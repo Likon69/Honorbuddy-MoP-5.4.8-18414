@@ -5,7 +5,7 @@
 ### |
 >**add this lines to**
 
-C:\Windows\System32\drivers\etc\hosts
+>C:\Windows\System32\drivers\etc\hosts
 
     127.0.0.1 eu1.auth.buddyauth.com
     127.0.0.1 eu2.auth.buddyauth.com
@@ -18,7 +18,7 @@ C:\Windows\System32\drivers\etc\hosts
 ### II
 >**Go to folder**
 
-Honorbuddy/auth
+>Honorbuddy/auth
 
 >**Start**
 
@@ -29,7 +29,7 @@ Buddy_Auth.exe (must do this every time)
 ### III
 >**Start**
 
-Honorbuddy.exe
+>Honorbuddy.exe
 
 >Key: 12345678901234567890
 
@@ -40,7 +40,7 @@ Honorbuddy.exe
 # **IMPORTANT**
 >**Your game must be**
 
-Directx11
+>Directx11
 
 >Wow.exe(32 BITS)
 
