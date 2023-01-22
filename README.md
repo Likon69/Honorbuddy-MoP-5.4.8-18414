@@ -21,7 +21,11 @@ Start: Buddy_Auth.exe (must do this every time)
 Start: Honorbuddy.exe
 
 Key: 12345678901234567890
+
+"IMPORTANT"
+
 Directx11
+
 Wow.exe(32 BITS)
 
 
