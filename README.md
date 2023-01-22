@@ -1,9 +1,11 @@
-![](https://avatars.githubusercontent.com/u/7963704?s=280&v=4) 
+![](https://avatars.githubusercontent.com/u/7963704?s=280&v=4)
+
 #Honorbuddy-MoP-5.4.8-18414 for Mists of Pandaria
 ## How to execute it 
 ### |
 
 **add this lines to**
+
 C:\Windows\System32\drivers\etc\hosts
 
 **127.0.0.1 eu1.auth.buddyauth.com**
@@ -15,6 +17,7 @@ C:\Windows\System32\drivers\etc\hosts
 
 ### II
 **Go to folder **
+
 Honorbuddy/auth
 
 **Start** 
@@ -22,6 +25,7 @@ Buddy_Auth.exe (must do this every time)
 
 ### III
 **Start**
+
 Honorbuddy.exe
 
 Key: 12345678901234567890
