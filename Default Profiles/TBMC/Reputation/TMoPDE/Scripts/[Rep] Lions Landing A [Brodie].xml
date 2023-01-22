@@ -1,0 +1,98 @@
+<HBProfile>
+	<Name>Lion's Landing ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- A King Among Men -->
+	<Quest Id="32247" Name="A King Among Men" > 
+		<Objective Type="KillMob" MobId="65978" MobId2="68334" MobId3="68333" MobId4="68332" KillCount="25" >
+			<Hotspots>
+				<Hotspot X="1677.37" Y="1366.47" Z="453.59" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<If Condition="!IsQuestCompleted(32246) &amp;&amp; !HasQuest(32246)" >
+		<CustomBehavior File="FlyTo" X="966.3139" Y="360.1289" Z="446.7688" />
+		<PickUp QuestName="Meet the Scout" QuestId="32246" GiverName="Lyalia" GiverId="64610" X="957.8577" Y="353.651" Z="451.7676" />
+		<CustomBehavior File="FlyTo" X="929.9602" Y="420.0021" Z="521.8432" />
+	</If>
+
+	<If Condition="HasQuest(32246)" >
+		<CustomBehavior File="Message" Text="Starting PreReq quest." LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="-1014.058" Y="-1050.747" Z="1.415" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Meet the Scout" QuestId="32246" TurnInName="Scout Lynna" TurnInId="68311" />
+	</If>
+
+	<If Condition="!IsQuestCompleted(32247) &amp;&amp; !HasQuest(32247)" >
+		<CustomBehavior File="FlyTo" X="-1016.577" Y="-1051.82" Z="1.0602" />
+		<PickUp QuestName="A King Among Men" QuestId="32247" GiverName="King Varian Wrynn" GiverId="68392" X="-1020.08" Y="-1050.05" Z="0.93"/>
+	</If>
+
+	<If Condition="!IsQuestCompleted(32247) &amp;&amp; HasQuest(32247)" >
+		<While Condition="!IsObjectiveComplete(2,32247) &amp;&amp; HasQuest(32247)" >
+			<CustomBehavior File="FlyTo" X="-893.03" Y="-775.4284" Z="6.449" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="68331" QuestId="32247" WaitForNpcs="False"/>
+		</While>
+		<While Condition="!IsObjectiveComplete(3,32247) &amp;&amp; HasQuest(32247)" >
+			<CustomBehavior File="FlyTo" X="-663.9311" Y="-802.2401" Z="5.856111" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="68312" QuestId="32247" WaitForNpcs="False"/>
+		</While>
+		<CustomBehavior File="FlyTo" X="-764.56" Y="-1012.02" Z="24.21" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="A King Among Men" QuestId="32247" Type="KillMob" MobId="65978" MobId2="68334" MobId3="68333" MobId4="68332" KillCount="25" />
+	</If>
+
+	<If Condition="IsQuestCompleted(32247) &amp;&amp; HasQuest(32247)" >
+		<TurnIn QuestName="A King Among Men" QuestId="32247" TurnInName="King varian Wrynn" TurnInId="68392" />
+	</If>
+
+	<If Condition="!HasQuest(32109) &amp;&amp; !IsQuestCompleted(32109)" >
+		<PickUp QuestName="Lion's Landing" QuestId="32109" GiverName="King varian Wrynn" GiverId="68392" />
+	</If>
+
+	<If Condition="HasQuest(32109)" >
+		<CustomBehavior File="FlyTo" X="-1016.577" Y="-1051.82" Z="1.0602" />
+		<TurnIn QuestName="Lion's Landing" QuestId="32109" TurnInName="Flare Launcher" TurnInId="216609" />
+		<CustomBehavior File="WaitTimer" WaitTime="40000" />
+	</If>
+
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Shieldwall [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

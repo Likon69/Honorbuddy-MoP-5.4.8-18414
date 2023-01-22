@@ -1,0 +1,502 @@
+<HBProfile>
+	<Name>The Anglers Dailies ($Rev$)</Name>
+	<MinLevel>89</MinLevel>
+	<MaxLevel>91</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Nav="Fly" Name="Nat Pagle" Entry="63721" Type="Repair" X="-1470.55" Y="-259.85" Z="0.11" />
+	</Vendors>
+
+	<Mailboxes>
+		<Mailbox X="-1525.247" Y="-243.2205" Z="15.21873" />
+	</Mailboxes>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+		<Blackspot X="-1386.979" Y="-382.1962" Z="-17.525" Radius="20" Height="20" /> <!-- The Damn Clam -->
+		<Blackspot X="-1378.67" Y="50.84" Z="10.19" Radius="5" Height="10" /> <!-- Guy on a Roof -->
+		<Blackspot X="-1423.01" Y="40.56" Z="7.12" Radius="5" Height="10" /> <!-- Guy on a Roof -->
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- Viseclaw Soup -->
+	<Quest Id="30701" Name="Viseclaw Soup">
+		<Objective Type="CollectItem" ItemId="80832" CollectCount="16">
+			<CollectFrom>
+				<Mob Name="Viseclaw Fry" Id="61090" />
+				<Mob Name="Viseclaw Fisher" Id="58880" />
+				<Mob Name="Viseclaw Scuttler" Id="58881" />
+				<Mob Name="Elder Viseclaw" Id="61091" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-1409.04" Y="153.46" Z="3.70" />
+				<Hotspot X="-1419.89" Y="209.86" Z="1.24" />
+				<Hotspot X="-1485.05" Y="247.25" Z="1.17" />
+				<Hotspot X="-1484.86" Y="312.30" Z="2.53" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Fishing for a Bruising -->
+	<Quest Id="30588" Name="Fishing for a Bruising">
+		<Objective Type="KillMob" MobId="59714" KillCount="8">
+			<Hotspots>
+				<Hotspot X="-1396.098" Y="62.59824" Z="2.671331" />
+				<Hotspot X="-1355.565" Y="44.07656" Z="5.211459" />
+				<Hotspot X="-1395.164" Y="15.74911" Z="2.359046" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Snapclaw -->
+	<Quest Id="30700" Name="Snapclaw">
+		<Objective Type="CollectItem" ItemId="80831" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Snapclaw" Id="60401" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-1307.36" Y="-514.03" Z="-69.62" />
+			</Hotspots>
+		</Objective>
+   	</Quest>
+
+<!-- Bright Bait -->
+	<Quest Id="30754" Name="Bright Bait">
+		<Objective Type="CollectItem" ItemId="80831" CollectCount="1">
+			<CollectFrom>
+				<GameObject Name="Suncrawler" Id="211474" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-1308.72" Y="-512.74" Z="-69.77" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Who Knew Fish Liked Eggs -->
+	<Quest Id="30598" Name="Who Knew Fish Liked Eggs">
+		<Objective Type="CollectItem" ItemId="80303" CollectCount="1">
+			<CollectFrom>
+				<GameObject Name="Pristine Crane Egg" Id="211160" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-1599.62" Y="-112.61" Z="46.40" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<CustomBehavior File="RunMacro" Macro="/script SetCVar('AutoLootDefault', 1)" NumOfTimes="1" WaitTime="1000" />
+	<CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+
+	<!-- If I am in EK, take the SW portal -->
+	<If Condition="(Me.MapId == 0 &amp;&amp; Me.IsAlliance)" >
+		<CustomBehavior File="FlyTo" DestName="SW Portal" X="-8199.441" Y="529.3228" Z="117.0738" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="215457" Range="4" X="-8194.479" Y="528.1129" Z="117.2901" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+	</If>
+
+	<If Condition=" (Me.MapId == 1 &amp;&amp; Me.IsHorde)" >
+		<CustomBehavior File="FlyTo" DestName="Org Portal" X="2013.813" Y="-4699.559" Z="28.61817" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="215424" Range="4.75" X="2014.819" Y="-4700.274" Z="28.62439" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Quests..." LogColor="Green" />
+
+	<If Condition="((!HasQuest(30586) &amp;&amp; IsQuestCompleted(30586)) ||
+		(!HasQuest(31443) &amp;&amp; IsQuestCompleted(31443)) ||
+		(!HasQuest(31444) &amp;&amp; IsQuestCompleted(31444)) ||
+		(!HasQuest(31446) &amp;&amp; IsQuestCompleted(31446)) ||
+		(!HasQuest(30613) &amp;&amp; IsQuestCompleted(30613)) ||
+		(!HasQuest(30658) &amp;&amp; IsQuestCompleted(30658)) ||
+		(!HasQuest(30701) &amp;&amp; IsQuestCompleted(30701)) ||
+		(!HasQuest(30588) &amp;&amp; IsQuestCompleted(30588)) ||
+		(!HasQuest(30700) &amp;&amp; IsQuestCompleted(30700)) ||
+		(!HasQuest(30678) &amp;&amp; IsQuestCompleted(30678)) ||
+		(!HasQuest(30754) &amp;&amp; IsQuestCompleted(30754)) ||
+		(!HasQuest(30584) &amp;&amp; IsQuestCompleted(30584)) ||
+		(!HasQuest(30698) &amp;&amp; IsQuestCompleted(30698)) ||
+		(!HasQuest(30700) &amp;&amp; IsQuestCompleted(30700)) ||
+		(!HasQuest(30753) &amp;&amp; IsQuestCompleted(30753)) ||
+		(!HasQuest(30585) &amp;&amp; IsQuestCompleted(30585)) ||
+		(!HasQuest(30598) &amp;&amp; IsQuestCompleted(30598)) ||
+		(!HasQuest(30763) &amp;&amp; IsQuestCompleted(30763)))" >
+		<CustomBehavior File="Message" Text="Previously Completed Quests Detected." LogColor="Green" />
+		<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: Previously completed quests detected! \n\n Either you have done some of you quests already, and have restarted the bot...\n OR your cache folder is NOT clean, and must be deleted, and bot restarted." />
+	</If>
+
+<!-- Checking if you have a quest. If you do, start, if not, fly to Nat Pagle's Man Cave -->
+	<If Condition="(!HasQuest(30613) &amp;&amp; !HasQuest(30586) &amp;&amp; !HasQuest(30658) 
+			&amp;&amp; !HasQuest(30754) &amp;&amp; !HasQuest(30588) &amp;&amp; !HasQuest(30701)
+			&amp;&amp; !HasQuest(30700) &amp;&amp; !HasQuest(30678) 
+			&amp;&amp; !HasQuest(30753) &amp;&amp; !HasQuest(30585) &amp;&amp; !HasQuest(30763)
+			&amp;&amp; !HasQuest(30584) &amp;&amp; !HasQuest(30598))" >
+		<CustomBehavior File="Message" Text="Starting The Anglers Dailies, moving to Nat Pagle's Man Cave." LogColor="Green" />
+		<CustomBehavior File="FlyTo" DestName="Man Cave" X="-1437.63" Y="-253.9103" Z="0.7829753" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+	</If>
+
+<!-- Fo Fook -->
+	<While Condition="HasQuestAvailable(60675)" >
+		<CustomBehavior File="FlyTo" X="-1396.24" Y="-202.15" Z="1.50" />
+		<CustomBehavior File="InteractWith" MobId="60675" PreInteractMountStrategy="Dismount" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		<CustomBehavior File="InteractWith" MobId="60675" PreInteractMountStrategy="Dismount" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton2" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Trawler Yotimo -->
+	<While Condition="HasQuestAvailable(60135)" >
+		<CustomBehavior File="FlyTo" X="-1438.39" Y="-221.81" Z="0.35" />
+		<CustomBehavior File="InteractWith" MobId="60135" PreInteractMountStrategy="Dismount" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Elder Fisherman Rassan -->
+	<While Condition="HasQuestAvailable(60673)" >
+		<CustomBehavior File="FlyTo" X="-1425.53" Y="-255.90" Z="0.50" />
+		<CustomBehavior File="InteractWith" MobId="60673" PreInteractMountStrategy="Dismount" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		<If Condition="HasQuestAvailable(60673)" >
+			<CustomBehavior File="InteractWith" MobId="60673" PreInteractMountStrategy="Dismount" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton2" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</If>
+	</While>
+
+<!-- John Big Hook Marsock -->
+	<While Condition="HasQuestAvailable(60674)" >
+		<CustomBehavior File="FlyTo" X="-1465.597" Y="-253.7264" Z="0.3228427" />
+		<CustomBehavior File="InteractWith" MobId="60674" InteractByQuestFrameDisposition="Ignore" PreInteractMountStrategy="Dismount" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+	<If Condition="HasQuestAvailable(59586) || HasQuestAvailable(60136) || HasQuestAvailable(59584)" >
+		<CustomBehavior File="ForcedMount" MountType="Flying" />
+		<CustomBehavior File="FlyTo" X="-1477.431" Y="-247.1234" Z="5.103402" />
+	</If>
+
+<!-- Angler Shen -->
+	<While Condition="HasQuestAvailable(59586)" >
+		<CustomBehavior File="FlyTo" X="-1469.85" Y="-218.82" Z="5.43" />
+		<CustomBehavior File="InteractWith" MobId="59586" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Fiznix -->
+	<While Condition="HasQuestAvailable(60136)" >
+		<CustomBehavior File="FlyTo" X="-1503.70" Y="-219.3447" Z="0.643862" />
+		<CustomBehavior File="InteractWith" MobId="60136" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		<If Condition="HasQuestAvailable(60136)" >
+			<CustomBehavior File="InteractWith" MobId="60136" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton2" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</If>
+	</While>
+
+<!-- Fisherman Haito -->
+	<While Condition="HasQuestAvailable(59584)" >
+		<CustomBehavior File="FlyTo" X="-1522.92" Y="-235.618" Z="15.20922" />
+		<CustomBehavior File="InteractWith" MobId="59584" IgnoreLoSToTarget="True" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Starting Quests -->
+
+<CustomBehavior File="Message" Text="Beginning The Anglers Quests." LogColor="Green" />
+
+<!-- Jumping The Shark -->
+	<If Condition="HasQuest(30753) &amp;&amp; !IsQuestCompleted(30753)" >
+		<CustomBehavior File="Message" Text="Starting Jumping The Shark" LogColor="Green" />
+		<While Condition="!IsQuestCompleted(30753)" >
+			<CustomBehavior File="FlyTo" X="-1459.95" Y="-254.43" Z="0.61" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="MountVehOnly" VehicleMountId="60408" X="-1456.75" Y="-259.65" Z="0.0" />
+			<Custombehavior File="WaitTimer" WaitTime="2000" />
+			<While Condition="Me.IsOnTransport" >
+				<CustomBehavior File="RunMacro" Macro="/click [overridebar][vehicleui][possessbar,@vehicle,exists]OverrideActionBarButton2" NumOfTimes="1" WaitTime="100" />
+				<CustomBehavior File="RunMacro" Macro="/click [overridebar][vehicleui][possessbar,@vehicle,exists]OverrideActionBarButton1" NumOfTimes="1" WaitTime="100" />
+				<CustomBehavior File="RunMacro" Macro="/click [overridebar][vehicleui][possessbar,@vehicle,exists]OverrideActionBarButton3" NumOfTimes="1" WaitTime="100" />
+			</While>
+			<If Condition="!IsQuestCompleted(30753)" >
+				<CustomBehavior File="FlyTo" X="-1465.597" Y="-253.7264" Z="0.3228427" />
+				<CustomBehavior File="InteractWith" MobId="60674" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" WaitTime="1000" />
+			</If>
+		</While>
+	</If>
+
+<!-- Scavenger Hunt -->
+<!--<If Condition="HasQuest(30698) &amp;&amp; !IsQuestCompleted(30698) &amp;&amp; (Me.GetSkill(Styx.SkillLine.Fishing).CurrentValue &gt;= 450)" >
+		<CustomBehavior File="Message" Text="Starting Scavenger Hunt" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1656.867" Y="-26.41589" Z="0.2146372" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="MrFishIt" PoolId="211423" CollectItemId="80830" CollectItemCount="15" MoveToPool="True" MinCastRange="15" MaxCastRange="20" />
+	</If>-->
+
+<!-- What Lurks Below -->
+	<If Condition="HasQuest(30585) &amp;&amp; !IsQuestCompleted(30585)" >
+		<CustomBehavior File="Message" Text="Starting What Lurks Below" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1087.74" Y="1332.411" Z="16.6486" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30585)" >
+			<CustomBehavior File="MrFishIt" CollectItemId="80262" CollectItemCount="1" X="-1100.109" Y="1346.707" Z="13.99739" />
+		</While>
+	</If>
+
+<!-- Shocking! -->
+	<If Condition="HasQuest(30584) &amp;&amp; !IsQuestCompleted(30584)" >
+		<CustomBehavior File="Message" Text="Starting Shocking" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-976.15" Y="-64.50" Z="23.50" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="MrFishIt" CollectItemId="80260" CollectItemCount="7" X="-979.07" Y="-79.09" Z="18.18" />
+	</If>
+
+<!-- Piranha! -->
+	<If Condition="HasQuest(30763) &amp;&amp; !IsQuestCompleted(30763)" >
+		<CustomBehavior File="Message" Text="Starting Piranha!" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1371.848" Y="958.5745" Z="14.70232" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Random(100) &lt; 50" >
+			<MoveTo X="-1363.943" Y="949.0052" Z="14.36509" />
+			<CustomBehavior File="MrFishIt" CollectItemId="81122" CollectItemCount="5" X="-1355.389" Y="934.9373" Z="13.99744" />
+		<Else>
+			<MoveTo X="-1390.914" Y="950.1599" Z="14.01557" />
+			<CustomBehavior File="MrFishIt" CollectItemId="81122" CollectItemCount="5" X="-1401.413" Y="943.752" Z="13.99757" />
+		</Else>
+		</If>
+	</If>
+
+<!-- Fishing for a Bruising -->
+	<If Condition="HasQuest(30588) &amp;&amp; !IsQuestCompleted(30588)" >
+		<CustomBehavior File="Message" Text="Starting Fishing for a Bruising" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Fishing for a Bruising" QuestId="30588" Type="KillMob" MobId="59714" KillCount="8" />
+	</If>
+
+<!-- Viseclaw Soup -->
+	<If Condition="HasQuest(30701) &amp;&amp; !IsQuestCompleted(30701)" >
+		<CustomBehavior File="Message" Text="Starting Viseclaw Soup" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Viseclaw Soup" QuestId="30701" Type="CollectItem" ItemId="80832" CollectCount="16" />
+	</If>
+
+<!-- Snapclaw -->
+	<If Condition="HasQuest(30700) &amp;&amp; !IsQuestCompleted(30700)" >
+		<CustomBehavior File="Message" Text="Starting Snapclaw" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1306.801" Y="-380.5321" Z="0.1" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="MyCTM" X="-1311.473" Y="-380.6592" Z="-92.616" />
+		<CustomBehavior File="MyCTM" X="-1308.503" Y="-455.9226" Z="-81.81419" />
+		<CustomBehavior File="MyCTM" X="-1308.519" Y="-488.3546" Z="-71.68121" />
+		<Objective QuestName="Snapclaw" QuestId="30700" Type="CollectItem" ItemId="80831" CollectCount="1" />
+		<CustomBehavior File="MyCTM" X="-1308.519" Y="-488.3546" Z="-71.68121" />
+		<CustomBehavior File="MyCTM" X="-1308.503" Y="-455.9226" Z="-81.81419" />
+		<CustomBehavior File="MyCTM" X="-1311.473" Y="-380.6592" Z="-92.616" />
+		<CustomBehavior File="AscendInWater" />
+	</If>
+
+<!-- Bright Bait -->
+	<If Condition="HasQuest(30754) &amp;&amp; !IsQuestCompleted(30754)" >
+		<CustomBehavior File="Message" Text="Starting Bright Bait" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Bright Bait" QuestId="30754" Type="CollectItem" ItemId="81116" CollectCount="7" />
+	</If>
+
+<!-- Jagged Abalone -->
+ 	<If Condition="HasQuest(30586) &amp;&amp; !IsQuestCompleted(30586)">
+		<CustomBehavior File="Message" Text="Starting Jagged Abalone" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="FlyTo" X="-1353.003" Y="-342.6745" Z="-3.762463" />
+		<CustomBehavior File="ForcedDismount" />
+		<UseMount Value="False" />
+		<CustomBehavior File="CollectThings" QuestId="30586" CollectUntil="QuestComplete" ObjectId="211118" HuntingGroundRadius="120" NonCompeteDistance="5" />
+		<CustomBehavior File="AscendInWater" />
+		<EnableBehavior Name="Pull" />
+		<UseMount Value="True" />
+	</If>
+
+<!-- Like Bombing Fish In A Barrel -->
+	<If Condition="HasQuest(30678) &amp;&amp; !IsQuestCompleted(30678)" >
+		<CustomBehavior File="Message" Text="Starting Like Bombing Fish In A Barrel" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Like Bombing Fish In A Barrel" QuestId="30678" Type="CollectItem" ItemId="80600" CollectCount="3" />
+	</If>
+
+<!-- Armored Carp -->
+	<If Condition="HasQuest(30613) &amp;&amp; !IsQuestCompleted(30613)" >
+		<CustomBehavior File="Message" Text="Starting Armored Carp" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1631.022" Y="-282.085" Z="0.1" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="CollectThings" MobId="59936" CollectUntil="RequiredCountReached" CollectItemCount="5" CollectItemId="80437" QuestId="30613" HuntingGroundRadius="120" NonCompeteDistance="5" />
+		<CustomBehavior File="AscendInWater" />
+	</If>
+
+<!-- Huff n Puff -->
+	<If Condition="HasQuest(30658) &amp;&amp; !IsQuestCompleted(30658)" >
+		<CustomBehavior File="Message" Text="Starting Huff n Puff" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2039.777" Y="526.7104" Z="0.1" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="CollectThings" MobId="60037" CollectUntil="RequiredCountReached" CollectItemCount="5" CollectItemId="80529" QuestId="30658" HuntingGroundRadius="120" NonCompeteDistance="10" X="-2128.736" Y="456.9435" Z="-28.55532" />
+		<CustomBehavior File="AscendInWater" />
+	</If>
+
+<!-- Who Knew Fish Liked Eggs -->
+	<If Condition="HasQuest(30598) &amp;&amp; !IsQuestCompleted(30598)" >
+		<CustomBehavior File="Message" Text="Starting Who Knew Fish Likes Eggs" LogColor="Green" />
+		<If Condition="!HasItem(80303)" >
+			<CustomBehavior File="FlyTo" QuestId="30598" X="-1599.62" Y="-112.61" Z="46.40" />
+			<Objective Nav="Fly" QuestName="Who Knew Fish Like Eggs" QuestId="30598" Type="CollectItem" ItemId="80303" CollectCount="1" />
+		</If>
+		<If Condition="!IsObjectiveComplete(2,30598)" >
+			<CustomBehavior File="FlyTo" X="-1394.035" Y="-259.272" Z="0.1" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(80303)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="MrFishIt" QuestId="30598" CollectItemId="80310" PoolId="211169" MoveToPool="True" />
+		</If>
+	</If>
+
+<!-- Quest Turn ins -->
+
+	<If Condition="HasItem(86542) &amp;&amp; !HasQuest(31443) &amp;&amp; !IsQuestCompleted(31443)" >
+		<PickUp QuestName="Flying Tiger Gourami" GiverType="Item" QuestId="31443" GiverId="86542" />
+	</If>
+
+	<If Condition="HasItem(86544) &amp;&amp; !HasQuest(31444) &amp;&amp; !IsQuestCompleted(31444)" >
+		<PickUp QuestName="Spinefish Alpha" GiverType="Item" QuestId="31444" GiverId="86544" />
+	</If>
+
+	<If Condition="HasItem(86545) &amp;&amp; !HasQuest(31446) &amp;&amp; !IsQuestCompleted(31446)" >
+		<PickUp QuestName="Mimic Octopus" GiverType="Item" QuestId="31446" GiverId="86545" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Quests Completed. Returning to Nat Pagle's Man Cave." LogColor="Green" />
+
+  	<If Condition="HasQuest(30701) &amp;&amp; IsQuestCompleted(30701)" >
+		<TurnIn Nav="Fly" QuestName="Viseclaw Soup" QuestId="30701" TurnInName="Fo Fook" TurnInId="60675" />
+	</If>
+
+  	<If Condition="HasQuest(30763) &amp;&amp; IsQuestCompleted(30763)" >
+		<TurnIn Nav="Fly" QuestName="Piranha" QuestId="30763" TurnInName="Fo Fook" TurnInId="60675" />
+	</If>
+
+  	<If Condition="HasQuest(30585) &amp;&amp; IsQuestCompleted(30585)" >
+		<TurnIn Nav="Fly" QuestName="What Lurks Below" QuestId="30585" TurnInName="Elder Fisherman Rassan" TurnInId="60673" />
+	</If>
+
+  	<If Condition="HasQuest(30598) &amp;&amp; IsQuestCompleted(30598)" >
+		<TurnIn Nav="Fly" QuestName="Who Knew Fish Liked Eggs" QuestId="30598" TurnInName="Elder Fisherman Rassan" TurnInId="60673" />
+	</If>
+
+  	<If Condition="HasQuest(30613) &amp;&amp; IsQuestCompleted(30613)" >
+		<TurnIn Nav="Fly" QuestName="Armored Carp" QuestId="30613" TurnInName="Trawler Yomito" TurnInId="60135" />
+	</If>
+
+  	<If Condition="HasQuest(30658) &amp;&amp; IsQuestCompleted(30658)" >
+		<TurnIn Nav="Fly" QuestName="Huff n Puff" QuestId="30658" TurnInName="Trawler Yomito" TurnInId="60135" />
+	</If>
+
+  	<If Condition="HasQuest(30754) &amp;&amp; IsQuestCompleted(30754)" >
+		<TurnIn Nav="Fly" QuestName="Bright Bait" QuestId="30754" TurnInName="John Marsock" TurnInId="60674" />
+	</If>
+
+  	<If Condition="HasQuest(30753) &amp;&amp; IsQuestCompleted(30753)" >
+		<TurnIn Nav="Fly" QuestName="Jumping the Shark" QuestId="30753" TurnInName="John Marsock" TurnInId="60674" />
+	</If>
+
+  	<If Condition="HasQuest(31443) &amp;&amp; IsQuestCompleted(31443)" >
+		<TurnIn Nav="Fly" QuestName="Flying Tiger Gourami" QuestId="31443" TurnInName="Nat Pagle" TurnInId="63721" />
+	</If>
+
+  	<If Condition="HasQuest(31444) &amp;&amp; IsQuestCompleted(31444)" >
+		<TurnIn Nav="Fly" QuestName="Spinefish Alpha" QuestId="31444" TurnInName="Nat Pagle" TurnInId="63721" />
+	</If>
+
+  	<If Condition="HasQuest(31446) &amp;&amp; IsQuestCompleted(31446)" >
+		<TurnIn Nav="Fly" QuestName="Mimic Octopus" QuestId="31446" TurnInName="Nat Pagle" TurnInId="63721" />
+	</If>
+	
+	<If Condition="HasQuest(30588) || HasQuest(30700) || HasQuest(30678) || HasQuest(30586) || HasQuest(30584)" >
+		<CustomBehavior File="ForcedMount" MountType="Flying" />
+		<CustomBehavior File="FlyTo" X="-1477.431" Y="-247.1234" Z="5.103402" />
+	</If>
+
+  	<If Condition="HasQuest(30588) &amp;&amp; IsQuestCompleted(30588)" >
+		<TurnIn Nav="Fly" QuestName="Fishing for a Bruising" QuestId="30588" TurnInName="Angler Shen" TurnInId="59586" />
+	</If>
+
+  	<If Condition="HasQuest(30700) &amp;&amp; IsQuestCompleted(30700)" >
+		<TurnIn Nav="Fly" QuestName="Snapclaw" QuestId="30700" TurnInName="Angler Shen" TurnInId="59586" />
+	</If>
+
+  	<If Condition="HasQuest(30678) &amp;&amp; IsQuestCompleted(30678)" >
+		<TurnIn Nav="Fly" QuestName="Like Bombing Fish In A Barrel" QuestId="30678" TurnInName="Fiznix" TurnInId="60136" />
+	</If>
+
+  	<If Condition="HasQuest(30586) &amp;&amp; IsQuestCompleted(30586)" >
+		<CustomBehavior File="FlyTo" X="-1521.61" Y="-235.739" Z="15.20826" />
+		<TurnIn Nav="Fly" QuestName="Jagged Abalone" QuestId="30586" TurnInName="Fisherman Haito" TurnInId="59584" />
+	</If>
+
+  	<If Condition="HasQuest(30584) &amp;&amp; IsQuestCompleted(30584)" >
+		<CustomBehavior File="FlyTo" X="-1521.61" Y="-235.739" Z="15.20826" />
+		<TurnIn Nav="Fly" QuestName="Shocking" QuestId="30584" TurnInName="Fisherman Haito" TurnInId="59584" />
+	</If>
+
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+
+	<CustomBehavior File="ForcedDismount" />
+	<If Condition="HasItem(60498)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60498)" WaitTime="1500" />
+	<ElseIf Condition="HasItem(93672)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93672)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(54452)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(54452)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(64488)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(6948)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1500" />
+	</ElseIf>
+	</If>
+
+	<CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of Anglers Dailies" />
+
+</QuestOrder>
+</HBProfile>

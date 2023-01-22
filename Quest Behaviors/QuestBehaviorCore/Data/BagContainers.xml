@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This table was built to assist the MrItemRemove plugin.
+  We keep the table here in case the information is needed in the future.
+  The information is not easily assembled.
+ -->
+<BagContainers>
+    <!-- 1 -->
+    <Bag Name="Penny Pouch" Entry="37606" Size="1" Quality="1" /> <!-- http://wowhead.com/item=37606 -->
+
+    <!-- 4 -->
+    <Bag Name="Empty Draenei Supply Pouch" Entry="23389" Size="4" Quality="1" /> <!-- http://wowhead.com/item=23389 -->
+    <Bag Name="Fatcandle Bag" Entry="56147" Size="4" Quality="1" /> <!-- http://wowhead.com/item=56147 -->
+    <Bag Name="Magister's Pouch" Entry="22976" Size="4" Quality="1" /> <!-- http://wowhead.com/item=22976 -->
+    <Bag Name="Sunstrider Book Satchel" Entry="20474" Size="4" Quality="1" /> <!-- http://wowhead.com/item=20474 -->
+
+    <!-- 6 -->
+    <Bag Name="Airfield Courier Bag" Entry="59053" Size="6" Quality="1" /> <!-- http://wowhead.com/item=59053 -->
+    <Bag Name="Bag of Thorns" Entry="57792" Size="6" Quality="1" /> <!-- http://wowhead.com/item=57792 -->
+    <Bag Name="Bank Robber's Bag" Entry="56148" Size="6" Quality="1" /> <!-- http://wowhead.com/item=56148 -->
+    <Bag Name="Coldridge Mountaineer's Pouch" Entry="57542" Size="6" Quality="1" /> <!-- http://wowhead.com/item=57542 -->
+    <Bag Name="Courier's Bag" Entry="22571" Size="6" Quality="1" /> <!-- http://wowhead.com/item=22571 -->
+    <Bag Name="Dusty Bag" Entry="60241" Size="6" Quality="1" /> <!-- http://wowhead.com/item=60241 -->
+    <Bag Name="Foul Bag" Entry="60239" Size="6" Quality="1" /> <!-- http://wowhead.com/item=60239 -->
+    <Bag Name="Grape-Picking Sack" Entry="57247" Size="6" Quality="1" /> <!-- http://wowhead.com/item=57247 -->
+    <Bag Name="Jewelry Box" Entry="6756" Size="6" Quality="1" /> <!-- http://wowhead.com/item=6756 -->
+    <Bag Name="Kodo Hide Bag" Entry="5081" Size="6" Quality="1" /> <!-- http://wowhead.com/item=5081 -->
+    <Bag Name="Kodo Saddlebag" Entry="57793" Size="6" Quality="1" /> <!-- http://wowhead.com/item=57793 -->
+    <Bag Name="Light Leather Quiver" Entry="7278" Size="6" Quality="1" /> <!-- http://wowhead.com/item=7278 -->
+    <Bag Name="Light Quiver" Entry="2101" Size="6" Quality="1" /> <!-- http://wowhead.com/item=2101 -->
+    <Bag Name="Linen Bag" Entry="4238" Size="6" Quality="1" /> <!-- http://wowhead.com/item=4238 -->
+    <Bag Name="Melithar's Supply Bag" Entry="46753" Size="6" Quality="1" /> <!-- http://wowhead.com/item=46753 -->
+    <Bag Name="Merchant's Satchel" Entry="73241" Size="6" Quality="1" /> <!-- http://wowhead.com/item=73241 -->
+    <Bag Name="Old Moneybag" Entry="4957" Size="6" Quality="1" /> <!-- http://wowhead.com/item=4957 -->
+    <Bag Name="Pumpkin Bag" Entry="57790" Size="6" Quality="1" /> <!-- http://wowhead.com/item=57790 -->
+    <Bag Name="Red Linen Bag" Entry="5762" Size="6" Quality="1" /> <!-- http://wowhead.com/item=5762 -->
+    <Bag Name="Salvager's Bag" Entry="52040" Size="6" Quality="1" /> <!-- http://wowhead.com/item=52040 -->
+    <Bag Name="Sea Witch's Bag" Entry="60260" Size="6" Quality="1" /> <!-- http://wowhead.com/item=60260 -->
+    <Bag Name="Small Leather Ammo Pouch" Entry="7279" Size="6" Quality="1" /> <!-- http://wowhead.com/item=7279 -->
+    <Bag Name="Small Ammo Pouch" Entry="2102" Size="6" Quality="1" /> <!-- http://wowhead.com/item=2102 -->
+    <Bag Name="Small Black Pouch" Entry="5571" Size="6" Quality="1" /> <!-- http://wowhead.com/item=5571 -->
+    <Bag Name="Small Blue Pouch" Entry="828" Size="6" Quality="1" /> <!-- http://wowhead.com/item=828 -->
+    <Bag Name="Small Brown Pouch" Entry="4496" Size="6" Quality="1" /> <!-- http://wowhead.com/item=4496 -->
+    <Bag Name="Small Green Pouch" Entry="5572" Size="6" Quality="1" /> <!-- http://wowhead.com/item=5572 -->
+    <Bag Name="Small Red Pouch" Entry="805" Size="6" Quality="1" /> <!-- http://wowhead.com/item=805 -->
+    <Bag Name="Small Shot Pouch" Entry="5441" Size="6" Quality="1" /> <!-- http://wowhead.com/item=5441 -->
+    <Bag Name="Small Quiver" Entry="5439" Size="6" Quality="1" /> <!-- http://wowhead.com/item=5439 -->
+    <Bag Name="Wizbang's Gunnysack" Entry="2082" Size="6" Quality="1" /> <!-- http://wowhead.com/item=2082 -->
+
+    <!-- 8 -->
+    <Bag Name="&quot;Collecting&quot; Bag" Entry="57251" Size="8" Quality="1" /> <!-- http://wowhead.com/item=57251 -->
+    <Bag Name="Blue Leather Bag" Entry="856" Size="8" Quality="1" /> <!-- http://wowhead.com/item=856 -->
+    <Bag Name="Brown Leather Satchel" Entry="4498" Size="8" Quality="1" /> <!-- http://wowhead.com/item=4498 -->
+    <Bag Name="Captain Sanders' Booty Bag" Entry="3343" Size="8" Quality="1" /> <!-- http://wowhead.com/item=3343 -->
+    <Bag Name="Dream Carrier" Entry="60240" Size="8" Quality="1" /> <!-- http://wowhead.com/item=60240 -->
+    <Bag Name="Empty Town-In-A-Box" Entry="56149" Size="8" Quality="1" /> <!-- http://wowhead.com/item=56149 -->
+    <Bag Name="Gnoll Hide Sack" Entry="3233" Size="8" Quality="1" /> <!-- http://wowhead.com/item=3233 -->
+    <Bag Name="Green Leather Bag" Entry="5573" Size="8" Quality="1" /> <!-- http://wowhead.com/item=5573 -->
+    <Bag Name="Green Woolen Bag" Entry="4241" Size="8" Quality="1" /> <!-- http://wowhead.com/item=4241 -->
+    <Bag Name="Handmade Leather Bag" Entry="11845" Size="8" Quality="1" /> <!-- http://wowhead.com/item=11845 -->
+    <Bag Name="Headsman's Bag" Entry="57791" Size="8" Quality="1" /> <!-- http://wowhead.com/item=57791 -->
+    <Bag Name="Hunting Ammo Sack" Entry="3574" Size="8" Quality="1" /> <!-- http://wowhead.com/item=3574 -->
+    <Bag Name="Hunting Quiver" Entry="3573" Size="8" Quality="1" /> <!-- http://wowhead.com/item=3573 -->
+    <Bag Name="Kron's New Hunting Bag" Entry="60242" Size="8" Quality="1" /> <!-- http://wowhead.com/item=60242 -->
+    <Bag Name="Master's Haversac" Entry="73242" Size="8" Quality="1" /> <!-- http://wowhead.com/item=73242 -->
+    <Bag Name="Medium Quiver" Entry="11362" Size="8" Quality="1" /> <!-- http://wowhead.com/item=11362 -->
+    <Bag Name="Medium Shot Pouch" Entry="11363" Size="8" Quality="1" /> <!-- http://wowhead.com/item=11363 -->
+    <Bag Name="Message Carrier" Entry="60731" Size="8" Quality="1" /> <!-- http://wowhead.com/item=60731 -->
+    <Bag Name="Nolkai's Bag" Entry="23852" Size="8" Quality="2" /> <!-- http://wowhead.com/item=23852 -->
+    <Bag Name="Old Blanchy's Feed Pouch" Entry="1537" Size="8" Quality="1" /> <!-- http://wowhead.com/item=1537 -->
+    <Bag Name="Prospector's Bag" Entry="57549" Size="8" Quality="1" /> <!-- http://wowhead.com/item=57549 -->
+    <Bag Name="Red Leather Bag" Entry="2657" Size="8" Quality="1" /> <!-- http://wowhead.com/item=2657 -->
+    <Bag Name="Red Woolen Bag" Entry="5763" Size="8" Quality="1" /> <!-- http://wowhead.com/item=5763 -->
+    <Bag Name="Shipwright's Bag" Entry="52039" Size="8" Quality="1" /> <!-- http://wowhead.com/item=52039 -->
+    <Bag Name="Small Soul Pouch" Entry="22243" Size="8" Quality="2" /> <!-- http://wowhead.com/item=22243 -->
+    <Bag Name="White Leather Bag" Entry="5574" Size="8" Quality="1" /> <!-- http://wowhead.com/item=5574 -->
+    <Bag Name="Woolen Bag" Entry="4240" Size="8" Quality="1" /> <!-- http://wowhead.com/item=4240 -->
+
+    <!-- 10 -->
+    <Bag Name="Black Silk Pack" Entry="5765" Size="10" Quality="1" /> <!-- http://wowhead.com/item=5765 -->
+    <Bag Name="Box of Souls" Entry="22244" Size="10" Quality="2" /> <!-- http://wowhead.com/item=22244 -->
+    <Bag Name="Deviate Hide Pack" Entry="918" Size="10" Quality="1" /> <!-- http://wowhead.com/item=918 -->
+    <Bag Name="Fel Steed Saddlebags" Entry="932" Size="10" Quality="1" /> <!-- http://wowhead.com/item=932 -->
+    <Bag Name="Green Silk Pack" Entry="5764" Size="10" Quality="1" /> <!-- http://wowhead.com/item=5764 -->
+    <Bag Name="Gunnysack of the Night Watch" Entry="1729" Size="10" Quality="1" /> <!-- http://wowhead.com/item=1729 -->
+    <Bag Name="Heavy Leather Ammo Pouch" Entry="7372" Size="10" Quality="2" /> <!-- http://wowhead.com/item=7372 -->
+    <Bag Name="Heavy Brown Bag" Entry="4497" Size="10" Quality="1" /> <!-- http://wowhead.com/item=4497 -->
+    <Bag Name="Heavy Quiver" Entry="7371" Size="10" Quality="2" /> <!-- http://wowhead.com/item=7371 -->
+    <Bag Name="Large Blue Sack" Entry="804" Size="10" Quality="1" /> <!-- http://wowhead.com/item=804 -->
+    <Bag Name="Large Brown Sack" Entry="5576" Size="10" Quality="1" /> <!-- http://wowhead.com/item=5576 -->
+    <Bag Name="Large Green Sack" Entry="5575" Size="10" Quality="1" /> <!-- http://wowhead.com/item=5575 -->
+    <Bag Name="Large Rucksack" Entry="933" Size="10" Quality="1" /> <!-- http://wowhead.com/item=933 -->
+    <Bag Name="Large Red Sack" Entry="857" Size="10" Quality="1" /> <!-- http://wowhead.com/item=857 -->
+    <Bag Name="Murloc Skin Bag" Entry="1470" Size="10" Quality="1" /> <!-- http://wowhead.com/item=1470 -->
+    <Bag Name="Ooze-Covered Bag" Entry="3352" Size="10" Quality="1" /> <!-- http://wowhead.com/item=3352 -->
+    <Bag Name="Small Silk Pack" Entry="4245" Size="10" Quality="1" /> <!-- http://wowhead.com/item=4245 -->
+    <Bag Name="Snakeskin Bag" Entry="6446" Size="10" Quality="3" /> <!-- http://wowhead.com/item=6446 -->
+
+    <!-- 12 -->
+    <Bag Name="Bandolier of the Night Watch" Entry="3604" Size="12" Quality="2" /> <!-- http://wowhead.com/item=3604 -->
+    <Bag Name="Deathweave Bag" Entry="38145" Size="12" Quality="1" /> <!-- http://wowhead.com/item=38145 -->
+    <Bag Name="Huge Brown Sack" Entry="4499" Size="12" Quality="1" /> <!-- http://wowhead.com/item=4499 -->
+    <Bag Name="Large Knapsack" Entry="1725" Size="12" Quality="1" /> <!-- http://wowhead.com/item=1725 -->
+    <Bag Name="Mageweave Bag" Entry="10050" Size="12" Quality="1" /> <!-- http://wowhead.com/item=10050 -->
+    <Bag Name="Quickdraw Quiver" Entry="8217" Size="12" Quality="2" /> <!-- http://wowhead.com/item=8217 -->
+    <Bag Name="Quiver of the Night Watch" Entry="3605" Size="12" Quality="2" /> <!-- http://wowhead.com/item=3605 -->
+    <Bag Name="Red Mageweave Bag" Entry="10051" Size="12" Quality="1" /> <!-- http://wowhead.com/item=10051 -->
+    <Bag Name="Sturdy Lunchbox" Entry="1652" Size="12" Quality="1" /> <!-- http://wowhead.com/item=1652 -->
+    <Bag Name="Thick Leather Ammo Pouch" Entry="8218" Size="12" Quality="2" />
+
+    <!-- 14 -->
+    <Bag Name="&quot;Carriage&quot; Signature Bag" Entry="67387" Size="14" Quality="1" /> <!-- http://wowhead.com/item=67387 -->
+    <Bag Name="Clefthoof Hide Quiver" Entry="29143" Size="14" Quality="3" /> <!-- http://wowhead.com/item=29143 -->
+    <Bag Name="Draenic Leather Pack" Entry="30744" Size="14" Quality="2" /> <!-- http://wowhead.com/item=30744 -->
+    <Bag Name="Explorer's Knapsack" Entry="11324" Size="14" Quality="1" /> <!-- http://wowhead.com/item=11324 -->
+    <Bag Name="Journeyman's Backpack" Entry="3914" Size="14" Quality="1" /> <!-- http://wowhead.com/item=3914 -->
+    <Bag Name="Runecloth Bag" Entry="14046" Size="14" Quality="1" /> <!-- http://wowhead.com/item=14046 -->
+    <Bag Name="Soul Pouch" Entry="21340" Size="14" Quality="2" /> <!-- http://wowhead.com/item=21340 -->
+    <Bag Name="Thawpelt Sack" Entry="9587" Size="14" Quality="2" /> <!-- http://wowhead.com/item=9587 -->
+    <Bag Name="Thick Hide Pack" Entry="60335" Size="14" Quality="1" /> <!-- http://wowhead.com/item=60335 -->
+    <Bag Name="Worg Hide Quiver" Entry="29144" Size="14" Quality="3" /> <!-- http://wowhead.com/item=29144 -->
+
+    <!-- 16 -->
+    <Bag Name="Bilgewater Satchel" Entry="67525" Size="16" Quality="2" /> <!-- http://wowhead.com/item=67525 -->
+    <Bag Name="Darkmoon Storage Box" Entry="19291" Size="16" Quality="1" /> <!-- http://wowhead.com/item=19291 -->
+    <Bag Name="Darkspear Satchel" Entry="67536" Size="16" Quality="2" /> <!-- http://wowhead.com/item=67536 -->
+    <Bag Name="Darnassian Satchel" Entry="67526" Size="16" Quality="2" /> <!-- http://wowhead.com/item=67526 -->
+    <Bag Name="Demon Hide Sack" Entry="10959" Size="16" Quality="2" /> <!-- http://wowhead.com/item=10959 -->
+    <Bag Name="Exodar Satchel" Entry="67527" Size="16" Quality="2" /> <!-- http://wowhead.com/item=67527 -->
+    <Bag Name="Felcloth Bag" Entry="21341" Size="16" Quality="3" /> <!-- http://wowhead.com/item=21341 -->
+    <Bag Name="Gilnean Satchel" Entry="67532" Size="16" Quality="2" /> <!-- http://wowhead.com/item=67532 -->
+    <Bag Name="Gnoll Skin Bandolier" Entry="19320" Size="16" Quality="3" /> <!-- http://wowhead.com/item=19320 -->
+    <Bag Name="Gnomeregan Satchel" Entry="67530" Size="16" Quality="2" /> <!-- http://wowhead.com/item=67530 -->
+    <Bag Name="Harpy Hide Quiver" Entry="19319" Size="16" Quality="3" /> <!-- http://wowhead.com/item=19319 -->
+    <Bag Name="Huojin Satchel" Entry="92070" Size="16" Quality="2" /> <!-- http://wowhead.com/item=92070 -->
+    <Bag Name="Ironforge Satchel" Entry="67528" Size="16" Quality="2" /> <!-- http://wowhead.com/item=67528 -->
+    <Bag Name="Knothide Quiver" Entry="34100" Size="16" Quality="2" /> <!-- http://wowhead.com/item=34100 -->
+    <Bag Name="Lucky Satchel" Entry="103629" Size="16" Quality="3" /> <!-- http://wowhead.com/item=103629 -->
+    <Bag Name="Mooncloth Bag" Entry="14155" Size="16" Quality="2" /> <!-- http://wowhead.com/item=14155 -->
+    <Bag Name="Netherweave Bag" Entry="21841" Size="16" Quality="2" /> <!-- http://wowhead.com/item=21841 -->
+    <Bag Name="Orgrimmar Satchel" Entry="67533" Size="16" Quality="2" /> <!-- http://wowhead.com/item=67533 -->
+    <Bag Name="Pumpkin Bag" Entry="20400" Size="16" Quality="2" /> <!-- http://wowhead.com/item=20400 -->
+    <Bag Name="Ribbly's Bandolier" Entry="2663" Size="16" Quality="2" /> <!-- http://wowhead.com/item=2663 -->
+    <Bag Name="Ribbly's Quiver" Entry="2662" Size="16" Quality="2" /> <!-- http://wowhead.com/item=2662 -->
+    <Bag Name="Silvermoon Satchel" Entry="67535" Size="16" Quality="2" /> <!-- http://wowhead.com/item=67535 -->
+    <Bag Name="Stormwind Satchel" Entry="67531" Size="16" Quality="2" /> <!-- http://wowhead.com/item=67531 -->
+    <Bag Name="Thunder Bluff Satchel" Entry="67534" Size="16" Quality="2" /> <!-- http://wowhead.com/item=67534 -->
+    <Bag Name="Traveler's Backpack" Entry="4500" Size="16" Quality="2" /> <!-- http://wowhead.com/item=4500 -->
+    <Bag Name="Tushui Satchel" Entry="92071" Size="16" Quality="2" /> <!-- http://wowhead.com/item=92071 -->
+    <Bag Name="Undercity Satchel" Entry="67529" Size="16" Quality="2" /> <!-- http://wowhead.com/item=67529 -->
+    <Bag Name="Wayfarer's Knapsack" Entry="11742" Size="16" Quality="3" /> <!-- http://wowhead.com/item=11742 -->
+
+    <!-- 18 -->
+    <Bag Name="Bottomless Bag" Entry="14156" Size="18" Quality="3" /> <!-- http://wowhead.com/item=14156 -->
+    <Bag Name="Core Felcloth Bag" Entry="21342" Size="18" Quality="4" /> <!-- http://wowhead.com/item=21342 -->
+    <Bag Name="Halaani Bag" Entry="27680" Size="18" Quality="3" /> <!-- http://wowhead.com/item=27680 -->
+    <Bag Name="Imbued Netherweave Bag" Entry="21843" Size="18" Quality="2" /> <!-- http://wowhead.com/item=21843 -->
+    <Bag Name="Jack-o'-Lantern" Entry="33117" Size="18" Quality="3" /> <!-- http://wowhead.com/item=33117 -->
+    <Bag Name="Knothide Ammo Pouch" Entry="34099" Size="18" Quality="2" /> <!-- http://wowhead.com/item=34099 -->
+    <Bag Name="Onyxia Hide Backpack" Entry="17966" Size="18" Quality="2" /> <!-- http://wowhead.com/item=17966 -->
+    <Bag Name="Panther Hide Sack" Entry="19914" Size="18" Quality="3" /> <!-- http://wowhead.com/item=19914 -->
+    <Bag Name="Smuggler's Ammo Pouch" Entry="29118" Size="18" Quality="3" /> <!-- http://wowhead.com/item=29118 -->
+    <Bag Name="Supply Bag" Entry="22679" Size="18" Quality="3" /> <!-- http://wowhead.com/item=22679 -->
+
+    <!-- 20 -->
+    <Bag Name="Dragonscale Ammo Pouch" Entry="44447" Size="20" Quality="3" /> <!-- http://wowhead.com/item=44447 -->
+    <Bag Name="Ebon Shadowbag" Entry="21872" Size="20" Quality="3" /> <!-- http://wowhead.com/item=21872 -->
+    <Bag Name="Frostweave Bag" Entry="41599" Size="20" Quality="2" /> <!-- http://wowhead.com/item=41599 -->
+    <Bag Name="Nerubian Reinforced Quiver" Entry="44448" Size="20" Quality="3" /> <!-- http://wowhead.com/item=44448 -->
+    <Bag Name="Netherscale Ammo Pouch" Entry="34106" Size="20" Quality="3" /> <!-- http://wowhead.com/item=34106 -->
+    <Bag Name="Papa's New Bag" Entry="50317" Size="20" Quality="4" /> <!-- http://wowhead.com/item=50317 -->
+    <Bag Name="Pit Lord's Satchel" Entry="34845" Size="20" Quality="4" /> <!-- http://wowhead.com/item=34845 -->
+    <Bag Name="Primal Mooncloth Bag" Entry="21876" Size="20" Quality="3" /> <!-- http://wowhead.com/item=21876 -->
+    <Bag Name="Quiver of a Thousand Feathers" Entry="34105" Size="20" Quality="3" /> <!-- http://wowhead.com/item=34105 -->
+    <Bag Name="Sun Touched Satchel" Entry="35516" Size="20" Quality="3" /> <!-- http://wowhead.com/item=35516 -->
+    <Bag Name="Tattered Hexcloth Sack" Entry="34067" Size="20" Quality="3" /> <!-- http://wowhead.com/item=34067 -->
+
+    <!-- 22 -->
+    <Bag Name="&quot;Gigantique&quot; Bag" Entry="38082" Size="22" Quality="4" /> <!-- http://wowhead.com/item=38082 -->
+    <Bag Name="Abyssal Bag" Entry="41597" Size="22" Quality="3" /> <!-- http://wowhead.com/item=41597 -->
+    <Bag Name="Dragon Hide Bag" Entry="43345" Size="22" Quality="4" /> <!-- http://wowhead.com/item=43345 -->
+    <Bag Name="Embersilk Bag" Entry="54443" Size="22" Quality="2" /> <!-- http://wowhead.com/item=54443 -->
+    <Bag Name="Enlarged Onyxia Hide Backpack" Entry="49295" Size="22" Quality="4" /> <!-- http://wowhead.com/item=49295 -->
+    <Bag Name="Glacial Bag" Entry="41600" Size="22" Quality="3" /> <!-- http://wowhead.com/item=41600 -->
+    <Bag Name="Papa's Brand New Bag" Entry="50316" Size="22" Quality="4" /> <!-- http://wowhead.com/item=50316 -->
+
+    <!-- 24 -->
+    <Bag Name="Ancient Sinew Wrapped Lamina" Entry="18714" Size="24" Quality="4" /> <!-- http://wowhead.com/item=18714 -->
+    <Bag Name="Grummlepack" Entry="88397" Size="24" Quality="1" /> <!-- http://wowhead.com/item=88397 -->
+    <Bag Name="Kor'kron Supply Satchel" Entry="98059" Size="24" Quality="3" /> <!-- http://wowhead.com/item=98059 -->
+    <Bag Name="Portable Hole" Entry="51809" Size="24" Quality="4" /> <!-- http://wowhead.com/item=51809 -->
+    <Bag Name="Tattered Hexcloth Bag" Entry="69748" Size="24" Quality="3" /> <!-- http://wowhead.com/item=69748 -->
+
+    <!-- 26 -->
+    <Bag Name="Illusionary Bag" Entry="54444" Size="26" Quality="3" /> <!-- http://wowhead.com/item=54444 -->
+
+    <!-- 28 -->
+    <Bag Name="Royal Satchel" Entry="82446" Size="28" Quality="4" /> <!-- http://wowhead.com/item=82446 -->
+
+
+    <!-- Cooking -->
+    <!-- NB: Honorbuddy API is missing COOKING WoWItemBagFamily at the moment -->
+    <Bag Name="Portable Refridgerator" Entry="92748" Size="32" Quality="2" BagFamily="COOKING" /> <!-- http://wowhead.com/item=92748 -->
+
+    <!-- EnchantingSupplies -->
+    <Bag Name="&quot;Carriage - Exclusive&quot; Enchantng Evening Purse" Entry="67389" Size="20" Quality="1" BagFamily="EnchantingSupplies" /> <!-- http://wowhead.com/item=67389 -->
+    <Bag Name="Big Bag of Enchantment" Entry="22249" Size="24" Quality="2" BagFamily="EnchantingSupplies" /> <!-- http://wowhead.com/item=22249 -->
+    <Bag Name="Enchanted Mageweave Pouch" Entry="22246" Size="16" Quality="2" BagFamily="EnchantingSupplies" /> <!-- http://wowhead.com/item=22246 -->
+    <Bag Name="Enchanted Runecloth Bag" Entry="22248" Size="20" Quality="2" BagFamily="EnchantingSupplies" /> <!-- http://wowhead.com/item=22248 -->
+    <Bag Name="Enchanter's Satchel" Entry="30748" Size="20" Quality="1" BagFamily="EnchantingSupplies" /> <!-- http://wowhead.com/item=30748 -->
+    <Bag Name="Mysterious Bag" Entry="41598" Size="32" Quality="3" BagFamily="EnchantingSupplies" /> <!-- http://wowhead.com/item=41598 -->
+    <Bag Name="Otherworldly Bag" Entry="54445" Size="36" Quality="3" BagFamily="EnchantingSupplies" /> <!-- http://wowhead.com/item=54445 -->
+    <Bag Name="Spellfire Bag" Entry="21858" Size="28" Quality="3" BagFamily="EnchantingSupplies" /> <!-- http://wowhead.com/item=21858 -->
+
+    <!-- EngineeringSupplies -->
+    <Bag Name="&quot;Carriage - Maddy&quot; High Tech Bag" Entry="67390" Size="20" Quality="1" BagFamily="EngineeringSupplies" /> <!-- http://wowhead.com/item=67390 -->
+    <Bag Name="Elementium Toolbox" Entry="60217" Size="36" Quality="3" BagFamily="EngineeringSupplies" /> <!-- http://wowhead.com/item=60217 -->
+    <Bag Name="Fel Iron Toolbox" Entry="23774" Size="24" Quality="2" BagFamily="EngineeringSupplies" /> <!-- http://wowhead.com/item=23774 -->
+    <Bag Name="Heavy Toolbox" Entry="30745" Size="20" Quality="1" BagFamily="EngineeringSupplies" /> <!-- http://wowhead.com/item=30745 -->
+    <Bag Name="Titanium Toolbox" Entry="23775" Size="32" Quality="3" BagFamily="EngineeringSupplies" /> <!-- http://wowhead.com/item=23775 -->
+
+    <!-- Gems -->
+    <Bag Name="&quot;Carriage - Exclusive&quot; Gem Studded Clutch" Entry="67392" Size="20" Quality="1" BagFamily="Gems" /> <!-- http://wowhead.com/item=67392 -->
+    <Bag Name="Bag of Jewels" Entry="24270" Size="24" Quality="2" BagFamily="Gems" /> <!-- http://wowhead.com/item=24270 -->
+    <Bag Name="Gem Pouch" Entry="30747" Size="20" Quality="1" BagFamily="Gems" /> <!-- http://wowhead.com/item=30747 -->
+    <Bag Name="Luxurious Silk Gem Bag" Entry="70138" Size="36" Quality="3" BagFamily="Gems" /> <!-- http://wowhead.com/item=70138 -->
+
+    <!-- Herbs -->
+    <Bag Name="&quot;Carriage - Going Green&quot; Herb Tote Bag" Entry="67393" Size="20" Quality="1" BagFamily="Herbs" /> <!-- http://wowhead.com/item=67393 -->
+    <Bag Name="Cenarion Herb Bag" Entry="22251" Size="20" Quality="2" BagFamily="Herbs" /> <!-- http://wowhead.com/item=22251 -->
+    <Bag Name="Emerald Bag" Entry="45773" Size="32" Quality="3" BagFamily="Herbs" /> <!-- http://wowhead.com/item=45773 -->
+    <Bag Name="Herb Pouch" Entry="22250" Size="12" Quality="2" BagFamily="Herbs" /> <!-- http://wowhead.com/item=22250 -->
+    <Bag Name="Hyjal Expedition Bag" Entry="54446" Size="36" Quality="2" BagFamily="Herbs" /> <!-- http://wowhead.com/item=54446 -->
+    <Bag Name="Mycah's Botanical Bag" Entry="38225" Size="28" Quality="3" BagFamily="Herbs" /> <!-- http://wowhead.com/item=38225 -->
+    <Bag Name="Satchel of Cenarius" Entry="22252" Size="24" Quality="2" BagFamily="Herbs" /> <!-- http://wowhead.com/item=22252 -->
+
+    <!-- InscriptionSupplies -->
+    <Bag Name="&quot;Carriage - Xandera&quot; Student's Satchel" Entry="67394" Size="20" Quality="1" BagFamily="InscriptionSupplies" />
+    <Bag Name="Pack of Endless Pockets" Entry="44446" Size="32" Quality="3" BagFamily="InscriptionSupplies" /> <!-- http://wowhead.com/item=44446 -->
+    <Bag Name="Royal Scribe's Satchel" Entry="70136" Size="36" Quality="3" BagFamily="InscriptionSupplies" /> <!-- http://wowhead.com/item=70136 -->
+    <Bag Name="Scribe's Satchel" Entry="39489" Size="16" Quality="2" BagFamily="InscriptionSupplies" /> <!-- http://wowhead.com/item=39489 -->
+
+    <!-- LeatherworkingSupplies -->
+    <Bag Name="&quot;Carriage - Meeya&quot; Leather Bag" Entry="67395" Size="20" Quality="1" BagFamily="LeatherworkingSupplies" />
+    <Bag Name="Bag of Many Hides" Entry="34490" Size="24" Quality="3" BagFamily="LeatherworkingSupplies" /> <!-- http://wowhead.com/item=34490 -->
+    <Bag Name="Leatherworker's Satchel" Entry="34482" Size="20" Quality="2" BagFamily="LeatherworkingSupplies" /> <!-- http://wowhead.com/item=34482 -->
+    <Bag Name="Magnificent Hide Pack" Entry="95536" Size="36" Quality="3" BagFamily="LeatherworkingSupplies" /> <!-- http://wowhead.com/item=95536 -->
+    <Bag Name="Trapper's Traveling Pack" Entry="38399" Size="28" Quality="3" BagFamily="LeatherworkingSupplies" />
+
+    <!-- MiningSupplies -->
+    <Bag Name="&quot;Carriage - Christina&quot; Precious Metal Bag" Entry="67396" Size="20" Quality="1" BagFamily="MiningSupplies" /> <!-- http://wowhead.com/item=67396 -->
+    <Bag Name="Mammoth Mining Bag" Entry="38347" Size="32" Quality="3" BagFamily="MiningSupplies" /> <!-- http://wowhead.com/item=38347 -->
+    <Bag Name="Mining Sack" Entry="30746" Size="20" Quality="1" BagFamily="MiningSupplies" /> <!-- http://wowhead.com/item=30746 -->
+    <Bag Name="Reinforced Mining Bag" Entry="29540" Size="28" Quality="2" BagFamily="MiningSupplies" /> <!-- http://wowhead.com/item=29540 -->
+    <Bag Name="Triple-Reinforced Mining Bag" Entry="70137" Size="36" Quality="3" BagFamily="MiningSupplies" /> <!-- http://wowhead.com/item=70137 -->
+
+    <!-- TACKLEBOX -->
+    <!-- NB: Honorbuddy API is missing TACKLEBOX WoWItemBagFamily at the moment -->
+    <Bag Name="Lure Master Tackle Box" Entry="60218" Size="36" Quality="3" BagFamily="TACKLEBOX" /> <!-- http://wowhead.com/item=60218 -->
+</BagContainers>

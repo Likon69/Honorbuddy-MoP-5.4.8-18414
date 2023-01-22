@@ -1,0 +1,63 @@
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>H LK to K [Kick] ($Rev: 2921 $)</Name>
+    <MinLevel>1</MinLevel>
+    <MaxLevel>86</MaxLevel>
+
+    <MinDurability>0.1</MinDurability>
+    <MinFreeBagSlots>1</MinFreeBagSlots>
+
+
+    <Vendors>
+        <!-- Orgrimmar Vendor -->
+        <Vendor Name="Trak'gen" Entry="3313" Type="Food" X="1528.89" Y="-4442.89" Z="24.02194" />
+        <Vendor Name="Urtharo" Entry="3314" Type="Repair" X="1639.75" Y="-4316.71" Z="21.12019" />
+    </Vendors>
+
+    <Mailboxes>
+        <Mailbox X="1604.843" Y="-4383.491" Z="20.57193" /> <!-- Org -->
+    </Mailboxes>
+
+    <Blackspots>
+    </Blackspots>
+
+    <QuestOrder>
+
+        <CustomBehavior File="UserSettings" LearnFlightPaths="False" UseFlightPaths="False" />
+
+        <If Condition="(Me.MapId == 571)">
+            <CustomBehavior File="FlyTo" DestName="Borean Tundra" X="2708.396" Y="6066.991" Z="109.617" />
+            <CustomBehavior File="FlyTo" DestName="Warsong Hold, BT" X="2740.837" Y="6097.529" Z="76.88604" />
+
+            <CustomBehavior File="Message" Text="Running to Borean Zepp to Org" LogColor="CornflowerBlue" />
+            <RunTo X="2829.74" Y="6179.48" Z="121.9793" />
+
+            <CustomBehavior File="Message" Text="Waiting for Borean Zepp to Org - don't interact!" LogColor="Orange" />
+
+            <CustomBehavior File="UseTransport" TransportId="186238"
+                            WaitAtX="2836.831" WaitAtY="6185.15" WaitAtZ="121.9923"
+                            TransportStartX="2837.908" TransportStartY="6187.443" TransportStartZ="140.1648"
+                            StandOnX="2844.171" StandOnY="6191.577" StandOnZ="122.3017"
+                            TransportEndX="1775.066" TransportEndY="-4299.745" TransportEndZ="151.0326"
+                            GetOffX="1763.203" GetOffY="-4284.529" GetOffZ="133.1072" />
+
+        </If>
+
+
+        <If Condition="Me.MapId == 1 &amp;&amp; (Me.ZoneId == 1637)">
+            <CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" DoMail="True" />
+            <RunTo X="1717.191" Y="-4352.751" Z="31.41282" />
+            <If Condition="!SpellManager.HasSpell(&quot;Flight Master's License&quot;)">
+                <CustomBehavior File="ForceTrainRiding" MobId="44919" />
+                <CustomBehavior File="WaitTimer" WaitTime="5000"
+                                GoalText="Waiting for quest to complete {TimeRemaining}" />
+            </If>
+        </If>
+        <If Condition="!SpellManager.HasSpell(&quot;Flight Master's License&quot;)">
+            <CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1"
+                            Text="You need your cata flying license to continue!!!! Train it at Org Flight Path!" />
+        </If>
+
+        <CustomBehavior File="LoadProfile" ProfileName="..\Cata\[Fly][N - Quest] Hyjal 80-82 [Kick]" RememberProfile="true" />
+
+    </QuestOrder>
+</HBProfile>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile xsi:noNamespaceSchemaLocation="../../DungeonbuddyProfile.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>The Dread Approach</Name>
+  <DungeonId>529</DungeonId>
+
+  <BossEncounters>
+    <Boss isFinal="false" entry="62980" name="Imperial Vizier Zor'lok" killOrder="1" optional="false" X="-2299.286" Y="282.9757" Z="421.9503"/>
+    <Boss isFinal="false" entry="62543" name="Blade Lord Ta'yak" killOrder="2" optional="false" X="-2083.76" Y="277.4631" Z="422.1615"/>
+    <Boss isFinal="true" entry="63191" name="Garalon" killOrder="3" optional="false" X="-2270.192" Y="263.825" Z="406.3814" />
+  </BossEncounters>
+
+  <Blackspots>
+
+  </Blackspots>
+  <PullBlackspots>
+  </PullBlackspots>
+</DungeonBuddyProfile>

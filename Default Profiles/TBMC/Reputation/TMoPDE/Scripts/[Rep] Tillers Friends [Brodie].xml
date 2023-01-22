@@ -1,0 +1,1056 @@
+<HBProfile>
+	<Name>Tillers Friendship ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+ 
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+ 
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+ 
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+ 
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Gina Mudclaw" Entry="58706" Type="Repair" X="-259.5399" Y="592.5469" Z="167.5478" />
+		<Vendor Name="Ben of the Booming Voice" Entry="70398" Type="Food" X="-131.74" Y="366.67" Z="147.48" />
+	</Vendors>
+ 
+	<AvoidMobs>
+	</AvoidMobs>
+  
+	<Blackspots>
+		<Blackspot X="-229.8389" Y="1422.793" Z="223.3444" Radius="2"/>
+		<!--<Blackspot X="-260.692" Y="610.3264" Z="168.9762" Radius="2"/>--> <!-- Antheas Pot -->
+	</Blackspots>
+	
+<QuestOrder>
+
+<CustomBehavior File="Message" Text="Dishing out the Friend Items:" LogColor="Green" />
+
+<!-- Ruby Shard -->
+	<While Condition="HasItem(79264)" >
+		<If Condition="!IsQuestCompleted(31349)" > <!-- Haohan Mudclaw -->
+			<If Condition="Unit(57402, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="198.835" Y="931.0523" Z="174.6813" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(57402, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="57402" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(57402, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="57402" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		<ElseIf Condition="!IsQuestCompleted(31353)" > <!-- Tina Mudclaw -->
+			<If Condition="Unit(58761, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="195.2015" Y="901.5311" Z="179.4855" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="InteractWith" MobId="58761" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31350)" > <!-- Jogu The Drunk -->
+			<While Condition="HasQuestAvailable(58710, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58710" WaitTime="1000" PreInteractMountStrategy="Dismount" />
+				<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58710, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58710" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31351)" > <!-- Old Hillpaw -->
+			<If Condition="Unit(58707, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="-285.9792" Y="1460.626" Z="231.4944" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="InteractWith" MobId="58707" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31351) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31345)" > <!-- Ella -->
+			<If Condition="Unit(58647, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="-430.2818" Y="1432.726" Z="173.5338" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(58647, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58647" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58647, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58647" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31345) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31346)" > <!-- Farmer Fung -->
+			<If Condition="Unit(57298, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="213.0149" Y="778.0533" Z="162.2789" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(57298, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="57298" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(57298, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="57298" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31347)" > <!-- Fish Fellreed -->
+			<If Condition="Unit(58705, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="305.6752" Y="1043.745" Z="145.6812" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="InteractWith" MobId="58705" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31348)" > <!-- Gina Mudclaw -->
+			<CustomBehavior File="InteractWith" MobId="58706" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31344)" > <!-- Chee Chee -->
+			<If Condition="Unit(58709, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="-128.6772" Y="1314.725" Z="215.1565" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(58709, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58709" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58709, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58709" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31352)" > <!-- Sho -->
+			<If Condition="Unit(58708, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="298.3233" Y="1517.59" Z="454.2077" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(58708, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58708" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58708, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58708" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="DeleteItems" Ids="79264"/>
+		</Else>
+		</If>
+		<If Condition="!HasItem(79264) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+			<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+			<CustomBehavior File="ForcedDismount" />
+		</If> 
+	</While>
+	
+<!-- Lovely Apple -->
+	<While Condition="HasItem(79267)" >
+		<If Condition="!IsQuestCompleted(31350)" > <!-- Jogu The Drunk -->
+			<While Condition="HasQuestAvailable(58710, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58710" WaitTime="1000" PreInteractMountStrategy="Dismount" />
+				<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58710, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58710" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+		<ElseIf Condition="!IsQuestCompleted(31352)" > <!-- Sho -->
+			<If Condition="Unit(58708, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="298.3233" Y="1517.59" Z="454.2077" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(58708, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58708" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58708, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58708" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31351)" > <!-- Old Hillpaw -->
+			<If Condition="Unit(58707, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="-285.9792" Y="1460.626" Z="231.4944" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="InteractWith" MobId="58707" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31351) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31345)" > <!-- Ella -->
+			<If Condition="Unit(58647, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="-430.2818" Y="1432.726" Z="173.5338" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(58647, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58647" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58647, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58647" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31345) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31346)" > <!-- Farmer Fung -->
+			<If Condition="Unit(57298, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="213.0149" Y="778.0533" Z="162.2789" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(57298, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="57298" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(57298, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="57298" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31347)" > <!-- Fish Fellreed -->
+			<If Condition="Unit(58705, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="305.6752" Y="1043.745" Z="145.6812" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="InteractWith" MobId="58705" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31348)" > <!-- Gina Mudclaw -->
+			<CustomBehavior File="InteractWith" MobId="58706" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31349)" > <!-- Haohan Mudclaw -->
+			<If Condition="Unit(57402, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="198.835" Y="931.0523" Z="174.6813" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(57402, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="57402" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(57402, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="57402" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31344)" > <!-- Chee Chee -->
+			<If Condition="Unit(58709, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="-128.6772" Y="1314.725" Z="215.1565" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(58709, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58709" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58709, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58709" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31353)" > <!-- Tina Mudclaw -->
+			<If Condition="Unit(58761, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="195.2015" Y="901.5311" Z="179.4855" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="InteractWith" MobId="58761" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="DeleteItems" Ids="79267"/>
+		</Else>
+		</If>
+		<If Condition="!HasItem(79267) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+			<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+			<CustomBehavior File="ForcedDismount" />
+		</If> 
+	</While>
+	
+<!-- Jade Cat -->
+	<While Condition="HasItem(79226)" >
+		<If Condition="!IsQuestCompleted(31345)" > <!-- Ella -->
+			<If Condition="Unit(58647, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="-430.2818" Y="1432.726" Z="173.5338" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(58647, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58647" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58647, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58647" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31345) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		<ElseIf Condition="!IsQuestCompleted(31347)" > <!-- Fish Fellreed -->
+			<If Condition="Unit(58705, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="305.6752" Y="1043.745" Z="145.6812" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="InteractWith" MobId="58705" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31350)" > <!-- Jogu The Drunk -->
+			<While Condition="HasQuestAvailable(58710, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58710" WaitTime="1000" PreInteractMountStrategy="Dismount" />
+				<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58710, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58710" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31351)" > <!-- Old Hillpaw -->
+			<If Condition="Unit(58707, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="-285.9792" Y="1460.626" Z="231.4944" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="InteractWith" MobId="58707" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31351) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31346)" > <!-- Farmer Fung -->
+			<If Condition="Unit(57298, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="213.0149" Y="778.0533" Z="162.2789" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(57298, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="57298" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(57298, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="57298" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31348)" > <!-- Gina Mudclaw -->
+			<CustomBehavior File="InteractWith" MobId="58706" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31349)" > <!-- Haohan Mudclaw -->
+			<If Condition="Unit(57402, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="198.835" Y="931.0523" Z="174.6813" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(57402, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="57402" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(57402, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="57402" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31344)" > <!-- Chee Chee -->
+			<If Condition="Unit(58709, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="-128.6772" Y="1314.725" Z="215.1565" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(58709, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58709" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58709, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58709" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31352)" > <!-- Sho -->
+			<If Condition="Unit(58708, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="298.3233" Y="1517.59" Z="454.2077" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(58708, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58708" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58708, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58708" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31353)" > <!-- Tina Mudclaw -->
+			<If Condition="Unit(58761, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="195.2015" Y="901.5311" Z="179.4855" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="InteractWith" MobId="58761" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="DeleteItems" Ids="79226"/>
+		</Else>
+		</If>
+		<If Condition="!HasItem(79226) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+			<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+			<CustomBehavior File="ForcedDismount" />
+		</If> 
+	</While>
+	<!-- Feather -->
+	<While Condition="HasItem(79265)" >
+		<If Condition="!IsQuestCompleted(31351)" > <!-- Old Hillpaw -->
+			<If Condition="Unit(58707, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="-285.9792" Y="1460.626" Z="231.4944" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="InteractWith" MobId="58707" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31351) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		<ElseIf Condition="!IsQuestCompleted(31344)" > <!-- Chee Chee -->
+			<If Condition="Unit(58709, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="-128.6772" Y="1314.725" Z="215.1565" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(58709, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58709" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58709, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58709" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31345)" > <!-- Ella -->
+			<If Condition="Unit(58647, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="-430.2818" Y="1432.726" Z="173.5338" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(58647, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58647" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58647, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58647" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31345) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31347)" > <!-- Fish Fellreed -->
+			<If Condition="Unit(58705, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="305.6752" Y="1043.745" Z="145.6812" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="InteractWith" MobId="58705" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31350)" > <!-- Jogu The Drunk -->
+			<While Condition="HasQuestAvailable(58710, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58710" WaitTime="1000" PreInteractMountStrategy="Dismount" />
+				<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58710, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58710" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31346)" > <!-- Farmer Fung -->
+			<If Condition="Unit(57298, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="213.0149" Y="778.0533" Z="162.2789" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(57298, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="57298" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(57298, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="57298" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31348)" > <!-- Gina Mudclaw -->
+			<CustomBehavior File="InteractWith" MobId="58706" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31349)" > <!-- Haohan Mudclaw -->
+			<If Condition="Unit(57402, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="198.835" Y="931.0523" Z="174.6813" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(57402, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="57402" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(57402, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="57402" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31352)" > <!-- Sho -->
+			<If Condition="Unit(58708, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="298.3233" Y="1517.59" Z="454.2077" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(58708, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58708" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58708, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58708" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31353)" > <!-- Tina Mudclaw -->
+			<If Condition="Unit(58761, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="195.2015" Y="901.5311" Z="179.4855" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="InteractWith" MobId="58761" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="DeleteItems" Ids="79265"/>
+		</Else>
+		</If>
+		<If Condition="!HasItem(79265) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+			<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+			<CustomBehavior File="ForcedDismount" />
+		</If> 
+	</While>
+	<!-- Lily -->
+	<While Condition="HasItem(79268)" >
+		<If Condition="!IsQuestCompleted(31346)" > <!-- Farmer Fung -->
+			<If Condition="Unit(57298, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="213.0149" Y="778.0533" Z="162.2789" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(57298, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="57298" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(57298, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="57298" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		<ElseIf Condition="!IsQuestCompleted(31348)" > <!-- Gina Mudclaw -->
+			<CustomBehavior File="InteractWith" MobId="58706" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31351)" > <!-- Old Hillpaw -->
+			<If Condition="Unit(58707, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="-285.9792" Y="1460.626" Z="231.4944" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="InteractWith" MobId="58707" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31351) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31344)" > <!-- Chee Chee -->
+			<If Condition="Unit(58709, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="-128.6772" Y="1314.725" Z="215.1565" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(58709, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58709" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58709, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58709" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31345)" > <!-- Ella -->
+			<If Condition="Unit(58647, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="-430.2818" Y="1432.726" Z="173.5338" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(58647, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58647" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58647, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58647" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31345) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31347)" > <!-- Fish Fellreed -->
+			<If Condition="Unit(58705, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="305.6752" Y="1043.745" Z="145.6812" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="InteractWith" MobId="58705" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31350)" > <!-- Jogu The Drunk -->
+			<While Condition="HasQuestAvailable(58710, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58710" WaitTime="1000" PreInteractMountStrategy="Dismount" />
+				<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58710, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58710" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31349)" > <!-- Haohan Mudclaw -->
+			<If Condition="Unit(57402, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="198.835" Y="931.0523" Z="174.6813" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(57402, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="57402" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(57402, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="57402" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31352)" > <!-- Sho -->
+			<If Condition="Unit(58708, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="298.3233" Y="1517.59" Z="454.2077" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<While Condition="HasQuestAvailable(58708, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" MobId="58708" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+				<If Condition="!HasQuestAvailable(58708, &quot;Available&quot;)" >
+					<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+				</If>
+			</While>
+			<CustomBehavior File="InteractWith" MobId="58708" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="!IsQuestCompleted(31353)" > <!-- Tina Mudclaw -->
+			<If Condition="Unit(58761, u =&gt; u.Distance &lt;= 150) == null" >
+				<CustomBehavior File="FlyTo" X="195.2015" Y="901.5311" Z="179.4855" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="InteractWith" MobId="58761" NumOfTimes="1" WaitForNpcs="False" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" WaitTime="1000" />
+			<If Condition="IsQuestCompleted(31346) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+				<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="DeleteItems" Ids="79268"/>
+		</Else>
+		</If>
+		<If Condition="!HasItem(79268) &amp;&amp; !(Me.Location.Distance(new WoWPoint(-259.55, 599.15, 167.55)) &lt; 150)" >
+			<CustomBehavior File="FlyTo" X="-259.55" Y="599.15" Z="167.55" />
+			<CustomBehavior File="ForcedDismount" />
+		</If> 
+	</While>
+	
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Tillers Dailies [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

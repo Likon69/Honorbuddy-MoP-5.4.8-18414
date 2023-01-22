@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <!--
+    =====
+    Original contribution by chinajade
+      $Rev: 3159 $
+      $Date: 2014-03-19 01:34:46 -0500 (Wed, 19 Mar 2014) $
+    
+    WARNING: DO NOT EDIT .xsd files.
+      They are not authoritative and will be overwritten!
+      Instead, regenerate the .xsd files from the .rnc 'sources'.
+      Its a one-line command to do this. Please see README.txt
+      for more information.
+    =====
+  -->
+  <!-- BEGIN: AbandonQuest -->
+  <xs:simpleType name="QBType-AbandonQuest-AbandonType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="All"/>
+      <xs:enumeration value="Failed"/>
+      <xs:enumeration value="Incomplete"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- END: AbandonQuest -->
+  <!-- BEGIN: CollectThings -->
+  <xs:simpleType name="QBType-CollectThings-CollectUntil">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="NoTargetsInArea"/>
+      <xs:enumeration value="RequiredCountReached"/>
+      <xs:enumeration value="QuestComplete"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-CollectThings-MobState">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Alive"/>
+      <xs:enumeration value="BelowHp"/>
+      <xs:enumeration value="Dead"/>
+      <xs:enumeration value="DontCare"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:group name="QBSubElement-CollectThings-Hotspot">
+    <xs:sequence>
+      <xs:element name="Hotspot">
+        <xs:complexType>
+          <xs:attribute name="Name"/>
+          <xs:attribute name="StartPoint" type="xs:boolean"/>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <!-- END: CollectThings -->
+  <!-- BEGIN: CombatUseItemOnV2 -->
+  <xs:simpleType name="QBType-CombatUseItemOnV2-UseItemStrategy">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="UseItemOncePerTarget"/>
+      <xs:enumeration value="UseItemOncePerTargetDontDefend"/>
+      <xs:enumeration value="UseItemContinuouslyOnTarget"/>
+      <xs:enumeration value="UseItemContinuouslyOnTargetDontDefend"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- END: CombatUseItemOnV2 -->
+  <!-- BEGIN: Escort -->
+  <xs:attributeGroup name="Attributes-Escort-EscortDestXYZ">
+    <xs:attribute name="EscortDestX" use="required" type="xs:decimal"/>
+    <xs:attribute name="EscortDestY" use="required" type="xs:decimal"/>
+    <xs:attribute name="EscortDestZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <xs:simpleType name="QBType-Escort-DefendUnit">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ItemStartTimer"/>
+      <xs:enumeration value="Unit"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-Escort-EscortUntil">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="DestinationReached"/>
+      <xs:enumeration value="QuestComplete"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-Escort-ObjectType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="GameObject"/>
+      <xs:enumeration value="Npc"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- END: Escort -->
+  <!-- BEGIN: EscortGroup -->
+  <xs:attributeGroup name="Attributes-EscortGroup-EscortCompleteXYZ">
+    <xs:attribute name="EscortCompleteX" use="required" type="xs:decimal"/>
+    <xs:attribute name="EscortCompleteY" use="required" type="xs:decimal"/>
+    <xs:attribute name="EscortCompleteZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-EscortGroup-EscortNpcIdN">
+    <xs:attribute name="EscortNpcId" use="required" type="HBType-Id"/>
+    <xs:attribute name="EscortNpcId2" type="HBType-Id"/>
+    <xs:attribute name="EscortNpcId3" type="HBType-Id"/>
+    <xs:attribute name="EscortNpcId4" type="HBType-Id"/>
+    <xs:attribute name="EscortNpcId5" type="HBType-Id"/>
+    <xs:attribute name="EscortNpcId6" type="HBType-Id"/>
+    <xs:attribute name="EscortNpcId7" type="HBType-Id"/>
+    <xs:attribute name="EscortNpcId8" type="HBType-Id"/>
+    <xs:attribute name="EscortNpcId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-EscortGroup-PriorityTargetIdN">
+    <xs:attribute name="PriorityTargetId" type="HBType-Id"/>
+    <xs:attribute name="PriorityTargetId2" type="HBType-Id"/>
+    <xs:attribute name="PriorityTargetId3" type="HBType-Id"/>
+    <xs:attribute name="PriorityTargetId4" type="HBType-Id"/>
+    <xs:attribute name="PriorityTargetId5" type="HBType-Id"/>
+    <xs:attribute name="PriorityTargetId6" type="HBType-Id"/>
+    <xs:attribute name="PriorityTargetId7" type="HBType-Id"/>
+    <xs:attribute name="PriorityTargetId8" type="HBType-Id"/>
+    <xs:attribute name="PriorityTargetId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-EscortGroup-StartNpcIdN">
+    <xs:attribute name="StartNpcId" type="HBType-Id"/>
+    <xs:attribute name="StartNpcId2" type="HBType-Id"/>
+    <xs:attribute name="StartNpcId3" type="HBType-Id"/>
+    <xs:attribute name="StartNpcId4" type="HBType-Id"/>
+    <xs:attribute name="StartNpcId5" type="HBType-Id"/>
+    <xs:attribute name="StartNpcId6" type="HBType-Id"/>
+    <xs:attribute name="StartNpcId7" type="HBType-Id"/>
+    <xs:attribute name="StartNpcId8" type="HBType-Id"/>
+    <xs:attribute name="StartNpcId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:simpleType name="QBType-EscortGroup-EscortCompleteWhen">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="DestinationReached"/>
+      <xs:enumeration value="QuestComplete"/>
+      <xs:enumeration value="QuestCompleteOrFails"/>
+      <xs:enumeration value="QuestObjectiveComplete"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- END: EscortGroup -->
+  <!-- BEGIN: ForcedMount -->
+  <xs:simpleType name="QBType-ForcedMount-MountType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Ground"/>
+      <xs:enumeration value="Flying"/>
+      <xs:enumeration value="Water"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- END: ForcedMount -->
+  <!-- BEGIN: GetOutOfGroundEffectsAndAuras -->
+  <xs:attributeGroup name="Attributes-GOOGEAA-EventXYZ">
+    <xs:attribute name="EventX" use="required" type="xs:decimal"/>
+    <xs:attribute name="EventY" use="required" type="xs:decimal"/>
+    <xs:attribute name="EventZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-GOOGEAA-MoveAwayFromMobWithAuraIdN">
+    <xs:attribute name="MoveAwayFromMobWithAuraId" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobWithAuraId2" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobWithAuraId3" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobWithAuraId4" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobWithAuraId5" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobWithAuraId6" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobWithAuraId7" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobWithAuraId8" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobWithAuraId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-GOOGEAA-MoveAwayFromMobCastingSpellIdN">
+    <xs:attribute name="MoveAwayFromMobCastingSpellId" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobCastingSpellId2" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobCastingSpellId3" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobCastingSpellId4" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobCastingSpellId5" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobCastingSpellId6" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobCastingSpellId7" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobCastingSpellId8" type="HBType-Id"/>
+    <xs:attribute name="MoveAwayFromMobCastingSpellId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-GOOGEAA-MoveBehindMobCastingSpellIdN">
+    <xs:attribute name="MoveBehindMobCastingSpellId" type="HBType-Id"/>
+    <xs:attribute name="MoveBehindMobCastingSpellId2" type="HBType-Id"/>
+    <xs:attribute name="MoveBehindMobCastingSpellId3" type="HBType-Id"/>
+    <xs:attribute name="MoveBehindMobCastingSpellId4" type="HBType-Id"/>
+    <xs:attribute name="MoveBehindMobCastingSpellId5" type="HBType-Id"/>
+    <xs:attribute name="MoveBehindMobCastingSpellId6" type="HBType-Id"/>
+    <xs:attribute name="MoveBehindMobCastingSpellId7" type="HBType-Id"/>
+    <xs:attribute name="MoveBehindMobCastingSpellId8" type="HBType-Id"/>
+    <xs:attribute name="MoveBehindMobCastingSpellId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-GOOGEAA-MoveOutOfGroundEffectAuraIdN">
+    <xs:attribute name="MoveOutOfGroundEffectAuraId" type="HBType-Id"/>
+    <xs:attribute name="MoveOutOfGroundEffectAuraId2" type="HBType-Id"/>
+    <xs:attribute name="MoveOutOfGroundEffectAuraId3" type="HBType-Id"/>
+    <xs:attribute name="MoveOutOfGroundEffectAuraId4" type="HBType-Id"/>
+    <xs:attribute name="MoveOutOfGroundEffectAuraId5" type="HBType-Id"/>
+    <xs:attribute name="MoveOutOfGroundEffectAuraId6" type="HBType-Id"/>
+    <xs:attribute name="MoveOutOfGroundEffectAuraId7" type="HBType-Id"/>
+    <xs:attribute name="MoveOutOfGroundEffectAuraId8" type="HBType-Id"/>
+    <xs:attribute name="MoveOutOfGroundEffectAuraId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-GOOGEAA-PreferKillingMobIdN">
+    <xs:attribute name="PreferKillingMobId" type="HBType-Id"/>
+    <xs:attribute name="PreferKillingMobId2" type="HBType-Id"/>
+    <xs:attribute name="PreferKillingMobId3" type="HBType-Id"/>
+    <xs:attribute name="PreferKillingMobId4" type="HBType-Id"/>
+    <xs:attribute name="PreferKillingMobId5" type="HBType-Id"/>
+    <xs:attribute name="PreferKillingMobId6" type="HBType-Id"/>
+    <xs:attribute name="PreferKillingMobId7" type="HBType-Id"/>
+    <xs:attribute name="PreferKillingMobId8" type="HBType-Id"/>
+    <xs:attribute name="PreferKillingMobId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-GOOGEAA-EventCompleteDeadMobIdN">
+    <xs:attribute name="EventCompleteDeadMobId" type="HBType-Id"/>
+    <xs:attribute name="EventCompleteDeadMobId2" type="HBType-Id"/>
+    <xs:attribute name="EventCompleteDeadMobId3" type="HBType-Id"/>
+    <xs:attribute name="EventCompleteDeadMobId4" type="HBType-Id"/>
+    <xs:attribute name="EventCompleteDeadMobId5" type="HBType-Id"/>
+    <xs:attribute name="EventCompleteDeadMobId6" type="HBType-Id"/>
+    <xs:attribute name="EventCompleteDeadMobId7" type="HBType-Id"/>
+    <xs:attribute name="EventCompleteDeadMobId8" type="HBType-Id"/>
+    <xs:attribute name="EventCompleteDeadMobId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:element name="Safespots">
+    <xs:complexType>
+      <xs:group maxOccurs="unbounded" ref="Hotspot"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- END: GetOutOfGroundEffectsAndAuras -->
+  <!-- BEGIN: InteractWith -->
+  <xs:complexType name="Attributes-Base-InteractWith">
+    <xs:complexContent>
+      <xs:extension base="QuestBehaviorBase">
+        <xs:attributeGroup ref="Attributes-AuraIdMissingFromMobN"/>
+        <xs:attributeGroup ref="Attributes-AuraIdOnMobN"/>
+        <xs:attribute name="FactionId" type="HBType-Id"/>
+        <xs:attribute name="FactionId2" type="HBType-Id"/>
+        <xs:attribute name="FactionId3" type="HBType-Id"/>
+        <xs:attribute name="FactionId4" type="HBType-Id"/>
+        <xs:attribute name="FactionId5" type="HBType-Id"/>
+        <xs:attribute name="FactionId6" type="HBType-Id"/>
+        <xs:attribute name="FactionId7" type="HBType-Id"/>
+        <xs:attribute name="FactionId8" type="HBType-Id"/>
+        <xs:attribute name="FactionId9" type="HBType-Id"/>
+        <xs:attribute name="MobId" type="HBType-Id"/>
+        <xs:attribute name="MobId2" type="HBType-Id"/>
+        <xs:attribute name="MobId3" type="HBType-Id"/>
+        <xs:attribute name="MobId4" type="HBType-Id"/>
+        <xs:attribute name="MobId5" type="HBType-Id"/>
+        <xs:attribute name="MobId6" type="HBType-Id"/>
+        <xs:attribute name="MobId7" type="HBType-Id"/>
+        <xs:attribute name="MobId8" type="HBType-Id"/>
+        <xs:attribute name="MobId9" type="HBType-Id"/>
+        <xs:attribute name="MobId10" type="HBType-Id"/>
+        <xs:attribute name="MobId11" type="HBType-Id"/>
+        <xs:attribute name="MobId12" type="HBType-Id"/>
+        <xs:attribute name="MobId13" type="HBType-Id"/>
+        <xs:attribute name="MobId14" type="HBType-Id"/>
+        <xs:attribute name="MobId15" type="HBType-Id"/>
+        <xs:attribute name="MobId16" type="HBType-Id"/>
+        <xs:attribute name="MobId17" type="HBType-Id"/>
+        <xs:attribute name="MobId18" type="HBType-Id"/>
+        <xs:attribute name="MobId19" type="HBType-Id"/>
+        <xs:attribute name="MobId20" type="HBType-Id"/>
+        <xs:attribute name="X" type="xs:decimal"/>
+        <xs:attribute name="Y" type="xs:decimal"/>
+        <xs:attribute name="Z" type="xs:decimal"/>
+        <xs:attribute name="CollectionDistance" type="HBType-Distance"/>
+        <xs:attribute name="IgnoreCombat" type="HBType-Boolean"/>
+        <xs:attribute name="IgnoreLoSToTarget" type="HBType-Boolean"/>
+        <xs:attribute name="InteractBlacklistTimeInSeconds" type="xs:nonNegativeInteger"/>
+        <xs:attribute name="KeepTargetSelected" type="HBType-Boolean"/>
+        <xs:attribute name="MinRange" type="HBType-DistancePositive"/>
+        <xs:attribute name="MobHpPercentLeft" type="HBType-Percent"/>
+        <xs:attribute name="MobIdIncludesSelf" type="HBType-Boolean"/>
+        <xs:attribute name="MobIds" type="QBType-IdsList"/>
+        <xs:attribute name="MobState" type="QBType-MobState"/>
+        <xs:attribute name="NotMoving" type="HBType-Boolean"/>
+        <xs:attribute name="NumOfTimes" type="HBType-Count"/>
+        <xs:attribute name="PreInteractMountStrategy" type="QBCoreType-MountStrategy"/>
+        <xs:attribute name="ProactiveCombatStrategy" type="QBCoreType-ProactiveCombatStrategy"/>
+        <xs:attribute name="Range" type="HBType-DistancePositive"/>
+        <xs:attribute name="WaitForNpcs" type="HBType-Boolean"/>
+        <xs:attribute name="WaitTime" type="HBType-TimeDuration"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="QBType-InteractWith-QuestFrameDisposition">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Accept"/>
+      <xs:enumeration value="Complete"/>
+      <xs:enumeration value="Continue"/>
+      <xs:enumeration value="Ignore"/>
+      <xs:enumeration value="TerminateBehavior"/>
+      <xs:enumeration value="TerminateProfile"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- Simple interact... -->
+  <!-- InteractByBuyingItemId... -->
+  <!-- InteractByCastingSpellId... -->
+  <!-- InteractByGossipOptions... -->
+  <!-- InteractByLooting... -->
+  <!-- InteractByUsingItemId... -->
+  <!-- END: InteractWith -->
+  <!-- BEGIN: NPCAssistance -->
+  <xs:simpleType name="QBType-NPCAssistance-MobCommand">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Target"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-NPCAssistance-MobState">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Alive"/>
+      <xs:enumeration value="Dead"/>
+      <xs:enumeration value="DontCare"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- END: NPCAssistance -->
+  <!-- BEGIN: TaxiRide -->
+  <xs:simpleType name="QBType-TaxiRide-MobCommand">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Target"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-TaxiRide-MobState">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Alive"/>
+      <xs:enumeration value="Dead"/>
+      <xs:enumeration value="DontCare"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- END: TaxiRide -->
+  <!-- BEGIN: UseItemTargetLocation -->
+  <xs:attributeGroup name="Attributes-UseItemTargetLocation-ClickToXYZ">
+    <xs:attribute name="ClickToX" use="required" type="xs:decimal"/>
+    <xs:attribute name="ClickToY" use="required" type="xs:decimal"/>
+    <xs:attribute name="ClickToZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <xs:simpleType name="QBType-UseItemTargetLocation-UseType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="PointToPoint"/>
+      <xs:enumeration value="PointToObject"/>
+      <xs:enumeration value="ToObject"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-UseItemTargetLocation-MobType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Npc"/>
+      <xs:enumeration value="GameObject"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-UseItemTargetLocation-MobState">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Alive"/>
+      <xs:enumeration value="BelowHp"/>
+      <xs:enumeration value="Dead"/>
+      <xs:enumeration value="DontCare"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- END: UseItemTargetLocation -->
+  <!-- BEGIN: UsePetAbility -->
+  <xs:attributeGroup name="Attributes-UsePetAbility-ClickToXYZ">
+    <xs:attribute name="ClicktToX" use="required" type="xs:decimal"/>
+    <xs:attribute name="ClicktToY" use="required" type="xs:decimal"/>
+    <xs:attribute name="ClicktToZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <xs:simpleType name="QBType-UsePetAbility-MobState">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Alive"/>
+      <xs:enumeration value="BelowHp"/>
+      <xs:enumeration value="Dead"/>
+      <xs:enumeration value="DontCare"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-UsePetAbility-UseType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Current"/>
+      <xs:enumeration value="Location"/>
+      <xs:enumeration value="ToObject"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- END: UsePetAbility -->
+  <!-- BEGIN: UserDialog -->
+  <xs:simpleType name="QBType-UserDialog-ExpiryAction">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="InputDisabled_BotStop"/>
+      <xs:enumeration value="InputDisabled_Continue"/>
+      <xs:enumeration value="InputDisabled_EnableInput"/>
+      <xs:enumeration value="InputEnabled_BotStop"/>
+      <xs:enumeration value="InputEnabled_Continue"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-UserDialog-SoundCue">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Asterisk"/>
+      <xs:enumeration value="Beep"/>
+      <xs:enumeration value="Exclamation"/>
+      <xs:enumeration value="Hand"/>
+      <xs:enumeration value="Question"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- END: UserDialog -->
+  <!-- BEGIN: UseTransport -->
+  <xs:attributeGroup name="Attributes-UseTransport-GetOffXYZ">
+    <xs:attribute name="GetOffX" use="required" type="xs:decimal"/>
+    <xs:attribute name="GetOffY" use="required" type="xs:decimal"/>
+    <xs:attribute name="GetOffZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-UseTransport-StandOnXYZ">
+    <xs:attribute name="StandOnX" use="required" type="xs:decimal"/>
+    <xs:attribute name="StandOnY" use="required" type="xs:decimal"/>
+    <xs:attribute name="StandOnZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-UseTransport-TransportStartXYZ">
+    <xs:attribute name="TransportStartX" use="required" type="xs:decimal"/>
+    <xs:attribute name="TransportStartY" use="required" type="xs:decimal"/>
+    <xs:attribute name="TransportStartZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-UseTransport-TransportEndXYZ">
+    <xs:attribute name="TransportEndX" use="required" type="xs:decimal"/>
+    <xs:attribute name="TransportEndY" use="required" type="xs:decimal"/>
+    <xs:attribute name="TransportEndZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-UseTransport-WaitAtXYZ">
+    <xs:attribute name="WaitAtX" use="required" type="xs:decimal"/>
+    <xs:attribute name="WaitAtY" use="required" type="xs:decimal"/>
+    <xs:attribute name="WaitAtZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <!-- END: UseTransport -->
+  <!-- BEGIN: WaitForPatrol -->
+  <xs:element name="FollowPath">
+    <xs:complexType>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="QBCoreSubElement-Waypoint"/>
+      <xs:attribute name="DismissPet" type="HBType-Boolean"/>
+      <xs:attribute name="EgressDistance" type="HBType-Distance"/>
+      <xs:attribute name="Strategy" use="required" type="QBCoreType-SafePathType-Strategy"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- END: WaitForPatrol -->
+</xs:schema>

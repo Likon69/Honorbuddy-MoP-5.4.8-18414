@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Utgarde Keep</Name>
+  <DungeonId>202</DungeonId>
+  <BossEncounters>
+	<Boss isFinal="false" entry="23953" name="Prince Keleseth" killOrder="1" optional="true" X="193.1207" Y="197.4918" Z="40.81612" />
+	<Boss isFinal="false" entry="24201" name="Dalronn the Controller" killOrder="2" optional="true" X="112.0226" Y="-40.28646" Z="118.8607" />
+	<Boss isFinal="false" entry="24200" name="Skarvald the Constructor" killOrder="3" optional="true" X="109.5156" Y="-33.65799" Z="118.8607" />
+	<Boss isFinal="true" entry="23954" name="Ingvar the Plunderer" killOrder="4" optional="false" X="242.6771" Y="-333.5949" Z="180.4546" /> <!-- Same ID after rezzing -->
+	<!-- After last boss - use the tunnel out -->
+  </BossEncounters>
+  <Blackspots>
+    <Blackspot X="304.756" Y="-7.971109" Z="24.4611" Radius="4.090889" />
+    <Blackspot X="309.0699" Y="-8.773548" Z="23.71602" Radius="4.939703" />
+    <Blackspot X="313.6312" Y="-9.759905" Z="23.60518" Radius="5.368206" />
+    <Blackspot X="319.3829" Y="-11.61876" Z="22.75492" Radius="5.386977" />
+    <Blackspot X="331.1201" Y="-16.14894" Z="23.71676" Radius="8.068718" />    
+    <Blackspot X="307.8242" Y="-12.10051" Z="23.71592" Radius="10.13346" />
+    <Blackspot X="325.4253" Y="-17.09606" Z="23.71677" Radius="12.43551" />
+  </Blackspots>
+</DungeonBuddyProfile>

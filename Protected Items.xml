@@ -1,0 +1,1674 @@
+﻿<ProtectedItems>
+	<!-- ProtectedItems element...
+         For an explanation, please see:
+             http://www.thebuddyforum.com/mediawiki/index.php/Honorbuddy:_About_ProtectedItems_and_ForceMail
+
+         If you decide you don't need certain sections of this file, we recommend you comment them
+         out, rather than actually delete the lines.  We've tried to keep the items in each subsection
+         sorted appropriately, such that commenting out is easy to do.  Please recall that XML does
+         *not* allow nesting comments.
+    -->
+
+	<!-- ========== Basic Items (alphabetically) ========== -->
+	<Item Name="Hearthstone" Id="6948" />
+
+	<!-- Basic Items: Bandages (ordered by skill to make) -->
+	<Item Name="Linen Bandage" Id="1251" />
+	<Item Name="Heavy Linen Bandage" Id="2581" />
+	<Item Name="Wool Bandage" Id="3530" />
+	<Item Name="Heavy Wool Bandage" Id="3531" />
+	<Item Name="Silk Bandage" Id="6450" />
+	<Item Name="Heavy Silk Bandage" Id="6451" />
+	<Item Name="Arathi Basin Silk Bandage" Id="20067" />
+	<Item Name="Defiler's Silk Bandage" Id="20235" />
+	<Item Name="Highlander's Silk Bandage" Id="20244" />
+	<Item Name="Warsong Gulch Silk Bandage" Id="19068" />
+	<Item Name="Mageweave Bandage" Id="8544" />
+	<Item Name="Heavy Mageweave Bandage" Id="8545" />
+	<Item Name="Arathi Basin Mageweave Bandage" Id="20065" />
+	<Item Name="Defiler's Mageweave Bandage" Id="20232" />
+	<Item Name="Highlander's Mageweave Bandage" Id="20237" />
+	<Item Name="Warsong Gulch Mageweave Bandage" Id="19067" />
+	<Item Name="Runecloth Bandage" Id="14529" />
+	<Item Name="Heavy Runecloth Bandage" Id="14530" />
+	<Item Name="Alterac Heavy Runecloth Bandage" Id="19307" />
+	<Item Name="Arathi Basin Runecloth Bandage" Id="20066" />
+	<Item Name="Defiler's Runecloth Bandage" Id="20234" />
+	<Item Name="Highlander's Runecloth Bandage" Id="20243" />
+	<Item Name="Warsong Gulch Runecloth Bandage" Id="19066" />
+	<Item Name="Netherweave Bandage" Id="21990" />
+	<Item Name="Heavy Netherweave Bandage" Id="21991" />
+	<Item Name="Frostweave Bandage" Id="34721" />
+	<Item Name="Heavy Frostweave Bandage" Id="34722" />
+	<Item Name="Baradin's Wardens Bandage" Id="63391" />
+	<Item Name="Hellscream's Reach Bandage" Id="64995" />
+	<Item Name="Embersilk Bandage" Id="53049" />
+	<Item Name="Heavy Embersilk Bandage" Id="53050" />
+	<Item Name="Dense Embersilk Bandage" Id="53051" />
+	<Item Name="Windwool Bandage" Id="72985" />
+	<Item Name="Heavy Windwool Bandage" Id="72986" />
+
+	<!-- Basic Items: Containers (BoE or unbound only; ordered by size) -->
+	<!-- 16 slots -->
+	<Item Name="Mooncloth Bag" Id="14155" />
+	<Item Name="Felcloth Bag" Id="21341" />
+	<Item Name="Imbued Netherweave Bag" Id="21843" />
+	<!-- 18 slots -->
+	<Item Name="Bottomless Bag" Id="14156" />
+	<Item Name="Core Felcloth Bag" Id="21342" />
+	<!-- 20 slots -->
+	<Item Name="Frostweave Bag" Id="41599" />
+	<Item Name="Quiver of a Thousand Feathers" Id="34105" />
+	<Item Name="Primal Mooncloth Bag" Id="21876" />
+	<Item Name="Ebon Shadowbag" Id="21872" />
+	<!-- 22 slots -->
+	<Item Name="Embersilk Bag" Id="54443" />
+	<Item Name="Glacial Bag" Id="41600" />
+	<Item Name="Abyssal Bag" Id="41597" />
+	<Item Name="&quot;Gigantique&quot; Bag" Id="38082" />
+	<!-- 24 slots -->
+	<Item Name="Grummlepack" Id="88397" />
+	<!-- quest reward, *not* BoP -->
+	<Item Name="Portable Hole" Id="51809" />
+	<!-- 26 slots -->
+	<Item Name="Illusionary Bag" Id="54444" />
+	<!-- 28 slots -->
+	<Item Name="Royal Satchel" Id="82446" />
+
+	<!-- Basic Items: Drink (ordered by level) -->
+	<!-- There are far too many drink items to list them all, and most are never used.
+         We only list the 'mainstream' items here, sorted by level.  If a "Stat food" is
+         needed, please place it in the "Basic Items: Drink & Food with Stats (ordered by level)"
+         section below.
+         We keep the food & drink sections separated, as warrior and rogues
+         could care less about drinks, and healing classes could care less about food.
+         -->
+	<Item Name="Refreshing Spring Water" Id="159" />
+	<Item Name="Ice Cold Milk" Id="1179" />
+	<Item Name="Melon Juice" Id="1205" />
+	<Item Name="Sweet Nectar" Id="1708" />
+	<Item Name="Moonberry Juice" Id="1645" />
+	<Item Name="Morning Glory Dew" Id="8766" />
+	<!-- iLevel:55 4200/30sec -->
+	<Item Name="Star's Lament" Id="32455" />
+	<Item Name="Footman's Waterskin" Id="24007" />
+	<Item Name="Grunt's Waterskin" Id="24006" />
+	<Item Name="Filtered Draenic Water" Id="28399" />
+	<!-- iLevel:65 7200/30sec -->
+	<Item Name="Purified Draenic Water" Id="27860" />
+	<Item Name="Star's Tears" Id="32453" />
+	<Item Name="Sweetened Goat's Milk" Id="35954" />
+	<Item Name="Pungent Seal Whey" Id="33444" />
+	<Item Name="Honeymint Tea" Id="33445" />
+	<!-- iLevel:80 45000/30sec -->
+	<Item Name="Greasy Whale Milk" Id="59029" />
+	<Item Name="Sparkling Oasis Water" Id="58256" />
+	<!-- iLevel:85 96000/30sec -->
+	<Item Name="Highland Spring Water" Id="58257" />
+	<Item Name="Mei's Masterful Brew" Id="63251" />
+	<!-- iLevel:85 200000/20sec -->
+	<Item Name="Carbonated Water" Id="81924" />
+	<Item Name="Cup of Kafa" Id="88578" />
+	<Item Name="Viseclaw Soup" Id="85501" />
+	<!-- iLevel:85 300000/20sec -->
+	<Item Name="Cobo Cola" Id="81923" />
+	<Item Name="Golden Carp Consomme" Id="74636" />
+	<Item Name="Lotus Water" Id="88532" />
+
+	<!-- Basic Items: Drink & Food with Stats (ordered by level to use) -->
+	<Item Name="Enriched Manna Biscuit" Id="13724" />
+	<Item Name="Alterac Manna Biscuit" Id="19301" />
+	<Item Name="Fisherman's Feast" Id="33052" />
+	<Item Name="Fish Feast" Id="43015" />
+	<Item Name="Jillian's Gourmet Fish Feast" Id="45279" />
+	<!-- available on PTR only -->
+
+	<!-- Basic Items: Food  (ordered by level) -->
+	<!-- There are far too many food items to list them all, and most are never used.
+         We only list the 'mainstream' items here, sorted by level.  If a "Stat food" is
+         needed, please place it in the "Basic Items: Drink & Food with Stats (ordered by level)"
+         section.
+         We keep the food & drink sections separated, as warrior and rogues
+         could care less about drinks, and healing classes could care less about food.
+         -->
+	<!-- iLevel:1 -->
+	<Item Name="Shiny Red Apple" Id="4536" />
+	<Item Name="Tough Hunk of Bread" Id="4540" />
+	<Item Name="Tough Jerky" Id="117" />
+	<!-- iLevel:5 -->
+	<Item Name="Freshly Baked Bread" Id="4541" />
+	<Item Name="Haunch of Meat" Id="2287" />
+	<Item Name="Tel'Abim Banana" Id="4537" />
+	<!-- iLevel:15 -->
+	<Item Name="Moist Cornbread" Id="4542" />
+	<Item Name="Mutton Chop" Id="3770" />
+	<Item Name="Snapvine Watermelon" Id="4538" />
+	<!-- iLevel:25 -->
+	<Item Name="Goldenbark Apple" Id="4539" />
+	<Item Name="Mulgore Spice Bread" Id="4544" />
+	<Item Name="Wild Hog Shank" Id="3771" />
+	<Item Name="Hot Wolf Ribs" Id="13851" />
+	<!-- iLevel:35 -->
+	<Item Name="Cured Ham Steak" Id="4599" />
+	<Item Name="Moon Harvest Pumpkin" Id="4602" />
+	<Item Name="Soft Banana Bread" Id="4601" />
+	<!-- iLevel:45 -->
+	<Item Name="Alterac Swiss" Id="8932" />
+	<Item Name="Deep Fried Plantains" Id="8953" />
+	<Item Name="Homemade Cherry Pie" Id="8950" />
+	<Item Name="Roasted Quail" Id="8952" />
+	<!-- iLevel:55 -->
+	<Item Name="Garadar Sharp" Id="27857" />
+	<Item Name="Mag'har Grainbread" Id="27855" />
+	<Item Name="Skethyl Berries" Id="27856" />
+	<Item Name="Smoked Talbuk Venison" Id="27854" />
+	<!-- iLevel:65 -->
+	<Item Name="Bladespire Bagel" Id="29449" />
+	<Item Name="Clefthoof Ribs" Id="29451" />
+	<Item Name="Crusty Flatbread" Id="33449" />
+	<Item Name="Mag'har Mild Cheese" Id="29448" />
+	<Item Name="Salted Venison" Id="33454" />
+	<Item Name="Sour Goat Cheese" Id="33443" />
+	<Item Name="Telaari Grapes" Id="29450" />
+	<Item Name="Tundra Berries" Id="35949" />
+	<!-- iLevel:75 -->
+	<Item Name="Briny Hardcheese" Id="35952" />
+	<Item Name="Mead Basted Caribou" Id="35953" />
+	<Item Name="Savory Snowplum" Id="35948" />
+	<Item Name="Sweet Potato Bread" Id="35950" />
+	<!-- iLevel:80 -->
+	<Item Name="Pine Nut Bread" Id="58260" />
+	<Item Name="Roasted Beef" Id="58268" />
+	<Item Name="Sliced Raw Billfish" Id="58262" />
+	<Item Name="Smoked String Cheese" Id="58258" />
+	<Item Name="Sour Green Apple" Id="58264" />
+	<Item Name="Violet Morel" Id="58266" />
+	<Item Name="Baked Rockfish" Id="62661" />
+	<!-- iLevel:85 96000/30sec -->
+	<Item Name="Buttery Wheat Roll" Id="58261" />
+	<Item Name="Grilled Shark" Id="58263" />
+	<Item Name="Highland Pomegranate" Id="58265" />
+	<Item Name="Highland Sheep Cheese" Id="58259" />
+	<Item Name="Massive Turkey Leg" Id="58269" />
+	<Item Name="Scarlet Polypore" Id="58267" />
+	<!-- iLevel:85 200000/20sec -->
+	<Item Name="Cornmeal Biscuit" Id="82450" />
+	<Item Name="Crispy Dojani Eel" Id="81175" />
+	<Item Name="Krasarang Fritters" Id="85504" />
+	<Item Name="Mutton Stew" Id="81917" />
+	<Item Name="Peppered Puffball" Id="81889" />
+	<Item Name="Red Raspberry" Id="81919" />
+	<Item Name="Redridge Roquefort" Id="81922" />
+	<Item Name="Sliced Peaches" Id="86057" />
+	<Item Name="Smoked Squid Belly" Id="82448" />
+	<Item Name="Swirling Mist Soup" Id="74644" />
+	<Item Name="Tortoise Jerky" Id="83097" />
+	<!-- iLevel:90 300000/20sec -->
+	<Item Name="Barnacle Bouillabaisse" Id="82449" />
+	<Item Name="Chilton Stilton" Id="81921" />
+	<Item Name="Fish Cake" Id="74641" />
+	<Item Name="Frybread" Id="82451" />
+	<Item Name="Green Curry Fish" Id="81410" />
+	<Item Name="Humongous Fungus" Id="81916" />
+	<Item Name="Pearl Milk Tea" Id="81414" />
+	<Item Name="Pickled Pig's Snout" Id="81918" />
+	<Item Name="Plump Fig" Id="81920" />
+	<Item Name="Thick-Cut Bacon" Id="90135" />
+	<Item Name="Root Veggie Stew" Id="88398" />
+	<Item Name="Tangy Yogurt" Id="81409" />
+
+	<!-- Basic Items: Food, Hunter's Exotic Pet  (ordered by level to use) -->
+	<Item Name="Kibler's Bits" Id="33874" />
+
+	<!-- Basic Items: Potions, Flasks  (ordered by level, then alphabetical) -->
+	<!-- iLevel:60 -->
+	<Item Name="Flask of Distilled Wisdom" Id="13511" />
+	<Item Name="Flask of Petrification" Id="13506" />
+	<Item Name="Flask of Supreme Power" Id="13512" />
+	<Item Name="Flask of the Titans" Id="13510" />
+	<!-- iLevel:70 -->
+	<Item Name="Flask of Blinding Light" Id="22861" />
+	<Item Name="Flask of Fortification" Id="22851" />
+	<Item Name="Flask of Mighty Restoration" Id="22853" />
+	<Item Name="Flask of Pure Death" Id="22866" />
+	<Item Name="Flask of Relentless Assault" Id="22854" />
+	<Item Name="Shattrath Flask of Blinding Light" Id="35717" />
+	<Item Name="Shattrath Flask of Fortification" Id="32898" />
+	<Item Name="Shattrath Flask of Mighty Restoration" Id="32899" />
+	<Item Name="Shattrath Flask of Pure Death" Id="35716" />
+	<Item Name="Shattrath Flask of Relentless Assault" Id="32901" />
+	<Item Name="Shattrath Flask of Supreme Power" Id="32900" />
+	<Item Name="Unstable Flask of the Bandit" Id="32599" />
+	<Item Name="Unstable Flask of the Beast" Id="32598" />
+	<Item Name="Unstable Flask of the Elder" Id="32596" />
+	<Item Name="Unstable Flask of the Physician" Id="32600" />
+	<Item Name="Unstable Flask of the Soldier" Id="32597" />
+	<Item Name="Unstable Flask of the Sorcerer" Id="32601" />
+	<!-- iLevel:80 -->
+	<Item Name="Flask of Endless Rage" Id="46377" />
+	<Item Name="Flask of the Frost Wyrm" Id="46376" />
+	<Item Name="Flask of Pure Mojo" Id="46378" />
+	<Item Name="Flask of Stoneblood" Id="46379" />
+	<Item Name="Flask of the North" Id="47499" />
+	<!-- iLevel:85 -->
+	<Item Name="Flask of Battle" Id="65455" />
+	<Item Name="Flask of Flowing Water" Id="67438" />
+	<Item Name="Flask of Steelskin" Id="58085" />
+	<Item Name="Flask of the Draconic Mind" Id="58086" />
+	<Item Name="Flask of the Winds" Id="58087" />
+	<Item Name="Flask of Titanic Strength" Id="58088" />
+	<!-- iLevel:90 -->
+	<Item Name="Flask of the Earth" Id="76087" />
+	<Item Name="Flask of Falling Leaves" Id="76086" />
+	<Item Name="Flask of Spring Blossoms" Id="76084" />
+	<Item Name="Flask of the Warm Sun" Id="76085" />
+	<Item Name="Flask of Winter's Bite" Id="76088" />
+
+	<!-- Basic Items: Potions, Health  (ordered by level to use) -->
+	<Item Name="Minor Healing Potion" Id="118" />
+	<Item Name="Lesser Healing Potion" Id="858" />
+	<Item Name="Discolored Healing Potion" Id="4596" />
+	<Item Name="Healing Potion" Id="929" />
+	<Item Name="Greater Healing Potion" Id="1710" />
+	<Item Name="Superior Healing Potion" Id="3928" />
+	<Item Name="Combat Healing Potion" Id="18839" />
+	<Item Name="Superior Healing Draught" Id="17349" />
+	<Item Name="Major Healing Potion" Id="13446" />
+	<Item Name="Major Healing Draught" Id="17348" />
+	<Item Name="Super Healing Potion" Id="22829" />
+	<Item Name="Auchenai Healing Potion" Id="32947" />
+	<Item Name="Bottled Nethergon Vapor" Id="32905" />
+	<Item Name="Crystal Healing Potion" Id="33934" />
+	<Item Name="Healing Potion Injector" Id="33092" />
+	<Item Name="Volatile Healing Potion" Id="28100" />
+	<Item Name="Fel Regeneration Potion" Id="31676" />
+	<Item Name="Major Combat Healing Potion" Id="31838" />
+	<Item Name="Major Combat Healing Potion" Id="31839" />
+	<Item Name="Major Combat Healing Potion" Id="31852" />
+	<Item Name="Major Combat Healing Potion" Id="31853" />
+	<Item Name="Endless Healing Potion" Id="43569" />
+	<Item Name="Resurgent Healing Potion" Id="39671" />
+	<Item Name="Runic Healing Potion" Id="33447" />
+	<Item Name="Runic Healing Injector" Id="41166" />
+	<Item Name="Mythical Healing Potion" Id="57191" />
+	<Item Name="Master Healing Potion" Id="76097" />
+	<Item Name="Adrenaline Shot" Id="88416" />
+	<Item Name="Endless Master Healing Potion" Id="80040" />
+
+	<!-- Basic Items: Potions, Mana (ordered by level to use) -->
+	<Item Name="Minor Mana Potion" Id="2455" />
+	<Item Name="Lesser Mana Potion" Id="3385" />
+	<Item Name="Mana Potion" Id="3827" />
+	<Item Name="Greater Mana Potion" Id="6149" />
+	<Item Name="Superior Mana Draught" Id="17352" />
+	<Item Name="Superior Mana Potion" Id="13443" />
+	<Item Name="Combat Mana Potion" Id="18841" />
+	<Item Name="Major Mana Draught" Id="17351" />
+	<Item Name="Major Mana Potion" Id="13444" />
+	<Item Name="Major Combat Mana Potion" Id="31840" />
+	<Item Name="Major Combat Mana Potion" Id="31841" />
+	<Item Name="Major Combat Mana Potion" Id="31854" />
+	<Item Name="Major Combat Mana Potion" Id="31855" />
+	<Item Name="Super Mana Potion" Id="22832" />
+	<Item Name="Auchenai Mana Potion" Id="32948" />
+	<Item Name="Bottled Nethergon Energy" Id="32902" />
+	<Item Name="Crystal Mana Potion" Id="33935" />
+	<Item Name="Mana Potion Injector" Id="33093" />
+	<Item Name="Unstable Mana Potion" Id="28101" />
+	<Item Name="Endless Mana Potion" Id="43570" />
+	<Item Name="Icy Mana Potion" Id="40067" />
+	<Item Name="Runic Mana Potion" Id="33448" />
+	<Item Name="Runic Mana Injector" Id="42545" />
+	<Item Name="Mythical Mana Potion" Id="57192" />
+	<Item Name="Master Mana Potion" Id="76098" />
+
+	<!-- Basic Items: Potions, Mana Oil (ordered by level to use) -->
+	<Item Name="Minor Mana Oil" Id="20745" />
+	<Item Name="Lesser Mana Oil" Id="20747" />
+	<Item Name="Brilliant Mana Oil" Id="20748" />
+	<Item Name="Superior Mana Oil" Id="22521" />
+
+	<!-- Basic Items: Potions, Rejuvenation [Health & Mana] (ordered by level to use) -->
+	<Item Name="Minor Rejuvenation Potion" Id="2456" />
+	<!-- iLevel:45 -->
+	<Item Name="Dreamless Sleep Potion" Id="12190" />
+	<Item Name="Wildvine Potion" Id="9144" />
+	<!-- iLevel:60 -->
+	<Item Name="Major Rejuvenation Potion" Id="18253" />
+	<Item Name="Greater Dreamless Sleep Potion" Id="20002" />
+	<Item Name="Noth's Special Brew" Id="39327" />
+	<!-- iLevel:65 -->
+	<Item Name="Mad Alchemist's Potion" Id="34440" />
+	<Item Name="Major Dreamless Sleep Potion" Id="22836" />
+	<!-- iLevel: 75 -->
+	<Item Name="Super Rejuvenation Potion" Id="22850" />
+	<!-- iLevel:80 -->
+	<Item Name="Potion of Nightmares" Id="40081" />
+	<Item Name="Powerful Rejuvenation Potion" Id="40087" />
+	<Item Name="Mighty Rejuvenation Potion" Id="57193" />
+	<!-- iLevel:90 -->
+	<Item Name="Alchemist's Rejuvenation" Id="76094" />
+
+	<!-- Basic Items: Potions, Utility (ordered alphabetically) -->
+	<!-- iLevel:85 -->
+	<Item Name="Draught of War" Id="67415" />
+	<Item Name="Earthen Potion" Id="58090" />
+	<Item Name="Golemblood Potion" Id="58146" />
+	<Item Name="Mysterious Potion" Id="57099" />
+	<Item Name="Potion of Concentration" Id="57194" />
+	<Item Name="Potion of Deepholm" Id="58487" />
+	<Item Name="Potion of Illusion" Id="58489" />
+	<Item Name="Potion of the Tol'vir" Id="58145" />
+	<Item Name="Potion of Treasure Finding" Id="58488" />
+	<Item Name="Rogue's Draught" Id="63300" />
+	<Item Name="Volcanic Potion" Id="58091" />
+	<!-- iLevel:90 -->
+	<Item Name="Greater Potion of Luck" Id="76091" />
+	<Item Name="Potion of Luck" Id="93351" />
+	<Item Name="Darkwater Potion" Id="76096" />
+	<Item Name="Virmen's Bite" Id="76089" />
+	<Item Name="Potion of Focus" Id="76092" />
+	<Item Name="Potion of the Jade Serpent" Id="76093" />
+	<Item Name="Potion of Mogu Power" Id="76095" />
+	<Item Name="Potion of the Mountains" Id="76090" />
+
+
+	<!-- ========== Harvests (alphabetically) ========== -->
+	<!-- Harvests: Cloth & Spider's Silk (ordered by level) -->
+	<!-- Classic -->
+	<Item Name="Linen Cloth" Id="2589" />
+	<Item Name="Wool Cloth" Id="2592" />
+	<Item Name="Spider's Silk" Id="3182" />
+	<Item Name="Silk Cloth" Id="4306" />
+	<Item Name="Thick Spider's Silk" Id="4337" />
+	<Item Name="Mageweave Cloth" Id="4338" />
+	<Item Name="Shadow Silk" Id="10285" />
+	<Item Name="Felcloth" Id="14256" />
+	<Item Name="Ironweb Spider Silk" Id="14227" />
+	<Item Name="Runecloth" Id="14047" />
+	<Item Name="Mooncloth" Id="14342" />
+	<!-- Burning Cruade -->
+	<Item Name="Netherweave Cloth" Id="21877" />
+	<Item Name="Netherweb Spider Silk" Id="21881" />
+	<Item Name="Primal Mooncloth" Id="21845" />
+	<!-- Lich King -->
+	<Item Name="Frostweave Cloth" Id="33470" />
+	<Item Name="Shadowcloth" Id="24272" />
+	<Item Name="Spellcloth" Id="24271" />
+	<Item Name="Iceweb Spider Silk" Id="42253" />
+	<Item Name="Ebonweave" Id="41593" />
+	<Item Name="Moonshroud" Id="41594" />
+	<Item Name="Spellweave" Id="41595" />
+	<!-- Cataclysm -->
+	<Item Name="Embersilk Cloth" Id="53010" />
+	<Item Name="Dreamcloth" Id="54440" />
+	<!-- Mists of Panderia -->
+	<Item Name="Windwool Cloth" Id="72988" />
+	<Item Name="Imperial Silk" Id="82447" />	
+	<Item Name="Celestial Cloth" Id="98619" />
+
+	<!-- Harvests: Elementals (ordered by level, then alphabetically) -->
+	<!-- Classic -->
+	<Item Name="Elemental Air" Id="7069" />
+	<Item Name="Elemental Earth" Id="7067" />
+	<Item Name="Elemental Fire" Id="7068" />
+	<Item Name="Elemental Water" Id="7070" />
+	<Item Name="Breath of Wind" Id="7081" />
+	<Item Name="Core of Earth" Id="7075" />
+	<Item Name="Globe of Water" Id="7079" />
+	<Item Name="Heart of Fire" Id="7077" />
+	<Item Name="Heart of the Wild" Id="10286" />
+	<Item Name="Ichor of Undeath" Id="7972" />
+	<Item Name="Essence of Air" Id="7082" />
+	<Item Name="Essence of Earth" Id="7076" />
+	<Item Name="Essence of Fire" Id="7078" />
+	<Item Name="Essence of Undeath" Id="12808" />
+	<Item Name="Essence of Water" Id="7080" />
+	<Item Name="Essence of Hatred" Id="90636" />
+	<Item Name="Living Essence" Id="12803" />
+	<!-- Burning Crusade -->
+	<Item Name="Primal Air" Id="22451" />
+	<Item Name="Mote of Air" Id="22572" />
+	<Item Name="Primal Earth" Id="22452" />
+	<Item Name="Mote of Earth" Id="22573" />
+	<Item Name="Primal Fire" Id="21884" />
+	<Item Name="Mote of Fire" Id="22574" />
+	<Item Name="Primal Life" Id="21886" />
+	<Item Name="Mote of Life" Id="22575" />
+	<Item Name="Primal Mana" Id="22457" />
+	<Item Name="Mote of Mana" Id="22576" />
+	<Item Name="Primal Might" Id="23571" />
+	<Item Name="Primal Shadow" Id="22456" />
+	<Item Name="Mote of Shadow" Id="22577" />
+	<Item Name="Primal Water" Id="21885" />
+	<Item Name="Mote of Water" Id="22578" />
+	<!-- Lich King -->
+	<Item Name="Crystallized Air" Id="37700" />
+	<Item Name="Eternal Air" Id="35623" />
+	<Item Name="Crystallized Earth" Id="37701" />
+	<Item Name="Eternal Earth" Id="35624" />
+	<Item Name="Crystallized Fire" Id="37702" />
+	<Item Name="Eternal Fire" Id="36860" />
+	<Item Name="Crystallized Life" Id="37704" />
+	<Item Name="Eternal Life" Id="35625" />
+	<Item Name="Crystallized Shadow" Id="37703" />
+	<Item Name="Eternal Shadow" Id="35627" />
+	<Item Name="Crystallized Water" Id="37705" />
+	<Item Name="Eternal Water" Id="35622" />
+	<Item Name="Eternal Might" Id="40248" />
+	<!-- Cataclysm -->
+	<Item Name="Chaos Orb" Id="52078" />
+	<Item Name="Volatile Air" Id="52328" />
+	<Item Name="Volatile Earth" Id="52327" />
+	<Item Name="Volatile Fire" Id="52325" />
+	<Item Name="Volatile Life" Id="52329" />
+	<Item Name="Volatile Water" Id="52326" />
+	<!-- Mists of Panderia -->
+	<Item Name="Mote of Harmony" Id="89112" />
+	<Item Name="Spirit of Harmony" Id="76061" />
+	<!-- NotInGame: <Item Name="Spirit of Autumn" Id="76060" /> -->
+	<!-- NotInGame: <Item Name="Spirit of the Season" Id="80816" /> -->
+	<!-- NotInGame: <Item Name="Spirit of Spring" Id="76059" /> -->
+	<!-- NotInGame: <Item Name="Spirit of Summer" Id="76057" /> -->
+	<!-- NotInGame: <Item Name="Spirit of Winter" Id="76058" /> -->
+	<!-- NotInGame: <Item Name="Splinter of Hate" Id="90637" /> -->
+
+	<!-- Harvests: Gems (ordered by level, then alphabetically) -->
+	<!-- Classic -->
+	<!-- Worthless: <Item Name="Blood Shard" Id="5075" /> -->
+	<Item Name="Malachite" Id="774" />
+	<Item Name="Tigerseye" Id="818" />
+	<Item Name="Shadowgem" Id="1210" />
+	<Item Name="Moss Agate" Id="1206" />
+	<Item Name="Lesser Moonstone" Id="1705" />
+	<Item Name="Jade" Id="1529" />
+	<Item Name="Citrine" Id="3864" />
+	<Item Name="Aquamarine" Id="7909" />
+	<Item Name="Blood of the Mountain" Id="11382" />
+	<Item Name="Star Ruby" Id="7910" />
+	<Item Name="Blue Sapphire" Id="12361" />
+	<Item Name="Large Opal" Id="12799" />
+	<Item Name="Azerothian Diamond" Id="12800" />
+	<Item Name="Arcane Crystal" Id="12363" />
+	<Item Name="Black Diamond" Id="11754" />
+	<Item Name="Huge Emerald" Id="12364" />
+	<!-- Burning Crusade -->
+	<Item Name="Azure Moonstone" Id="23117" />
+	<Item Name="Blood Garnet" Id="23077" />
+	<Item Name="Deep Peridot" Id="23079" />
+	<Item Name="Flame Spessarite" Id="21929" />
+	<Item Name="Golden Draenite" Id="23112" />
+	<Item Name="Shadow Draenite" Id="23107" />
+	<Item Name="Dawnstone" Id="23440" />
+	<Item Name="Living Ruby" Id="23436" />
+	<Item Name="Nightseye" Id="23441" />
+	<Item Name="Noble Topaz" Id="23439" />
+	<Item Name="Star of Elune" Id="23438" />
+	<Item Name="Talasite" Id="23437" />
+	<!-- Lich King -->
+	<Item Name="Bloodstone" Id="36917" />
+	<Item Name="Chalcedony" Id="36923" />
+	<Item Name="Dark Jade" Id="36932" />
+	<Item Name="Huge Citrine" Id="36929" />
+	<Item Name="Shadow Crystal" Id="36926" />
+	<Item Name="Sun Crystal" Id="36920" />
+	<Item Name="Autumn's Glow" Id="36921" />
+	<Item Name="Forest Emerald" Id="36933" />
+	<Item Name="Monarch Topaz" Id="36930" />
+	<Item Name="Scarlet Ruby" Id="36918" />
+	<Item Name="Sky Sapphire" Id="36924" />
+	<Item Name="Twilight Opal" Id="36927" />
+	<Item Name="Ametrine" Id="36931" />
+	<Item Name="Cardinal Ruby" Id="36919" />
+	<Item Name="Dreadstone" Id="36928" />
+	<Item Name="Eye of Zul" Id="36934" />
+	<Item Name="King's Amber" Id="36922" />
+	<Item Name="Majestic Zircon" Id="36925" />
+	<!-- Cataclysm -->
+	<Item Name="Alicite" Id="52179" />
+	<Item Name="Carnelian" Id="52177" />
+	<Item Name="Hessonite" Id="52181" />
+	<Item Name="Jasper" Id="52182" />
+	<Item Name="Nightstone" Id="52180" />
+	<Item Name="Zephyrite" Id="52178" />
+	<Item Name="Amberjewel" Id="52195" />
+	<Item Name="Demonseye" Id="52194" />
+	<Item Name="Dream Emerald" Id="52192" />
+	<Item Name="Ember Topaz" Id="52193" />
+	<Item Name="Inferno Ruby" Id="52190" />
+	<Item Name="Ocean Sapphire" Id="52191" />
+	<Item Name="Chimera's Eye" Id="52196" />
+	<!-- Mists of Panderia -->
+	<Item Name="Alexandrite" Id="76137" />
+	<Item Name="Lapis Lazuli" Id="76133" />
+	<Item Name="Pandarian Garnet" Id="76136" />
+	<Item Name="Roguestone" Id="76135" />
+	<Item Name="Sunstone" Id="76134" />
+	<Item Name="Tiger Opal" Id="76130" />
+	<Item Name="Primordial Ruby" Id="76131" />
+	<Item Name="River's Heart" Id="76138" />
+	<Item Name="Wild Jade" Id="76139" />
+	<Item Name="Vermilion Onyx" Id="76140" />
+	<Item Name="Imperial Amethyst" Id="76141" />
+
+	<!-- Harvests: Herbs (ordered by level) -->
+	<!-- Classic -->
+	<Item Name="Bloodthistle" Id="22710" />
+	<Item Name="Peacebloom" Id="2447" />
+	<Item Name="Silverleaf" Id="765" />
+	<Item Name="Earthroot" Id="2449" />
+	<Item Name="Mageroyal" Id="785" />
+	<Item Name="Briarthorn" Id="2450" />
+	<Item Name="Swiftthistle" Id="2452" />
+	<Item Name="Bruiseweed" Id="2453" />
+	<Item Name="Stranglekelp" Id="3820" />
+	<Item Name="Grave Moss" Id="3369" />
+	<Item Name="Wild Steelbloom" Id="3355" />
+	<Item Name="Kingsblood" Id="3356" />
+	<Item Name="Liferoot" Id="3357" />
+	<Item Name="Fadeleaf" Id="3818" />
+	<Item Name="Goldthorn" Id="3821" />
+	<Item Name="Khadgar's Whisker" Id="3358" />
+	<Item Name="Wintersbite" Id="3819" />
+	<Item Name="Wildvine" Id="8153" />
+	<Item Name="Firebloom" Id="4625" />
+	<Item Name="Purple Lotus" Id="8831" />
+	<Item Name="Arthas' Tears" Id="8836" />
+	<Item Name="Sungrass" Id="8838" />
+	<Item Name="Blindweed" Id="8839" />
+	<Item Name="Ghost Mushroom" Id="8845" />
+	<Item Name="Gromsblood" Id="8846" />
+	<Item Name="Golden Sansam" Id="13464" />
+	<Item Name="Dreamfoil" Id="13463" />
+	<Item Name="Flame Cap" Id="22788" />
+	<Item Name="Mountain Silversage" Id="13465" />
+	<Item Name="Plaguebloom" Id="13466" />
+	<Item Name="Icecap" Id="13467" />
+	<Item Name="Black Lotus" Id="13468" />
+	<!-- Burning Crusade -->
+	<Item Name="Dreaming Glory" Id="22786" />
+	<Item Name="Felweed" Id="22785" />
+	<Item Name="Nightmare Seed" Id="22797" />
+	<Item Name="Terocone" Id="22789" />
+	<Item Name="Ragveil" Id="22787" />
+	<Item Name="Ancient Lichen" Id="22790" />
+	<Item Name="Fel Lotus" Id="22794" />
+	<Item Name="Mana Thistle" Id="22793" />
+	<Item Name="Netherbloom" Id="22791" />
+	<Item Name="Nightmare Vine" Id="22792" />
+	<Item Name="Deadnettle" Id="37921" />
+	<Item Name="Goldclover" Id="36901" />
+	<Item Name="Talandra's Rose" Id="36907" />
+	<Item Name="Tiger Lily" Id="36904" />
+	<Item Name="Adder's Tongue" Id="36903" />
+	<!-- Lich King -->
+	<Item Name="Stormvine" Id="52984" />
+	<Item Name="Lichbloom" Id="36905" />
+	<Item Name="Cinderbloom" Id="52983" />
+	<Item Name="Azshara's Veil" Id="52985" />
+	<Item Name="Icethorn" Id="36906" />
+	<Item Name="Frost Lotus" Id="36908" />
+	<Item Name="Heartblossom" Id="52986" />
+	<Item Name="Whiptail" Id="52988" />
+	<Item Name="Twilight Jasmine" Id="52987" />
+	<!-- Cataclysm / Mists of Panderia -->
+	<Item Name="Green Tea Leaf" Id="72234" />
+	<Item Name="Torn Green Tea Leaf" Id="97619" />
+	<Item Name="Rain Poppy" Id="72237" />
+	<Item Name="Rain Poppy Petal" Id="97620" />
+	<Item Name="Silkweed" Id="72235" />
+	<Item Name="Silkweed Stem" Id="97621" />
+	<Item Name="Golden Lotus" Id="72238" />
+	<Item Name="Snow Lily" Id="79010" />
+	<Item Name="Snow Lily Petal" Id="97622" />
+	<Item Name="Fool's Cap" Id="79011" />
+	<Item Name="Fool's Cap Spores" Id="97623" />
+	<Item Name="Desecrated Herb" Entry="89639" />
+	<Item Name="Desecrated Herb Pod" Entry="97624" />
+
+	<!-- Harvests: Leather & Pelts-mainstream (ordered by level) -->
+	<!-- Classic -->
+	<Item Name="Ruined Leather Scraps" Id="2934" />
+	<Item Name="Light Hide" Id="783" />
+	<Item Name="Light Leather" Id="2318" />
+	<Item Name="Medium Hide" Id="4232" />
+	<Item Name="Medium Leather" Id="2319" />
+	<Item Name="Heavy Hide" Id="4235" />
+	<Item Name="Heavy Leather" Id="4234" />
+	<Item Name="Deeprock Salt" Id="8150" />
+	<Item Name="Thick Hide" Id="8169" />
+	<Item Name="Thick Leather" Id="4304" />
+	<Item Name="Rugged Hide" Id="8171" />
+	<Item Name="Rugged Leather" Id="8170" />
+	<Item Name="Enchanted Leather" Id="12810" />
+	<Item Name="Crystal Infused Leather" Id="25699" />
+	<!-- Burning Crusade -->
+	<Item Name="Knothide Leather" Id="21887" />
+	<Item Name="Knothide Leather Scraps" Id="25649" />
+	<Item Name="Thick Clefthoof Leather" Id="25708" />
+	<Item Name="Heavy Knothide Leather" Id="23793" />
+	<!-- Lich King -->
+	<Item Name="Borean Leather" Id="33568" />
+	<Item Name="Borean Leather Scraps" Id="33567" />
+	<Item Name="Arctic Fur" Id="44128" />
+	<Item Name="Heavy Borean Leather" Id="38425" />
+	<!-- Cataclysm -->
+	<Item Name="Savage Leather" Id="52976" />
+	<Item Name="Savage Leather Scraps" Id="52977" />
+	<Item Name="Heavy Savage Leather" Id="56516" />
+	<Item Name="Pristine Hide" Id="52980" />
+	<Item Name="Heavy Exotic Leather" Id="80221" />
+	<!-- Mists of Panderia -->
+	<Item Name="Sha-Touched Leather" Id="72162" />
+	<Item Name="Exotic Leather" Id="72120" />
+	<Item Name="Magnificent Hide" Id="72163" />
+	<Item Name="Hardened Magnificent Hide" Id="98617" />
+
+	<!-- Harvests: Leather & Pelts-exotics (ordered by level) -->
+	<Item Name="Black Whelp Scale" Id="7286" />
+	<Item Name="Deviate Scale" Id="6470" />
+	<Item Name="Green Whelp Scale" Id="7392" />
+	<Item Name="Perfect Deviate Scale" Id="6471" />
+	<Item Name="Thin Kodo Leather" Id="5082" />
+	<Item Name="Slimy Murloc Scale" Id="5784" />
+	<Item Name="Raptor Hide" Id="4461" />
+	<Item Name="Thick Murloc Scale" Id="5785" />
+	<Item Name="Turtle Scale" Id="8167" />
+	<Item Name="Scorpid Scale" Id="8154" />
+	<Item Name="Worn Dragonscale" Id="8165" />
+	<Item Name="Blue Dragonscale" Id="15415" />
+	<Item Name="Devilsaur Leather" Id="15417" />
+	<Item Name="Green Dragonscale" Id="15412" />
+	<Item Name="Warbear Leather" Id="15419" />
+	<Item Name="Black Dragonscale" Id="15416" />
+	<Item Name="Heavy Scorpid Scale" Id="15408" />
+	<Item Name="Refined Scale of Onyxia" Id="17967" />
+	<Item Name="Scale of Onyxia" Id="15410" />
+	<Item Name="Cobra Scales" Id="29539" />
+	<Item Name="Core Leather" Id="17012" />
+	<Item Name="Fel Scales" Id="25700" />
+	<Item Name="Nether Dragonscales" Id="29548" />
+	<Item Name="Red Dragonscale" Id="15414" />
+	<Item Name="Wind Scales" Id="29547" />
+	<Item Name="Fel Hide" Id="25707" />
+	<Item Name="Nerubian Chitin" Id="38558" />
+	<Item Name="Icy Dragonscale" Id="38557" />
+	<Item Name="Jormungar Scale" Id="38561" />
+	<Item Name="Blackened Dragonscale" Id="52979" />
+	<Item Name="Deepsea Scale" Id="52982" />
+	<Item Name="Prismatic Scale" Id="79101" />
+
+
+	<!-- Harvests: Ore-mainstream (ordered by level) -->
+	<!-- Classic -->
+	<Item Name="Copper Ore" Id="2770" />
+	<Item Name="Tin Ore" Id="2771" />
+	<Item Name="Silver Ore" Id="2775" />
+	<Item Name="Iron Ore" Id="2772" />
+	<Item Name="Gold Ore" Id="2776" />
+	<Item Name="Mithril Ore" Id="3858" />
+	<Item Name="Truesilver Ore" Id="7911" />
+	<Item Name="Thorium Ore" Id="10620" />
+	<Item Name="Dark Iron Ore" Id="11370" />
+	<Item Name="Elementium Ingot" Id="18562" />
+	<!-- Burning Crusade -->
+	<Item Name="Fel Iron Ore" Id="23424" />
+	<Item Name="Adamantite Ore" Id="23425" />
+	<Item Name="Eternium Ore" Id="23427" />
+	<!-- Lich King -->
+	<Item Name="Cobalt Ore" Id="36909" />
+	<Item Name="Khorium Ore" Id="23426" />
+	<Item Name="Saronite Ore" Id="36912" />
+	<Item Name="Titanium Ore" Id="36910" />
+	<!-- Cataclysm -->
+	<Item Name="Obsidium Ore" Id="53038" />
+	<Item Name="Elementium Ore" Id="52185" />
+	<Item Name="Pyrite Ore" Id="52183" />
+	<!-- Mists of Panderia -->
+	<Item Name="Ghost Iron Ore" Id="72092" />
+	<Item Name="Ghost Iron Nugget" Entry="97512" />
+	<Item Name="Black Trillium Ore" Id="72094" />
+	<Item Name="White Trillium Ore" Id="72103" />
+	<Item Name="Kyparite" Id="72093" />
+	<Item Name="Kyparite Fragment" Entry="97546" />
+
+	<!-- Harvests: Ore-exotics (alphabetical) -->
+	<Item Name="Incendite Ore" Id="3340" />
+	<Item Name="Lesser Bloodstone Ore" Id="4278" />
+	<Item Name="Nethercite Ore" Id="32464" />
+	<Item Name="Rathban Ore" Id="2798" />
+
+	<!-- Harvests: Stone (ordered by level) -->
+	<Item Name="Rough Stone" Id="2835" />
+	<Item Name="Coarse Stone" Id="2836" />
+	<Item Name="Heavy Stone" Id="2838" />
+	<Item Name="Solid Stone" Id="7912" />
+	<Item Name="Dense Stone" Id="12365" />
+
+
+	<!-- ========== Reputation Items (alphabetical by Faction) ==========
+      If you don't want these items in your backpack, we suggest setting up
+      Lootfilter to delete the unwanted ones.
+     -->
+
+	<!-- Reputation: Argent Dawn (alphabetical) -->
+
+	<!-- Reputation: Booty Bay/Everlook/Gadgetzan/Ratchet (alphabetical) -->
+	<Item Name="Miniaturization Residue" Id="18956" />
+	<Item Name="Water Elemental Core" Id="18958" />
+
+	<!-- Reputation: Cenarion Expedition (alphabetical) -->
+	<Item Name="Nesingwary Lackey Ear" Id="35188" />
+	<Item Name="Uncatalogued Species" Id="24407" />
+	<Item Name="Unidentified Plant Parts" Id="24401" />
+
+	<!-- Reputation: Gadgetzan (alphabetical) -->
+
+	<!-- Reputation: Guild -->
+		<!-- ========== Special Items (alphabetical) ==========
+      If you don't want these items in your backpack, we suggest you explicitly
+      sell or bank them.
+    -->
+	<Item Name="Armadillo Pup" Id="63398" />
+	<Item Name="Dark Phoenix Hatchling" Id="63138" />
+	<Item Name="Guild Herald (Alliance)" Id="65363" />
+	<Item Name="Guild Herald (Horde)" Id="65364" />
+	<Item Name="Guild Page (Alliance)" Id="65361" />
+	<Item Name="Guild Page (Horde)" Id="65362" />
+	<Item Name="Lil' Tarecgosa" Id="71033" />
+	<Item Name="Thundering Serpent Hatchling" Id="85513" />
+	
+	<Item Name="Reins of the Dark Phoenix" Id="63125" />
+	<Item Name="Reins of the Golden King (Alliance only)" Id="62298" />
+	<Item Name="Reins of the Kor'kron Annihilator (Horde only)" Id="67107" />
+	<Item Name="Reins of the Thundering Jade Cloud Serpent" Id="85666" />
+	
+	<Item Name="Recipe: Seafood Magnifique Feast" Id="62800" />
+	<Item Name="Recipe: Broiled Dragon Feast" Id="62799" />
+	<Item Name="Recipe: Cauldron of Battle" Id="65435" />
+	<Item Name="Recipe:Big Cauldron of Battle" Id="65498" />
+	
+	<Item Name="Banner of Cooperation (Alliance)" Id="63359" />
+	<Item Name="Banner of Cooperation (Horde)" Id="64400" />
+	<Item Name="Battle Standard of Coordination (Alliance)" Id="64399" />
+	<Item Name="Battle Standard of Coordination (Horde)" Id="64402" />
+	<Item Name="Standard of Unity (Alliance)" Id="64398" />
+	<Item Name="Standard of Unity (Horde)" Id="64401" />
+	
+	<Item Name="Artisan Initiate's Shirt" Id="89191" />
+	<Item Name="Artisan Member's Shirt" Id="89193" />
+	<Item Name="Artisan Officer's Shirt" Id="89195" />
+	<Item Name="Tailored Initiate's Shirt" Id="89190" />
+	<Item Name="Tailored Member's Shirt" Id="89192" />
+	<Item Name="Tailored Oficer's Shirt" Id="89194" />
+	<Item Name="Initiate's Shirt" Id="85508" />
+	<Item Name="Member's Shirt" Id="85509" />
+	<Item Name="Officer's Shirt" Id="85510" />
+	
+	<Item Name="Shroud of Cooperation (Alliance)" Id="63352" />
+	<Item Name="Shroud of Cooperation (Horde)" Id="63353" />
+	<Item Name="Wrap of Unity (Alliance)" Id="63206" />
+	<Item Name="Wrap of Unity (Horde)" Id="63207" />
+	<Item Name="Cloak of Coordination (Alliance)" Id="65360" />
+	<Item Name="Cloak of Coordination (Horde)" Id="65274" />
+	
+	<!-- Reputation: Kurenai/Mag'har (alphabetical) -->
+	<Item Name="Obsidian Warbeads" Id="25433" />
+
+	<!-- Reputation: Netherwing (alphabetical) -->
+	<Item Name="Fel Gland" Id="32502" />
+	<Item Name="Netherwing Crystal" Id="32427" />
+	<Item Name="Netherwing Egg" Id="32506" />
+	<Item Name="Netherwing Relic" Id="32509" />
+	<Item Name="Nethermine Cargo" Id="32723" />
+	<Item Name="Nethermine Flayer Hide" Id="32470" />
+	<Item Name="Nethercite Ore" Id="32464" />
+	<Item Name="Netherdust Pollen" Id="32468" />
+
+	<!-- Reputation: Oracles (alphabetical) -->
+	<Item Name="Energized Polished Crystal" Id="39748" />
+	<Item Name="Shiny Treasures" Id="38575" />
+
+	<!-- Reputation: Order of the Cloud Serpent  (alphabetical) -->
+	<Item Name="Onyx Egg" Id="89155" />
+
+	<!-- Reputation: Ravenholdt (alphabetical) -->
+	<Item Name="Heavy Junkbox" Id="16885" />
+	<Item Name="Syndicate Emblem" Id="17124" />
+
+	<!-- Reputation: Sons of Hodir (alphabetical) -->
+	<Item Name="Everfrost Chip" Id="44724" />
+	<Item Name="Everfrost Chip" Id="44725" />
+	<Item Name="Frozen Iron Scrap" Id="42252" />
+	<Item Name="Relic of Ulduar" Id="42780" />
+	<Item Name="Viscous Oil" Id="42640" />
+
+	<!-- Reputation: Sporeggar (alphabetical) -->
+	<Item Name="Bog Lord Tendril" Id="24291" />
+	<Item Name="Fertile Spores" Id="24449" />
+	<Item Name="Glowcap" Id="24245" />
+	<Item Name="Mature Spore Sac" Id="24290" />
+	<Item Name="Sanguine Hibiscus" Id="24246" />
+
+	<!-- Reputation: The Aldor (alphabetical) -->
+	<Item Name="Dreadfang Venom Sac" Id="25802" />
+	<Item Name="Fel Armament" Id="29740" />
+	<Item Name="Mark of Kil'jaeden" Id="29425" />
+	<Item Name="Mark of Sargeras" Id="30809" />
+
+	<!-- Reputation: The Consortium (alphabetical) -->
+	<Item Name="Ethereum Prison Key" Id="29460" />
+	<Item Name="Ethereum Prisoner I.D. Tag" Id="31957" />
+	<Item Name="Oshu'gun Crystal Fragment" Id="25416" />
+	<Item Name="Pair of Ivory Tusks" Id="25463" />
+	<Item Name="Zaxxis Insignia" Id="29209" />
+
+	<!-- Reputation: The Scryers (alphabetical) -->
+	<Item Name="Arcane Tome" Id="29739" />
+	<Item Name="Dampscale Basilisk Eye" Id="25744" />
+	<Item Name="Firewing Signet" Id="29426" />
+	<Item Name="Sunfury Signet" Id="30810" />
+
+	<!-- Reputation: Thorium Brotherhood (alphabetical) -->
+	<Item Name="Blood of the Mountain" Id="11382" />
+	<Item Name="Core Leather" Id="17012" />
+	<Item Name="Dark Iron Ore" Id="11370" />
+	<Item Name="Dark Iron Residue" Id="18945" />
+	<Item Name="Fiery Core" Id="17010" />
+	<Item Name="Incendosaur Scale" Id="18944" />
+	<Item Name="Lava Core" Id="17011" />
+
+	<!-- Reputation: Timbermaw Hold (alphabetical) -->
+	<Item Name="Deadwood Headdress Feather" Id="21377" />
+	<Item Name="Winterfall Spirit Beads" Id="21383" />
+
+	<!-- Reputation: Zandalar Tribe (alphabetical) -->
+
+	<!-- Reputation: Wintersaber Trainers (alphabetical) -->
+	<Item Name="Shardtooth Meat" Id="12622" />
+	<Item Name="Chillwind Meat" Id="12623" />
+
+
+	<!-- ========== Tabards (alphabetical) ==========
+      If you don't want these items in your backpack, we suggest you explicitly
+      sell or bank them.
+     -->
+	<Item Name="Aldor Tabard" Id="31779" />
+	<Item Name="Anglers Tabard" Id="89401" />
+	<Item Name="Arathor Battle Tabard" Id="20132" />
+	<Item Name="Argent Crusader's Tabard" Id="46874" />
+	<Item Name="August Celestials Tabard" Id="89799" />
+	<Item Name="Baradin's Wardens Tabard" Id="63379" />
+	<Item Name="Battle Tabard of the Defilers" Id="20131" />
+	<Item Name="Bilgewater Cartel Tabard" Id="64884" />
+	<Item Name="Blood Knight Tabard" Id="25549" />
+	<Item Name="Cenarion Expedition Tabard" Id="31804" />
+	<Item Name="Competitor's Tabard" Id="36941" />
+	<Item Name="Consortium Tabard" Id="31776" />
+	<Item Name="Contest Winner's Tabard" Id="19160" />
+	<Item Name="Darkspear Tabard" Id="45582" />
+	<Item Name="Darnassus Tabard" Id="45579" />
+	<Item Name="Exodar Tabard" Id="45580" />
+	<Item Name="Frostwolf Battle Tabard" Id="19031" />
+	<Item Name="Furious Gladiator's Tabard" Id="45983" />
+	<Item Name="Gilneas Tabard" Id="64882" />
+	<Item Name="Gnomeregan Tabard" Id="45578" />
+	<Item Name="Golden Lotus Tabard" Id="89797" />
+	<Item Name="Green Trophy Tabard of the Illidari" Id="31404" />
+	<Item Name="Grievous Gladiator's Tabard" Id="101697" />
+	<Item Name="Guild Tabard" Id="5976" />
+	<Item Name="Hellscream's Reach Tabard" Id="63378" />
+	<Item Name="Honor Hold Tabard" Id="23999" />
+	<Item Name="Huojin Tabard" Id="83080" />
+	<Item Name="Illustrious Guild Tabard" Id="69209" />
+	<Item Name="Ironforge Tabard" Id="45577" />
+	<Item Name="Keepers of Time Tabard" Id="31777" />
+	<Item Name="Kirin Tor Offensive Tabard" Id="95591" />
+	<Item Name="Klaxxi Tabard" Id="89798" />
+	<Item Name="Kurenai Tabard" Id="31774" />
+	<Item Name="Lorewalkers Tabard" Id="89795" />
+	<Item Name="Lower City Tabard" Id="31778" />
+	<Item Name="Mag'har Tabard" Id="31773" />
+	<Item Name="Ogri'la Tabard" Id="32828" />
+	<Item Name="Order of the Cloud Serpent Tabard" Id="89796" />
+	<Item Name="Orgrimmar Tabard" Id="45581" />
+	<Item Name="Prideful Gladiator's Tabard" Id="103636" />
+	<Item Name="Private's Tabard" Id="15196" />
+	<Item Name="Purple Trophy Tabard of the Illidari" Id="31405" />
+	<Item Name="Renowned Guild Tabard" Id="69210" />
+	<Item Name="Scout's Tabard" Id="15197" />
+	<Item Name="Scryers Tabard" Id="31780" />
+	<Item Name="Sha'tar Tabard" Id="31781" />
+	<Item Name="Shado-Pan Assault Tabard" Id="97131" />
+	<Item Name="Shado-Pan Tabard" Id="89800" />
+	<Item Name="Silver Covenant Tabard" Id="46817" />
+	<Item Name="Silvermoon City Tabard" Id="45585" />
+	<Item Name="Silverwing Battle Tabard" Id="19506" />
+	<Item Name="Skyguard Tabard" Id="32445" />
+	<Item Name="Sporeggar Tabard" Id="31775" />
+	<Item Name="Stormpike Battle Tabard" Id="19032" />
+	<Item Name="Stormwind Tabard" Id="45574" />
+	<Item Name="Sunreaver Onslaught Tabard" Id="95592" />
+	<Item Name="Sunreaver Tabard" Id="46818" />
+	<Item Name="Tabard of Brilliance" Id="38312" />
+	<Item Name="Tabard of Brute Force" Id="43349" />
+	<Item Name="Tabard of Conquest" Id="49052" />
+	<Item Name="Tabard of Conquest" Id="49054" />
+	<Item Name="Tabard of Flame" Id="23705" />
+	<Item Name="Tabard of Frost" Id="23709" />
+	<Item Name="Tabard of Fury" Id="38313" />
+	<Item Name="Tabard of Nature" Id="38309" />
+	<Item Name="Tabard of Ramkahen" Id="65904" />
+	<Item Name="Tabard of Summer Flames" Id="35280" />
+	<Item Name="Tabard of Summer Skies" Id="35279" />
+	<Item Name="Tabard of Therazane" Id="65907" />
+	<Item Name="Tabard of the Achiever" Id="40643" />
+	<Item Name="Tabard of the Arcane" Id="38310" />
+	<Item Name="Tabard of the Argent Crusade" Id="43154" />
+	<Item Name="Tabard of the Argent Dawn" Id="22999" />
+	<Item Name="Tabard of the Defender" Id="38314" />
+	<Item Name="Tabard of the Dragonmaw Clan" Id="65909" />
+	<Item Name="Tabard of the Earthen Ring" Id="65905" />
+	<Item Name="Tabard of the Ebon Blade" Id="43155" />
+	<Item Name="Tabard of the Explorer" Id="43348" />
+	<Item Name="Tabard of the Guardians of Hyjal" Id="65906" />
+	<Item Name="Tabard of the Hand" Id="24344" />
+	<Item Name="Tabard of the Kirin Tor" Id="43157" />
+	<Item Name="Tabard of the Lightbringer" Id="52252" />
+	<Item Name="Tabard of the Protector" Id="28788" />
+	<Item Name="Tabard of the Scarlet Crusade" Id="23192" />
+	<Item Name="Tabard of the Shattered Sun" Id="35221" />
+	<Item Name="Tabard of the Void" Id="38311" />
+	<Item Name="Tabard of the Wildhammer Clan" Id="65908" />
+	<Item Name="Tabard of the Wyrmrest Accord" Id="43156" />
+	<Item Name="Theramore Tabard" Id="89196" />
+	<Item Name="Thrallmar Tabard" Id="24004" />
+	<Item Name="Thunder Bluff Tabard" Id="45584" />
+	<Item Name="Tillers Tabard" Id="89784" />
+	<Item Name="Tushui Tabard" Id="83079" />
+	<Item Name="Tyrannical Gladiator's Tabard" Id="98162" />
+	<Item Name="Undercity Tabard" Id="45583" />
+	<Item Name="Warsong Battle Tabard" Id="19505" />
+
+
+	<!-- ========== Trade Tools & Items (alphabetical) ========== -->
+	<!-- Trade: Alchemy Tools (alphabetical) -->
+	<Item Name="Philsopher's Stone" Id="9149" />
+	<Item Name="Pyrium-Laced Crystalline Vial" Id="65892" />
+	<Item Name="Living Steel" Id="72104" />
+
+	<!-- Trade: Archeology Items (alphabetical) -->
+	<Item Name="Draenei Tome" Id="64394" />
+	<Item Name="Dwarf Rune Stone" Id="52843" />
+	<Item Name="Highborne Scroll" Id="63127" />
+	<Item Name="Mantid Amber Sliver" Id="95373" />
+	<Item Name="Mogu Statue Piece" Id="79869" />
+	<Item Name="Nerubian Obelisk" Id="64396" />
+	<Item Name="Orc Blood Text" Id="64392" />
+	<Item Name="Pandaren Pottery Shard" Id="79868" />
+	<Item Name="Tol'vir Hieroglyphic" Id="64397" />
+	<Item Name="Troll Tablet" Id="63128" />
+	<Item Name="Vrykul Rune Stick" Id="64395" />
+
+	<!-- Trade: Blacksmithing Tools ( (alphabetical; also see Trade Tools: Multi-purpose) -->
+	<Item Name="Blacksmith Hammer" Id="5956" />
+
+	<!-- Trade: Cooking Tools (alphabetical)-->
+	<Item Name="Apron" Id="86468" />
+	<Item Name="Frying Pan" Id="86559" />
+	<Item Name="Rolling Pin" Id="86558" />
+	<Item Name="Flippable Table" Id="88801" />
+
+	<!-- Trade: Cooking Items (alphabetical) -->
+	<Item Name="100 Year Soy Sauce" Id="74853" />
+	<Item Name="Black Pepper" Id="74661" />
+	<Item Name="Bundle of Groceries" Id="87557" />
+	<Item Name="Emperor Salmon" Id="74859" />
+	<Item Name="Empty Emperor Salmon Container" Id="87680" />
+	<Item Name="Sack of Emperor Salmon" Id="87723" />
+	<Item Name="Giant Mantis Shrimp" Id="74857" />
+	<Item Name="Giant Mantis Shrimp" Id="85857" />
+	<Item Name="Empty Giant Mantis Shrimp Container" Id="87679" />
+	<Item Name="Sack of Giant Mantis Shrimp" Id="87722" />
+	<Item Name="Ginseng" Id="74845" />
+	<Item Name="Golden Carp" Id="74866" />
+	<Item Name="Empty Golden Carp Container" Id="87686" />
+	<Item Name="Sack of Golden Carp" Id="87729" />
+	<Item Name="Green Cabbage" Id="74840" />
+	<Item Name="Empty Green Cabbage Container" Id="87663" />
+	<Item Name="Sack of Green Cabbages" Id="87706" />
+	<Item Name="Jade Lungfish" Id="74856" />
+	<Item Name="Empty Jade Lungfish Container" Id="87678" />
+	<Item Name="Sack of Jade Lungfish" Id="87721" />
+	<Item Name="Jade Squash" Id="74847" />
+	<Item Name="Empty Jade Squash Container" Id="87670" />
+	<Item Name="Sack of Jade Squash" Id="87713" />
+	<Item Name="Jewel Danio" Id="74863" />
+	<Item Name="Empty Jewel Danio Container" Id="87683" />
+	<Item Name="Sack of Jewel Danio" Id="87726" />
+	<Item Name="Juicycrunch Carrot" Id="74841" />
+	<Item Name="Empty Juicycrunch Carrot Container" Id="87664" />
+	<Item Name="Sack of Juicycrunch Carrots" Id="87707" />
+	<Item Name="Krasarang Paddlefish" Id="74865" />
+	<Item Name="Empty Krasarang Paddlefish Container" Id="87685" />
+	<Item Name="Sack of Krasarang Paddlefish" Id="87728" />
+	<Item Name="Mogu Pumpkin" Id="74842" />
+	<Item Name="Empty Mogu Pumpkin Container" Id="87665" />
+	<Item Name="Sack of Mogu Pumpkins" Id="87708" />
+	<Item Name="Mushan Ribs" Id="74834" />
+	<Item Name="Empty Mushan Ribs Container" Id="87659" />
+	<Item Name="Sack of Mushan Ribs" Id="87702" />
+	<Item Name="Pink Turnip" Id="74849" />
+	<Item Name="Empty Pink Turnip Container" Id="87672" />
+	<Item Name="Sack of Pink Turnips" Id="87715" />
+	<Item Name="Raw Crab Meat" Id="74838" />
+	<Item Name="Empty Crab Meat Container" Id="87661" />
+	<Item Name="Sack of Raw Crab Meat" Id="87704" />
+	<Item Name="Raw Crocolisk Belly" Id="75014" />
+	<Item Name="Empty Crocolisk Belly Container" Id="87687" />
+	<Item Name="Sack of Crocolisk Belly" Id="87730" />
+	<Item Name="Raw Tiger Steak" Id="74833" />
+	<Item Name="Empty Raw Tiger Steak Container" Id="87658" />
+	<Item Name="Sack of Raw Tiger Steaks" Id="87701" />
+	<Item Name="Raw Turtle Meat" Id="74837" />
+	<Item Name="Empty Raw Turtle Meat Container" Id="87660" />
+	<Item Name="Sack of Raw Turtle Meat" Id="87703" />
+	<Item Name="Red Blossom Leek" Id="74844" />
+	<Item Name="Empty Red Blossom Leek Container" Id="87667" />
+	<Item Name="Sack of Red Blossom Leeks" Id="87710" />
+	<Item Name="Redbelly Mandarin" Id="74860" />
+	<Item Name="Empty Redbelly Mandarin Container" Id="87681" />
+	<Item Name="Sack of Redbelly Mandarin" Id="87724" />
+	<Item Name="Reef Octopus" Id="74864" />
+	<Item Name="Empty  Reef OctopusContainer" Id="87684" />
+	<Item Name="Sack of Reef Octopus" Id="87727" />
+	<Item Name="Rice" Id="74851" />
+	<Item Name="Rice Flour" Id="74662" />
+	<Item Name="Scallions" Id="87709" />
+	<Item Name="Empty Scallions Container" Id="87666" />
+	<Item Name="Sack of Scallions" Id="74843" />
+	<Item Name="Striped Melon" Id="74848" />
+	<Item Name="Empty Striped Melon Container" Id="87671" />
+	<Item Name="Sack of Striped Melons" Id="87714" />
+	<Item Name="Tiger Gourami" Id="74861" />
+	<Item Name="Empty Tiger Gourami Container" Id="87682" />
+	<Item Name="Sack of Tiger Gourami" Id="87725" />
+	<Item Name="White Turnip" Id="74850" />
+	<Item Name="Empty White Turnip Container" Id="87673" />
+	<Item Name="Sack of White Turnips" Id="87716" />
+	<Item Name="Wildfowl Breast" Id="74839" />
+	<Item Name="Empty Wildfowl Breast Container" Id="87762" />
+	<Item Name="Sack of Wildfowl Breasts" Id="87705" />
+	<Item Name="Witchberries" Id="74846" />
+	<Item Name="Empty Witchberries Container" Id="87669" />
+	<Item Name="Sack of Witchberries" Id="87712" />
+	<Item Name="Viseclaw Meat" Id="85506" />
+
+	<!-- Trade: Enchanting Tools (alphabetical) -->
+	<Item Name="Simple Wood" Id="4470" />
+	<Item Name="Runed Copper Rod" Id="6218" />
+
+	<!-- Trade: Enchanting Items (alphabetical) -->
+	<Item Name="Brilliant Wizard Oil" Id="20749" />
+	<Item Name="Enchant 2H Weapon - Agility" Id="38896" />
+	<Item Name="Enchant 2H Weapon - Greater Impact" Id="38845" />
+	<Item Name="Enchant 2H Weapon - Greater Savagery" Id="38992" />
+	<Item Name="Enchant 2H Weapon - Impact" Id="38822" />
+	<Item Name="Enchant 2H Weapon - Lesser Impact" Id="38796" />
+	<Item Name="Enchant 2H Weapon - Lesser Intellect" Id="38781" />
+	<Item Name="Enchant 2H Weapon - Lesser Spirit" Id="38788" />
+	<Item Name="Enchant 2H Weapon - Major Agility" Id="38922" />
+	<Item Name="Enchant 2H Weapon - Major Intellect" Id="38875" />
+	<Item Name="Enchant 2H Weapon - Major Spirit" Id="38874" />
+	<Item Name="Enchant 2H Weapon - Massacre" Id="44463" />
+	<Item Name="Enchant 2H Weapon - Mighty Agility" Id="68134" />
+	<Item Name="Enchant 2H Weapon - Minor Impact" Id="38772" />
+	<Item Name="Enchant 2H Weapon - Savagery" Id="38919" />
+	<Item Name="Enchant 2H Weapon - Scourgebane" Id="38981" />
+	<Item Name="Enchant 2H Weapon - Superior Impact" Id="38869" />
+	<Item Name="Enchant Boots - Agility" Id="38844" />
+	<Item Name="Enchant Boots - Assassin's Step" Id="52781" />
+	<Item Name="Enchant Boots - Assault" Id="44449" />
+	<Item Name="Enchant Boots - Blurred Speed" Id="74717" />
+	<Item Name="Enchant Boots - Boar's Speed" Id="38944" />
+	<Item Name="Enchant Boots - Cat's Swiftness" Id="38943" />
+	<Item Name="Enchant Boots - Dexterity" Id="37603" />
+	<Item Name="Enchant Boots - Earthen Vitality" Id="52743" />
+	<Item Name="Enchant Boots - Fortitude" Id="38909" />
+	<Item Name="Enchant Boots - Greater Agility" Id="38863" />
+	<Item Name="Enchant Boots - Greater Assault" Id="44469" />
+	<Item Name="Enchant Boots - Greater Fortitude" Id="38966" />
+	<Item Name="Enchant Boots - Greater Haste" Id="74715" />
+	<Item Name="Enchant Boots - Greater Precision" Id="74716" />
+	<Item Name="Enchant Boots - Greater Spirit" Id="38961" />
+	<Item Name="Enchant Boots - Greater Stamina" Id="38862" />
+	<Item Name="Enchant Boots - Greater Vitality" Id="38974" />
+	<Item Name="Enchant Boots - Haste" Id="52750" />
+	<Item Name="Enchant Boots - Icewalker" Id="38986" />
+	<Item Name="Enchant Boots - Lavawalker" Id="52782" />
+	<Item Name="Enchant Boots - Lesser Accuracy" Id="45628" />
+	<Item Name="Enchant Boots - Lesser Agility" Id="38807" />
+	<Item Name="Enchant Boots - Lesser Spirit" Id="38819" />
+	<Item Name="Enchant Boots - Lesser Stamina" Id="38810" />
+	<Item Name="Enchant Boots - Major Agility" Id="52757" />
+	<Item Name="Enchant Boots - Mastery" Id="52771" />
+	<Item Name="Enchant Boots - Minor Agility" Id="38786" />
+	<Item Name="Enchant Boots - Minor Speed" Id="38837" />
+	<Item Name="Enchant Boots - Minor Stamina" Id="38785" />
+	<Item Name="Enchant Boots - Pandaren's Step" Id="74718" />
+	<Item Name="Enchant Boots - Precision" Id="52769" />
+	<Item Name="Enchant Boots - Spirit" Id="38864" />
+	<Item Name="Enchant Boots - Stamina" Id="38830" />
+	<Item Name="Enchant Boots - Superior Agility" Id="38976" />
+	<Item Name="Enchant Boots - Surefooted" Id="38910" />
+	<Item Name="Enchant Boots - Tuskarr's Vitality" Id="39006" />
+	<Item Name="Enchant Boots - Vitality" Id="38908" />
+	<Item Name="Enchant Bracer - Agility" Id="68784" />
+	<Item Name="Enchant Bracer - Assault" Id="38971" />
+	<Item Name="Enchant Bracer - Brawn" Id="38897" />
+	<Item Name="Enchant Bracer - Critical Strike" Id="52752" />
+	<Item Name="Enchant Bracer - Dodge" Id="38842" />
+	<Item Name="Enchant Bracer - Exceptional Intellect" Id="38968" />
+	<Item Name="Enchant Bracer - Exceptional Spirit" Id="52770" />
+	<Item Name="Enchant Bracer - Exceptional Strength" Id="74704" />
+	<Item Name="Enchant Bracer - Expertise" Id="38984" />
+	<Item Name="Enchant Bracer - Fortitude" Id="38902" />
+	<Item Name="Enchant Bracer - Greater Agility" Id="74705" />
+	<Item Name="Enchant Bracer - Greater Assault" Id="44815" />
+	<Item Name="Enchant Bracer - Greater Critical Strike" Id="52778" />
+	<Item Name="Enchant Bracer - Greater Dodge" Id="38899" />
+	<Item Name="Enchant Bracer - Greater Expertise" Id="52772" />
+	<Item Name="Enchant Bracer - Greater Intellect" Id="38852" />
+	<Item Name="Enchant Bracer - Greater Speed" Id="52785" />
+	<Item Name="Enchant Bracer - Greater Spellpower" Id="38997" />
+	<Item Name="Enchant Bracer - Greater Spirit" Id="38832" />
+	<Item Name="Enchant Bracer - Greater Stamina" Id="38849" />
+	<Item Name="Enchant Bracer - Greater Stats" Id="38987" />
+	<Item Name="Enchant Bracer - Greater Strength" Id="38846" />
+	<Item Name="Enchant Bracer - Healing Power" Id="38882" />
+	<Item Name="Enchant Bracer - Intellect" Id="38829" />
+	<Item Name="Enchant Bracer - Lesser Assault" Id="38938" />
+	<Item Name="Enchant Bracer - Lesser Dodge" Id="38811" />
+	<Item Name="Enchant Bracer - Lesser Intellect" Id="38803" />
+	<Item Name="Enchant Bracer - Lesser Spirit" Id="38783" />
+	<Item Name="Enchant Bracer - Lesser Stamina" Id="38793" />
+	<Item Name="Enchant Bracer - Lesser Strength" Id="38797" />
+	<Item Name="Enchant Bracer - Major Dodge" Id="74701" />
+	<Item Name="Enchant Bracer - Major Intellect" Id="38937" />
+	<Item Name="Enchant Bracer - Major Spirit" Id="38980" />
+	<Item Name="Enchant Bracer - Major Stamina" Id="44947" />
+	<Item Name="Enchant Bracer - Major Strength" Id="68785" />
+	<Item Name="Enchant Bracer - Mana Regeneration" Id="38881" />
+	<Item Name="Enchant Bracer - Mastery" Id="74700" />
+	<Item Name="Enchant Bracer - Mighty Intellect" Id="68786" />
+	<Item Name="Enchant Bracer - Minor Agility" Id="38777" />
+	<Item Name="Enchant Bracer - Minor Dodge" Id="38768" />
+	<Item Name="Enchant Bracer - Minor Health" Id="38679" />
+	<Item Name="Enchant Bracer - Minor Spirit" Id="38774" />
+	<Item Name="Enchant Bracer - Minor Stamina" Id="38771" />
+	<Item Name="Enchant Bracer - Minor Strength" Id="38778" />
+	<Item Name="Enchant Bracer - Precision" Id="52766" />
+	<Item Name="Enchant Bracer - Restore Mana Prime" Id="38901" />
+	<Item Name="Enchant Bracer - Speed" Id="52746" />
+	<Item Name="Enchant Bracer - Spellpower" Id="38903" />
+	<Item Name="Enchant Bracer - Spirit" Id="38809" />
+	<Item Name="Enchant Bracer - Stamina" Id="38812" />
+	<Item Name="Enchant Bracer - Stats" Id="38898" />
+	<Item Name="Enchant Bracer - Strength" Id="38817" />
+	<Item Name="Enchant Bracer - Super Intellect" Id="74703" />
+	<Item Name="Enchant Bracer - Superior Dodge" Id="52763" />
+	<Item Name="Enchant Bracer - Superior Healing" Id="38900" />
+	<Item Name="Enchant Bracer - Superior Spellpower" Id="44470" />
+	<Item Name="Enchant Bracer - Superior Spirit" Id="38853" />
+	<Item Name="Enchant Bracer - Superior Stamina" Id="38855" />
+	<Item Name="Enchant Bracer - Superior Strength" Id="38854" />
+	<Item Name="Enchant Chest - Dodge" Id="38999" />
+	<Item Name="Enchant Chest - Exceptional Health" Id="38911" />
+	<Item Name="Enchant Chest - Exceptional Mana" Id="38912" />
+	<Item Name="Enchant Chest - Exceptional Resilience" Id="38975" />
+	<Item Name="Enchant Chest - Exceptional Spirit" Id="52765" />
+	<Item Name="Enchant Chest - Exceptional Stats" Id="38913" />
+	<Item Name="Enchant Chest - Glorious Stats" Id="74708" />
+	<Item Name="Enchant Chest - Greater Dodge" Id="39002" />
+	<Item Name="Enchant Chest - Greater Health" Id="38808" />
+	<Item Name="Enchant Chest - Greater Mana" Id="38818" />
+	<Item Name="Enchant Chest - Greater Mana Restoration" Id="38962" />
+	<Item Name="Enchant Chest - Greater Stamina" Id="52780" />
+	<Item Name="Enchant Chest - Greater Stats" Id="38865" />
+	<Item Name="Enchant Chest - Health" Id="38782" />
+	<Item Name="Enchant Chest - Lesser Absorption" Id="38798" />
+	<Item Name="Enchant Chest - Lesser Health" Id="38773" />
+	<Item Name="Enchant Chest - Lesser Mana" Id="38776" />
+	<Item Name="Enchant Chest - Lesser Stats" Id="38824" />
+	<Item Name="Enchant Chest - Major Health" Id="38866" />
+	<Item Name="Enchant Chest - Major Mana" Id="38867" />
+	<Item Name="Enchant Chest - Major Resilience" Id="38930" />
+	<Item Name="Enchant Chest - Major Spirit" Id="38928" />
+	<Item Name="Enchant Chest - Mana" Id="38799" />
+	<Item Name="Enchant Chest - Mighty Health" Id="38955" />
+	<Item Name="Enchant Chest - Mighty Resilience" Id="52758" />
+	<Item Name="Enchant Chest - Mighty Spirit" Id="74707" />
+	<Item Name="Enchant Chest - Mighty Stats" Id="52744" />
+	<Item Name="Enchant Chest - Minor Absorption" Id="38767" />
+	<Item Name="Enchant Chest - Minor Health" Id="38766" />
+	<Item Name="Enchant Chest - Minor Mana" Id="38769" />
+	<Item Name="Enchant Chest - Minor Stats" Id="38804" />
+	<Item Name="Enchant Chest - Peerless Stats" Id="52779" />
+	<Item Name="Enchant Chest - Powerful Stats" Id="44465" />
+	<Item Name="Enchant Chest - Restore Mana Prime" Id="38929" />
+	<Item Name="Enchant Chest - Stamina" Id="52751" />
+	<Item Name="Enchant Chest - Stats" Id="38847" />
+	<Item Name="Enchant Chest - Super Health" Id="39005" />
+	<Item Name="Enchant Chest - Super Resilience" Id="74706" />
+	<Item Name="Enchant Chest - Super Stats" Id="38989" />
+	<Item Name="Enchant Chest - Superior Health" Id="38833" />
+	<Item Name="Enchant Chest - Superior Mana" Id="38841" />
+	<Item Name="Enchant Chest - Superior Stamina" Id="74709" />
+	<Item Name="Enchant Cloak - Accuracy" Id="74710" />
+	<Item Name="Enchant Cloak - Critical Strike" Id="52764" />
+	<Item Name="Enchant Cloak - Defense" Id="38806" />
+	<Item Name="Enchant Cloak - Dodge" Id="38895" />
+	<Item Name="Enchant Cloak - Greater Agility" Id="38940" />
+	<Item Name="Enchant Cloak - Greater Critical Strike" Id="52777" />
+	<Item Name="Enchant Cloak - Greater Defense" Id="38825" />
+	<Item Name="Enchant Cloak - Greater Dodge" Id="39000" />
+	<Item Name="Enchant Cloak - Greater Intellect" Id="52773" />
+	<Item Name="Enchant Cloak - Greater Protection" Id="74711" />
+	<Item Name="Enchant Cloak - Greater Speed" Id="39003" />
+	<Item Name="Enchant Cloak - Intellect" Id="52753" />
+	<Item Name="Enchant Cloak - Lesser Agility" Id="38835" />
+	<Item Name="Enchant Cloak - Lesser Power" Id="52745" />
+	<Item Name="Enchant Cloak - Lesser Protection" Id="38790" />
+	<Item Name="Enchant Cloak - Major Agility" Id="44457" />
+	<Item Name="Enchant Cloak - Major Armor" Id="38914" />
+	<Item Name="Enchant Cloak - Mighty Stamina" Id="39001" />
+	<Item Name="Enchant Cloak - Minor Agility" Id="38789" />
+	<Item Name="Enchant Cloak - Minor Power" Id="38973" />
+	<Item Name="Enchant Cloak - Minor Protection" Id="38775" />
+	<Item Name="Enchant Cloak - Protection" Id="52767" />
+	<Item Name="Enchant Cloak - PvP Power" Id="38939" />
+	<Item Name="Enchant Cloak - Shadow Armor" Id="38993" />
+	<Item Name="Enchant Cloak - Speed" Id="44456" />
+	<Item Name="Enchant Cloak - Stealth" Id="38893" />
+	<Item Name="Enchant Cloak - Subtlety" Id="38894" />
+	<Item Name="Enchant Cloak - Superior Agility" Id="38959" />
+	<Item Name="Enchant Cloak - Superior Critical Strike" Id="74713" />
+	<Item Name="Enchant Cloak - Superior Defense" Id="38859" />
+	<Item Name="Enchant Cloak - Superior Dodge" Id="38978" />
+	<Item Name="Enchant Cloak - Superior Intellect" Id="74712" />
+	<Item Name="Enchant Cloak - Wisdom" Id="39004" />
+	<Item Name="Enchant Gloves - Advanced Herbalism" Id="38834" />
+	<Item Name="Enchant Gloves - Advanced Mining" Id="38831" />
+	<Item Name="Enchant Gloves - Agility" Id="38827" />
+	<Item Name="Enchant Gloves - Angler" Id="50816" />
+	<Item Name="Enchant Gloves - Armsman" Id="38990" />
+	<Item Name="Enchant Gloves - Assault" Id="38934" />
+	<Item Name="Enchant Gloves - Blasting" Id="38931" />
+	<Item Name="Enchant Gloves - Crusher" Id="44458" />
+	<Item Name="Enchant Gloves - Exceptional Spellpower" Id="38979" />
+	<Item Name="Enchant Gloves - Exceptional Strength" Id="52756" />
+	<Item Name="Enchant Gloves - Expertise" Id="38951" />
+	<Item Name="Enchant Gloves - Fire Power" Id="38888" />
+	<Item Name="Enchant Gloves - Fishing" Id="38802" />
+	<Item Name="Enchant Gloves - Frost Power" Id="38887" />
+	<Item Name="Enchant Gloves - Gatherer" Id="38960" />
+	<Item Name="Enchant Gloves - Greater Agility" Id="38856" />
+	<Item Name="Enchant Gloves - Greater Assault" Id="38964" />
+	<Item Name="Enchant Gloves - Greater Blasting" Id="38985" />
+	<Item Name="Enchant Gloves - Greater Expertise" Id="52759" />
+	<Item Name="Enchant Gloves - Greater Haste" Id="74719" />
+	<Item Name="Enchant Gloves - Greater Mastery" Id="52784" />
+	<Item Name="Enchant Gloves - Greater Strength" Id="38857" />
+	<Item Name="Enchant Gloves - Haste" Id="52749" />
+	<Item Name="Enchant Gloves - Healing Power" Id="38889" />
+	<Item Name="Enchant Gloves - Herbalism" Id="38801" />
+	<Item Name="Enchant Gloves - Major Agility" Id="38967" />
+	<Item Name="Enchant Gloves - Major Healing" Id="38936" />
+	<Item Name="Enchant Gloves - Major Spellpower" Id="38935" />
+	<Item Name="Enchant Gloves - Major Strength" Id="38933" />
+	<Item Name="Enchant Gloves - Mastery" Id="52687" />
+	<Item Name="Enchant Gloves - Mighty Strength" Id="52783" />
+	<Item Name="Enchant Gloves - Mining" Id="38800" />
+	<Item Name="Enchant Gloves - Minor Haste" Id="38851" />
+	<Item Name="Enchant Gloves - Precise Strikes" Id="38932" />
+	<Item Name="Enchant Gloves - Precision" Id="38953" />
+	<Item Name="Enchant Gloves - Riding Skill" Id="38850" />
+	<Item Name="Enchant Gloves - Shadow Power" Id="38886" />
+	<Item Name="Enchant Gloves - Skinning" Id="38823" />
+	<Item Name="Enchant Gloves - Strength" Id="38836" />
+	<Item Name="Enchant Gloves - Super Strength" Id="74721" />
+	<Item Name="Enchant Gloves - Superior Agility" Id="38890" />
+	<Item Name="Enchant Gloves - Superior Expertise" Id="74720" />
+	<Item Name="Enchant Gloves - Superior Mastery" Id="74722" />
+	<Item Name="Enchant Gloves - Threat" Id="38885" />
+	<Item Name="Enchant Off-Hand - Major Intellect" Id="74729" />
+	<Item Name="Enchant Off-Hand - Superior Intellect" Id="52768" />
+	<Item Name="Enchant Shield - Dodge" Id="38954" />
+	<Item Name="Enchant Shield - Greater Parry" Id="89737" />
+	<Item Name="Enchant Shield - Greater Spirit" Id="38839" />
+	<Item Name="Enchant Shield - Greater Stamina" Id="38861" />
+	<Item Name="Enchant Shield - Intellect" Id="38905" />
+	<Item Name="Enchant Shield - Lesser Dodge" Id="38904" />
+	<Item Name="Enchant Shield - Lesser Parry" Id="38820" />
+	<Item Name="Enchant Shield - Lesser Protection" Id="38791" />
+	<Item Name="Enchant Shield - Lesser Spirit" Id="38792" />
+	<Item Name="Enchant Shield - Lesser Stamina" Id="38805" />
+	<Item Name="Enchant Shield - Major Stamina" Id="38945" />
+	<Item Name="Enchant Shield - Mastery" Id="52762" />
+	<Item Name="Enchant Shield - Minor Stamina" Id="38787" />
+	<Item Name="Enchant Shield - Parry" Id="38906" />
+	<Item Name="Enchant Shield - Protection" Id="52754" />
+	<Item Name="Enchant Shield - Resilience" Id="38949" />
+	<Item Name="Enchant Shield - Spirit" Id="38816" />
+	<Item Name="Enchant Shield - Stamina" Id="38828" />
+	<Item Name="Enchant Shield - Vitality" Id="38860" />
+	<Item Name="Enchant Staff - Greater Spellpower" Id="45056" />
+	<Item Name="Enchant Staff - Spellpower" Id="45060" />
+	<Item Name="Enchant Weapon - Accuracy" Id="44497" />
+	<Item Name="Enchant Weapon - Agility" Id="38880" />
+	<Item Name="Enchant Weapon - Avalanche" Id="52748" />
+	<Item Name="Enchant Weapon - Battlemaster" Id="38927" />
+	<Item Name="Enchant Weapon - Berserking" Id="44493" />
+	<Item Name="Enchant Weapon - Black Magic" Id="43987" />
+	<Item Name="Enchant Weapon - Blade Ward" Id="46026" />
+	<Item Name="Enchant Weapon - Blood Draining" Id="46098" />
+	<Item Name="Enchant Weapon - Colossus" Id="74727" />
+	<Item Name="Enchant Weapon - Crusader" Id="38873" />
+	<Item Name="Enchant Weapon - Dancing Steel" Id="74726" />
+	<Item Name="Enchant Weapon - Deathfrost" Id="38998" />
+	<Item Name="Enchant Weapon - Demonslaying" Id="38840" />
+	<Item Name="Enchant Weapon - Elemental Force" Id="74725" />
+	<Item Name="Enchant Weapon - Elemental Slayer" Id="52755" />
+	<Item Name="Enchant Weapon - Exceptional Agility" Id="38995" />
+	<Item Name="Enchant Weapon - Exceptional Spellpower" Id="38991" />
+	<Item Name="Enchant Weapon - Exceptional Spirit" Id="38963" />
+	<Item Name="Enchant Weapon - Executioner" Id="38948" />
+	<Item Name="Enchant Weapon - Fiery Weapon" Id="38838" />
+	<Item Name="Enchant Weapon - Giant Slayer" Id="38988" />
+	<Item Name="Enchant Weapon - Greater Agility" Id="38947" />
+	<Item Name="Enchant Weapon - Greater Potency" Id="44453" />
+	<Item Name="Enchant Weapon - Greater Striking" Id="38848" />
+	<Item Name="Enchant Weapon - Healing Power" Id="38878" />
+	<Item Name="Enchant Weapon - Heartsong" Id="52761" />
+	<Item Name="Enchant Weapon - Hurricane" Id="52760" />
+	<Item Name="Enchant Weapon - Icebreaker" Id="38965" />
+	<Item Name="Enchant Weapon - Icy Chill" Id="38868" />
+	<Item Name="Enchant Weapon - Jade Spirit" Id="74724" />
+	<Item Name="Enchant Weapon - Landslide" Id="52776" />
+	<Item Name="Enchant Weapon - Lesser Beastslayer" Id="38813" />
+	<Item Name="Enchant Weapon - Lesser Elemental Slayer" Id="38814" />
+	<Item Name="Enchant Weapon - Lesser Striking" Id="38794" />
+	<Item Name="Enchant Weapon - Lifestealing" Id="38871" />
+	<Item Name="Enchant Weapon - Lifeward" Id="38972" />
+	<Item Name="Enchant Weapon - Major Healing" Id="38946" />
+	<Item Name="Enchant Weapon - Major Intellect" Id="38918" />
+	<Item Name="Enchant Weapon - Major Spellpower" Id="38921" />
+	<Item Name="Enchant Weapon - Major Striking" Id="38917" />
+	<Item Name="Enchant Weapon - Mending" Id="52747" />
+	<Item Name="Enchant Weapon - Mighty Intellect" Id="38884" />
+	<Item Name="Enchant Weapon - Mighty Spellpower" Id="44467" />
+	<Item Name="Enchant Weapon - Mighty Spirit" Id="38883" />
+	<Item Name="Enchant Weapon - Minor Beastslayer" Id="38779" />
+	<Item Name="Enchant Weapon - Minor Striking" Id="38780" />
+	<Item Name="Enchant Weapon - Mongoose" Id="38925" />
+	<Item Name="Enchant Weapon - Potency" Id="38920" />
+	<Item Name="Enchant Weapon - Power Torrent" Id="52774" />
+	<Item Name="Enchant Weapon - River's Song" Id="74728" />
+	<Item Name="Enchant Weapon - Soulfrost" Id="38924" />
+	<Item Name="Enchant Weapon - Spellpower" Id="38877" />
+	<Item Name="Enchant Weapon - Spellsurge" Id="38926" />
+	<Item Name="Enchant Weapon - Strength" Id="38879" />
+	<Item Name="Enchant Weapon - Striking" Id="38821" />
+	<Item Name="Enchant Weapon - Sunfire" Id="38923" />
+	<Item Name="Enchant Weapon - Superior Potency" Id="44466" />
+	<Item Name="Enchant Weapon - Superior Striking" Id="38870" />
+	<Item Name="Enchant Weapon - Titanguard" Id="44946" />
+	<Item Name="Enchant Weapon - Unholy Weapon" Id="38872" />
+	<Item Name="Enchant Weapon - Windsong" Id="74723" />
+	<Item Name="Enchant Weapon - Windwalk" Id="52775" />
+	<Item Name="Enchant Weapon - Winter's Might" Id="38876" />
+	<Item Name="Lesser Wizard Oil" Id="20746" />
+	<Item Name="Minor Wizard Oil" Id="20744" />
+	<Item Name="Superior Wizard Oil" Id="22522" />
+	<Item Name="Wizard Oil" Id="20750" />
+	<!-- MoP -->
+	<Item Name="Sha Crystal" Id="74248" />
+
+	<!-- Trade: Engineering Tools (alphabetical) -->
+	<Item Name="Arclight Spanner" Id="6219" />
+	<Item Name="Gyromatic Micro-Adjustor" Id="10498" />
+	<Item Name="Gnomish Army Knife" Id="40772" />
+
+	<!-- Trade: Engineering Items (alphabetical) -->
+	<Item Name="Blingtron 4000" Id="87214" />
+	<Item Name="Delicate Arcanite Converter" Id="16006" />
+	<Item Name="Dimensional Ripper - Area 52" Id="30542" />
+	<Item Name="Dimensional Ripper - Everlook" Id="18984" />
+	<Item Name="Electrified Ether" Id="67749" />
+	<Item Name="Electrostatic Condenser" Id="67494" />
+	<Item Name="Engineer's Ink" Id="10647" />
+	<Item Name="Field Repair Bot 110G" Id="34113" />
+	<Item Name="Field Repair Bot 74A" Id="18232" />
+	<Item Name="Goblin Barbecue" Id="60858" />
+	<Item Name="Goblin Jumper Cables XL" Id="18587" />
+	<Item Name="Goblin Jumper Cables" Id="7148" />
+	<Item Name="Heat-Treated Spinning Lure" Id="68049" />
+	<Item Name="Jeeves" Id="49040" />
+	<Item Name="MOLL-E" Id="40768" />
+	<Item Name="Scrapbot Construction Kit" Id="40769" />
+	<Item Name="Ultrasafe Transporter: Gadgetzan" Id="18986" />
+	<Item Name="Ultrasafe Transporter: Toshley's Station" Id="30544" />
+	<Item Name="Wormhole Generator: Northrend" Id="48933" />
+	<Item Name="Wormhole Generator: Pandaria" Id="87215" />
+	<Item Name="Zapthrottle Mote Extractor" Id="23821" />
+
+	<!-- Trade: Fishing Tools (alphabetical) -->
+	<Item Name="Arcanite Fishing Pole" Id="19970" />
+	<Item Name="Big Iron Fishing Pole" Id="6367" />
+	<Item Name="Bone Fishing Pole" Id="45991" />
+	<Item Name="Boots of the Bay" Id="50287" />
+	<Item Name="Captain Rumsey's Lager" Id="34832" />
+	<Item Name="Darkwood Fishing Pole" Id="6366" />
+	<Item Name="Dragon Fishing Pole" Id="84661" />
+	<Item Name="Fishing Chair" Id="33223" />
+	<Item Name="Fishing Pole" Id="6256" />
+	<Item Name="High Test Eternium Fishing Line" Id="19971" />
+	<Item Name="Jeweled Fishing Pole" Id="45992" />
+	<Item Name="Lucky Fishing Hat" Id="19972" />
+	<Item Name="Mastercraft Kalu'ak Fishing Pole" Id="44050" />
+	<Item Name="Nat Pagle's Extreme Anglin' Boots" Id="19969" />
+	<Item Name="Nat's Lucky Fishing Pole" Id="45858" />
+	<Item Name="Pandaren Fishing Pole" Id="84660" />
+	<Item Name="Seth's Graphite Fishing Pole" Id="25978" />
+	<Item Name="Sharpened Tuskarr Spear" Id="88535" />
+	<Item Name="Spun Truesilver Fishing Line" Id="34836" />
+	<Item Name="Strong Fishing Pole" Id="6365" />
+	<Item Name="Underbelly Elixir" Id="44012" />
+	<Item Name="Weather-Beaten Fishing Hat" Id="33820" />
+
+	<!-- Trade: Herbalist Tools (alphabetical) -->
+	<Item Name="Forager's Gloves" Id="86566" />
+	<Item Name="Herbalist's Spade" Id="85663" />
+
+	<!-- Trade: Inscription Tools (alphabetical) -->
+	<Item Name="Virtuoso Inking Set" Id="39505" />
+	<Item Name="Light Parchment" Id="39354" />
+	<Item Name="Rough Parchment" Id="34647" />
+
+	<Item Name="Ashen Pigment" Id="61979" />
+	<Item Name="Alabaster Pigment" Id="39151" />
+	<Item Name="Azure Pigment" Id="39343" />
+	<Item Name="Blackfallow Ink" Id="61978" />
+	<Item Name="Burnt Pigment" Id="43104" />
+	<Item Name="Celestial Ink" Id="43120" />
+	<Item Name="Darkflame Ink" Id="43125" />
+	<Item Name="Dawnstar Ink" Id="43117" />
+	<Item Name="Dusky Pigment" Id="39334" />
+	<Item Name="Ebon Pigment" Id="43108" />
+	<Item Name="Emerald Pigment" Id="39339" />
+	<Item Name="Ethereal Ink" Id="43124" />
+	<Item Name="Fiery Ink" Id="43121" />
+	<Item Name="Golden Pigment" Id="39338" />
+	<Item Name="Hunter's Ink" Id="43115" />
+	<Item Name="Icy Pigment" Id="43109" />
+	<Item Name="Indigo Pigment" Id="43105" />
+	<Item Name="Inferno Ink" Id="61981" />
+	<Item Name="Ink of Dreams" Id="79254" />
+	<Item Name="Ink of the Sea" Id="43126" />
+	<Item Name="Ink of the Sky" Id="43123" />
+	<Item Name="Ivory Ink" Id="37101" />
+	<Item Name="Jadefire Ink" Id="43118" />
+	<Item Name="Lion's Ink" Id="43116" />
+	<Item Name="Midnight Ink" Id="39774" />
+	<Item Name="Misty Pigment" Id="79253" />
+	<Item Name="Moonglow Ink" Id="39469" />
+	<Item Name="Nether Pigment" Id="39342" />
+	<Item Name="Royal Ink" Id="43119" />
+	<Item Name="Ruby Pigment" Id="43106" />
+	<Item Name="Sapphire Pigment" Id="43107" />
+	<Item Name="Shadow Pigment" Id="79251" />
+	<Item Name="Shimmering Ink" Id="43122" />
+	<Item Name="Silvery Pigment" Id="39341" />
+	<Item Name="Snowfall Ink" Id="43127" />
+	<Item Name="Starlight Ink" Id="79255" />
+	<Item Name="Verdant Pigment" Id="43103" />
+	<Item Name="Violet Pigment" Id="39340" />
+
+	<!-- Trade: Inscription Items (alphabetical) -->
+	<Item Name="Tome of the Clear Mind" Id="79249" />
+
+	<!-- Trade: Jewelcrafting Tools (alphabetical) -->
+	<Item Name="Jeweler's Kit" Id="20815" />
+
+	<!-- Trade: Leatherworking Tools (alphabetical) -->
+	<Item Name="Salt Shaker" Id="15846" />
+
+	<!-- Trade: Leatherworking Items (alphabetical) -->
+	<Item Name="Lucky Charm" Id="5373" />
+
+	<!-- Trade: Mining Tools  (also see Trade Tools: Multi-purpose) -->
+	<Item Name="Brann's Trusty Pick" Id="20723" />
+	<Item Name="Cold Iron Pick" Id="1959" />
+	<Item Name="Digmaster 5000" Id="9465" />
+	<Item Name="Kobold Excavation Pick" Id="778" />
+	<Item Name="Mining Pick" Id="2901" />
+	<Item Name="Tunnel Pick" Id="756" />
+	<Item Name="Mist-Piercing Goggles" Id="87213" />
+	<Item Name="Ancient Pandaren Mining Pick" Entry="85777" />
+
+	<!-- Trade: Mining Items (alphabetical) -->
+	<!-- Classic -->
+	<Item Name="Copper Bar" Id="2840" />
+	<Item Name="Tin Bar" Id="3576" />
+	<Item Name="Bronze Bar" Id="2841" />
+	<Item Name="Silver Bar" Id="2842" />
+	<Item Name="Iron Bar" Id="3575" />
+	<Item Name="Gold Bar" Id="3577" />
+	<Item Name="Steel Bar" Id="3859" />
+	<Item Name="Mithril Bar" Id="3860" />
+	<Item Name="Truesilver Bar" Id="6037" />
+	<Item Name="Thorium Bar" Id="12359" />
+	<Item Name="Dark Iron Bar" Id="11371" />
+	<Item Name="Enchanted Thorium Bar" Id="12655" />
+	<!-- Burning Crusade -->
+	<Item Name="Fel Iron Bar" Id="23445" />
+	<Item Name="Enchanted Elementium Bar" Id="17771" />
+	<Item Name="Adamantite Bar" Id="23446" />
+	<Item Name="Felsteel Bar" Id="23448" />
+	<!-- Lich King -->
+	<Item Name="Cobalt Bar" Id="36916" />
+	<Item Name="Khorium Bar" Id="23449" />
+	<Item Name="Hardened Khorium Bar" Id="35128" />
+	<Item Name="Hardened Adamantite Bar" Id="23573" />
+	<Item Name="Saronite Bar" Id="36913" />
+	<!-- Cataclysm -->
+	<Item Name="Obsidium Bar" Id="54849" />
+	<Item Name="Titanium Bar" Id="41163" />
+	<Item Name="Titansteel Bar" Id="37663" />
+	<Item Name="Elementium Bar" Id="52186" />
+	<Item Name="Hardened Elementium Bar" Id="53039" />
+	<Item Name="Pyrium Bar" Id="51950" />
+	<!-- Mists of Panderia -->
+	<Item Name="Trillium Bar" Id="72095" />
+	<Item Name="Ghost Iron Bar" Id="72096" />
+	<Item Name="Heavy Ghost Iron Bar" Id="80432" />
+
+	<!-- Trade: Multi-purpose Tools [Blacksmith/Mining/Skinning] Tools (alphabetical) -->
+	<Item Name="Bladed Pickaxe" Id="40893" />
+	<Item Name="Hammer Pick" Id="40892" />
+
+	<!-- Trade: Skinning Tools (also see Trade Tools: Multi-purpose) -->
+	<Item Name="Finkle's Skinner" Id="12709" />
+	<Item Name="Skinning Knife" Id="7005" />
+
+	<!-- Trade: Tailoring Items (alphabetical) -->
+	<!-- Classic -->
+	<Item Name="Bolt of Linen Cloth" Id="2996" />
+	<Item Name="Bolt of Woolen Cloth" Id="2997" />
+	<Item Name="Bolt of Silk Cloth" Id="4305" />
+	<Item Name="Bolt of Mageweave" Id="4339" />
+	<Item Name="Bolt of Runecloth" Id="14048" />
+	<!-- Burning Crusade -->
+	<Item Name="Bolt of Netherweave" Id="21840" />
+	<Item Name="Bolt of Imbued Netherweave" Id="21842" />
+	<Item Name="Bolt of Soulcloth" Id="21844" />
+	<!-- Lich King -->
+	<Item Name="Bolt of Frostweave" Id="41510" />
+	<Item Name="Bolt of Imbued Frostweave" Id="41511" />
+	<!-- Cataclysm -->
+	<Item Name="Bolt of Embersilk Cloth" Id="53643" />
+	<!-- Mists of Panderia -->
+	<Item Name="Bolt of Windwool Cloth" Id="82441" />
+
+
+	<!-- ========== Valuable (farmed) MiniPets (alphabetical) ========== -->
+	<Item Name="Azure Whelpling" Id="34535" />
+	<Item Name="Baneling" Id="90177" />
+	<Item Name="Captured Firefly" Id="29960" />
+	<Item Name="Cat Carrier (Black Tabby)" Id="8491" />
+	<Item Name="Cat Carrier (Siamese)" Id="8490" />
+	<Item Name="Cat Carrier (White Kitten)" Id="8489" />
+	<Item Name="Chi-ji Kite" Id="89368" />
+	<Item Name="Cracked Egg" Id="39883" />
+	<Item Name="Dark Whelpling" Id="10822" />
+	<Item Name="Darkmoon Rabbit" Id="80008" />
+	<Item Name="Darting Hatchling" Id="48112" />
+	<Item Name="Deviate Hatchling" Id="48114" />
+	<Item Name="Disgusting Oozeling" Id="20769" />
+	<Item Name="Feral Vermling" Id="85578" />
+	<Item Name="Fishy" Id="84105" />
+	<Item Name="Fox Kit" Id="90897" />
+	<Item Name="Fox Kit" Id="90898" />
+	<Item Name="Hollow Reed" Id="86563" />
+	<Item Name="Hopling" Id="86562" />
+	<Item Name="Imbued Jade Fragment" Id="86564" />
+	<Item Name="Jade Crane Chick" Id="88148" />
+	<Item Name="Jade Owl" Id="82774" />
+	<Item Name="Jade Tentacle" Id="89686" />
+	<Item Name="Leaping Hatchling" Id="48118" />
+	<Item Name="Lucky Quilen Cub" Id="85871" />
+	<Item Name="Mechanical Pandaren Dragonling" Id="87526" />
+	<Item Name="Mysterious Egg" Id="39878" />
+	<Item Name="Pandaren Water Spirit" Id="90173" />
+	<Item Name="Parrot Cage (Green Wing Macaw)" Id="8492" />
+	<Item Name="Parrot Cage (Hyacinth Macaw)" Id="8494" />
+	<Item Name="Porcupette" Id="89587" />
+	<Item Name="Ravasaur Hatchling" Id="48122" />
+	<Item Name="Razormaw Hatchling" Id="48124" />
+	<Item Name="Razzashi Hatchling" Id="48126" />
+	<Item Name="Red Cricket" Id="85222" />
+	<Item Name="Sapphire Cub" Id="82775" />
+	<Item Name="Singing Cricket Cage" Id="88147" />
+	<Item Name="Spectral Tiger Cub" Id="90953" />
+	<Item Name="Terrible Turnip" Id="85220" />
+	<Item Name="Thundering Serpent Hatchling" Id="85513" />
+	<Item Name="Tiny Crimson Whelpling" Id="8499" />
+	<Item Name="Tiny Goldfish" Id="85447" />
+	<Item Name="Venus" Id="89736" />
+	<Item Name="Yu'lon Kite" Id="89367" />
+	
+	<!-- ========== Valuable (farmed) Mounts (alphabetical) ========== -->	
+	<Item Name="Cracked Primal Egg" Id="94296" />
+	<Item Name="Primal Egg" Id="94295" />
+
+</ProtectedItems>

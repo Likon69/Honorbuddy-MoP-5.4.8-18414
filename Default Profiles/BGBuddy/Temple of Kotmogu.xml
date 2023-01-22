@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<PvpProfile>
+  <Name>Temple of Kotmogu</Name>
+
+  <StartLocation X="1780.244" Y="1591.458" Z="32.28436" Side="Horde" />
+  <StartLocation X="1784.385" Y="1084.504" Z="27.0073" Side="Alliance" />
+
+  <Blackspots>
+    <!-- Rock -->
+    <Blackspot X="1850.836" Y="1210.905" Z="13.83446" Radius="2.702427" />
+  </Blackspots>
+</PvpProfile>

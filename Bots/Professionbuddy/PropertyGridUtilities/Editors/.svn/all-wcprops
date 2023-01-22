@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/686/trunk/Professionbuddy/PropertyGridUtilities/Editors
+END
+EntryEditor.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/686/trunk/Professionbuddy/PropertyGridUtilities/Editors/EntryEditor.cs
+END
+GoldEditor.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/686/trunk/Professionbuddy/PropertyGridUtilities/Editors/GoldEditor.cs
+END
+LocationEditor.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/686/trunk/Professionbuddy/PropertyGridUtilities/Editors/LocationEditor.cs
+END
+FileLocationEditor.cs
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/686/trunk/Professionbuddy/PropertyGridUtilities/Editors/FileLocationEditor.cs
+END

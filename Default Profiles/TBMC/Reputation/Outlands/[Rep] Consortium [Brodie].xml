@@ -1,0 +1,237 @@
+<HBProfile>
+
+	<Name>Consortium Rep Grind ($Rev$)</Name>
+	<MinLevel>70</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.1</MinDurability>
+	<MinFreeBagSlots>1</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="10262" Name="A Heap of Ethereals" >
+	<Objective Type="CollectItem" ItemId="29209" CollectCount="10" >
+		<CollectFrom>
+			<Mob Name="Warp-Raider Nesaad" Id="19641" />
+			<Mob Name="Nexus Raider" Id="18875" />
+			<Mob Name="Nexus Stalker" Id="19642" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="2636.968" Y="3747.119" Z="144.3603" />
+			<Hotspot X="2645.297" Y="3820.928" Z="138.3902" />
+			<Hotspot X="2545.19" Y="3793.138" Z="141.6344" />
+			<Hotspot X="2513.152" Y="3860.966" Z="133.1966" />
+			<Hotspot X="2573.673" Y="3918.103" Z="135.6816" />
+			<Hotspot X="2492.725" Y="3929.007" Z="123.9556" />
+			<Hotspot X="2485.928" Y="4021.46" Z="130.7932" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<CustomBehavior File="Message" Text="Beginning Consortium Reputation Grind" LogColor="Green" />
+
+	<CustomBehavior File="UserSettings" KillBetweenHotspots="False" />
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Shattrath -->
+		<If Condition="Me.IsAlliance" >
+			<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<UseMount Value="False" />
+			<CustomBehavior File="InteractWith" MobId="215120" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<UseMount Value="False" />
+			<CustomBehavior File="InteractWith" MobId="215113" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1732.343" Y="881.7467" Z="487.0864" />
+		</If>
+		<UseMount Value="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+		</If>
+	</If>
+	
+	<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="-3997.277" Y="-4723.235" Z="4.2373507" />
+			<CustomBehavior File="UseTransport" TransportId="176231"
+				WaitAtX="-3997.277" WaitAtY="-4723.235" WaitAtZ="4.2373507" 
+				TransportStartX="-4016.39" TransportStartY="-4740.588" TransportStartZ="0.03803937"
+				TransportEndX="-3872.35" TransportEndY="-639.944" TransportEndZ="-0.02619897"
+				StandOnX="-4009.505" StandOnY="-4738.07" StandOnZ="6.021125"
+				GetOffX="-3861.013" GetOffY="-656.758" GetOffZ="5.279493" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="1773.506" Y="-4327.022" Z="-8.118139" />
+			<CustomBehavior File="InteractWith" MobId="195142" NonCompeteDistance="0" WaitTime="5000" X="1773.506" Y="-4327.022" Z="-8.118139" />
+		</If>
+	</If>
+
+	<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.IsAlliance" >
+			<If Condition="Me.ZoneId == 1519" >
+				<CustomBehavior File="InteractWith" MobId="195141" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+					X="-9005.213" Y="868.702" Z="129.6925" />
+			</If>
+			<CustomBehavior File="FlyTo" X="-11899.66" Y="-3208.164" Z="-14.73684" />
+			<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+			<CustomBehavior File="WaitTimer" WaitTime="10000" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="-11899.66" Y="-3208.164" Z="-14.73684" />
+			<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+			<CustomBehavior File="WaitTimer" WaitTime="10000" />
+		</If>
+	</If>
+
+	<While Condition="Me.GetReputationLevelWith(933) &lt; WoWUnitReaction.Exalted" >
+		
+		<If Condition="HasQuest(10263)" >
+			<TurnIn Nav="Fly" QuestName="Assisting the Consortium" QuestId="10263" TurnInName="Nether-Stalker Khay'ji" TurnInId="19880" />
+		</If>
+		<If Condition="HasQuest(10264)" >
+			<TurnIn Nav="Fly" QuestName="Assisting the Consortium" QuestId="10264" TurnInName="Nether-Stalker Khay'ji" TurnInId="19880" />
+		</If>
+		
+		<If Condition="!HasQuest(10265) &amp;&amp; !IsQuestCompleted(10265)" >
+			<PickUp Nav="Fly" QuestName="Consortium Crystal Collection" QuestId="10265" GiverName="Nether-Stalker Khayji" GiverId="19880" />
+		</If>
+		<If Condition="HasQuest(10265) &amp;&amp; !IsQuestCompleted(10265)" >
+			<Objective Nav="Fly" QuestName="Consortium Crystal Collection" QuestId="10265" Type="CollectItem" ItemId="28829" CollectCount="1" />
+		</If>
+		<If Condition="HasQuest(10265) &amp;&amp; IsQuestCompleted(10265)" >
+			<TurnIn Nav="Fly" QuestName="Consortium Crystal Collection" QuestId="10265" TurnInName="Nether-Stalker Khayji" TurnInId="19880" />
+		</If>
+		
+		<If Condition="!HasQuest(10262) &amp;&amp; !IsQuestCompleted(10262)" >
+			<PickUp Nav="Fly" QuestName="A Heap of Ethereals" QuestId="10262" GiverName="Nether-Stalker Khay'ji" GiverId="19880" />
+		</If>
+
+		<If Condition="HasQuest(10262) &amp;&amp; !IsQuestCompleted(10262)" >
+			<CustomBehavior File="FlyTo" TerminateWhen="Unit(18875, u =&gt; u.Distance &lt; 20) != null || Unit(19642, u =&gt; u.Distance &lt; 20) != null"
+				X="2686.132" Y="3733.628" Z="143.8752" />
+			<Objective Nav="Fly" QuestName="A Heap of Ethereals" QuestId="10262" Type="CollectItem" ItemId="29209" CollectCount="10" />
+		</If>
+		
+		<If Condition="HasQuest(10262) &amp;&amp; IsQuestCompleted(10262)" >
+			<TurnIn Nav="Fly" QuestName="A Heap of Ethereals" QuestId="10262" TurnInName="Nether-Stalker Khay'ji" TurnInId="19880" />
+		</If>
+		
+		<If Condition="!HasQuest(10205) &amp;&amp; !IsQuestCompleted(10205)" >
+			<PickUp Nav="Fly" QuestName="Warp-Raider Nesaad" QuestId="10205" GiverName="Nether-Stalker Khayji" GiverId="19880" />
+		</If>
+
+		<If Condition="HasQuest(10205) &amp;&amp; !IsQuestCompleted(10205)" >
+			<CustomBehavior File="FlyTo" X="2497.712" Y="3907.362" Z="128.6241" />
+			<Objective Nav="Fly" QuestName="Warp-Raider Nesaad" QuestId="10205" Type="KillMob" MobId="19641" KillCount="1" X="2497.712" Y="3907.362" Z="128.6241" />
+		</If>
+		
+		<If Condition="HasQuest(10205) &amp;&amp; IsQuestCompleted(10205)" >
+			<TurnIn Nav="Fly" QuestName="Warp-Raider Nesaad" QuestId="10205" TurnInName="Nether-Stalker Khayji" TurnInId="19880" />
+		</If>
+		
+		<If Condition="!HasQuest(10266) &amp;&amp; !IsQuestCompleted(10266)" >
+			<PickUp Nav="Fly" QuestName="Request for Assistance" QuestId="10266" GiverName="Nether-Stalker Khayji" GiverId="19880" />
+		</If>
+		
+
+		<While Condition="GetItemCount(29209) &gt;= 10 &amp;&amp; Unit(19880, u =&gt; u.IsAlive) != null" >
+			<CustomBehavior File="InteractWith" MobId="19880" MobState="Alive" NonCompeteDistance="0"
+				WaitTime="1000" X="3069.964" Y="3674.858" Z="142.3458" />
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</While>
+
+		<CustomBehavior File="UserSettings" KillBetweenHotspots="True" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Unit(18875, u =&gt; u.Distance &lt; 20) != null || Unit(19642, u =&gt; u.Distance &lt; 20) != null"
+			X="2686.132" Y="3733.628" Z="143.8752" />
+		<SetGrindArea>
+				<GrindArea>
+
+				<TargetMinLevel>60</TargetMinLevel>
+				<TargetMaxLevel>80</TargetMaxLevel>
+
+				<Factions>16</Factions>
+
+				<Hotspots>
+					<Hotspot X="2636.968" Y="3747.119" Z="144.3603" />
+					<Hotspot X="2645.297" Y="3820.928" Z="138.3902" />
+					<Hotspot X="2545.19" Y="3793.138" Z="141.6344" />
+					<Hotspot X="2513.152" Y="3860.966" Z="133.1966" />
+					<Hotspot X="2573.673" Y="3918.103" Z="135.6816" />
+					<Hotspot X="2492.725" Y="3929.007" Z="123.9556" />
+					<Hotspot X="2485.928" Y="4021.46" Z="130.7932" />
+				</Hotspots>
+
+				</GrindArea>
+			</SetGrindArea>
+			<GrindTo Condition="Me.GetReputationLevelWith(933) &gt;= WoWUnitReaction.Exalted ||
+							GetItemCount(29209) &gt;= 30 || Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3"
+				GoalText="Farming Ethereals for Zaxxis Insignias" />
+				
+		<CustomBehavior File="UserSettings" KillBetweenHotspots="False" />
+		
+		<If Condition="Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3" >
+			<CustomBehavior File="ForceSetVendor" DoRepair="True" DoSell="True" />
+		</If>
+
+		<While Condition="GetItemCount(29209) &gt;= 10" >
+			<CustomBehavior File="InteractWith" MobId="19880" MobState="Alive" NonCompeteDistance="0"
+				WaitTime="1000" X="3069.964" Y="3674.858" Z="142.3458" />
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</While>
+	</While>
+	
+	<CustomBehavior File="Message" Text="Congratulations on reaching exalted with The Consortium" LogColor="Orange" />
+		
+</QuestOrder>
+</HBProfile>

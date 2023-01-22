@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!-- This schema was originally created by HighVoltz but he admits to stealing some of the dox from the wiki -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:include schemaLocation="HBProfileSchema.xsd" />
+
+    <!--============== Redefinition of Types ==============-->
+
+    <xs:redefine schemaLocation="HBProfileSchema.xsd">
+        <xs:complexType name="subProfileType">
+            <xs:complexContent>
+                <xs:extension base="subProfileType">
+                    <xs:choice minOccurs="0" maxOccurs="unbounded">
+                        <xs:element ref="Quest" />
+                        <xs:element name="QuestOrder" type="questOrderType" minOccurs="1" maxOccurs="1" />
+                    </xs:choice>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:redefine>
+
+    <!--============== Definition of simple Types ==============-->
+
+    <xs:simpleType name="objectiveTypeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="TurnIn" />
+            <xs:enumeration value="CollectItem" />
+            <xs:enumeration value="KillMob" />
+            <xs:enumeration value="UseObject" />
+
+            <!-- these are aliases for the above enumerations but nobody uses them and there is no reason to.
+            <xs:enumeration value="HandIn" />
+            <xs:enumeration value="Grind" />
+            <xs:enumeration value="Kill" />
+            <xs:enumeration value="Slay" />
+            <xs:enumeration value="SlayMob" />
+            <xs:enumeration value="Use" />-->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============== Definition of complex Types ==============-->
+
+    <xs:complexType name="flowControlType">
+        <xs:complexContent>
+            <xs:extension base="questOrderBaseType">
+                <xs:attribute ref="Condition" use="required" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="gameObjectType">
+        <xs:annotation>
+            <xs:documentation>Identifies a game object needed to complete an objective</xs:documentation>
+        </xs:annotation>
+        <xs:attribute ref="Nav" />
+        <xs:attribute name="Name" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The name of the game object</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Id" type="xs:positiveInteger" use="required">
+            <xs:annotation>
+                <xs:documentation>The Id of the game object</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="mobObjectiveType">
+        <xs:annotation>
+            <xs:documentation>Identifies a mob needed to complete an objective</xs:documentation>
+        </xs:annotation>
+        <xs:attribute ref="Nav" />
+        <xs:attribute name="Name" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The name of the mob</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Id" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>The Id of the mob (Either this or 'Entry' attrib is required)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Entry" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>The Id of the mob (Alias for Id)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="objectiveMetaType">
+        <xs:annotation>
+            <xs:documentation>Used to describe an objective within a "Quest Override" section of a profile</xs:documentation>
+        </xs:annotation>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="TargetMinLevel" type="xs:positiveInteger" maxOccurs="1" />
+            <xs:element name="TargetMaxLevel" type="xs:positiveInteger" maxOccurs="1" />
+            <xs:element ref="CollectFrom" maxOccurs="1" />
+            <xs:element name="TurnIn" type="turninObjectiveType" maxOccurs="1" />
+            <xs:element ref="Hotspots" minOccurs="1" maxOccurs="1" />
+        </xs:choice>
+        <xs:attribute name="CollectCount" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>
+                    (required for Type="CollectItem")
+                    Identifies the number of the item to acquire.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ItemId" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>
+                    (required for Type="CollectItem")
+                    Identifies the item that needs to be acquired in order to achieve the quest goal.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="KillCount" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>
+                    (required for Type="KillMob")
+                    Identifies the number of dispatches required
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="MobId" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>
+                    (required for Type="KillMob")
+                    Identifies the mob that needs to be dispatched in order to achieve the quest goal.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Name" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The human-readable name of the objective. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ObjectId" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>
+                    (required for Type="UseObject")
+                    Identifies the item that needs to be used in order to achieve the quest goal.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Type " type="objectiveTypeType" use="required" />
+        <xs:attribute name="UseCount" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>
+                    (required for Type="UseObject")
+                    Represents the number of times the item needs to be used.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="objectiveType">
+        <xs:annotation>
+            <xs:documentation>Used to fulfill an objective within a "Quest Override" section of a profile</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="CollectCount" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>
+                    (required for Type="CollectItem")
+                    Identifies the number of the item to acquire.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ItemId" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>
+                    (required for Type="CollectItem")
+                    Identifies the item that needs to be acquired in order to achieve the quest goal.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="KillCount" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>
+                    (required for Type="KillMob")
+                    Identifies the number of dispatches required
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="MobId" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>
+                    (required for Type="KillMob")
+                    Identifies the mob that needs to be dispatched in order to achieve the quest goal.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ObjectId" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>
+                    (required for Type="UseObject")
+                    Identifies the item that needs to be used in order to achieve the quest goal.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute ref="QuestId" use="required" />
+        <xs:attribute ref="QuestName" />
+        <xs:attribute name="Type " type="objectiveTypeType" use="required" />
+        <xs:attribute name="UseCount" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>
+                    (required for Type="UseObject")
+                    Represents the number of times the item needs to be used.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="questOrderBaseType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="CustomBehavior" />
+            <xs:element name="If" type="flowControlType" />
+            <xs:element ref="PickUp" />
+            <xs:element ref="RunTo" />
+            <xs:element ref="TurnIn" />
+            <xs:element name="While" type="flowControlType" />
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="questOrderType">
+        <xs:complexContent>
+            <xs:extension base="questOrderBaseType">
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:element name="CheckPoint">
+                        <xs:complexType>
+                            <xs:attribute name="Level" type="positiveFloatType" use="required">
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        The level at which the toon should be, before starting this point in the QuestOrder.
+                                        The Level attribute may be fractional (i.e., Level="32.75" is acceptable)
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:attribute>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:choice>
+                <xs:attribute name="IgnoreCheckPoints" type="booleanType" default="False">
+                    <xs:annotation>
+                        <xs:documentation>
+                            The attribute is an easy way for end users to convert Profiles written using checkpoints
+                            into a Profile a max-level toon may use to progress towards achievements.
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="turninObjectiveType">
+        <xs:annotation>
+            <xs:documentation>Specifies the quest turnin location</xs:documentation>
+        </xs:annotation>
+        <xs:attribute ref="Nav" />
+        <xs:attributeGroup ref="coord3dGroup_required" />
+    </xs:complexType>
+
+    <xs:complexType name="vendorObjectiveType">
+        <xs:annotation>
+            <xs:documentation>Sets the turnin location for given quest</xs:documentation>
+        </xs:annotation>
+        <xs:attribute ref="Nav" />
+        <xs:attribute name="Name" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The name of the quest turnin NPC</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Id" type="xs:positiveInteger" use="required">
+            <xs:annotation>
+                <xs:documentation>The Id of the quest turnin NPC</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <!--============== Definition of Attributes ==============-->
+
+    <xs:attribute name="Condition">
+        <xs:annotation>
+            <xs:documentation>Sets the conditon requirement in CSharp</xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+
+    <xs:attribute name="QuestId" type="xs:unsignedInt">
+        <xs:annotation>
+            <xs:documentation>Quest Id</xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+
+    <xs:attribute name="QuestName" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>The name of a quest</xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+
+    <!--============== Definition of Elements ==============-->
+
+    <xs:element name="CollectFrom">
+        <xs:annotation>
+            <xs:documentation>Used to describe an objective within a "Quest Override" section of a profile</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Mob" type="mobObjectiveType" />
+                <xs:element name="GameObject" type="gameObjectType" />
+                <xs:element name="Vendor" type="vendorObjectiveType" />
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CustomBehavior">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="Hotspot" />
+                <xs:element name="HuntingGrounds">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="Hotspot" />
+                        </xs:sequence>
+                        <xs:attribute name="WaypointVisitStrategy" type="xs:string" use="optional" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+            <xs:attribute name="AllowBotStop" type="xs:string" use="optional" />
+            <xs:attribute name="AttackButton" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="BuyItemId" type="xs:unsignedInt" use="optional" />
+            <xs:attribute name="CollectionDistance" type="xs:unsignedShort" use="optional" />
+            <xs:attribute name="CollectItemCount" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="CollectItemId" type="xs:unsignedShort" use="optional" />
+            <xs:attribute name="CollectUntil" type="xs:string" use="optional" />
+            <xs:attribute name="DestName" type="xs:string" use="optional" />
+            <xs:attribute name="DoRepair" type="xs:string" use="optional" />
+            <xs:attribute name="DoMail" type="xs:string" use="optional" />
+            <xs:attribute name="DoSell" type="xs:string" use="optional" />
+            <xs:attribute name="File" type="xs:string" use="required" />
+            <xs:attribute name="GoalText" type="xs:string" use="optional" />
+            <xs:attribute name="GossipOptions" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="GroundMountFarmingMode" type="booleanType" use="optional" />
+            <xs:attribute name="HuntingGroundRadius" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="Ids" type="xs:unsignedShort" use="optional" />
+            <xs:attribute name="IgnoreMobsInBlackspots" type="xs:string" use="optional" />
+            <xs:attribute name="InteractByUsingItemId" type="xs:unsignedShort" use="optional" />
+            <xs:attribute name="KillBetweenHotspots" type="booleanType" use="optional" />
+            <xs:attribute name="LogColor" type="xs:string" use="optional" />
+            <xs:attribute name="Lua" type="xs:string" use="optional" />
+            <xs:attribute name="Macro" type="xs:string" use="optional" />
+            <xs:attribute name="MaxRange" type="xs:unsignedShort" use="optional" />
+            <xs:attribute name="MaxRangeToUseItem" type="xs:unsignedShort" use="optional" />
+            <xs:attribute name="MinRange" type="xs:unsignedShort" use="optional" />
+            <xs:attribute name="MobId" type="xs:unsignedInt" use="optional" />
+            <xs:attribute name="MobId1" type="xs:unsignedInt" use="optional" />
+            <xs:attribute name="MobId2" type="xs:unsignedInt" use="optional" />
+            <xs:attribute name="MobId3" type="xs:unsignedInt" use="optional" />
+            <xs:attribute name="MobId4" type="xs:unsignedInt" use="optional" />
+            <xs:attribute name="MobId5" type="xs:unsignedInt" use="optional" />
+            <xs:attribute name="MobId6" type="xs:unsignedInt" use="optional" />
+            <xs:attribute name="MobIds" type="xs:string" use="optional" />
+            <xs:attribute name="MobState" type="xs:string" use="optional" />
+            <xs:attribute name="NonCompeteDistance" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="NumOfTimes" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="ObjectId" type="xs:unsignedInt" use="optional" />
+            <xs:attribute name="ObjectType" type="xs:string" use="optional" />
+            <xs:attribute name="PreInteractMountStrategy" type="xs:string" use="optional" />
+            <xs:attribute ref="QuestId" use="optional" />
+            <xs:attribute name="QuestObjectiveIndex" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="Range" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="SoundCue" type="xs:string" use="optional" />
+            <xs:attribute name="SoundCueInterval" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="Text" type="xs:string" use="optional" />
+            <xs:attribute name="Type" type="xs:string" use="optional" />
+            <xs:attribute name="UseType" type="xs:string" use="optional" />
+            <xs:attribute name="UseWhenMobHasHealthPercent" type="xs:unsignedByte" use="optional" />
+            <xs:attribute name="VehicleMountId" type="xs:unsignedShort" use="optional" />
+            <xs:attribute name="WaitForNpcs" type="xs:string" use="optional" />
+            <xs:attribute name="WaitTime" type="xs:unsignedInt" use="optional" />
+            <xs:attribute name="X" type="xs:decimal" use="optional" />
+            <xs:attribute name="Y" type="xs:decimal" use="optional" />
+            <xs:attribute name="Z" type="xs:decimal" use="optional" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="MoveTo" substitutionGroup="RunTo" />
+    
+    <xs:element name="PickUp">
+        <xs:complexType>
+            <xs:attribute name="GiverId" type="xs:unsignedInt" use="required">
+                <xs:annotation>
+                    <xs:documentation>The Id of the quest giver NPC</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="GiverName" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>The name of the quest giver NPC</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute ref="Nav" />
+            <xs:attribute ref="QuestName" use="required" />
+            <xs:attribute ref="QuestId" use="required" />
+            <xs:attributeGroup ref="coord3dGroup_required" />
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="Quest">
+        <xs:annotation>
+            <xs:documentation>Describes the steps needed to complete a quest</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Objective" type="objectiveMetaType" maxOccurs="1" />
+                <xs:element name="TurnIn" type="turninObjectiveType" maxOccurs="1" />
+                <!-- alias for TurnIn that nobody uses and theres no reason to!. Commented out so nobody finds out about this tag via intelli-sense! 
+                <xs:element name="HandIn" type="turninObjectiveType"  maxOccurs="1" />-->
+            </xs:choice>
+            <xs:attribute name="Id" type="xs:positiveInteger" use="required">
+                <xs:annotation>
+                    <xs:documentation>(Required) The quest Id</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Name" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The human-readable name of the quest. </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="RunTo">
+        <xs:annotation>
+            <xs:documentation>Move bot to destination.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="DestName" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The human-readable name of the area to run to</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute ref="QuestId" />
+            <xs:attribute ref="Nav" />
+            <xs:attributeGroup ref="coord3dGroup_required" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="TurnIn">
+        <xs:complexType>
+            <xs:attribute name="TurnInName" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>The name of the quest turnin NPC</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+
+            <xs:attribute name="TurnInId" type="xs:unsignedInt" use="required">
+                <xs:annotation>
+                    <xs:documentation>The Id of the quest turnin NPC</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute ref="Nav" />
+            <xs:attribute ref="QuestName" use="required" />
+            <xs:attribute ref="QuestId" use="required" />
+            <xs:attributeGroup ref="coord3dGroup_required" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

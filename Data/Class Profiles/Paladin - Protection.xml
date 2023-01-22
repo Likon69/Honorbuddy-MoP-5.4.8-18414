@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassProfile Class="Paladin" Specialization="2" Name="Paladin - Protection">
+	<TalentTree>
+		<Talent Tier="1" Index="1" Name="Speed of Light" />
+		<Talent Tier="2" Index="1" Name="Fist of Justice" />
+		<Talent Tier="3" Index="2" Name="Eternal Flame" />
+		<Talent Tier="4" Index="3" Name="Clemency" />
+		<Talent Tier="5" Index="2" Name="Sanctified Wrath" />
+		<Talent Tier="6" Index="1" Name="Holy Prism" />
+	</TalentTree>
+	<WeightSet>
+		<DamagePerSecond>22</DamagePerSecond>
+		<Strength>20</Strength>
+		<Stamina>20</Stamina>
+		<Hit>18</Hit>
+		<Expertise>17</Expertise>
+		<Haste>16</Haste>
+		<Mastery>14</Mastery>
+		<Dodge>12</Dodge>
+		<Parry>12</Parry>
+		<CriticalStrike>10</CriticalStrike>
+		<AttackPower>5</AttackPower>
+		<Armor>0.01</Armor>
+	</WeightSet>
+</ClassProfile>

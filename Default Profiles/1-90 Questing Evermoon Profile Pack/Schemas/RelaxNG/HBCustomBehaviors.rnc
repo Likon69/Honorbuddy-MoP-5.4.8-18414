@@ -1,0 +1,322 @@
+# =====
+# Original contribution by chinajade
+#   $Rev: 3207 $
+#   $Date: 2014-04-23 06:16:30 -0300 (qua, 23 abr 2014) $
+#
+# WARNING: DO NOT EDIT .xsd files.
+#   They are not authoritative and will be overwritten!
+#   Instead, regenerate the .xsd files from the .rnc 'sources'.
+#   Its a one-line command to do this. Please see README.txt
+#   for more information.
+# =====
+
+# CustomBehavior schema is implemented via co-occurrence constraints.
+#
+# While co-occurrence constraints provide powerful capabilities, they
+# unfortunately don't survive conversion to DTDs or W3C XML
+# Schema. RELAX NG has fewer restrictions on the XML structures it can
+# describe than either of those, as you'll see this in Chapter
+# 16. RELAX NG's co-occurrence constraints can't be expressed with W3C
+# XML Schema, because this type of schema isn't "deterministic." Some
+# co-occurrence constraints can be expressed in W3C XML Schema using
+# either xsi:type when possible or xs:key as a tricky hack
+
+
+# ********** CUSTOMBEHAVIOR EXTENSIONS **********
+Attributes-AuraIdN =
+  attribute AuraId { HBType-Id }?,
+  attribute AuraId2 { HBType-Id }?,
+  attribute AuraId3 { HBType-Id }?,
+  attribute AuraId4 { HBType-Id }?,
+  attribute AuraId5 { HBType-Id }?,
+  attribute AuraId6 { HBType-Id }?,
+  attribute AuraId7 { HBType-Id }?,
+  attribute AuraId8 { HBType-Id }?,
+  attribute AuraId9 { HBType-Id }?
+
+  
+Attributes-AuraIdMissingFromMobN =
+  attribute AuraIdMissingFromMob { HBType-Id }?,
+  attribute AuraIdMissingFromMob2 { HBType-Id }?,
+  attribute AuraIdMissingFromMob3 { HBType-Id }?,
+  attribute AuraIdMissingFromMob4 { HBType-Id }?,
+  attribute AuraIdMissingFromMob5 { HBType-Id }?,
+  attribute AuraIdMissingFromMob6 { HBType-Id }?,
+  attribute AuraIdMissingFromMob7 { HBType-Id }?,
+  attribute AuraIdMissingFromMob8 { HBType-Id }?,
+  attribute AuraIdMissingFromMob9 { HBType-Id }?
+
+  
+Attributes-AuraIdOnMobN =
+  attribute AuraIdOnMob { HBType-Id }?,
+  attribute AuraIdOnMob2 { HBType-Id }?,
+  attribute AuraIdOnMob3 { HBType-Id }?,
+  attribute AuraIdOnMob4 { HBType-Id }?,
+  attribute AuraIdOnMob5 { HBType-Id }?,
+  attribute AuraIdOnMob6 { HBType-Id }?,
+  attribute AuraIdOnMob7 { HBType-Id }?,
+  attribute AuraIdOnMob8 { HBType-Id }?,
+  attribute AuraIdOnMob9 { HBType-Id }?
+
+  
+Attributes-FactionIdN =
+  attribute FactionId { HBType-Id }?,
+  attribute FactionId2 { HBType-Id }?,
+  attribute FactionId3 { HBType-Id }?,
+  attribute FactionId4 { HBType-Id }?,
+  attribute FactionId5 { HBType-Id }?,
+  attribute FactionId6 { HBType-Id }?,
+  attribute FactionId7 { HBType-Id }?,
+  attribute FactionId8 { HBType-Id }?,
+  attribute FactionId9 { HBType-Id }?
+
+  
+Attributes-FactionIdN-Mandatory1 =
+  attribute FactionId { HBType-Id },
+  attribute FactionId2 { HBType-Id }?,
+  attribute FactionId3 { HBType-Id }?,
+  attribute FactionId4 { HBType-Id }?,
+  attribute FactionId5 { HBType-Id }?,
+  attribute FactionId6 { HBType-Id }?,
+  attribute FactionId7 { HBType-Id }?,
+  attribute FactionId8 { HBType-Id }?,
+  attribute FactionId9 { HBType-Id }?
+
+  
+Attributes-MobIdN =
+  attribute MobId { HBType-Id }?,
+  attribute MobId2 { HBType-Id }?,
+  attribute MobId3 { HBType-Id }?,
+  attribute MobId4 { HBType-Id }?,
+  attribute MobId5 { HBType-Id }?,
+  attribute MobId6 { HBType-Id }?,
+  attribute MobId7 { HBType-Id }?,
+  attribute MobId8 { HBType-Id }?,
+  attribute MobId9 { HBType-Id }?,
+  attribute MobId10 { HBType-Id }?,
+  attribute MobId11 { HBType-Id }?,
+  attribute MobId12 { HBType-Id }?,
+  attribute MobId13 { HBType-Id }?,
+  attribute MobId14 { HBType-Id }?,
+  attribute MobId15 { HBType-Id }?,
+  attribute MobId16 { HBType-Id }?,
+  attribute MobId17 { HBType-Id }?,
+  attribute MobId18 { HBType-Id }?,
+  attribute MobId19 { HBType-Id }?,
+  attribute MobId20 { HBType-Id }?
+
+  
+Attributes-MobIdN-Mandatory1 =
+  attribute MobId { HBType-Id },
+  attribute MobId2 { HBType-Id }?,
+  attribute MobId3 { HBType-Id }?,
+  attribute MobId4 { HBType-Id }?,
+  attribute MobId5 { HBType-Id }?,
+  attribute MobId6 { HBType-Id }?,
+  attribute MobId7 { HBType-Id }?,
+  attribute MobId8 { HBType-Id }?,
+  attribute MobId9 { HBType-Id }?,
+  attribute MobId10 { HBType-Id }?,
+  attribute MobId11 { HBType-Id }?,
+  attribute MobId12 { HBType-Id }?,
+  attribute MobId13 { HBType-Id }?,
+  attribute MobId14 { HBType-Id }?,
+  attribute MobId15 { HBType-Id }?,
+  attribute MobId16 { HBType-Id }?,
+  attribute MobId17 { HBType-Id }?,
+  attribute MobId18 { HBType-Id }?,
+  attribute MobId19 { HBType-Id }?,
+  attribute MobId20 { HBType-Id }?
+
+  
+Attributes-ObjectIdN =
+  attribute ObjectId { HBType-Id }?,
+  attribute ObjectId2 { HBType-Id }?,
+  attribute ObjectId3 { HBType-Id }?,
+  attribute ObjectId4 { HBType-Id }?,
+  attribute ObjectId5 { HBType-Id }?,
+  attribute ObjectId6 { HBType-Id }?,
+  attribute ObjectId7 { HBType-Id }?,
+  attribute ObjectId8 { HBType-Id }?,
+  attribute ObjectId9 { HBType-Id }?
+
+  
+Attributes-ObjectIdN-Mandatory1 =
+  attribute ObjectId { HBType-Id },
+  attribute ObjectId2 { HBType-Id }?,
+  attribute ObjectId3 { HBType-Id }?,
+  attribute ObjectId4 { HBType-Id }?,
+  attribute ObjectId5 { HBType-Id }?,
+  attribute ObjectId6 { HBType-Id }?,
+  attribute ObjectId7 { HBType-Id }?,
+  attribute ObjectId8 { HBType-Id }?,
+  attribute ObjectId9 { HBType-Id }?
+
+  
+QuestBehaviorBase =
+  Attributes-QuestSpecifier,
+  attribute IgnoreMobsInBlackspots { HBType-Boolean }?,
+  attribute MovementBy { QBCoreType-MovementBy }?,
+  attribute NonCompeteDistance { HBType-Distance }?,
+  attribute QuestName { string }?,
+  attribute QuestObjectiveIndex { QBType-QuestObjectiveIndex }?,
+  attribute TerminateWhen { HBType-Condition }?,
+  attribute TerminationChecksQuestProgress { HBType-Boolean }?,
+  QBCoreSubElement-AvoidMobs?,
+  QBCoreSubElement-Blackspots?
+
+  
+Attributes-QuestSpecifier =
+  attribute QuestId { HBType-Id }?,
+  attribute QuestCompleteRequirement { QBType-QuestCompleteRequirement }?,
+  attribute QuestInLogRequirement { QBType-QuestInLogRequirement }?
+
+  
+Attributes-QuestSpecifier-MandatoryQuestId =
+  attribute QuestId { HBType-Id },
+  attribute QuestCompleteRequirement { QBType-QuestCompleteRequirement }?,
+  attribute QuestInLogRequirement { QBType-QuestInLogRequirement }?
+
+  
+Attributes-VehicleIdN =
+  attribute VehicleId { HBType-Id }?,
+  attribute VehicleId2 { HBType-Id }?,
+  attribute VehicleId3 { HBType-Id }?,
+  attribute VehicleId4 { HBType-Id }?,
+  attribute VehicleId5 { HBType-Id }?,
+  attribute VehicleId6 { HBType-Id }?,
+  attribute VehicleId7 { HBType-Id }?,
+  attribute VehicleId8 { HBType-Id }?,
+  attribute VehicleId9 { HBType-Id }?
+
+  
+Attributes-VehicleIdN-Mandatory1 =
+  attribute VehicleId { HBType-Id },
+  attribute VehicleId2 { HBType-Id }?,
+  attribute VehicleId3 { HBType-Id }?,
+  attribute VehicleId4 { HBType-Id }?,
+  attribute VehicleId5 { HBType-Id }?,
+  attribute VehicleId6 { HBType-Id }?,
+  attribute VehicleId7 { HBType-Id }?,
+  attribute VehicleId8 { HBType-Id }?,
+  attribute VehicleId9 { HBType-Id }?
+
+  
+QBCoreSubElement-AvoidMobs =
+  element AvoidMobs
+  {
+    Mob*
+  }
+
+  
+QBCoreSubElement-Blackspots =
+  element Blackspots
+  {
+    Blackspot*
+  }
+
+  
+QBCoreSubElement-HuntingGrounds =
+  element HuntingGrounds
+  {
+    attribute WaypointVisitStrategy { "InOrder" | "PickOneAtRandom" | "Random" }?,
+    QBCoreSubElement-Waypoint+
+  }
+
+  
+QBCoreSubElement-Waypoint =
+  element Hotspot {
+    Attributes-XYZ,
+    attribute Name { HBType-Name }?,
+    attribute Radius { HBType-Distance }?
+  }
+
+  
+QBCoreType-SafePathType-Strategy =
+  "StalkMobAtAvoidDistance"
+  | "WaitForAvoidDistance"
+
+  
+QBCoreType-MovementBy =
+  "ClickToMoveOnly"
+  | "FlightorPreferred"
+  | "NavigatorOnly"
+  | "NavigatorPreferred"
+  | "None"
+
+  
+QBCoreType-MountStrategy =
+  "CancelShapeshift"
+  | "Dismount"
+  | "DismountOrCancelShapeshift"
+  | "Mount"
+  | "None"
+
+  
+# Similar to HBType-Count, but we want to flag an error
+# if user specifies the default type of "1".
+QBCoreType-NumOfTimes =
+  xsd:integer { minInclusive="2" }  
+
+  
+QBCoreType-ProactiveCombatStrategy =
+  "NoClear"
+  | "ClearMobsTargetingUs"
+  | "ClearMobsThatWillAggro"
+  | "ClearAll"
+
+  
+QBType-Angle =
+  xsd:decimal { minInclusive="-3.1415926" maxInclusive="6.2831853" }
+
+  
+QBType-GossipOptions =
+  xsd:token { pattern="(1|2|3|4|5)((,\s*|\s+)(1|2|3|4|5))*" }
+
+  
+QBType-HotbarButton =
+  xsd:decimal { minInclusive="1" maxInclusive="12" }
+
+  
+QBType-HotbarButtons =
+  xsd:token { pattern="(1|2|3|4|5|6|7|8|9|10|11|12)((,|\s*)(1|2|3|4|5|6|7|8|9|10|11|12))*" }
+
+  
+QBType-IdsList =
+  xsd:token { pattern="[0-9]+((,\s*|\s+)[0-9]+)*" }
+
+  
+QBType-MobState =
+  "Alive"
+  | "AliveNotInCombat"
+  | "BelowHp"
+  | "Dead"
+  | "DontCare"
+
+  
+QBType-QuestCompleteRequirement =
+  "Complete"
+  | "CompleteOrFailed"
+  | "DontCare"
+  | "Failed"
+  | "NotComplete"
+  | "NotCompleteOrFailed"
+  | "NotFailed"
+
+  
+QBType-QuestInLogRequirement =
+  "DontCare"
+  | "InLog"
+  | "NotInLog"
+
+  
+QBType-QuestObjectiveIndex =
+  xsd:integer { minInclusive="1" maxInclusive="7" }
+  
+
+QBType-WoWPoint =
+  xsd:token { pattern="-?[0-9]+(\.[0-9]*)?(,\s*|\s+)-?[0-9]+(\.[0-9]*)?(,\s*|\s+)-?[0-9]+(\.[0-9]*)?" }
+
+  
+QBType-WoWPoints =
+  xsd:token { pattern="-?[0-9]+(\.[0-9]*)?(,\s*|\s+)-?[0-9]+(\.[0-9]*)?(,\s*|\s+)-?[0-9]+(\.[0-9]*)?((\s*\|\s*)-?[0-9]+(\.[0-9]*)?(,\s*|\s+)-?[0-9]+(\.[0-9]*)?(,\s*|\s+)-?[0-9]+(\.[0-9]*)?)*" }

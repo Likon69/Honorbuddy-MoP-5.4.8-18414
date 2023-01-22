@@ -1,0 +1,77 @@
+<HBProfile>
+
+	<Name>Flame Warden/Keeper and Extinguishing - Pandaria ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+	
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+		
+<QuestOrder>
+
+	<If Condition="Me.MapId != 870" >
+		<CustomBehavior File="UserDialog" Title="Not In Pandaria" StopOnContinue="True" SoundCue="Asterisk" SoundCueInterval="5"
+			Text="Currently not in Pandaria. Due to portal usage, or quest progression limitations, please move yourself to Pandaria in anyway you choose. Once there, press Start on HB." />
+	</If>
+
+	<!-- Jade Forest -->
+	<PickUp Nav="Fly" QuestName="Honor the Flame" QuestId="32498" GiverName="Jade Forest Flame Guardian" GiverId="69529" X="1448.193" Y="-1846.723" Z="225.0073" />
+	<TurnIn Nav="Fly" QuestName="Honor the Flame" QuestId="32498" TurnInName="Midsummer Bonfire" TurnInId="217846" X="1448.193" Y="-1846.723" Z="225.0073" />
+
+	<!-- Valley of the Four Winds -->
+	<PickUp Nav="Fly" QuestName="Honor the Flame" QuestId="32502" GiverName="Valley of the Four Winds Flame Guardian" GiverId="69550" X="-251.5256" Y="645.8337" Z="166.2882" />
+	<TurnIn Nav="Fly" QuestName="Honor the Flame" QuestId="32502" TurnInName="Midsummer Bonfire" TurnInId="217850" X="-251.5256" Y="645.8337" Z="166.2882" />
+
+	<!-- Krasarang Wilds -->
+	<PickUp Nav="Fly" QuestName="Honor the Flame" QuestId="32499" GiverName="Krasarang Wilds Flame Guardian" GiverId="69533" X="-411.8603" Y="-523.9319" Z="105.5139" />
+	<TurnIn Nav="Fly" QuestName="Honor the Flame" QuestId="32499" TurnInName="Midsummer Bonfire" TurnInId="217847" X="-411.8603" Y="-523.9319" Z="105.5139" />
+
+	<!-- Dread Wastes -->
+	<PickUp Nav="Fly" QuestName="Honor the Flame" QuestId="32497" GiverName="Dread Wastes Flame Guardian" GiverId="69522" X="-1072.341" Y="3138.605" Z="1.330957" />
+	<TurnIn Nav="Fly" QuestName="Honor the Flame" QuestId="32497" TurnInName="Midsummer Bonfire" TurnInId="217845" X="-1072.341" Y="3138.605" Z="1.330957" />
+
+	<!-- Townlong Steppes -->
+	<PickUp Nav="Fly" QuestName="Honor the Flame" QuestId="32501" GiverName="Townlong Steppes Flame Guardian" GiverId="69536" X="2403.49" Y="2964.521" Z="420.2997" />
+	<TurnIn Nav="Fly" QuestName="Honor the Flame" QuestId="32501" TurnInName="Midsummer Bonfire" TurnInId="217849" X="2403.49" Y="2964.521" Z="420.2997" />
+
+	<!-- Kun-Lai Summit -->
+	<PickUp Nav="Fly" QuestName="Honor the Flame" QuestId="32500" GiverName="Kun-Lai Summit Flame Guardian" GiverId="69535" X="1834.88" Y="380.558" Z="482.4238" />
+	<TurnIn Nav="Fly" QuestName="Honor the Flame" QuestId="32500" TurnInName="Midsummer Bonfire" TurnInId="217848" X="1834.88" Y="380.558" Z="482.4238" />
+
+	<!-- Vale of Eternal Blossoms -->
+	<If Condition="Me.IsHorde" >
+		<PickUp Nav="Fly" QuestName="Honor the Flame" QuestId="32509" GiverName="Vale of Eternal Blossoms Flame Keeper" GiverId="69551" X="1340.373" Y="494.1252" Z="457.7206" />
+		<TurnIn Nav="Fly" QuestName="Honor the Flame" QuestId="32509" TurnInName="Vale of Eternal Blossoms Flame Keeper" TurnInId="69551" X="1340.373" Y="494.1252" Z="457.7206" />
+		<!-- Alliance Extinguish -->
+		<While Condition="!IsQuestCompleted(32503)" >
+			<CustomBehavior File="InteractWith" MobId="217851" WaitTime="1000"
+				NonCompeteDistance="0" PreInteractMountStrategy="Dismount" X="1318.615" Y="456.8281" Z="457.7204" />
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</While>
+	</If>
+	
+	<If Condition="Me.IsAlliance" >
+		<!-- Flame Warden -->
+		<PickUp QuestName="Honor the Flame" QuestId="32510" GiverName="Vale of Eternal Blossoms Flame Warden" GiverId="69572" X="1340.373" Y="494.1252" Z="457.7206" />
+		<TurnIn QuestName="Honor the Flame" QuestId="32510" TurnInName="Vale of Eternal Blossoms Flame Warden" TurnInId="69572" X="1340.373" Y="494.1252" Z="457.7206" />
+		<!-- Horde Extinguish -->
+		<While Condition="!IsQuestCompleted(32496)" >
+			<CustomBehavior File="InteractWith" MobId="217852" WaitTime="1000"
+				NonCompeteDistance="0" PreInteractMountStrategy="Dismount" X="1318.174" Y="510.9688" Z="457.7204" />
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</While>
+	</If>
+	
+	<CustomBehavior File="Message" Text="Moving to factional capital!" LogColor="CornflowerBlue" />
+	
+	<If Condition="Me.IsHorde" >
+		<CustomBehavior File="FlyTo" X="1624.412" Y="923.8805" Z="471.1833" />
+		<CustomBehavior File="Message" Text="Pandaria Flame Keeper complete! Don't forget to buy your items!" LogColor="CornflowerBlue" />
+	</If>
+	<If Condition="Me.IsAlliance" >
+		<CustomBehavior File="FlyTo" X="864.1824" Y="283.6591" Z="503.6779" />
+		<CustomBehavior File="Message" Text="Pandaria Flame Warden complete! Don't forget to buy your items!" LogColor="CornflowerBlue" />
+	</If>
+	
+</QuestOrder>
+</HBProfile>

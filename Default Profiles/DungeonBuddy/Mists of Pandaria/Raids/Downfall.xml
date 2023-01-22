@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile xsi:noNamespaceSchemaLocation="../../DungeonbuddyProfile.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>Downfall</Name>
+    <DungeonId>725</DungeonId>
+    <BossEncounters>
+        <Boss isFinal="false" entry="71504" name="Siegecrafter Blackfuse" killOrder="1" optional="false" X="1985.904" Y="-5637.544" Z="-309.3269"/>
+
+        <!-- Paragons of the Klaxxi -->
+        <Boss isFinal="false" entry="71152" name="Skeer the Bloodseeker" killOrder="2" optional="false" X="1582.5" Y="-5686.611" Z="-314.639" />
+        <Boss isFinal="false" entry="71153" name="Hisek the Swarmkeeper" killOrder="2" optional="false" X="1582.5" Y="-5686.611" Z="-314.639" />
+        <Boss isFinal="false" entry="71154" name="Ka'roz the Locust" killOrder="2" optional="false" X="1582.5" Y="-5686.611" Z="-314.639" />
+        <Boss isFinal="false" entry="71155" name="Korven the Prime" killOrder="2" optional="false" X="1582.5" Y="-5686.611" Z="-314.639" />
+        <Boss isFinal="false" entry="71156" name="Kaz'tik the Manipulator" killOrder="2" optional="false" X="1582.5" Y="-5686.611" Z="-314.639" />
+        <Boss isFinal="false" entry="71157" name="Xaril the Poisoned Mind" killOrder="2" optional="false" X="1582.5" Y="-5686.611" Z="-314.639" />
+        <Boss isFinal="false" entry="71158" name="Rik'kal the Dissector" killOrder="2" optional="false" X="1582.5" Y="-5686.611" Z="-314.639" />
+        <Boss isFinal="false" entry="71160" name="Iyyokuk the Lucid" killOrder="2" optional="false" X="1582.5" Y="-5686.611" Z="-314.639" />
+        <Boss isFinal="false" entry="71161" name="Kil'ruk the Wind-Reaver" killOrder="2" optional="false" X="1582.5" Y="-5686.611" Z="-314.639" />
+
+        <Boss isFinal="true" entry="71865" name="Garrosh Hellscream" killOrder="3" optional="false" X="1028.61" Y="-5633.94" Z="-317.6894"/>
+    </BossEncounters>
+    <Blackspots>
+        <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+    </Blackspots>
+</DungeonBuddyProfile>

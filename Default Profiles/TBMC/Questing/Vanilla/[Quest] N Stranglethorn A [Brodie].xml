@@ -1,0 +1,381 @@
+<HBProfile>
+
+	<Name>Northern Stranglethorn($Rev$)</Name>
+	<MinLevel>23</MinLevel>
+	<MaxLevel>35</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Rebel Camp -->
+		<Vendor Name="Corporal Bluth" Entry="734" Type="Food" X="-11295.82" Y="-201.3427" Z="75.60201" />
+		<!-- Nesingwary Expedition -->
+		<Vendor Name="Jaquilina Dramet" Entry="2483" Type="Repair" X="-11650.59" Y="-47.65972" Z="16.23934" />
+		<!-- Fort Livingston -->
+		<Vendor Name="Daniel Roberts" Entry="44181" Type="Repair" X="-12851.6" Y="-417.425" Z="12.96745" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Name="Tiger Prowess" Id="187" >
+	<Objective Type="KillMob" MobId="1085" KillCount="5" >
+		<Hotspots>
+			<Hotspot X="-11831.35" Y="182.7059" Z="17.56062" />
+			<Hotspot X="-11869.68" Y="197.6427" Z="16.10034" />
+			<Hotspot X="-11943.48" Y="200.0949" Z="18.29319" />
+			<Hotspot X="-11977.74" Y="135.5312" Z="16.09189" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Panther Prowess" Id="192" >
+	<Objective Type="KillMob" MobId="684" KillCount="5" >
+		<Hotspots>
+			<Hotspot X="-12562.07" Y="-365.035" Z="19.91416" />
+			<Hotspot X="-12588.94" Y="-256.7416" Z="16.61263" />
+			<Hotspot X="-12601.85" Y="-173.7877" Z="15.60621" />
+			<Hotspot X="-12620.8" Y="-320.8069" Z="16.69385" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="The Mosh'Ogg Bounty" Id="26782" >
+	<Objective Type="CollectItem" ItemId="58205" CollectCount="1" >
+		<CollectFrom>
+			<GameObject Name="MoshOgg Bounty" Id="204087" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-12495.68" Y="-1009.912" Z="52.7469" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="The Source of the Madness" Id="26734" >
+	<Objective Type="CollectItem" ItemId="60263" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Chief Anders" Id="43910" />
+			<Mob Name="Chief Miranda" Id="43913" />
+			<Mob Name="Chief Gaulus" Id="43911" />
+			<Mob Name="Chief Esquivel" Id="43912" />
+			<Mob Name="Kurzen Elite" Id="939" />
+			<Mob Name="Kurzen Witch Doctor" Id="942" />
+			<Mob Name="Kurzen Headshrinker" Id="941" />
+			<Mob Name="Kurzen Subchief" Id="978" />
+			<Mob Name="Kurzen Shadow Hunter" Id="979" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-11538.62" Y="-712.8309" Z="36.59041" />
+			<Hotspot X="-11472.14" Y="-739.782" Z="32.01062" />
+			<Hotspot X="-11490.25" Y="-832.223" Z="34.17992" />
+			<Hotspot X="-11536.35" Y="-888.955" Z="24.16865" />
+			<Hotspot X="-11496.93" Y="-941.3273" Z="29.31897" />
+			<Hotspot X="-11435.76" Y="-905.0582" Z="18.28028" />
+			<Hotspot X="-11347.13" Y="-909.8707" Z="27.35382" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="!HasQuest(26838) &amp;&amp; !IsQuestCompleted(26838)" >
+		<PickUp QuestName="Rebels Without a Clue" QuestId="26838" GiverName="Sister Elsington" GiverId="43731" />
+	</If>
+	
+	<If Condition="HasQuest(26838)" >
+		<TurnIn QuestName="Rebels Without a Clue" QuestId="26838" TurnInName="Lieutenant Doren" TurnInId="469" />
+	</If>
+	
+	<If Condition="!HasQuest(26735) &amp;&amp; !IsQuestCompleted(26735)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Northern Stranglethorn Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Rebel Camp Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="The Fate of Kurzen" QuestId="26735" GiverName="Lieutenant Doren" GiverId="469" />
+	<PickUp QuestName="Bad Medicine" QuestId="26732" GiverName="Brother Nimetz" GiverId="739" />
+	
+	<Objective QuestName="The Fate of Kurzen" QuestId="26735" Type="CollectItem" ItemId="60214" CollectCount="1" />
+	<Objective QuestName="The Fate of Kurzen" QuestId="26735" Type="CollectItem" ItemId="60215" CollectCount="1" />
+	<Objective QuestName="Bad Medicine" QuestId="26732" Type="CollectItem" ItemId="2633" CollectCount="7" />
+	
+	<TurnIn QuestName="The Fate of Kurzen" QuestId="26735" TurnInName="Lieutenant Doren" TurnInId="469" />
+	<PickUp QuestName="Spared from Madness" QuestId="26736" GiverName="Lieutenant Doren" GiverId="469" />
+	<TurnIn QuestName="Bad Medicine" QuestId="26732" TurnInName="Brother Nimetz" TurnInId="739" />
+	<PickUp QuestName="Control Sample" QuestId="26733" GiverName="Brother Nimetz" GiverId="739" />
+	
+	<If Condition="!HasQuest(26738) &amp;&amp; !IsQuestCompleted(26738)" >
+		<PickUp QuestName="Just Hatched" QuestId="26738" GiverName="Corporal Sethman" GiverId="1422" />
+	</If>
+	<TurnIn QuestName="Just Hatched" QuestId="26738" TurnInName="Corporal Sethman" TurnInId="1422" />
+	<PickUp QuestName="I Think She's Hungry" QuestId="26739" GiverName="Corporal Sethman" GiverId="1422" />
+	
+	<CustomBehavior File="InteractWith" QuestId="26736" MobId="204828" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" X="-11571.02" Y="-574.0579" Z="33.68065" />
+	
+	<Objective QuestName="Control Sample" QuestId="26733" Type="CollectItem" ItemId="60213" CollectCount="7" />
+	<Objective QuestName="I Think She's Hungry" QuestId="26739" Type="KillMob" MobId="42742" KillCount="40" />
+	
+	<TurnIn QuestName="Control Sample" QuestId="26733" TurnInName="Brother Nimetz" TurnInId="739" />
+	<PickUp QuestName="The Source of the Madness" QuestId="26734" GiverName="Brother Nimetz" GiverId="739" />
+	<TurnIn QuestName="Spared from Madness" QuestId="26736" TurnInName="Lieutenant Doren" TurnInId="469" />
+	<PickUp QuestName="Stopping Kurzen's Legacy" QuestId="26737" GiverName="Lieutenant Doren" GiverId="469" />
+	<TurnIn QuestName="I Think She's Hungry" QuestId="26739" TurnInName="Corporal Sethman" TurnInId="1422" />
+	<PickUp QuestName="Deep Roots" QuestId="26744" GiverName="Corporal Sethman" GiverId="1422" />
+	
+	<Objective QuestName="Stopping Kurzen's Legacy" QuestId="26737" Type="KillMob" MobId="43911" KillCount="1" X="-11401.35" Y="-816.9705" Z="14.96466" />
+	<Objective QuestName="Stopping Kurzen's Legacy" QuestId="26737" Type="KillMob" MobId="43910" KillCount="1" X="-11473.96" Y="-869.1649" Z="36.48135" />
+	<Objective QuestName="Stopping Kurzen's Legacy" QuestId="26737" Type="KillMob" MobId="43913" KillCount="1" X="-11483.68" Y="-953.5226" Z="31.09152" />
+	<Objective QuestName="Stopping Kurzen's Legacy" QuestId="26737" Type="KillMob" MobId="43912" KillCount="1" X="-11337.27" Y="-966.1823" Z="29.94605" />
+	<Objective QuestName="The Source of the Madness" QuestId="26734" Type="CollectItem" ItemId="60263" CollectCount="1" />
+	<TurnIn QuestName="The Source of the Madness" QuestId="26734" TurnInName="Brother Nimetz" TurnInId="739" />
+	<TurnIn QuestName="Stopping Kurzen's Legacy" QuestId="26737" TurnInName="Lieutenant Doren" TurnInId="469" />
+	
+	<PickUp QuestName="Water Elementals" QuestId="26729" GiverName="Emerine Junis" GiverId="43885" X="-11309.08" Y="-200.9259" Z="75.14777" />
+	<PickUp QuestName="Bloodscalp Insight" QuestId="26742" GiverName="Berrin Burnquill" GiverId="43886" X="-11346.57" Y="-219.6615" Z="75.36026" />
+	
+	<CustomBehavior File="Message" Text="Compiling Nesingwary Expedition Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Krazek's Cookery" QuestId="26740" GiverName="Corporal Kaleb" GiverId="770" />
+	<TurnIn QuestName="Krazek's Cookery" QuestId="26740" TurnInName="Krazek" TurnInId="773" />
+	<PickUp QuestName="Venture Company Mining" QuestId="26763" GiverName="Krazek" GiverId="773" />
+	<PickUp QuestName="Supply and Demand" QuestId="26343" GiverName="Drizzlik" GiverId="2495" />
+	
+	<PickUp QuestName="Welcome to the Jungle" QuestId="583" GiverName="Barnil Stonepot" GiverId="716" />
+	<TurnIn QuestName="Welcome to the Jungle" QuestId="583" TurnInName="Hemet Nesingwary Jr." TurnInId="715" />
+	<PickUp QuestName="Raptor Hunting" QuestId="194" GiverName="Hemet Nesingwary Jr." GiverId="715" />
+	<PickUp QuestName="Panther Hunting" QuestId="190" GiverName="Sir S. J. Erlgadin" GiverId="718" />
+	<PickUp QuestName="The Green Hills of Stranglethorn" QuestId="26269" GiverName="Barnil Stonepot" GiverId="716" />
+	<PickUp QuestName="Tiger Hunting" QuestId="185" GiverName="Ajeck Rouack" GiverId="717" />
+	
+	<Objective QuestName="Supply and Demand" QuestId="26343" Type="CollectItem" ItemId="4053" CollectCount="2" />
+	<CustomBehavior File="CollectThings" QuestId="26269" MobId="681" MobId2="1150" MobId3="683" CollectItemId="57990" CollectItemCount="1" HuntingGroundRadius="200" >
+		<Hotspot X="-11614.05" Y="113.2435" Z="16.60246" />
+		<Hotspot X="-11687.14" Y="-7.938299" Z="15.4709" />
+		<Hotspot X="-11767.54" Y="-166.257" Z="12.33576" />
+	</CustomBehavior>
+	<Objective QuestName="Tiger Hunting" QuestId="185" Type="KillMob" MobId="681" KillCount="10" />
+	<TurnIn QuestName="Tiger Hunting" QuestId="185" />
+	<PickUp QuestName="Tiger Stalking" QuestId="186" GiverName="Ajeck Rouack" GiverId="717" />
+	<TurnIn QuestName="Supply and Demand" QuestId="26343" TurnInName="Drizzlik" TurnInId="2495" />
+	<PickUp QuestName="Some Assembly Required" QuestId="26344" GiverName="Drizzlik" GiverId="2495" />
+	<TurnIn QuestName="The Green Hills of Stranglethorn" QuestId="26269" TurnInName="Barnil Stonepot" TurnInId="716" />
+	
+	<Objective QuestName="Panther Hunting" QuestId="190" Type="KillMob" MobId="683" KillCount="10" />
+	<TurnIn QuestName="Panther Hunting" QuestId="190" />
+	<PickUp QuestName="Panther Stalking" QuestId="191" GiverName="Sir S. J. Erlgadin" GiverId="718" />
+	
+	<Objective QuestName="Some Assembly Required" QuestId="26344" Type="CollectItem" ItemId="4104" CollectCount="5" />
+	
+	<Objective QuestName="Venture Company Mining" QuestId="26763" Type="CollectItem" ItemId="4106" CollectCount="5" />
+	
+	<Objective QuestName="Tiger Stalking" QuestId="186" Type="KillMob" MobId="682" KillCount="10" />
+	<TurnIn QuestName="Tiger Stalking" QuestId="186" />
+	<PickUp QuestName="Tiger Prowess" QuestId="187" GiverName="Ajeck Rouack" GiverId="717" />
+	
+	<TurnIn QuestName="Venture Company Mining" QuestId="26763" TurnInName="Krazek" TurnInId="773" />
+	<PickUp QuestName="Return to Corporal Kaleb" QuestId="26765" GiverName="Krazek" GiverId="773" />
+	<TurnIn QuestName="Some Assembly Required" QuestId="26344" TurnInName="Drizzlik" TurnInId="2495" />
+	<PickUp QuestName="Excelsior" QuestId="26345" GiverName="Drizzlik" GiverId="2495" />
+	
+	<Objective QuestName="Tiger Prowess" QuestId="187" Type="KillMob" MobId="1085" KillCount="5" />
+	<TurnIn QuestName="Tiger Prowess" QuestId="187" />
+	<PickUp QuestName="Tiger Mastery" QuestId="188" GiverName="Ajeck Rouack" GiverId="717" />
+	<Objective QuestName="Tiger Mastery" QuestId="188" Type="CollectItem" ItemId="3879" CollectCount="1" />
+	
+	<Objective QuestName="Deep Roots" QuestId="26744" Type="CollectItem" ItemId="60295" CollectCount="1" />
+	<Objective QuestName="Bloodscalp Insight" QuestId="26742" Type="CollectItem" ItemId="23679" CollectCount="1" />
+
+	<PickUp QuestName="Favored Skull" QuestId="26745" GiverName="Lashtail Hatchling" GiverId="42736" />
+	
+	<Objective QuestName="Water Elementals" QuestId="26729" Type="CollectItem" ItemId="3923" CollectCount="6" />
+	<If Condition="HasQuest(26729) &amp;&amp; IsQuestCompleted(26729)" >
+		<If Condition="Unit(43885, u =&gt; u.Distance &lt; 20) == null" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60273)" WaitTime="3000" />
+		</If>
+		<TurnIn QuestName="Water Elementals" QuestId="26729" TurnInName="Emerine Junis" TurnInId="43885" />
+	</If>
+	<If Condition="!HasQuest(26730) &amp;&amp; !IsQuestCompleted(26730)" >
+		<If Condition="Unit(43885, u =&gt; u.Distance &lt; 20) == null" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60273)" WaitTime="3000" />
+		</If>
+		<PickUp QuestName="You Can Take the Murloc Out of the Ocean..." QuestId="26730" GiverName="Emerine Junis" GiverId="43885" />
+	</If>
+	
+	<Objective QuestName="Raptor Hunting" QuestId="194" Type="KillMob" MobId="685" KillCount="10" />
+	<TurnIn QuestName="Raptor Hunting" QuestId="194" />
+	
+	<Objective QuestName="Panther Stalking" QuestId="191" Type="KillMob" MobId="736" KillCount="10" />
+	<TurnIn QuestName="Panther Stalking" QuestId="191" />
+	<PickUp QuestName="Panther Prowess" QuestId="192" GiverName="Sir S. J. Erlgadin" GiverId="718" />
+	
+	<TurnIn QuestName="Tiger Mastery" QuestId="188" TurnInName="Ajeck Rouack" TurnInId="717" />
+	
+	<TurnIn QuestName="Bloodscalp Insight" QuestId="26742" TurnInName="Berrin Burnquill" TurnInId="43886" X="-11346.57" Y="-219.6615" Z="75.36026" />
+	<PickUp QuestName="Sacred to the Bloodscalp" QuestId="26743" GiverName="Berrin Burnquill" GiverId="43886" X="-11346.57" Y="-219.6615" Z="75.36026" />
+	<TurnIn QuestName="Deep Roots" QuestId="26744" TurnInName="Corporal Sethman" TurnInId="1422" />
+	<TurnIn QuestName="Return to Corporal Kaleb" QuestId="26765" TurnInName="Corporal Kaleb" TurnInId="770" />
+	<TurnIn QuestName="Favored Skull" QuestId="26745" TurnInName="Osborn Obnoticus" TurnInId="43884" X="-11309.08" Y="-200.9259" Z="75.14777" />
+	<PickUp QuestName="A Nose for This Sort of Thing" QuestId="26746" GiverName="Osborn Obnoticus" GiverId="43884" X="-11309.08" Y="-200.9259" Z="75.14777" />
+	
+	<CustomBehavior File="Message" Text="Compiling Rebel Camp, Part 2 Quests" LogColor="CornflowerBlue" />
+	
+	<Objective QuestName="Sacred to the Bloodscalp" QuestId="26743" Type="CollectItem" ItemId="60270" CollectCount="1" />
+	<Objective QuestName="Sacred to the Bloodscalp" QuestId="26743" Type="CollectItem" ItemId="60271" CollectCount="1" />
+	<Objective QuestName="Sacred to the Bloodscalp" QuestId="26743" Type="CollectItem" ItemId="60272" CollectCount="1" />
+	<While Condition="HasQuest(26746) &amp;&amp; !IsQuestCompleted(26746)" >
+		<If Condition="Unit(42736, u =&gt; u.Distance &lt; 50) == null" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(58165)" WaitTime="3000" />
+		</If>
+		<CustomBehavior File="InteractWith" QuestId="26746" MobId="43977" NumOfTimes="1000" NonCompeteDistance="0"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="200" WaitTime="6000"
+			TerminateWhen="Unit(42736, u =&gt; u.Distance &lt; 30) == null" X="-11769.95" Y="120.4142" Z="18.11492" />
+	</While>
+	
+	<Objective QuestName="You Can Take the Murloc Out of the Ocean..." QuestId="26730" Type="CollectItem" ItemId="60274" CollectCount="6" />
+	<If Condition="HasQuest(26730) &amp;&amp; IsQuestCompleted(26730)" >
+		<If Condition="Unit(43885, u =&gt; u.Distance &lt; 20) == null" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60273)" WaitTime="3000" />
+		</If>
+		<TurnIn QuestName="You Can Take the Murloc Out of the Ocean..." QuestId="26730" TurnInName="Emerine Junis" TurnInId="43885" />
+	</If>
+	<If Condition="!HasQuest(26731) &amp;&amp; !IsQuestCompleted(26731)" >
+		<If Condition="Unit(43885, u =&gt; u.Distance &lt; 20) == null" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60273)" WaitTime="3000" />
+		</If>
+		<PickUp QuestName="The Altar of Naias" QuestId="26731" GiverName="Emerine Junis" GiverId="43885" />
+	</If>
+	<Objective QuestName="Raptor Stalking" QuestId="195" Type="KillMob" MobId="686" KillCount="10" />
+	<TurnIn QuestName="Raptor Stalking" QuestId="195" />
+	<PickUp QuestName="Raptor Prowess" QuestId="196" GiverName="Hemet Nesingwary Jr." GiverId="715" />
+	
+	<Objective QuestName="Excelsior" QuestId="26345" Type="CollectItem" ItemId="4105" CollectCount="1" />
+	
+	<Objective QuestName="Panther Prowess" QuestId="192" Type="KillMob" MobId="684" KillCount="5" />
+	<TurnIn QuestName="Panther Prowess" QuestId="192" />
+	<PickUp QuestName="Panther Mastery" QuestId="193" GiverName="Sir S. J. Erlgadin" GiverId="718" />
+	
+	<Objective QuestName="Raptor Prowess" QuestId="196" Type="KillMob" MobId="687" KillCount="10" />
+	<TurnIn QuestName="Raptor Prowess" QuestId="196" />
+	<PickUp QuestName="Raptor Mastery" QuestId="197" GiverName="Hemet Nesingwary Jr." GiverId="715" />
+	<Objective QuestName="Raptor Mastery" QuestId="197" Type="CollectItem" ItemId="3877" CollectCount="1" />
+	
+	<Objective QuestName="Panther Mastery" QuestId="193" Type="CollectItem" ItemId="3876" CollectCount="1" />
+	
+	<While Condition="HasQuest(26731) &amp;&amp; !IsQuestCompleted(26731)" >
+		<CustomBehavior File="FlyTo" TerminateWhen="Unit(17207, u =&gt; u.IsAlive) != null" X="-12129.54" Y="956.3556" Z="4.706149" />
+		<If Condition="Unit(17207, u =&gt; u.IsAlive) == null" >
+			<CustomBehavior File="InteractWith" QuestId="26731" MobId="181636" InteractByUsingItemId="23680"
+				ProactiveCombatStrategy="ClearMobsTargetingUs" PreInteractMountStrategy="Dismount"
+				TerminateWhen="Unit(17207, u =&gt; u.IsAlive) != null"
+				NonCompeteDistance="0" WaitTime="5000" X="-12130.55" Y="958.9944" Z="4.871482" />
+		</If>
+		<If Condition="Unit(17207, u =&gt; u.IsAlive) != null" >
+			<CustomBehavior File="InteractWith" QuestId="26731" MobId="17207"
+				ProactiveCombatStrategy="ClearMobsTargetingUs" PreInteractMountStrategy="Dismount"
+				TerminateWhen="Unit(17207, u =&gt; u.IsAlive) == null"
+				NonCompeteDistance="0" WaitTime="5000" X="-12130.55" Y="958.9944" Z="4.871482" />
+		</If>
+	</While>
+	
+	<TurnIn QuestName="Excelsior" QuestId="26345" TurnInName="Drizzlik" TurnInId="2495" />
+	<TurnIn QuestName="Panther Mastery" QuestId="193" TurnInName="Sir S. J. Erlgadin" TurnInId="718" />
+	<TurnIn QuestName="Raptor Mastery" QuestId="197" TurnInName="Hemet Nesingwary Jr." TurnInId="715" />
+	<PickUp QuestName="Big Game Hunter" QuestId="208" GiverName="Hemet Nesingwary Jr." GiverId="715" />
+	
+	<TurnIn QuestName="Sacred to the Bloodscalp" QuestId="26743" TurnInName="Berrin Burnquill" TurnInId="43886" X="-11346.57" Y="-219.6615" Z="75.36026" />
+	<TurnIn QuestName="A Nose for This Sort of Thing" QuestId="26746" TurnInName="Osborn Obnoticus" TurnInId="43884" X="-11309.08" Y="-200.9259" Z="75.14777" />
+	<PickUp QuestName="A Physical Specimen" QuestId="26747" GiverName="Osborn Obnoticus" GiverId="43884" X="-11309.08" Y="-200.9259" Z="75.14777" />
+	<TurnIn QuestName="The Altar of Naias" QuestId="26731" TurnInName="Emerine Junis" TurnInId="43885" X="-11309.08" Y="-200.9259" Z="75.14777" />
+	
+	<PickUp QuestName="Population Con-Troll" QuestId="26751" GiverName="Sergeant Yohwa" GiverId="733" />
+	
+	<Objective QuestName="A Physical Specimen" QuestId="26747" Type="CollectItem" ItemId="58179" CollectCount="1" />
+	<Objective QuestName="Population Con-Troll" QuestId="26751" Type="KillMob" MobId="699" KillCount="1" />
+	<Objective QuestName="Population Con-Troll" QuestId="26751" Type="KillMob" MobId="701" KillCount="7" />
+	<Objective QuestName="Population Con-Troll" QuestId="26751" Type="KillMob" MobId="588" KillCount="7" />
+	<Objective QuestName="Population Con-Troll" QuestId="26751" Type="KillMob" MobId="595" KillCount="7" />
+	
+	<TurnIn QuestName="Population Con-Troll" QuestId="26751" TurnInName="Sergeant Yohwa" TurnInId="733" />
+	<TurnIn QuestName="A Physical Specimen" QuestId="26747" TurnInName="Osborn Obnoticus" TurnInId="43884" X="-11309.08" Y="-200.9259" Z="75.14777" />
+	
+	<PickUp QuestName="Bloodlord Mandokir" QuestId="26748" GiverName="Bloodlord Mandokir" GiverId="42790" X="-11309.08" Y="-200.9259" Z="75.14777" />
+	<TurnIn QuestName="Bloodlord Mandokir" QuestId="26748" TurnInName="Bloodlord Mandokir" TurnInId="42790" X="-11309.08" Y="-200.9259" Z="75.14777" />
+	
+	<PickUp QuestName="Priestess Thaalia" QuestId="26749" GiverName="Osborn Obnoticus" GiverId="43884" />
+	<TurnIn QuestName="Priestess Thaalia" QuestId="26749" TurnInName="Priestess Thaalia" TurnInId="44017" />
+	
+	<CustomBehavior File="Message" Text="Compiling Fort Livingston Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Mind Vision" QuestId="26772" GiverName="Priestess Thaalia" GiverId="44017" />
+	<PickUp QuestName="The Mind's Eye" QuestId="26781" GiverName="Livingston Marshal" GiverId="44019" />
+	<PickUp QuestName="The Mosh'Ogg Bounty" QuestId="26782" GiverName="Wulfred Harrys" GiverId="44018" />
+	<PickUp QuestName="To the Cape!" QuestId="26805" GiverName="Wulfred Harrys" GiverId="44018" />
+	
+	<Objective QuestName="Big Game Hunter" QuestId="208" Type="CollectItem" ItemId="3880" CollectCount="1" />
+	
+	<Objective QuestName="Mind Vision" QuestId="26772" Type="CollectItem" ItemId="3863" CollectCount="5" />
+	<Objective QuestName="The Mind's Eye" QuestId="26781" Type="CollectItem" ItemId="3616" CollectCount="1" />
+	<Objective QuestName="The Mosh'Ogg Bounty" QuestId="26782" Type="CollectItem" ItemId="58205" CollectCount="1" />
+	
+	<TurnIn QuestName="Mind Vision" QuestId="26772" TurnInName="Priestess Thaalia" TurnInId="44017" />
+	<PickUp QuestName="See Raptor" QuestId="26773" GiverName="Priestess Thaalia" GiverId="44017" />
+	<CustomBehavior File="InteractWith" QuestId="26773" MobId="44017" InteractByGossipOptions="1" NonCompeteDistance="0" 
+		 WaitTime="3000" X="-12840.46" Y="-444.522" Z="12.96638" />
+	<While Condition="HasQuest(26773) &amp;&amp; !IsQuestCompleted(26773)" />
+	<TurnIn QuestName="See Raptor" QuestId="26773" TurnInName="Priestess Thaalia" TurnInId="44017" />
+	<PickUp QuestName="Mind Control" QuestId="26774" GiverName="Priestess Thaalia" GiverId="44017" />
+	
+	<TurnIn QuestName="The Mosh'Ogg Bounty" QuestId="26782" TurnInName="Wulfred Harrys" TurnInId="44018" />
+	<PickUp QuestName="Nighttime in the Jungle" QuestId="26780" GiverName="Kinnel" GiverId="44043" />
+	
+	<TurnIn QuestName="The Mind's Eye" QuestId="26781" TurnInName="Livingston Marshal" TurnInId="44019" />
+	<PickUp QuestName="Zul'Mamwe Mambo" QuestId="26779" GiverName="Ghaliri" GiverId="44021" />
+	
+	<Objective QuestName="Mind Control" QuestId="26774" Type="CollectItem" ItemId="58225" CollectCount="1" />
+	<Objective QuestName="Nighttime in the Jungle" QuestId="26780" Type="UseObject" ObjectId="204247" UseCount="8" />
+	<Objective QuestName="Zul'Mamwe Mambo" QuestId="26779" Type="KillMob" MobId="43024" KillCount="16" />
+	
+	<TurnIn QuestName="Zul'Mamwe Mambo" QuestId="26779" TurnInName="Ghaliri" TurnInId="44021" />
+	<TurnIn QuestName="Nighttime in the Jungle" QuestId="26780" TurnInName="Kinnel" TurnInId="44043" />
+	<TurnIn QuestName="Mind Control" QuestId="26774" TurnInName="Priestess Thaalia" TurnInId="44017" />
+	
+	<TurnIn QuestName="Big Game Hunter" QuestId="208" TurnInName="Hemet Nesingwary Jr." TurnInId="715" />
+
+	<CustomBehavior File="Message" Text="Northern Stranglethorn Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Battle on the High Seas Heroic - Alliance</Name>
+  <DungeonId>655</DungeonId>
+  <BossEncounters>
+    
+    <Boss isFinal="true" entry="67426" name="Admiral Hagman" killOrder="1" optional="false" X="2462.042" Y="-4118.76" Z="21.45941"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+
+  </PullBlackspots>
+</DungeonBuddyProfile>

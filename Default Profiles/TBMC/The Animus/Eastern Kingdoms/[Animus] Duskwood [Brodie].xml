@@ -1,0 +1,296 @@
+<HBProfile>
+
+	<Name>Duskwood Memory Block ($Rev$)</Name>
+	<MinLevel>60</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+		<Mailbox X="-10547.33" Y="-1157.422" Z="27.89477" />
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Darkshire -->
+		<Vendor Name="Frank Carlson" Entry="44022" Type="Food" X="-10585.92" Y="-1160.068" Z="30.0593" />
+		<Vendor Name="Morg Gnarltree" Entry="226" Type="Repair" X="-10590.63" Y="-1156.782" Z="30.05962" />
+		<!-- Raven Hill -->
+		<Vendor Name="Wilkinson" Entry="44114" Type="Repair" X="-10767.3" Y="286.467" Z="39.54105" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="26690" Name="Vile and Tainted">
+	<Objective Type="KillMob" MobId="920" KillCount="8">
+		<Hotspots>
+			<Hotspot X="-11081.13" Y="-1140.906" Z="42.66488" />
+			<Hotspot X="-11106.73" Y="-1162.458" Z="42.17715" />
+			<Hotspot X="-11129.35" Y="-1172.173" Z="43.96264" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Mistmantle's Revenge" Id="26674" >
+	<Objective Type="KillMob" MobId="315" KillCount="1" >
+		<Hotspots>
+			<Hotspot X="-10367.69" Y="-1255.696" Z="35.90968" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="The Cries of the Dead" Id="26778" >
+	<Objective Type="KillMob" MobId="44032" KillCount="20" >
+		<Hotspots>
+			<Hotspot X="-10404.74" Y="427.613" Z="48.60836" />
+			<Hotspot X="-10507.68" Y="420.1653" Z="36.65418" />
+			<Hotspot X="-10532.7" Y="376.7887" Z="32.74632" />
+			<Hotspot X="-10570.91" Y="310.8788" Z="30.68274" />
+			<Hotspot X="-10547.9" Y="276.0579" Z="28.46013" />
+			<Hotspot X="-10483.27" Y="232.6111" Z="31.68933" />
+			<Hotspot X="-10430.28" Y="196.9874" Z="37.05892" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="Message" Text="Fatal Desynchronization: Incorrect faction linking." LogColor="Red" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<If Condition="HasQuest(26728)" >
+		<CustomBehavior File="Message" Text="Parsing for breadcrumbs..." LogColor="CornflowerBlue" />
+		<TurnIn Nav="Fly" QuestName="Hero's Call: Duskwood!" QuestId="26728" TurnInName="Commander Althea Ebonlocke" TurnInId="264" />
+	</If>
+	
+	<If Condition="HasQuest(28564)" >
+		<CustomBehavior File="Message" Text="Parsing for breadcrumbs..." LogColor="CornflowerBlue" />
+		<TurnIn Nav="Fly" QuestName="Hero's Call: Duskwood!" QuestId="28564" TurnInName="Commander Althea Ebonlocke" TurnInId="264" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Beginning Memory Block: Duskwood" LogColor="Green" />
+	<CustomBehavior File="UserSettings" LootMobs="True" UseFlightPaths="True" PullDistance="25" />
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding Memory to Darkshire" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="Wolves at Our Heels" QuestId="26618" GiverName="Commander Althea Ebonlocke" GiverId="264" />
+	<PickUp Nav="Fly" QuestName="Seasoned Wolf Kabobs" QuestId="26620" GiverName="Chef Grual" GiverId="272" />
+	<PickUp Nav="Fly" QuestName="Dusky Crab Cakes" QuestId="26623" GiverName="Chef Grual" GiverId="272" />
+	
+	<Objective QuestName="Seasoned Wolf Kabobs" QuestId="26620" Type="CollectItem" ItemId="60989" CollectCount="5" />
+	<Objective QuestName="Dusky Crab Cakes" QuestId="26623" Type="CollectItem" ItemId="60988" CollectCount="6" />
+	<Objective QuestName="Wolves at Our Heels" QuestId="26618" Type="KillMob" MobId="43704" KillCount="12" />
+	
+	<TurnIn Nav="Fly" QuestName="Wolves at Our Heels" QuestId="26618" TurnInName="Commander Althea Ebonlocke" TurnInId="264" />	
+	<TurnIn Nav="Fly" QuestName="Seasoned Wolf Kabobs" QuestId="26620" TurnInName="Chef Grual" TurnInId="272" />	
+	<TurnIn Nav="Fly" QuestName="Dusky Crab Cakes" QuestId="26623" TurnInName="Chef Grual" TurnInId="272" />
+	
+	<PickUp Nav="Fly" QuestName="The Hermit" QuestId="26627" GiverName="Commander Althea Ebonlocke" GiverId="264" />
+	<PickUp Nav="Fly" QuestName="The Night Watch" QuestId="26645" GiverName="Commander Althea Ebonlocke" GiverId="264" />
+	<PickUp Nav="Fly" QuestName="Worgen in the Woods" QuestId="26688" GiverName="Calor" GiverId="663" />
+	<PickUp Nav="Fly" QuestName="The Legend of Stalvan" QuestId="26666" GiverName="Tobias Mistmantle" GiverId="43453" />
+	<PickUp Nav="Fly" QuestName="Look To The Stars" QuestId="26683" GiverName="Viktori PrismAntras" GiverId="276" />
+
+	<TurnIn Nav="Fly" QuestName="The Hermit" QuestId="26627" TurnInName="Abercrombie" TurnInId="289" />
+	<PickUp Nav="Fly" QuestName="Supplies from Darkshire" QuestId="26653" GiverName="Abercrombie" GiverId="289" />
+	
+	<TurnIn Nav="Fly" QuestName="Supplies from Darkshire" QuestId="26653" TurnInName="Madame Eva" TurnInId="265" />
+	<PickUp Nav="Fly" QuestName="Ghost Hair Thread" QuestId="26652" GiverName="Madame Eva" GiverId="265" />
+	
+	<TurnIn Nav="Fly" QuestName="The Legend of Stalvan" QuestId="26666" TurnInName="Clerk Daltry" TurnInId="267" />
+	<PickUp Nav="Fly" QuestName="The Stolen Letters" QuestId="26667" GiverName="Clerk Daltry" GiverId="267" />
+	
+	<TurnIn Nav="Fly" QuestName="Look To The Stars" QuestId="26683" TurnInName="Blind Mary" TurnInId="302" />
+	<TurnIn Nav="Fly" QuestName="Ghost Hair Thread" QuestId="26652" TurnInName="Blind Mary" TurnInId="302" />
+	<PickUp Nav="Fly" QuestName="The Insane Ghoul" QuestId="26684" GiverName="Blind Mary" GiverId="302" />
+	<PickUp Nav="Fly" QuestName="Return the Comb" QuestId="26654" GiverName="Blind Mary" GiverId="302" />
+	
+	<Objective QuestName="The Night Watch" QuestId="26645" Type="KillMob" MobId="202" KillCount="8" />
+	<TurnIn Nav="Fly" QuestName="The Night Watch" QuestId="26645" TurnInName="Commander Althea Ebonlocke" TurnInId="264" />
+	<PickUp Nav="Fly" QuestName="Bones That Walk" QuestId="26686" GiverName="Commander Althea Ebonlocke" GiverId="264" />
+	<TurnIn Nav="Fly" QuestName="Return the Comb" QuestId="26654" TurnInName="Madame Eva" TurnInId="265" />
+	<PickUp Nav="Fly" QuestName="Deliver the Thread" QuestId="26655" GiverName="Madame Eva" GiverId="265" />
+	
+	<TurnIn Nav="Fly" QuestName="Deliver the Thread" QuestId="26655" TurnInName="Abercrombie" TurnInId="289" />
+	<PickUp Nav="Fly" QuestName="Zombie Juice" QuestId="26660" GiverName="Abercrombie" GiverId="289" />
+	<TurnIn Nav="Fly" QuestName="Zombie Juice" QuestId="26660" TurnInName="Tavernkeep Smitts" TurnInId="273" />
+	<PickUp Nav="Fly" QuestName="Gather Rot Blossoms" QuestId="26661" GiverName="Tavernkeep Smitts" GiverId="273" />
+	
+	<Objective QuestName="The Insane Ghoul" QuestId="26684" Type="CollectItem" ItemId="1946" CollectCount="1" />
+	<Objective QuestName="Gather Rot Blossoms" QuestId="26661" Type="CollectItem" ItemId="59345" CollectCount="5" />
+	<Objective QuestName="Bones That Walk" QuestId="26686" Type="KillMob" MobId="203" KillCount="5" />
+	<Objective QuestName="Bones That Walk" QuestId="26686" Type="KillMob" MobId="48" KillCount="5" />
+	<TurnIn Nav="Fly" QuestName="The Insane Ghoul" QuestId="26684" TurnInName="Viktori PrismAntras" TurnInId="276" />
+	<PickUp Nav="Fly" QuestName="Classy Glass" QuestId="26685" GiverName="Viktori PrismAntras" GiverId="276" />
+	<TurnIn Nav="Fly" QuestName="Bones That Walk" QuestId="26686" TurnInName="Commander Althea Ebonlocke" TurnInId="264" />
+	<TurnIn Nav="Fly" QuestName="Gather Rot Blossoms" QuestId="26661" TurnInName="Tavernkeep Smitts" TurnInId="273" />
+	<PickUp Nav="Fly" QuestName="Juice Delivery" QuestId="26676" GiverName="Tavernkeep Smitts" GiverId="273" />
+	
+	<TurnIn Nav="Fly" QuestName="Juice Delivery" QuestId="26676" TurnInName="Abercrombie" TurnInId="289" />
+	<PickUp Nav="Fly" QuestName="Ogre Thieves" QuestId="26680" GiverName="Abercrombie" GiverId="289" />
+	
+	<Objective QuestName="The Stolen Letters" QuestId="26667" Type="CollectItem" ItemId="59357" CollectCount="1" />
+	<Objective QuestName="Worgen in the Woods" QuestId="26688" Type="KillMob" MobId="898" KillCount="7" />
+	<TurnIn Nav="Fly" QuestName="Worgen in the Woods" QuestId="26688" TurnInName="Calor" TurnInId="663" />
+	<PickUp Nav="Fly" QuestName="The Rotting Orchard" QuestId="26689" GiverName="Calor" GiverId="663" />
+	<TurnIn Nav="Fly" QuestName="The Stolen Letters" QuestId="26667" TurnInName="Clerk Daltry" TurnInId="267" />
+	<PickUp Nav="Fly" QuestName="In A Dark Corner" QuestId="26669" GiverName="Clerk Daltry" GiverId="267" />
+	
+	<Objective QuestName="In A Dark Corner" QuestId="26669" Type="CollectItem" ItemId="59361" CollectCount="1" />
+	<Objective QuestName="The Rotting Orchard" QuestId="26689" Type="KillMob" MobId="533" KillCount="10" />
+	<TurnIn Nav="Fly" QuestName="In A Dark Corner" QuestId="26669" TurnInName="Clerk Daltry" TurnInId="267" />
+	<PickUp Nav="Fly" QuestName="Roland's Doom" QuestId="26670" GiverName="Clerk Daltry" GiverId="267" />
+	<TurnIn Nav="Fly" QuestName="The Rotting Orchard" QuestId="26689" TurnInName="Calor" TurnInId="663" />
+	<PickUp Nav="Fly" QuestName="Vile and Tainted" QuestId="26690" GiverName="Calor" GiverId="663" />
+	
+	<Objective QuestName="Roland's Doom" QuestId="26670" Type="CollectItem" ItemId="938" CollectCount="1" />
+	<Objective QuestName="Vile and Tainted" QuestId="26690" Type="KillMob" MobId="206" KillCount="8" />
+	<Objective QuestName="Vile and Tainted" QuestId="26690" Type="KillMob" MobId="920" KillCount="8" />
+	<TurnIn Nav="Fly" QuestName="Vile and Tainted" QuestId="26690" TurnInName="Calor" TurnInId="663" />
+	<PickUp Nav="Fly" QuestName="Worgen in the Woods" QuestId="26691" GiverName="Calor" GiverId="663" />
+	<TurnIn Nav="Fly" QuestName="Worgen in the Woods" QuestId="26691" TurnInName="Jonathan Carevin" TurnInId="661" />
+	<TurnIn Nav="Fly" QuestName="Roland's Doom" QuestId="26670" TurnInName="Clerk Daltry" TurnInId="267" />
+	<PickUp Nav="Fly" QuestName="The Fate of Stalvan Mistmantle" QuestId="26671" GiverName="Clerk Daltry" GiverId="267" />
+	
+	<TurnIn Nav="Fly" QuestName="The Fate of Stalvan Mistmantle" QuestId="26671" TurnInName="Tobias Mistmantle" TurnInId="43453" />
+	<PickUp Nav="Fly" QuestName="Clawing at the Truth" QuestId="26672" GiverName="Tobias Mistmantle" GiverId="43453" />
+	<TurnIn Nav="Fly" QuestName="Clawing at the Truth" QuestId="26672" TurnInName="Madame Eva" TurnInId="265" />
+	<PickUp Nav="Fly" QuestName="Mistmantle's Revenge" QuestId="26674" GiverName="Madame Eva" GiverId="265" />
+	<If Condition="HasQuest(26674) &amp;&amp; !IsQuestCompleted(26674)" >
+		<CustomBehavior File="UserSettings" PullDistance="5" />
+		<RunTo X="-10366.93" Y="-1255.235" Z="35.90954" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(59363)" WaitTime="25000" />
+		<Objective QuestName="Mistmantle's Revenge" QuestId="26674" Type="KillMob" MobId="315" KillCount="1" />
+		<CustomBehavior File="UserSettings" PullDistance="25" />
+	</If>
+	
+	<TurnIn Nav="Fly" QuestName="Mistmantle's Revenge" QuestId="26674" TurnInName="Tobias Mistmantle" TurnInId="43453" X="-10514.42" Y="-1298.951" Z="41.29073" />
+	<PickUp Nav="Fly" QuestName="Part of the Pack" QuestId="26785" GiverName="Tobias Mistmantle" GiverId="43453" />
+	<TurnIn Nav="Fly" QuestName="Part of the Pack" QuestId="26785" TurnInName="Apprentice Fess" TurnInId="43738" />
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding Memory to the Crossroad Campsite" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="A Deadly Vine" QuestId="26707" GiverName="Apprentice Fess" GiverId="43738" />
+	<PickUp Nav="Fly" QuestName="The Yorgen Worgen" QuestId="26717" GiverName="Apprentice Fess" GiverId="43738" />
+	<PickUp Nav="Fly" QuestName="Vulgar Vul'Gol" QuestId="25235" GiverName="Watcher Dodds" GiverId="888" X="-10921.18" Y="-384.4989" Z="38.85501" />
+	
+	<Objective QuestName="The Yorgen Worgen" QuestId="26717" Type="UseObject" ObjectId="204777" UseCount="1" />
+	<Objective QuestName="A Deadly Vine" QuestId="26707" Type="CollectItem" ItemId="60204" CollectCount="5" />
+	<TurnIn Nav="Fly" QuestName="The Yorgen Worgen" QuestId="26717" TurnInName="Apprentice Fess" TurnInId="43738" />
+	<TurnIn Nav="Fly" QuestName="A Deadly Vine" QuestId="26707" TurnInName="Apprentice Fess" TurnInId="43738" />
+	
+	<PickUp Nav="Fly" QuestName="Delivery to Master Harris" QuestId="26719" GiverName="Apprentice Fess" GiverId="43738" />
+	
+	<Objective QuestName="Classy Glass" QuestId="26685" Type="CollectItem" ItemId="1968" CollectCount="1" />
+	<Objective QuestName="Ogre Thieves" QuestId="26680" Type="CollectItem" ItemId="1349" CollectCount="1" />
+	<Objective QuestName="Vulgar Vul'Gol" QuestId="25235" Type="KillMob" MobId="43754" KillCount="15" />
+	<TurnIn Nav="Fly" QuestName="Vulgar Vul'Gol" QuestId="25235" TurnInName="Watcher Dodds" TurnInId="888" X="-10921.18" Y="-384.4989" Z="38.85501" />
+	
+	<TurnIn Nav="Fly" QuestName="Delivery to Master Harris" QuestId="26719" TurnInName="Oliver Harris" TurnInId="43730" />
+	
+	<TurnIn Nav="Fly" QuestName="Classy Glass" QuestId="26685" TurnInName="Viktori PrismAntras" TurnInId="276" />
+	<TurnIn Nav="Fly" QuestName="Ogre Thieves" QuestId="26680" TurnInName="Abercrombie" TurnInId="289" />
+	
+	<PickUp Nav="Fly" QuestName="Ghoulish Effigy" QuestId="26677" GiverName="Abercrombie" GiverId="289" />
+	<Objective QuestName="Ghoulish Effigy" QuestId="26677" Type="CollectItem" ItemId="884" CollectCount="7" />
+	<TurnIn Nav="Fly" QuestName="Ghoulish Effigy" QuestId="26677" TurnInName="Abercrombie" TurnInId="289" />
+	
+	<PickUp Nav="Fly" QuestName="Note to the Mayor" QuestId="26681" GiverName="Abercrombie" GiverId="289" />
+	<TurnIn Nav="Fly" QuestName="Note to the Mayor" QuestId="26681" TurnInName="Lord Ello Ebonlocke" TurnInId="263" />
+	
+	<PickUp Nav="Fly" QuestName="The Embalmer's Revenge" QuestId="26727" GiverName="Lord Ello Ebonlocke" GiverId="263" />
+	<Objective QuestName="The Embalmer's Revenge" QuestId="26727" Type="KillMob" MobId="43862" KillCount="1" />
+	<TurnIn Nav="Fly" QuestName="The Embalmer's Revenge" QuestId="26727" TurnInName="Lord Ello Ebonlocke" TurnInId="263" />
+	
+	<CustomBehavior File="Message" Text="Compiling Raven Hill Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="A Curse We Cannot Lift" QuestId="26720" GiverName="Oliver Harris" GiverId="43730" />
+	<PickUp Nav="Fly" QuestName="The Jitters-Bugs" QuestId="26721" GiverName="Jitters" GiverId="288" />
+	<PickUp Nav="Fly" QuestName="Soothing Spirits" QuestId="26777" GiverName="Sister Elsington" GiverId="43731" />
+	<PickUp Nav="Fly" QuestName="Rebels Without a Clue" QuestId="26838" GiverName="Sister Elsington" GiverId="43731" />
+	
+	<While Condition="HasQuest(26720) &amp;&amp; !IsQuestCompleted(26720)" >
+		<RunTo X="-11035.57" Y="250.6749" Z="27.63483" />
+		<CustomBehavior File="CombatUseItemOnV2" QuestId="26720" MobId="43814" ItemId="60206" NonCompeteDistance="1" UseWhenMobHasHealthPercent="20" 
+			ItemAppliesAuraId="AssumeItemUseAlwaysSucceeds" UseItemStrategy="UseItemContinuouslyOnTarget" X="-11035.57" Y="250.6749" Z="27.63483" />
+	</While>	
+
+	<CustomBehavior File="InteractWith" QuestId="26777" MobId="43923" MobState="Alive" InteractByUsingItemId="60225" NonCompeteDistance="0" NumOfTimes="1000" 
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" X="-10986.15" Y="244.1585" Z="28.36088" />
+	<TurnIn Nav="Fly" QuestName="Soothing Spirits" QuestId="26777" TurnInName="Sister Elsington" TurnInId="43731" />
+	<TurnIn Nav="Fly" QuestName="A Curse We Cannot Lift" QuestId="26720" TurnInName="Oliver Harris" TurnInId="43730" />
+	<PickUp Nav="Fly" QuestName="Cry For The Moon" QuestId="26760" GiverName="Oliver Harris" GiverId="43730" />
+	<While Condition="HasQuest(26760) &amp;&amp; !IsQuestCompleted(26760)" />
+	<TurnIn Nav="Fly" QuestName="Cry For The Moon" QuestId="26760" TurnInName="Oliver Harris" TurnInId="43730" />
+	
+	<PickUp Nav="Fly" QuestName="The Fate of Morbent Fel" QuestId="26723" GiverName="Sven Yorgen" GiverId="43861" />
+	<PickUp Nav="Fly" QuestName="The Cries of the Dead" QuestId="26778" GiverName="Sister Elsington" GiverId="43731" />
+	
+	<Objective QuestName="The Jitters-Bugs" QuestId="26721" Type="CollectItem" ItemId="60207" CollectCount="8" />
+	<TurnIn Nav="Fly" QuestName="The Jitters-Bugs" QuestId="26721" TurnInName="Jitters" TurnInId="288" />
+
+	<PickUp Nav="Fly" QuestName="Bear In Mind" QuestId="26787" GiverName="Jitters" GiverId="288" />
+	<Objective QuestName="Bear In Mind" QuestId="26787" Type="CollectItem" ItemId="60334" CollectCount="8" />
+	<Objective QuestName="The Fate of Morbent Fel" QuestId="26723" Type="UseObject" ObjectId="204816" UseCount="1" />
+	
+	<PickUp Nav="Fly" QuestName="The Weathered Grave" QuestId="26793" GiverName="A Weathered Grave" GiverId="268" />
+	
+	<Objective QuestName="The Cries of the Dead" QuestId="26778" Type="KillMob" MobId="44032" KillCount="20" />
+	<TurnIn Nav="Fly" QuestName="Bear In Mind" QuestId="26787" TurnInName="Jitters" TurnInId="288" />
+	<TurnIn Nav="Fly" QuestName="The Fate of Morbent Fel" QuestId="26723" TurnInName="Sven Yorgen" TurnInId="43861" />
+	<PickUp Nav="Fly" QuestName="The Lurking Lich" QuestId="26724" GiverName="Sven Yorgen" GiverId="43861" />
+	<TurnIn Nav="Fly" QuestName="The Lurking Lich" QuestId="26724" TurnInName="Sister Elsington" TurnInId="43731" />
+	<TurnIn Nav="Fly" QuestName="The Cries of the Dead" QuestId="26778" TurnInName="Sister Elsington" TurnInId="43731" />
+	
+	<PickUp Nav="Fly" QuestName="Guided by the Light" QuestId="26725" GiverName="Sister Elsington" GiverId="43731" />
+	<TurnIn Nav="Fly" QuestName="Guided by the Light" QuestId="26725" TurnInType="Object" TurnInName="Lightforged Rod" TurnInId="204817" X="-10355.77" Y="200.7911" Z="34.50056" />
+	
+	<PickUp Nav="Fly" QuestName="The Halls of the Dead" QuestId="26753" GiverType="Object" GiverName="Lightforged Rod" GiverId="204817" X="-10355.77" Y="200.7911" Z="34.50056" />
+	<TurnIn Nav="Fly" QuestName="The Halls of the Dead" QuestId="26753" TurnInType="Object" TurnInName="Lightforged Arch" TurnInId="204824" X="-10210.77" Y="284.8017" Z="2.216016" />
+	
+	<PickUp Nav="Fly" QuestName="Buried Below" QuestId="26722" GiverType="Object" GiverName="Lightforged Arch" GiverId="204824" X="-10210.77" Y="284.8017" Z="2.216016" />
+	<TurnIn Nav="Fly" QuestName="Buried Below" QuestId="26722" TurnInType="Object" TurnInName="Lightforged Crest" TurnInId="204825" X="-10168.62" Y="339.4249" Z="8.544958" />
+	
+	<PickUp Nav="Fly" QuestName="Morbent's Bane" QuestId="26754" GiverType="Object" GiverName="Lightforged Crest" GiverId="204825" X="-10168.62" Y="339.4249" Z="8.544958" />
+	<CustomBehavior File="InteractWith" QuestId="26754" MobId="43761" InteractByUsingItemId="60212" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" 
+		NumOfTimes="100" Range="15" X="-10223.22" Y="371.487" Z="10.41346" />
+	<Objective QuestName="Morbent's Bane" QuestId="26754" Type="KillMob" MobId="43761" KillCount="1" />
+	<TurnIn Nav="Fly" QuestName="Morbent's Bane" QuestId="26754" TurnInName="Sven Yorgen" TurnInId="43861" />
+	
+	<TurnIn Nav="Fly" QuestName="The Weathered Grave" QuestId="26793" TurnInName="Sirra Von\'Indi" TurnInId="268" />
+	<PickUp Nav="Fly" QuestName="Morgan Ladimore" QuestId="26794" GiverName="Sirra Von\'Indi" GiverId="268" />
+	<TurnIn Nav="Fly" QuestName="Morgan Ladimore" QuestId="26794" TurnInName="Commander Althea Ebonlocke" TurnInId="264" />
+
+	<CustomBehavior File="Message" Text="Duskwood Memory Synchronized" LogColor="Orange" />
+	<CustomBehavior File="DeleteItems" ItemIds="2154,2794" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\EKMemBlock [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

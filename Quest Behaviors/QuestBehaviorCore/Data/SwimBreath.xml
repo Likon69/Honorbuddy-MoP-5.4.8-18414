@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+    Underwater Air Sources available while swimming
+    30Apr2013-07:56UTC chinajade
+ -->
+<SwimBreath>
+    <AirSources>
+        <!-- no preferences -->
+        <AirSource ObjectId="177524" Name="Bubbly Fissure" />
+    </AirSources>
+
+    <Consumables>
+        <!-- in order of preference -->
+        <Consumable ItemId="34076" Name="Fish Bladder" />                       <!-- 3mins, BoP -->      
+        <Consumable ItemId="40390" Name="Vic's Emergency Air Tank" />           <!-- 3mins, BoP -->
+        <Consumable ItemId="37449" Name="Breath of Murloc" />                   <!-- 10mins, BoP -->
+        <Consumable ItemId="5996"  Name="Elixir of Water Breathing" />          <!-- Level 8, 30mins -->
+        <Consumable ItemId="23871" Name="Potion of Water Breathing" />          <!-- Level 8, 30mins, BoP -->
+        <Consumable ItemId="18294" Name="Elixir of Greater Water Breathing" />  <!-- Level 35, 1 hour -->
+    </Consumables>
+
+    <!-- Equipment is swapped in only long enough to catch our breath, then the original piece is restored.
+        This prevents us from making a trip to an airsource and possibly aggro'ing mobs on the way.
+        Equipment swapping is only conducted while out of combat.
+        -->
+    <Equipments>
+        <!-- in order of preference -->
+        <Equipment ItemId="21526" Name="Band of Icy Depths" />                  <!-- ring -->
+        <Equipment ItemId="19979" Name="Hook of the Master Angler" />           <!-- trinket -->
+        <Equipment ItemId="10506" Name="Deepdive Helmet" />                     <!-- helm; Engineers only-->
+        <Equipment ItemId="44050" Name="Mastercraft Kalu'ak Fishing Pole" />
+        <Equipment ItemId="9452"  Name="Hydrocane" />
+    </Equipments>
+</SwimBreath>

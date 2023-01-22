@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassProfile Class="Shaman" Specialization="3" Name="Shaman - Restoration">
+	<TalentTree>
+		<Talent Tier="1" Index="3" Name="Astral Shift" />
+		<Talent Tier="2" Index="2" Name="Earthgrab Totem" />
+		<Talent Tier="3" Index="1" Name="Call of the Elements" />
+		<Talent Tier="4" Index="2" Name="Ancestral Swiftness" />
+		<Talent Tier="5" Index="2" Name="Ancestral Guidance" />
+		<Talent Tier="6" Index="2" Name="Prime Elementalist" />
+	</TalentTree>
+	<WeightSet>
+		<Spirit>20</Spirit>
+		<Intellect>18</Intellect>
+		<SpellPower>18</SpellPower>
+		<Haste>16</Haste>
+		<CriticalStrike>14</CriticalStrike>
+		<Mastery>12</Mastery>
+		<Stamina>5</Stamina>
+		<Armor>0.01</Armor>
+		<DamagePerSecond>0.01</DamagePerSecond>
+	</WeightSet>
+</ClassProfile>

@@ -1,0 +1,1541 @@
+<HBProfile>
+	<Name>The Tillers ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Nav="Fly" Name="Gina Mudclaw" Entry="58706" Type="Repair" X="-259.5399" Y="592.5469" Z="167.5478" />
+		<Vendor Nav="Fly" Name="Ben of the Booming Voice" Entry="70398" Type="Food" X="-131.74" Y="366.67" Z="147.48" />
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+		<Blackspot X="-229.8389" Y="1422.793" Z="223.3444" Radius="2" />
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- Not in Chee Chee's Backyard -->
+	<Quest Id="30324" Name="Not in Chee Chee's Backyard" > 
+		<Objective Type="KillMob" MobId="59120" KillCount="8" >
+			<Hotspots>
+				<Hotspot X="343.9983" Y="1484.133" Z="442.1457" />
+				<Hotspot X="401.656" Y="1428.688" Z="430.7724" />
+				<Hotspot X="460.0145" Y="1407.949" Z="415.3195" />		
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="59124" KillCount="8" >
+			<Hotspots>
+				<Hotspot X="343.9983" Y="1484.133" Z="442.1457" />
+				<Hotspot X="401.656" Y="1428.688" Z="430.7724" />
+				<Hotspot X="460.0145" Y="1407.949" Z="415.3195" />		
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- They Don't Even Wear Them -->
+	<Quest Id="30323" Name="They Don't Even Wear Them" > 
+		<Objective Type="CollectItem" ItemId="80138" CollectCount="1" >
+			<CollectFrom>
+				<Mob Name="Springtail Littlewhisker" Id="59515" />
+				<Mob Name="Springtail Trapper" Id="59513" />
+				<Mob Name="Springtail Burrower" Id="59514" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="561.4364" Y="1131.681" Z="323.9022" />
+				<Hotspot X="630.6943" Y="1146.209" Z="292.5561" />
+				<Hotspot X="508.4103" Y="952.438" Z="278.3873" />
+				<Hotspot X="545.0652" Y="839.0911" Z="284.4408" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="CollectItem" ItemId="80137" CollectCount="1" >
+			<CollectFrom>
+				<Mob Name="Springtail Littlewhisker" Id="59515" />
+				<Mob Name="Springtail Trapper" Id="59513" />
+				<Mob Name="Springtail Burrower" Id="59514" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="561.4364" Y="1131.681" Z="323.9022" />
+				<Hotspot X="630.6943" Y="1146.209" Z="292.5561" />
+				<Hotspot X="508.4103" Y="952.438" Z="278.3873" />
+				<Hotspot X="545.0652" Y="839.0911" Z="284.4408" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="CollectItem" ItemId="80139" CollectCount="1" >
+			<CollectFrom>
+				<Mob Name="Springtail Littlewhisker" Id="59515" />
+				<Mob Name="Springtail Trapper" Id="59513" />
+				<Mob Name="Springtail Burrower" Id="59514" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="561.4364" Y="1131.681" Z="323.9022" />
+				<Hotspot X="630.6943" Y="1146.209" Z="292.5561" />
+				<Hotspot X="508.4103" Y="952.438" Z="278.3873" />
+				<Hotspot X="545.0652" Y="839.0911" Z="284.4408" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- A Gift for Chee Chee -->
+	<Quest Id="30471" Name="A Gift for Chee Chee" > 
+		<Objective Type="CollectItem" ItemId="79827" CollectCount="1" >
+			<CollectFrom>
+				<GameObject Name="Authentic Valley Stir Fry" Id="210803" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="346.4479" Y="1408.168" Z="424.0974" />
+				<Hotspot X="360.9479" Y="1424.533" Z="423.9449" />
+				<Hotspot X="392.7031" Y="1416.274" Z="436.1737" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- A Gift for Ella -->
+	<Quest Id="30474" Name="A Gift for Ella" > 
+		<Objective Type="CollectItem" ItemId="79871" CollectCount="1" >
+			<CollectFrom>
+				<Mob Name="Kunzen Ritualist" Id="59123" />
+				<Mob Name="Kunzen Hunter" Id="59121" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="195.6467" Y="1516.928" Z="427.4137" />
+				<Hotspot X="331.3852" Y="1467.327" Z="442.3755" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- A Gift for Old Hillpaw -->
+	<Quest Id="30476" Name="A Gift For Old Hillpaw" >
+		<Objective Type="CollectItem" ItemId="80229" CollectCount="1" >
+			<CollectFrom>
+				<Mob Name="Freshwater Oyster" Id="211021" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="347.3112" Y="827.1058" Z="146.4336" />
+				<Hotspot X="311.1568" Y="881.0031" Z="146.282" />
+				<Hotspot X="276.9386" Y="905.9626" Z="146.6994" />
+				<Hotspot X="281.2593" Y="1047.926" Z="145.5947" />
+				<Hotspot X="389.1611" Y="1116.088" Z="146.2448" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- A Gift for Tina -->
+	<Quest Id="30470" Name="A Gift for Tina" > 
+		<Objective Type="CollectItem" ItemId="80134" CollectCount="1" >
+			<CollectFrom>
+				<GameObject Name="Chrysoberyl Outcropping" Id="210958" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="561.4364" Y="1131.681" Z="323.9022" />
+				<Hotspot X="630.6943" Y="1146.209" Z="292.5561" />
+				<Hotspot X="508.4103" Y="952.438" Z="278.3873" />
+				<Hotspot X="545.0652" Y="839.0911" Z="284.4408" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Stealing is Bad...Re-Stealing is OK -->
+	<Quest Id="30334" Name="Stealing is Bad...Re-Stealing is OK" > 
+		<Objective Type="CollectItem" ItemId="79824" CollectCount="16" >
+			<CollectFrom>
+				<GameObject Name="Stolen Vegetable" Id="210763" />
+				<GameObject Name="Stolen Vegetable" Id="210764" />
+				<GameObject Name="Stolen Vegetable" Id="210765" />
+				<GameObject Name="Stolen Vegetable" Id="210766" />
+				<GameObject Name="Stolen Vegetable" Id="210767" />
+				<GameObject Name="Stolen Vegetable" Id="210768" />
+				<GameObject Name="Stolen Vegetable" Id="210769" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="343.2171" Y="1478.659" Z="442.1466" />
+				<Hotspot X="402.6873" Y="1426.938" Z="430.7084" />
+				<Hotspot X="472.7371" Y="1413.912" Z="415.4045" />
+				<Hotspot X="526.1399" Y="1322.689" Z="385.7747" />
+				<Hotspot X="492.5291" Y="1326.259" Z="386.2574" />
+				<Hotspot X="464.6505" Y="1354.64" Z="389.8053" />
+				<Hotspot X="353.7256" Y="1413.878" Z="419.5858" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Stalling the Ravage -->
+	<Quest Id="30335" Name="Stalling the Ravage" >
+		<Objective Type="KillMob" MobId="59124" KillCount="12" >
+			<Hotspots>
+				<Hotspot X="343.5628" Y="1509.567" Z="452.1451" />
+				<Hotspot X="356.53" Y="1464.07" Z="442.68" />
+				<Hotspot X="392.96" Y="1446.55" Z="429.75" />
+				<Hotspot X="395.41" Y="1418.25" Z="431.10" />
+				<Hotspot X="449.28" Y="1426.77" Z="423.76" />
+				<Hotspot X="484.82" Y="1423.54" Z="415.41" />
+				<Hotspot X="468.57" Y="1379.62" Z="415.41" />
+				<Hotspot X="482.36" Y="1323.90" Z="387.48" />
+				<Hotspot X="408.45" Y="1386.72" Z="405.53" />
+				<Hotspot X="303.81" Y="1388.77" Z="404.83" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Cindergut Peppers -->
+	<Quest Id="30329" Name="Cindergut Peppers" >
+		<Objective Type="CollectItem" ItemId="79864" CollectCount="4" >
+			<CollectFrom>
+				<Mob Name="Kunzen Ritualist" Id="59123" />
+				<Mob Name="Kunzen Hunter" Id="59121" />
+				<Mob Name="Kunzen Rockflinger" Id="59120" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="343.5628" Y="1509.567" Z="452.1451" />
+				<Hotspot X="356.53" Y="1464.07" Z="442.68" />
+				<Hotspot X="392.96" Y="1446.55" Z="429.75" />
+				<Hotspot X="395.41" Y="1418.25" Z="431.10" />
+				<Hotspot X="449.28" Y="1426.77" Z="423.76" />
+				<Hotspot X="484.82" Y="1423.54" Z="415.41" />
+				<Hotspot X="468.57" Y="1379.62" Z="415.41" />
+				<Hotspot X="482.36" Y="1323.90" Z="387.48" />
+				<Hotspot X="408.45" Y="1386.72" Z="405.53" />
+				<Hotspot X="303.81" Y="1388.77" Z="404.83" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Fatty Goatsteak -->
+	<Quest Id="30332" Name="Fatty Goatsteak" > 
+		<Objective Type="CollectItem" ItemId="79867" CollectCount="4" >
+			<CollectFrom>
+				<Mob Name="Stout Staghorn" Id="59139" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="119.7072" Y="1582.929" Z="425.609" />
+				<Hotspot X="286.929" Y="1550.566" Z="457.3518" />
+				<Hotspot X="244.768" Y="1448.88" Z="447.6444" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+	
+<!-- Lost and Lonely -->
+	<Quest Id="30526" Name="Lost and Lonely" > 
+		<Objective Type="CollectItem" ItemId="80144" CollectCount="20" >
+			<CollectFrom>
+				<Mob Name="Skyrange Mushan" Id="64309" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="61.89011" Y="1513.531" Z="387.8288" />
+				<Hotspot X="109.194" Y="1518.543" Z="407.7219" />
+				<Hotspot X="149.1372" Y="1576.327" Z="426.0547" />
+				<Hotspot X="260.5562" Y="1590.351" Z="447.3658" />
+				<Hotspot X="233.5961" Y="1479.964" Z="440.7363" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<CustomBehavior File="RunMacro" Macro="/script SetCVar('AutoLootDefault', 1)" NumOfTimes="1" WaitTime="1000" />
+	<CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+
+	<!-- If I am in EK, take the SW portal -->
+	<If Condition="(Me.MapId == 0 &amp;&amp; Me.IsAlliance)" >
+		<CustomBehavior File="FlyTo" DestName="SW Portal" X="-8199.441" Y="529.3228" Z="117.0738" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="215457" Range="4" X="-8194.479" Y="528.1129" Z="117.2901" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+	</If>
+
+	<If Condition=" (Me.MapId == 1 &amp;&amp; Me.IsHorde)" >
+		<CustomBehavior File="FlyTo" DestName="Org Portal" X="2013.813" Y="-4699.559" Z="28.61817" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="215424" Range="4.75" X="2014.819" Y="-4700.274" Z="28.62439" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Tiller Quests..." LogColor="Green" />
+
+	<If Condition="((!HasQuest(30332) &amp;&amp; IsQuestCompleted(30332)) ||
+			(!HasQuest(30317) &amp;&amp; IsQuestCompleted(30317)) ||
+			(!HasQuest(30324) &amp;&amp; IsQuestCompleted(30324)) ||
+			(!HasQuest(30331) &amp;&amp; IsQuestCompleted(30331)) ||
+			(!HasQuest(30329) &amp;&amp; IsQuestCompleted(30329)) ||
+			(!HasQuest(30323) &amp;&amp; IsQuestCompleted(30323)) ||
+			(!HasQuest(30474) &amp;&amp; IsQuestCompleted(30474)) ||
+			(!HasQuest(30470) &amp;&amp; IsQuestCompleted(30470)) ||
+			(!HasQuest(30476) &amp;&amp; IsQuestCompleted(30476)) ||
+			(!HasQuest(30475) &amp;&amp; IsQuestCompleted(30475)) ||
+			(!HasQuest(30322) &amp;&amp; IsQuestCompleted(30322)) ||
+			(!HasQuest(30333) &amp;&amp; IsQuestCompleted(30333)) ||
+			(!HasQuest(30334) &amp;&amp; IsQuestCompleted(30334)) ||
+			(!HasQuest(30335) &amp;&amp; IsQuestCompleted(30335)) ||
+			(!HasQuest(30336) &amp;&amp; IsQuestCompleted(30336)) ||
+			(!HasQuest(30328) &amp;&amp; IsQuestCompleted(30328)) ||
+			(!HasQuest(30326) &amp;&amp; IsQuestCompleted(30326)) ||
+			(!HasQuest(30327) &amp;&amp; IsQuestCompleted(30327)) ||
+			(!HasQuest(30318) &amp;&amp; IsQuestCompleted(30318)) ||
+			(!HasQuest(30325) &amp;&amp; IsQuestCompleted(30325)) ||
+			(!HasQuest(30330) &amp;&amp; IsQuestCompleted(30330)) ||
+			(!HasQuest(30477) &amp;&amp; IsQuestCompleted(30477)) ||
+			(!HasQuest(30471) &amp;&amp; IsQuestCompleted(30471)) ||
+			(!HasQuest(30472) &amp;&amp; IsQuestCompleted(30472)) ||
+			(!HasQuest(30319) &amp;&amp; IsQuestCompleted(30319)) ||
+			(!HasQuest(30337) &amp;&amp; IsQuestCompleted(30337)) ||
+			(!HasQuest(30473) &amp;&amp; IsQuestCompleted(30473)) ||
+			(!HasQuest(30479) &amp;&amp; IsQuestCompleted(30479)) ||
+			(!HasQuest(30478) &amp;&amp; IsQuestCompleted(30478)) ||
+			(!HasQuest(30321) &amp;&amp; IsQuestCompleted(30321)))" >
+		<CustomBehavior File="Message" Text="Previously Completed Tillers Quests Detected" LogColor="CornflowerBlue" />
+		<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: Previously completed quests detected! \n\n Either you have done some of you quests already, and have restarted the bot...\n OR your cache folder is NOT clean, and must be deleted, and bot restarted." />
+	</If>
+	
+	<If Condition="!IsQuestCompleted(30257) || (HasQuest(30535) || HasQuest(30254) ||
+					HasQuest(30255) || HasQuest(30256) || HasQuest(30257))" >
+		<CustomBehavior File="LoadProfile" ProfileName="[Rep] Tillers PreReqs [Brodie]" />
+	</If>
+	
+	<If Condition="((!HasQuest(32682) &amp;&amp; !IsQuestCompleted(32682)) || HasQuest(32682)) &amp;&amp; Me.GetReputationLevelWith(1272) == WoWUnitReaction.Exalted &amp;&amp; IsQuestCompleted(30529)" >
+		<If Condition="!HasQuest(32682)" >
+			<PickUp Nav="Fly" QuestName="Inherit The Earth" QuestId="32682" GiverName="Nana Mudclaw" GiverId="64597" />
+		</If>
+		<If Condition="HasQuest(32682) &amp;&amp; !IsQuestCompleted(32682)" >
+			<CustomBehavior File="FlyTo" X="-182.20" Y="631.29" Z="165.41" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="58646" InteractByGossipOptions="2" WaitTime="1500" X="-182.20" Y="631.29" Z="165.41" />
+		</If>
+		<If Condition="HasQuest(32682) &amp;&amp; IsQuestCompleted(32682)" >
+			<TurnIn QuestName="Inherit The Earth" QuestId="32682" TurnInName="Nana Mudclaw" TurnInId="64597" />
+		</If>
+	</If>
+
+<!-- Checking if you have a quest. If you do, start, if not, fly to Halfhill -->
+	<If Condition="!HasQuest(30332) &amp;&amp; !HasQuest(30317) &amp;&amp; !HasQuest(30324)
+			&amp;&amp; !HasQuest(30331) &amp;&amp; !HasQuest(30329) &amp;&amp; !HasQuest(30473)
+			&amp;&amp; !HasQuest(30323) &amp;&amp; !HasQuest(30474) &amp;&amp; !HasQuest(30470)
+			&amp;&amp; !HasQuest(30476) &amp;&amp; !HasQuest(30475) &amp;&amp; !HasQuest(30322)
+			&amp;&amp; !HasQuest(30333) &amp;&amp; !HasQuest(30334) &amp;&amp; !HasQuest(30335)
+			&amp;&amp; !HasQuest(30336) &amp;&amp; !HasQuest(30328) &amp;&amp; !HasQuest(30326)
+			&amp;&amp; !HasQuest(30327) &amp;&amp; !HasQuest(30318) &amp;&amp; !HasQuest(30325)
+			&amp;&amp; !HasQuest(30330) &amp;&amp; !HasQuest(30477) &amp;&amp; !HasQuest(30471)
+			&amp;&amp; !HasQuest(30472) &amp;&amp; !HasQuest(30319) &amp;&amp; !HasQuest(30321)
+			&amp;&amp; !HasQuest(31942) &amp;&amp; !HasQuest(31672) &amp;&amp; !HasQuest(31673)
+			&amp;&amp; !HasQuest(31941) &amp;&amp; !HasQuest(31670) &amp;&amp; !HasQuest(31669)
+			&amp;&amp; !HasQuest(31674) &amp;&amp; !HasQuest(31675) &amp;&amp; !HasQuest(31943)
+			&amp;&amp; !HasQuest(31671) &amp;&amp; !HasQuest(30337) &amp;&amp; !HasQuest(30479)
+			&amp;&amp; !HasQuest(30478)" >
+		<CustomBehavior File="Message" Text="Starting Tillers Dailies, moving to Halfhill." LogColor="Green" />
+		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-239.3049" Y="586.3218" Z="167.5479" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+	</If>
+	
+<!-- Sungshin Ironpaw -->
+	<While Condition="HasQuestAvailable(64231)" >
+		<CustomBehavior File="InteractWith" MobId="64231" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Merchant Greenfield -->
+	<While Condition="HasQuestAvailable(58718)" >
+		<CustomBehavior File="InteractWith" MobId="58718" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Anthea Ironpaw -->
+	<If Condition="HasQuestAvailable(58713)" >
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="Cindergut Peppers" QuestId="30329" GiverName="Anthea Ironpaw" GiverId="58713" />
+	</If>
+
+<!-- Mei Mei Ironpaw -->
+	<If Condition="HasQuestAvailable(58714)" >
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="The Mile-High Grub" QuestId="30331" GiverName="Mei Mei Ironpaw" GiverId="58714" />
+	</If>
+
+<!-- Yan Ironpaw -->
+	<If Condition="HasQuestAvailable(58715)" >
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="The Thousand-Year Dumpling" QuestId="30328" GiverName="Yan Ironpaw" GiverId="58715" />
+	</If>
+
+<!-- Kol Ironpaw -->
+	<If Condition="HasQuestAvailable(58712)" >
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="Fatty Goatsteak" QuestId="30332" GiverName="Kol Ironpaw" GiverId="58712" />
+	</If>
+
+<!-- Jian Ironpaw-->
+	<If Condition="HasQuestAvailable(58716)" >
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="The Truffle Shuffle" QuestId="30330" GiverName="Jian Ironpaw" GiverId="58716" />
+	</If>
+	
+<!-- A Shabby New Face -->
+	<If Condition="HasQuest(32189)" >
+		<TurnIn QuestName="A Shabby New Face" QuestId="32189" TurnInName="Barnaby Fletcher" TurnInId="67565" />
+	</If>
+	
+<!-- Barnaby Fletcher -->
+	<While Condition="HasQuestAvailable(67565)" >
+		<CustomBehavior File="InteractWith" MobId="67565" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- One Magical, Flying Kingdom's Trash -->
+	<If Condition="HasQuest(32198)" >
+		<TurnIn QuestName="One Magical, Flying Kingdom's Trash" QuestId="32198" TurnInName="Barnaby Fletcher" TurnInId="67565" />
+	</If>
+
+<!-- Chee Chee -->
+	<If Condition="HasQuestAvailable(58709)" >
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="IsQuestCompleted(31338) &amp;&amp; IsQuestCompleted(31339) &amp;&amp; IsQuestCompleted(31340)" >
+			<PickUp QuestName="Not in Chee Chee's Backyard" QuestId="30324" GiverName="Chee Chee" GiverId="58709" />
+		<Else>
+			<While Condition="HasQuestAvailable(58709)" >
+				<CustomBehavior File="InteractWith" MobId="58709" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			</While>
+		</Else>
+		</If>
+	</If>
+
+<!-- Tina Mudclaw -->
+	<If Condition="HasQuestAvailable(58761)" >
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="They Don't Even Wear Them" QuestId="30323" GiverName="Tina" GiverId="58761" />
+	</If>
+
+<!-- Gina Mudclaw -->
+	<If Condition="HasQuestAvailable(58706)" >
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="IsQuestCompleted(31945)" >
+			<PickUp QuestName="Money Matters" QuestId="30322" GiverName="Gina Mudclaw" GiverId="58706" />
+		<Else>
+			<While Condition="HasQuestAvailable(58706)" >
+				<CustomBehavior File="InteractWith" MobId="58706" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			</While>
+		</Else>
+		</If>
+	</If>
+
+<!-- Farmer Fung -->
+	<If Condition="HasQuestAvailable(57298)" >
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="IsQuestCompleted(30518) &amp;&amp; IsQuestCompleted(31947)" >
+			<PickUp QuestName="Water, Water Everywhere" QuestId="30317" GiverName="Farmer Fung" GiverId="57298" />
+		<Else>
+			<While Condition="HasQuestAvailable(57298)" >
+				<CustomBehavior File="InteractWith" MobId="57298" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			</While>
+		</Else>
+		</If>
+	</If>
+
+<!-- Ella -->
+	<If Condition="HasQuestAvailable(58647)" >
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="IsQuestCompleted(31534) &amp;&amp; IsQuestCompleted(31537) &amp;&amp; IsQuestCompleted(31538)" >
+			<PickUp QuestName="You Have to Burn The Ropes" QuestId="30327" GiverName="Ella" GiverId="58647" />
+		<Else>
+			<While Condition="HasQuestAvailable(58647, &quot;Available&quot;)" >
+				<CustomBehavior File="InteractWith" InteractByQuestFrameDisposition="Ignore" MobId="58647" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			</While>
+		</Else>
+		</If>
+	</If>
+
+<!-- Haohan Mudclaw -->
+	<If Condition="HasQuestAvailable(57402)" >
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="IsQuestCompleted(30522)" >
+			<PickUp QuestName="Pest Problems" QuestId="30319" GiverName="Haohan" GiverId="57402" />
+		<Else>
+			<While Condition="HasQuestAvailable(57402)" >
+				<CustomBehavior File="InteractWith" MobId="57402" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			</While>
+		</Else>
+		</If>
+	</If>
+
+<!-- Old Hillpaw -->
+	<If Condition="HasQuestAvailable(58707)" >
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="Chasing the Chicken" QuestId="30318" GiverName="Old Hillpaw" GiverId="58707" />
+	</If>
+
+<!-- Jogu the Drunk -->
+	<While Condition="HasQuestAvailable(58710)" >
+		<CustomBehavior File="InteractWith" MobId="58710" PreInteractMountStrategy="Dismount" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Fish Fellreed -->
+	<While Condition="HasQuestAvailable(58705)" >
+		<CustomBehavior File="InteractWith" MobId="58705" PreInteractMountStrategy="Dismount" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Sho -->
+	<If Condition="HasQuestAvailable(58708)" >
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="IsQuestCompleted(31531) &amp;&amp; IsQuestCompleted(31529) &amp;&amp; IsQuestCompleted(31532)" >
+			<PickUp QuestName="Where It Counts" QuestId="30325" GiverName="Sho" GiverId="58708" />
+		<Else>
+			<While Condition="HasQuestAvailable(58708)" >
+				<CustomBehavior File="InteractWith" MobId="58708" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			</While>
+		</Else>
+		</If>
+	</If>
+	
+<!-- Farmer Yoon (In Market)-->
+	<If Condition="IsQuestCompleted(32682)" >
+		<If Condition="((!HasQuest(31942) &amp;&amp; IsQuestCompleted(31942)) ||
+				(!HasQuest(31672) &amp;&amp; IsQuestCompleted(31672)) ||
+				(!HasQuest(31673) &amp;&amp; IsQuestCompleted(31673)) ||
+				(!HasQuest(31941) &amp;&amp; IsQuestCompleted(31941)) ||
+				(!HasQuest(31670) &amp;&amp; IsQuestCompleted(31670)) ||
+				(!HasQuest(31669) &amp;&amp; IsQuestCompleted(31669)) ||
+				(!HasQuest(31674) &amp;&amp; IsQuestCompleted(31674)) ||
+				(!HasQuest(31675) &amp;&amp; IsQuestCompleted(31675)) ||
+				(!HasQuest(31943) &amp;&amp; IsQuestCompleted(31943)) ||
+				(!HasQuest(31671) &amp;&amp; IsQuestCompleted(31671)))" >
+			<CustomBehavior File="Message" Text="Previously Completed Farming Quests Detected" LogColor="CornflowerBlue" />
+			<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: Previously completed quests detected! \n\n Either you have done some of you quests already, and have restarted the bot...\n OR your cache folder is NOT clean, and must be deleted, and bot restarted." />
+		</If>
+		<While Condition="HasQuestAvailable(58646)" >
+			<CustomBehavior File="InteractWith" MobId="58646" InteractByQuestFrameDisposition="Ignore" PreInteractMountStrategy="Dismount" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+
+<!-- Andi -->
+	<While Condition="HasQuestAvailable(64464)" >
+		<CustomBehavior File="InteractWith" InteractByQuestFrameDisposition="Ignore" MobId="64464" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+	<If Condition="HasQuest(32648) || HasQuest(32646) || HasQuest(32643) || HasQuest(32654) || HasQuest(32659) ||
+					HasQuest(32650)" >
+		<CustomBehavior File="Message" Text="Checking for harvestable plants." LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-180.84" Y="628.36" Z="165.41" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; new [] 
+						{ 58567, 60113, 66112, 66113, 63154, 63156, 63184, 63185, 63249, 63250,
+						63228, 63229, 63164, 63165, 66128, 66129, 63264, 63265, 66084, 66085,
+						66043, 65989, 66016, 65973, 66006, 60172, 65938, 65932, 65930, 65933,
+						65929, 65931, 63157, 66108, 63158, 63180, 63245, 63223, 63160, 66123,
+						63260, 66080 }.Contains((int)u.Entry) &amp;&amp; u.Distance &lt;= 100)" >
+			<CustomBehavior File="InteractWith" MobId="58567" MobId2="60113" MobId3="66112" MobId4="66113" MobId5="63154"
+												MobId6="63156" MobId7="63184" MobId8="63185" MobId9="63249" MobId10="63250"
+												MobId11="63228" MobId12="63229" MobId13="63164" MobId14="63165" MobId15="66128"
+												MobId16="66129" MobId17="63264" MobId18="63265" MobId19="66084" MobId20="66085"
+												MobId21="66043" MobId22="65989" MobId23="66016" MobId24="65973" MobId25="66006"
+												MobId26="60172" MobId27="65938" MobId28="65932" MobId29="65930" MobId30="65933"
+												MobId31="65929" MobId32="65931" MobId33="63157" MobId34="66108" MobId35="63158"
+												MobId36="63180" MobId37="63245" MobId38="63223" MobId39="63160" MobId40="66123"
+												MobId41="63260" MobId42="66080" WaitForNpcs="False" WaitTime="10" />
+		</While>
+		<If Condition="HasQuest(32648) &amp;&amp; IsQuestCompleted(32648)" >
+			<TurnIn QuestName="Work Order: Golden Lotus II" QuestId="32648" TurnInType="Object" TurnInName="Empty Crate" TurnInId="218765" X="-177.908" Y="653.5" Z="166.1242" />
+		</If>
+		<If Condition="HasQuest(32643) &amp;&amp; IsQuestCompleted(32643)" >
+			<TurnIn QuestName="Work Order: Dominance Offensive II" QuestId="32643" TurnInType="Object" TurnInName="Empty Crate" TurnInId="218765" X="-177.908" Y="653.5" Z="166.1242" />
+		</If>
+		<If Condition="HasQuest(32646) &amp;&amp; IsQuestCompleted(32646)" >
+			<TurnIn QuestName="Work Order: Operation Shieldwall II" QuestId="32646" TurnInType="Object" TurnInName="Empty Crate" TurnInId="218765" X="-177.908" Y="653.5" Z="166.1242" />
+		</If>
+		<If Condition="HasQuest(32650) &amp;&amp; IsQuestCompleted(32650)" >
+			<TurnIn QuestName="Work Order: Shado-Pan II" QuestId="32650" TurnInType="Object" TurnInName="Empty Crate" TurnInId="218765" X="-177.908" Y="653.5" Z="166.1242" />
+		</If>
+		<If Condition="HasQuest(32657) &amp;&amp; IsQuestCompleted(32657)" >
+			<TurnIn QuestName="Work Order: The August Celestials II" QuestId="32657" TurnInType="Object" TurnInName="Empty Crate" TurnInId="218765" X="-177.908" Y="653.5" Z="166.1242" />
+		</If>
+		<If Condition="HasQuest(32659) &amp;&amp; IsQuestCompleted(32659)" >
+			<TurnIn QuestName="Work Order: The Klaxxi II" QuestId="32659" TurnInType="Object" TurnInName="Empty Crate" TurnInId="218765" X="-177.908" Y="653.5" Z="166.1242" />
+		</If>
+	</If>
+
+<!-- If changed, make sure Yoon stays last, farm phasing issues. -->
+
+<!-- Farmer Yoon -->
+	<If Condition="!IsQuestCompleted(32682)" >
+		<If Condition="((!HasQuest(31942) &amp;&amp; IsQuestCompleted(31942)) ||
+				(!HasQuest(31672) &amp;&amp; IsQuestCompleted(31672)) ||
+				(!HasQuest(31673) &amp;&amp; IsQuestCompleted(31673)) ||
+				(!HasQuest(31941) &amp;&amp; IsQuestCompleted(31941)) ||
+				(!HasQuest(31670) &amp;&amp; IsQuestCompleted(31670)) ||
+				(!HasQuest(31669) &amp;&amp; IsQuestCompleted(31669)) ||
+				(!HasQuest(31674) &amp;&amp; IsQuestCompleted(31674)) ||
+				(!HasQuest(31675) &amp;&amp; IsQuestCompleted(31675)) ||
+				(!HasQuest(31943) &amp;&amp; IsQuestCompleted(31943)) ||
+				(!HasQuest(31671) &amp;&amp; IsQuestCompleted(31671)))" >
+			<CustomBehavior File="Message" Text="Previously Completed Farm Quests Detected" LogColor="CornflowerBlue" />
+			<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: Previously completed quests detected! \n\n Either you have done some of you quests already, and have restarted the bot...\n OR your cache folder is NOT clean, and must be deleted, and bot restarted." />
+		</If>
+		<While Condition="HasQuestAvailable(58646)" >
+			<CustomBehavior File="InteractWith" MobId="58646" PreInteractMountStrategy="Dismount" WaitTime="1000" X="-180.84" Y="628.36" Z="165.41" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+		<CustomBehavior File="InteractWith" MobId="58567" MobId2="60113" MobId3="66112" MobId4="66113" MobId5="63154"
+											MobId6="63156" MobId7="63184" MobId8="63185" MobId9="63249" MobId10="63250"
+											MobId11="63228" MobId12="63229" MobId13="63164" MobId14="63165" MobId15="66128"
+											MobId16="66129" MobId17="63264" MobId18="63265" MobId19="66084" MobId20="66085"
+											MobId21="66043" MobId22="65989" MobId23="66016" MobId24="65973" MobId25="66006"
+											MobId26="60172" MobId27="65938" MobId28="65932" MobId29="65930" MobId30="65933"
+											MobId31="65929" MobId32="65931" MobId33="63157" MobId34="66108" MobId35="63158"
+											MobId36="63180" MobId37="63245" MobId38="63223" MobId39="63160" MobId40="66123"
+											MobId41="63260" MobId42="66080" NumOfTimes="16" WaitForNpcs="False" WaitTime="10" />
+	</If>
+
+<!-- Starting Quests -->
+
+	<CustomBehavior File="Message" Text="Beginning Tillers Quests." LogColor="Green" />
+
+	<If Condition="HasQuest(31942) || HasQuest(31672) || HasQuest(31673) || HasQuest(31941) ||
+					HasQuest(31670) || HasQuest(31669) || HasQuest(31674) || HasQuest(31675) ||
+					HasQuest(31943) || HasQuest(31671) || HasQuest(32645) || HasQuest(32647) || 
+					HasQuest(32642) || HasQuest(32653) || HasQuest(32658) || HasQuest(32649)" >
+		<CustomBehavior File="Message" Text="Starting The Seeds Dailies." LogColor="Green" />
+		<CustomBehavior File="LoadProfile" ProfileName="[Rep] Farm Dailies [Brodie]" />
+	</If>
+
+	<If Condition="HasQuest(31945) &amp;&amp; IsQuestCompleted(31945)" >
+		<TurnIn QuestName="Learn and Grow VI: Gina's Vote" QuestId="31945" TurnInName="Gina Mudclaw" TurnInId="58706" X="-259.5399" Y="592.5469" Z="167.5478" />
+		<CustomBehavior File="FlyTo" X="-169.0728" Y="638.5255" Z="165.4094" />
+		<CustomBehavior File="WaitTimer" WaitTime="15000" />
+	</If>
+
+	<If Condition="HasQuest(30517) || HasQuest(30518) || HasQuest(31947) || HasQuest(31479) ||
+					HasQuest(30519) || HasQuest(31948) || HasQuest(31949) || HasQuest(30258) ||
+					HasQuest(30259) || HasQuest(31946) || HasQuest(30260) || HasQuest(30516) ||
+					HasQuest(30523) || HasQuest(30524)" >
+		<CustomBehavior File="LoadProfile" ProfileName="[Rep] Tillers Votes [Brodie]" />
+	</If>
+
+<!-- You Want Fish? -->
+	<If Condition="HasQuest(32684)" >
+		<CustomBehavior File="Message" Text="Starting You Want Fish?" LogColor="Green" />
+		<TurnIn QuestName="You Want Fish?" QuestId="32684" TurnInName="Ben of the Booming Voice" TurnInId="70398" />
+	</If>
+	
+<!-- Ben of the Booming Voice -->
+	<While Condition="HasQuestAvailable(70398)" >
+		<CustomBehavior File="InteractWith" MobId="70398" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- No Fishing Pole Necessary -->
+	<If Condition="HasQuest(32685) &amp;&amp; !IsQuestCompleted(32685)" >
+		<CustomBehavior File="Message" Text="Starting No Fishing Pole Necessary" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-129.49" Y="369.72" Z="147.49" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="MrFishIt" CollectItemId="74866" CollectItemCount="5" X="-135.56" Y="355.43" Z="146.0" />
+	</If>
+	<If Condition="HasQuest(32685) &amp;&amp; IsQuestCompleted(32685)" >
+		<TurnIn QuestName="No Fishing Pole Necessary" QuestId="32685" TurnInName="Ben of the Booming Voice" TurnInId="70398" />
+	</If>
+
+<!-- A Gift for Jogu -->
+	<If Condition="HasQuest(30478) &amp;&amp; !IsQuestCompleted(30478)" >
+		<CustomBehavior File="Message" Text="Starting A Gift for Jogu" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-164.2701" Y="618.3003" Z="175.4463" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="HasQuest(30478) &amp;&amp; !IsQuestCompleted(30478) &amp;&amp; !HasItem(80234)" >
+			<CustomBehavior File="InteractWith" MobId="211020" CollectionDistance="1000" WaitTime="1000" />
+		</While>
+		<While Condition="HasQuest(30478) &amp;&amp; !IsQuestCompleted(30478) &amp;&amp; !HasItem(80235)" >
+			<CustomBehavior File="InteractWith" MobId="211022" CollectionDistance="1000" WaitTime="1000" />
+		</While>
+		<CustomBehavior File="FlyTo" X="-266.1383" Y="590.1978" Z="167.5488" />
+		<CustomBehavior File="InteractWith" MobId="58717" QuestId="30478" InteractByGossipOptions="1" WaitTime="1000" />
+	</If>
+
+<!-- Money Matters -->
+ 	<If Condition="HasQuest(30322) &amp;&amp; !IsQuestCompleted(30322)" >
+		<CustomBehavior File="Message" Text="Starting Money Matters" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="30322" QuestObjectiveIndex="3" MobId="59582" InteractByGossipOptions="1,1"
+			NonCompeteDistance="0" CollectionDistance="200" WaitTime="1500" X="-203.3791" Y="496.2022" Z="187.179" />
+		<CustomBehavior File="InteractWith" QuestId="30322" QuestObjectiveIndex="1" MobId="59581" InteractByGossipOptions="1,1"
+			NonCompeteDistance="0" CollectionDistance="200" WaitTime="1500" X="-140.0031" Y="505.1759" Z="209.4762" />
+		<CustomBehavior File="InteractWith" QuestId="30322" QuestObjectiveIndex="4" MobId="59585" InteractByGossipOptions="1,1"
+			NonCompeteDistance="0" CollectionDistance="200" WaitTime="1500" X="-270.4832" Y="497.3418" Z="168.56" />
+		<CustomBehavior File="InteractWith" QuestId="30322" QuestObjectiveIndex="2" MobId="59583" InteractByGossipOptions="1,1"
+			NonCompeteDistance="0" CollectionDistance="200" WaitTime="1500" X="-149.9961" Y="477.6948" Z="196.3098" />
+	</If>
+
+<!-- Water, Water Everywhere -->
+ 	<If Condition="HasQuest(30317) &amp;&amp; !IsQuestCompleted(30317)" >
+		<CustomBehavior File="Message" Text="Starting Water, Water Everywhere" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-221.92" Y="461.65" Z="185.44" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="30317" MobId="60231" PreInteractMountStrategy="Dismount" NonCompeteDistance="0" InteractByGossipOptions="1,1" CollectionDistance="1000" X="-221.92" Y="461.65" Z="185.44" />
+		<While Condition="!IsObjectiveComplete(1,30317)" >
+			<CustomBehavior File="NoControlVehicle" QuestId="30317" VehicleMountId="63274" TargetId="59574" AttackButton="1" OftenToUse="2000" MaxRange="200" TypeId="2" />
+		</While>
+	</If>
+	
+<!-- The Beginner's Brew -->
+	<If Condition="HasQuest(31534) &amp;&amp; !IsQuestCompleted(31534)" >
+		<CustomBehavior File="Message" Text="Starting The Beginner's Brew" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-251.5292" Y="593.0345" Z="167.5488" />
+		<!-- Checking Halfhill first -->
+		<If Condition="Unit(57402) != null &amp;&amp; !IsObjectiveComplete(1,31534)" >
+			<CustomBehavior File="InteractWith" MobId="57402" NonCompeteDistance="0" WaitTime="1000" X="-251.5292" Y="593.0345" Z="167.5488" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipOption(GetNumGossipOptions())" WaitTime="1000" />
+		</If>
+		<If Condition="Unit(58706) != null &amp;&amp; !IsObjectiveComplete(2,31534)" >
+			<CustomBehavior File="InteractWith" MobId="58706" NonCompeteDistance="0" WaitTime="1000" X="-251.5292" Y="593.0345" Z="167.5488" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipOption(GetNumGossipOptions()-1)" WaitTime="1000" />
+		</If>
+		<If Condition="Unit(58705) != null &amp;&amp; !IsObjectiveComplete(3,31534)" >
+			<CustomBehavior File="InteractWith" MobId="58705" NonCompeteDistance="0" WaitTime="1000" X="-251.5292" Y="593.0345" Z="167.5488" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipOption(GetNumGossipOptions())" WaitTime="1000" />
+		</If>
+		<If Condition="Unit(57298) != null &amp;&amp; !IsObjectiveComplete(4,31534)" >
+			<CustomBehavior File="InteractWith" MobId="57298" NonCompeteDistance="0" WaitTime="1000" X="-251.5292" Y="593.0345" Z="167.5488" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipOption(GetNumGossipOptions())" WaitTime="1000" />
+		</If>
+		<!-- Finish off whomever wasn't at Halfhill -->
+		<If Condition="!IsObjectiveComplete(4,31534)" >
+			<CustomBehavior File="FlyTo" TerminateWhen="Unit(57298) != null" X="215.5551" Y="774.2877" Z="160.5352" />
+			<CustomBehavior File="InteractWith" MobId="57298" NonCompeteDistance="0" WaitTime="1000" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				X="215.5551" Y="774.2877" Z="160.5352" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipOption(GetNumGossipOptions())" WaitTime="1000" />
+		</If>
+		<If Condition="!IsObjectiveComplete(3,31534)" >
+			<CustomBehavior File="FlyTo" TerminateWhen="Unit(58705) != null" X="305.699" Y="1044.236" Z="145.685" />
+			<CustomBehavior File="InteractWith" MobId="58705" NonCompeteDistance="0" WaitTime="1000" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				X="305.699" Y="1044.236" Z="145.685" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipOption(GetNumGossipOptions())" WaitTime="1000" />
+		</If>
+		<If Condition="!IsObjectiveComplete(1,31534)" >
+			<CustomBehavior File="FlyTo" TerminateWhen="Unit(57402) != null" X="198.3857" Y="930.7967" Z="174.7557" />
+			<CustomBehavior File="InteractWith" MobId="57402" NonCompeteDistance="0" WaitTime="1000" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				X="198.3857" Y="930.7967" Z="174.7557" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipOption(GetNumGossipOptions())" WaitTime="1000" />
+		</If>
+	</If>
+	
+	<If Condition="(!HasQuest(30526) &amp;&amp; !IsQuestCompleted(30526)) &amp;&amp; GetFactionReputation(1272) &gt; 33600" >
+		<PickUp Nav="Fly" QuestName="Lost and Lonely" QuestId="30526" GiverName="Lost Dog" GiverId="59533" X="-220.1198" Y="1014.149" Z="167.4768" />
+	</If>
+
+<!-- Chasing the Chicken -->
+	<If Condition="HasQuest(30318) &amp;&amp; !IsQuestCompleted(30318)" >
+		<CustomBehavior File="Message" Text="Starting Chasing the Chicken" LogColor="Green" />
+		<CustomBehavior File="FlyTo" DestName="Chicken Chasing! Spot #2" X="-230.5073" Y="1385.025" Z="222.1091" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="HasQuest(30318) &amp;&amp; !HasItem(80223)" >
+			<CustomBehavior File="InteractWith" MobId="58918" PreInteractMountStrategy="DismountOrCancelShapeshift" CollectionDistance="250" ProactiveCombatStrategy="NoClear" />
+			<If Condition="Me.HasAura(114652)" >
+				<CustomBehavior File="InteractWith" MobId="210604" PreInteractMountStrategy="DismountOrCancelShapeshift" Range="8" MinRange="3" X="-225.0399" Y="1424.528" Z="223.0623" WaitForNpcs="False" />
+				<CustomBehavior File="RunMacro" Macro="/click ExtraActionButton1" />
+			</If>
+			<If Condition="Me.HasAura(114670)" >
+				<RunTo X="-230.5073" Y="1385.025" Z="222.1091" />
+				<CustomBehavior File="RunMacro" Macro="/click ExtraActionButton1" />
+			</If>
+			<If Condition="Me.HasAura(114672)" >
+				<CustomBehavior File="RunMacro" Macro="/click ExtraActionButton1" />
+			</If>
+			<If Condition="Me.HasAura(114677)" >
+				<CustomBehavior File="RunMacro" Macro="/click ExtraActionButton1" />
+			</If>
+		</While>
+	</If>
+
+<!-- Pest Problems -->
+	<If Condition="HasQuest(30319) &amp;&amp; !IsQuestCompleted(30319)" >
+		<CustomBehavior File="Message" Text="Starting Pest Problems" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="FlyTo" X="-94.36108" Y="1126.441" Z="171.5581" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30319)" >
+			<CustomBehavior File="InteractWith" QuestId="30319" TerminateWhen="Me.HasAura(114573) || Me.HasAura(114517)" MobId="59532" NonCompeteDistance="0"
+				InteractByGossipOptions="1" IgnoreLoSToTarget="True" WaitTime="1000" X="-92.06" Y="1126.441" Z="171.5581" />
+			<CustomBehavior File="InteractWith" QuestId="30319" TerminateWhen="!(Me.HasAura(114573)) &amp;&amp; !(Me.HasAura(114517))" MobId="59530" MobState="Alive"
+				WaitTime="100" NonCompeteDistance="0" Range="10" IgnoreCombat="True" NumOfTimes="1000" X="-85.90" Y="1118.68" Z="171.39" />
+		</While>
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- Weed War II -->
+	<If Condition="HasQuest(30321) &amp;&amp; !IsQuestCompleted(30321)" >
+		<CustomBehavior File="Message" Text="Starting Weed War II" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<UseMount Value="False" />
+		<CustomBehavior File="FlyTo" X="-249.2745" Y="1165.031" Z="165.9371" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30321)" >
+			<CustomBehavior File="InteractWith" QuestId="30321" MobId="57385" TerminateWhen="Me.HasAura(114494)" InteractByGossipOptions="1" Range="5" X="-257.53" Y="1164.85" Z="169.60" />
+			<CustomBehavior File="InteractWith" QuestId="30321" MobId="57306" MobId2="57308" Range="5" WaitTime="10" CollectionDistance="1000" WaitForNpcs="False" />
+			<CustomBehavior File="InteractWith" QuestId="30321" MobId="210056" WaitTime="10" CollectionDistance="1000" WaitForNpcs="False" />
+		</While>
+		<EnableBehavior Name="Pull" />
+		<UseMount Value="True" />
+	</If>
+	
+<!-- Lost Sheepie -->
+	<If Condition="HasQuest(31338) &amp;&amp; !IsQuestCompleted(31338)" >
+		<CustomBehavior File="Message" Text="Starting Lost Sheepie" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="86.18186" Y="1307.803" Z="218.9255" />
+		<CustomBehavior File="InteractWith" QuestId="31338" MobId="64385" NumOfTimes="100" NonCompeteDistance="0"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			X="86.18186" Y="1307.803" Z="218.9255" />
+	</If>
+	
+<!-- Lost Sheepie... Again -->
+	<If Condition="HasQuest(31339) &amp;&amp; !IsQuestCompleted(31339)" >
+		<CustomBehavior File="Message" Text="Starting Lost Sheepie... Again" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="109.1845" Y="814.6761" Z="160.7633" />
+		<CustomBehavior File="InteractWith" QuestId="31339" MobId="64386" NumOfTimes="100" NonCompeteDistance="0"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			X="109.1845" Y="814.6761" Z="160.7633" />
+	</If>
+
+<!-- A Gift for Old Hillpaw -->
+ 	<If Condition="HasQuest(30476) &amp;&amp; !IsQuestCompleted(30476)" >
+		<CustomBehavior File="Message" Text="Starting A Gift for Old Hillpaw" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="348.8154" Y="1011.628" Z="146.0121" />
+		<While Condition="!IsQuestCompleted(30476)" >
+			<If Condition="!HasItem(80229)" >
+				<CustomBehavior File="FlyTo" X="348.64" Y="1067.99" Z="145.28" />
+				<CustomBehavior File="InteractWith" MovementBy="ClickToMoveOnly" QuestId="30476" MobId="211021" CollectionDistance="1000" WaitForNpcs="False" />
+			</If>
+			<If Condition="!HasItem(80229)" >
+				<CustomBehavior File="FlyTo" X="349.86" Y="963.92" Z="145.28" />
+				<CustomBehavior File="InteractWith" MovementBy="ClickToMoveOnly" QuestId="30476" MobId="211021" CollectionDistance="1000" WaitForNpcs="False" />
+			</If>
+			<If Condition="!HasItem(80229)" >
+				<CustomBehavior File="FlyTo" X="378.03" Y="868.71" Z="145.28" />
+				<CustomBehavior File="InteractWith" MovementBy="ClickToMoveOnly" QuestId="30476" MobId="211021" CollectionDistance="1000" WaitForNpcs="False" />
+			</If>
+		</While>
+		<If Condition="IsQuestCompleted(30476)" >
+			<CustomBehavior File="MyCTM" X="321.46" Y="980.80" Z="143.7215" />
+			<RunTo X="264.722" Y="1034.658" Z="146.9037" />
+		</If>
+	</If>
+
+<!-- You Have to Burn the Ropes -->
+	<If Condition="HasQuest(30327) &amp;&amp; !IsQuestCompleted(30327)" >
+		<CustomBehavior File="Message" Text="Starting You Have to Burn the Ropes" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="FlyTo" X="40.36983" Y="1480.113" Z="357.612" />
+		<While Condition="!IsQuestCompleted(30327)" >
+			<CustomBehavior File="InteractWith" QuestId="30327" MobId="210760" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="15" NonCompeteDistance="1" MobState="Alive" WaitForNpcs="False" />
+			<If Condition="!IsQuestCompleted(30327)" >
+				<CustomBehavior File="FlyTo" X="-40.17399" Y="1439.186" Z="316.8765" />
+				<CustomBehavior File="InteractWith" QuestId="30327" MobId="210760" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="15" NonCompeteDistance="1" MobState="Alive" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsQuestCompleted(30327)" >
+				<CustomBehavior File="FlyTo" X="-7.054522" Y="1468.977" Z="365.7731" />
+				<CustomBehavior File="InteractWith" QuestId="30327" MobId="210760" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="15" NonCompeteDistance="1" MobState="Alive" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsQuestCompleted(30327)" >			
+				<CustomBehavior File="FlyTo" X="-45.5295" Y="1487.24" Z="365.1429" />
+				<CustomBehavior File="InteractWith" QuestId="30327" MobId="210760" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="15" NonCompeteDistance="1" MobState="Alive" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsQuestCompleted(30327)" >
+				<CustomBehavior File="FlyTo" X="37.77297" Y="1481.998" Z="358.0376" />
+				<CustomBehavior File="InteractWith" QuestId="30327" MobId="210760" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="15" NonCompeteDistance="1" MobState="Alive" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsQuestCompleted(30327)" >
+				<CustomBehavior File="FlyTo" X="119.0154" Y="1438.674" Z="358.1469" />
+				<CustomBehavior File="InteractWith" QuestId="30327" MobId="210760" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="15" NonCompeteDistance="1" MobState="Alive" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsQuestCompleted(30327)" >
+				<CustomBehavior File="FlyTo" X="147.5691" Y="1454.504" Z="410.7695" />
+				<CustomBehavior File="InteractWith" QuestId="30327" MobId="210760" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="15" NonCompeteDistance="1" MobState="Alive" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsQuestCompleted(30327)" >
+				<CustomBehavior File="FlyTo" X="187.5415" Y="1408.249" Z="371.0334" />
+				<CustomBehavior File="InteractWith" QuestId="30327" MobId="210760" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="15" NonCompeteDistance="1" MobState="Alive" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsQuestCompleted(30327)" >
+				<CustomBehavior File="FlyTo" X="195.6982" Y="1407.607" Z="369.3455" />
+				<CustomBehavior File="InteractWith" QuestId="30327" MobId="210760" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="15" NonCompeteDistance="1" MobState="Alive" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsQuestCompleted(30327)" >
+				<CustomBehavior File="FlyTo" X="252.6152" Y="1369.607" Z="343.0423" />
+				<CustomBehavior File="InteractWith" QuestId="30327" MobId="210760" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="15" NonCompeteDistance="1" MobState="Alive" WaitForNpcs="False" />
+			</If>
+		</While>
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- The Mile-High Grub -->
+ 	<If Condition="HasQuest(30331) &amp;&amp; !IsQuestCompleted(30331)" >
+		<CustomBehavior File="Message" Text="Starting The Mile-High Grub" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="466.8641" Y="1400.579" Z="415.4039" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsObjectiveComplete(1,30331)" >
+			<RunTo X="466.8641" Y="1400.579" Z="415.4039" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(79895)" WaitTime="20000" />
+		</While>
+	</If>
+
+<!-- Where it Counts -->
+	<If Condition="HasQuest(30325) &amp;&amp; !IsQuestCompleted(30325)" >
+		<CustomBehavior File="Message" Text="Starting Where It Counts" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="192.4045" Y="1512.467" Z="427.4137" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Where it Counts" QuestId="30325" Type="KillMob" MobId="59123" KillCount="1" X="192.4045" Y="1512.467" Z="427.4137" />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="InteractWith" QuestId="30325" QuestObjectiveIndex="1" PreInteractMountStrategy="Dismount" MobId="210955" 
+			NonCompeteDistance="0" NumOfTimes="100" WaitTime="100" />
+		<CustomBehavior File="InteractWith" QuestId="30325" QuestObjectiveIndex="2" PreInteractMountStrategy="Dismount" MobId="210890" 
+			NonCompeteDistance="0" NumOfTimes="100" WaitTime="100" />
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- A Gift for Sho -->
+	<If Condition="HasQuest(30472) &amp;&amp; !IsQuestCompleted(30472)" >
+		<CustomBehavior File="Message" Text="Starting A Gift for Sho" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="FlyTo" X="192.4045" Y="1512.467" Z="427.4137" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="30472" MobId="210873" NumOfTimes="10" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" />
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- The Truffle Shuffle -->
+	<If Condition="HasQuest(30330) &amp;&amp; !IsQuestCompleted(30330)" >
+		<CustomBehavior File="Message" Text="Starting The Truffle Shuffle" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="FlyTo" X="98.31226" Y="1476.329" Z="389.9664" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsObjectiveComplete(1,30330)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(80127)" WaitTime="1000" />
+		</While>
+		<CustomBehavior File="InteractWith" QuestId="30330" QuestObjectiveIndex="2" MobId="210810" NumOfTimes="100" WaitTime="1000" PreInteractMountStrategy="Dismount" 
+			NonCompeteDistance="0" CollectionDistance="1000" X="98.31226" Y="1476.329" Z="389.9664" />
+		<EnableBehavior Name="Pull" />
+	</If>
+	
+<!-- Lost and Lonely -->
+	<If Condition="HasQuest(30526) &amp;&amp; !IsQuestCompleted(30526)" >
+		<CustomBehavior File="Message" Text="Starting Lost and Lonely" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Lost and Lonely" QuestId="30526" Type="CollectItem" ItemId="80144" CollectCount="20" />
+	</If>
+
+<!-- Fatty Goatsteak -->
+	<If Condition="HasQuest(30332) &amp;&amp; !IsQuestCompleted(30332)" >
+		<CustomBehavior File="Message" Text="Starting Fatty Goatsteak" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Fatty Goatsteak" QuestId="30332" Type="CollectItem" ItemId="79864" CollectCount="4" />
+	</If>
+
+<!-- The Kunzen Hunter-Chief -->
+	<If Condition="HasQuest(30336) &amp;&amp; !IsQuestCompleted(30336)" >
+		<CustomBehavior File="Message" Text="Starting Kunzen Hunter-Chief" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Kunzen Hunter-Chief" QuestId="30336" Type="KillMob" MobId="59128" KillCount="1" X="-108.26" Y="1479.47" Z="340.46" />
+	</If>
+
+<!-- Simian Sabotage -->
+	<If Condition="HasQuest(30337) &amp;&amp; !IsQuestCompleted(30337)" >
+		<CustomBehavior File="Message" Text="Starting Simian Sabotage" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="30337" QuestObjectiveIndex="1" MobId="211048" MobId2="211049" MobId3="211050" 
+			MobId4="211051" MobId5="211052" MobId6="211053" MobId7="211054" MobId8="211055" MobId9="211056" MobId10="211057" MobId11="211058" 
+			MobId12="211059" MobId13="211060" InteractByUsingItemId="79885" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="30" NumOfTimes="100"
+			WaitTime="10000" X="361.2101" Y="1485.229" Z="442.2877" />
+		<CustomBehavior File="InteractWith" QuestId="30337" QuestObjectiveIndex="2" MobId="211027" MobId2="211028" MobId3="211029" 
+			MobId4="211030" MobId5="211031" MobId6="211032" MobId7="211033" MobId8="211034" MobId9="211035" MobId10="211043" MobId11="211037" 
+			MobId12="211038" MobId13="211039" MobId14="211040" MobId15="211041" MobId16="211042"
+			InteractByUsingItemId="79885" PreInteractMountStrategy="Dismount" NonCompeteDistance="0" CollectionDistance="30" NumOfTimes="100"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="10000" X="301.3538" Y="1396.193" Z="406.4178" />
+		<CustomBehavior File="InteractWith" QuestId="30337" QuestObjectiveIndex="3" MobId="211036" MobId2="211044" MobId3="211045" 
+			MobId4="211046" MobId5="211047" MobId6="211061" MobId7="211062" MobId8="211063" MobId9="211064" MobId10="211065" MobId11="211066" 
+			MobId12="211067" MobId13="211068" MobId14="211069" MobId15="211070" InteractByUsingItemId="79885" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="30" NumOfTimes="100"
+			WaitTime="10000" X="411.4637" Y="1422.371" Z="430.4197" />
+		<CustomBehavior File="InteractWith" QuestId="30337" QuestObjectiveIndex="4" MobId="211071" MobId2="211072" MobId3="211073" 
+			MobId4="211074" MobId5="211075" MobId6="211076" MobId7="211077" MobId8="211078" MobId9="211079" MobId10="211080" MobId11="211081" 
+			MobId12="211082" MobId13="211083" MobId14="211084" MobId15="211085" MobId16="211086" MobId17="211087" MobId18="211088" 
+			MobId19="211089" MobId20="211090" MobId21="211091" MobId22="211092" InteractByUsingItemId="79885" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="30" NumOfTimes="100"
+			WaitTime="10000" X="521.8856" Y="1311.551" Z="383.7625" />
+	</If>
+
+<!-- Stealing is Bad...Re-Stealing is OK -->
+	<If Condition="HasQuest(30334) &amp;&amp; !IsQuestCompleted(30334)" >
+		<CustomBehavior File="Message" Text="Starting Stealing is Bad...Re-Stealing is OK" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Stealing is Bad" QuestId="30334" Type="CollectItem" ItemId="79824" CollectCount="16" />
+	</If>
+
+<!-- Cindergut Peppers -->
+	<If Condition="HasQuest(30329) &amp;&amp; !IsQuestCompleted(30329)" >
+		<CustomBehavior File="Message" Text="Starting Cindergut Peppers" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Cindergut Peppers" QuestId="30329" Type="CollectItem" ItemId="79864" CollectCount="4" />
+	</If>
+
+<!-- The Kunzen Legend-Chief -->
+	<If Condition="HasQuest(30326) &amp;&amp; !IsQuestCompleted(30326)" >
+		<CustomBehavior File="Message" Text="Starting The Kunzen Legend-Chief" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Kunzen Legend-Chief" QuestId="30326" Type="CollectItem" ItemId="79866" CollectCount="1" />
+	</If>
+	
+<!-- Not in Chee Chee's Backyard -->
+ 	<If Condition="HasQuest(30324) &amp;&amp; !IsQuestCompleted(30324)" >
+		<CustomBehavior File="Message" Text="Starting Not in Chee Chee's Backyard" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Not in Chee Chee's Backyard" QuestId="30324" Type="KillMob" MobId="59119" KillCount="8" />
+	</If>
+
+<!-- Stalling the Ravage -->
+	<If Condition="HasQuest(30335) &amp;&amp; !IsQuestCompleted(30335)" >
+		<CustomBehavior File="Message" Text="Starting Stalling the Ravage" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Stalling the Ravage" QuestId="30335" Type="KillMob" MobId="59124" KillCount="12" />
+	</If>
+
+<!-- The Lesser of Two Evils -->
+ 	<If Condition="HasQuest(30333) &amp;&amp; !IsQuestCompleted(30333)" >
+		<CustomBehavior File="Message" Text="Starting The Lesser of Two Evils" LogColor="Green" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Unit(59516, u =&gt; u.Distance &lt; 20) != null" X="540.5706" Y="837.7956" Z="284.4258" />
+		<Objective Nav="Fly" QuestName="The Lesser of Two Evils" QuestId="30333" Type="KillMob" MobId="59516" KillCount="1" X="601.6123" Y="771.0812" Z="252.7877" />
+	</If>
+
+<!-- The Thousand-Year Dumpling -->
+ 	<If Condition="HasQuest(30328) &amp;&amp; !IsQuestCompleted(30328)" >
+		<CustomBehavior File="Message" Text="Starting The Thousand-Year Dumpling" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="The Thousand-Year Dumpling" QuestId="30328" Type="CollectItem" ItemId="80133" CollectCount="7" />
+	</If>
+
+<!-- A Gift for Tina -->
+	<If Condition="HasQuest(30470) &amp;&amp; !IsQuestCompleted(30470)" >
+		<CustomBehavior File="Message" Text="Starting A Gift for Tina" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="A Gift for Tina" QuestId="30470" Type="CollectItem" ItemId="80134" CollectCount="1" />
+	</If>
+
+<!-- They Don't Even Wear Them -->
+ 	<If Condition="HasQuest(30323) &amp;&amp; !IsQuestCompleted(30323)" >
+		<CustomBehavior File="Message" Text="Starting They Don't Even Wear Them" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="They Don't Even Wear Them" QuestId="30323" Type="CollectItem" ItemId="80138" COllectCount="1" />
+		<Objective Nav="Fly" QuestName="They Don't Even Wear Them" QuestId="30323" Type="CollectItem" ItemId="80137" CollectCount="1" />
+		<Objective Nav="Fly" QuestName="They Don't Even Wear Them" QuestId="30323" Type="CollectItem" ItemId="80139" CollectCount="1" />
+	</If>
+
+<!-- A Gift for Chee Chee -->
+	<If Condition="HasQuest(30471) &amp;&amp; !IsQuestCompleted(30471)" >
+		<CustomBehavior File="Message" Text="Starting A Gift for Chee Chee" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="A Gift for Chee Chee" QuestId="30471" Type="CollectItem" ItemId="79827" CollectCount="1" />
+	</If>
+
+<!-- A Gift for Ella --> <!-- Only farms the mobs, does not farm the item in the Hozen village -->
+	<If Condition="HasQuest(30474) &amp;&amp; !IsQuestCompleted(30474)" >
+		<CustomBehavior File="Message" Text="Starting A Gift for Ella" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="A Gift for Ella" QuestId="30474" Type="CollectItem" ItemId="79871" CollectCount="1" />
+	</If>
+	
+<!-- A Gift for Fung -->
+	<If Condition="HasQuest(30475) &amp;&amp; !IsQuestCompleted(30475)" >
+		<CustomBehavior File="Message" Text="Starting A Gift for Fung" LogColor="Green" />
+		<While Condition="!HasItem(80232)" >
+			<If Condition="Me.Location.Distance(new WoWPoint(-271.49, 555.9184, 182.68)) &gt; 8" >
+				<CustomBehavior File="FlyTo" X="-271.49" Y="555.9184" Z="182.68" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Rogue)" >
+				<CustomBehavior File="InteractWith" MobId="59641" TerminateWhen="(Unit(59641, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 30) == null) || HasItem(80232)"
+					MobState="Alive" InteractByCastingSpellId="121733" Range="30" CollectionDistance="30" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Warlock)" >
+				<CustomBehavior File="InteractWith" MobId="59641" TerminateWhen="(Unit(59641, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 30) == null) || HasItem(80232)"
+					MobState="Alive" InteractByCastingSpellId="172" Range="30" CollectionDistance="30" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Warrior)" >
+				<CustomBehavior File="InteractWith" MobId="59641" TerminateWhen="(Unit(59641, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 30) == null) || HasItem(80232)"
+					MobState="Alive" InteractByCastingSpellId="122475" Range="30" CollectionDistance="30" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.DeathKnight)" >
+				<CustomBehavior File="InteractWith" MobId="59641" TerminateWhen="(Unit(59641, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 30) == null) || HasItem(80232)"
+					MobState="Alive" InteractByCastingSpellId="49576" Range="30" CollectionDistance="30" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Druid)" >
+				<CustomBehavior File="InteractWith" MobId="59641" TerminateWhen="(Unit(59641, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 30) == null) || HasItem(80232)"
+					MobState="Alive" InteractByCastingSpellId="8921" Range="30" CollectionDistance="30" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Hunter)" >
+				<CustomBehavior File="InteractWith" MobId="59641" TerminateWhen="(Unit(59641, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 30) == null) || HasItem(80232)"
+					MobState="Alive" InteractByCastingSpellId="3044" Range="30" CollectionDistance="30" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Mage)" >
+				<CustomBehavior File="InteractWith" MobId="59641" TerminateWhen="(Unit(59641, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 30) == null) || HasItem(80232)"
+					MobState="Alive" InteractByCastingSpellId="2136" Range="30" CollectionDistance="30" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Paladin)" >
+				<CustomBehavior File="InteractWith" MobId="59641" TerminateWhen="(Unit(59641, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 30) == null) || HasItem(80232)"
+					MobState="Alive" InteractByCastingSpellId="20271" Range="30" CollectionDistance="30" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Priest)" >
+				<CustomBehavior File="InteractWith" MobId="59641" TerminateWhen="(Unit(59641, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 30) == null) || HasItem(80232)"
+					MobState="Alive" InteractByCastingSpellId="589" Range="30" CollectionDistance="30" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Shaman)" >
+				<CustomBehavior File="InteractWith" MobId="59641" TerminateWhen="(Unit(59641, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 30) == null) || HasItem(80232)"
+					MobState="Alive" InteractByCastingSpellId="403" Range="30" CollectionDistance="30" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Monk)" >
+				<CustomBehavior File="InteractWith" MobId="59641" TerminateWhen="(Unit(59641, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 30) == null) || HasItem(80232)"
+					MobState="Alive" InteractByCastingSpellId="115546" Range="30" CollectionDistance="30" />
+			</If>
+		</While>
+		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-239.3049" Y="586.3218" Z="167.5479" />
+		<CustomBehavior File="InteractWith" QuestId="30475" MobId="58712" InteractByGossipOptions="1" NonCompeteDistance="0" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+	
+<!-- A Gift for Fish -->
+	<If Condition="HasQuest(30473) &amp;&amp; !IsQuestCompleted(30473)" >
+		<CustomBehavior File="Message" Text="Starting A Gift for Fish" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="A Gift for Fish" QuestId="30473" Type="CollectItem" ItemId="79828" CollectCount="1" />
+	</If>
+	
+<!-- A Gift for Gina -->
+	<If Condition="HasQuest(30479) &amp;&amp; !IsQuestCompleted(30479)" >
+		<CustomBehavior File="Message" Text="Starting A Gift for Gina" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<While Condition="!IsQuestCompleted(30479)" >
+			<If Condition="!IsQuestCompleted(30479)" >
+				<CustomBehavior File="FlyTo" X="-182.8989" Y="878.6262" Z="243.2868" />
+				<CustomBehavior File="InteractWith" QuestId="30479" MobId="211025" WaitForNpcs="False" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" />
+			</If>
+			<If Condition="!IsQuestCompleted(30479)" >
+				<CustomBehavior File="FlyTo" X="-29.69154" Y="1044.316" Z="219.5321" />
+				<CustomBehavior File="InteractWith" QuestId="30479" MobId="211025" WaitForNpcs="False" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" />
+			</If>
+			<If Condition="!IsQuestCompleted(30479)" >
+				<CustomBehavior File="FlyTo" X="126.8075" Y="1218.519" Z="299.1005" />
+				<CustomBehavior File="InteractWith" QuestId="30479" MobId="211025" WaitForNpcs="False" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" />
+			</If>
+		</While>
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- A Gift for Haohan -->
+	<If Condition="HasQuest(30477) &amp;&amp; !IsQuestCompleted(30477)" >
+		<CustomBehavior File="Message" Text="Starting A Gift for Haohan" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="348.98" Y="1021.83" Z="145.40" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30477)" >
+			<If Condition="(Me.Class == WoWClass.Rogue)" >
+				<CustomBehavior File="InteractWith" MobId="59639" MobState="Alive" InteractByCastingSpellId="121733" Range="30" CollectionDistance="500" NonCompeteDistance="0" X="348.98" Y="1021.83" Z="145.40" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Warlock)" >
+				<CustomBehavior File="InteractWith" MobId="59639" MobState="Alive" InteractByCastingSpellId="172" Range="30" CollectionDistance="500" NonCompeteDistance="0" X="348.98" Y="1021.83" Z="145.40" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Warrior)" >
+				<CustomBehavior File="InteractWith" MobId="59639" MobState="Alive" InteractByCastingSpellId="355" Range="30" CollectionDistance="500" NonCompeteDistance="0" X="348.98" Y="1021.83" Z="145.40" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.DeathKnight )" >
+				<CustomBehavior File="InteractWith" MobId="59639" MobState="Alive" InteractByCastingSpellId="49576" Range="30" CollectionDistance="500" NonCompeteDistance="0" X="348.98" Y="1021.83" Z="145.40" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Druid)" >
+				<CustomBehavior File="InteractWith" MobId="59639" MobState="Alive" InteractByCastingSpellId="8921" Range="30" CollectionDistance="500" NonCompeteDistance="0" X="348.98" Y="1021.83" Z="145.40" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Hunter)" >
+				<CustomBehavior File="InteractWith" MobId="59639" MobState="Alive" InteractByCastingSpellId="3044" Range="30" CollectionDistance="500" NonCompeteDistance="0" X="348.98" Y="1021.83" Z="145.40" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Mage)" >
+				<CustomBehavior File="InteractWith" MobId="59639" MobState="Alive" InteractByCastingSpellId="2136" Range="30" CollectionDistance="500" NonCompeteDistance="0" X="348.98" Y="1021.83" Z="145.40" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Paladin)" >
+				<CustomBehavior File="InteractWith" MobId="59639" MobState="Alive" InteractByCastingSpellId="62124" Range="30" CollectionDistance="500" NonCompeteDistance="0" X="348.98" Y="1021.83" Z="145.40" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Priest)" >
+				<CustomBehavior File="InteractWith" MobId="59639" MobState="Alive" InteractByCastingSpellId="589" Range="30" CollectionDistance="500" NonCompeteDistance="0" X="348.98" Y="1021.83" Z="145.40" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Shaman)" >
+				<CustomBehavior File="InteractWith" MobId="59639" MobState="Alive" InteractByCastingSpellId="403" Range="30" CollectionDistance="500" NonCompeteDistance="0" X="348.98" Y="1021.83" Z="145.40" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Monk)" >
+				<CustomBehavior File="InteractWith" MobId="59639" MobState="Alive" InteractByCastingSpellId="115546" Range="30" CollectionDistance="500" NonCompeteDistance="0" X="348.98" Y="1021.83" Z="145.40" />
+			</If>
+		</While>
+		<CustomBehavior File="AscendInWater" />
+	</If>
+	
+<!-- Buy a Fish a Drink?/Round?/Keg? -->
+	<If Condition="HasQuest(31320) &amp;&amp; !IsQuestCompleted(31320) ||
+					HasQuest(31321) &amp;&amp; !IsQuestCompleted(31321)" >
+		<CustomBehavior File="Message" Text="Starting Buy a Fish a...Something!" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-216.7406" Y="503.1344" Z="190.8141" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="31320" MobId="64319" InteractByBuyingItemId="81407" BuyItemCount="1" />
+		<CustomBehavior File="InteractWith" QuestId="31321" MobId="64319" InteractByBuyingItemId="81415" BuyItemCount="5" />
+	</If>
+
+<!-- Quest Turn ins -->
+
+	<CustomBehavior File="Message" Text="Quests Completed. Returning to Halfhill." LogColor="Green" />
+	
+<!-- Lost and Lonely -->
+  	<If Condition="HasQuest(30526) &amp;&amp; IsQuestCompleted(30526)" >
+		<TurnIn Nav="Fly" QuestName="Lost and Lonely" QuestId="30526" TurnInName="Lost Dog" TurnInId="59533" X="-220.1198" Y="1014.149" Z="167.4768" />
+	</If>
+
+<!-- The Mile-High Grub -->
+  	<If Condition="HasQuest(30331) &amp;&amp; IsQuestCompleted(30331)" >
+		<TurnIn Nav="Fly" QuestName="The Mile-High Grub" QuestId="30331" TurnInName="Mei Mei Ironpaw" TurnInId="58714" X="-251.56" Y="614.06" Z="167.55" />
+	</If>
+
+<!-- Cindergut Peppers -->
+  	<If Condition="HasQuest(30329) &amp;&amp; IsQuestCompleted(30329)" >
+		<TurnIn Nav="Fly" QuestName="Cindergut Peppers" QuestId="30329" TurnInName="Anthea Ironpaw" TurnInId="58713" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- A Gift for Chee Chee -->
+	<If Condition="HasQuest(30471) &amp;&amp; IsQuestCompleted(30471)" >
+		<TurnIn Nav="Fly" QuestName="A Gift For Chee Chee" QuestId="30471" TurnInName="Chee Chee" TurnInId="58709" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- Not in Chee Chee's Backyard -->
+  	<If Condition="HasQuest(30324) &amp;&amp; IsQuestCompleted(30324)" >
+		<TurnIn Nav="Fly" QuestName="Not in Chee Chee's Backyard" QuestId="30324" TurnInName="Chee Chee" TurnInId="58709" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+	
+<!-- Lost Sheepie -->
+  	<If Condition="(HasQuest(31338) &amp;&amp; IsQuestCompleted(31338)) &amp;&amp; Unit(58709, u =gt; u.Distance &lt;= 150)" >
+		<TurnIn Nav="Fly" QuestName="Lost Sheepie" QuestId="31338" TurnInName="Chee Chee" TurnInId="58709" />
+	</If>
+	
+<!-- Lost Sheepie... Again -->
+  	<If Condition="(HasQuest(31339) &amp;&amp; IsQuestCompleted(31339)) &amp;&amp; Unit(58709, u =gt; u.Distance &lt;= 150)" >
+		<TurnIn Nav="Fly" QuestName="Lost Sheepie... Again" QuestId="31339" TurnInName="Chee Chee" TurnInId="58709" />
+	</If>
+
+<!-- A Gift for Ella -->
+	<If Condition="HasQuest(30474) &amp;&amp; IsQuestCompleted(30474)" >
+		<TurnIn Nav="Fly" QuestName="A Gift for Ella" QuestId="30474" TurnInName="Ella" TurnInId="58647" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- You Have to Burn the Ropes -->
+  	<If Condition="HasQuest(30327) &amp;&amp; IsQuestCompleted(30327)" >
+		<TurnIn Nav="Fly" QuestName="You Have to Burn the Ropes" QuestId="30327" TurnInName="Ella" TurnInId="58647" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+	
+<!-- The Beginner's Brew -->
+  	<If Condition="HasQuest(31534) &amp;&amp; IsQuestCompleted(31534)" >
+		<TurnIn Nav="Fly" QuestName="The Beginner's Brew" QuestId="31534" TurnInName="Ella" TurnInId="58647" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- A Gift for Fung -->
+	<If Condition="HasQuest(30475) &amp;&amp; IsQuestCompleted(30475)" >
+		<TurnIn Nav="Fly" QuestName="A Gift for Fung" QuestId="30475" TurnInName="Farmer Fung" TurnInId="57298" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- Water, Water Everywhere -->
+  	<If Condition="HasQuest(30317) &amp;&amp; IsQuestCompleted(30317)" >
+		<TurnIn Nav="Fly" QuestName="Water, Water Everywhere" QuestId="30317" TurnInName="Farmer Fung" TurnInId="57298" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- A Gift for Fish -->
+	<If Condition="HasQuest(30473) &amp;&amp; IsQuestCompleted(30473)" >
+		<TurnIn Nav="Fly" QuestName="A Gift for Fish" QuestId="30473" TurnInName="Fish Fellreed" TurnInId="58705" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- The Kunzen Legend-Chief -->
+ 	<If Condition="HasQuest(30326) &amp;&amp; IsQuestCompleted(30326)" >
+		<TurnIn Nav="Fly" QuestName="The Kunzen Legend-Chief" QuestId="30326" TurnInName="Fish Fellreed" TurnInId="58705" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- A Gift for Gina -->
+	<If Condition="HasQuest(30479) &amp;&amp; IsQuestCompleted(30479)" >
+		<TurnIn Nav="Fly" QuestName="A Gift for Gina" QuestId="30479" TurnInName="Gina Mudclaw" TurnInId="58706" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- Money Matters -->
+  	<If Condition="HasQuest(30322) &amp;&amp; IsQuestCompleted(30322)" >
+		<TurnIn Nav="Fly" QuestName="Money Matters" QuestId="30322" TurnInName="Gina Mudclaw" TurnInId="58706" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- A Gift for Haohan -->
+	<If Condition="HasQuest(30477) &amp;&amp; IsQuestCompleted(30477)" >
+		<TurnIn Nav="Fly" QuestName="A Gift for Haohan" QuestId="30477" TurnInName="Haohan" TurnInId="57402" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- Pest Problems -->
+	<If Condition="HasQuest(30319) &amp;&amp; IsQuestCompleted(30319)" >
+		<TurnIn Nav="Fly" QuestName="Pest Problems" QuestId="30319" TurnInName="Haohan" TurnInId="57402" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- A Gift for Jogu -->
+	<If Condition="HasQuest(30478) &amp;&amp; IsQuestCompleted(30478)" >
+		<TurnIn Nav="Fly" QuestName="A Gift for Jogu" QuestId="30478" TurnInName="Jogu the Drunk" TurnInId="58710" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- Weed War II -->
+	<If Condition="HasQuest(30321) &amp;&amp; IsQuestCompleted(30321)" >
+		<TurnIn Nav="Fly" QuestName="Weed War II" QuestId="30321" TurnInName="Jogu the Drunk" TurnInId="58710" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+	
+<!-- Buy a Fish a Drink? -->
+	<If Condition="HasQuest(31320) &amp;&amp; IsQuestCompleted(31320)" >
+		<TurnIn Nav="Fly" QuestName="Buy a Fish a Drink?" QuestId="31320" TurnInName="Jogu the Drunk" TurnInId="58710" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+	
+<!-- Buy a Fish a Round? -->
+	<If Condition="HasQuest(31321) &amp;&amp; IsQuestCompleted(31321)" >
+		<TurnIn Nav="Fly" QuestName="Buy a Fish a Round?" QuestId="31321" TurnInName="Jogu the Drunk" TurnInId="58710" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- A Gift for Old Hillpaw -->
+	<If Condition="HasQuest(30476) &amp;&amp; IsQuestCompleted(30476)" >
+		<TurnIn Nav="Fly" QuestName="A Gift For Old Hillpaw" QuestId="30476" TurnInName="Old Hillpaw" TurnInId="58707" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- Chasing the Chicken -->
+	<If Condition="HasQuest(30318) &amp;&amp; IsQuestCompleted(30318)" >
+		<TurnIn Nav="Fly" QuestName="Chasing The Chicken" QuestId="30318" TurnInName="Old Hillpaw" TurnInId="58707" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- A Gift for Sho -->
+	<If Condition="HasQuest(30472) &amp;&amp; IsQuestCompleted(30472)" >
+		<TurnIn Nav="Fly" QuestName="A Gift for Sho" QuestId="30472" TurnInName="Sho" TurnInId="58708" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- Where it Counts -->
+	<If Condition="HasQuest(30325) &amp;&amp; IsQuestCompleted(30325)" >
+		<TurnIn Nav="Fly" QuestName="Where It Counts" QuestId="30325" TurnInName="Sho" TurnInId="58708" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- A Gift for Tina -->
+	<If Condition="HasQuest(30470) &amp;&amp; IsQuestCompleted(30470)" >
+		<TurnIn Nav="Fly" QuestName="A Gift for Tina" QuestId="30470" TurnInName="Tina Mudclaw" TurnInId="58761" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- They Don't Even Wear Them -->
+  	<If Condition="HasQuest(30323) &amp;&amp; IsQuestCompleted(30323)" >
+		<TurnIn Nav="Fly" QuestName="They Don't Even Wear Them" QuestId="30323" TurnInName="Tina Mudclaw" TurnInId="58761" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+	
+<!-- Tina's Jewelry -->
+	<!-- Nice Necklace -->
+	<If Condition="HasItem(86433) &amp;&amp; !HasQuest(31325) &amp;&amp; !IsQuestCompleted(31325)" >
+		<PickUp QuestName="A Very Nice Necklace" QuestId="31325" GiverType="Item" GiverId="86433" />
+	</If>
+	<!-- Tasteful Tiara -->
+	<If Condition="HasItem(86434) &amp;&amp; !HasQuest(31326) &amp;&amp; !IsQuestCompleted(31326)" >
+		<PickUp QuestName="Tina's Tasteful Tiara" QuestId="31326" GiverType="Item" GiverId="86434" />
+	</If>
+	<!-- Exquisite Earring -->
+	<If Condition="HasItem(86435) &amp;&amp; !HasQuest(31328) &amp;&amp; !IsQuestCompleted(31328)" >
+		<PickUp QuestName="An Exquisite Earring" QuestId="31328" GiverType="Item" GiverId="86435" />
+	</If>
+	<!-- Beautiful Brooch -->
+	<If Condition="HasItem(86436) &amp;&amp; !HasQuest(31329) &amp;&amp; !IsQuestCompleted(31329)" >
+		<PickUp QuestName="A Beautiful Brooch" QuestId="31329" GiverType="Item" GiverId="86436" />
+	</If>
+	
+	<If Condition="Unit(58761, u =&gt; u.Distance &lt;= 250)" >
+	<!-- Nice Necklace -->
+		<If Condition="HasQuest(31325)" >
+			<TurnIn Nav="Fly" QuestName="A Very Nice Necklace" QuestId="31325" TurnInName="Tina Mudclaw" TurnInId="58761" X="-239.3049" Y="586.3218" Z="167.5479" />
+		</If>
+				
+	<!-- Tasteful Tiara -->
+		<If Condition="HasQuest(31326)" >
+			<TurnIn Nav="Fly" QuestName="Tina's Tasteful Tiara" QuestId="31326" TurnInName="Tina Mudclaw" TurnInId="58761" X="-239.3049" Y="586.3218" Z="167.5479" />
+		</If>	
+				
+	<!-- Exquisite Earring -->
+		<If Condition="HasQuest(31328)" >
+			<TurnIn Nav="Fly" QuestName="An Exquisite Earring" QuestId="31328" TurnInName="Tina Mudclaw" TurnInId="58761" X="-239.3049" Y="586.3218" Z="167.5479" />
+		</If>
+				
+	<!-- Beautiful Brooch -->
+		<If Condition="HasQuest(31329)" >
+			<TurnIn Nav="Fly" QuestName="A Beautiful Brooch" QuestId="31329" TurnInName="Tina Mudclaw" TurnInId="58761" X="-239.3049" Y="586.3218" Z="167.5479" />
+		</If>
+	</If>
+
+<!-- The Truffle Shuffle -->
+	<If Condition="HasQuest(30330) &amp;&amp; IsQuestCompleted(30330)" >
+		<TurnIn Nav="Fly" QuestName="The Truffle Shuffle" QuestId="30330" TurnInName="Jian Ironpaw" TurnInId="58716" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- The Thousand-Year Dumpling -->
+	<If Condition="HasQuest(30328) &amp;&amp; IsQuestCompleted(30328)" >
+		<TurnIn Nav="Fly" QuestName="The Thousand-Year Dumpling" QuestId="30328" TurnInName="Yan Ironpaw" TurnInId="58715" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- Fatty Goatsteak -->
+	<If Condition="HasQuest(30332) &amp;&amp; IsQuestCompleted(30332)" >
+		<TurnIn Nav="Fly" QuestName="Fatty Goatsteak" QuestId="30332" TurnInName="Kol Ironpaw" TurnInId="58712" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- Simian Sabotage -->
+	<If Condition="HasQuest(30337) &amp;&amp; IsQuestCompleted(30337)" >
+		<TurnIn Nav="Fly" QuestName="Simian Sabotage" QuestId="30337" TurnInName="Farmer Yoon" TurnInId="58646" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+	
+<!-- The Lesser of Two Evils -->
+	<If Condition="HasQuest(30333) &amp;&amp; IsQuestCompleted(30333)" >
+		<TurnIn Nav="Fly" QuestName="The Lesser of Two Evils" QuestId="30333" TurnInName="Farmer Yoon" TurnInId="58646" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+	
+<!-- Stealing is Bad...Re-Stealing is OK -->
+	<If Condition="HasQuest(30334) &amp;&amp; IsQuestCompleted(30334)" >
+		<TurnIn Nav="Fly" QuestName="Stealing is bad... Re-Stealing is OK" QuestId="30334" TurnInName="Farmer Yoon" TurnInId="58646" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+	
+<!-- Stalling the Ravage -->
+	<If Condition="HasQuest(30335) &amp;&amp; IsQuestCompleted(30335)" >
+		<TurnIn Nav="Fly" QuestName="Stalling the Ravage" QuestId="30335" TurnInName="Farmer Yoon" TurnInId="58646" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+
+<!-- The Kunzen Hunter-Chief -->
+	<If Condition="HasQuest(30336) &amp;&amp; IsQuestCompleted(30336)" >
+		<TurnIn Nav="Fly" QuestName="The Kunzen Hunter-Chief" QuestId="30336" TurnInName="Farmer Yoon" TurnInId="58646" X="-239.3049" Y="586.3218" Z="167.5479" />
+	</If>
+	
+<!-- Tillers Friends Item Turn In -->
+	<If Condition="HasItem(79264) || HasItem(79267) || HasItem(79226) || HasItem(79265) || HasItem(79268)" >
+		<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Tillers Friends [Brodie]" />
+	</If>
+
+	<If Condition="HasItem(86425)" >
+		<CustomBehavior File="FlyTo" DestName="Halfhill" X="-239.3049" Y="586.3218" Z="167.5479" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Unit(64337, u =&gt; u.Distance &lt; 30) == null" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(86425)" WaitTime="5000" />
+		</If>
+		<While Condition="HasQuestAvailable(64337)" >
+			<CustomBehavior File="InteractWith"  MobId="64337" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+
+<!-- Lesson 1: Sliced Peaches -->
+	<If Condition="HasQuest(31332) &amp;&amp; !IsQuestCompleted(31332)" >
+		<CustomBehavior File="Message" Text="Starting Lesson 1: Sliced Peaches" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="31332" MobId="64231" InteractByGossipOptions="2" InteractByBuyingItemId="74660" BuyItemCount="5" NumOfTimes="10" WaitTime="3000" />
+	</If>
+
+<!-- Lesson 2: Instant Noodles -->
+	<If Condition="HasQuest(31333) &amp;&amp; !IsQuestCompleted(31333)" >
+		<CustomBehavior File="Message" Text="Starting Lesson 2: Instant Noodles" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="31333" MobId="64231" InteractByGossipOptions="2" InteractByBuyingItemId="74854" BuyItemCount="5" NumOfTimes="10" WaitTime="3000" />
+	</If>
+
+<!-- Lesson 3: Toasted Fish Jerky -->
+	<If Condition="HasQuest(31334) &amp;&amp; !IsQuestCompleted(31334)" >
+		<CustomBehavior File="Message" Text="Starting Lesson 3: Toasted Fish Jerky" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-402.11" Y="384.63" Z="152.78" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="MrFishIt" CollectItemId="74866" CollectItemCount="5" X="-407.18" Y="391.84" Z="146.14" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+	</If>
+
+<!-- Lesson 4: Dried Needle Mushrooms -->
+	<If Condition="HasQuest(31335) &amp;&amp; !IsQuestCompleted(31335)" >
+		<CustomBehavior File="Message" Text="Starting Lesson 4: Dried Needle Mushrooms" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="31335" MobId="64231" InteractByGossipOptions="2" InteractByBuyingItemId="85583" BuyItemCount="5" NumOfTimes="10" WaitTime="3000" />
+	</If>
+
+<!-- Lesson 5: Pounded Rice Cake -->
+	<If Condition="HasQuest(31336) &amp;&amp; !IsQuestCompleted(31336)" >
+		<CustomBehavior File="Message" Text="Starting Lesson 5: Pounded Rice Cake" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="31336" MobId="64231" InteractByGossipOptions="2" InteractByBuyingItemId="74851" BuyItemCount="5" NumOfTimes="10" WaitTime="3000" />
+	</If>
+
+<!-- Cooking Turn Ins -->
+
+	<If Condition="HasQuest(31332) &amp;&amp; IsQuestCompleted(31332)" >
+		<TurnIn Nav="Fly" QuestName="Lesson 1: Sliced Peaches" QuestId="31332" TurnInName="Nomi" TurnInId="64337" />
+	</If>
+
+	<If Condition="HasQuest(31333) &amp;&amp; IsQuestCompleted(31333)" >
+		<TurnIn Nav="Fly" QuestName="Lesson 2: Instant Noodles" QuestId="31333" TurnInName="Nomi" TurnInId="64337" />
+	</If>
+
+	<If Condition="HasQuest(31334) &amp;&amp; IsQuestCompleted(31334)" >
+		<TurnIn Nav="Fly" QuestName="Lesson 3: Toasted Fish Jerky" QuestId="31334" TurnInName="Nomi" TurnInId="64337" />
+	</If>
+
+	<If Condition="HasQuest(31335) &amp;&amp; IsQuestCompleted(31335)" >
+		<TurnIn Nav="Fly" QuestName="Lesson 4: Dried Needle Mushrooms" QuestId="31335" TurnInName="Nomi" TurnInId="64337" />
+	</If>
+
+	<If Condition="HasQuest(31336) &amp;&amp; IsQuestCompleted(31336)" >
+		<TurnIn Nav="Fly" QuestName="Lesson 5: Pounded Rice Cake" QuestId="31336" TurnInName="Nomi" TurnInId="64337" />
+	</If>
+
+	<If Condition="HasQuest(31337) &amp;&amp; IsQuestCompleted(31337)" >
+		<TurnIn Nav="Fly" QuestName="Token of Appreciation" QuestId="31337" TurnInName="Nomi" TurnInId="64337" />
+	</If>
+
+	<If Condition="HasQuest(31820) &amp;&amp; IsQuestCompleted(31820)" >
+		<TurnIn Nav="Fly" QuestName="A Present for Teacher" QuestId="31820" TurnInName="Nomi" TurnInId="64337" />
+	</If>
+
+	<If Condition="HasItem(90735)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(90735)" WaitTime="1500" />
+	</If>
+
+	<While Condition="(GetItemCount(89112) &gt; 10)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+
+	<CustomBehavior File="ForcedDismount" />
+	<If Condition="HasItem(60498)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60498)" WaitTime="1500" />
+	<ElseIf Condition="HasItem(93672)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93672)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(54452)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(54452)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(64488)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(6948)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1500" />
+	</ElseIf>
+	</If>
+
+	<CustomBehavior File="UserDialog" Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of Tillers Dailies" />
+
+</QuestOrder>
+</HBProfile>

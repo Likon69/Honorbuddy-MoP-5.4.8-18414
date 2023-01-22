@@ -1,0 +1,194 @@
+<HBProfile>
+	<Name>Blood Elf Starter ($Rev$)</Name>
+	
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	
+	<MinLevel>1</MinLevel>
+	<MaxLevel>10</MaxLevel>
+	
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+	
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<AvoidMobs>
+		<Mob Name="Training Dummy" Entry="44794" />
+	</AvoidMobs>
+
+	<Mailboxes>
+		<!-- Sunstrider Isle -->
+		<Mailbox X="10353.51" Y="-6368.346" Z="35.71226" />
+		<!-- Falconwing Square -->
+		<Mailbox X="9500.135" Y="-6842.25" Z="16.40702" />
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Sunstrider Isle -->
+		<Vendor Name="Shara Sunwing" Type="Food" Entry="15287" X="10374.12" Y="-6391.749" Z="38.53321" />
+		<Vendor Name="Jainthess Thelryn" Type="Repair" Entry="15291" X="10416.79" Y="-6316.604" Z="35.57223" />
+		<!-- Falconwing Square -->
+		<Vendor Name="Kyrenna" Type="Food" Entry="18929" X="9552.018" Y="-6825.113" Z="16.49371" />
+		<Vendor Name="Sleyin" Type="Repair" Entry="18926" X="9482.344" Y="-6805.512" Z="16.49449" />
+		<!-- Silvermoon -->
+		<Vendor Name="Innkeeper Jovia" Entry="17630" Type="Food" X="9565.677" Y="-7222.801" Z="16.21334" />
+		<Vendor Name="Zathanna" Entry="16636" Type="Repair" X="9629.071" Y="-7240.864" Z="15.24548" />
+	</Vendors>
+
+	<Blackspots>
+		<Blackspot X="9147.209" Y="-6994.8" Z="9.03133" Radius="33.13993" />
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<Quest Id="8335" Name="Felendren the Banished" >
+	<Objective Type="CollectItem" ItemId="20799" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Felendren the Banished" Id="15367" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="10151.26" Y="-6004.046" Z="110.1549" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="15298" KillCount="2" >
+		<Hotspots>
+			<Hotspot X="10145.7" Y="-6022.378" Z="63.56999" />
+			<Hotspot X="10073.21" Y="-6041.684" Z="42.1644" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="15273" KillCount="8" >
+		<Hotspots>
+			<Hotspot X="10222.85" Y="-5983.911" Z="38.94392" />
+			<Hotspot X="10173.27" Y="-5949.974" Z="63.57146" />
+			<Hotspot X="10137.68" Y="-5996.978" Z="110.1542" />
+			<Hotspot X="10086.69" Y="-5988.642" Z="63.32656" />
+			<Hotspot X="10073.15" Y="-6042.694" Z="42.16415" />
+			<Hotspot X="10128.45" Y="-6061.079" Z="25.57002" />
+			<Hotspot X="10177.92" Y="-6050.373" Z="25.53964" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="8334" Name="Aggression" >
+	<Objective Type="KillMob" MobId="15271" KillCount="7" >
+		<Hotspots>
+			<Hotspot X="10241.23" Y="-6128.996" Z="21.03963" />
+			<Hotspot X="10258.9" Y="-6069.61" Z="24.82249" />
+			<Hotspot X="10273.7" Y="-6012.498" Z="26.6564" />
+			<Hotspot X="10309.04" Y="-6002.535" Z="33.47968" />
+			<Hotspot X="10377.22" Y="-6033.536" Z="29.25511" />
+			<Hotspot X="10324.88" Y="-6071.027" Z="25.98827" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="15294" KillCount="7" >
+		<Hotspots>
+			<Hotspot X="10241.23" Y="-6128.996" Z="21.03963" />
+			<Hotspot X="10258.9" Y="-6069.61" Z="24.82249" />
+			<Hotspot X="10273.7" Y="-6012.498" Z="26.6564" />
+			<Hotspot X="10309.04" Y="-6002.535" Z="33.47968" />
+			<Hotspot X="10377.22" Y="-6033.536" Z="29.25511" />
+			<Hotspot X="10324.88" Y="-6071.027" Z="25.98827" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="LoadProfile" ProfileName="..\..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Blood Elf Starter Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Sunstrider Isle Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Reclaiming Sunstrider Isle" QuestId="8325" GiverName="Magistrix Erona" GiverId="15278" />
+	<Objective QuestName="Reclaiming Sunstrider Isle" QuestId="8325" Type="KillMob" MobId="15274" KillCount="8" />
+	<TurnIn QuestName="Reclaiming Sunstrider Isle" QuestId="8325" TurnInName="Magistrix Erona" TurnInId="15278" />
+	
+	<PickUp QuestName="Unfortunate Measures" QuestId="8326" GiverName="Magistrix Erona" GiverId="15278" />
+	<Objective QuestName="Unfortunate Measures" QuestId="8326" Type="CollectItem" ItemId="20797" CollectCount="8" />
+	<TurnIn QuestName="Unfortunate Measures" QuestId="8326" TurnInName="Magistrix Erona" TurnInId="15278" />
+
+	<PickUp QuestName="Solanian's Belongings" QuestId="8330" GiverName="Well Watcher Solanian" GiverId="15295" />
+	<PickUp QuestName="The Shrine of Dath'Remar" QuestId="8345" GiverName="Well Watcher Solanian" GiverId="15295" />
+	<PickUp QuestName="A Fistful of Slivers" QuestId="8336" GiverName="Arcanist Ithanas" GiverId="15296" />
+	
+	<PickUp QuestName="Thirst Unending" QuestId="8346" GiverName="Arcanist Helion" GiverId="15297" />
+	<While Condition="HasQuest(8346) &amp;&amp; !IsQuestCompleted(8346)" >
+		<If Condition="Me.Class == WoWClass.Paladin || Me.Class == WoWClass.Priest || Me.Class == WoWClass.Mage || Me.Class == WoWClass.Warlock" >
+			<CustomBehavior File="CastSpellOn" QuestId="8346" MobHpPercentLeft="100" SpellId="28730" MobId="15274" Range="2" MinRange="1" X="10382.54" Y="-6300.068" Z="29.83106" />
+		<ElseIf Condition="Me.Class == WoWClass.Warrior" >
+			<CustomBehavior File="CastSpellOn" QuestId="8346" MobHpPercentLeft="100" SpellId="69179" MobId="15274" Range="2" MinRange="1" X="10382.54" Y="-6300.068" Z="29.83106" />
+		</ElseIf>
+		<ElseIf Condition="Me.Class == WoWClass.Hunter" >
+			<CustomBehavior File="CastSpellOn" QuestId="8346" MobHpPercentLeft="100" SpellId="80483" MobId="15274" Range="2" MinRange="1" X="10382.54" Y="-6300.068" Z="29.83106" />
+		</ElseIf>
+		<ElseIf Condition="Me.Class == WoWClass.Monk" >
+			<CustomBehavior File="CastSpellOn" QuestId="8346" MobHpPercentLeft="100" SpellId="129597" MobId="15274" Range="2" MinRange="1" X="10382.54" Y="-6300.068" Z="29.83106" />
+		</ElseIf>
+		<ElseIf Condition="Me.Class == WoWClass.Rogue" >
+			<CustomBehavior File="CastSpellOn" QuestId="8346" MobHpPercentLeft="100" SpellId="25046" MobId="15274" Range="2" MinRange="1" X="10382.54" Y="-6300.068" Z="29.83106" />
+		</ElseIf>
+		</If>
+	</While>
+	<TurnIn QuestName="Thirst Unending" QuestId="8346" TurnInName="Arcanist Helion" TurnInId="15297" />
+
+	<Objective QuestName="A Fistful of Slivers" QuestId="8336" Type="CollectItem" ItemId="20482" CollectCount="6" />
+	<Objective QuestName="Solanian's Belongings" QuestId="8330" Type="CollectItem" ItemId="20472" CollectCount="1" />
+	<Objective QuestName="Solanian's Belongings" QuestId="8330" Type="CollectItem" ItemId="20471" CollectCount="1" />
+	<Objective QuestName="The Shrine of Dath'Remar" QuestId="8345" Type="UseObject" ObjectId="180516" UseCount="1" />
+	<Objective QuestName="Solanian's Belongings" QuestId="8330" Type="CollectItem" ItemId="20470" CollectCount="1" />
+
+	<PickUp QuestName="Report to Lanthan Perilon" QuestId="8327" GiverName="Magistrix Erona" GiverId="15278" />
+	<TurnIn QuestName="Solanian's Belongings" QuestId="8330" TurnInName="Well Watcher Solanian" TurnInId="15295" />
+	<TurnIn QuestName="The Shrine of Dath'Remar" QuestId="8345" TurnInName="Well Watcher Solanian" TurnInId="15295" />
+	<TurnIn QuestName="A Fistful of Slivers" QuestId="8336" TurnInName="Arcanist Ithanas" TurnInId="15296" />
+	<TurnIn QuestName="Report to Lanthan Perilon" QuestId="8327" TurnInName="Lanthan Perilon" TurnInId="15281" />
+
+	<PickUp QuestName="Aggression" QuestId="8334" GiverName="Lanthan Perilon" GiverId="15281" />
+	<Objective QuestName="Aggression" QuestId="8334" Type="KillMob" MobId="15271" KillCount="7" />
+	<Objective QuestName="Aggression" QuestId="8334" Type="KillMob" MobId="15294" KillCount="7" />
+	<TurnIn QuestName="Aggression" QuestId="8334" TurnInName="Lanthan Perilon" TurnInId="15281" />
+
+	<PickUp QuestName="Felendren the Banished" QuestId="8335" GiverName="Lanthan Perilon" GiverId="15281" />
+	<Objective QuestName="Felendren the Banished" QuestId="8335" Type="CollectItem" ItemId="20799" CollectCount="1" />
+	<Objective QuestName="Felendren the Banished" QuestId="8335" Type="KillMob" MobId="15298" KillCount="2" />
+	<Objective QuestName="Felendren the Banished" QuestId="8335" Type="KillMob" MobId="15273" KillCount="8" />
+	<If Condition="HasItem(20483)" >
+		<PickUp QuestName="Tainted Arcane Sliver" QuestId="8338" GiverName="Tainted Arcane Sliver" GiverId="20483" GiverType="Item" />
+	</If>
+	<If Condition="HasQuest(8338) &amp;&amp; IsQuestCompleted(8338)" >
+		<TurnIn QuestName="Tainted Arcane Sliver" QuestId="8338" TurnInName="Arcanist Helion" TurnInId="15297" />
+	</If>
+	<TurnIn QuestName="Felendren the Banished" QuestId="8335" TurnInName="Lanthan Perilon" TurnInId="15281" />
+
+	<PickUp QuestName="Aiding the Outrunners" QuestId="8347" GiverName="Lanthan Perilon" GiverId="15281" />
+	<TurnIn QuestName="Aiding the Outrunners" QuestId="8347" TurnInName="Outrunner Alarion" TurnInId="15301" />
+
+	<PickUp QuestName="Slain by the Wretched" QuestId="9704" GiverName="Outrunner Alarion" GiverId="15301" X="9984.044" Y="-6478.019" Z="0.997164" />
+	<TurnIn QuestName="Slain by the Wretched" QuestId="9704" TurnInName="Slain Outrunner" TurnInId="17849" />
+
+	<PickUp QuestName="Package Recovery" QuestId="9705" GiverName="Slain Outrunner" GiverId="17849" />
+	<TurnIn QuestName="Package Recovery" QuestId="9705" TurnInName="Outrunner Alarion" TurnInId="15301" />
+	
+	<PickUp QuestName="Completing the Delivery" QuestId="8350" GiverName="Outrunner Alarion" GiverId="15301" />
+	<If Condition="HasQuest(8350)" >
+		<TurnIn QuestName="Completing the Delivery" QuestId="8350" TurnInName="Innkeeper Delaniel" TurnInId="15433" />
+		<CustomBehavior File="SetHearthstone" MobId="15433" X="9476.91" Y="-6859.21" Z="17.34" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Blood Elf Starter Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

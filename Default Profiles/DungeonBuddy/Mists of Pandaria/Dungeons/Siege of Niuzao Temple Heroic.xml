@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Siege of Niuzao Temple Heroic</Name>
+  <DungeonId>554</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="61567" name="Vizier Jin'bak" killOrder="1" optional="false" X="1529.494" Y="5163.246" Z="158.8925"/>
+    <Boss isFinal="false" entry="61634" name="Commander Vo'jak" killOrder="2" optional="false" X="1527.454" Y="5294.15" Z="184.6829"/>
+    <Boss isFinal="false" entry="61485" name="General Pa'valak" killOrder="3" optional="false" X="1728.692" Y="5217.435" Z="123.4695"/>
+    <Boss isFinal="true" entry="62205" name="Wing Leader Ner'onok" killOrder="4" optional="false" X="1888.998" Y="5177.15" Z="131.1692"/>
+  </BossEncounters>
+  <Blackspots>
+  </Blackspots>
+</DungeonBuddyProfile>

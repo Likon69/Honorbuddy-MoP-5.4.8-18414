@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!-- INFORMATION:
+		Last Updated: Oct 2013
+		Credits: Larc
+		
+		When using this profile, set the HonorBuddy bot to:
+			[ ] AutoAngler
+			[ ] GatherBuddy2
+			[ ] Grind Bot / Mixed Mode
+			[ ] ProfessionBuddy
+			[ ] PvP
+			[X] Questing
+
+		This profile was written for:
+			[ ] Alliance	[X] Achievement
+			[X] Horde		[ ] Farming
+							[ ] Leveling
+							[ ] PvP
+							[X] Questing
+							[X] Reputation
+							[X] Seasonal
+	-->
+	<Name>[QO] [H] Tricks and Treats Auto-Loader (Northrend, Outland, Kalimdor, Eastern Kingdoms)</Name>
+	<QuestOrder>
+		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="15" ExpiryTime="60" ExpiryAction="InputEnabled_Continue" Text="This auto-loader will run through Northrend, Outland, Kalimdor, Eastern Kingdoms.\n\nPandaria is not included due to phasing issues with multiple Candy Buckets.\n\nPlease set your Hearthstone to the Shrine of Two Moons." />
+		<If Condition="!IsQuestCompleted(13501) || !IsQuestCompleted(13460) || !IsQuestCompleted(13463) || !IsQuestCompleted(13472) || !IsQuestCompleted(13459) || !IsQuestCompleted(13456) || !IsQuestCompleted(12946) || !IsQuestCompleted(13452) || !IsQuestCompleted(13466) || !IsQuestCompleted(13462) || !IsQuestCompleted(13548) || !IsQuestCompleted(12941) || !IsQuestCompleted(13467) || !IsQuestCompleted(13468) || !IsQuestCompleted(13474) || !IsQuestCompleted(13469) || !IsQuestCompleted(13470) || !IsQuestCompleted(12947) || !IsQuestCompleted(13464) || !IsQuestCompleted(13465) || !IsQuestCompleted(12950) || !IsQuestCompleted(13471) || !IsQuestCompleted(13461) || !IsQuestCompleted(12940)">
+			<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Northrend is not completed, loading profile..." />
+			<If Condition="Me.MapId != 870 &amp;&amp; Me.MapId != 571">
+				<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="We are not where we need to be, Hearthing..." />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" />
+				<CustomBehavior File="WaitTimer" WaitTime="20000" VariantTime="5000" />				
+			</If>
+			<If Condition="Me.MapId == 870">
+				<CustomBehavior File="FlyTo" DestName="Shrine of Two Moons Dalaran Portal" X="1745.899" Y="899.2382" Z="487.1374" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" MobId="215112" ObjectType="Gameobject" Range="5" X="1745.706" Y="903.9822" Z="487.2821" />
+				<CustomBehavior File="WaitTimer" WaitTime="10000" VariantTime="2500" />
+			</If>
+			<If Condition="Me.MapId == 571">
+				<CustomBehavior File="LoadProfile" ProfileName="[QO] [H] Tricks and Treats of Northrend" />
+			</If>
+		</If>
+		<If Condition="IsQuestCompleted(13501) &amp;&amp; IsQuestCompleted(13460) &amp;&amp; IsQuestCompleted(13463) &amp;&amp; IsQuestCompleted(13472) &amp;&amp; IsQuestCompleted(13459) &amp;&amp; IsQuestCompleted(13456) &amp;&amp; IsQuestCompleted(12946) &amp;&amp; IsQuestCompleted(13452) &amp;&amp; IsQuestCompleted(13466) &amp;&amp; IsQuestCompleted(13462) &amp;&amp; IsQuestCompleted(13548) &amp;&amp; IsQuestCompleted(12941) &amp;&amp; IsQuestCompleted(13467) &amp;&amp; IsQuestCompleted(13468) &amp;&amp; IsQuestCompleted(13474) &amp;&amp; IsQuestCompleted(13469) &amp;&amp; IsQuestCompleted(13470) &amp;&amp; IsQuestCompleted(12947) &amp;&amp; IsQuestCompleted(13464) &amp;&amp; IsQuestCompleted(13465) &amp;&amp; IsQuestCompleted(12950) &amp;&amp; IsQuestCompleted(13471) &amp;&amp; IsQuestCompleted(13461) &amp;&amp; IsQuestCompleted(12940)">
+			<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Northrend is completed, compiling Outland..." />
+			<If Condition="!IsQuestCompleted(12404) || !IsQuestCompleted(12392) || !IsQuestCompleted(12390) || !IsQuestCompleted(12403) || !IsQuestCompleted(12393) || !IsQuestCompleted(12406) || !IsQuestCompleted(12394) || !IsQuestCompleted(12407) || !IsQuestCompleted(12408) || !IsQuestCompleted(12388) || !IsQuestCompleted(12389) || !IsQuestCompleted(12409) || !IsQuestCompleted(12395) || !IsQuestCompleted(12391)">
+				<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Outland is not completed, loading profile..." />
+				<If Condition="Me.MapId != 870 &amp;&amp; Me.MapId != 530">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="We are not where we need to be, Hearthing..." />
+					<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" />
+					<CustomBehavior File="WaitTimer" WaitTime="20000" VariantTime="5000" />
+				</If>
+				<If Condition="Me.MapId == 870">
+					<CustomBehavior File="FlyTo" DestName="Shrine of Two Moons Shattrath Portal" X="1710.986" Y="895.1791" Z="486.8545" />
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="InteractWith" MobId="215113" ObjectType="Gameobject" Range="5" X="1709.74" Y="899.3869" Z="487.0404" />
+					<CustomBehavior File="WaitTimer" WaitTime="10000" VariantTime="2500" />
+				</If>
+				<If Condition="Me.MapId == 530">
+					<CustomBehavior File="LoadProfile" ProfileName="[QO] [H] Tricks and Treats of Outland" />
+				</If>
+			</If>
+		</If>
+		<If Condition="!IsQuestCompleted(12404) || !IsQuestCompleted(12392) || !IsQuestCompleted(12390) || !IsQuestCompleted(12403) || !IsQuestCompleted(12393) || !IsQuestCompleted(12406) || !IsQuestCompleted(12394) || !IsQuestCompleted(12407) || !IsQuestCompleted(12408) || !IsQuestCompleted(12388) || !IsQuestCompleted(12389) || !IsQuestCompleted(12409) || !IsQuestCompleted(12395) || !IsQuestCompleted(12391)">
+			<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Outland is still not completed, re-loading profile..." />
+			<If Condition="Me.MapId != 870 &amp;&amp; Me.MapId != 530">
+				<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="We are not where we need to be, Hearthing..." />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" />
+				<CustomBehavior File="WaitTimer" WaitTime="20000" VariantTime="5000" />
+			</If>
+			<If Condition="Me.MapId == 870">
+				<CustomBehavior File="FlyTo" DestName="Shrine of Two Moons Shattrath Portal" X="1710.986" Y="895.1791" Z="486.8545" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" MobId="215113" ObjectType="Gameobject" Range="5" X="1709.74" Y="899.3869" Z="487.0404" />
+				<CustomBehavior File="WaitTimer" WaitTime="10000" VariantTime="2500" />
+			</If>
+			<If Condition="Me.MapId == 530">
+				<CustomBehavior File="LoadProfile" ProfileName="[QO] [H] Tricks and Treats of Outland" />
+			</If>
+		</If>
+		<If Condition="IsQuestCompleted(12404) &amp;&amp; IsQuestCompleted(12392) &amp;&amp; IsQuestCompleted(12390) &amp;&amp; IsQuestCompleted(12403) &amp;&amp; IsQuestCompleted(12393) &amp;&amp; IsQuestCompleted(12406) &amp;&amp; IsQuestCompleted(12394) &amp;&amp; IsQuestCompleted(12407) &amp;&amp; IsQuestCompleted(12408) &amp;&amp; IsQuestCompleted(12388) &amp;&amp; IsQuestCompleted(12389) &amp;&amp; IsQuestCompleted(12409) &amp;&amp; IsQuestCompleted(12395) &amp;&amp; IsQuestCompleted(12391)">
+			<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Outland is completed, compiling Kalimdor..." />
+			<If Condition="!IsQuestCompleted(12366) || !IsQuestCompleted(28992) || !IsQuestCompleted(12400) || !IsQuestCompleted(28999) || !IsQuestCompleted(29001) || !IsQuestCompleted(29000) || !IsQuestCompleted(28994) || !IsQuestCompleted(28989) || !IsQuestCompleted(28958) || !IsQuestCompleted(28953) || !IsQuestCompleted(12377) || !IsQuestCompleted(29003) || !IsQuestCompleted(12361) || !IsQuestCompleted(12396) || !IsQuestCompleted(29002) || !IsQuestCompleted(12374) || !IsQuestCompleted(29009) || !IsQuestCompleted(12378) || !IsQuestCompleted(29004) || !IsQuestCompleted(12367) || !IsQuestCompleted(28993) || !IsQuestCompleted(12381) || !IsQuestCompleted(28996) || !IsQuestCompleted(28998) || !IsQuestCompleted(12386) || !IsQuestCompleted(12401) || !IsQuestCompleted(29016) || !IsQuestCompleted(29017) || !IsQuestCompleted(29018) || !IsQuestCompleted(29014) || !IsQuestCompleted(12399) || !IsQuestCompleted(12398) || !IsQuestCompleted(12383) || !IsQuestCompleted(29005) || !IsQuestCompleted(12362)">
+				<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Kalimdor is not completed, loading profile..." />
+				<If Condition="Me.MapId != 870 &amp;&amp; Me.MapId != 1">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="We are not where we need to be, Hearthing..." />
+					<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" />
+					<CustomBehavior File="WaitTimer" WaitTime="20000" VariantTime="5000" />
+				</If>
+				<If Condition="Me.MapId == 870">
+					<CustomBehavior File="FlyTo" DestName="Shrine of Two Moons Orgrimmar Portal" X="1733.145" Y="878.0269" Z="487.0988" />
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="InteractWith" MobId="215127" ObjectType="Gameobject" Range="5" X="1735.073" Y="873.5676" Z="487.4114" />
+					<CustomBehavior File="WaitTimer" WaitTime="10000" VariantTime="2500" />
+				</If>
+				<If Condition="Me.MapId == 1">
+					<CustomBehavior File="LoadProfile" ProfileName="[QO] [H] Tricks and Treats of Kalimdor" />
+				</If>
+			</If>
+		</If>
+		<If Condition="!IsQuestCompleted(12366) || !IsQuestCompleted(28992) || !IsQuestCompleted(12400) || !IsQuestCompleted(28999) || !IsQuestCompleted(29001) || !IsQuestCompleted(29000) || !IsQuestCompleted(28994) || !IsQuestCompleted(28989) || !IsQuestCompleted(28958) || !IsQuestCompleted(28953) || !IsQuestCompleted(12377) || !IsQuestCompleted(29003) || !IsQuestCompleted(12361) || !IsQuestCompleted(12396) || !IsQuestCompleted(29002) || !IsQuestCompleted(12374) || !IsQuestCompleted(29009) || !IsQuestCompleted(12378) || !IsQuestCompleted(29004) || !IsQuestCompleted(12367) || !IsQuestCompleted(28993) || !IsQuestCompleted(12381) || !IsQuestCompleted(28996) || !IsQuestCompleted(28998) || !IsQuestCompleted(12386) || !IsQuestCompleted(12401) || !IsQuestCompleted(29016) || !IsQuestCompleted(29017) || !IsQuestCompleted(29018) || !IsQuestCompleted(29014) || !IsQuestCompleted(12399) || !IsQuestCompleted(12398) || !IsQuestCompleted(12383) || !IsQuestCompleted(29005) || !IsQuestCompleted(12362)">
+			<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Kalimdor is not still completed, re-loading profile..." />
+			<If Condition="Me.MapId != 870 &amp;&amp; Me.MapId != 1">
+				<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="We are not where we need to be, Hearthing..." />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" />
+				<CustomBehavior File="WaitTimer" WaitTime="20000" VariantTime="5000" />
+			</If>
+			<If Condition="Me.MapId == 870">
+				<CustomBehavior File="FlyTo" DestName="Shrine of Two Moons Orgrimmar Portal" X="1733.145" Y="878.0269" Z="487.0988" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" MobId="215127" ObjectType="Gameobject" Range="5" X="1735.073" Y="873.5676" Z="487.4114" />
+				<CustomBehavior File="WaitTimer" WaitTime="10000" VariantTime="2500" />
+			</If>
+			<If Condition="Me.MapId == 1">
+				<CustomBehavior File="LoadProfile" ProfileName="[QO] [H] Tricks and Treats of Kalimdor" />
+			</If>
+		</If>
+		<If Condition="IsQuestCompleted(12366) &amp;&amp; IsQuestCompleted(28992) &amp;&amp; IsQuestCompleted(12400) &amp;&amp; IsQuestCompleted(28999) &amp;&amp; IsQuestCompleted(29001) &amp;&amp; IsQuestCompleted(29000) &amp;&amp; IsQuestCompleted(28994) &amp;&amp; IsQuestCompleted(28989) &amp;&amp; IsQuestCompleted(28958) &amp;&amp; IsQuestCompleted(28953) &amp;&amp; IsQuestCompleted(12377) &amp;&amp; IsQuestCompleted(29003) &amp;&amp; IsQuestCompleted(12361) &amp;&amp; IsQuestCompleted(12396) &amp;&amp; IsQuestCompleted(29002) &amp;&amp; IsQuestCompleted(12374) &amp;&amp; IsQuestCompleted(29009) &amp;&amp; IsQuestCompleted(12378) &amp;&amp; IsQuestCompleted(29004) &amp;&amp; IsQuestCompleted(12367) &amp;&amp; IsQuestCompleted(28993) &amp;&amp; IsQuestCompleted(12381) &amp;&amp; IsQuestCompleted(28996) &amp;&amp; IsQuestCompleted(28998) &amp;&amp; IsQuestCompleted(12386) &amp;&amp; IsQuestCompleted(12401) &amp;&amp; IsQuestCompleted(29016) &amp;&amp; IsQuestCompleted(29017) &amp;&amp; IsQuestCompleted(29018) &amp;&amp; IsQuestCompleted(29014) &amp;&amp; IsQuestCompleted(12399) &amp;&amp; IsQuestCompleted(12398) &amp;&amp; IsQuestCompleted(12383) &amp;&amp; IsQuestCompleted(29005) &amp;&amp; IsQuestCompleted(12362)">
+			<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Kalimdor is completed, compiling Eastern Kingdoms..." />
+			<If Condition="!IsQuestCompleted(12369) || !IsQuestCompleted(12370) || !IsQuestCompleted(12364) || !IsQuestCompleted(12365) || !IsQuestCompleted(12373) || !IsQuestCompleted(12402) || !IsQuestCompleted(28987) || !IsQuestCompleted(28972) || !IsQuestCompleted(12368) || !IsQuestCompleted(12363) || !IsQuestCompleted(28966) || !IsQuestCompleted(12371) || !IsQuestCompleted(12376) || !IsQuestCompleted(28962) || !IsQuestCompleted(28971) || !IsQuestCompleted(12387) || !IsQuestCompleted(12380) || !IsQuestCompleted(28976) || !IsQuestCompleted(28973) || !IsQuestCompleted(28974) || !IsQuestCompleted(28955) || !IsQuestCompleted(28957) || !IsQuestCompleted(28965) || !IsQuestCompleted(28967) || !IsQuestCompleted(12384) || !IsQuestCompleted(28959) || !IsQuestCompleted(12382) || !IsQuestCompleted(28969) || !IsQuestCompleted(12397)">
+				<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Eastern Kingdoms is not completed, loading profile..." />
+				<If Condition="Me.MapId != 870 &amp;&amp; Me.MapId != 0 &amp;&amp; Me.ZoneId != 3487 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3430">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="We are not where we need to be, Hearthing..." />
+					<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" />
+					<CustomBehavior File="WaitTimer" WaitTime="20000" VariantTime="5000" />
+				</If>
+				<If Condition="Me.MapId == 870">
+					<CustomBehavior File="FlyTo" DestName="Shrine of Two Moons Silvermoon City Portal" X="1715.592" Y="872.0211" Z="487.0356" />
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="InteractWith" MobId="215126" ObjectType="Gameobject" Range="5" X="1717.823" Y="867.4124" Z="487.3876" />
+					<CustomBehavior File="WaitTimer" WaitTime="10000" VariantTime="2500" />
+				</If>
+				<If Condition="Me.MapId == 0 || Me.ZoneId == 3487 || Me.ZoneId == 3433 || Me.ZoneId == 3430">
+					<CustomBehavior File="LoadProfile" ProfileName="[QO] [H] Tricks and Treats of Eastern Kingdoms" />
+				</If>
+			</If>
+		</If>
+		<If Condition="!IsQuestCompleted(12369) || !IsQuestCompleted(12370) || !IsQuestCompleted(12364) || !IsQuestCompleted(12365) || !IsQuestCompleted(12373) || !IsQuestCompleted(12402) || !IsQuestCompleted(28987) || !IsQuestCompleted(28972) || !IsQuestCompleted(12368) || !IsQuestCompleted(12363) || !IsQuestCompleted(28966) || !IsQuestCompleted(12371) || !IsQuestCompleted(12376) || !IsQuestCompleted(28962) || !IsQuestCompleted(28971) || !IsQuestCompleted(12387) || !IsQuestCompleted(12380) || !IsQuestCompleted(28976) || !IsQuestCompleted(28973) || !IsQuestCompleted(28974) || !IsQuestCompleted(28955) || !IsQuestCompleted(28957) || !IsQuestCompleted(28965) || !IsQuestCompleted(28967) || !IsQuestCompleted(12384) || !IsQuestCompleted(28959) || !IsQuestCompleted(12382) || !IsQuestCompleted(28969) || !IsQuestCompleted(12397)">
+			<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Eastern Kingdoms is not still completed, re-loading profile..." />
+			<If Condition="Me.MapId != 870 &amp;&amp; Me.MapId != 0 &amp;&amp; Me.ZoneId != 3487 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3430">
+				<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="We are not where we need to be, Hearthing..." />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" />
+				<CustomBehavior File="WaitTimer" WaitTime="20000" VariantTime="5000" />
+			</If>
+			<If Condition="Me.MapId == 870">
+					<CustomBehavior File="FlyTo" DestName="Shrine of Two Moons Silvermoon City Portal" X="1715.592" Y="872.0211" Z="487.0356" />
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="InteractWith" MobId="215126" ObjectType="Gameobject" Range="5" X="1717.823" Y="867.4124" Z="487.3876" />
+					<CustomBehavior File="WaitTimer" WaitTime="10000" VariantTime="2500" />
+			</If>
+			<If Condition="Me.MapId == 0 || Me.ZoneId == 3487 || Me.ZoneId == 3433 || Me.ZoneId == 3430">
+				<CustomBehavior File="LoadProfile" ProfileName="[QO] [H] Tricks and Treats of Eastern Kingdoms" />
+			</If>
+		</If>
+		<If Condition="IsQuestCompleted(12369) &amp;&amp; IsQuestCompleted(12370) &amp;&amp; IsQuestCompleted(12364) &amp;&amp; IsQuestCompleted(12365) &amp;&amp; IsQuestCompleted(12373) &amp;&amp; IsQuestCompleted(12402) &amp;&amp; IsQuestCompleted(28987) &amp;&amp; IsQuestCompleted(28972) &amp;&amp; IsQuestCompleted(12368) &amp;&amp; IsQuestCompleted(12363) &amp;&amp; IsQuestCompleted(28966) &amp;&amp; IsQuestCompleted(12371) &amp;&amp; IsQuestCompleted(12376) &amp;&amp; IsQuestCompleted(28962) &amp;&amp; IsQuestCompleted(28971) &amp;&amp; IsQuestCompleted(12387) &amp;&amp; IsQuestCompleted(12380) &amp;&amp; IsQuestCompleted(28976) &amp;&amp; IsQuestCompleted(28973) &amp;&amp; IsQuestCompleted(28974) &amp;&amp; IsQuestCompleted(28955) &amp;&amp; IsQuestCompleted(28957) &amp;&amp; IsQuestCompleted(28965) &amp;&amp; IsQuestCompleted(28967) &amp;&amp; IsQuestCompleted(12384) &amp;&amp; IsQuestCompleted(28959) &amp;&amp; IsQuestCompleted(12382) &amp;&amp; IsQuestCompleted(28969) &amp;&amp; IsQuestCompleted(12397)">
+			<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Eastern Kingdoms is completed, remember to do Vashj'ir &amp; Deepholm manually!" />
+		</If>
+	</QuestOrder>
+</HBProfile>

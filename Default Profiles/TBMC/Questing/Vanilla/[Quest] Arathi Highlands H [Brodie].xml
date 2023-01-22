@@ -1,0 +1,238 @@
+<HBProfile>
+	<Name>Arathi Highlands ($Rev$)</Name>
+	<MinLevel>20</MinLevel>
+	<MaxLevel>35</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Audrid Grenich" Entry="44047" Type="Food" X="-948.96" Y="-1611.26" Z="51.33" />
+		<Vendor Name="Mu'uta" Entry="9555" Type="Repair" X="-933.8503" Y="-3477.469" Z="51.30431" />
+	</Vendors>
+  
+	<AvoidMobs>
+		<Mob Name="Refuge Pointe Defender" Entry="10696" />
+	</AvoidMobs>
+   
+	<Blackspots>
+		<Blackspot X="-1339.607" Y="-2444.736" Z="58.59106" Radius="25" Height="40" />
+		<Blackspot X="-1223.576" Y="-2580.691" Z="32.25826" Radius="12" Height="40" />
+	</Blackspots>
+	
+	<Blacklist>
+		<Mob Name="Apprentice Kryten" Entry="41983" Flags="Pull" />
+	</Blacklist>
+
+<!-- Quest Overrides -->
+
+<Quest Id="26053" Name="Clearing the Highlands"> 
+	<Objective Type="KillMob" MobId="2562" KillCount="8">
+		<Hotspots>
+			<Hotspot X="-1187.26" Y="-2153.61" Z="58.45" />
+			<Hotspot X="-1193.97" Y="-2109.05" Z="53.89" />
+			<Hotspot X="-1186.78" Y="-2066.31" Z="41.47" />
+			<Hotspot X="-1236.38" Y="-2077.08" Z="52.05" />
+			<Hotspot X="-1176.958" Y="-2042.744" Z="36.12228" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="2564" KillCount="10">
+		<Hotspots>
+			<Hotspot X="-1187.26" Y="-2153.61" Z="58.45" />
+			<Hotspot X="-1193.97" Y="-2109.05" Z="53.89" />
+			<Hotspot X="-1186.78" Y="-2066.31" Z="41.47" />
+			<Hotspot X="-1236.38" Y="-2077.08" Z="52.05" />
+			<Hotspot X="-1176.958" Y="-2042.744" Z="36.12228" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="26428" Name="To Steal From Thieves"> 
+	<Objective Type="CollectItem" ItemId="5830" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Kenata Dabyrie" Id="4480" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-999.39" Y="-2896.35" Z="63.64" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="5832" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Marcel Dabyrie" Id="4481" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-1047.40" Y="-2817.19" Z="42.20" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="5831" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Fardel Dabyrie" Id="4479" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-1064.11" Y="-2903.64" Z="42.06" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="26039" Name="The Princess Trapped"> 
+	<Objective Type="CollectItem" ItemId="4435" CollectCount="12">
+		<CollectFrom>
+			<Mob Name="Drywhisker Kobold" Id="2572" />
+			<Mob Name="Drywhisker Digger" Id="2574" />
+			<Mob Name="Drywhisker Surveyor" Id="2573" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-984.46" Y="-3871.54" Z="149.16" />
+			<Hotspot X="-905.51" Y="-3853.17" Z="140.72" />
+			<Hotspot X="-881.30" Y="-3931.59" Z="132.92" />
+			<Hotspot X="-884.44" Y="-4003.52" Z="147.56" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<CustomBehavior File="Message" Text="Compiling Arathi Highlands" LogColor="Green"  />
+	
+	<If Condition="HasQuest(28619)" >
+		<CustomBehavior File="Message" Text="Kicker Quest Detected, Turning In." LogColor="CornflowerBlue"  />
+		<TurnIn QuestName="Warchief's Command: Arathi Highlands" QuestId="28619" TurnInName="Dark Ranger Alina" TurnInId="41949" />
+	</If>
+	
+	<If Condition="!HasQuest(26022) &amp;&amp; !IsQuestCompleted(26022)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Galen's Fall Quests" LogColor="CornflowerBlue"  />
+
+	<PickUp QuestName="First Blood" QuestId="26022" GiverName="Dark Ranger Alina" GiverId="41949" />
+	<PickUp QuestName="Clearing the Highlands" QuestId="26053" GiverName="Deathstalker Maudria" GiverId="41966" />
+	<PickUp QuestName="To Steal From Thieves" QuestId="26428" GiverName="Genavie Callow" GiverId="4486" />
+	<Objective QuestName="First Blood" QuestId="26022" Type="CollectItem" ItemId="4495" CollectCount="10" />
+	<Objective QuestName="Clearing the Highlands" QuestId="26053" Type="KillMob" MobId="2562" KillCount="8" />
+	<Objective QuestName="Clearing the Highlands" QuestId="26053" Type="KillMob" MobId="2564" KillCount="10" />
+	<TurnIn QuestName="First Blood" QuestId="26022" TurnInName="Dark Ranger Alina" TurnInId="41949" />
+
+	<PickUp QuestName="The Forsaken Trollbane" QuestId="26023" GiverName="Dark Ranger Alina" GiverId="41949" />
+	<PickUp QuestName="The Traitor Orc" QuestId="26025" GiverName="Dark Ranger Alina" GiverId="41949" />
+
+	<TurnIn QuestName="Clearing the Highlands" QuestId="26053" TurnInName="Deathstalker Maudria" TurnInId="41966" />
+	<PickUp QuestName="Call to Arms" QuestId="26027" GiverName="Deathstalker Maudria" GiverId="41966" />
+
+	<TurnIn QuestName="The Forsaken Trollbane" QuestId="26023" TurnInName="Galen Trollbane" TurnInId="41944" />
+	<PickUp QuestName="Sigil of Strom" QuestId="26030" GiverName="Galen Trollbane" GiverId="41944" />
+
+<!-- The Traitor Orc -->
+	<CustomBehavior File="CollectThings" QuestId="26025" CollectItemId="4510" CollectItemCount="1" MobId="2783" MobState="Alive" HuntingGroundRadius="50" NonCompeteDistance="1" X="-1645.998" Y="-1935.961" Z="68.16148" />
+
+	<Objective QuestName="Sigil of Strom" QuestId="26030" Type="CollectItem" ItemId="4440" CollectCount="1" />
+
+	<Objective QuestName="Call to Arms" QuestId="26027" Type="KillMob" MobId="2570" KillCount="7" />
+	<Objective QuestName="Call to Arms" QuestId="26027" Type="KillMob" MobId="2571" KillCount="3" />
+
+	<Objective QuestName="To Steal From Thieves" QuestId="26428" Type="CollectItem" ItemId="5832" CollectCount="1" />
+	<Objective QuestName="To Steal From Thieves" QuestId="26428" Type="CollectItem" ItemId="5830" CollectCount="1" />
+	<Objective QuestName="To Steal From Thieves" QuestId="26428" Type="CollectItem" ItemId="5831" CollectCount="1" />
+
+	<TurnIn QuestName="To Steal From Thieves" QuestId="26428" TurnInName="Genavie Callow" TurnInId="4486" />
+	<TurnIn QuestName="Call to Arms" QuestId="26027" TurnInName="Dark Ranger Alina" TurnInId="41949" />
+	<TurnIn QuestName="The Traitor Orc" QuestId="26025" TurnInName="Dark Ranger Alina" TurnInId="41949" />
+	<TurnIn QuestName="Sigil of Strom" QuestId="26030" TurnInName="Galen Trollbane" TurnInId="41944" />
+
+	<PickUp QuestName="Sigil of Thoradin" QuestId="26031" GiverName="Galen Trollbane" GiverId="41944" />
+	<PickUp QuestName="The Real Threat" QuestId="26029" GiverName="Deathstalker Maudria" GiverId="41966" />
+	<Objective QuestName="The Real Threat" QuestId="26029" Type="CollectItem" ItemId="4551" CollectCount="1" />
+	<Objective QuestName="Sigil of Thoradin" QuestId="26031" Type="CollectItem" ItemId="4550" CollectCount="5" />
+	<TurnIn QuestName="The Real Threat" QuestId="26029" TurnInName="Deathstalker Maudria" TurnInId="41966" />
+	<TurnIn QuestName="Sigil of Thoradin" QuestId="26031" TurnInName="Galen Trollbane" TurnInId="41944" />
+
+	<PickUp QuestName="Sigil of Arathor" QuestId="26032" GiverName="Galen Trollbane" GiverId="41944" />
+	<Objective QuestName="Sigil of Arathor" QuestId="26032" Type="CollectItem" ItemId="4458" CollectCount="1" X="-1451.49" Y="-2385.373" Z="61.35297" />
+	<TurnIn QuestName="Sigil of Arathor" QuestId="26032" TurnInName="Galen Trollbane" TurnInId="41944" />
+
+	<PickUp QuestName="Trol'Kalar" QuestId="26033" GiverName="Galen Trollbane" GiverId="41944" />
+	<Objective QuestName="Trol'Kalar" QuestId="26033" Type="CollectItem" ItemId="56804" CollectCount="1" />
+	<TurnIn QuestName="Trol'kalar" QuestId="26033" TurnInName="Galen Trollbane" TurnInId="41944" />
+
+	<PickUp QuestName="Alina's Reward" QuestId="26081" GiverName="Galen Trollbane" GiverId="41944" />
+	<TurnIn QuestName="Alina's Reward" QuestId="26081" TurnInName="Dark Ranger Alina" TurnInId="41949" />
+
+	<PickUp QuestName="Hammerfall" QuestId="26084" GiverName="Dark Ranger Alina" GiverId="41949" />
+
+	<PickUp QuestName="Hello Lolo" QuestId="26083" GiverName="Goutgut" GiverId="42088" />
+	<TurnIn QuestName="Hello Lolo" QuestId="26083" TurnInName="Lolo the Lookout" TurnInId="2766" />
+
+	<CustomBehavior File="Message" Text="Compiling Faldir's Cove Quests" LogColor="CornflowerBlue"  />
+
+	<PickUp QuestName="Goggle Boggle" QuestId="26050" GiverName="Professor Phizzlethorpe" GiverId="2768" />
+	<CustomBehavior File="EscortGroup" QuestId="26050" EscortNpcId="2768" EscortMaxFollowDistance="5" />
+	<TurnIn QuestName="Goggle Boggle" QuestId="26050" TurnInName="Doctor Draxlegauge" TurnInID="2774" />
+
+	<CustomBehavior File="Message" Text="Compiling Hammerfall Quests" LogColor="CornflowerBlue"  />
+
+	<TurnIn QuestName="Hammerfall" QuestId="26084" TurnInName="Gor'mul" TurnInId="42130" />
+	
+	<PickUp QuestName="Raising Spirits" QuestId="26107" GiverName="Gor'mul" GiverId="42130" />
+	<PickUp QuestName="Crush the Witherbark" QuestId="26429" GiverName="Drum Fel" GiverId="2771" />
+	<PickUp QuestName="The Stone Shards" QuestId="26909" GiverName="Zaruk" GiverId="2787" />
+	<TurnIn QuestName="The Stone Shards" QuestId="26909" TurnInName="Shards of Myzrael" TurnInId="138492" TurnInType="Object" X="-942.842" Y="-3116.747" Z="48.42065" />
+
+	<PickUp QuestName="The Princess Trapped" QuestId="26039" GiverName="Shards of Myzrael" GiverId="138492" GiverType="Object" X="-942.842" Y="-3116.747" Z="48.42065" />
+	
+	<Objective QuestName="Raising Spirits" QuestId="26107" Type="CollectItem" ItemId="4512" CollectCount="10" />
+	
+	<Objective QuestName="Crush the Witherbark" QuestId="26429" Type="KillMob" MobId="2554" KillCount="10" />
+	<Objective QuestName="Crush the Witherbark" QuestId="26429" Type="KillMob" MobId="2556" KillCount="10" />
+	<Objective QuestName="Crush the Witherbark" QuestId="26429" Type="KillMob" MobId="2555" KillCount="8" />
+	<TurnIn QuestName="Raising Spirits" QuestId="26107" TurnInName="Gor'mul" TurnInId="42130" />
+	<PickUp QuestName="Guile of the Raptor" QuestId="26108" GiverName="Gor'mul" GiverId="42130" />
+	
+	<If Condition="HasQuest(26429) &amp;&amp; IsQuestCompleted(26429)" >
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+		<TurnIn QuestName="Crush the Witherbark" QuestId="26429" TurnInName="Drum Fel" TurnInId="2771" />
+	</If>
+	
+	<Objective QuestName="The Princess Trapped" QuestId="26039" Type="CollectItem" ItemId="4435" CollectCount="12" />
+	<TurnIn QuestName="The Princess Trapped" QuestId="26039" TurnInName="Iridescent Shards" TurnInId="2701" TurnInType="Object" X="-876.186" Y="-3901.82" Z="142.851" />
+
+	<PickUp QuestName="Stones of Binding" QuestId="26041" GiverName="Iridescent Shards" GiverId="2701" GiverType="Object" X="-876.186" Y="-3901.82" Z="142.851" />
+	<CustomBehavior File="InteractWith" QuestId="26041" QuestObjectiveIndex="2" MobId="2691" NumOfTimes="100" ProactiveCombatStrategy="ClearMobsTargetingUs" X="-847.6234" Y="-3264.437" Z="78.08965" />
+	<CustomBehavior File="InteractWith" QuestId="26041" QuestObjectiveIndex="1" MobId="2689" NumOfTimes="100" ProactiveCombatStrategy="ClearMobsTargetingUs" X="-896.33" Y="-1800.50" Z="45.40" />
+	<CustomBehavior File="InteractWith" QuestId="26041" QuestObjectiveIndex="3" MobId="2690" NumOfTimes="100" ProactiveCombatStrategy="ClearMobsTargetingUs" X="-1347.408" Y="-2744.143" Z="59.17933" />
+	
+	<Objective QuestName="Guile of the Raptor" QuestId="26108" Type="CollectItem" ItemId="4513" CollectCount="12" />
+
+	<TurnIn QuestName="Stones of Binding" QuestId="26041" TurnInName="Stone of Inner Binding" TurnInId="2702" TurnInType="Object" X="-1510.337" Y="-2170.79" Z="17.26296" />
+	
+	<PickUp QuestName="Breaking the Keystone" QuestId="26042" GiverName="Stone of Inner Binding" GiverId="2702" GiverType="Object" X="-1510.337" Y="-2170.79" Z="17.26296" />
+	<Objective QuestName="Breaking the Keystone" QuestId="26042" Type="CollectItem" ItemId="4469" CollectCount="1" />
+	<TurnIn QuestName="Breaking the Keystone" QuestId="26042" TurnInName="Keystone" TurnInId="2688" TurnInType="Object" X="-1527.509" Y="-2165.451" Z="17.14878" />
+	
+	<PickUp QuestName="Myzrael's Tale" QuestId="26911" GiverName="Stone of Inner Binding" GiverId="2702" GiverType="Object" X="-1510.337" Y="-2170.79" Z="17.26296" />
+	<TurnIn QuestName="Myzrael's Tale" QuestId="26911" TurnInName="Zaruk" TurnInId="2787" />
+	
+	<TurnIn QuestName="Guile of the Raptor" QuestId="26108" TurnInName="Gor'mul" TurnInId="42130" />
+	
+	<PickUp QuestName="Revantusk Village" QuestId="26430" GiverName="Drum Fel" GiverId="2771" />
+	
+	<CustomBehavior File="Message" Text="Arathi Highlands Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

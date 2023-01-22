@@ -1,0 +1,101 @@
+<HBProfile>
+	<Name>Domination Point ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>91</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- The Might of the Warchief -->
+	<Quest Id="32250" Name="The Might of the Warchief"> 
+		<Objective Type="KillMob" MobId="67900" MobId2="67901" KillCount="25">
+			<Hotspots>
+				<Hotspot X="-2097.96" Y="2475.90" Z="6.32" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<If Condition="!IsQuestCompleted(32249) &amp;&amp; !HasQuest(32249)" >
+		<CustomBehavior File="FlyTo" X="1613.74" Y="921.02" Z="471.15" />
+		<PickUp QuestName="Meet the Scout" QuestId="32249" GiverName="Sunwalker Dezco" GiverId="64566" X="1563.299" Y="936.2483" Z="473.6003" />
+	</If>
+
+	<If Condition="HasQuest(32249)" >
+		<CustomBehavior File="Message" Text="Starting PreReq quests." LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="-2124.40" Y="2543.98" Z="3.81" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Meet the Scout" QuestId="32249" TurnInName="Scout Rokla" TurnInId="67812" />
+		<CustomBehavior File="WaitTimer" WaitTime="35000" />
+	</If>
+
+	<If Condition="!IsQuestCompleted(32250) &amp;&amp; !HasQuest(32250) &amp;&amp; !HasQuest(32249) &amp;&amp; IsQuestCompleted(32249) " >
+		<CustomBehavior File="FlyTo" X="-2124.40" Y="2543.98" Z="3.81" />
+		<PickUp QuestName="The Might of the Warchief" QuestId="32250" GiverName="Garrosh Hellscream" GiverId="67867" />
+	</If>
+
+	<If Condition="!IsQuestCompleted(32250) &amp;&amp; HasQuest(32250)" >
+		<While Condition="!IsObjectiveComplete(2,32250)" >
+			<CustomBehavior File="FlyTo" X="-1790.34" Y="2459.65" Z="25.41" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="67927" QuestId="32250" WaitForNpcs="False"/>
+		</While>
+		<While Condition="!IsObjectiveComplete(3,32250)" >
+			<CustomBehavior File="FlyTo" X="-1918.62" Y="2209.91" Z="2.29" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="67926" QuestId="32250" WaitForNpcs="False" />
+		</While>
+		<CustomBehavior File="FlyTo" X="-2097.96" Y="2475.90" Z="6.32" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="The Might of the Warchief" QuestId="32250" Type="KillMob" MobId="67900" MobId2="67901" KillCount="25" />
+	</If>
+
+	<If Condition="IsQuestCompleted(32250) &amp;&amp; HasQuest(32250)" >
+		<TurnIn QuestName="The Might of the Warchief" QuestId="32250" TurnInName="Garrosh Hellscream" TurnInId="67867" />
+	</If>
+
+	<If Condition="!HasQuest(32108) &amp;&amp; !IsQuestCompleted(32108)" >
+		<PickUp QuestName="Domination Point" QuestId="32108" GiverName="Garrosh Hellscream" GiverId="67867" />
+	</If>
+
+	<If Condition="HasQuest(32108)" >
+		<CustomBehavior File="FlyTo" X="-2116.30" Y="2557.63" Z="3.49" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Domination Point" QuestId="32108" TurnInName="Signal Fire" TurnInId="216274" />
+		<CustomBehavior File="WaitTimer" WaitTime="35000" />
+	</If>
+
+<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Dominance [Brodie]" />
+
+<CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of Dailies" />
+
+</QuestOrder>
+</HBProfile>

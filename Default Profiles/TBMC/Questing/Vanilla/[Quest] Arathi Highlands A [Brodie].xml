@@ -1,0 +1,340 @@
+<HBProfile>
+	<Name>Arathi Highlands ($Rev$)</Name>
+	<MinLevel>20</MinLevel>
+	<MaxLevel>35</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<Quest Id="26110" Name="Just Like Old Times"> 
+	<Objective Type="CollectItem" ItemId="4482" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Forsaken Courier" Id="2714" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-1584.76" Y="-3057.82" Z="12.86" />
+			<Hotspot X="-1639.04" Y="-3006.09" Z="20.73" />
+			<Hotspot X="-1639.22" Y="-2932.30" Z="28.15" />
+			<Hotspot X="-1634.44" Y="-2876.36" Z="28.60" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="26039" Name="The Princess Trapped"> 
+	<Objective Type="CollectItem" ItemId="4435" CollectCount="12">
+		<CollectFrom>
+			<Mob Name="Drywhisker Kobold" Id="2572" />
+			<Mob Name="Drywhisker Digger" Id="2574" />
+			<Mob Name="Drywhisker Surveyor" Id="2573" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-984.46" Y="-3871.54" Z="149.16" />
+			<Hotspot X="-905.51" Y="-3853.17" Z="140.72" />
+			<Hotspot X="-881.30" Y="-3931.59" Z="132.92" />
+			<Hotspot X="-884.44" Y="-4003.52" Z="147.56" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="26049" Name="The Princess Unleashed"> 
+	<Objective Type="CollectItem" ItemId="4473" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Myzrael" Id="2755" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-945.80" Y="-3117.71" Z="48.86" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="26042" Name="Breaking the Keystone"> 
+	<Objective Type="CollectItem" ItemId="4469" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Fozruk" Id="2611" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-1697.09" Y="-2645.63" Z="43.54" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="26036" Name="Wand Over Fist"> 
+	<Objective Type="CollectItem" ItemId="4525" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Kor'gresh Coldrage" Id="2793" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-2098.22" Y="-2837.69" Z="79.06" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="26037" Name="Trelane's Defenses"> 
+	<Objective Type="CollectItem" ItemId="4527" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Boulderfist Shaman" Id="2570" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-1683.25" Y="-1566.45" Z="56.21" />
+			<Hotspot X="-1714.84" Y="-1551.35" Z="55.74" />
+			<Hotspot X="-1752.65" Y="-1554.86" Z="58.45" />
+			<Hotspot X="-1772.59" Y="-1610.90" Z="52.15" />
+			<Hotspot X="-1755.89" Y="-1664.57" Z="53.47" />
+			<Hotspot X="-1694.73" Y="-1605.94" Z="59.50" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="26038" Name="Attack on the Tower"> 
+	<Objective Type="CollectItem" ItemId="4530" CollectCount="1">
+		<CollectFrom>
+			<GameObject Name="Trelane's Footlocker" Id="2717" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-1768.742" Y="-1521.206" Z="75.23772" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="4531" CollectCount="1">
+		<CollectFrom>
+			<GameObject Name="Trelane's Footlocker" Id="2716" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-1792.98" Y="-1520.953" Z="99.39425" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="4532" CollectCount="1">
+		<CollectFrom>
+			<GameObject Name="Trelane's Footlocker" Id="2718" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-1762.314" Y="-1515.684" Z="90.60927" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="26093" Name="Northfold Manor"> 
+	<Objective Type="KillMob" MobId="2589" MobId2="2587" MobId3="2586" KillCount="10">
+		<Hotspots>
+			<Hotspot X="-835.68" Y="-2076.09" Z="34.31" />
+			<Hotspot X="-877.57" Y="-2053.88" Z="34.52" />
+			<Hotspot X="-854.25" Y="-2001.73" Z="34.77" />
+			<Hotspot X="-802.84" Y="-1981.57" Z="34.01" />
+			<Hotspot X="-775.71" Y="-2021.17" Z="34.44" />
+			<Hotspot X="-771.59" Y="-2062.38" Z="34.11" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Stromgarde Badges" Id="26095" >
+	<Objective Type="CollectItem" ItemId="4506" CollectCount="7" >
+		<CollectFrom>
+			<Mob Name="Syndicate Conjuror" Id="2590" />
+			<Mob Name="Syndicate Prowler" Id="2588" />
+			<Mob Name="Syndicate Magus" Id="2591" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-1569.21" Y="-1832.08" Z="68.45" />
+			<Hotspot X="-1580.68" Y="-1859.80" Z="68.35" />
+			<Hotspot X="-1585.83" Y="-1903.17" Z="68.55" />
+			<Hotspot X="-1606.49" Y="-1940.52" Z="68.65" />
+			<Hotspot X="-1649.94" Y="-1794.64" Z="80.06" />
+			<Hotspot X="-1637.46" Y="-1850.18" Z="81.27" />
+			<Hotspot X="-1647.92" Y="-1869.27" Z="80.79" />
+			<Hotspot X="-1708.47" Y="-1864.59" Z="81.25" />
+			<Hotspot X="-1682.08" Y="-1888.41" Z="79.28" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Wanted! Otto and Falconcrest" Id="26079" >
+	<Objective Type="CollectItem" ItemId="4516" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Otto" Id="2599" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-1706.60" Y="-1810.70" Z="101.71" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="4517" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Lord Falconcrest" Id="2597" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-1709.68" Y="-1803.80" Z="101.71" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Wanted! Marez Cowl" Id="26024" >
+	<Objective Type="CollectItem" ItemId="4515" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Marez Cowl" Id="2783" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-1644.63" Y="-1930.72" Z="68.08" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Arathi Highlands Quests" LogColor="Green" />
+
+	<If Condition="HasQuest(26139)" >
+		<TurnIn QuestName="Into Arathi" QuestId="26139" TurnInName="Captain Nials" TurnInID="2700" />
+	</If>
+	
+	<If Condition="HasQuest(28573)" >
+		<TurnIn QuestName="Hero's Call: Arathi Highlands" QuestId="28573" TurnInName="Captain Nials" TurnInID="2700" />
+	</If>
+	
+	<If Condition="!HasQuest(26093) &amp;&amp; !IsQuestCompleted(26093)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Refuge Pointe Quests" LogColor="CornflowerBlue" />
+
+	<PickUp QuestName="Northfold Manor" QuestId="26093" GiverName="Captain Nials" GiverId="2700" />
+	<PickUp QuestName="Quae and Kinelory" QuestId="26113" GiverName="Commander Amaren" GiverId="2608" />
+	<PickUp QuestName="Worth Its Weight in Gold" QuestId="26035" GiverName="Skuerto" GiverId="2789" />
+	<PickUp QuestName="Shakes O'Breen" QuestId="26336" GiverName="Skuerto" GiverId="2789" />
+	<PickUp QuestName="Wanted! Marez Cowl" QuestId="26024" GiverName="Wanted Board" GiverId="2713" GiverType="Object" 
+		X="-1279.634" Y="-2524.149" Z="22.71724" />
+	<PickUp QuestName="Wanted! Otto and Falconcrest" QuestId="26079" GiverName="Wanted Board" GiverId="2713" GiverType="Object" 
+		X="-1279.634" Y="-2524.149" Z="22.71724" />
+
+	<Objective QuestName="Northfold Manor" QuestId="26093" Type="KillMob" MobId="2589" MobId2="2587" MobId3="2586" KillCount="10" />
+	<TurnIn QuestName="Northfold Manor" QuestId="26093" TurnInName="Captain Nials" TurnInID="2700" />
+
+	<PickUp QuestName="Stromgarde Badges" QuestId="26095" GiverName="Captain Nials" GiverId="2700" />
+
+	<Objective QuestName="Wanted! Marez Cowl" QuestId="26024" Type="CollectItem" ItemId="4515" CollectCount="1" />
+	<Objective QuestName="Wanted! Otto and Falconcrest" QuestId="26079" Type="CollectItem" ItemId="4516" CollectCount="1" />
+	<Objective QuestName="Wanted! Otto and Falconcrest" QuestId="26079" Type="CollectItem" ItemId="4517" CollectCount="1" />
+	<Objective QuestName="Stromgarde Badges" QuestId="26095" Type="CollectItem" ItemId="4506" CollectCount="7" />
+
+	<TurnIn QuestName="Stromgarde Badges" QuestId="26095" TurnInName="Captain Nials" TurnInID="2700" />
+	<TurnIn QuestName="Wanted! Otto and Falconcrest" QuestId="26079" TurnInName="Captain Nials" TurnInID="2700" />
+	<TurnIn QuestName="Wanted! Marez Cowl" QuestId="26024" TurnInName="Captain Nials" TurnInID="2700" />
+
+	<TurnIn QuestName="Shakes O'Breen" QuestId="26336" TurnInName="Shakes O'Breen" TurnInID="2610" />
+
+	<PickUp QuestName="Goggle Boggle" QuestId="26050" GiverName="Professor Phizzlethorpe" GiverId="2768" />
+	<CustomBehavior File="EscortGroup" QuestId="26050" EscortNpcId="2768" EscortMaxFollowDistance="5" />
+	<TurnIn QuestName="Goggle Boggle" QuestId="26050" TurnInName="Doctor Draxlegauge" TurnInID="2774" />
+
+	<If Condition="HasQuest(26035) &amp;&amp; !IsQuestCompleted(26035)" >
+		<CustomBehavior File="CollectThings" MobId="2555" CollectItemId="4522" CollectItemCount="4" HuntingGroundRadius="50" NonCompeteDistance="5" PostInteractDelay="1000" >
+			<Hotspot X="-1759.96" Y="-3139.25" Z="30.46" />
+			<Hotspot X="-1865.37" Y="-3065.48" Z="57.88" />
+			<Hotspot X="-1892.24" Y="-3190.72" Z="56.58" />
+			<Hotspot X="-1904.64" Y="-3319.62" Z="51.80" />
+			<Hotspot X="-1824.13" Y="-3407.50" Z="45.54" />
+		</CustomBehavior>
+		<CustomBehavior File="CollectThings" MobId="2555" MobId2="2556" CollectItemId="4503" CollectItemCount="10" HuntingGroundRadius="50" NonCompeteDistance="5" PostInteractDelay="1000" >
+			<Hotspot X="-1759.96" Y="-3139.25" Z="30.46" />
+			<Hotspot X="-1865.37" Y="-3065.48" Z="57.88" />
+			<Hotspot X="-1892.24" Y="-3190.72" Z="56.58" />
+			<Hotspot X="-1904.64" Y="-3319.62" Z="51.80" />
+			<Hotspot X="-1824.13" Y="-3407.50" Z="45.54" />
+		</CustomBehavior>
+	</If>
+
+	<TurnIn QuestName="Worth Its Weight in Gold" QuestId="26035" TurnInName="Skuerto" TurnInId="2789" />
+
+	<PickUp QuestName="Wand Over Fist" QuestId="26036" GiverName="Skuerto" GiverId="2789" />
+	<Objective QuestName="Wand Over Fist" QuestId="26036" Type="CollectItem" ItemId="4525" CollectCount="1" />
+	<TurnIn QuestName="Wand Over Fist" QuestId="26036" TurnInName="Skuerto" TurnInId="2789" />
+	
+	<PickUp QuestName="Trelane's Defenses" QuestId="26037" GiverName="Skuerto" GiverId="2789" />
+	<Objective QuestName="Trelane's Defenses" QuestId="26037" Type="CollectItem" ItemId="4527" CollectCount="1" />
+	<TurnIn QuestName="Trelane's Defenses" QuestId="26037" TurnInName="Apprentice Kryten" TurnInId="41983" />
+
+	<PickUp QuestName="Attack on the Tower" QuestId="26038" GiverName="Apprentice Kryten" GiverId="41983" />
+	<Objective QuestName="Attack on the Tower" QuestId="26038" Type="CollectItem" ItemId="4530" CollectCount="1" />
+	<Objective QuestName="Attack on the Tower" QuestId="26038" Type="CollectItem" ItemId="4532" CollectCount="1" />
+	<Objective QuestName="Attack on the Tower" QuestId="26038" Type="CollectItem" ItemId="4531" CollectCount="1" />
+	<TurnIn QuestName="Attack on the Tower" QuestId="26038" TurnInName="Skuerto" TurnInId="2789" />
+
+	<PickUp QuestName="The Stone Shards" QuestId="26341" GiverName="Skuerto" GiverId="2789" />
+	<TurnIn QuestName="The Stone Shards" QuestId="26341" TurnInName="Shards of Myzrael" TurnInId="138492" TurnInType="Object" X="-942.842" Y="-3116.747" Z="48.42065" />
+	
+	<PickUp QuestName="The Princess Trapped" QuestId="26039" GiverName="Shards of Myzrael" GiverId="138492" GiverType="Object" X="-942.842" Y="-3116.747" Z="48.42065" />
+	<Objective QuestName="The Princess Trapped" QuestId="26039" Type="CollectItem" ItemId="4435" CollectCount="12" />
+	<TurnIn QuestName="The Princess Trapped" QuestId="26039" TurnInName="Iridescent Shards" TurnInId="2701" TurnInType="Object" X="-876.186" Y="-3901.82" Z="142.851" />
+
+	<PickUp QuestName="Stones of Binding" QuestId="26041" GiverName="Iridescent Shards" GiverId="2701" GiverType="Object" X="-876.186" Y="-3901.82" Z="142.851" />
+	<CustomBehavior File="InteractWith" QuestId="26041" QuestObjectiveIndex="2" MobId="2691" NumOfTimes="100" ProactiveCombatStrategy="ClearMobsTargetingUs" X="-847.6234" Y="-3264.437" Z="78.08965" />
+	<CustomBehavior File="InteractWith" QuestId="26041" QuestObjectiveIndex="1" MobId="2689" NumOfTimes="100" ProactiveCombatStrategy="ClearMobsTargetingUs" X="-896.33" Y="-1800.50" Z="45.40" />
+	<CustomBehavior File="InteractWith" QuestId="26041" QuestObjectiveIndex="3" MobId="2690" NumOfTimes="100" ProactiveCombatStrategy="ClearMobsTargetingUs" X="-1347.408" Y="-2744.143" Z="59.17933" />
+	<TurnIn QuestName="Stones of Binding" QuestId="26041" TurnInName="Stone of Inner Binding" TurnInId="2702" TurnInType="Object" X="-1510.337" Y="-2170.79" Z="17.26296" />
+
+	<PickUp QuestName="Breaking the Keystone" QuestId="26042" GiverName="Stone of Inner Binding" GiverId="2702" GiverType="Object" X="-1510.337" Y="-2170.79" Z="17.26296" />
+	<Objective QuestName="Breaking the Keystone" QuestId="26042" Type="CollectItem" ItemId="4469" CollectCount="1" />
+	<TurnIn QuestName="Breaking the Keystone" QuestId="26042" TurnInName="Keystone" TurnInId="2688" TurnInType="Object" X="-1527.51" Y="-2165.45" Z="17.15" />
+
+	<PickUp QuestName="Myzrael's Tale" QuestId="26346" GiverName="Stone of Inner Binding" GiverId="2702" GiverType="Object" X="-1510.337" Y="-2170.79" Z="17.26296" />
+	<TurnIn QuestName="Myzrael's Tale" QuestId="26346" TurnInName="Skuerto" TurnInId="2789" />
+
+	<TurnIn QuestName="Quae and Kinelory" QuestId="26113" TurnInName="Quae" TurnInId="2712" />
+
+	<PickUp QuestName="Just Like Old Times" QuestId="26110" GiverName="Quae" GiverId="2712" />
+	<Objective QuestName="Just Like Old Times" QuestId="26110" Type="CollectItem" ItemId="4482" CollectCount="1" />
+	<TurnIn QuestName="Just Like Old Times" QuestId="26110" TurnInName="Quae" TurnInId="2712" />
+	
+	<PickUp QuestName="Quae Trusts You" QuestId="26114" GiverName="Quae" GiverId="2712" />
+	<TurnIn QuestName="Quae Trusts You" QuestId="26114" TurnInName="Kinelory" TurnInId="2713" />
+	
+	<PickUp QuestName="Kinelory Strikes" QuestId="26116" GiverName="Kinelory" GiverId="2713" />
+	<CustomBehavior File="EscortGroup" QuestId="26116" EscortNpcId="2713" EscortMaxFollowDistance="5" />
+	<TurnIn QuestName="Kinelory Strikes" QuestId="26116" TurnInName="Quae" TurnInId="2712" />
+	
+	<PickUp QuestName="For Southshore" QuestId="26117" GiverName="Quae" GiverId="2712" />
+	<TurnIn QuestName="For Southshore" QuestId="26117" TurnInName="Commander Amaren" TurnInId="2608" />
+	
+	<PickUp QuestName="The Princess Unleashed" QuestId="26049" GiverName="Skuerto" GiverId="2789" />
+	<UseItem QuestId="26049" ItemId="4472" X="-946.7461" Y="-3113.951" Z="48.85522" />
+	<Objective QuestName="The Princess Unleashed" QuestId="26049" Type="CollectItem" ItemId="4473" CollectCount="1" />
+	<TurnIn QuestName="The Princess Unleashed" QuestId="26049" TurnInName="Shards of Myzrael" TurnInId="138492"
+		TurnInType="Object" X="-946.7461" Y="-3113.951" Z="48.85522" />
+	
+	<If Condition="Me.Level &lt; 33" >
+		<PickUp QuestName="Hero's Call: The Hinterlands!" QuestId="26542" GiverName="Captain Nials" GiverId="2700" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Arathi Highlands Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="[Quest] Hinterlands A [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

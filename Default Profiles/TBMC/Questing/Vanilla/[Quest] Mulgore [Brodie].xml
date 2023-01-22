@@ -1,0 +1,247 @@
+<HBProfile>
+
+	<Name>Mulgore ($Rev$)</Name>
+	<MinLevel>4</MinLevel>
+	<MaxLevel>20</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>False</TargetElites>
+
+	<AvoidMobs>
+		<Mob Name="Enforcer Emilgund" Entry="5787" />
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+
+	<Mailboxes>
+		<Mailbox X="-2336.538" Y="-368.1059" Z="-8.463984" />
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Bloodhoof Village -->
+		<Vendor Name="Jhawna Oatwind" Entry="3884" Type="Food" X="-2378.957" Y="-399.2678" Z="-3.88913" />
+		<Vendor Name="Mahnott Roughwound" Entry="3077" Type="Repair" X="-2280.133" Y="-297.7678" Z="-9.424784" />
+		<!-- Camp Sungraze -->
+		<Vendor Name="Skorn Whitecloud" Entry="3052" Type="Repair" X="-794.7656" Y="-503.5469" Z="-32.27554" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Name="Sharing the Land" Id="14438" >
+	<Objective Type="KillMob" MobId="2949" MobId2="2970" MobId3="2950" KillCount="15" >
+		<Hotspots>
+			<Hotspot X="-2713.68" Y="-643.4094" Z="4.63399" />
+			<Hotspot X="-2757.961" Y="-672.5774" Z="6.479277" />
+			<Hotspot X="-2766.115" Y="-732.9668" Z="3.177465" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Dangers of the Windfury" Id="743" >
+	<Objective Type="CollectItem" ItemId="4751" CollectCount="8" >
+		<CollectFrom>
+			<Mob Name="Windfury Harpy" Id="2962" />
+			<Mob Name="Windfury Wind Witch" Id="2963" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-2709.284" Y="-1159.742" Z="17.95104" />
+			<Hotspot X="-2701.003" Y="-1215.766" Z="11.41584" />
+			<Hotspot X="-2696.02" Y="-1300.378" Z="35.1376" />
+			<Hotspot X="-2675.575" Y="-1375.643" Z="18.42156" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="!HasQuest(14438) &amp;&amp; !IsQuestCompleted(14438)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Mulgore Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Bloodhoof Village Quests" LogColor="CornflowerBlue" />
+	
+	<If Condition="!HasQuest(14438) &amp;&amp; !IsQuestCompleted(14438)" >
+		<PickUp QuestName="Sharing the Land" QuestId="14438" GiverName="Ahmo Thunderhorn" GiverId="36644" />
+		<CustomBehavior File="ForceSetVendor" DoMail="True" DoRepair="True" DoSell="True" />
+	</If>
+	
+<!-- The Flight Quests -->
+	<PickUp QuestName="A Bundle of Hides" QuestId="6361" GiverName="Varg Windwhisper" GiverId="3079" />
+	<TurnIn QuestName="A Bundle of Hides" QuestId="6361" TurnInName="Tak" TurnInId="40809" />
+	<PickUp QuestName="Ride to Thunder Bluff" QuestId="6362" GiverName="Tak" GiverId="40809" />
+	<TurnIn QuestName="Ride to Thunder Bluff" QuestId="6362" TurnInName="Ahanu" TurnInId="8359" />
+	<PickUp QuestName="Tal the Wind Rider Master" QuestId="6363" GiverName="Ahanu" GiverId="8359" />
+	<TurnIn QuestName="Tal the Wind Rider Master" QuestId="6363" TurnInName="Tal" TurnInId="2995" />
+	<PickUp QuestName="Return to Varg" QuestId="6364" GiverName="Tal" GiverId="2995" />
+	<TurnIn QuestName="Return to Varg" QuestId="6364" TurnInName="Varg Windwhisper" TurnInId="3079" />
+
+<!-- Swoop Hunting/Poison Water -->
+	<PickUp QuestName="Swoop Hunting" QuestId="761" GiverName="Harken Windtotem" GiverId="2947" />
+	<PickUp QuestName="Poison Water" QuestId="20440" GiverName="Mull Thunderhorn" GiverId="2948" />
+	<Objective QuestName="Swoop Hunting" QuestId="761" Type="CollectItem" ItemId="4769" CollectCount="8" />
+	<Objective QuestName="Poison Water" QuestId="20440" Type="CollectItem" ItemId="4758" CollectCount="6" />
+	<Objective QuestName="Poison Water" QuestId="20440" Type="CollectItem" ItemId="4759" CollectCount="4" />
+	<TurnIn QuestName="Poison Water" QuestId="20440" TurnInName="Mull Thunderhorn" TurnInId="2948" />
+	<PickUp QuestName="Winterhoof Cleansing" QuestId="24440" GiverName="Mull Thunderhorn" GiverId="2948" />
+	<TurnIn QuestName="Swoop Hunting" QuestId="761" TurnInName="Harken Windtotem" TurnInId="2947" />
+	
+	<PickUp QuestName="Morin Cloudstalker" QuestId="24459" GiverName="Ahmo Thunderhorn" GiverId="36644" />
+	<PickUp QuestName="Dangers of the Windfury" QuestId="743" GiverName="Ruul Eagletalon" GiverId="2985" />
+	
+	<If Condition="HasQuest(24440) &amp;&amp; !IsQuestCompleted(24440)" >
+		<RunTo X="-2539.67" Y="-702.03" Z="-8.37" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(5411)" WaitTime="3000" />
+	</If>
+	
+	<Objective QuestName="Sharing the Land" QuestId="14438" Type="KillMob" MobId="2949" MobId2="2970" MobId3="2950" KillCount="15" />
+	<Objective QuestName="Dangers of the Windfury" QuestId="743" Type="CollectItem" ItemId="4751" CollectCount="8" />
+
+	<CustomBehavior File="Message" Text="Compiling Morin Cloudstalker Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn QuestName="Morin Cloudstalker" QuestId="24459" TurnInName="Morin Cloudstalker" TurnInId="2988" />
+	<PickUp QuestName="The Ravaged Caravan" QuestId="749" GiverName="Morin Cloudstalker" GiverId="2988" />
+	<TurnIn QuestName="The Ravaged Caravan" QuestId="749" TurnInName="Sealed Supply Crate" TurnInId="2908" 
+		TurnInType="Object" X="-1922.882" Y="-712.9219" Z="3.69172" />
+	<PickUp QuestName="The Ravaged Caravan" QuestId="751" GiverName="Sealed Supply Crate" GiverId="2908" 
+		GiverType="Object" X="-1922.882" Y="-712.9219" Z="3.69172" />
+	<TurnIn QuestName="The Ravaged Caravan" QuestId="751" TurnInName="Morin Cloudstalker" TurnInId="2988" />
+	
+	<PickUp QuestName="The Venture Co." QuestId="26179" GiverName="Morin Cloudstalker" GiverId="2988" />
+	<PickUp QuestName="Supervisor Fizsprocket" QuestId="26180" GiverName="Morin Cloudstalker" GiverId="2988" />
+	<Objective QuestName="Supervisor Fizsprocket" QuestId="26180" Type="CollectItem" ItemId="4819" CollectCount="1" />
+	<Objective QuestName="The Venture Co." QuestId="26179" Type="KillMob" MobId="2978" KillCount="7" />
+	<TurnIn QuestName="Supervisor Fizsprocket" QuestId="26180" TurnInName="Morin Cloudstalker" TurnInId="2988" />
+	<TurnIn QuestName="The Venture Co." QuestId="26179" TurnInName="Morin Cloudstalker" TurnInId="2988" />
+	
+	<TurnIn QuestName="Sharing the Land" QuestId="14438" TurnInName="Ahmo Thunderhorn" TurnInId="36644" />
+	<PickUp QuestName="The Restless Earth" QuestId="14491" GiverName="Ahmo Thunderhorn" GiverId="36644" />
+	<TurnIn QuestName="Winterhoof Cleansing" QuestId="24440" TurnInName="Mull Thunderhorn" TurnInId="2948" />
+	<PickUp QuestName="Thunderhorn Totem" QuestId="24441" GiverName="Mull Thunderhorn" GiverId="2948" />
+	<TurnIn QuestName="Dangers of the Windfury" QuestId="743" TurnInName="Ruul Eagletalon" TurnInId="2985" />
+	
+	<CustomBehavior File="Message" Text="Compiling North of Bloodhoof Village Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Mazzranache" QuestId="26188" GiverName="Maur Raincaller" GiverId="3055" />
+	
+	<Objective QuestName="Thunderhorn Totem" QuestId="24441" Type="CollectItem" ItemId="4801" CollectCount="6" />
+	<Objective QuestName="Thunderhorn Totem" QuestId="24441" Type="CollectItem" ItemId="4802" CollectCount="6" />
+	<Objective QuestName="Mazzranache" QuestId="26188" Type="CollectItem" ItemId="4805" CollectCount="1" />
+	<TurnIn QuestName="Mazzranache" QuestId="26188" TurnInName="Maur Raincaller" TurnInId="3055" />
+	<TurnIn QuestName="Thunderhorn Totem" QuestId="24441" TurnInName="Mull Thunderhorn" TurnInId="2948" />
+	
+	<PickUp QuestName="Thunderhorn Cleansing" QuestId="24456" GiverName="Mull Thunderhorn" GiverId="2948" />
+	<PickUp QuestName="Kyle's Gone Missing" QuestId="11129" GiverName="Ahab Wheathoof" GiverId="23618" />
+	
+<!-- The Restless Earth -->
+	<CustomBehavior File="InteractWith" QuestId="14491" MobId="36845" InteractByUsingItemId="49647" Range="30" NumOfTimes="1000" WaitTime="6000" >
+		<HuntingGrounds>
+			<Hotspot X="-1914.18" Y="348.8087" Z="105.414" />
+			<Hotspot X="-1916.675" Y="406.4653" Z="134.3184" />
+			<Hotspot X="-1977.992" Y="427.8373" Z="133.9229" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	
+<!-- Thunderhorn Cleansing -->
+	<If Condition="HasQuest(24456) &amp;&amp; !IsQuestCompleted(24456)" >
+		<RunTo X="-1824.178" Y="-226.7272" Z="-9.424454" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(5415)" WaitTime="3000" />
+	</If>
+	
+<!-- Kyle's Gone Missing -->
+	<If Condition="HasQuest(11129) &amp;&amp; !IsQuestCompleted(11129)" >
+		<If Condition="!HasItem(33009)" >
+			<CustomBehavior File="CollectThings" MobId="2956" CollectItemId="33009" CollectItemCount="1" HuntingGroundRadius="200" NonCompeteDistance="1" >
+				<Hotspot X="-1913.971" Y="-17.88591" Z="-1.61921" />
+				<Hotspot X="-2009.191" Y="6.077542" Z="5.836329" />
+				<Hotspot X="-2090.174" Y="24.2813" Z="18.8324" />
+				<Hotspot X="-2178.241" Y="22.15032" Z="26.6358" />
+				<Hotspot X="-2267.042" Y="19.6023" Z="20.44732" />
+				<Hotspot X="-2352.032" Y="18.53136" Z="17.71656" />
+				<Hotspot X="-2453.932" Y="13.23354" Z="12.54222" />
+				<Hotspot X="-2517.95" Y="7.203331" Z="8.90996" />
+				<Hotspot X="-2569.69" Y="15.33315" Z="9.962763" />
+			</CustomBehavior>
+		</If>
+		<CustomBehavior File="InteractWith" QuestId="11129" MobId="23616" InteractByUsingItemId="33009" CollectionDistance="10" Range="25" X="-2325.266" Y="-366.7992" Z="-8.929448" />
+	</If>
+	
+	<TurnIn QuestName="Kyle's Gone Missing" QuestId="11129" TurnInName="Ahab Wheathoof" TurnInId="23618" />
+	<TurnIn QuestName="The Restless Earth" QuestId="14491" TurnInName="Ahmo Thunderhorn" TurnInId="36644" />
+	<TurnIn QuestName="Thunderhorn Cleansing" QuestId="24456" TurnInName="Mull Thunderhorn" TurnInId="2948" />
+	
+	<PickUp QuestName="Rite of Vision" QuestId="24457" GiverName="Mull Thunderhorn" GiverId="2948" />
+	<TurnIn QuestName="Rite of Vision" QuestId="24457" TurnInName="Zarlman Two-Moons" TurnInId="3054" />
+	<PickUp QuestName="Rite of Vision" QuestId="20441" GiverName="Zarlman Two-Moons" GiverId="3054" />
+	<If Condition="HasQuest(20441) &amp;&amp; !IsQuestCompleted(20441)" >
+		<RunTo X="-2246.105" Y="-401.3825" Z="-9.424225" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(49651)" />
+	</If>
+	<TurnIn QuestName="Rite of Vision" QuestId="20441" TurnInName="Una Wildmane" TurnInId="37024" />
+	
+	<CustomBehavior File="Message" Text="Compiling Camp Sungraze Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Wildmane Totem" QuestId="24523" GiverName="Una Wildmane" GiverId="37024" />
+	<PickUp QuestName="Rite of Wisdom" QuestId="773" GiverName="Lorekeeper Raintotem" GiverId="3233" />
+	<PickUp QuestName="A Sacred Burial" QuestId="833" GiverName="Lorekeeper Raintotem" GiverId="3233" />
+	<PickUp QuestName="The Hunter's Way" QuestId="861" GiverName="Skorn Whitecloud" GiverId="3052" />
+	<PickUp QuestName="Preparation for Ceremony" QuestId="744" GiverName="Eyahn Eagletalon" GiverId="2987" />
+	<Objective QuestName="Wildmane Totem" QuestId="24523" Type="CollectItem" ItemId="4803" CollectCount="4" />
+	<Objective QuestName="The Hunter's Way" QuestId="861" Type="CollectItem" ItemId="5203" CollectCount="4" />
+	<TurnIn QuestName="Wildmane Totem" QuestId="24523" TurnInName="Una Wildmane" TurnInId="37024" />
+	<PickUp QuestName="Wildmane Cleansing" QuestId="24524" GiverName="Una Wildmane" GiverId="37024" />
+	<TurnIn QuestName="The Hunter's Way" QuestId="861" TurnInName="Skorn Whitecloud" TurnInId="3052" />
+	
+	<If Condition="HasQuest(24524) &amp;&amp; !IsQuestCompleted(24524)" >
+		<RunTo X="-755.5873" Y="-157.2179" Z="-27.62707" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(5416)" WaitTime="3000" />
+	</If>
+	<Objective QuestName="Preparation for Ceremony" QuestId="744" Type="CollectItem" ItemId="4752" CollectCount="6" />
+	<Objective QuestName="Preparation for Ceremony" QuestId="744" Type="CollectItem" ItemId="4753" CollectCount="6" />
+	<TurnIn QuestName="Wildmane Cleansing" QuestId="24524" TurnInName="Una Wildmane" TurnInId="37024" />
+	<TurnIn QuestName="Preparation for Ceremony" QuestId="744" TurnInName="Eyahn Eagletalon" TurnInId="2987" />
+	<Objective QuestName="A Sacred Burial" QuestId="833" Type="KillMob" MobId="3232" KillCount="8" />
+	<TurnIn QuestName="Rite of Wisdom" QuestId="773" TurnInName="Ancestral Spirit" TurnInId="2994" />
+	<TurnIn QuestName="A Sacred Burial" QuestId="833" TurnInName="Lorekeeper Raintotem" TurnInId="3233" />
+	
+	<PickUp QuestName="Journey into Thunder Bluff" QuestId="24550" GiverName="Una Wildmane" GiverId="37024" />
+	<TurnIn QuestName="Journey into Thunder Bluff" QuestId="24550" TurnInName="Baine Bloodhoof" TurnInId="36648" />
+	
+	<PickUp QuestName="War Dance" QuestId="24540" GiverName="Baine Bloodhoof" GiverId="36648" />
+	<Objective QuestName="War Dance" QuestId="24540" Type="KillMob" MobId="36931" KillCount="1" />
+	<TurnIn QuestName="War Dance" QuestId="24540" TurnInName="Baine Bloodhoof" TurnInId="36648" />
+	
+	<PickUp QuestName="Walk With The Earth Mother" QuestId="26397" GiverName="Baine Bloodhoof" GiverId="36648" />
+	<TurnIn QuestName="Walk With The Earth Mother" QuestId="26397" TurnInName="Garrosh Hellscream" TurnInId="39605" />
+	
+	<If Condition="Me.LevelFraction &gt;= 10 &amp;&amp; Me.LevelFraction &lt; 14" >
+		<PickUp QuestName="Warchief's Command: Azshara" QuestId="28496" GiverType="Object" GiverName="Warchief's Command Board"
+			GiverId="206109" X="1602.042" Y="-4373.613" Z="21.04764" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Mulgore Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

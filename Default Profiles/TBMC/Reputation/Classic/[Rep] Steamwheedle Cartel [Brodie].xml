@@ -1,0 +1,158 @@
+<HBProfile>
+	
+	<Name>Steamwheedle Cartel Rep Grind ($Rev$)</Name>
+
+	<MinLevel>60</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<MinDurability>0.2</MinDurability>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	
+	<TargetElites>True</TargetElites>
+	
+	<Vendors>
+		<Vendor Nav="Fly" Name="Krinkle Goodsteel" Entry="5411" Type="Repair" X="-7232.01" Y="-3751.71" Z="9.093103" />
+	</Vendors>
+
+
+	<Mailboxes>
+	</Mailboxes>
+	
+	<Blacklist>
+		<Mob Name="Bilgewater Battlebruiser" Entry="38648" Flags="Pull" />
+		<Mob Name="Covert Ops Hardsuit" Entry="38646" Flags="Pull" />
+		<Mob Name="Covert Ops Pounder" Entry="38649" Flags="Pull" />
+	</Blacklist>
+
+<QuestOrder>
+
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Exodar/Orgrimmar -->
+		<If Condition="Me.IsAlliance" >
+			<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<UseMount Value="False" />
+			<CustomBehavior File="InteractWith" MobId="215116" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<UseMount Value="False" />
+			<CustomBehavior File="InteractWith" MobId="215127" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1732.343" Y="881.7467" Z="487.0864" />
+		</If>
+		<UseMount Value="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+		</If>
+	</If>
+	
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557
+			&amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487" > <!-- Outlands, but not Azure/Bloodmyst/Exodar or Ghostlands/Eversong/Silvermoon -->
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="-338.0062" Y="969.5461" Z="54.29" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="195139" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-338.0062" Y="969.5461" Z="54.29" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="-163.8283" Y="973.4586" Z="54.29" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="195140" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-163.8283" Y="973.4586" Z="54.29" />
+		</If>
+	</If>
+
+	<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+		<If Condition="Me.IsAlliance" >
+			<If Condition="IsQuestCompleted(25316)" > <!-- If Has Hyjal Portal Available -->
+				<CustomBehavior File="FlyTo" X="-8211.945" Y="413.7261" Z="117.7627" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" MobId="207692" NonCompeteDistance="0" TerminateWhen="Me.MapId != 0" X="-8211.945" Y="413.7261" Z="117.7627" />
+			<Else> <!-- Boat to Darnassus -->
+				<CustomBehavior File="FlyTo" X="-8641.401" Y="1324.443" Z="5.505301" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="UseTransport" TransportId="176310"
+					WaitAtX="-8641.401" WaitAtY="1324.443" WaitAtZ="5.505301" 
+					TransportStartX="-8650.719" TransportStartY="1346.051" TransportStartZ="0.04218207"
+					TransportEndX="8162.587" TransportEndY="1005.365" TransportEndZ="-0.04571009"
+					StandOnX="-8643.596" StandOnY="1342.503" StandOnZ="6.104574"
+					GetOffX="8179.11" GetOffY="1002.75" GetOffZ="6.817571" />
+			</Else>
+			</If>
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="2067.239" Y="286.846" Z="97.03265" />
+			<CustomBehavior File="UseTransport" TransportId="164871"
+				WaitAtX="2067.239" WaitAtY="286.846" WaitAtZ="97.03265"
+				TransportStartX="2062.376" TransportStartY="292.998" TransportStartZ="114.973"
+				TransportEndX="1833.509" TransportEndY="-4391.543" TransportEndZ="152.7679"
+				StandOnX="2067.527" StandOnY="296.0905" StandOnZ="97.21635"
+				GetOffX="1842.996" GetOffY="-4393.846" GetOffZ="135.233" /> <!-- Zeppelin to Durotar -->
+		</If>
+	</If>
+	
+	<CustomBehavior File="UserSettings" LootMobs="False" />
+
+	<While Condition="Me.GetReputationLevelWith(470) &lt; WoWUnitReaction.Exalted ||
+						Me.GetReputationLevelWith(21) &lt; WoWUnitReaction.Exalted ||
+						Me.GetReputationLevelWith(577) &lt; WoWUnitReaction.Exalted ||
+						Me.GetReputationLevelWith(369) &lt; WoWUnitReaction.Exalted">
+		<CustomBehavior File="FlyTo" X="-8237.145" Y="-5088.24" Z="4.191106" />
+		<SetGrindArea>
+			<GrindArea>
+   
+            <TargetMinLevel>20</TargetMinLevel>
+            <TargetMaxLevel>63</TargetMaxLevel>
+   
+            <Factions>14 230 2258</Factions>
+
+            <Hotspots>
+				<Hotspot X="-8237.145" Y="-5088.24" Z="4.191106" />
+				<Hotspot X="-8290.736" Y="-5083.063" Z="4.961221" />
+				<Hotspot X="-8341.112" Y="-5052.856" Z="3.76134" />
+				<Hotspot X="-8409.482" Y="-5010.826" Z="2.432424" />
+				<Hotspot X="-8442.799" Y="-4961.403" Z="2.658839" />
+				<Hotspot X="-8456.034" Y="-5030.47" Z="5.868397" />
+				<Hotspot X="-8487.716" Y="-5064.18" Z="5.866444" />
+				<Hotspot X="-8409.9" Y="-5061.578" Z="0.8648033" />
+				<Hotspot X="-8381.36" Y="-5117.395" Z="4.934885" />
+				<Hotspot X="-8421.146" Y="-5153.076" Z="4.805467" />
+				<Hotspot X="-8331.593" Y="-5116.446" Z="0.5684462" />
+            </Hotspots>
+
+			</GrindArea>
+		</SetGrindArea>
+		<GrindTo Condition="Me.GetReputationLevelWith(470) &gt;= WoWUnitReaction.Exalted &amp;&amp;
+						Me.GetReputationLevelWith(21) &gt;= WoWUnitReaction.Exalted &amp;&amp;
+						Me.GetReputationLevelWith(577) &gt;= WoWUnitReaction.Exalted &amp;&amp;
+						Me.GetReputationLevelWith(369) &gt;= WoWUnitReaction.Exalted" GoalText="Pirate Population Control" />
+	</While>
+	
+	<CustomBehavior File="Message" Text="Congrats on hitting exalted! Profile will terminate." LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+
+</QuestOrder>
+</HBProfile>

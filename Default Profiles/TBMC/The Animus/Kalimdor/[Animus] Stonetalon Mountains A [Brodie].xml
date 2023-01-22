@@ -1,0 +1,546 @@
+<HBProfile>
+
+	<Name>Stonetalon Mountains Memory Block ($Rev$)</Name>
+	<MinLevel>60</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+		<Blackspot X="156.7234" Y="78.4443" Z="50.96186" Radius="28.82542" />
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Windshear Lake -->
+		<Vendor Name="Ryan Mills" Entry="41053" Type="Food" X="1188.833" Y="400.2431" Z="79.24059" />
+		<Vendor Name="Ol' Irongoat" Entry="41054" Type="Repair" X="1200.165" Y="428.8281" Z="77.58211" />
+		<!-- Thal'darah Overlook -->
+		<Vendor Name="Donald Dealright" Entry="41490" Type="Food" X="2110.859" Y="1554.644" Z="343.3705" />
+		<Vendor Name="Poppy" Entry="41493" Type="Repair" X="2142.755" Y="1602.793" Z="341.255" />
+		<!-- Northwatch Expedition -->
+		<Vendor Name="Chief Explorer Jansun" Entry="41274" Type="Repair" X="277.3576" Y="-309.5104" Z="92.90104" />
+		<Vendor Name="Explorer Tabby Triloc" Entry="41275" Type="Food" X="276.3125" Y="-307.2604" Z="92.97431" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="LoadProfile" ProfileName="..\KalimdorMemBlock [Brodie]" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Beginning Memory Block: Stonetalon Mountains" LogColor="Green" />
+	<CustomBehavior File="UserSettings" LootMobs="True" UseFlightPaths="True" PullDistance="25" />
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding memory to Ashenvale Entrance area" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="They Took Our Gnomes" QuestId="13913" GiverName="Huntress Jalin" GiverId="34354" />
+	<PickUp Nav="Fly" QuestName="Ze Gnomecorder" QuestId="25607" GiverName="Professor Xakxak Gyromate" GiverId="40895" />
+	<If Condition="HasQuest(13913) &amp;&amp; !IsQuestCompleted(13913)" >
+		<If Condition="(Me.Class == WoWClass.Rogue)" >
+			<CustomBehavior File="InteractWith" QuestId="13913" MobId="39096"
+				MobState="Alive" InteractByCastingSpellId="121733" Range="30" NonCompeteDistance="0" >
+				<HuntingGrounds>
+					<Hotspot X="2212.255" Y="-814.3381" Z="104.8886" />
+					<Hotspot X="2171.161" Y="-882.6456" Z="98.37232" />
+					<Hotspot X="2171.168" Y="-933.9341" Z="93.9973" />
+					<Hotspot X="2251.218" Y="-776.1147" Z="108.377" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</If>
+		<If Condition="(Me.Class == WoWClass.Warlock)" >
+			<CustomBehavior File="InteractWith" QuestId="13913" MobId="39096"
+				MobState="Alive" InteractByCastingSpellId="172" Range="30" NonCompeteDistance="0" >
+				<HuntingGrounds>
+					<Hotspot X="2212.255" Y="-814.3381" Z="104.8886" />
+					<Hotspot X="2171.161" Y="-882.6456" Z="98.37232" />
+					<Hotspot X="2171.168" Y="-933.9341" Z="93.9973" />
+					<Hotspot X="2251.218" Y="-776.1147" Z="108.377" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</If>
+		<If Condition="(Me.Class == WoWClass.Warrior)" >
+			<CustomBehavior File="InteractWith" QuestId="13913" MobId="39096"
+				MobState="Alive" InteractByCastingSpellId="122475" Range="30" NonCompeteDistance="0" >
+				<HuntingGrounds>
+					<Hotspot X="2212.255" Y="-814.3381" Z="104.8886" />
+					<Hotspot X="2171.161" Y="-882.6456" Z="98.37232" />
+					<Hotspot X="2171.168" Y="-933.9341" Z="93.9973" />
+					<Hotspot X="2251.218" Y="-776.1147" Z="108.377" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</If>
+		<If Condition="(Me.Class == WoWClass.DeathKnight)" >
+			<CustomBehavior File="InteractWith" QuestId="13913" MobId="39096"
+				MobState="Alive" InteractByCastingSpellId="49576" Range="30" NonCompeteDistance="0" >
+				<HuntingGrounds>
+					<Hotspot X="2212.255" Y="-814.3381" Z="104.8886" />
+					<Hotspot X="2171.161" Y="-882.6456" Z="98.37232" />
+					<Hotspot X="2171.168" Y="-933.9341" Z="93.9973" />
+					<Hotspot X="2251.218" Y="-776.1147" Z="108.377" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</If>
+		<If Condition="(Me.Class == WoWClass.Druid)" >
+			<CustomBehavior File="InteractWith" QuestId="13913" MobId="39096"
+				MobState="Alive" InteractByCastingSpellId="8921" Range="30" NonCompeteDistance="0" >
+				<HuntingGrounds>
+					<Hotspot X="2212.255" Y="-814.3381" Z="104.8886" />
+					<Hotspot X="2171.161" Y="-882.6456" Z="98.37232" />
+					<Hotspot X="2171.168" Y="-933.9341" Z="93.9973" />
+					<Hotspot X="2251.218" Y="-776.1147" Z="108.377" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</If>
+		<If Condition="(Me.Class == WoWClass.Hunter)" >
+			<CustomBehavior File="InteractWith" QuestId="13913" MobId="39096"
+				MobState="Alive" InteractByCastingSpellId="3044" Range="30" NonCompeteDistance="0" >
+				<HuntingGrounds>
+					<Hotspot X="2212.255" Y="-814.3381" Z="104.8886" />
+					<Hotspot X="2171.161" Y="-882.6456" Z="98.37232" />
+					<Hotspot X="2171.168" Y="-933.9341" Z="93.9973" />
+					<Hotspot X="2251.218" Y="-776.1147" Z="108.377" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</If>
+		<If Condition="(Me.Class == WoWClass.Mage)" >
+			<CustomBehavior File="InteractWith" QuestId="13913" MobId="39096"
+				MobState="Alive" InteractByCastingSpellId="2136" Range="30" NonCompeteDistance="0" >
+				<HuntingGrounds>
+					<Hotspot X="2212.255" Y="-814.3381" Z="104.8886" />
+					<Hotspot X="2171.161" Y="-882.6456" Z="98.37232" />
+					<Hotspot X="2171.168" Y="-933.9341" Z="93.9973" />
+					<Hotspot X="2251.218" Y="-776.1147" Z="108.377" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</If>
+		<If Condition="(Me.Class == WoWClass.Paladin)" >
+			<CustomBehavior File="InteractWith" QuestId="13913" MobId="39096"
+				MobState="Alive" InteractByCastingSpellId="20271" Range="30" NonCompeteDistance="0" >
+				<HuntingGrounds>
+					<Hotspot X="2212.255" Y="-814.3381" Z="104.8886" />
+					<Hotspot X="2171.161" Y="-882.6456" Z="98.37232" />
+					<Hotspot X="2171.168" Y="-933.9341" Z="93.9973" />
+					<Hotspot X="2251.218" Y="-776.1147" Z="108.377" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</If>
+		<If Condition="(Me.Class == WoWClass.Priest)" >
+			<CustomBehavior File="InteractWith" QuestId="13913" MobId="39096"
+				MobState="Alive" InteractByCastingSpellId="589" Range="30" NonCompeteDistance="0" >
+				<HuntingGrounds>
+					<Hotspot X="2212.255" Y="-814.3381" Z="104.8886" />
+					<Hotspot X="2171.161" Y="-882.6456" Z="98.37232" />
+					<Hotspot X="2171.168" Y="-933.9341" Z="93.9973" />
+					<Hotspot X="2251.218" Y="-776.1147" Z="108.377" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</If>
+		<If Condition="(Me.Class == WoWClass.Shaman)" >
+			<CustomBehavior File="InteractWith" QuestId="13913" MobId="39096"
+				MobState="Alive" InteractByCastingSpellId="403" Range="30" NonCompeteDistance="0" >
+				<HuntingGrounds>
+					<Hotspot X="2212.255" Y="-814.3381" Z="104.8886" />
+					<Hotspot X="2171.161" Y="-882.6456" Z="98.37232" />
+					<Hotspot X="2171.168" Y="-933.9341" Z="93.9973" />
+					<Hotspot X="2251.218" Y="-776.1147" Z="108.377" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</If>
+		<If Condition="(Me.Class == WoWClass.Monk)" >
+			<CustomBehavior File="InteractWith" QuestId="13913" MobId="39096"
+				MobState="Alive" InteractByCastingSpellId="115546" Range="30" NonCompeteDistance="0" >
+				<HuntingGrounds>
+					<Hotspot X="2212.255" Y="-814.3381" Z="104.8886" />
+					<Hotspot X="2171.161" Y="-882.6456" Z="98.37232" />
+					<Hotspot X="2171.168" Y="-933.9341" Z="93.9973" />
+					<Hotspot X="2251.218" Y="-776.1147" Z="108.377" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</If>
+	</If>
+	
+	<Objective Nav="Fly" QuestName="Ze Gnomecorder" QuestId="25607" Type="CollectItem" ItemId="55144" CollectCount="8" X="2267.441" Y="-956.3951" Z="86.25994" />
+	<TurnIn Nav="Fly" QuestName="They Took Our Gnomes" QuestId="13913" TurnInName="Huntress Jalin" TurnInId="34354" />
+	<TurnIn Nav="Fly" QuestName="Ze Gnomecorder" QuestId="25607" TurnInName="Professor Xakxak Gyromate" TurnInId="40895" />
+	
+	<PickUp Nav="Fly" QuestName="Do Yourself a Favor" QuestId="25613" GiverName="Gnombus the X-Terminator" GiverId="40894" />
+	<TurnIn Nav="Fly" QuestName="Do Yourself a Favor" QuestId="25613" TurnInName="Kalen Trueshot" TurnInId="39256" />
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding memory to Trueshot Point" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="The Only Way Down is in a Body Bag" QuestId="25614" GiverName="Kalen Trueshot" GiverId="39256" />
+	<While Condition="HasQuest(25614) &amp;&amp; !IsQuestCompleted(25614)" >
+		<CustomBehavior File="InteractWith" QuestId="25614" MobId="32254" NonCompeteDistance="0" TerminateWhen="Me.IsOnTransport"
+			PreInteractMountStrategy="DismountOrCancelShapeshift" Range="10" CollectionDistance="5" X="1600.604" Y="-337.1023" Z="138.6517" />
+		<CustomBehavior File="25614-TheOnlyWayDown" />
+	</While>
+	<TurnIn Nav="Fly" QuestName="The Only Way Down is in a Body Bag" QuestId="25614" TurnInName="Kalen Trueshot" TurnInId="39256" />
+	
+	<PickUp Nav="Fly" QuestName="Return to Stardust" QuestId="25615" GiverName="Kalen Trueshot" GiverId="39256" />
+	<TurnIn Nav="Fly" QuestName="Return to Stardust" QuestId="25615" TurnInName="Huntress Jalin" TurnInId="34354" />
+	
+	<PickUp Nav="Fly" QuestName="Hellscream's Legacy" QuestId="25616" GiverName="Huntress Jalin" GiverId="34354" />
+	<PickUp Nav="Fly" QuestName="Field Test: Gnomecorder" QuestId="25621" GiverName="Professor Xakxak Gyromate" GiverId="40895" />
+	<If Condition="HasQuest(25621) &amp;&amp; !IsQuestCompleted(25621)" >
+		<MoveTo X="1584.77" Y="-410.7769" Z="64.53017" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="Field Test: Gnomecorder" QuestId="25621" />
+	<PickUp Nav="Fly" QuestName="Burn, Baby, Burn!" QuestId="25622" GiverName="Professor Xakxak Gyromate" GiverId="40895" />
+	
+	<Objective Nav="Fly" QuestName="Hellscream's Legacy" QuestId="25616" Type="KillMob" MobId="34345" KillCount="10" />
+	<If Condition="!HasItem(55152) &amp;&amp; (HasQuest(25622) &amp;&amp; !IsQuestCompleted(25622))" >
+		<CustomBehavior File="CollectThings" MobId="34345" CollectItemId="55152" CollectItemCount="1" NonCompeteDistance="1" HuntingGroundRadius="120" >
+			<Hotspot X="1442.166" Y="-508.3696" Z="30.52685" />
+			<Hotspot X="1414.632" Y="-404.5813" Z="22.76121" />
+			<Hotspot X="1497.824" Y="-354.3128" Z="31.70239" />
+			<Hotspot X="1515.432" Y="-415.0684" Z="39.93424" />
+		</CustomBehavior>
+	</If>
+	<CustomBehavior File="InteractWith" QuestId="25622" MobId="40957" InteractByUsingItemId="55152" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" Range="7" WaitTime="2000" NumOfTimes="1000" >
+		<HuntingGrounds>
+			<Hotspot X="1442.166" Y="-508.3696" Z="30.52685" />
+			<Hotspot X="1414.632" Y="-404.5813" Z="22.76121" />
+			<Hotspot X="1497.824" Y="-354.3128" Z="31.70239" />
+			<Hotspot X="1515.432" Y="-415.0684" Z="39.93424" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn Nav="Fly" QuestName="Burn, Baby, Burn!" QuestId="25622" />
+	<PickUp Nav="Fly" QuestName="Bombs Away: Windshear Mine!" QuestId="25640" GiverName="Professor Xakxak Gyromate" GiverId="40895" />
+	
+	<TurnIn Nav="Fly" QuestName="Hellscream's Legacy" QuestId="25616" TurnInName="Sentinel Heliana" TurnInId="40973" />
+	<TurnIn Nav="Fly" QuestName="Bombs Away: Windshear Mine!" QuestId="25640" TurnInName="Boog the Gear Whisperer" TurnInId="40879" />
+	
+	<PickUp Nav="Fly" QuestName="Windshear Mine Cleanup" QuestId="25646" GiverName="Sentinel Heliana" GiverId="40973" />
+	<PickUp Nav="Fly" QuestName="Don't Look Them in the Eyes" QuestId="25642" GiverName="Boog the Gear Whisperer" GiverId="40879" />
+	<Objective Nav="Fly" QuestName="Don't Look Them in the Eyes" QuestId="25642" Type="CollectItem" ItemId="55174" CollectCount="10" />
+	<Objective Nav="Fly" QuestName="Windshear Mine Cleanup" QuestId="25646" Type="KillMob" MobId="40905" KillCount="6" />
+	
+	<TurnIn Nav="Fly" QuestName="Windshear Mine Cleanup" QuestId="25646" TurnInName="Sentinel Heliana" TurnInId="40973" />
+	<TurnIn Nav="Fly" QuestName="Don't Look Them in the Eyes" QuestId="25642" TurnInName="Boog the Gear Whisperer" TurnInId="40879" />
+	
+	<If Condition="!HasItem(55181) &amp;&amp; (!HasQuest(25647) &amp;&amp; !IsQuestCompleted(25647))" >
+		<CustomBehavior File="CollectThings" MobId="40905" CollectItemId="55181" CollectItemCount="1" NonCompeteDistance="1"
+			HuntingGroundRadius="200" X="977.9955" Y="-359.6805" Z="16.00361" />
+	</If>
+	<If Condition="HasItem(55181) &amp;&amp; (!HasQuest(25647) &amp;&amp; !IsQuestCompleted(25647))" >
+		<PickUp Nav="Fly" QuestName="Illegible Orc Letter" QuestId="25647" GiverType="Item" GiverId="55181" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="Illegible Orc Letter" QuestId="25647" TurnInName="Boog the Gear Whisperer" TurnInId="40879" />
+	
+	<PickUp Nav="Fly" QuestName="Minx'll Fix It" QuestId="25649" GiverName="Boog the Gear Whisperer" GiverId="40879" />
+	<TurnIn Nav="Fly" QuestName="Minx'll Fix It" QuestId="25649" TurnInName="Minx" TurnInId="40881" X="927.5259" Y="-275.7697" Z="22.39182" />
+	
+	<PickUp Nav="Fly" QuestName="Orders from High Command" QuestId="25650" GiverName="Minx" GiverId="40881" />
+	<TurnIn Nav="Fly" QuestName="Orders from High Command" QuestId="25650" TurnInName="Boog the Gear Whisperer" TurnInId="40879" />
+	
+	<PickUp Nav="Fly" QuestName="Commandeer That Balloon!" QuestId="25652" GiverName="Boog the Gear Whisperer" GiverId="40879" />
+	<While Condition="HasQuest(25652) &amp;&amp; !IsQuestCompleted(25652)" >
+		<CustomBehavior File="InteractWith" QuestId="25652" MobId="41019" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0"
+			Range="10" NumOfTimes="100" TerminateWhen="Me.IsOnTransport" WaitTime="3000" X="996.5344" Y="-418.2276" Z="4.04276" />
+		<CustomBehavior File="25652-CommandeerThatBalloon" />
+	</While>
+	<DisableBehavior Name="Combat" />
+	<TurnIn Nav="Fly" QuestName="Commandeer That Balloon!" QuestId="25652" TurnInName="Lord Fallowmere" TurnInId="40896" />
+	<EnableBehavior Name="Combat" />
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding memory to Windshear Lake" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="Free Our Sisters" QuestId="25662" GiverName="Lord Fallowmere" GiverId="40896" />
+	<PickUp Nav="Fly" QuestName="Just Ask Alice" QuestId="25673" GiverName="Alice" GiverId="40908" />
+	<Objective Nav="Fly" QuestName="Just Ask Alice" QuestId="25673" Type="CollectItem" ItemId="55223" CollectCount="1" X="881.407" Y="364.4148" Z="23.18521" />
+	<If Condition="HasQuest(25673) &amp;&amp; !IsObjectiveComplete(2,25673)" > <!-- Due to tight corners and poor mesh -->
+		<MoveTo X="1150.986" Y="191.0681" Z="5.138127" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="MyCTM" X="1155.877" Y="188.1433" Z="5.877659" />
+		<CustomBehavior File="MyCTM" X="1166.295" Y="202.9105" Z="14.53024" />
+		<CustomBehavior File="MyCTM" X="1178.897" Y="194.6428" Z="17.91066" />
+		<CustomBehavior File="MyCTM" X="1173.053" Y="184.3876" Z="23.26561" />
+		<CustomBehavior File="InteractWith" QuestId="25673" QuestObjectiveIndex="2" MobId="203174" NumOfTimes="10" IgnoreCombat="True" NonCompeteDistance="0" />
+		<CustomBehavior File="MyCTM" X="1173.053" Y="184.3876" Z="23.26561" />
+		<CustomBehavior File="MyCTM" X="1178.897" Y="194.6428" Z="17.91066" />
+		<CustomBehavior File="MyCTM" X="1166.295" Y="202.9105" Z="14.53024" />
+		<CustomBehavior File="MyCTM" X="1155.877" Y="188.1433" Z="5.877659" />
+		<MoveTo X="1150.986" Y="191.0681" Z="5.138127" />
+	</If>
+	<While Condition="HasQuest(25662) &amp;&amp; !IsQuestCompleted(25662)" >
+		<CustomBehavior File="CollectThings" QuestId="25662" MobId="41062" CollectItemId="55200" CollectItemCount="1" NonCompeteDistance="1" HuntingGroundRadius="120" >
+			<Hotspot X="1211.729" Y="59.72988" Z="-8.542147" />
+			<Hotspot X="1286.958" Y="72.89057" Z="-0.03124291" />
+			<Hotspot X="1378.111" Y="67.14888" Z="12.38292" />
+			<Hotspot X="1327.215" Y="-18.89778" Z="5.355618" />
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" QuestId="25662" MobId="203161" MobId2="203163" MobId3="203158" MobId4="203154"
+															MobId5="203165" MobId6="203159" MobId7="203166"
+			NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100"
+			TerminateWhen="!HasItem(55200)" WaitTime="2000" >
+			<HuntingGrounds>
+				<Hotspot X="1211.729" Y="59.72988" Z="-8.542147" />
+				<Hotspot X="1286.958" Y="72.89057" Z="-0.03124291" />
+				<Hotspot X="1378.111" Y="67.14888" Z="12.38292" />
+				<Hotspot X="1327.215" Y="-18.89778" Z="5.355618" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<TurnIn Nav="Fly" QuestName="Free Our Sisters" QuestId="25662" TurnInName="Huntress Illiona" TurnInId="41071" />
+	
+	<PickUp Nav="Fly" QuestName="Rumble in the Lumber... Mill" QuestId="25669" GiverName="Huntress Illiona" GiverId="41071" />
+	<If Condition="HasQuest(25669) &amp;&amp; !IsQuestCompleted(25669)" >
+		<Objective Nav="Fly" QuestName="Rumble in the Lumber... Mill" QuestId="25669" Type="CollectItem" ItemId="55213" CollectCount="1" X="1255.541" Y="-5.29916" Z="-5.459745" />
+		<CustomBehavior File="InteractWith" QuestId="25669" MobId="203171" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" X="1255.541" Y="-5.29916" Z="-5.459745" />
+	</If>
+	
+	<Objective Nav="Fly" QuestName="Just Ask Alice" QuestId="25673" Type="CollectItem" ItemId="55222" CollectCount="1" X="1436.278" Y="0.07076515" Z="38.81236" />
+	<If Condition="!IsQuestCompleted(25729) || HasQuest(25729)" >
+		<CustomBehavior File="InteractWith" MobId="4202" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			TerminateWhen="IsQuestCompleted(25729)" NumOfTimes="100" WaitTime="2000" X="1608.967" Y="179.439" Z="104.6742" />
+		<TurnIn Nav="Fly" QuestName="Gerenzo the Traitor" QuestId="25729" />
+	</If>
+	<CustomBehavior File="InteractWith" QuestId="25673" QuestObjectiveIndex="1" MobId="203088" NonCompeteDistance="0" 
+		ProactiveCombatStrategy="ClearMobsTargetingUs" X="1606.228" Y="181.6069" Z="104.6685" />
+		
+	<TurnIn Nav="Fly" QuestName="Rumble in the Lumber... Mill" QuestId="25669" TurnInName="Lord Fallowmere" TurnInId="40896" />
+	<PickUp Nav="Fly" QuestName="If the Horde Don't Get You..." QuestId="25739" GiverName="Northwatch Captain Kosak" GiverId="40897" />
+	<PickUp Nav="Fly" QuestName="Preparations for the Future" QuestId="25741" GiverName="Alithia Fallowmere" GiverId="40898" />
+	<PickUp Nav="Fly" QuestName="Capturing Memories" QuestId="25767" GiverName="Neophyte Starcrest" GiverId="40900" />
+	<PickUp Nav="Fly" QuestName="Arcane Legacy" QuestId="25766" GiverName="Arcanist Valdurian" GiverId="40899" />
+	<TurnIn Nav="Fly" QuestName="Just Ask Alice" QuestId="25673" TurnInName="Alice" TurnInId="40908" />
+	
+	<Objective Nav="Fly" QuestName="If the Horde Don't Get You..." QuestId="25739" Type="KillMob" MobId="41185" KillCount="1" />
+	<Objective Nav="Fly" QuestName="Preparations for the Future" QuestId="25741" Type="CollectItem" ItemId="55280" CollectCount="10" />
+	<CustomBehavior File="InteractWith" QuestId="25766" MobId="34932" MobId2="34938" MobId3="34931" MobId4="34934"
+		MobId5="34933" MobState="Alive" InteractByUsingItemId="55972" NumOfTimes="1000"
+		WaitTime="2000" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="15" >
+		<HuntingGrounds>
+			<Hotspot X="557.6542" Y="951.1219" Z="115.189" />
+			<Hotspot X="478.7025" Y="994.5308" Z="116.9652" />
+			<Hotspot X="410.8728" Y="1043.087" Z="132.0339" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective Nav="Fly" QuestName="Capturing Memories" QuestId="25767" Type="CollectItem" ItemId="55971" CollectCount="8" />
+	
+	<TurnIn Nav="Fly" QuestName="If the Horde Don't Get You..." QuestId="25739" TurnInName="Northwatch Captain Kosak" TurnInId="40897" />
+	<PickUp Nav="Fly" QuestName="Tell 'Em Koko Sent You" QuestId="25765" GiverName="Northwatch Captain Kosak" GiverId="40897" />
+	<TurnIn Nav="Fly" QuestName="Preparations for the Future" QuestId="25741" TurnInName="Alithia Fallowmere" TurnInId="40898" />
+	<TurnIn Nav="Fly" QuestName="Arcane Legacy" QuestId="25766" TurnInName="Arcanist Valdurian" TurnInId="40899" />
+	<TurnIn Nav="Fly" QuestName="Capturing Memories" QuestId="25767" TurnInName="Neophyte Starcrest" TurnInId="40900" />
+	
+	<PickUp Nav="Fly" QuestName="Fallowmere Beckons" QuestId="25769" GiverName="Arcanist Valdurian" GiverId="40899" />
+	<TurnIn Nav="Fly" QuestName="Fallowmere Beckons" QuestId="25769" TurnInName="Lord Fallowmere" TurnInId="40896" />
+	
+	<PickUp Nav="Fly" QuestName="Bombs Away: Mirkfallon Post!" QuestId="25768" GiverName="Lord Fallowmere" GiverId="40896" />
+	<TurnIn Nav="Fly" QuestName="Bombs Away: Mirkfallon Post!" QuestId="25768" TurnInName="Scout Commander Barus" TurnInId="41233" />
+
+	<CustomBehavior File="Message" Text="Fast Forwarding memory to Mirkfallon Post" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="Gnome on the Inside" QuestId="25875" GiverName="Scout Commander Barus" GiverId="41233" />
+	<PickUp Nav="Fly" QuestName="Schemin' That Sabotage" QuestId="25878" GiverName="Scout Mistress Yvonia" GiverId="41441" />
+	<PickUp Nav="Fly" QuestName="The Lumbering Oaf Problem" QuestId="25879" GiverName="Scout Mistress Yvonia" GiverId="41441" />
+	
+	<While Condition="HasQuest(25878) &amp;&amp; !IsQuestCompleted(25878)" >
+		<CustomBehavior File="CollectThings" QuestId="25878" MobId="41437" CollectItemId="56140" CollectItemCount="1" 
+			NonCompeteDistance="1" HuntingGroundRadius="120" >
+			<Hotspot X="1524.046" Y="967.2332" Z="130.5567" />
+			<Hotspot X="1572.701" Y="986.0811" Z="129.7443" />
+			<Hotspot X="1641.169" Y="972.4611" Z="124.5622" />
+			<Hotspot X="1672.872" Y="950.3704" Z="126.7204" />
+			<Hotspot X="1706.611" Y="911.3925" Z="125.6061" />
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" QuestId="25878" MobId="41475" MobState="Alive" InteractByUsingItemId="56140"
+			Range="15" MinRange="5" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000"
+			NumOfTimes="100" TerminateWhen="!HasItem(56140)" >
+			<HuntingGrounds>
+				<Hotspot X="1524.046" Y="967.2332" Z="130.5567" />
+				<Hotspot X="1572.701" Y="986.0811" Z="129.7443" />
+				<Hotspot X="1641.169" Y="972.4611" Z="124.5622" />
+				<Hotspot X="1672.872" Y="950.3704" Z="126.7204" />
+				<Hotspot X="1706.611" Y="911.3925" Z="125.6061" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<Objective Nav="Fly" QuestName="The Lumbering Oaf Problem" QuestId="25879" Type="KillMob" MobId="40906" KillCount="10" />
+	
+	<TurnIn Nav="Fly" QuestName="Gnome on the Inside" QuestId="25875" TurnInName="Goblin Pump Controller" TurnInId="41434" X="1737.063" Y="736.681" Z="134.7939" />
+	<PickUp Nav="Fly" QuestName="It's Up There!" QuestId="25876" GiverName="Goblin Pump Controller" GiverId="41434" />
+	<Objective Nav="Fly" QuestName="It's Up There!" QuestId="25876" Type="CollectItem" ItemId="56091" CollectCount="1" />
+	<TurnIn Nav="Fly" QuestName="It's Up There!" QuestId="25876" TurnInName="Goblin Pump Controller" TurnInId="41434" />
+	<PickUp Nav="Fly" QuestName="No Time for Goodbyes!" QuestId="25877" GiverName="Goblin Pump Controller" GiverId="41434" />
+	
+	<Objective Nav="Fly" QuestName="The Lumbering Oaf Problem" QuestId="25879" Type="KillMob" MobId="40906" KillCount="10" />
+	
+	<TurnIn Nav="Fly" QuestName="The Lumbering Oaf Problem" QuestId="25879" TurnInName="Scout Mistress Yvonia" TurnInId="41441" />
+	<TurnIn Nav="Fly" QuestName="Schemin' That Sabotage" QuestId="25878" TurnInName="Scout Mistress Yvonia" TurnInId="41441" />
+	<TurnIn Nav="Fly" QuestName="No Time for Goodbyes!" QuestId="25877" TurnInName="Scout Commander Barus" TurnInId="41233" />
+	
+	<PickUp Nav="Fly" QuestName="Warn Master Thal'darah" QuestId="25880" GiverName="Scout Commander Barus" GiverId="41233" />
+	<TurnIn Nav="Fly" QuestName="Warn Master Thal'darah" QuestId="25880" TurnInName="Master Thal'darah" TurnInId="41482" />
+
+	<CustomBehavior File="Message" Text="Compiling Thal'darah Overlook Quests" LogColor="CornflowerBlue" />
+	
+	<If Condition="!HasQuest(25889) &amp;&amp; !IsQuestCompleted(25889)" >
+		<PickUp Nav="Fly" QuestName="Save the Children!" QuestId="25889" GiverName="Master Thal'darah" GiverId="41482" />
+		<MoveTo X="2140.874" Y="1539.748" Z="341.237" />
+	</If>
+	<While Condition="HasQuest(25889) &amp;&amp; !IsQuestCompleted(25889)" >
+		<If Condition="!Me.HasAura(77630)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(56168)" />
+		</If>
+		<CustomBehavior File="25889-SaveTheChildren" />
+	</While>
+	<If Condition="HasQuest(25889) &amp;&amp; IsQuestCompleted(25889) &amp;&amp; Me.IsOnTransport" >
+		<CustomBehavior File="EjectVeh" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="Save the Children!" QuestId="25889" TurnInName="Master Thal'darah" TurnInId="41482" />
+	
+	<If Condition="!HasQuest(25891) &amp;&amp; !IsQuestCompleted(25891)" >
+		<PickUp Nav="Fly" QuestName="Last Ditch Effort" QuestId="25891" GiverName="Master Thal'darah" GiverId="41482" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="Last Ditch Effort" QuestId="25891" TurnInName="Master Thal'darah" TurnInId="41482" />
+
+	<PickUp Nav="Fly" QuestName="Thal'darah's Vengeance" QuestId="25925" GiverName="Master Thal'darah" GiverId="41482" />
+	<PickUp Nav="Fly" QuestName="Seen Better Days" QuestId="25912" GiverName="Elder Sareth'na" GiverId="41486" />
+	<PickUp Nav="Fly" QuestName="Putting Them to Rest" QuestId="25913" GiverName="Sentinel Mistress Geleneth" GiverId="41488" />
+	<PickUp Nav="Fly" QuestName="Back to the Depths!" QuestId="25914" GiverName="Sentinel Mistress Geleneth" GiverId="41488" />
+	
+	<Objective Nav="Fly" QuestName="Seen Better Days" QuestId="25912" Type="CollectItem" ItemId="56186" CollectCount="1" />
+	<Objective Nav="Fly" QuestName="Putting Them to Rest" QuestId="25913" Type="CollectItem" ItemId="56187" CollectCount="8" />
+	<Objective Nav="Fly" QuestName="Back to the Depths!" QuestId="25914" Type="KillMob" MobId="34923" KillCount="1" />
+	<Objective Nav="Fly" QuestName="Back to the Depths!" QuestId="25914" Type="KillMob" MobId="34961" KillCount="10" />
+	
+	<TurnIn Nav="Fly" QuestName="Seen Better Days" QuestId="25912" TurnInName="Elder Sareth'na" TurnInId="41486" />
+	<TurnIn Nav="Fly" QuestName="Putting Them to Rest" QuestId="25913" TurnInName="Sentinel Mistress Geleneth" TurnInId="41488" />
+	<TurnIn Nav="Fly" QuestName="Back to the Depths!" QuestId="25914" TurnInName="Sentinel Mistress Geleneth" TurnInId="41488" />
+	
+	<If Condition="HasQuest(25925) &amp;&amp; !IsQuestCompleted(25925)" >
+		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" Text="Quest: Thal'darah's Vengeance utilizes a complex vehicle. No implemented QB at this time. Please complete this quest manually. Once it is complete, you may restart the bot (or press continue) and it will continue as normal." />
+	</If>
+	
+	<TurnIn Nav="Fly" QuestName="Thal'darah's Vengeance" QuestId="25925" TurnInName="Hierophant Malyk" TurnInId="41487" />
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding memory to The Charred Vale" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="Ascending the Vale" QuestId="25930" GiverName="Hierophant Malyk" GiverId="41487" />
+	<PickUp Nav="Fly" QuestName="World First: Gnomegen" QuestId="25934" GiverName="Salsbury the Help" GiverId="41664" />
+	<PickUp Nav="Fly" QuestName="Hungry Pups" QuestId="25935" GiverName="Houndmaster Jonathan" GiverId="41638" />
+	
+	<Objective Nav="Fly" QuestName="World First: Gnomegen" QuestId="25934" Type="CollectItem" ItemId="56224" CollectCount="1" />
+	<Objective Nav="Fly" QuestName="Hungry Pups" QuestId="25935" Type="CollectItem" ItemId="56223" CollectCount="6" />
+	
+	<If Condition="HasQuest(25930) &amp;&amp; !IsQuestCompleted(25930)" >
+		<MoveTo X="612.965" Y="2059.474" Z="60.67928" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="Ascending the Vale" QuestId="25930" />
+	<PickUp Nav="Fly" QuestName="Brood of Seldarria" QuestId="25931" GiverName="Hierophant Malyk" GiverId="41487" />
+	
+	<Objective Nav="Fly" QuestName="Brood of Seldarria" QuestId="25931" Type="UseObject" ObjectId="203384" UseCount="5" />
+	
+	<TurnIn Nav="Fly" QuestName="Hungry Pups" QuestId="25935" TurnInName="Houndmaster Jonathan" TurnInId="41638" />
+	<TurnIn Nav="Fly" QuestName="World First: Gnomegen" QuestId="25934" TurnInName="Salsbury the Help" TurnInId="41664" />
+	<TurnIn Nav="Fly" QuestName="Brood of Seldarria" QuestId="25931" TurnInName="Hierophant Malyk" TurnInId="41487" />
+
+	<CustomBehavior File="Message" Text="Fast Forwarding memory to Northwatch Expedition" LogColor="CornflowerBlue" />
+	
+	<TurnIn Nav="Fly" QuestName="Tell 'Em Koko Sent You" QuestId="25765" TurnInName="Force Commander Valen" TurnInId="41229" />
+	
+	<PickUp Nav="Fly" QuestName="The Deep Reaches" QuestId="25793" GiverName="Force Commander Valen" GiverId="41229" />
+	<TurnIn Nav="Fly" QuestName="The Deep Reaches" QuestId="25793" TurnInName="Steeltoe McGee" TurnInId="41276" />
+
+	<PickUp Nav="Fly" QuestName="Shuttin Her Down" QuestId="25811" GiverName="Steeltoe McGee" GiverId="41276" />
+	<PickUp Nav="Fly" QuestName="Leave No Man Behind! " QuestId="25809" GiverName="Corporal Wocard" GiverId="41282" />
+	<PickUp Nav="Fly" QuestName="They Put the Assass in... Never Mind" QuestId="25806" GiverName="Lieutenant Paulson" GiverId="41277" />
+	
+	<CustomBehavior File="InteractWith" QuestId="25811" QuestObjectiveIndex="1" MobId="41314" InteractByUsingItemId="56018"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" Range="6" MinRange="2"
+		IgnoreLoSToTarget="True" X="414.8549" Y="-266.8621" Z="66.75895" />
+	<CustomBehavior File="InteractWith" QuestId="25811" QuestObjectiveIndex="2" MobId="41315" InteractByUsingItemId="56018"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" Range="6" MinRange="2" 
+		IgnoreLoSToTarget="True" X="445.6921" Y="-208.0438" Z="59.94008" />
+	<CustomBehavior File="InteractWith" QuestId="25811" QuestObjectiveIndex="3" MobId="41316" InteractByUsingItemId="56018"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" Range="6" MinRange="2" 
+		IgnoreLoSToTarget="True" X="597.4053" Y="-152.4997" Z="21.54356" />
+	<CustomBehavior File="InteractWith" QuestId="25811" QuestObjectiveIndex="4" MobId="41317" InteractByUsingItemId="56018"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" Range="6" MinRange="2" 
+		IgnoreLoSToTarget="True" X="550.7674" Y="-135.1198" Z="25.06091" />
+		
+	<CustomBehavior File="InteractWith" QuestId="25809" MobId="41283" MobState="Alive"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" >
+		<HuntingGrounds>
+			<Hotspot X="414.8549" Y="-266.8621" Z="66.75895" />
+			<Hotspot X="445.6921" Y="-208.0438" Z="59.94008" />
+			<Hotspot X="597.4053" Y="-152.4997" Z="21.54356" />
+			<Hotspot X="550.7674" Y="-135.1198" Z="25.06091" />
+			<Hotspot X="641.2358" Y="-190.8586" Z="20.01028" />
+		</HuntingGrounds>
+	</CustomBehavior>
+		
+	<Objective Nav="Fly" QuestName="They Put the Assass in... Never Mind" QuestId="25806" Type="KillMob" MobId="41291" KillCount="12" />
+	<TurnIn Nav="Fly" QuestName="They Put the Assass in... Never Mind" QuestId="25806" />
+	<PickUp Nav="Fly" QuestName="Is This Thing On?" QuestId="25808" GiverName="Lieutenant Paulson" GiverId="41277" />
+	
+	<Objective Nav="Fly" QuestName="Is This Thing On?" QuestId="25808" Type="KillMob" MobId="41311" KillCount="1" />
+	<TurnIn Nav="Fly" QuestName="Is This Thing On?" QuestId="25808" TurnInName="Lieutenant Paulson" TurnInId="41277" />
+	<TurnIn Nav="Fly" QuestName="Shuttin Her Down" QuestId="25811" TurnInName="Steeltoe McGee" TurnInId="41276" />
+	<TurnIn Nav="Fly" QuestName="Leave No Man Behind! " QuestId="25809" TurnInName="Corporal Wocard" TurnInId="41282" />
+
+	<PickUp Nav="Fly" QuestName="A Special Kind of Job" QuestId="25821" GiverName="Lieutenant Paulson" GiverId="41277" />
+	<TurnIn Nav="Fly" QuestName="A Special Kind of Job" QuestId="25821" TurnInName="Force Commander Valen" TurnInId="41229" />
+	
+	<PickUp Nav="Fly" QuestName="Death by Proxy" QuestId="25834" GiverName="Force Commander Valen" GiverId="41229" />
+	<TurnIn Nav="Fly" QuestName="Death by Proxy" QuestId="25834" TurnInName="Cookie McWeaksauce" TurnInId="41278" />
+	
+	<PickUp Nav="Fly" QuestName="A Proper Peace Offerin'" QuestId="25837" GiverName="Cookie McWeaksauce" GiverId="41278" />
+	<Objective Nav="Fly" QuestName="A Proper Peace Offerin'" QuestId="25837" Type="CollectItem" ItemId="56041" CollectCount="6" />
+	<Objective Nav="Fly" QuestName="A Proper Peace Offerin'" QuestId="25837" Type="CollectItem" ItemId="56040" CollectCount="8" />
+	<Objective Nav="Fly" QuestName="A Proper Peace Offerin'" QuestId="25837" Type="CollectItem" ItemId="56042" CollectCount="10" />
+	<TurnIn Nav="Fly" QuestName="A Proper Peace Offerin'" QuestId="25837" TurnInName="Cookie McWeaksauce" TurnInId="41278" />
+
+	<PickUp Nav="Fly" QuestName="Sating the Savage Beast" QuestId="25844" GiverName="Cookie McWeaksauce" GiverId="41278" />
+	<TurnIn Nav="Fly" QuestName="Sating the Savage Beast" QuestId="25844" TurnInName="Ton Windbow" TurnInId="41350" />
+	
+	<PickUp Nav="Fly" QuestName="Terms of Service" QuestId="25845" GiverName="Ton Windbow" GiverId="41350" />
+	<TurnIn Nav="Fly" QuestName="Terms of Service" QuestId="25845" TurnInName="Force Commander Valen" TurnInId="41229" />
+	
+	<PickUp Nav="Fly" QuestName="Armaments for War" QuestId="25822" GiverName="Force Commander Valen" GiverId="41229" />
+	<PickUp Nav="Fly" QuestName="The Unrelenting Horde" QuestId="25823" GiverName="Force Commander Valen" GiverId="41229" />
+	<Objective Nav="Fly" QuestName="Armaments for War" QuestId="25822" Type="CollectItem" ItemId="56010" CollectCount="10" />
+	<Objective Nav="Fly" QuestName="The Unrelenting Horde" QuestId="25823" Type="KillMob" MobId="41408" KillCount="12" />
+	<TurnIn Nav="Fly" QuestName="Armaments for War" QuestId="25822" TurnInName="Force Commander Valen" TurnInId="41229" />
+	<TurnIn Nav="Fly" QuestName="The Unrelenting Horde" QuestId="25823" TurnInName="Force Commander Valen" TurnInId="41229" />
+	
+	<PickUp Nav="Fly" QuestName="Grundig Darkcloud, Chieftain of the Grimtotem" QuestId="25846" GiverName="Force Commander Valen" GiverId="41229" />
+	<TurnIn Nav="Fly" QuestName="Grundig Darkcloud, Chieftain of the Grimtotem" QuestId="25846" TurnInName="Grundig Darkcloud" TurnInId="11858" />
+
+	<CustomBehavior File="Message" Text="Stonetalon Mountains Synchronized" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\KalimdorMemBlock [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

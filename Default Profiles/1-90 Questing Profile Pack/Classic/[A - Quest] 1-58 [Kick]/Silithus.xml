@@ -1,0 +1,593 @@
+<HBProfile xsi:noNamespaceSchemaLocation="../../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>Hawker's Silithus Profile</Name>
+
+    <MinLevel>54</MinLevel>
+    <MaxLevel>1001</MaxLevel>
+
+    <MinDurability>0.3</MinDurability>
+    <MinFreeBagSlots>3</MinFreeBagSlots>
+
+    <!-- NB: Honorbuddy sells before mailing -->
+    <SellGrey>true</SellGrey>
+    <SellWhite>true</SellWhite>
+    <SellGreen>true</SellGreen>
+    <SellBlue>false</SellBlue>
+    <SellPurple>false</SellPurple>
+
+    <MailGrey>false</MailGrey>
+    <MailWhite>true</MailWhite>
+    <MailGreen>true</MailGreen>
+    <MailBlue>true</MailBlue>
+    <MailPurple>true</MailPurple>
+
+
+    <Blackspots>
+        <!-- Pillar at entrance to Silithus-->
+        <Blackspot X="-6532.299" Y="-542.1953" Z="-269.6691" Height="1" Radius="2" />
+        <!-- Hive'Zora Alliance Camp-->
+        <Blackspot X="-7157.741" Y="1417.392" Z="5.509088" Radius="45" />
+        <!-- Hive'Regal Horde Camp-->
+        <Blackspot X="-7595.551" Y="768.6691" Z="-17.59448" Radius="20" />
+    </Blackspots>
+
+
+    <QuestOrder>
+        <CustomBehavior File="Misc\ProfileCompatibilityInfo"
+            AllowBrokenAddOns="true" AllowBrokenPlugIns="true" />
+
+        <CustomBehavior File="UserSettings" UseMount="true" LootMobs="true" UseFlightPaths="true" PullDistance="35" GroundMountFarmingMode="false" KillBetweenHotspots="true" />
+
+        <!-- For toons that are on Eastern Kingdoms -->
+        <If Condition="Me.MapId == 0" >
+            <MoveTo X="-14288.29" Y="549.3284" Z="8.689642" />
+            <CustomBehavior File="ForcedDismount" />
+            <!-- BB dock to Ratchet -->
+            <CustomBehavior File="UseTransport" TransportId="20808"
+                                        WaitAtX="-14280.88" WaitAtY="566.6268" WaitAtZ="6.979454"
+                                        TransportStartX="-14277.75" TransportStartY="582.8661" TransportStartZ="0.01553879"
+                                        StandOnX="-14270.46" StandOnY="579.9881" StandOnZ="6.088587"
+                                        TransportEndX="-1005.613" TransportEndY="-3841.648" TransportEndZ="0.03330701"
+                                        GetOffX="-996.8669" GetOffY="-3826.07" GetOffZ="5.536246" />
+        </If>
+
+        <If Condition="Me.IsAlliance" >
+            <ClearVendor />
+            <SetVendor>
+                <Vendors>
+                    <Vendor Name="Razbo Rustgear" Id="23571" Type="Repair" X="-4603.661" Y="-3210.939" Z="34.9258" />
+                    <Vendor Name="Krinkle Goodsteel" Id="5411" Type="Repair" X="-7232.01" Y="-3751.71" Z="9.093862" />
+                    <Vendor Name="Gibbert" Id="3000" Type="Repair" X="-7491.394" Y="-1501.245" Z="-266.0465" />
+                    <Vendor Name="Dramm Riverhorn" Id="38561" Type="Repair" X="-6992.45" Y="-1074.266" Z="-270.2546" />
+                    <!-- Alliance Only -->
+                    <Vendor Name="Brod Anvilbeard" Id="40826" Type="Food" X="-9478.37" Y="-2968.17" Z="12.55388" />
+                    <Vendor Name="Vargus" Id="15176" Type="Repair" X="-6860.931" Y="753.0439" Z="42.47247" />
+                </Vendors>
+            </SetVendor>
+
+
+            <If Condition="!HasQuest(28859) &amp;&amp; !IsQuestCompleted(28859)" >
+                <!--PickUp QuestName="Bloodfen Feathers" GiverName="Brogg" QuestId="27407" GiverId="23579" -->
+                <If Condition="!HasQuest(27407) &amp;&amp; !IsQuestCompleted(27407)" >
+                    <MoveTo DestName="Mudsprocket" X="-4568.401" Y="-3223.187" Z="34.9063" />
+                    <CustomBehavior File="InteractWith" Range="5" MobId="40358" X="-4568.401" Y="-3223.187" Z="34.9063" />
+                </If>
+
+                <!-- PickUp QuestName="Puddle Stomping" QuestId="24907" GiverName="Megs Dreadshredder" GiverId="38534" -->
+                <If Condition="!HasQuest(24907) &amp;&amp; !IsQuestCompleted(24907)" >
+                    <MoveTo DestName="Gadgetzan" X="-7098.417" Y="-3816.016" Z="9.489635" />
+                    <!-- Get Gadgetzan flight path from Bulkrek Ragefist -->
+                    <CustomBehavior File="InteractWith" Range="5" MobId="7823" X="-7188.603" Y="-3766.392" Z="9.165956" />
+                </If>
+
+                <!-- PickUp QuestName="Bootlegger Outpost" QuestId="25103" GiverName="Megs Dreadshredder" GiverId="38703" -->
+                <If Condition="!HasQuest(25103) &amp;&amp; !IsQuestCompleted(25103)" >
+                    <MoveTo DestName="Bootlegger Outpost" X="-8684.64" Y="-4093.03" Z="40.45159" />
+                    <!-- Make sure to get Bootlegger Outpost Flight paths off Slick Dropdip -->
+                    <CustomBehavior File="InteractWith" MobId="41214" Range="5" X="-8684.64" Y="-4093.03" Z="40.45159" />
+                </If>
+
+                <!-- Gunstan's Dig flight path-->
+                <CustomBehavior File="InteractWith" MobId="40827" X="-9499.326" Y="-2950.922" Z="12.85121" />
+                <MoveTo DestName="Marshall's Stand" X="-7461.412" Y="-1528.385" Z="-268.8134" />
+            </If>
+        </If>
+
+        <!-- Abandon "Warchief's Command: Silithus" if we have it...
+             This will prevent us from picking up "The Dunes of Silithus" which is worth more XP + Rep -->
+        <If Condition="HasQuest(28527)">
+            <CustomBehavior File="AbandonQuest" QuestId="28527" />
+        </If>
+        <!-- If we've completed "Warchief's Command: Silithus", skip "The Dunes of Silithus"
+             since it will no longer be offered -->
+        <If Condition="!IsQuestCompleted(28527)">
+            <PickUp QuestName="The Dunes of Silithus" QuestId="28859" GiverName="Zen'Aliri" GiverId="38269" X="-7461.412" Y="-1528.385" Z="-268.8134" />
+        </If>
+
+        <If Condition="HasQuest(28859)" >
+            <MoveTo DestName="Windcaller Proudhorn" X="-6843.563" Y="756.0581" Z="42.38491" />
+            <TurnIn QuestName="The Dunes of Silithus" QuestId="28859" TurnInName="Windcaller Proudhorn" TurnInId="15191" X="-6847.807" Y="755.6797" Z="42.14317" />
+        </If>
+
+        <CustomBehavior File="Message" Text="Compiling Cenarion Hold Silithus Quests" LogColor="Green" />
+        <PickUp QuestName="Securing the Supply Lines" QuestId="8280" GiverName="Windcaller Proudhorn" GiverId="15191" X="-6847.807" Y="755.6797" Z="42.14317" />
+        <PickUp QuestName="Deadly Desert Venom" QuestId="8277" GiverName="Beetix Ficklespragg" GiverId="15189" X="-6855.655" Y="739.6216" Z="55.05116" />
+
+        <Objective QuestName="Securing the Supply Lines" QuestId="8280" Type="KillMob" MobId="11740" KillCount="15" />
+        <Objective QuestName="Deadly Desert Venom" QuestId="8277" Type="CollectItem" ItemId="20373" CollectCount="8" />
+        <Objective QuestName="Deadly Desert Venom" QuestId="8277" Type="CollectItem" ItemId="20376" CollectCount="8" />
+
+        <TurnIn QuestName="Securing the Supply Lines" QuestId="8280" TurnInName="Windcaller Proudhorn" TurnInId="15191" />
+        <PickUp QuestName="Stepping Up Security" QuestId="8281" GiverName="Windcaller Proudhorn" GiverId="15191" />
+        <TurnIn QuestName="Deadly Desert Venom" QuestId="8277" TurnInName="Beetix Ficklespragg" TurnInId="15189" />
+
+        <PickUp QuestName="Noggle's Last Hope" QuestId="8278" GiverName="Beetix Ficklespragg" GiverId="15189" />
+
+
+        <Objective QuestName="Noggle's Last Hope" QuestId="8278" Type="CollectItem" ItemId="20375" CollectCount="3" />
+        <Objective QuestName="Noggle's Last Hope" QuestId="8278" Type="CollectItem" ItemId="20374" CollectCount="3" />
+        <Objective QuestName="Noggle's Last Hope" QuestId="8278" Type="CollectItem" ItemId="20377" CollectCount="3" />
+
+        <TurnIn QuestName="Noggle's Last Hope" QuestId="8278" TurnInName="Beetix Ficklespragg" TurnInId="15189" />
+        <PickUp QuestName="Noggle's Lost Satchel" QuestId="8282" GiverName="Noggle Ficklespragg" GiverId="15190" />
+
+        <PickUp QuestName="Wanted - Deathclasp, Terror of the Sands" QuestId="8283" GiverName="Wanted Poster: Deathclasp" GiverId="180448" GiverType="Object" X="-6845.848" Y="748.7029" Z="42.54035" />
+
+        <Objective QuestName="Wanted - Deathclasp, Terror of the Sands" QuestId="8283" Type="CollectItem" ItemId="20385" CollectCount="1" />
+        <Objective QuestName="Noggle's Lost Satchel" QuestId="8282" Type="CollectItem" ItemId="20379" CollectCount="1" />
+        <Objective QuestName="Stepping Up Security" QuestId="8281" Type="KillMob" MobId="11741" KillCount="20" />
+
+        <TurnIn QuestName="Stepping Up Security" QuestId="8281" TurnInName="Windcaller Proudhorn" TurnInId="15191" />
+        <TurnIn QuestName="Noggle's Lost Satchel" QuestId="8282" TurnInName="Noggle Ficklespragg" TurnInId="15190" />
+
+        <While Condition="HasItem(20768)" >
+            <!-- Oozing Bag -->
+            <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(20768)" WaitTime="1000" />
+            <CustomBehavior File="WaitTimer" WaitTime="1000" GoalText="Waiting for Oozing Bag loot {TimeRemaining}" />
+        </While>
+
+        <While Condition="HasItem(20767)" >
+            <!-- Scum Covered Bag -->
+            <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(20767)" WaitTime="1000" />
+            <CustomBehavior File="WaitTimer" WaitTime="1000" GoalText="Waiting for Scum Covered Bag loot {TimeRemaining}" />
+        </While>
+
+        <!-- Vish Kozus is badly for Taurens so we have to be dismounted to turnin -->
+        <While Condition="HasQuest(8283) &amp;&amp; IsQuestCompleted(8283)" >
+            <MoveTo DestName="Tower with Vish Kozus in Cenarion Hold" X="-6737.583" Y="770.1729" Z="90.92376" />
+            <CustomBehavior File="ForcedDismount" />
+            <CustomBehavior File="UserSettings" UseMount="false" />
+            <TurnIn QuestName="Wanted - Deathclasp, Terror of the Sands" QuestId="8283" TurnInName="Vish Kozus" TurnInId="15182" X="-6740.078" Y="769.562" Z="128.4377" />
+            <CustomBehavior File="UserSettings" UseMount="true" />
+        </While>
+        <CustomBehavior File="UserSettings" UseMount="true" />
+
+        <PickUp QuestName="Twilight Geolords" QuestId="8320" GiverName="Huum Wildmane" GiverId="15270" />
+        <PickUp QuestName="Secret Communication" QuestId="8318" GiverName="Bor Wildmane" GiverId="15306" />
+        <Objective QuestName="Twilight Geolords" QuestId="8320" Type="KillMob" MobId="11881" KillCount="10" />
+        <Objective QuestName="Secret Communication" QuestId="8318" Type="CollectItem" ItemId="20404" CollectCount="10" />
+
+        <TurnIn QuestName="Secret Communication" QuestId="8318" TurnInName="Bor Wildmane" TurnInId="15306" />
+        <TurnIn QuestName="Twilight Geolords" QuestId="8320" TurnInName="Huum Wildmane" TurnInId="15270" />
+        <PickUp QuestName="Vyral the Vile" QuestId="8321" GiverName="Huum Wildmane" GiverId="15270" />
+        <While Condition="HasQuest(8321) &amp;&amp; !IsQuestCompleted(8321)" >
+            <MoveTo QuestId="8321" DestName="Vyral the Vile" X="-6325.47" Y="7.681579" Z="6.509269" />
+            <CustomBehavior File="WaitTimer" WaitTime="120000" GoalText="Waiting for Vyral the Vile {TimeRemaining}" />
+            <CustomBehavior File="InteractWith" QuestId="8321"  MobId="15202" X="-6325.47" Y="7.681579" Z="6.509269" />
+        </While>
+        <Objective QuestName="Vyral the Vile" QuestId="8321" Type="CollectItem" ItemId="20466" CollectCount="1" />
+        <TurnIn QuestName="Vyral the Vile" QuestId="8321" TurnInName="Huum Wildmane" TurnInId="15270" />
+        <PickUp QuestName="The Twilight Mystery" QuestId="8284" GiverName="Geologist Larksbane" GiverId="15183" />
+        <PickUp QuestName="Dearest Natalia" QuestId="8304" GiverName="Commander Mar'alith" GiverId="15181" X="-6752.384" Y="823.8355" Z="57.36497" />
+
+        <Objective QuestName="The Twilight Mystery" QuestId="8284" Type="CollectItem" ItemId="20378" CollectCount="8" />
+
+
+        <MoveTo QuestId="8304" X="-8020.625" Y="1108.113" Z="2.875897" />
+        <While Condition="HasQuest(8304) &amp;&amp; !IsQuestCompleted(8304)" >
+            <CustomBehavior File="InteractWith" QuestId="8304" MobId="15170" InteractByGossipOptions="1,1,1,1,1,1,1,1" Range="5" X="-8013.063" Y="1099.647" Z="4.636153" />
+            <CustomBehavior File="InteractWith" QuestId="8304" MobId="15171" InteractByGossipOptions="1,1,1,1,1,1,1,1" Range="5" X="-8022.499" Y="1115.789" Z="2.738349" />
+        </While>
+
+
+        <If Condition="HasQuest(8304) &amp;&amp; IsQuestCompleted(8304)" >
+            <TurnIn QuestId="8304" />
+            <!-- Get 186 -->
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for Commander Mar'alith {TimeRemaining}" />
+        </If>
+
+        <PickUp QuestName="Into The Maw of Madness" QuestId="8306" GiverName="Commander Mar'alith" GiverId="15181" X="-6752.384" Y="823.8355" Z="57.36497" />
+        <PickUp QuestName="Breaking the Code" QuestId="8310" GiverName="Frankal Stonebridge" GiverId="15171" />
+        <PickUp QuestName="Glyph Chasing" QuestId="8309" GiverName="Rutgar Glyphshaper" GiverId="15170" />
+
+        <!-- This avoids getting stuck in the tent so please don't delete it! -->
+        <MoveTo DestName="Avoid getting stuck in the tent." QuestId="8309" X="-7984.102" Y="1119.002" Z="-1.765348" />
+
+        <If Condition="HasQuest(8306) &amp;&amp; !IsQuestCompleted(8306)" >
+            <Objective QuestName="Into The Maw of Madness" QuestId="8306" Type="KillMob" MobId="15215" KillCount="1" />
+        </If>
+
+        <While Condition="HasQuest(8309) &amp;&amp; !IsQuestCompleted(8309)">
+            <MoveTo DestName="The Crystal by Natalia" X="-8341.286" Y="734.4688" Z="-64.41396" />
+            <CustomBehavior File="InteractWith" QuestId="8309" MobId="180453" InteractByGossipOptions="1" Range="5" WaitTime="10000" X="-8326.188" Y="727.3082" Z="-66.85242" />
+        </While>
+
+        <While Condition="HasItem(20768)" >
+            <!-- Oozing Bag -->
+            <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(20768)" WaitTime="1000" />
+            <CustomBehavior File="WaitTimer" WaitTime="1000" GoalText="Waiting for Oozing Bag loot {TimeRemaining}" />
+        </While>
+
+        <While Condition="HasItem(20767)" >
+            <!-- Scum Covered Bag -->
+            <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(20767)" WaitTime="1000" />
+            <CustomBehavior File="WaitTimer" WaitTime="1000" GoalText="Waiting for Scum Covered Bag loot {TimeRemaining}" />
+        </While>
+
+        <TurnIn QuestName="The Twilight Mystery" QuestId="8284" TurnInName="Geologist Larksbane" TurnInId="15183" />
+        <PickUp QuestName="The Deserter" QuestId="8285" GiverName="Geologist Larksbane" GiverId="15183" />
+
+        <TurnIn QuestName="The Deserter" QuestId="8285" TurnInName="Hermit Ortell" TurnInId="15194" X="-7578.721" Y="196.9136" Z="11.46645" />
+        <PickUp QuestName="The Twilight Lexicon" QuestId="8279" GiverName="Hermit Ortell" GiverId="15194" />
+
+        <TurnIn QuestName="Into The Maw of Madness" QuestId="8306" TurnInName="Commander Mar'alith" TurnInId="15181" X="-6752.384" Y="823.8355" Z="57.36497" />
+
+        <Objective QuestName="The Twilight Lexicon" QuestId="8279" Type="CollectItem" ItemId="20394" CollectCount="1" />
+        <Objective QuestName="The Twilight Lexicon" QuestId="8279" Type="CollectItem" ItemId="20395" CollectCount="1" />
+        <Objective QuestName="The Twilight Lexicon" QuestId="8279" Type="CollectItem" ItemId="20396" CollectCount="1" />
+
+        <TurnIn QuestName="The Twilight Lexicon" QuestId="8279" TurnInName="Hermit Ortell" TurnInId="15194" />
+
+        <PickUp QuestName="A Terrible Purpose" QuestId="8287" GiverName="Hermit Ortell" GiverId="15194" />
+        <PickUp QuestName="true Believers" QuestId="8323" GiverName="Hermit Ortell" GiverId="15194" />
+
+        <Objective QuestName="true Believers" QuestId="8323" Type="CollectItem" ItemId="20404" CollectCount="10" />
+
+        <TurnIn QuestName="true Believers" QuestId="8323" TurnInName="Hermit Ortell" TurnInId="15194" />
+        <TurnIn QuestName="A Terrible Purpose" QuestId="8287" TurnInName="Commander Mar'alith" TurnInId="15181" X="-6752.384" Y="823.8355" Z="57.36497" />
+
+
+        <If Condition="Me.IsHorde" >
+            <PickUp QuestName="Report to General Kirika" QuestId="9416" GiverName="Scout Bloodfist" GiverId="17081" />
+            <TurnIn QuestName="Report to General Kirika" QuestId="9416" TurnInName="General Kirika" TurnInId="17079" />
+        </If>
+
+        <If Condition="Me.IsAlliance" >
+            <PickUp QuestName="Report to Marshal Bluewall" QuestId="9415" GiverName="Rifleman Torrig" GiverId="17082" />
+            <TurnIn QuestName="Report to Marshal Bluewall" QuestId="9415" TurnInName="Marshal Bluewall" TurnInId="17080" />
+        </If>
+
+
+        <!-- Really, this should already have been completed but just in case... -->
+        <Objective QuestName="Breaking the Code" QuestId="8310" Type="CollectItem" ItemId="20459" CollectCount="1" />
+
+        <TurnIn QuestName="Breaking the Code" QuestId="8310" TurnInName="Frankal Stonebridge" TurnInId="15171" />
+
+        <!-- We should have Brann Bronzebeard's Lost Letter by now -->
+        <If Condition="HasItem(20461)" >
+            <PickUp QuestName="Brann Bronzebeard's Lost Letter" QuestId="8308" GiverName="Brann Bronzebeard's Lost Letter" GiverId="20461" GiverType="Item" />
+        </If>
+
+        <If Condition="HasQuest(8308)" >
+            <CustomBehavior File="Message" Text="Moving to turn in 'Brann Bronzebeard's Lost Letter'" LogColor="Green" />
+            <MoveTo X="-8022.499" Y="1115.789" Z="2.738349" />
+            <TurnIn QuestName="Brann Bronzebeard's Lost Letter" QuestId="8308" TurnInName="Rutgar Glyphshaper" TurnInId="15170" X="-8013.063" Y="1099.647" Z="4.636414" />
+        </If>
+
+        <TurnIn QuestName="Glyph Chasing" QuestId="8309" TurnInName="Rutgar Glyphshaper" TurnInId="15170" />
+        <PickUp QuestName="Unraveling the Mystery" QuestId="8314" GiverName="Rutgar Glyphshaper" GiverId="15170" />
+
+        <TurnIn QuestName="Unraveling the Mystery" QuestId="8314" TurnInName="Geologist Larksbane" TurnInId="15183" />
+
+        <SetGrindArea>
+            <GrindArea>
+                <Name>Grinding to Level 58</Name>
+                <Factions>14 16</Factions>
+                <TargetMinLevel>52</TargetMinLevel>
+                <TargetMaxLevel>58</TargetMaxLevel>
+                <Hotspots>
+                    <Hotspot X="-7035.473" Y="1099.451" Z="5.219384" />
+                    <Hotspot X="-6926.106" Y="1249.856" Z="5.20635" />
+                    <Hotspot X="-6943.58" Y="1094.687" Z="1.608419" />
+                    <Hotspot X="-7059.649" Y="1210.637" Z="0.3497658" />
+                    <Hotspot X="-7827.51" Y="1926.173" Z="5.640767" />
+                    <Hotspot X="-7972.875" Y="1806.636" Z="2.405842" />
+                    <Hotspot X="-7948.423" Y="1946.38" Z="6.90883" />
+                    <Hotspot X="-6800.691" Y="1620.447" Z="3.199211" />
+                    <Hotspot X="-6839.785" Y="1689.428" Z="-0.01458124" />
+                    <Hotspot X="-6748.827" Y="1695.199" Z="2.267287" />
+                </Hotspots>
+            </GrindArea>
+        </SetGrindArea>
+
+        <GrindTo Level="58"/>
+
+        <MoveTo DestName="The Inn at Cenarion Hold" X="-6867.857" Y="730.6714" Z="45.66279" />
+
+        <While Condition="HasItem(20768)" >
+            <!-- Oozing Bag -->
+            <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(20768)" WaitTime="1000" />
+            <CustomBehavior File="WaitTimer" WaitTime="1000" GoalText="Waiting for Oozing Bag loot {TimeRemaining}" />
+        </While>
+
+        <While Condition="HasItem(20767)" >
+            <!-- Scum Covered Bag -->
+            <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(20767)" WaitTime="1000" />
+            <CustomBehavior File="WaitTimer" WaitTime="1000" GoalText="Waiting for Scum Covered Bag loot {TimeRemaining}" />
+        </While>
+
+
+        <CustomBehavior File="Message" Text="All done in Silithus." LogColor="Yellow" />
+        <CustomBehavior File="Halt" />
+    </QuestOrder>
+
+    <!--Quest Overrides-->
+    <Quest Name="Breaking the Code" Id="8310" >
+        <Objective Type="CollectItem" ItemId="20459" ItemName="Hive'Regal Brain" CollectCount="1">
+            <Hotspots>
+                <Hotspot X="-8326.188" Y="727.3082" Z="-66.85242" />
+                <Hotspot X="-7993.608" Y="601.6851" Z="-40.19724" />
+                <Hotspot X="-8058.74" Y="324.506" Z="-40.06275" />
+                <Hotspot X="-8240.404" Y="330.3004" Z="-92.66431" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="true Believers" Id="8323" >
+        <Objective Type="CollectItem" ItemId="20404" CollectCount="10">
+            <Hotspots>
+                <Hotspot X="-7035.473" Y="1099.451" Z="5.219384" />
+                <Hotspot X="-6926.106" Y="1249.856" Z="5.20635" />
+                <Hotspot X="-6943.58" Y="1094.687" Z="1.608419" />
+                <Hotspot X="-7059.649" Y="1210.637" Z="0.3497658" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="The Twilight Lexicon" Id="8279" >
+        <Objective Type="CollectItem" ItemId="20394" ItemName="Twilight Lexicon - Chapter 1" CollectCount="1">
+            <CollectFrom>
+                <Mob Name="Twilight Keeper Mayna"  Id="15200" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-6800.691" Y="1620.447" Z="3.199211" />
+                <Hotspot X="-6839.785" Y="1689.428" Z="-0.01458124" />
+                <Hotspot X="-6748.827" Y="1695.199" Z="2.267287" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="20395" ItemName="Twilight Lexicon - Chapter 2" CollectCount="1">
+            <CollectFrom>
+                <Mob Name="Twilight Keeper Exeter"  Id="11803" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-7827.51" Y="1926.173" Z="5.640767" />
+                <Hotspot X="-7972.875" Y="1806.636" Z="2.405842" />
+                <Hotspot X="-7948.423" Y="1946.38" Z="6.90883" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="20396" ItemName="Twilight Lexicon - Chapter 3" CollectCount="1">
+            <CollectFrom>
+                <Mob Name="Twilight Keeper Havunth"  Id="11804" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-7039.972" Y="1194.189" Z="5.77029" />
+                <Hotspot X="-6987.871" Y="1261.443" Z="-0.7287688" />
+                <Hotspot X="-7010.087" Y="1072.925" Z="3.791959" />
+                <Hotspot X="-6941.279" Y="1111.991" Z="0.5240195" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="Into The Maw of Madness" Id="8306" >
+        <Objective Type="KillMob" MobId="15215" MobName="Natalia" KillCount="1">
+            <Hotspots>
+                <Hotspot X="-8325.497" Y="727.5823" Z="-67.0653" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="The Twilight Mystery" Id="8284"  >
+        <Objective Type="CollectItem" ItemId="20378" ItemName="Twilight Tablet Fragment" CollectCount="8">
+            <CollectFrom>
+                <Object Name="Twilight Tablet Fragment" Id="180436"/>
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-6257.161" Y="1515.545" Z="11.20413" />
+                <Hotspot X="-6262.185" Y="1714.125" Z="6.188356" />
+                <Hotspot X="-6226.242" Y="1646.595" Z="7.076653" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Name="Vyral the Vile" Id="8321" >
+        <Objective Type="CollectItem" ItemId="20466" ItemName="Vyral's Signet Ring" CollectCount="1">
+            <CollectFrom>
+                <Mob Name="Vyral the Vile"  Id="15202" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-6325.47" Y="7.681579" Z="6.509269" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="Twilight Geolords" Id="8320" >
+        <Objective Type="KillMob" MobId="11881" MobName="Twilight Geolord" KillCount="10">
+            <Hotspots>
+                <Hotspot X="-7035.473" Y="1099.451" Z="5.219384" />
+                <Hotspot X="-6926.106" Y="1249.856" Z="5.20635" />
+                <Hotspot X="-6943.58" Y="1094.687" Z="1.608419" />
+                <Hotspot X="-7059.649" Y="1210.637" Z="0.3497658" />
+                <Hotspot X="-7827.51" Y="1926.173" Z="5.640767" />
+                <Hotspot X="-7972.875" Y="1806.636" Z="2.405842" />
+                <Hotspot X="-7948.423" Y="1946.38" Z="6.90883" />
+                <Hotspot X="-6800.691" Y="1620.447" Z="3.199211" />
+                <Hotspot X="-6839.785" Y="1689.428" Z="-0.01458124" />
+                <Hotspot X="-6748.827" Y="1695.199" Z="2.267287" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="8318" Name="Secret Communication">
+        <Objective Type="CollectItem" ItemId="20404" CollectCount="10">
+            <Hotspots>
+                <Hotspot X="-7035.473" Y="1099.451" Z="5.219384" />
+                <Hotspot X="-6926.106" Y="1249.856" Z="5.20635" />
+                <Hotspot X="-6943.58" Y="1094.687" Z="1.608419" />
+                <Hotspot X="-7059.649" Y="1210.637" Z="0.3497658" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Name="Noggle's Lost Satchel" Id="8282" >
+        <Objective Type="CollectItem" ItemId="20379" ItemName="Noggle's Lost Satchel" CollectCount="1">
+            <CollectFrom>
+                <Object Name="Noggle's Lost Satchel" Id="180435"/>
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-8079.748" Y="984.3573" Z="47.6392" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="Stepping Up Security" Id="8281" >
+        <Objective Type="KillMob" MobId="11741" MobName="Dredge Crusher" KillCount="1">
+            <Hotspots>
+                <Hotspot X="-7449.603" Y="452.8522" Z="-3.4941" />
+                <Hotspot X="-7212.101" Y="1209.251" Z="1.49545" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="Securing the Supply Lines" Id="8280" >
+        <Objective Type="KillMob" MobId="11740" MobName="Dredge Striker " KillCount="15">
+            <Hotspots>
+                <Hotspot X="-7014.406" Y="264.8094" Z="3.18469" />
+                <Hotspot X="-6848.32" Y="65.51746" Z="3.418952" />
+                <Hotspot X="-6748.045" Y="-17.98473" Z="3.15032" />
+                <Hotspot X="-6634.553" Y="175.4547" Z="7.436229" />
+                <Hotspot X="-6538.268" Y="319.1416" Z="2.42944" />
+                <Hotspot X="-6433.28" Y="709.7766" Z="3.999131" />
+                <Hotspot X="-6694.539" Y="635.8777" Z="6.437017" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="Wanted - Deathclasp, Terror of the Sands" Id="8283" >
+        <Objective Type="CollectItem" ItemId="20385" ItemName="Deathclasp Pincer" CollectCount="1">
+            <CollectFrom>
+                <Mob Name="Deathclasp"  Id="15196" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-8120.358" Y="987.546" Z="61.87784" />
+                <Hotspot X="-8053.853" Y="1005.14" Z="39.09744" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="Noggle's Last Hope" Id="8278" >
+        <Objective Type="CollectItem" ItemId="20374" ItemName="Stonelash Pincer Stinger" CollectCount="3">
+            <CollectFrom>
+                <Mob Name="Stonelash Pincer"  Id="11736" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-7449.603" Y="452.8522" Z="-3.4941" />
+                <Hotspot X="-7212.101" Y="1209.251" Z="1.49545" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="20375" ItemName="Stonelash Flayer Stinger" CollectCount="3">
+            <CollectFrom>
+                <Mob Name="Stonelash Flayer"  Id="11737" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-7771.804" Y="1548.979" Z="0.8492084" />
+                <Hotspot X="-7939.57" Y="1566.239" Z="-0.1165237" />
+                <Hotspot X="-7894.474" Y="1332.112" Z="-8.943189" />
+                <Hotspot X="-7903.409" Y="1021.493" Z="1.263738" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="20377" ItemName="Rock Stalker Fang" CollectCount="1">
+            <CollectFrom>
+                <Mob Name="Rock Stalker"  Id="11739" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-7771.804" Y="1548.979" Z="0.8492084" />
+                <Hotspot X="-7939.57" Y="1566.239" Z="-0.1165237" />
+                <Hotspot X="-7894.474" Y="1332.112" Z="-8.943189" />
+                <Hotspot X="-7903.409" Y="1021.493" Z="1.263738" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="Deadly Desert Venom" Id="8277" >
+        <Objective Type="CollectItem" ItemId="20376" ItemName="Sand Skitterer Fang" CollectCount="8">
+            <CollectFrom>
+                <Mob Name="Sand Skitterer"  Id="11738" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-7014.406" Y="264.8094" Z="3.18469" />
+                <Hotspot X="-6848.32" Y="65.51746" Z="3.418952" />
+                <Hotspot X="-6748.045" Y="-17.98473" Z="3.15032" />
+                <Hotspot X="-6634.553" Y="175.4547" Z="7.436229" />
+                <Hotspot X="-6538.268" Y="319.1416" Z="2.42944" />
+                <Hotspot X="-6433.28" Y="709.7766" Z="3.999131" />
+                <Hotspot X="-6694.539" Y="635.8777" Z="6.437017" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="20373" ItemName="Stonelash Scorpid Stinger" CollectCount="8">
+            <CollectFrom>
+                <Mob Name="Stonelash Scorpid"  Id="11735" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-7014.406" Y="264.8094" Z="3.18469" />
+                <Hotspot X="-6848.32" Y="65.51746" Z="3.418952" />
+                <Hotspot X="-6748.045" Y="-17.98473" Z="3.15032" />
+                <Hotspot X="-6634.553" Y="175.4547" Z="7.436229" />
+                <Hotspot X="-6538.268" Y="319.1416" Z="2.42944" />
+                <Hotspot X="-6433.28" Y="709.7766" Z="3.999131" />
+                <Hotspot X="-6694.539" Y="635.8777" Z="6.437017" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="DummyKillMob" Id="123456" >
+        <Objective Type="KillMob" MobId="1" MobName="Mob" KillCount="1">
+            <Hotspots>
+                <Hotspot X="1" Y="1" Z="1" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="DummyCollectfromMob" Id="123456" >
+        <Objective Type="CollectItem" ItemId="1" ItemName="Item" CollectCount="1">
+            <CollectFrom>
+                <Mob Name="Mob"  Id="1" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="1" Y="1" Z="1" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="DummyCollectfromGameObject" Id="123456" >
+        <Objective Type="CollectItem" ItemId="1" ItemName="Item" CollectCount="1">
+            <CollectFrom>
+                <Object Name="GameObject" Id="1"/>
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="1" Y="1" Z="1" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Vendors>
+        <Vendor Name="Krinkle Goodsteel" Id="5411" Type="Repair" X="-7232.01" Y="-3751.71" Z="9.093862" />
+        <Vendor Name="Gibbert" Id="3000" Type="Repair" X="-7491.394" Y="-1501.245" Z="-266.0465" />
+        <Vendor Name="Vargus" Id="15176" Type="Repair" X="-6860.931" Y="753.0439" Z="42.47247" />
+    </Vendors>
+
+    <Mailboxes>
+        <!-- Cenarion Hold -->
+        <Mailbox X="-6838.836" Y="734.1841" Z="42.18411" />
+    </Mailboxes>
+
+    <Blacklist>
+        <Mob Name="Covert Ops Pounder" Id="38649" Flags="Combat, Pull, Interact" />
+    </Blacklist>
+</HBProfile>

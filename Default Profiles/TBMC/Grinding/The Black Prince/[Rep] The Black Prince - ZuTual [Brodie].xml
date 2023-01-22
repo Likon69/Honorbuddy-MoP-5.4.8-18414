@@ -1,0 +1,104 @@
+<HBProfile>
+	<Name>The Black Prince - Isle of Thunder ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	
+	<Blackspots>
+    </Blackspots>
+	
+	<Blacklist>
+		<Mob Name="Creeping Moor Beast" Entry="67772" Flags="Pull" />
+		<Mob Name="Slateshell Ancient" Entry="67763" Flags="Pull" />
+		<Mob Name="Shan'ze Animator" Entry="70069" Flags="Pull" />
+		<Mob Name="Shan'ze Bloodseeker" Entry="69431" Flags="Pull" />
+		<Mob Name="Mighty Devilsaur" Entry="69406" Flags="Pull" />
+		<Mob Name="Zandalari Battlebeast" Entry="69795" Flags="Pull" />
+		<Mob Name="Animated Warrior" Entry="67473" Flags="Pull" />
+		<Mob Name="Drakkari God-Hulk" Entry="69200" Flags="Pull" />
+		<Mob Name="Zandalari Beastlord" Entry="71298" Flags="Pull" />
+	</Blacklist>
+	
+	<AvoidMobs>
+		<Mob Name="Fierce Anklebiter" Entry="69244" />
+	</AvoidMobs>
+	
+	<Vendors>
+		<Vendor Name="Teng of the Flying Daggers" Entry="70535" Type="Repair" X="6865.31" Y="5515.42" Z="1.28" />
+	</Vendors>
+
+<QuestOrder>
+
+	<If Condition="Me.ZoneId != 6507" >
+		<CustomBehavior File="Message" Text="Moving to Shado Pan Garrison." LogColor="Green"  />
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="1921.81" Y="4223.25" Z="132.44" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+			<If Condition="!IsQuestCompleted(32644)" >
+				<CustomBehavior File="InteractWith" MobId="218947" ObjectType="GameObject" WaitForNpcs="True" />
+				<CustomBehavior File="WaitTimer" WaitTime="3000" />
+				<CustomBehavior File="InteractWith" MobId="218837" ObjectType="GameObject" WaitForNpcs="True" />
+			<ElseIf Condition="IsQuestCompleted(32644)" >
+				<CustomBehavior File="InteractWith" MobId="218463" ObjectType="GameObject" WaitForNpcs="True" />
+			</ElseIf>
+			</If>
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="1748.19" Y="4161.71" Z="159.51" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+			<If Condition="!IsQuestCompleted(32212)" >
+				<CustomBehavior File="InteractWith" MobId="218946" ObjectType="GameObject" WaitForNpcs="True" />
+				<CustomBehavior File="InteractWith" MobId="218839" ObjectType="GameObject" WaitForNpcs="True" />
+				<CustomBehavior File="WaitTimer" WaitTime="3000" />
+			<ElseIf Condition="IsQuestCompleted(32212)" >
+				<CustomBehavior File="InteractWith" MobId="218462" ObjectType="GameObject" WaitForNpcs="True" />
+			</ElseIf>
+			</If>
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</If>
+	</If>
+	
+	<SetGrindArea>
+		<GrindArea>
+			<Factions>14 16 634 1924 2000 2477 2479</Factions>
+			<Hotspots>
+				<!-- Zu'Tual -->
+				<Hotspot X="5929.531" Y="6210.804" Z="7.361635" />
+				<Hotspot X="5998.467" Y="6208.704" Z="17.353" />
+				<Hotspot X="6049.183" Y="6250.748" Z="22.89835" />
+				<Hotspot X="6048.091" Y="6180.009" Z="22.89828" />
+				<Hotspot X="6111.395" Y="6201.289" Z="24.95688" />
+				<Hotspot X="6118.13" Y="6247.609" Z="27.93462" />
+				<Hotspot X="6222.277" Y="6214.64" Z="20.70851" />
+				<Hotspot X="6279.105" Y="6231.616" Z="16.18914" />
+				<Hotspot X="6219.321" Y="6318.899" Z="12.79916" />
+				<Hotspot X="6289.293" Y="6134.351" Z="28.28782" />
+				<Hotspot X="6317.763" Y="6033.119" Z="29.10179" />
+				<Hotspot X="6263.321" Y="5993.019" Z="27.08778" />
+				<Hotspot X="6212.926" Y="5953.555" Z="40.78875" />
+				<Hotspot X="6123.67" Y="5977.282" Z="50.16852" />
+				<Hotspot X="6027.278" Y="6018.512" Z="57.07346" />
+			</Hotspots>
+		</GrindArea>
+	</SetGrindArea>
+	<GrindTo Condition="False" GoalText="The Black Prince Rep" />
+
+</QuestOrder>
+</HBProfile>  

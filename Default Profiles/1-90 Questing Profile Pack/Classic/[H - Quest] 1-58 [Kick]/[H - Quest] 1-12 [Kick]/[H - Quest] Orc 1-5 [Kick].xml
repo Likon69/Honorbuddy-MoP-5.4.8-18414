@@ -1,0 +1,381 @@
+<HBProfile xsi:noNamespaceSchemaLocation="../../../Schemas/QuestProfileSchema.xsd"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <!-- Originally contributed by Kickazz006 -->
+    <Name>[H - Quest] Orc 1-5 [Kick] ($Rev$)</Name>
+
+    <MinLevel>1</MinLevel>
+    <MaxLevel>1001</MaxLevel>
+
+    <MinDurability>0.3</MinDurability>
+    <MinFreeBagSlots>3</MinFreeBagSlots>
+
+    <!-- NB: Honorbuddy sells before mailing -->
+    <SellGrey>true</SellGrey>
+    <SellWhite>true</SellWhite>
+    <SellGreen>true</SellGreen>
+    <SellBlue>false</SellBlue>
+    <SellPurple>false</SellPurple>
+
+    <MailGrey>false</MailGrey>
+    <MailWhite>true</MailWhite>
+    <MailGreen>true</MailGreen>
+    <MailBlue>true</MailBlue>
+    <MailPurple>true</MailPurple>
+
+
+    <AvoidMobs>
+        <!--Orc Questgiver Bot Wants Dead-->
+        <!--<Mob Name="Rezlak" Entry="3293"/>Orc Training Dummy-->
+        <!--<Mob Name="Training Dummy" Entry="44820"  />  ?? Training Dummy -->
+    </AvoidMobs>
+
+
+    <Blackspots>
+        <Blackspot Name="Durotar" X="373.5913" Y="-4712.287" Z="16.10571" Radius="11" />
+
+        <Blackspot Name="Orc starter: behind building w/Farmers Krella and Lok'lub"
+                   X="-511.5697" Y="-4260.601" Z="43.82208" Radius="11" />
+
+        <Blackspot Name="Sen'jin Village Fence1" X="-768.1917" Y="-4881.526" Z="20.29184" Radius="7.254548"/>
+        <Blackspot Name="Sen'jin Village Fence2" X="-767.4973" Y="-4880.469" Z="20.56847" Radius="4.278707"/>
+
+        <Blackspot Name="Troll Starting Area" X="-1135.981" Y="-5414.498" Z="13.00538" Radius="2.300135" />
+        <Blackspot Name="Troll Starting Area" X="-1150.384" Y="-5519.188" Z="11.58836" Radius="2.494276" />
+        <Blackspot Name="Troll Starting Area" X="-1168.537" Y="-5269.622" Z="0.8604383" Radius="3.024951" />
+        <Blackspot Name="Harpy Nest" X="-2639.21" Y="-1405.313" Z="32.07373" Radius="3.31264"/>
+        <Blackspot Name="Cold Hearth Minor Sign" X="2188.518" Y="661.0852" Z="33.29134" Radius="4.017753"/>
+    </Blackspots>
+
+
+    <Mailboxes>
+        <Mailbox Name="Razor Hill" X="321.0783" Y="-4708.963" Z="14.15302"/>
+        <Mailbox Name="Sen'jin Village" X="-816.5651" Y="-4926.866" Z="19.88713"/>
+    </Mailboxes>
+
+
+    <Vendors>
+        <!--Valley of Trials Vendors-->
+        <Vendor Name="Zlagk" Id="3882" Type="Food" X="-560.1253" Y="-4217.204" Z="41.59082"/>
+        <Vendor Name="Huklah" Id="3160" Type="Repair" X="-590.3455" Y="-4227.319" Z="38.3847"/>
+
+        <!--Sen'jin Village Vendors-->
+        <Vendor Name="K'waii" Id="3186" Type="Food" X="-779.0314" Y="-4938.931" Z="22.24685" />
+        <Vendor Name="Trayexir" Id="10369" Type="Repair" X="-769.1502" Y="-4948.526" Z="22.84936"/>
+
+        <!--Razor Hill Vendors-->
+        <Vendor Name="Innkeeper Grosk" Id="6928" Type="Food" X="340.3629" Y="-4686.287" Z="16.48928"/>
+        <Vendor Name="Ghrawt" Id="3165" Type="Repair" X="362.1046" Y="-4763.842" Z="12.46936"/>
+    </Vendors>
+
+
+    <!-- BEGIN: Quest Overrides -->
+    <Quest Id="25126" Name="Cutting Teeth">
+        <Objective Type="KillMob" MobId="3098" KillCount="6">
+            <Hotspots>
+                <Hotspot X="-507.7307" Y="-4341.651" Z="38.31589"/>
+                <Hotspot X="-477.4008" Y="-4345.411" Z="41.38916"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="25136" Name="Galgar's Cactus Apple Surprise">
+        <Objective Type="CollectItem" ItemId="11583" CollectCount="6">
+            <CollectFrom>
+                <Object Name="Cactus Apple" Id="171938"/>
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-744.5067" Y="-4275.841" Z="42.98434"/>
+                <Hotspot X="-768.7281" Y="-4208.202" Z="44.68142"/>
+                <Hotspot X="-740.795" Y="-4137.785" Z="38.3647"/>
+                <Hotspot X="-477.4457" Y="-4321.036" Z="44.42284"/>
+                <Hotspot X="-553.2103" Y="-4289.594" Z="37.28544"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="25172" Name="Invaders in Our Home">
+        <Objective Type="KillMob" MobId="39317" KillCount="7">
+            <Hotspots>
+                <Hotspot X="-728.6015" Y="-4297.181" Z="45.10564"/>
+                <Hotspot X="-765.9155" Y="-4270.51" Z="46.75948"/>
+                <Hotspot X="-747.0746" Y="-4213.219" Z="39.63412"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="25127" Name="Sting of the Scorpid">
+        <Objective Type="CollectItem" ItemId="4862" CollectCount="8">
+            <CollectFrom>
+                <Mob Name="Scorpid Worker" Id="3124"/>
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-464.7263" Y="-4198.291" Z="51.22854"/>
+                <Hotspot X="-435.2009" Y="-4136.958" Z="51.62202"/>
+                <Hotspot X="-411.5247" Y="-4076.037" Z="50.10033"/>
+                <Hotspot X="-368.7698" Y="-4079.11" Z="50.01267"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="25129" Name="Sarkoth">
+        <Objective Type="CollectItem" ItemId="4905" CollectCount="1">
+            <CollectFrom>
+                <Mob Name="Sarkoth" Id="3281"/>
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-548.802" Y="-4099.277" Z="70.87624"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="25131" Name="Vile Familiars">
+        <Objective Type="KillMob" MobId="3101" KillCount="8">
+            <Hotspots>
+                <Hotspot X="-228.0485" Y="-4371.036" Z="63.85124"/>
+                <Hotspot X="-163.2926" Y="-4360.089" Z="67.19205"/>
+                <Hotspot X="-140.7615" Y="-4280.591" Z="63.96115"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="25135" Name="Thazz'ril's Pick">
+        <Objective Type="CollectItem" ItemId="16332" CollectCount="1">
+            <Hotspots>
+                <Hotspot X="-87.13933" Y="-4277.13" Z="65.05371" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <!-- END: Quest Overrides -->
+
+
+    <QuestOrder>
+        <!-- BEGIN: Checkpoint Block
+             This code needs to be replicated after every checkpoint.
+             If you modify something in this block, don't forget to update the copy of this
+             block after each checkpoint, and the at the start of the <QuestOrder>, also.
+        -->
+        <CustomBehavior File="Misc\RunLua" Lua="SetCVar('AutoLootDefault', 1)" />
+        <CustomBehavior File="UserSettings" AutoEquip="true" />
+
+        <CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+        <CustomBehavior File="EnablePlugin" Names="Questhelper - ItemForAura" />
+        <CustomBehavior File="EnablePlugin" Names="Refreshment Detection" />
+
+        <CustomBehavior File="Misc\ProfileCompatibilityInfo" AllowBrokenAddOns="true" AllowBrokenPlugIns="true" />
+
+        <LootMobs Value="true" />
+        <TargetingDistance Value="null" />    <!-- Use LevelBot default -->
+        <UseMount Value="true" />
+        <!-- END: Checkpoint Block -->
+
+
+        <PickUp QuestName="Your Place In The World" QuestId="25152" GiverName="Kaltunk" GiverId="10176" />
+        <TurnIn QuestName="Your Place In The World" QuestId="25152" TurnInName="Gornek" TurnInId="3143" />
+        <PickUp QuestName="Cutting Teeth" QuestId="25126" GiverName="Gornek" GiverId="3143" />
+        <Objective QuestName="Cutting Teeth" QuestId="25126" Type="KillMob" MobId="3098" KillCount="6" />
+        <TurnIn QuestName="Cutting Teeth" QuestId="25126" TurnInName="Gornek" TurnInId="3143" />
+
+        <!-- Class Specific Quests -->
+        <If Condition="Me.Class == WoWClass.Monk">
+            <While Condition="!HasQuest(31156) &amp;&amp; !IsQuestCompleted(31156)" >
+                <CustomBehavior File="InteractWith" MobId="3143" X="-597.7361" Y="-4248.255" Z="38.95614" />
+                <CustomBehavior File="Misc\RunLua" Lua="SelectAvailableQuest(1)" />
+                <CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" />
+            </While>
+            <PickUp QuestName="Calligraphed Parchment" QuestId="31156" GiverName="Gornek" GiverId="3143"
+                    X="-597.7361" Y="-4248.255" Z="38.95614" />
+            <TurnIn QuestName="Calligraphed Parchment" QuestId="31156" TurnInName="Gato" TurnInId="63296"
+                    X="-618.5833" Y="-4209.587" Z="38.13405" />
+        </If>
+        <If Condition="Me.Class == WoWClass.Hunter">
+            <While Condition="!HasQuest(3087) &amp;&amp; !IsQuestCompleted(3087)" >
+                <CustomBehavior File="InteractWith" MobId="3143" X="-597.7361" Y="-4248.255" Z="38.95614" />
+                <CustomBehavior File="Misc\RunLua" Lua="SelectAvailableQuest(1)" />
+                <CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" />
+            </While>
+            <PickUp QuestName="Etched Parchment" QuestId="3087" GiverName="Gornek" GiverId="3143" />
+            <TurnIn QuestName="Etched Parchment" QuestId="3087" TurnInName="Karranisha" TurnInId="39214" />
+            <!-- <If Condition="!HasSpell(56641)"> -->
+            <!--     <CustomBehavior File="ForceSetVendor" DoTrain="true" /> -->
+            <!-- </If> -->
+            <!-- <CustomBehavior File="WaitTimer" WaitTime="1000"/> -->
+            <!-- <CustomBehavior File="InteractWith" QuestId="25139" NumOfTimes="5" -->
+            <!--                 InteractByCastingSpellId="56641" MobId="44820" -->
+            <!--                 X="-579.9462" Y="-4240.132" Z="38.17958" /> -->
+            <!-- <TurnIn QuestName="Steady Shot" QuestId="25139" TurnInName="Karranisha" TurnInId="39214" /> -->
+        </If>
+        <If Condition="Me.Class == WoWClass.Warrior">
+            <While Condition="!HasQuest(2383) &amp;&amp; !IsQuestCompleted(2383)" >
+                <CustomBehavior File="InteractWith" MobId="3143" X="-597.7361" Y="-4248.255" Z="38.95614" />
+                <CustomBehavior File="Misc\RunLua" Lua="SelectAvailableQuest(1)" />
+                <CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" />
+            </While>
+            <PickUp QuestName="Simple Parchment" QuestId="2383" GiverName="Gornek" GiverId="3143" />
+            <TurnIn QuestName="Simple Parchment" QuestId="2383" TurnInName="Frang" TurnInId="3153" />
+            <!-- <PickUp QuestName="Charge" QuestId="25147" GiverName="Frang" GiverId="3153" /> -->
+            <!-- <If Condition="!HasSpell(100)"> -->
+            <!--     <CustomBehavior File="ForceSetVendor" DoTrain="true" /> -->
+            <!-- </If> -->
+            <!-- <MoveTo X="-584.0283" Y="-4236.268" Z="38.23893" /> -->
+            <!-- <CustomBehavior File="RunMacro" Macro="/target Training Dummy" /> -->
+            <!-- <CustomBehavior File="InteractWith" QuestId="25147" InteractByCastingSpellId="100" MobId="44820" -->
+            <!--                 MinRange="8" X="-584.0283" Y="-4236.268" Z="38.23893" /> -->
+            <!-- <TurnIn QuestName="Charge" QuestId="25147" TurnInName="Frang" TurnInId="3153" /> -->
+        </If>
+        <If Condition="Me.Class == WoWClass.Rogue">
+            <While Condition="!HasQuest(3088) &amp;&amp; !IsQuestCompleted(3088)" >
+                <CustomBehavior File="InteractWith" MobId="3143" X="-597.7361" Y="-4248.255" Z="38.95614" />
+                <CustomBehavior File="Misc\RunLua" Lua="SelectAvailableQuest(1)" />
+                <CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" />
+            </While>
+            <PickUp QuestName="Encrypted Parchment" QuestId="3088" GiverName="Gornek" GiverId="3143" />
+            <TurnIn QuestName="Encrypted Parchment" QuestId="3088" TurnInName="Rwag" TurnInId="3155" />
+            <!-- <PickUp QuestName="Eviscerate" QuestId="25141" GiverName="Rwag" GiverId="3155" /> -->
+            <!-- <If Condition="!HasSpell(2098)"> -->
+            <!--     <CustomBehavior File="ForceSetVendor" DoTrain="true" /> -->
+            <!-- </If> -->
+            <!-- <While Condition="HasQuest(14010) &amp;&amp; !IsQuestCompleted(14010)" > -->
+            <!--     <CustomBehavior File="InteractWith" QuestId="14010" InteractByCastingSpellId="1752" -->
+            <!--                     MobId="48304" X="-637.9774" Y="-4249.322" Z="38.36327"/> -->
+            <!--     <CustomBehavior File="InteractWith" QuestId="14010" InteractByCastingSpellId="2098" -->
+            <!--                     MobId="48304" X="-637.9774" Y="-4249.322" Z="38.36327"/> -->
+            <!--     <CustomBehavior File="InteractWith" QuestId="14010" InteractByCastingSpellId="1752" -->
+            <!--                     MobId="48304" X="-637.9774" Y="-4249.322" Z="38.36327"/> -->
+            <!--     <CustomBehavior File="InteractWith" QuestId="14010" InteractByCastingSpellId="2098" -->
+            <!--                     MobId="48304" X="-637.9774" Y="-4249.322" Z="38.36327"/> -->
+            <!--     <CustomBehavior File="InteractWith" QuestId="14010" InteractByCastingSpellId="1752" -->
+            <!--                     MobId="48304" X="-637.9774" Y="-4249.322" Z="38.36327"/> -->
+            <!--     <CustomBehavior File="InteractWith" QuestId="14010" InteractByCastingSpellId="2098" -->
+            <!--                     MobId="48304" X="-637.9774" Y="-4249.322" Z="38.36327"/> -->
+            <!--     <CustomBehavior File="InteractWith" QuestId="14010" InteractByCastingSpellId="1752" -->
+            <!--                     MobId="48304" X="-637.9774" Y="-4249.322" Z="38.36327"/> -->
+            <!--     <CustomBehavior File="InteractWith" QuestId="14010" InteractByCastingSpellId="2098" -->
+            <!--                     MobId="48304" X="-637.9774" Y="-4249.322" Z="38.36327"/> -->
+            <!--     <CustomBehavior File="InteractWith" QuestId="14010" InteractByCastingSpellId="1752" -->
+            <!--                     MobId="48304" X="-637.9774" Y="-4249.322" Z="38.36327"/> -->
+            <!--     <CustomBehavior File="InteractWith" QuestId="14010" InteractByCastingSpellId="2098" -->
+            <!--                     MobId="48304" X="-637.9774" Y="-4249.322" Z="38.36327"/> -->
+            <!-- </While> -->
+            <!-- <TurnIn QuestName="Eviscerate" QuestId="25141" TurnInName="Rwag" TurnInId="3155" /> -->
+        </If>
+        <If Condition="Me.Class == WoWClass.Mage">
+            <While Condition="!HasQuest(25138) &amp;&amp; !IsQuestCompleted(25138)" >
+                <CustomBehavior File="InteractWith" MobId="3143" X="-597.7361" Y="-4248.255" Z="38.95614" />
+                <CustomBehavior File="Misc\RunLua" Lua="SelectAvailableQuest(1)" />
+                <CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" />
+            </While>
+            <PickUp QuestName="Glyphic Parchment" QuestId="25138" GiverName="Gornek" GiverId="3143" />
+            <TurnIn QuestName="Glyphic Parchment" QuestId="25138" TurnInName="Acrypha" TurnInId="39206" />
+            <!-- <PickUp QuestName="Arcane Missiles" QuestId="25149" GiverName="Acrypha" GiverId="39206" /> -->
+            <!-- <If Condition="!HasSpell(5143)"> -->
+            <!--     <CustomBehavior File="ForceSetVendor" DoTrain="true" /> -->
+            <!-- </If> -->
+
+            <!-- <While Condition="HasQuest(25149) &amp;&amp; !IsQuestCompleted(25149)"> -->
+            <!--     <CustomBehavior File="InteractWith" InteractByCastingSpellId="133" -->
+            <!--                     MobId="44820" MinRange="5" Range="30" -->
+            <!--                     X="-584.0283" Y="-4236.268" Z="38.23893" /> -->
+            <!--     <CustomBehavior File="InteractWith" InteractByCastingSpellId="5143" -->
+            <!--                     MobId="44820" MinRange="5" Range="30" -->
+            <!--                     X="-584.0283" Y="-4236.268" Z="38.23893" /> -->
+            <!-- </While> -->
+            <!-- <TurnIn QuestName="Arcane Missiles" QuestId="25149" TurnInName="Acrypha" TurnInId="39206" /> -->
+        </If>
+        <If Condition="Me.Class == WoWClass.Warlock">
+            <While Condition="!HasQuest(3090) &amp;&amp; !IsQuestCompleted(3090)" >
+                <CustomBehavior File="InteractWith" MobId="3143" X="-597.7361" Y="-4248.255" Z="38.95614" />
+                <CustomBehavior File="Misc\RunLua" Lua="SelectAvailableQuest(1)" />
+                <CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" />
+            </While>
+            <PickUp QuestName="Tainted Parchment" QuestId="3090" GiverName="Gornek" GiverId="3143" />
+            <TurnIn QuestName="Tainted Parchment" QuestId="3090" TurnInName="Nartok" TurnInId="3156" />
+            <!-- <PickUp QuestName="Immolate" QuestId="25145" GiverName="Nartok" GiverId="3156" /> -->
+            <!-- <If Condition="!HasSpell(348)"> -->
+            <!--     <CustomBehavior File="ForceSetVendor" DoTrain="true" /> -->
+            <!-- </If> -->
+            <!-- <MoveTo X="-579.9462" Y="-4240.132" Z="38.17958" /> -->
+            <!-- <CustomBehavior File="InteractWith" QuestId="25145" InteractByCastingSpellId="348" -->
+            <!--                 MobId="44820" NumOfTimes="5" -->
+            <!--                 X="-579.9462" Y="-4240.132" Z="38.17958" /> -->
+            <!-- <TurnIn QuestName="Immolate" QuestId="25145" TurnInName="Nartok" TurnInId="3156" /> -->
+        </If>
+        <If Condition="Me.Class == WoWClass.Shaman">
+            <While Condition="!HasQuest(3089) &amp;&amp; !IsQuestCompleted(3089)" >
+                <CustomBehavior File="InteractWith" MobId="3143" X="-597.7361" Y="-4248.255" Z="38.95614" />
+                <CustomBehavior File="Misc\RunLua" Lua="SelectAvailableQuest(1)" />
+                <CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" />
+            </While>
+            <PickUp QuestName="Rune-Inscribed Parchment" QuestId="3089" GiverName="Gornek" GiverId="3143" />
+            <TurnIn QuestName="Rune-Inscribed Parchment" QuestId="3089" TurnInName="Shikrik" TurnInId="3157" />
+            <PickUp QuestName="Primal Strike" QuestId="25143" GiverName="Shikrik" GiverId="3157" />
+            <If Condition="HasQuest(25143) &amp;&amp; !IsQuestCompleted(25143)" >
+                <!-- CJ: Yep, we can get this quest without being level 3 to complete it <sigh>.
+                     So, off to a grind area, if we're not 3... grrrrr.  These are Level 3 Scorpid
+                     Workers to the West of main starter area.
+                -->
+                <SetGrindArea>
+                    <GrindArea>
+                        <TargetMinLevel>1</TargetMinLevel>
+                        <TargetMaxLevel>3</TargetMaxLevel>
+                        <Factions>7</Factions>
+                        <Hotspots>
+                            <Hotspot X="-464.6582" Y="-4205.184" Z="51.36232" />
+                            <Hotspot X="-421.2209" Y="-4087.316" Z="49.50297" />
+                            <Hotspot X="-369.3916" Y="-4078.94" Z="49.82488" />
+                            <Hotspot X="-335.8609" Y="-4164.206" Z="53.21599" />
+                        </Hotspots>
+                    </GrindArea>
+                </SetGrindArea>
+                <GrindTo Level="3" GoalText="Grinding to obtain Level 3" />
+                <CustomBehavior File="InteractWith" QuestId="25143" InteractByCastingSpellId="73899"
+                                MobId="44820" NumOfTimes="20"
+                                X="-584.0283" Y="-4236.268" Z="38.23893" />
+            </If>
+            <TurnIn QuestName="Primal Strike" QuestId="25143" TurnInName="Shikrik" TurnInId="3157" />
+        </If>
+        <!-- End of Class Specific Quests -->
+
+        <PickUp QuestName="Invaders in Our Home" QuestId="25172" GiverName="Gornek" GiverId="3143"/>
+        <PickUp QuestName="Galgar's Cactus Apple Surprise" QuestId="25136" GiverName="Galgar" GiverId="9796" />
+        <Objective QuestName="Invaders in Our Home" QuestId="25172" Type="KillMob" MobId="39317" KillCount="7" />
+        <Objective QuestName="Galgar's Cactus Apple Surprise" QuestId="25136" Type="CollectItem"
+                   ItemId="11583" CollectCount="6" />
+        <TurnIn QuestName="Galgar's Cactus Apple Surprise" QuestId="25136" TurnInName="Galgar" TurnInId="9796" />
+        <TurnIn QuestName="Invaders in Our Home" QuestId="25172" TurnInName="Gornek" TurnInId="3143" />
+        <PickUp QuestName="Sting of the Scorpid" QuestId="25127" GiverName="Gornek" GiverId="3143" />
+        <PickUp QuestName="Lazy Peons" QuestId="25134" GiverName="Foreman Thazz'ril" GiverId="11378" />
+        <While Condition="HasQuest(25134) &amp;&amp; !IsQuestCompleted(25134)" >
+            <CustomBehavior File="InteractWith" QuestId="25134" MobId="10556" InteractByUsingItemId="16114"
+                            AuraIdOnMob="17743" Range="5" NumOfTimes="100" CollectionDistance="1000"
+                            X="-413.3748" Y="-4101.751" Z="49.63153" />
+        </While>
+        <Objective QuestName="Sting of the Scorpid" QuestId="25127" Type="CollectItem" ItemId="4862" CollectCount="8" />
+        <TurnIn QuestName="Lazy Peons" QuestId="25134" TurnInName="Foreman Thazz'ril" TurnInId="11378" />
+        <TurnIn QuestName="Sting of the Scorpid" QuestId="25127" TurnInName="Gornek" TurnInId="3143" />
+        <PickUp QuestName="Hana'zua" QuestId="25128" GiverName="Canaga Earthcaller" GiverId="5887"/>
+        <TurnIn QuestName="Hana'zua" QuestId="25128" TurnInName="Hana'zua" TurnInId="3287"/>
+        <PickUp QuestName="Sarkoth" QuestId="25129" GiverName="Hana'zua" GiverId="3287"/>
+        <Objective QuestName="Sarkoth" QuestId="25129" Type="CollectItem" ItemId="4905" CollectCount="1"/>
+        <TurnIn QuestName="Sarkoth" QuestId="25129" TurnInName="Hana'zua" TurnInId="3287"/>
+        <PickUp QuestName="Back to the Den" QuestId="25130" GiverName="Hana'zua" GiverId="3287"/>
+        <TurnIn QuestName="Back to the Den" QuestId="25130" TurnInName="Gornek" TurnInId="3143"/>
+        <PickUp QuestName="Vile Familiars" QuestId="25131" GiverName="Zureetha Fargaze" GiverId="3145"/>
+        <Objective QuestName="Vile Familiars" QuestId="25131" Type="KillMob" MobId="3101" KillCount="8"/>
+        <TurnIn QuestName="Vile Familiars" QuestId="25131" TurnInName="Zureetha Fargaze" TurnInId="3145"/>
+        <PickUp QuestName="Burning Blade Medallion" QuestId="25132" GiverName="Zureetha Fargaze" GiverId="3145" />
+        <PickUp QuestName="Thazz'ril's Pick" QuestId="25135" GiverName="Foreman Thazz'ril" GiverId="11378" />
+        <Objective QuestName="Thazz'ril's Pick" QuestId="25135" Type="CollectItem" ItemId="16332" CollectCount="1" />
+        <Objective QuestName="Burning Blade Medallion" QuestId="25132" Type="CollectItem" ItemId="4859" CollectCount="1" />
+        <Objective QuestName="Burning Blade Medallion" QuestId="25132" Type="KillMob" MobId="3102" KillCount="7" />
+        <TurnIn QuestName="Burning Blade Medallion" QuestId="25132" TurnInName="Zureetha Fargaze" TurnInId="3145" />
+        <TurnIn QuestName="Thazz'ril's Pick" QuestId="25135" TurnInName="Foreman Thazz'ril" TurnInId="11378" />
+        <PickUp QuestName="Report to Sen'jin Village" QuestId="25133" GiverName="Zureetha Fargaze" GiverId="3145" />
+        <TurnIn QuestName="Report to Sen'jin Village" QuestId="25133" TurnInName="Master Gadrin" TurnInId="3188" />
+
+        <CustomBehavior File="LoadProfile" ProfileName="[H - Quest] Durotar 5-12 [Kick]" RememberProfile="true" />
+
+    </QuestOrder>
+
+</HBProfile>
+

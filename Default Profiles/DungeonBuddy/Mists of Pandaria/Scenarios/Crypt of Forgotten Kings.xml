@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Crypt of Forgotten Kings</Name>
+  <DungeonId>504</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="61814" name="Jin Ironfist" killOrder="1" optional="false" X="798.4617" Y="2484.769" Z="82.57219"/>
+    <Boss isFinal="true" entry="61707" name="Abomination of Anger" killOrder="2" optional="false" X="749.9462" Y="2353.526" Z="52.72213"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+
+  </PullBlackspots>
+</DungeonBuddyProfile>

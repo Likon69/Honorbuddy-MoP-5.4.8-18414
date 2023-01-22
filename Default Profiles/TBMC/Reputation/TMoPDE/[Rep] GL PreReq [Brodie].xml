@@ -1,0 +1,461 @@
+<HBProfile>
+	<Name>Golden Lotus PreReqs ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Jaluu the Generous" Entry="59908" Type="Repair" X="1228.93" Y="602.73" Z="394.21" />
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- Killing The Quilen -->
+	<Quest Id="30635" Name="Killing The Quilen"> 
+		<Objective Type="KillMob" MobId="59971" KillCount="9">
+			<Hotspots>
+				<Hotspot X="1439.403" Y="1785.866" Z="302.0502" />
+				<Hotspot X="1452.264" Y="1844.973" Z="300.3642" />
+				<Hotspot X="1449.162" Y="1915.252" Z="298.5353" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Out With The Scouts -->
+	<Quest Id="30633" Name="Out With The Scouts"> 
+		<Objective Type="KillMob" MobId="59914" KillCount="8">
+			<Hotspots>
+				<Hotspot X="1400.11" Y="1680.92" Z="344.24" />
+				<Hotspot X="1472.91" Y="1704.03" Z="353.35" />
+				<Hotspot X="1333.48" Y="1741.37" Z="347.66" />
+				<Hotspot X="1256.70" Y="1818.26" Z="344.78" />
+				<Hotspot X="1260.58" Y="1886.70" Z="345.83" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- A Celestial Experience (Alliance) -->
+	<Quest Id="31394" Name="A Celestial Experience"> 
+		<Objective Type="KillMob" MobId="64656" KillCount="1">
+			<Hotspots>
+				<Hotspot X="3796.271" Y="533.8489" Z="639.0079" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="64684" KillCount="1">
+			<Hotspots>
+				<Hotspot X="3796.271" Y="533.8489" Z="639.0079" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="64744" KillCount="1">
+			<Hotspots>
+				<Hotspot X="3796.271" Y="533.8489" Z="639.0079" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- A Celestial Experience (Horde) -->
+	<Quest Id="31395" Name="A Celestial Experience"> 
+		<Objective Type="KillMob" MobId="64656" KillCount="1">
+			<Hotspots>
+				<Hotspot X="3796.271" Y="533.8489" Z="639.0079" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="64684" KillCount="1">
+			<Hotspots>
+				<Hotspot X="3796.271" Y="533.8489" Z="639.0079" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="64742" KillCount="1">
+			<Hotspots>
+				<Hotspot X="3796.271" Y="533.8489" Z="639.0079" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<If Condition="HasQuest(31393) || HasQuest(31392)" >
+		<CustomBehavior File="FlyTo" DestName="White Tiger Temple" X="3686.266" Y="547.2056" Z="639.691" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="MyCTM" X="3819.63" Y="539.2305" Z="639.007" />
+		<If Condition="HasQuest(31392)" >
+			<Turnin QuestName="The Temple of the White Tiger" QuestId="31392" TurnInName="Anduin Wrynn" TurnInId="64540" />
+			<PickUp QuestName="A Celestial Experience" QuestId="31394" GiverName="Anduin Wrynn" GiverId="64540" />
+		</If>
+		<If Condition="HasQuest(31393)" >
+			<Turnin QuestName="The Temple of the White Tiger" QuestId="31393" TurnInName="Sunwalker Dezco" TurnInId="64542" />
+			<PickUp QuestName="A Celestial Experience" QuestId="31395" GiverName="Sunwalker Dezco" GiverId="64542" />
+		</If>
+	</If>
+
+	<If Condition="(Me.IsAlliance &amp;&amp; (!HasQuest(31394) &amp;&amp; !IsQuestCompleted(31394)) &amp;&amp; !IsQuestCompleted(31395))" >
+		<CustomBehavior File="FlyTo" DestName="White Tiger Temple" X="3686.266" Y="547.2056" Z="639.691" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="MyCTM" X="3819.63" Y="539.2305" Z="639.007" />
+		<PickUp QuestName="A Celestial Experience" QuestId="31394" GiverName="Anduin Wrynn" GiverId="64540" />
+	</If>
+
+	<If Condition="(Me.IsHorde &amp;&amp; (!HasQuest(31395) &amp;&amp; !IsQuestCompleted(31395)) &amp;&amp; !IsQuestCompleted(31394))" >
+		<CustomBehavior File="FlyTo" DestName="White Tiger Temple" X="3686.266" Y="547.2056" Z="639.691" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="MyCTM" X="3819.63" Y="539.2305" Z="639.007" />
+		<PickUp QuestName="A Celestial Experience" QuestId="31395" GiverName="Sunwalker Dezco" GiverId="64542" />
+	</If>
+
+	<If Condition="((HasQuest(31395) &amp;&amp; !IsQuestCompleted(31395)) ||
+			(HasQuest(31394) &amp;&amp; !IsQuestCompleted(31394)))" >
+		<CustomBehavior File="FlyTo" DestName="White Tiger Temple" X="3686.266" Y="547.2056" Z="639.691" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="MyCTM" X="3819.63" Y="539.2305" Z="639.007" />
+		<CustomBehavior File="InteractWith" MovementBy="ClickToMoveOnly" MobId="64528" IgnoreCombat="True" />
+		<If Condition="HasQuest(31395)" >
+			<CustomBehavior File="GetOutOfGroundEffectAndAuras" StartNpcId="64528" QuestId="31395"
+				EventX="3783.071" EventY="535.3829" EventZ="639.0076"
+				MoveOutOfGroundEffectAuraId1="126625"
+				MoveBehindMobCastingSpellId1="126631"
+				MoveAwayFromMobCastingSpellId1="126633"
+				MoveAwayFromMobWithAuraId1="23719"
+				MoveAwayFromMobWithAuraId2="126633">
+				<Safespots>
+					<!-- safe spots in the room are the gold circles that comprise the big circle -->
+					<Hotspot X="3825.954" Y="550.3646" Z="639.8345" />
+					<Hotspot X="3800.181" Y="567.9801" Z="639.8226" />
+					<Hotspot X="3770.128" Y="557.3201" Z="639.8259" />
+					<Hotspot X="3765.737" Y="516.8966" Z="639.8144" />
+					<Hotspot X="3791.67"  Y="499.2032" Z="639.825" />
+					<Hotspot X="3821.244" Y="509.5078" Z="639.8226" />
+				</Safespots>
+			</CustomBehavior>
+		</If>
+		<If Condition="HasQuest(31394)" >
+			<CustomBehavior File="GetOutOfGroundEffectAndAuras" StartNpcId="64528" QuestId="31394"
+				EventX="3783.071" EventY="535.3829" EventZ="639.0076"
+				MoveOutOfGroundEffectAuraId1="126625"
+				MoveBehindMobCastingSpellId1="126631"
+				MoveAwayFromMobCastingSpellId1="126633"
+				MoveAwayFromMobWithAuraId1="23719"
+				MoveAwayFromMobWithAuraId2="126633">
+				<Safespots>
+					<!-- safe spots in the room are the gold circles that comprise the big circle -->
+					<Hotspot X="3825.954" Y="550.3646" Z="639.8345" />
+					<Hotspot X="3800.181" Y="567.9801" Z="639.8226" />
+					<Hotspot X="3770.128" Y="557.3201" Z="639.8259" />
+					<Hotspot X="3765.737" Y="516.8966" Z="639.8144" />
+					<Hotspot X="3791.67"  Y="499.2032" Z="639.825" />
+					<Hotspot X="3821.244" Y="509.5078" Z="639.8226" />
+				</Safespots>
+			</CustomBehavior>
+		</If>
+	</If>
+
+	<If Condition="HasQuest(31395) &amp;&amp; IsQuestCompleted(31395)" >
+		<CustomBehavior File="MyCTM" X="3819.63" Y="539.2305" Z="639.007" />
+		<TurnIn QuestName="A Celestial Experience" QuestId="31395" TurnInName="Sunwalker Dezco" TurnInId="64542" />
+		<PickUp QuestName="A Witness to History" QuestId="31511" GiverName="Sunwalker Dezco" GiverId="64542" />
+		<CustomBehavior File="MyCTM" X="3686.266" Y="547.2056" Z="639.691" />
+	</If>
+
+	<If Condition="HasQuest(31394) &amp;&amp; IsQuestCompleted(31394)" >
+		<CustomBehavior File="MyCTM" X="3819.63" Y="539.2305" Z="639.007" />
+		<TurnIn QuestName="A Celestial Experience" QuestId="31394" TurnInName="Anduin Wrynn" TurnInId="64540" />
+		<PickUp QuestName="A Witness to History" QuestId="31512" GiverName="Anduin Wrynn" GiverId="64540" />
+		<CustomBehavior File="MyCTM" X="3686.266" Y="547.2056" Z="639.691" />
+	</If>
+
+	<If Condition="((!HasQuest(31512) &amp;&amp; !IsQuestCompleted(31512)) &amp;&amp; !IsQuestCompleted(31511)) ||
+			((!HasQuest(31511) &amp;&amp; !IsQuestCompleted(31511)) &amp;&amp; !IsQuestCompleted(31512))" >
+		<CustomBehavior File="FlyTo" DestName="White Tiger Temple" X="3686.266" Y="547.2056" Z="639.691" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="MyCTM" X="3819.63" Y="539.2305" Z="639.007" />
+		<If Condition="Me.IsAlliance" >
+			<PickUp QuestName="A Witness to History" QuestId="31512" GiverName="Anduin Wrynn" GiverId="64540" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<PickUp QuestName="A Witness to History" QuestId="31511" GiverName="Sunwalker Dezco" GiverId="64542" />
+		</If>
+		<CustomBehavior File="MyCTM" X="3686.266" Y="547.2056" Z="639.691" />
+	</If>
+
+	<If Condition="HasQuest(31512) &amp;&amp; !IsQuestCompleted(31512)" >
+		<CustomBehavior File="FlyTo" DestName="Vale Gate" X="1795.701" Y="1391.481" Z="468.855" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="64848" InteractByGossipOptions="1" />
+		<CustomBehavior File="WaitTimer" WaitTime="55000" />
+	</If>
+
+	<If Condition="HasQuest(31511) &amp;&amp; !IsQuestCompleted(31511)" >
+		<CustomBehavior File="FlyTo" DestName="Vale Gate" X="1803.922" Y="1325.357" Z="468.854" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="64853" InteractByGossipOptions="1" />
+		<CustomBehavior File="WaitTimer" WaitTime="55000" />
+	</If>
+
+	<If Condition="(HasQuest(31511) &amp;&amp; IsQuestCompleted(31511)) ||
+			(HasQuest(31512) &amp;&amp; IsQuestCompleted(31512))" >
+		<CustomBehavior File="FlyTo" DestName="Golden Pagoda" X="1218.375" Y="1016.247" Z="420.9642" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.IsAlliance" >
+			<TurnIn QuestName="A Witness to History" QuestId="31512" TurnInName="Zhi the Harmonious" TurnInId="59905" />
+			<PickUp QuestName="The Shrine of the Seven Stars" QuestId="30631" GiverName="Sun Tenderheart" GiverId="58468" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<TurnIn QuestName="A Witness to History" QuestId="31511" TurnInName="Zhi the Harmonious" TurnInId="59905" />
+			<PickUp QuestName="The Shrine of Two Moons" QuestId="30649" GiverName="Sun Tenderheart" GiverId="58468" />
+		</If>
+	</If>
+
+	<If Condition="(Me.IsAlliance &amp;&amp; (!HasQuest(30631) &amp;&amp; !IsQuestCompleted(30631)) &amp;&amp; !IsQuestCompleted(30649))" >
+		<CustomBehavior File="FlyTo" DestName="Golden Pagoda" X="1218.375" Y="1016.247" Z="420.9642" />
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="The Shrine of the Seven Stars" QuestId="30631" GiverName="Sun Tenderheart" GiverId="58468" />
+	</If>
+
+	<If Condition="(Me.IsHorde &amp;&amp; (!HasQuest(30649) &amp;&amp; !IsQuestCompleted(30649)) &amp;&amp; !IsQuestCompleted(30631))" >
+		<CustomBehavior File="FlyTo" DestName="Golden Pagoda" X="1218.375" Y="1016.247" Z="420.9642" />
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="The Shrine of Two Moons" QuestId="30649" GiverName="Sun Tenderheart" GiverId="58468" />
+	</If>
+
+	<If Condition="HasQuest(30631) &amp;&amp; !IsQuestCompleted(30631)" >
+		<If Condition="!IsObjectiveComplete(4,30631)" >
+			<CustomBehavior File="FlyTo" DestName="Alliance Starter" X="944.6064" Y="339.0539" Z="455.8447" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="64029" InteractByGossipOptions="1" NonCompeteDistance="0" />
+			<RunTo X="944.6064" Y="339.0539" Z="455.8447" />
+		</If>
+		<If Condition="!IsObjectiveComplete(2,30631)" >
+			<CustomBehavior File="FlyTo" X="975.2001" Y="361.4172" Z="526.0383" />
+			<CustomBehavior File="FlyTo" X="925.8339" Y="309.2366" Z="506.1105" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" QuestId="30631" MobId="59961" InteractByGossipOptions="1" NonCompeteDistance="0" />
+		</If>
+		<If Condition="!IsObjectiveComplete(3,30631)" >
+			<CustomBehavior File="FlyTo" DestName="Front Door" X="867.4457" Y="285.8521" Z="503.6778" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="64149" InteractByGossipOptions="2" NonCompeteDistance="0" X="784.08" Y="280.39" Z="503.42" />
+		</If>
+		<If Condition="!IsObjectiveComplete(1,30631)" >
+			<CustomBehavior File="FlyTo" DestName="Repair Vendor" X="1223.032" Y="602.6687" Z="394.04" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="59908" InteractByGossipOptions="1" NonCompeteDistance="0" />
+		</If>
+	</If>
+
+	<If Condition="HasQuest(30649) &amp;&amp; !IsQuestCompleted(30649)" >
+		<If Condition="!IsObjectiveComplete(4,30649)" >
+			<CustomBehavior File="FlyTo" DestName="Horde Starter" X="1553.2" Y="890.477" Z="424.1" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="63996" InteractByGossipOptions="1" NonCompeteDistance="0" />
+			<RunTo X="1553.2" Y="890.477" Z="424.1" />
+		</If>
+		<If Condition="!IsObjectiveComplete(2,30649)" >
+			<CustomBehavior File="FlyTo" X="1503.036" Y="905.7311" Z="494.7501" />
+			<CustomBehavior File="FlyTo" X="1566.38" Y="929.62" Z="494.7501" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="59959" InteractByGossipOptions="1" NonCompeteDistance="0" />
+		</If>
+		<If Condition="!IsObjectiveComplete(3,30649)" >
+			<CustomBehavior File="FlyTo" DestName="Front Door" X="1623.753" Y="923.2146" Z="471.1835" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="62996" InteractByGossipOptions="2" NonCompeteDistance="0" X="1700.95" Y="893.58" Z="470.98" />
+		</If>
+		<If Condition="!IsObjectiveComplete(1,30649)" >
+			<CustomBehavior File="FlyTo" DestName="Repair Vendor" X="1223.032" Y="602.6687" Z="394.04" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="59908" InteractByGossipOptions="1" NonCompeteDistance="0" />
+		</If>
+	</If>
+
+	<If Condition="HasQuest(30631) &amp;&amp; IsQuestCompleted(30631)" >
+		<CustomBehavior File="FlyTo" DestName="Golden Pagoda" X="1218.375" Y="1016.247" Z="420.9642" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="The Shrine of the Seven Stars" QuestId="30631" TurnInName="Sun Tenderheart" TurnInId="58468" />
+	</If>
+
+	<If Condition="HasQuest(30649) &amp;&amp; IsQuestCompleted(30649)" >
+		<CustomBehavior File="FlyTo" DestName="Golden Pagoda" X="1218.375" Y="1016.247" Z="420.9642" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="The Shrine of Two Moons" QuestId="30649" TurnInName="Sun Tenderheart" TurnInId="58468" />
+	</If>
+
+	<If Condition="HasQuest(31384)" >
+		<CustomBehavior File="FlyTo" DestName="Golden Pagoda" X="1218.375" Y="1016.247" Z="420.9642" />
+		<CustomBehavior File="ForcedDismount" />
+		<Turnin QuestName="The Golden Lotus" QuestId="31384" TurnInName="Leven Dawnblade" TurnInId="58408" />
+		<PickUp QuestName="The Ruins of Guo-Lai" QuestId="30632" GiverName="Leven Dawnblade" GiverId="58408" />
+	</If>
+
+	<If Condition="HasQuest(31385)" >
+		<CustomBehavior File="FlyTo" DestName="Golden Pagoda" X="1218.375" Y="1016.247" Z="420.9642" />
+		<CustomBehavior File="ForcedDismount" />
+		<Turnin QuestName="The Golden Lotus" QuestId="31385" TurnInName="Leven Dawnblade" TurnInId="58408" />
+		<PickUp QuestName="The Ruins of Guo-Lai" QuestId="30632" GiverName="Leven Dawnblade" GiverId="58408" />
+	</If>
+
+	<If Condition="!HasQuest(30632) &amp;&amp; !IsQuestCompleted(30632)" >
+		<CustomBehavior File="FlyTo" DestName="Golden Pagoda" X="1218.375" Y="1016.247" Z="420.9642" />
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="The Ruins of Guo-Lai" QuestId="30632" GiverName="Leven Dawnblade" GiverId="58408" />
+	</If>
+
+	<If Condition="HasQuest(30632)" >
+		<CustomBehavior File="FlyTo" DestName="Guo-Lai Ruins Camp" X="1298.691" Y="1619.438" Z="345.637" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="The Ruins of Guo-Lai" QuestId="30632" TurnInName="Anji Autumnlight" TurnInId="58465" />
+		<PickUp QuestName="Out With The Scouts" QuestId="30633" GiverName="Anji Autumnlight" GiverId="58465" />
+	</If>
+
+	<If Condition="!HasQuest(30633) &amp;&amp; !IsQuestCompleted(30633)" >
+		<CustomBehavior File="FlyTo" DestName="Guo-Lai Ruins Camp" X="1298.691" Y="1619.438" Z="345.637" />
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="Out With The Scouts" QuestId="30633" GiverName="Anji Autumnlight" GiverId="58465" />
+	</If>
+
+	<If Condition="HasQuest(30633) &amp;&amp; !IsQuestCompleted(30633)" >
+		<CustomBehavior File="FlyTo" X="1347.357" Y="1677.096" Z="342.3698" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Out With The Scouts" QuestId="30633" Type="KillMob" MobId="59914" KillCount="8" />
+	</If>
+
+	<If Condition="HasQuest(30633) &amp;&amp; IsQuestCompleted(30633)" >
+		<CustomBehavior File="FlyTo" DestName="Guo-Lai Ruins Camp" X="1298.691" Y="1619.438" Z="345.637" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Out With The Scouts" QuestId="30633" TurnInName="Anji Autumnlight" TurnInId="58465" />
+	</If>
+
+	<If Condition="!HasQuest(30634) &amp;&amp; !IsQuestCompleted(30634)" >
+		<CustomBehavior File="FlyTo" DestName="Guo-Lai Ruins Camp" X="1299.885" Y="1628.427" Z="345.7737" />
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="Barring Entry" QuestId="30634" GiverName="Kun Autumnlight" GiverId="58471" />
+	</If>
+
+	<If Condition="HasQuest(30634) &amp;&amp; !IsQuestCompleted(30634)" >
+		<CustomBehavior File="FlyTo" X="1564.09" Y="1625.977" Z="386.9979" />
+		<CustomBehavior File="InteractWith" MobId="65252" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="1000" />
+		<While Condition="!IsQuestCompleted(30634)" >
+			<CustomBehavior File="FlyTo" X="1697.30" Y="1781.58" Z="458.00" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(80484)" WaitTime="100" />
+			<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		</While>
+	</If>
+
+	<If Condition="HasQuest(30634) &amp;&amp; IsQuestCompleted(30634)" >
+		<CustomBehavior File="FlyTo" DestName="Guo-Lai Ruins Camp" X="1299.885" Y="1628.427" Z="345.7737" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Barring Entry" QuestId="30634" TurnInName="Kun Autumnlight" TurnInId="58471" />
+	</If>
+
+	<If Condition="!HasQuest(30635) &amp;&amp; !IsQuestCompleted(30635)" >
+		<CustomBehavior File="FlyTo" DestName="Guo-Lai Ruins Camp" X="1298.691" Y="1619.438" Z="345.637" />
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="Killing The Quilen" QuestId="30635" GiverName="Anji Autumnlight" GiverId="58465" />
+	</If>
+
+	<If Condition="!HasQuest(30636) &amp;&amp; !IsQuestCompleted(30636)" >
+		<CustomBehavior File="FlyTo" DestName="Guo-Lai Ruins Camp" X="1298.691" Y="1619.438" Z="345.637" />
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="Stones of Power" QuestId="30636" GiverName="Anji Autumnlight" GiverId="58465" />
+	</If>
+
+	<If Condition="HasQuest(30636) &amp;&amp; !IsQuestCompleted(30636)" >
+		<CustomBehavior File="FlyTo" X="1439.403" Y="1785.866" Z="302.0502" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="CollectThings" ObjectId="211306" CollectItemId="80511" CollectItemCount="7" CollectUntil="RequiredCountReached" PostInteractDelay="2000" NonCompeteDistance="5" HuntingGroundRadius="50" >
+			<Hotspot X="1439.403" Y="1785.866" Z="302.0502" />
+			<Hotspot X="1452.264" Y="1844.973" Z="300.3642" />
+			<Hotspot X="1449.162" Y="1915.252" Z="298.5353" />
+		</CustomBehavior>
+	</If>
+
+	<If Condition="HasQuest(30635) &amp;&amp; !IsQuestCompleted(30635)" >
+		<CustomBehavior File="FlyTo" X="1439.403" Y="1785.866" Z="302.0502" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Killing The Quilen" QuestId="30635" Type="KillMob" MobId="59971" KillCount="9" />
+	</If>
+
+	<If Condition="HasQuest(30635) &amp;&amp; IsQuestCompleted(30635)" >
+		<CustomBehavior File="FlyTo" DestName="Guo-Lai Ruins Camp" X="1298.691" Y="1619.438" Z="345.637" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Killing The Quilen" QuestId="30635" TurnInName="Anji Autumnlight" TurnInId="58465" />
+	</If>
+
+	<If Condition="HasQuest(30636) &amp;&amp; IsQuestCompleted(30636)" >
+		<CustomBehavior File="FlyTo" DestName="Guo-Lai Ruins Camp" X="1298.691" Y="1619.438" Z="345.637" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Stones of Power" QuestId="30636" TurnInName="Anji Autumnlight" TurnInId="58465" />
+	</If>
+
+	<If Condition="(!HasQuest(30654) &amp;&amp; !IsQuestCompleted(30654)) &amp;&amp; !HasQuest(30637)" >
+		<CustomBehavior File="FlyTo" DestName="Guo-Lai Ruins Camp" X="1298.691" Y="1619.438" Z="345.637" />
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="The Guo-Lai Halls" QuestId="30654" GiverName="Anji Autumnlight" GiverId="58465" />
+	</If>
+
+	<If Condition="(HasQuest(30654) &amp;&amp; !IsQuestCompleted(30654)) ||
+			(HasQuest(30637) &amp;&amp; !IsQuestCompleted(30637))" >
+		<CustomBehavior File="FlyTo" DestName="Guo-Lai Ruins" X="1492.945" Y="1911.833" Z="299.837" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="HasQuest(30654)">
+			<Objective QuestName="The Guo-Lai Halls" QuestId="30654" Type="KillMob" MobId="59977" KillCount="1" />
+		</If>
+		<If Condition="HasQuest(30637)">
+			<Objective QuestName="The Guo-Lai Halls" QuestId="30637" Type="KillMob" MobId="59977" KillCount="1" />
+		</If>
+	</If>
+
+	<If Condition="HasQuest(30654) &amp;&amp; IsQuestCompleted(30654)" >
+		<CustomBehavior File="FlyTo" DestName="Guo-Lai Ruins Camp" X="1298.691" Y="1619.438" Z="345.637" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="The Guo-Lai Halls" QuestId="30654" TurnInName="Anji Autumnlight" TurnInId="58465" />
+	</If>
+
+	<If Condition="HasQuest(30637) &amp;&amp; IsQuestCompleted(30637)" >
+		<CustomBehavior File="FlyTo" DestName="Guo-Lai Ruins Camp" X="1298.691" Y="1619.438" Z="345.637" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="The Guo-Lai Halls" QuestId="30637" TurnInName="Anji Autumnlight" TurnInId="58465" />
+	</If>
+
+	<If Condition="!HasQuest(30638) &amp;&amp; !IsQuestCompleted(30638)" >
+		<CustomBehavior File="FlyTo" DestName="Guo-Lai Ruins Camp" X="1298.691" Y="1619.438" Z="345.637" />
+		<CustomBehavior File="ForcedDismount" />
+		<PickUp QuestName="Leaving an Opening" QuestId="30638" GiverName="Anji Autumnlight" GiverId="58465" />
+	</If>
+
+	<If Condition="HasQuest(30638)" >
+		<CustomBehavior File="FlyTo" DestName="Golden Pagoda" X="1218.375" Y="1016.247" Z="420.9642" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Leaving an Opening" QuestId="30638" TurnInName="Leven Dawnblade" TurnInId="58408" />
+	</If>
+	
+<CustomBehavior File="Message" Text="Pre-Reqs Complete. Loading Golden Lotus Daily Profile" LogColor="Green" />
+<CustomBehavior File="LoadProfile" ProfileName="[Rep] Golden Lotus Dailies [Brodie]" />
+
+<CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of Golden Lotus PreReqs" />
+
+</QuestOrder>
+</HBProfile>

@@ -1,0 +1,202 @@
+<HBProfile>
+	<Name>The Beast Pens (Alliance) ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Teng of the Flying Daggers" Entry="70535" Type="Repair" X="6865.31" Y="5515.42" Z="1.28" />
+	</Vendors>
+  
+	<AvoidMobs>
+		<Mob Name="Horned Battlebeast" Entry="69142" />
+		<Mob Name="Disciple of Jalak" Entry="69376" />
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- Compy Stomp -->
+	<Quest Id="32551" Name="Compy Stomp"> 
+		<Objective Type="KillMob" MobId="58071" KillCount="10" >
+			<Hotspots>
+				<Hotspot X="6958.926" Y="5485.224" Z="29.57454" />
+				<Hotspot X="6947.429" Y="5583.052" Z="31.91465" />
+				<Hotspot X="6913.555" Y="5550.122" Z="29.82876" />
+				<Hotspot X="6892.14" Y="5519.236" Z="29.20298" />
+				<Hotspot X="6994.41" Y="5618.381" Z="31.13311" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+<CustomBehavior File="Message" Text="Compiling The Beast Pens Quests..." LogColor="CornflowerBlue"  />
+
+	<If Condition="(!HasQuest(32550) &amp;&amp; IsQuestCompleted(32550) ||
+					!HasQuest(32554) &amp;&amp; IsQuestCompleted(32554) ||
+					!HasQuest(32551) &amp;&amp; IsQuestCompleted(32551) ||
+					!HasQuest(32553) &amp;&amp; IsQuestCompleted(32553) ||
+					!HasQuest(32552) &amp;&amp; IsQuestCompleted(32552))" >
+		<CustomBehavior File="Message" Text="Previously Completed Quests Detected" LogColor="CornflowerBlue" />
+		<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: Previously completed quests detected! \n\n Either you have done some of you quests already, and have restarted the bot...\n OR your cache folder is NOT clean, and must be deleted, and bot restarted." />
+	</If>
+
+	<DisableBehavior Name="Pull, Combat" />
+
+<!-- The Beast Pens (Kicker) -->
+	<If Condition="HasQuest(32567)" >
+		<CustomBehavior File="Message" Text="Starting The Beast Pens Kicker" LogColor="Green" />
+		<MoveTo X="6849.81" Y="5510.09" Z="29.85" />
+		<TurnIn QuestName="The Beast Pens" QuestId="32567" TurnInName="Scout Captain Daelin" TurnInId="67998" />
+	</If>
+	
+<!-- Scout Captain Daelin -->
+	<While Condition="HasQuestAvailable(67998)" >
+		<CustomBehavior File="InteractWith" MobId="67998" InteractByQuestFrameDisposition="Ignore" IgnoreCombat="True" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Miura Brightweaver -->
+	<While Condition="HasQuestAvailable(67999)" >
+		<CustomBehavior File="InteractWith" MobId="67999" InteractByQuestFrameDisposition="Ignore" IgnoreCombat="True" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+	<EnableBehavior Name="Pull, Combat" />
+
+<!-- Compy Stomp -->
+	<If Condition="HasQuest(32551) &amp;&amp; !IsQuestCompleted(32551)" >
+		<CustomBehavior File="Message" Text="Starting Compy Stomp" LogColor="Green" />
+		<Objective QuestName="Compy Stomp" QuestId="32551" Type="KillMob" MobId="69183" KillCount="5" />
+		<Objective QuestName="Compy Stomp" QuestId="32551" Type="KillMob" MobId="58071" KillCount="10" />
+	</If>
+	
+<!-- Direhorn vs Devilsaur -->
+	<If Condition="HasQuest(32553) &amp;&amp; !IsQuestCompleted(32553)" >
+		<CustomBehavior File="Message" Text="Starting Direhorn vs Devilsaur" LogColor="Green" />
+		<MoveTo X="6976.67" Y="5420.00" Z="28.04" />
+		<CustomBehavior File="CollectThings" QuestId="32553" CollectUntil="QuestComplete" MobState="Alive" MobId="69286" HuntingGroundRadius="75" NonCompeteDistance="1" >
+			<Hotspot X="6976.67" Y="5420.00" Z="28.04" />
+		</CustomBehavior>
+	</If>
+	
+<!-- Loa-Saur -->
+	<If Condition="HasQuest(32552) &amp;&amp; !IsQuestCompleted(32552)" >
+		<CustomBehavior File="Message" Text="Starting Loa-Saur" LogColor="Green" />
+		<Objective QuestName="Loa-Saur" QuestId="32552" Type="KillMob" MobId="69302" KillCount="1" />
+	</If>
+	
+<!-- Dino Might -->
+	<If Condition="HasQuest(32554) &amp;&amp; !IsQuestCompleted(32554)" >
+		<CustomBehavior File="Message" Text="Starting Dino Might" LogColor="Green" />
+		<While Condition="!IsQuestCompleted(32554)" >
+			<CustomBehavior File="CollectThings" QuestId="32554" MobState="Alive" MobId="69155" MobId2="69154" ObjectId="218372" CollectItemId="93668" CollectItemCount="5" HuntingGroundRadius="120" NonCompeteDistance="5" PostInteractDelay="1000" >
+				<Hotspot X="6934.646" Y="5583.934" Z="31.91342" />
+				<Hotspot X="6965.709" Y="5612.741" Z="31.46052" />
+				<Hotspot X="6977.637" Y="5660.389" Z="31.97914" />
+				<Hotspot X="7059.277" Y="5687.34" Z="28.82038" />
+				<Hotspot X="7106.735" Y="5624.738" Z="29.4741" />
+				<Hotspot X="6930.552" Y="5482.106" Z="29.57177" />
+			</CustomBehavior>
+			<MoveTo X="6958.09" Y="5559.07" Z="30.73" />
+			<While Condition="HasItem(93668) &amp;&amp; !IsQuestCompleted(32554)" >
+				<CustomBehavior File="InteractWith" QuestId="32554" MobId="69271" AuraIdMissingFromMob="136483" InteractByUsingItemId="93668" >
+					<HuntingGrounds>
+						<Hotspot X="6956.104" Y="5556.778" Z="30.80519" />
+					</HuntingGrounds>
+				</CustomBehavior>
+			</While>
+		</While>
+	</If>
+	
+<!-- Saur Loser -->
+	<If Condition="HasQuest(32550) &amp;&amp; !IsQuestCompleted(32550)" >
+		<CustomBehavior File="Message" Text="Starting Saur Loser" LogColor="Green" />
+		<Objective QuestName="Loa-Saur" QuestId="32550" Type="KillMob" MobId="69154" MobId2="69286" MobId3="69144" MobId4="70328" MobId5="69155" MobId6="70401" KillCount="10" />
+	</If>
+	
+<!-- Beast Pens Turn-ins -->
+	<If Condition="HasQuest(32552) &amp;&amp; IsQuestCompleted(32552) ||
+					HasQuest(32554) &amp;&amp; IsQuestCompleted(32554) ||
+					HasQuest(32551) &amp;&amp; IsQuestCompleted(32551) ||
+					HasQuest(32553) &amp;&amp; IsQuestCompleted(32553) ||
+					HasQuest(32550) &amp;&amp; IsQuestCompleted(32550)" >
+		<CustomBehavior File="Message" Text="Heading back to Beast Pens to Turn-In" LogColor="Green" />
+		<DisableBehavior Name="Pull, Combat" />
+		<MoveTo X="6849.81" Y="5510.09" Z="29.85" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+	</If>
+	
+	<If Condition="HasQuest(32552) &amp;&amp; IsQuestCompleted(32552)" >
+		<TurnIn QuestName="Loa Saur" QuestId="32552" TurnInName="Miura Brightweaver" TurnInId="67999" />
+	</If>
+	
+	<If Condition="HasQuest(32553) &amp;&amp; IsQuestCompleted(32553)" >
+		<TurnIn QuestName="Direhorn vs Devilsaur" QuestId="32553" TurnInName="Miura Brightweaver" TurnInId="67999" />
+	</If>
+	
+	<If Condition="HasQuest(32550) &amp;&amp; IsQuestCompleted(32550)" >
+		<TurnIn QuestName="Saur Loser" QuestId="32550" TurnInName="Scout Captain Daelin" TurnInId="67998" />
+	</If>
+	
+	<If Condition="HasQuest(32554) &amp;&amp; IsQuestCompleted(32554)" >
+		<TurnIn QuestName="Dino Might" QuestId="32554" TurnInName="Scout Captain Daelin" TurnInId="67998" />
+	</If>
+	
+	<If Condition="HasQuest(32551) &amp;&amp; IsQuestCompleted(32551)" >
+		<TurnIn QuestName="Compy Stomp" QuestId="32551" TurnInName="Scout Captain Daelin" TurnInId="67998" />
+	</If>
+	
+<!-- Double check for ender quests -->
+
+<!-- Scout Captain Daelin -->
+	<While Condition="HasQuestAvailable(67998)" >
+		<CustomBehavior File="InteractWith" MobId="67998" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Miura Brightweaver -->
+	<While Condition="HasQuestAvailable(67999)" >
+		<CustomBehavior File="InteractWith" MobId="67999" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+	<EnableBehavior Name="Pull, Combat" />
+
+	<If Condition="HasItem(94566)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(94566)" WaitTime="1000" />
+	</If>
+	
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+
+<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Isle of Thunder A [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

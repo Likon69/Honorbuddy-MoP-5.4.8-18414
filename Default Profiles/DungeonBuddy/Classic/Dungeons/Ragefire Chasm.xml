@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Ragefire Chasm</Name>
+  <DungeonId>4</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="61408" name="Adarogg" killOrder="1" optional="false" X="-285.5606" Y="-71.12164" Z="-60.47674"/>
+    <Boss isFinal="false" entry="61412" name="Dark Shaman Koranthal" killOrder="2" optional="false" X="-117.0437" Y="71.07047" Z="-20.80363" />
+    <Boss isFinal="false" entry="61463" name="Slagmaw" killOrder="3" optional="false" X="-243.50" Y="153.06" Z="-18.72" />
+    <Boss isFinal="true" entry="61528" name="Lava Guard Gordoth" killOrder="4" optional="false" X="-376.8114" Y="209.2238" Z="-21.88431" />
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them-->
+    <Blackspot X="-6.582247" Y="-37.59494" Z="-21.7345" Radius="1.6835" />
+  </Blackspots>
+</DungeonBuddyProfile>

@@ -1,0 +1,147 @@
+<HBProfile>
+	<Name>Cloud Serpent PreReqs ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="San Redscale" Entry="58414" Type="Repair" X="1586.77" Y="-2507.24" Z="152.30" />
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- Beating the Odds -->
+	<Quest Id="30135" Name="Beating the Odds">
+		<Objective Type="KillMob" MobId="63532" MobId2="63536" KillCount="8">
+			<Hotspots>
+				<Hotspot X="2128.24" Y="-3061.00" Z="7.94" />
+				<Hotspot X="2187.40" Y="-3048.37" Z="19.67" />
+				<Hotspot X="2262.38" Y="-3050.66" Z="19.01" />
+				<Hotspot X="2204.59" Y="-2992.41" Z="32.68" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+<CustomBehavior File="Message" Text="Compiling Cloud Serpent Quests..." LogColor="Green" />
+
+<!-- Checking for Pre-reqs -->
+	<If Condition="!HasQuest(30134) &amp;&amp; !IsQuestCompleted(30134)" >
+		<CustomBehavior File="Message" Text="Starting Cloud Serpent Pre-reqs, moving to The Arboretum." LogColor="Green" />
+		<PickUp Nav="Fly" QuestName="Wild Things" QuestId="30134" GiverName="Elder Anli" GiverId="58564" />
+		<MoveTo X="1588.42" Y="-2602.253" Z="150.1638" />
+	</If>
+
+	<If Condition="HasQuest(30134)" >
+		<TurnIn Nav="Fly" QuestName="Wild Things" QuestId="30134" TurnInName="Instructor Tong" TurnInId="58225" />
+	</If>
+
+	<If Condition="!HasQuest(30135) &amp;&amp; !IsQuestCompleted(30135)" >
+		<PickUp Nav="Fly" QuestName="Beating the Odds" QuestId="30135" GiverName="Instructor Tong" GiverId="58225" />
+	</If>
+	<If Condition="!HasQuest(30136) &amp;&amp; !IsQuestCompleted(30136)" >
+		<PickUp Nav="Fly" QuestName="Empty Nests" QuestId="30136" GiverName="Instructor Tong" GiverId="58225" />
+	</If>
+	<If Condition="!HasQuest(30137) &amp;&amp; !IsQuestCompleted(30137)" >
+		<PickUp Nav="Fly" QuestName="Egg Collection" QuestId="30137" GiverName="Instructor Tong" GiverId="58225" />
+	</If>
+
+	<While Condition="HasQuest(30136) &amp;&amp; !IsQuestCompleted(30136)" >
+		<CustomBehavior File="InteractWith" QuestId="30136" MobId="58220" MobId2="58244" MobId3="58243" Range="10" 
+			InteractByUsingItemId="78947" NonCompeteDistance="0" CollectionDistance="1000" 
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="100" WaitTime="1000" TerminateWhen="Me.HasAura(66206)" X="2189.148" Y="-3028.586" Z="20.56" />
+		<MoveTo X="2302.172" Y="-3037.655" Z="20.18635" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+	</While>
+
+	<If Condition="HasQuest(30137) &amp;&amp; !IsQuestCompleted(30137)" >
+		<Objective Nav="Fly" QuestName="Egg Collection" QuestId="30137" Type="CollectItem" ItemId="78959" CollectCount="6" />
+	</If>
+	
+	<If Condition="HasQuest(30135) &amp;&amp; !IsQuestCompleted(30135)" >
+		<Objective Nav="Fly" QuestName="Beating the Odds" QuestId="30135" Type="KillMob" MobId="63532" MobId2="63536" KillCount="8" />
+	</If>
+
+	<If Condition="HasQuest(30135) &amp;&amp; IsQuestCompleted(30135)" >
+		<TurnIn Nav="Fly" QuestName="Beating the Odds" QuestId="30135" TurnInName="Instructor Tong" TurnInId="58225" />
+	</If>
+	<If Condition="HasQuest(30136) &amp;&amp; IsQuestCompleted(30136)" >
+		<TurnIn Nav="Fly" QuestName="Empty Nests" QuestId="30136" TurnInName="Instructor Tong" TurnInId="58225" />
+	</If>
+	<If Condition="HasQuest(30137) &amp;&amp; IsQuestCompleted(30137)" >
+		<TurnIn Nav="Fly" QuestName="Egg Collection" QuestId="30137" TurnInName="Instructor Tong" TurnInId="58225" />
+	</If>
+
+	<If Condition="!HasQuest(30138) &amp;&amp; !IsQuestCompleted(30138)" >
+		<PickUp Nav="Fly" QuestName="Choosing the One" QuestId="30138" GiverName="Instructor Tong" GiverId="58225" />
+	</If>
+	
+	<While Condition="HasQuest(30138)" >
+		<CustomBehavior File="UserDialog" Text="Pick an egg, then continue." SoundCue="Asterisk" />
+	</While>
+
+	<If Condition="HasItem(78962) &amp;&amp; !HasQuest(30139)" >
+		<PickUp Nav="Fly" QuestName="The Rider's Journey" QuestId="30139" GiverName="Instructor Tong" GiverId="58225" />
+	</If>
+
+	<If Condition="HasItem(78960) &amp;&amp; !HasQuest(30140)" >
+		<PickUp Nav="Fly" QuestName="The Rider's Journey" QuestId="30140" GiverName="Instructor Tong" GiverId="58225" />
+	</If>
+
+	<If Condition="HasItem(78961) &amp;&amp; !HasQuest(30141)" >
+		<PickUp Nav="Fly" QuestName="The Rider's Journey" QuestId="30141" GiverName="Instructor Tong" GiverId="58225" />
+	</If>
+
+	<If Condition="HasQuest(30139) || HasQuest(30140) || HasQuest(30141)" >
+		<If Condition="HasQuest(30139)" >
+			<TurnIn Nav="Fly" QuestName="The Rider's Journey" QuestId="30139" TurnInName="Instructor Skythorn" TurnInId="58228" />
+			<PickUp Nav="Fly" QuestName="It's A..." QuestId="30142" GiverName="Instructor Skythorn" GiverId="58228" />
+		</If>
+		<If Condition="HasQuest(30140)" >
+			<TurnIn Nav="Fly" QuestName="The Rider's Journey" QuestId="30140" TurnInName="Instructor Skythorn" TurnInId="58228" />
+			<PickUp Nav="Fly" QuestName="It's A..." QuestId="30142" GiverName="Instructor Skythorn" GiverId="58228" />
+		</If>
+		<If Condition="HasQuest(30141)" >
+			<TurnIn Nav="Fly" QuestName="The Rider's Journey" QuestId="30142" TurnInName="Instructor Skythorn" TurnInId="58228" />
+			<PickUp Nav="Fly" QuestName="It's A..." QuestId="30142" GiverName="Instructor Skythorn" GiverId="58228" />
+		</If>
+	</If>
+
+	<While Condition="!IsQuestCompleted(30142)" />
+	
+	<If Condition="HasQuest(30142) &amp;&amp; IsQuestCompleted(30142)" >
+		<TurnIn QuestName="It's A..." QuestId="30142" TurnInName="Instructor Skythorn" TurnInId="58228" />
+	</If>
+	
+	<CustomBehavior File="LoadProfile" ProfileName="[Rep] Cloud Serpent Dailies [Brodie]" />
+
+<CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of Cloud Serpent PreReqs" />
+
+</QuestOrder>
+</HBProfile>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile xsi:noNamespaceSchemaLocation="../../DungeonbuddyProfile.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Halls of Flesh-Shaping</Name>
+  <DungeonId>612</DungeonId>
+
+  <BossEncounters>
+    <!--- ToDo, get first 2 boss locations -->
+    <Boss isFinal="true" entry="69427" name="Dark Animus" killOrder="3" optional="false" X="5738.755" Y="4801.912" Z="75.27536"/>
+  </BossEncounters>
+
+  <Blackspots>
+  </Blackspots>
+  <PullBlackspots>
+  </PullBlackspots>
+</DungeonBuddyProfile>

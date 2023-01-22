@@ -1,0 +1,298 @@
+<HBProfile>
+	<Name>Court of Bones (Horde) ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Teng of the Flying Daggers" Entry="70535" Type="Repair" X="6865.31" Y="5515.42" Z="1.28" />
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- Rise No More! -->
+	<Quest Id="32224" Name="Rise No More!">
+		<Objective Type="KillMob" MobId="69237" KillCount="15">
+			<Hotspots>
+				<Hotspot X="6731.763" Y="6249.685" Z="18.80103" />
+				<Hotspot X="6660.982" Y="6252.057" Z="26.4351" />
+				<Hotspot X="6431.733" Y="6128.689" Z="30.93264" />
+				<Hotspot X="6363.832" Y="6131.635" Z="21.40365" />	
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+<!-- Starting Quests -->
+
+<CustomBehavior File="Message" Text="Compiling Court of Bones Quests..." LogColor="CornflowerBlue"  />
+
+	<If Condition="((!HasQuest(32225) &amp;&amp; IsQuestCompleted(32225)) ||
+					(!HasQuest(32201) &amp;&amp; IsQuestCompleted(32201)) ||
+					(!HasQuest(32220) &amp;&amp; IsQuestCompleted(32220)) ||
+					(!HasQuest(32224) &amp;&amp; IsQuestCompleted(32224)) ||
+					(!HasQuest(32495) &amp;&amp; IsQuestCompleted(32945)) ||
+					(!HasQuest(32219) &amp;&amp; IsQuestCompleted(32219)) ||
+					(!HasQuest(32218) &amp;&amp; IsQuestCompleted(32218)) ||
+					(!HasQuest(32517) &amp;&amp; IsQuestCompleted(32517)) ||
+					(!HasQuest(32728) &amp;&amp; IsQuestCompleted(32728)) ||
+					(!HasQuest(32226) &amp;&amp; IsQuestCompleted(32226)))" >
+		<CustomBehavior File="Message" Text="Previously Completed Quests Detected" LogColor="CornflowerBlue" />
+		<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: Previously completed quests detected! \n\n Either you have done some of you quests already, and have restarted the bot...\n OR your cache folder is NOT clean, and must be deleted, and bot restarted." />
+	</If>
+	
+	<DisableBehavior Name="Pull, Combat" />
+
+<!-- Court of Bones (Kicker) -->
+	<If Condition="HasQuest(32728)" >
+		<CustomBehavior File="Message" Text="Starting Court of Bones Kicker" LogColor="Green" />
+		<If Condition="!IsQuestCompleted(32212)" >
+			<MoveTo X="6694.93" Y="6285.77" Z="1.47" />
+		<ElseIf Condition="IsQuestCompleted(32212)" >
+			<MoveTo X="6735.43" Y="6060.58" Z="18.75" />
+		</ElseIf>
+		</If>
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<TurnIn QuestName="The Court of Bones" QuestId="32728" TurnInName="Grand Magister Rommath" TurnInId="67989" />
+	</If>
+
+<!-- Grand Magister Rommath -->
+	<While Condition="HasQuestAvailable(67989)" >
+		<CustomBehavior File="InteractWith" MobId="67989" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" NonCompeteDistance="0" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Harlan Whitedawn -->
+	<While Condition="HasQuestAvailable(69447)" >
+		<CustomBehavior File="InteractWith" MobId="69447" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" NonCompeteDistance="0" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Ryshelle Brightlock -->
+	<While Condition="HasQuestAvailable(69389)" >
+		<CustomBehavior File="InteractWith" MobId="69389" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" NonCompeteDistance="0" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Captain Aerthas Firehawk -->
+	<While Condition="HasQuestAvailable(67983)" >
+		<CustomBehavior File="InteractWith" MobId="67983" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" NonCompeteDistance="0" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+	<EnableBehavior Name="Pull, Combat" />
+	
+<!-- The Bloodletter -->
+	<If Condition="HasQuest(32495) &amp;&amp; !IsQuestCompleted(32495)" >
+		<CustomBehavior File="Message" Text="Starting The Bloodletter" KillBetweenHotspots="True" LogColor="Green" />
+		<Objective QuestName="The Bloodletter" QuestId="32495" Type="KillMob" MobId="69250" KillCount="1" />
+	</If>
+	
+<!-- The Conquest of Stone -->
+	<If Condition="HasQuest(32517) &amp;&amp; !IsQuestCompleted(32517)" >
+		<CustomBehavior File="Message" Text="Starting The Conquest of Stone" LogColor="Green" />
+		<MoveTo X="6389.11" Y="6192.63" Z="45.94" />
+		<CustomBehavior File="CollectThings" QuestId="32517" CollectUntil="QuestComplete" MobId="69903" HuntingGroundRadius="100" >
+			<Hotspot X="6389.11" Y="6192.63" Z="45.94" />
+		</CustomBehavior>
+	</If>
+	
+<!-- Into The Crypts -->
+	<If Condition="HasQuest(32226) &amp;&amp; !IsQuestCompleted(32226)" >
+		<CustomBehavior File="Message" Text="Starting Into The Crypts" LogColor="Green" />
+		<While Condition="!IsQuestCompleted(32226)" >
+			<MoveTo X="6588.30" Y="6132.71" Z="6.14" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93803)" WaitTime="3000" />
+		</While>
+	</If>
+	
+<!-- The Call of Thunder -->
+	<If Condition="HasQuest(32225) &amp;&amp; !IsQuestCompleted(32225)" >
+		<CustomBehavior File="Message" Text="Starting The Call of Thunder" LogColor="Green" />
+		<MoveTo X="6609.79" Y="6290.33" Z="3.63" />
+		<CustomBehavior File="CollectThings" QuestId="32225" CollectUntil="QuestComplete" MobState="Alive" MobId="69264" HuntingGroundRadius="50" NonCompeteDistance="5" >
+			<Hotspot X="6611.16" Y="6289.20" Z="3.95" />
+		</CustomBehavior>
+	</If>
+	
+<!-- Ashes of the Enemy -->
+	<If Condition="HasQuest(32218) &amp;&amp; !IsQuestCompleted(32218)" >
+		<CustomBehavior File="Message" Text="Starting Ashes of the Enemy" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="32218" MobId="69331" MobId2="69337" InteractByUsingItemId="93751" IgnoreLoSToTarget="True" 
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" MinRange="3" Range="10"
+			AuraIdMissingFromMob="136711" CollectionDistance="1000" NumOfTimes="1000" X="6512.10" Y="6070.66" Z="39.41" />
+	</If>
+	
+<!-- Stone Cold -->
+	<If Condition="HasQuest(32219) &amp;&amp; !IsQuestCompleted(32219)" >
+		<CustomBehavior File="Message" Text="Starting Stone Cold" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="32219" MobState="Alive" MobId="69894" MobId2="69240" CollectionDistance="250" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="1000" NonCompeteDistance="0" >
+			<HuntingGrounds>
+				<Hotspot X="6567.13" Y="6108.35" Z="36.27" />
+				<Hotspot X="6561.52" Y="6201.09" Z="36.27" />
+				<Hotspot X="6474.34" Y="6107.52" Z="36.27" />
+				<Hotspot X="6514.89" Y="6085.92" Z="39.40" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+	
+<!-- Soul Surrender -->
+ 	<If Condition="HasQuest(32220) &amp;&amp; !IsQuestCompleted(32220)">
+		<CustomBehavior File="Message" Text="Starting Soul Surrender" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="32220" MobId="217768" CollectionDistance="250" NonCompeteDistance="0" 
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="1000" >
+			<HuntingGrounds>
+				<Hotspot X="6467.76" Y="6241.741" Z="36.27182" />
+				<Hotspot X="6467.807" Y="6162.531" Z="36.27105" />
+				<Hotspot X="6509.202" Y="6110.627" Z="36.27237" />
+				<Hotspot X="6557.652" Y="6174.797" Z="36.27252" />
+				<Hotspot X="6538.69" Y="6290.28" Z="36.62913" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+	
+<!-- Rise No More! -->
+	<If Condition="HasQuest(32224) &amp;&amp; !IsQuestCompleted(32224)" >
+		<CustomBehavior File="Message" Text="Starting Rise No More!" LogColor="Green" />
+		<Objective QuestName="Rise No More!" QuestId="32224" Type="KillMob" MobId="69237" KillCount="15" />
+	</If>
+	
+<!-- Grave Circumstances -->
+	<If Condition="HasQuest(32201) &amp;&amp; !IsQuestCompleted(32201)" >
+		<CustomBehavior File="Message" Text="Starting Grave Circumstances" LogColor="Green" />
+		<Objective QuestName="Grave Circumstances" QuestId="32201" Type="KillMob" MobId="69236" KillCount="10" />
+	</If>
+	
+<!-- Court of Bones Turn-ins -->
+	<If Condition="HasQuest(32225) &amp;&amp; IsQuestCompleted(32225) ||
+					HasQuest(32201) &amp;&amp; IsQuestCompleted(32201) ||
+					HasQuest(32220) &amp;&amp; IsQuestCompleted(32220) ||
+					HasQuest(32224) &amp;&amp; IsQuestCompleted(32224) ||
+					HasQuest(32495) &amp;&amp; IsQuestCompleted(32945) ||
+					HasQuest(32219) &amp;&amp; IsQuestCompleted(32219) ||
+					HasQuest(32218) &amp;&amp; IsQuestCompleted(32218) ||
+					HasQuest(32517) &amp;&amp; IsQuestCompleted(32517) ||
+					HasQuest(32226) &amp;&amp; IsQuestCompleted(32226)" >
+		<CustomBehavior File="Message" Text="Heading back to Court of Bones to Turn-In" LogColor="Green" />
+		<DisableBehavior Name="Pull, Combat" />
+		<If Condition="!IsQuestCompleted(32212)" >
+			<MoveTo X="6694.93" Y="6285.77" Z="1.47" />
+		<ElseIf Condition="IsQuestCompleted(32212)" >
+			<MoveTo X="6735.43" Y="6060.58" Z="18.75" />
+		</ElseIf>
+		</If>
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+	</If>
+	
+	<If Condition="HasQuest(32201) &amp;&amp; IsQuestCompleted(32201)" >
+		<TurnIn QuestName="Grave Consequences" QuestId="32201" TurnInName="Grand Magister Rommath" TurnInId="67989" />
+	</If>
+	
+	<If Condition="HasQuest(32220) &amp;&amp; IsQuestCompleted(32220)" >
+		<TurnIn QuestName="Soul Surrender" QuestId="32220" TurnInName="Grand Magister Rommath" TurnInId="67989" />
+	</If>
+	
+	<If Condition="HasQuest(32495) &amp;&amp; IsQuestCompleted(32495)" >
+		<TurnIn QuestName="The Bloodletter" QuestId="32495" TurnInName="Grand Magister Rommath" TurnInId="67989" />
+	</If>
+	
+	<If Condition="HasQuest(32225) &amp;&amp; IsQuestCompleted(32225)" >
+		<TurnIn QuestName="The Call of Thunder" QuestId="32225" TurnInName="Grand Magister Rommath" TurnInId="67989" />
+	</If>
+	
+	<If Condition="HasQuest(32224) &amp;&amp; IsQuestCompleted(32224)" >
+		<TurnIn QuestName="Rise No More!" QuestId="32224" TurnInName="Ryshelle Brightlock" TurnInId="69389" />
+	</If>
+	
+	<If Condition="HasQuest(32517) &amp;&amp; IsQuestCompleted(32517)" >
+		<TurnIn QuestName="The Conquest of Stone" QuestId="32517" TurnInName="Ryshelle Brightlock" TurnInId="69389" />
+	</If>
+	
+	<If Condition="HasQuest(32226) &amp;&amp; IsQuestCompleted(32226)" >
+		<TurnIn QuestName="Into The Crypts" QuestId="32226" TurnInName="Ryshelle Brightlock" TurnInId="69389" />
+	</If>
+	
+	<If Condition="HasQuest(32219) &amp;&amp; IsQuestCompleted(32219)" >
+		<TurnIn QuestName="Stone Cold" QuestId="32219" TurnInName="Ryshelle Brightlock" TurnInId="69389" />
+	</If>
+	
+	<If Condition="HasQuest(32218) &amp;&amp; IsQuestCompleted(32218)" >
+		<TurnIn QuestName="Ashes of the Enemy" QuestId="32218" TurnInName="Captain Aerthas Firehawk" TurnInId="67983" />
+	</If>
+	
+	<CustomBehavior File="WaitTimer" WaitTime="1000" />
+	
+<!-- Double Check for ender quests -->
+
+<!-- Grand Magister Rommath -->
+	<While Condition="HasQuestAvailable(67989)" >
+		<CustomBehavior File="InteractWith" MobId="67989" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" NonCompeteDistance="0" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Harlan Whitedawn -->
+	<While Condition="HasQuestAvailable(69447)" >
+		<CustomBehavior File="InteractWith" MobId="69447" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" NonCompeteDistance="0" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Ryshelle Brightlock -->
+	<While Condition="HasQuestAvailable(69389)" >
+		<CustomBehavior File="InteractWith" MobId="69389" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" NonCompeteDistance="0" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Captain Aerthas Firehawk -->
+	<While Condition="HasQuestAvailable(67983)" >
+		<CustomBehavior File="InteractWith" MobId="67983" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" NonCompeteDistance="0" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<If Condition="HasItem(94566)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(94566)" />
+	</If>
+	
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+
+<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Isle of Thunder H [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

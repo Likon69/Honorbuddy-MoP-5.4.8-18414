@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../../../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- Original contribution by Kickazz006 -->
+    <Name>[A - Quest] Gnome 1-5 [Kick] ($Rev: 3165 $)</Name>
+
+    <MinLevel>1</MinLevel>
+    <MaxLevel>1001</MaxLevel>
+
+    <MinDurability>0.3</MinDurability>
+    <MinFreeBagSlots>3</MinFreeBagSlots>
+
+    <!-- NB: Honorbuddy sells before mailing -->
+    <SellGrey>true</SellGrey>
+    <SellWhite>true</SellWhite>
+    <SellGreen>true</SellGreen>
+    <SellBlue>false</SellBlue>
+    <SellPurple>false</SellPurple>
+
+    <MailGrey>false</MailGrey>
+    <MailWhite>true</MailWhite>
+    <MailGreen>true</MailGreen>
+    <MailBlue>true</MailBlue>
+    <MailPurple>true</MailPurple>
+
+    <TargetElites>false</TargetElites>
+
+
+    <AvoidMobs>
+        <Mob Name="Crazed Leper Gnome" Id="46363" />
+        <Mob Name="Crazed Leper Gnome" Id="46391" />
+        <Mob Name="Crushcog Sentry-Bot" Id="42291" />
+        <Mob Name="Great Father Arctikus" Id="126" />
+        <Mob Name="Living Contamination" Id="43089" />
+    </AvoidMobs>
+
+
+    <Blackspots>
+        <Blackspot Name="Defiant in Elwynn" X="-9151.938" Y="88.74734" Z="76.00366" Radius="20.25414" />
+        <Blackspot Name="New Tinkertown Mailbox" X="-5200.985" Y="516.0198" Z="387.5609" Radius="1.386786" />
+        <Blackspot Name="Tent by Jessup" X="-5527.078" Y="517.2145" Z="388.9192" Radius="3.217502" />
+    </Blackspots>
+
+
+    <Mailboxes>
+        <Mailbox Name="Goldshire" X="-9456.721" Y="46.77825" Z="56.60653" />
+        <Mailbox Name="Kharanos" X="-5603.603" Y="-512.9031" Z="401.6768" />
+        <Mailbox Name="New Tinkertown" X="-5199.83" Y="517.0881" Z="387.3979" />
+        <Mailbox Name="Old Dormitory" X="-4978.463" Y="848.6256" Z="276.2334" />
+        <Mailbox Name="Thelsamar" X="-5364.78" Y="-2953.748" Z="323.8507" />
+    </Mailboxes>
+
+
+    <Vendors>
+        <!-- Gnome -->
+        <Vendor Name="Burdrak Harglhelm" Id="3162" Type="Repair" X="-5367.575" Y="287.7031" Z="394.3148" />
+        <Vendor Name="Carson Crazybread" Id="46966" Type="Food" X="-5169.87" Y="467.493" Z="389.5643" />
+        <Vendor Name="Elly Sharpedge" Id="42335" Type="Repair" X="-5168.75" Y="469.4097" Z="389.596" />
+        <Vendor Name="Elly Sharpedge" Id="42335" Type="Repair" X="-5168.75" Y="469.4097" Z="389.5963" />
+
+        <!-- Kharanos -->
+        <Vendor Name="Frast Dokner" Id="1698" Type="Repair" X="-5714.372" Y="-1589.517" Z="383.2044" />
+        <Vendor Name="Grawn Thromwyn" Id="1273" Type="Repair" X="-5590.67" Y="-428.416" Z="397.3266" />
+        <Vendor Name="Jade Ramalot" Id="46996" Type="Repair" X="-4594.17" Y="-1714.2" Z="503.476" />
+        <Vendor Name="Monann Coldforge" Id="43384" Type="Food" X="-5522.49" Y="-1930.35" Z="398.9589" />
+        <Vendor Name="Turuk Amberstill" Id="3177" Type="Repair" X="-5514.975" Y="-1295.747" Z="405.9352" />
+
+        <!-- Stormwind Vendors -->
+        <Vendor Name="Gunther Weller" Id="1289" Type="Repair" X="-8790.421" Y="607.3484" Z="96.77347" />
+        <Vendor Name="Innkeeper Allison" Id="6740" Type="Food" X="-8867.786" Y="673.6729" Z="97.90376" />
+        <Vendor Name="Marda Weller" Id="1287" Type="Repair" X="-8787.688" Y="609.6306" Z="96.77336" />
+
+        <!-- Goldshire Vendors -->
+        <Vendor Name="Corina Steele" Id="54" Type="Repair" X="-9464.4" Y="94.0174" Z="58.34372" />
+        <Vendor Name="Innkeeper Farley" Id="295" Type="Food" X="-9462.663" Y="16.19151" Z="56.96306" />
+    </Vendors>
+
+
+    <!-- BEGIN: Quest Overrides -->
+    <Quest Name="Pinned Down" Id="27670" >
+        <Objective Type="KillMob" MobId="46363" MobName="Crazed Leper Gnome" KillCount="6">
+            <Hotspots>
+                <Hotspot X="-4963.558" Y="791.3566" Z="276.2403" />
+                <Hotspot X="-4988.647" Y="816.5391" Z="276.2351" />
+                <Hotspot X="-5015.488" Y="800.8891" Z="276.2351" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <!-- END: Quest Overrides -->
+
+
+    <QuestOrder IgnoreCheckpoints="false" >
+        <!-- BEGIN: Checkpoint Block
+             This code needs to be replicated after every checkpoint.
+             If you modify something in this block, don't forget to update the copy of this
+             block after each checkpoint, and the at the start of the <QuestOrder>, also.
+        -->
+        <CustomBehavior File="Misc\RunLua" Lua="SetCVar('AutoLootDefault', 1)" />
+        <CustomBehavior File="UserSettings" AutoEquip="true" />
+
+        <CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+        <CustomBehavior File="EnablePlugin" Names="Questhelper - ItemForAura" />
+        <CustomBehavior File="EnablePlugin" Names="Refreshment Detection" />
+
+        <CustomBehavior File="Misc\ProfileCompatibilityInfo" AllowBrokenAddOns="true" AllowBrokenPlugIns="true" />
+
+        <LootMobs Value="true" />
+        <TargetingDistance Value="null" /> <!-- use Honorbuddy default -->
+
+        <If Condition="!IsQuestCompleted(27674)" >
+            <TargetingDistance Value="3" />
+        </If>
+        <!-- END: Checkpoint Block -->
+
+
+        <!-- Dun Morogh Quests -->
+        <CustomBehavior File="Message" Text="Compiling The Old Dormitory Quests" LogColor="CornflowerBlue" />
+
+        <PickUp QuestName="Pinned Down" QuestId="27670" GiverName="Nevin Twistwrench" GiverId="45966" />
+        <Objective QuestName="Pinned Down" QuestId="27670" Type="KillMob" MobId="46363" KillCount="6" />
+        <TurnIn QuestName="Pinned Down" QuestId="27670" TurnInName="Nevin Twistwrench" TurnInId="45966" />
+        <PickUp QuestName="Report to Carvo Blastbolt" QuestId="28167" GiverName="Nevin Twistwrench" GiverId="45966" />
+        <TurnIn QuestName="Report to Carvo Blastbolt" QuestId="28167" TurnInName="Carvo Blastbolt" TurnInId="47250" />
+        <PickUp QuestName="See to the Survivors" QuestId="27671" GiverName="Carvo Blastbolt" GiverId="47250" />
+        <CustomBehavior File="InteractWith" QuestId="27671" MobId="46268" InteractByUsingItemId="62057"
+                        NumOfTimes="100" X="-4986.168" Y="808.9982" Z="276.2368" />
+        <TurnIn QuestName="See to the Survivors" QuestId="27671" TurnInName="Carvo Blastbolt" TurnInId="47250" />
+        <PickUp QuestName="Withdraw to the Loading Room!" QuestId="28169" GiverName="Carvo Blastbolt" GiverId="47250" />
+        <TurnIn QuestName="Withdraw to the Loading Room!" QuestId="28169" TurnInName="Gaffer Coilspring"
+                TurnInId="46274" />
+        <PickUp QuestName="Decontamination" QuestId="27635" GiverName="Gaffer Coilspring" GiverId="46274" />
+        <If Condition="HasQuest(27635) &amp;&amp; !IsQuestCompleted(27635)">
+            <CustomBehavior File="InteractWith" QuestId="27635" MobId="46185" X="-5175.427" Y="745.7177" Z="287.397" />
+            <CustomBehavior File="WaitTimer" WaitTime="25000" />
+        </If>
+        <TurnIn QuestName="Decontamination" QuestId="27635" TurnInName="Technician Braggle" TurnInId="46255" />
+        <PickUp QuestName="To the Surface" QuestId="27674" GiverName="Technician Braggle" GiverId="46255" />
+        <If Condition="HasQuest(27674) &amp;&amp; ( Me.Z &lt; 320 )">
+            <CustomBehavior File="InteractWith" MobId="46293" InteractByGossipOptions="1" WaitTime="4000"
+                            X="-5180.833" Y="686.3102" Z="287.7943" />
+        </If>
+        <TurnIn QuestName="To the Surface" QuestId="27674" TurnInName="Nevin Twistwrench" TurnInId="42396" />
+        <!-- End of Old Dormitory Quests -->
+
+        <!-- New Tinkertown -->
+        <CustomBehavior File="Message" Text="Compiling New Tinkertown Quests" LogColor="CornflowerBlue" />
+        <TargetingDistance Value="null" />    <!-- Use LevelBot default -->
+
+        <If Condition="Me.Class == WoWClass.Warrior">
+            <PickUp QuestName="The Future of Gnomeregan" QuestId="26203" GiverName="Nevin Twistwrench"
+                    GiverId="42396" />
+            <TurnIn QuestName="The Future of Gnomeregan" QuestId="26203" TurnInName="Drill Sergeant Steamcrank"
+                    TurnInId="42324" />
+            <PickUp QuestName="Meet the High Tinker" QuestId="26425" GiverName="Drill Sergeant Steamcrank"
+                    GiverId="42324" />
+            <TurnIn QuestName="Meet the High Tinker" QuestId="26425" TurnInName="High Tinker Mekkatorque"
+                    TurnInId="42317" />
+        </If>
+        <If Condition="Me.Class == WoWClass.Priest">
+            <PickUp QuestName="The Future of Gnomeregan" QuestId="26199" GiverName="Nevin Twistwrench"
+                    GiverId="42396" />
+            <TurnIn QuestName="The Future of Gnomeregan" QuestId="26199" TurnInName="Doc Cogspin" TurnInId="42323" />
+            <PickUp QuestName="Meet the High Tinker" QuestId="26422" GiverName="Doc Cogspin" GiverId="42323" />
+
+            <!-- Need dummy id verified before uncommenting -->
+            <!-- <PickUp QuestName="The Arts of a Priest" QuestId="26200" GiverName="Doc Cogspin" GiverId="42323" /> -->
+            <!-- <CustomBehavior File="InteractWith" QuestId="26200" InteractByCastingSpellId="589" MobId="44389" -->
+            <!-- NumOfTimes="5" X="-5070.408" Y="482.3681" Z="401.7074" /> -->
+            <!-- <TurnIn QuestName="The Arts of a Priest" QuestId="26200" TurnInName="Doc Cogspin" TurnInId="42323" /> -->
+
+            <TurnIn QuestName="Meet the High Tinker" QuestId="26422" TurnInName="High Tinker Mekkatorque"
+                    TurnInId="42317" />
+        </If>
+        <If Condition="Me.Class == WoWClass.Rogue">
+            <PickUp QuestName="The Future of Gnomeregan" QuestId="26206" GiverName="Nevin Twistwrench"
+                    GiverId="42396" />
+            <TurnIn QuestName="The Future of Gnomeregan" QuestId="26206" TurnInName="Kelsey Steelspark"
+                    TurnInId="42366" />
+            <PickUp QuestName="Meet the High Tinker" QuestId="26423" GiverName="Kelsey Steelspark"
+                    GiverId="42366" />
+            <TurnIn QuestName="Meet the High Tinker" QuestId="26423" TurnInName="High Tinker Mekkatorque"
+                    TurnInId="42317" />
+        </If>
+        <If Condition="Me.Class == WoWClass.Mage">
+            <PickUp QuestName="The Future of Gnomeregan" QuestId="26197" GiverName="Nevin Twistwrench"
+                    GiverId="42396" />
+            <TurnIn QuestName="The Future of Gnomeregan" QuestId="26197" TurnInName="Bipsi Frostflinger"
+                    TurnInId="42331" />
+            <PickUp QuestName="Meet the High Tinker" QuestId="26421" GiverName="Bipsi Frostflinger" GiverId="42331" />
+            <TurnIn QuestName="Meet the High Tinker" QuestId="26421" TurnInName="High Tinker Mekkatorque"
+                    TurnInId="42317" />
+        </If>
+        <If Condition="Me.Class == WoWClass.Warlock">
+            <PickUp QuestName="The Future of Gnomeregan" QuestId="26202" GiverName="Nevin Twistwrench"
+                    GiverId="42396" />
+            <TurnIn QuestName="The Future of Gnomeregan" QuestId="26202" TurnInName="Alamar Grimm" TurnInId="460" />
+            <PickUp QuestName="Meet the High Tinker" QuestId="26424" GiverName="Alamar Grimm" GiverId="460" />
+            <TurnIn QuestName="Meet the High Tinker" QuestId="26424" TurnInName="High Tinker Mekkatorque"
+                    TurnInId="42317" />
+        </If>
+        <If Condition="Me.Class == WoWClass.Monk">
+            <PickUp QuestName="The Future of Gnomeregan" QuestId="31135" GiverName="Nevin Twistwrench"
+                    GiverId="42396" />
+            <TurnIn QuestName="The Future of Gnomeregan" QuestId="31135" TurnInName="Xi, Friend to the Small"
+                    TurnInId="63238" />
+            <PickUp QuestName="Meet the High Tinker" QuestId="31137" GiverName="Xi, Friend to the Small"
+                    GiverId="63238" />
+            <TurnIn QuestName="Meet the High Tinker" QuestId="31137" TurnInName="High Tinker Mekkatorque"
+                    TurnInId="42317" />
+        </If>
+
+        <PickUp QuestName="The Fight Continues" QuestId="26208" GiverName="High Tinker Mekkatorque" GiverId="42317" />
+        <If Condition="HasQuest(26208) &amp;&amp; !IsQuestCompleted(26208)">
+            <MoveTo X="-5138.378" Y="496.1674" Z="395.5457" />
+            <CustomBehavior File="WaitTimer" QuestId="26208" WaitTime="120000"
+                            GoalText="Waiting for &quot;The Fight Continues&quot; to complete {TimeRemaining}" />
+        </If>
+        <TurnIn QuestName="The Fight Continues" QuestId="26208" TurnInName="High Tinker Mekkatorque" TurnInId="42317" />
+        <If Condition="!HasQuest(26566) &amp;&amp; !IsQuestCompleted(26566)">
+            <!-- spams pickup -->
+            <!-- <PickUp QuestName="A Triumph of Gnomish Ingenuity" QuestId="26566" -->
+            <!-- GiverName="High Tinker Mekkatorque" GiverId="42317" X="-5130.65" Y="488.8413" Z="395.5453" /> -->
+            <CustomBehavior File="InteractWith" MobId="42317" X="-5130.65" Y="488.8413" Z="395.5453" />
+            <CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+            <CustomBehavior File="RunMacro" Macro="/click QuestFrameAcceptButton" />
+        </If>
+        <TurnIn QuestName="A Triumph of Gnomish Ingenuity" QuestId="26566" TurnInName="Engineer Grindspark"
+                TurnInId="42553"
+                X="-5073.268" Y="454.8828" Z="410.9189" />
+        <PickUp QuestName="Scrounging for Parts" QuestId="26222" GiverName="Engineer Grindspark" GiverId="42553" />
+        <Objective QuestName="Scrounging for Parts" QuestId="26222" Type="CollectItem" ItemId="57764"
+                   CollectCount="7" />
+        <TurnIn QuestName="Scrounging for Parts" QuestId="26222" TurnInName="Engineer Grindspark" TurnInId="42553" />
+        <PickUp QuestName="A Job for the Multi-Bot" QuestId="26205" GiverName="Engineer Grindspark" GiverId="42553" />
+        <PickUp QuestName="What's Left Behind" QuestId="26264" GiverName="Tock Sprysprocket" GiverId="42611" />
+        <PickUp QuestName="Dealing with the Fallout" QuestId="26265" GiverName="Corporal Fizzwhistle" GiverId="42630" />
+        <CustomBehavior File="InteractWith" QuestId="26205" MobId="203975 " NumOfTimes="100" WaitTime="3500" Range="3" ProactiveCombatStrategy="ClearMobsTargetingUs" 
+                        X="-5358.981" Y="448.5872" Z="384.1597" />
+        <Objective QuestName="What's Left Behind" QuestId="26264" Type="CollectItem" ItemId="57987" CollectCount="6" />
+        <Objective QuestName="Dealing with the Fallout" QuestId="26265" Type="KillMob" MobId="42185" KillCount="6" />
+        <TurnIn QuestName="Dealing with the Fallout" QuestId="26265" TurnInName="Corporal Fizzwhistle"
+                TurnInId="42630" />
+        <TurnIn QuestName="What's Left Behind" QuestId="26264" TurnInName="Tock Sprysprocket" TurnInId="42611" />
+        <TurnIn QuestName="A Job for the Multi-Bot" QuestId="26205" TurnInName="Engineer Grindspark" TurnInId="42553" />
+        <PickUp QuestName="What's Keeping Jessup?" QuestId="26316" GiverName="Captain Tread Sparknozzle"
+                GiverId="42489" />
+        <TurnIn QuestName="What's Keeping Jessup?" QuestId="26316" TurnInName="Jessup McCree" TurnInId="42708" />
+        <PickUp QuestName="Get Me Explosives Back!" QuestId="26285" GiverName="Jessup McCree" GiverId="42708" />
+        <PickUp QuestName="Missing in Action" QuestId="26284" GiverName="Jessup McCree" GiverId="42708" />
+        <CustomBehavior File="InteractWith" QuestId="26284" MobId="204019" NumOfTimes="100" Range="4"
+                        CollectionDistance="500" X="-5567.554" Y="522.3546" Z="381.4504" />
+        <Objective QuestName="Get Me Explosives Back!" QuestId="26285" Type="CollectItem" ItemId="58202"
+                   CollectCount="7" />
+        <TurnIn QuestName="Get Me Explosives Back!" QuestId="26285" TurnInName="Jessup McCree" TurnInId="42708" />
+        <TurnIn QuestName="Missing in Action" QuestId="26284" TurnInName="Jessup McCree" TurnInId="42708" />
+        <PickUp QuestName="Finishin' the Job" QuestId="26318" GiverName="Jessup McCree" GiverId="42708" />
+        <Objective QuestName="Finishin' the Job" QuestId="26318" Type="UseObject" ObjectId="204042" UseCount="1" />
+        <Objective QuestName="Finishin' the Job" QuestId="26318" Type="KillMob" MobId="42773" KillCount="1" />
+        <TurnIn QuestName="Finishin' the Job" QuestId="26318" TurnInName="Jessup McCree" TurnInId="42708" />
+        <PickUp QuestName="One More Thing" QuestId="26329" GiverName="Jessup McCree" GiverId="42708" />
+        <TurnIn QuestName="One More Thing" QuestId="26329" TurnInName="High Tinker Mekkatorque" TurnInId="42317" />
+        <PickUp QuestName="Crushcog's Minions" QuestId="26331" GiverName="High Tinker Mekkatorque" GiverId="42317" />
+        <PickUp QuestName="No Tanks!" QuestId="26333" GiverName="Hinkles Fastblast" GiverId="42491" />
+        <CustomBehavior File="InteractWith" QuestId="26333" MobId="42224" InteractByUsingItemId="58200" NumOfTimes="100"
+                        X="-5010.189" Y="151.4061" Z="386.7669" />
+        <Objective QuestName="Crushcog's Minions" QuestId="26331" Type="KillMob" MobId="42223" KillCount="8" />
+        <TurnIn QuestName="Crushcog's Minions" QuestId="26331" TurnInName="High Tinker Mekkatorque" TurnInId="42317" />
+        <TurnIn QuestName="No Tanks!" QuestId="26333" TurnInName="Hinkles Fastblast" TurnInId="42491" />
+        <PickUp QuestName="Staging in Brewnall" QuestId="26339" GiverName="Kelsey Steelspark" GiverId="42366" />
+        <TurnIn QuestName="Staging in Brewnall" QuestId="26339" TurnInName="Jarvi Shadowstep" TurnInId="42353" />
+        <!-- End of Gnomeregan Quests -->
+
+        <PickUp QuestName="Bound for Kharanos" QuestId="26380" GiverName="Ciara Deepstone" GiverId="42933"
+                X="-5410.04" Y="-306.828" Z="400.6929" />
+        <If Condition="HasQuest(26380) &amp;&amp; !IsQuestCompleted(26380)">
+            <!-- Fargodeep Mine quest -->
+            <MoveTo DestName="Kharanos Flight Path" X="-5662.568" Y="-495.9951" Z="397.1285" />
+            <CustomBehavior File="InteractWith" Range="5" MobId="43701" X="-5664.08" Y="-497.684" Z="397.3411" />
+        </If>
+        <TurnIn QuestName="Bound for Kharanos" QuestId="26380" TurnInName="Innkeeper Belm" TurnInId="1247" />
+
+        <!-- Going to SW via flight paths -->
+        <CustomBehavior File="LoadProfile" ProfileName="[A - Quest] EK 5-12 [Kick]" RememberProfile="true" />
+        <CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+
+    </QuestOrder>
+
+</HBProfile>

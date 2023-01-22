@@ -1,0 +1,834 @@
+<HBProfile>
+
+	<Name>Darkshore ($Rev$)</Name>
+	<MinLevel>60</MinLevel>
+	<MaxLevel>100</MaxLevel>
+	
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<TargetElites>True</TargetElites>
+  
+	<AvoidMobs>
+		<Mob Name="Vile Terror" Entry="33864" />
+		<Mob Name="Aetherion" Entry="33041" />
+		<Mob Name="Faceless One" Entry="34413" />
+	</AvoidMobs>
+
+	<Blackspots>
+		<Blackspot X="6630.19" Y="-187.4851" Z="0.3904713" Radius="2.35758" />
+		<Blackspot X="7372.378" Y="-337.8942" Z="-1.231811" Radius="1.436166" />
+		<Blackspot X="7352.60" Y="-1109.83" Z="57.10" Radius="5" />
+		<Blackspot X="5002.517" Y="102.2977" Z="53.20249" Radius="1.685889" />
+		<Blackspot X="4652.052" Y="561.0186" Z="24.68328" Radius="3.966799" />
+		<Blackspot X="4629.637" Y="375.9908" Z="18.12226" Radius="6.017162" />
+	</Blackspots>
+
+	<Mailboxes>
+		<Mailbox X="7392.969" Y="-262.9229" Z="5.207484" />
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Darkshore -->
+		<Vendor Name="Rembar Bellanne" Entry="43419" Type="Food" X="7372.79" Y="-804.068" Z="8.099142" />
+		<Vendor Name="Harlon Thornguard" Entry="4187" Type="Repair" X="7394.35" Y="-264.641" Z="5.079112" />
+		<Vendor Name="Rembar Bellanne" Entry="43419" Type="Repair" X="7372.79" Y="-804.068" Z="8.099142" />
+		
+		<!-- Auberdine Refugee Camp -->
+		<Vendor Name="Ullanna" Entry="4194" Type="Food" X="6284.94" Y="264.16" Z="18.22316" />
+		<Vendor Name="Elisa Steelhand" Entry="33231" Type="Repair" X="6270.868" Y="263.5678" Z="18.21701" />
+		
+		<!-- Grove of the Ancients -->
+		<Vendor Name="Syleath Fairglade" Entry="43425" Type="Repair" X="5005.8" Y="86.941" Z="52.83877" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Name="A Love Eternal" Id="13563" >
+	<Objective Type="CollectItem" ItemId="5382" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Anaya Dawnrunner" Id="33181" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="6633.344" Y="-119.0439" Z="34.97572" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Call Down the Thunder" Id="13558" >
+	<Objective Type="CollectItem" ItemId="44929" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Weakened Aetherion" Id="33042" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="6454.721" Y="653.2641" Z="21.70151" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="The Devourer of Darkshore" Id="13891" >
+	<Objective Type="KillMob" MobId="34331" KillCount="1" >
+		<Hotspots>
+			<Hotspot X="4814.261" Y="103.5591" Z="46.78885" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Beginning Memory Block: Darkshore" LogColor="Green" />
+	<CustomBehavior File="UserSettings" LootMobs="True" UseFlightPaths="True" PullDistance="25" />
+	
+	<If Condition="!HasQuest(13518) &amp;&amp; !IsQuestCompleted(13518)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Fast forwarding memory to Lor'danel" LogColor="CornflowerBlue" />
+	
+<!-- The Last Wave of Survivors/Threat From the Water -->
+	<PickUp QuestName="The Last Wave of Survivors" QuestId="13518" GiverName="Dentaria Silverglade" GiverId="32973" />
+	<PickUp QuestName="Threat from the Water" QuestId="13522" GiverName="Ranger Glynda Nal'Shea" GiverId="32971" />
+	<CustomBehavior File="InteractWith" QuestObjectiveIndex="4" QuestId="13518" NumOfTimes="10" MobId="33094" X="7439.48" Y="106.23" Z="0.28" />
+	<CustomBehavior File="InteractWith" QuestObjectiveIndex="2" QuestId="13518" NumOfTimes="10" MobId="32911" X="7455.90" Y="164.99" Z="2.73" />
+	<CustomBehavior File="InteractWith" QuestObjectiveIndex="1" QuestId="13518" NumOfTimes="10" MobId="33093" X="7365.81" Y="134.71" Z="11.68" />
+	<CustomBehavior File="InteractWith" QuestObjectiveIndex="3" QuestId="13518" NumOfTimes="10" MobId="33095" X="7295.92" Y="242.54" Z="1.76" />
+	<Objective QuestName="Threat from the Water" QuestId="13522" Type="KillMob" MobId="32928" KillCount="8" />
+	
+	<TurnIn QuestName="Threat from the Water" QuestId="13522" TurnInName="Ranger Glynda Nal'Shea" TurnInId="32971" />
+	<TurnIn QuestName="The Last Wave of Survivors" QuestId="13518" TurnInName="Dentaria Silverglade" TurnInId="32973" />
+
+<!-- The Boon of the Seas/Buzzbox 413 -->
+	<PickUp QuestName="The Boon of the Seas" QuestId="13520" GiverName="Serendia Oakwhisper" GiverId="32972" />
+	<PickUp QuestName="Buzzbox 413" QuestId="13521" GiverName="Wizbang Cranktoggle" GiverId="32977" />
+	<CustomBehavior File="CollectThings" QuestId="13521" CollectUntil="QuestComplete" MobId="32935" MobState="Alive" HuntingGroundRadius="200" NonCompeteDistance="5" >
+		<Hotspot X="7490.445" Y="-411.6582" Z="-14.1819" />
+		<Hotspot X="7510.28" Y="-344.3577" Z="-17.79234" />
+		<Hotspot X="7483.629" Y="-269.6534" Z="-2.886598" />
+	</CustomBehavior>
+	<CustomBehavior File="CollectThings" QuestId="13520" CollectUntil="QuestComplete" ObjectId="194107" HuntingGroundRadius="200" NonCompeteDistance="5" PostInteractDelay="300" >
+		<Hotspot X="7490.445" Y="-411.6582" Z="-14.1819" />
+		<Hotspot X="7510.28" Y="-344.3577" Z="-17.79234" />
+		<Hotspot X="7483.629" Y="-269.6534" Z="-2.886598" />
+	</CustomBehavior>
+	
+	<TurnIn QuestName="The Boon of the Seas" QuestId="13520" TurnInName="Serendia Oakwhisper" TurnInId="32972" />
+
+	<TurnIn Nav="Fly" QuestName="Buzzbox 413" QuestId="13521" TurnInName="Buzzbox 413" TurnInId="194105" TurnInType="Object" X="7376.342" Y="-425.0824" Z="2.099702" />
+	
+<!-- No Accounting for Taste -->
+	<PickUp QuestName="No Accounting for Taste" QuestId="13527" GiverName="Buzzbox 413" GiverId="194105" GiverType="Object" X="7376.342" Y="-425.0824" Z="2.099702" />
+	<CustomBehavior File="InteractWith" QuestId="13527" MobId="32975" X="7318.281" Y="-545.9667" Z="3.088199" />
+	<TurnIn QuestName="No Accounting for Taste" QuestId="13527" TurnInName="Wizbang Cranktoggle" TurnInId="32977" />
+	
+<!-- Buzzbox 723 -->
+	<PickUp QuestName="Buzzbox 723" QuestId="13528" GiverName="Wizbang Cranktoggle" GiverId="32977" />
+	<Objective QuestName="Buzzbox 723" QuestId="13528" Type="CollectItem" ItemId="44913" CollectCount="6" />
+	<TurnIn QuestName="Buzzbox 723" QuestId="13528" TurnInName="Buzzbox 723" TurnInId="194122" TurnInType="Object" X="6962.548" Y="-485.2443" Z="24.64986" />
+	
+<!-- A Cure in the Dark/The Corruption's Source/A Troubling Prescription/Bearer of Good Fortune -->
+	<PickUp QuestName="A Cure in the Dark" QuestId="13554" GiverName="Buzzbox 723" GiverId="194122" GiverType="Object" X="6962.548" Y="-485.2443" Z="24.64986" />
+	<PickUp QuestName="The Corruption's Source" QuestId="13529" GiverName="Tharnariun Treetender" GiverId="32978" />
+	<PickUp QuestName="A Troubling Prescription" QuestId="13831" GiverName="Disgusting Workbench" GiverId="194714" GiverType="Object" X="6768.186" Y="-695.801" Z="69.95356" />
+	<Objective QuestName="A Cure in the Dark" QuestId="13554" Type="CollectItem" ItemId="44966" CollectCount="6" />
+	<Objective QuestName="The Corruption's Source" QuestId="13529" Type="KillMob" MobId="33020" KillCount="1" />
+	<Objective QuestName="The Corruption's Source" QuestId="13529" Type="KillMob" MobId="33021" KillCount="8" />
+	<While Condition="!HasItem(44927) &amp;&amp; (!HasQuest(13557) &amp;&amp; !IsQuestCompleted(13557))" >
+		<CustomBehavior File="CollectThings" CollectItemId="44927" CollectItemCount="1" MobId="33022" HuntingGroundRadius="200" MobState="Alive" >
+			<Hotspot X="6746.883" Y="-664.3602" Z="67.05317" />
+			<Hotspot X="6816.373" Y="-686.3694" Z="64.87888" />
+		</CustomBehavior>
+	</While>
+	<If Condition="HasItem(44927) &amp;&amp; (!HasQuest(13557) &amp;&amp; !IsQuestCompleted(13557))" >
+		<PickUp QuestName="Bearer of Good Fortune" QuestId="13557" GiverType="Item" GiverId="44927" />
+	</If>
+	<CustomBehavior File="CollectThings" QuestId="13557" CollectUntil="QuestComplete" ObjectId="194124" ObjectId2="194133" HuntingGroundRadius="200" >
+		<Hotspot X="6746.883" Y="-664.3602" Z="67.05317" />
+		<Hotspot X="6816.373" Y="-686.3694" Z="64.87888" />
+	</CustomBehavior>
+	<TurnIn QuestName="The Corruption's Source" QuestId="13529" TurnInName="Tharnariun Treetender" TurnInId="32978" />
+	<TurnIn QuestName="A Troubling Prescription" QuestId="13831" TurnInName="Tharnariun Treetender" TurnInId="32978" />
+	<TurnIn QuestName="Bearer of Good Fortune" QuestId="13557" TurnInName="Tharnariun Treetender" TurnInId="32978" />
+	<TurnIn QuestName="A Cure in the Dark" QuestId="13554" TurnInName="Wizbang Cranktoggle" TurnInId="32977" />
+	
+	<CustomBehavior File="Message" Text="Fast forwarding memory to Bashal'Aran" LogColor="CornflowerBlue" />
+	
+<!-- The Final Flame of Bashal'Aran/A Lost Companion/A Love Eternal/Solace for the Highborne -->
+	<PickUp QuestName="A Lost Companion" QuestId="13564" GiverName="Volcor" GiverId="32960" />
+	<PickUp QuestName="A Love Eternal" QuestId="13563" GiverName="Cerellean Whiteclaw" GiverId="32959" />
+	<If Condition="!HasQuest(13562) &amp;&amp; !IsQuestCompleted(13562)" >
+		<PickUp QuestName="The Final Flame of Bashal'Aran" QuestId="13562" GiverName="Ranger Glynda Nal'Shea" GiverId="32971" />
+		<CustomBehavior File="InteractWith" MobId="33359" InteractByGossipOptions="1" TerminateWhen="Me.IsOnTransport" NonCompeteDistance="0" X="7246.385" Y="-281.746" Z="21.01714" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<PickUp QuestName="Solace for the Highborne" QuestId="13561" GiverName="Arya Autumnlight" GiverId="33177" />
+	<CustomBehavior File="InteractWith" QuestId="13562" MobId="194179" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" X="6748.24" Y="48.5451" Z="48.6344" />
+	<Objective QuestName="Solace for the Highborne" QuestId="13561" Type="KillMob" MobId="33179" KillCount="6" />
+	<Objective QuestName="Solace for the Highborne" QuestId="13561" Type="KillMob" MobId="33180" KillCount="6" />
+	<Objective QuestName="A Love Eternal" QuestId="13563" Type="CollectItem" ItemId="5382" CollectCount="1" />
+	<TurnIn QuestName="Solace for the Highborne" QuestId="13561" TurnInName="Arya Autumnlight" TurnInId="33177" />
+	<CustomBehavior File="NoCombatMoveTo" QuestId="13564" X="6544.803" Y="239.3596" Z="7.365758" />
+	<TurnIn QuestName="A Lost Companion" QuestId="13564" TurnInName="Keeper Karithus" TurnInId="33048" />
+	
+	<CustomBehavior File="Message" Text="Fast forwarding memory to the Withering Thicket" LogColor="CornflowerBlue" />
+	
+<!-- Unsavory Remedies/Ritual Materials/Twice Removed -->
+	<PickUp QuestName="Unsavory Remedies" QuestId="13598" GiverName="Keeper Karithus" GiverId="33048" />
+	<PickUp QuestName="Ritual Materials" QuestId="13566" GiverName="Keeper Karithus" GiverId="33048" />
+	<PickUp QuestName="Twice Removed" QuestId="13565" GiverName="Seraphine" GiverId="33126" />
+	<Objective QuestName="Unsavory Remedies" QuestId="13598" Type="CollectItem" ItemId="44976" CollectCount="6" />
+	<CustomBehavior File="InteractWith" QuestId="13565" MobId="33206" InteractByUsingItemId="45911" NumOfTimes="100" MobState="Dead" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="2000" X="6484.345" Y="-120.1033" Z="1.546069" />
+	<Objective QuestName="Twice Removed" QuestId="13565" Type="KillMob" MobId="33207" KillCount="1" />
+	<CustomBehavior File="InteractWith" QuestId="13566" QuestObjectiveIndex="3" MovementBy="NavigatorPreferred" NumOfTimes="100" MobId="33978" MobState="Alive" Loot="True" CollectionDistance="1000" >
+		<HuntingGrounds>
+			<Hotspot X="6618.021" Y="89.30764" Z="1.211313" />
+			<Hotspot X="6604.552" Y="53.43229" Z="0.8724993" />
+			<Hotspot X="6549.4" Y="28.16332" Z="1.701459" />
+			<Hotspot X="6560.855" Y="-21.37775" Z="1.428758" />
+			<Hotspot X="6567.492" Y="-49.62509" Z="1.239592" />
+			<Hotspot X="6579.448" Y="-82.57281" Z="1.087196" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<CustomBehavior File="InteractWith" QuestId="13566" QuestObjectiveIndex="1" MovementBy="NavigatorPreferred" NumOfTimes="100" MobId="33127" Loot="True" MobState="Alive" NotMoving="True" CollectionDistance="1000" >
+		<HuntingGrounds>
+			<Hotspot X="6503.74" Y="327.0654" Z="10.50174" />
+			<Hotspot X="6536.051" Y="323.7469" Z="8.266435" />
+			<Hotspot X="6623.982" Y="314.6047" Z="14.86099" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<CustomBehavior File="InteractWith" QuestId="13566" QuestObjectiveIndex="2" MovementBy="NavigatorPreferred" NumOfTimes="100" MobId="33313" Loot="True" MobState="Alive" CollectionDistance="1000" X="6462.158" Y="131.7756" Z="9.53888" />
+	<TurnIn QuestName="Unsavory Remedies" QuestId="13598" TurnInName="Keeper Karithus" TurnInId="33048" />
+	<TurnIn QuestName="Ritual Materials" QuestId="13566" TurnInName="Keeper Karithus" TurnInId="33048" />
+	<TurnIn QuestName="Twice Removed" QuestId="13565" TurnInName="Seraphine" TurnInId="33126" />
+
+<!-- The Ritual Bond -->
+	<PickUp QuestName="The Ritual Bond" QuestId="13569" GiverName="Keeper Karithus" GiverId="33048" />
+	<While Condition="HasQuest(13569) &amp;&amp; !IsQuestCompleted(13569)" >
+		<CustomBehavior File="InteractWith" QuestId="13569" MobId="194771" InteractByGossipOptions="1" TerminateWhen="Me.HasAura(64198)" X="6540.561" Y="240.7807" Z="7.614807" />
+		<CustomBehavior File="InteractWith" QuestId="13569" MobId="33131" InteractByQuestFrameDisposition="Complete" TerminateWhen="!(Me.HasAura(64198))" X="6491.19" Y="250.34" Z="5.95" />
+	</While>
+	<TurnIn QuestName="The Ritual Bond" QuestId="13569" TurnInName="Keeper Karithus" TurnInId="33048" />
+
+<!-- Grimclaw's Return -->
+	<PickUp QuestName="Grimclaw's Return" QuestId="13599" GiverName="Keeper Karithus" GiverId="33048" />
+	<TurnIn QuestName="The Final Flame of Bashal'Aran" QuestId="13562" TurnInName="Ranger Glynda Nal'Shea" TurnInId="32971" />
+	<TurnIn QuestName="A Love Eternal" QuestId="13563" TurnInName="Cerellean Whiteclaw" TurnInId="32959" />
+	<TurnIn QuestName="Grimclaw's Return" QuestId="13599" TurnInName="Serendia Oakwhisper" TurnInId="32972" />
+	
+<!-- An Ocean Not So Deep/The Shatterspear Invaders -->
+	<PickUp QuestName="The Shatterspear Invaders" QuestId="13589" GiverName="Ranger Glynda Nal'Shea" GiverId="32971" />
+	<PickUp QuestName="An Ocean Not So Deep" QuestId="13560" GiverName="Gorbold Steelhand" GiverId="32979" />
+	<While Condition="HasQuest(13560) &amp;&amp; !IsQuestCompleted(13560)" >
+		<CustomBehavior File="InteractWith" QuestId="13560" MobId="195006" ProactiveCombatStrategy="ClearMobsTargetingUs" TerminateWhen="Me.IsOnTransport" X="7748.019" Y="-407.7125" Z="1.372246" />
+		<If Condition="(Me.IsOnTransport)" >
+			<CustomBehavior File="Vehicles\VehicleMover" QuestId="13560" VehicleId="34207" UseNavigator="False" SpellId="62684" X="7816.156" Y="-442.1584" Z="-28.06596" />
+			<CustomBehavior File="WaitTimer" QuestId="13560" WaitTime="3000" />
+		</If>
+	</While>
+	<TurnIn QuestName="An Ocean Not So Deep" QuestId="13560" TurnInName="Gorbold Steelhand" TurnInId="32979" />
+	
+	<CustomBehavior File="Message" Text="Fast forwarding memory to the Ruins of Mathystra" LogColor="CornflowerBlue" />
+	
+	<TurnIn QuestName="The Shatterspear Invaders" QuestId="13589" TurnInName="Lt. Morra Starbreeze" TurnInId="32963" />
+	
+<!-- Shatterspear Laborers/Remnants of the Highborne -->
+	<PickUp QuestName="Shatterspear Laborers" QuestId="13504" GiverName="Sentinel Tysha Moonblade" GiverId="32965" />
+	<PickUp QuestName="Remnants of the Highborne" QuestId="13505" GiverName="Balthule Shadowstrike" GiverId="32966" />
+	<Objective QuestName="Remnants of the Highborne" QuestId="13505" Type="CollectItem" ItemId="44830" CollectCount="8" />
+	<Objective QuestName="Shatterspear Laborers" QuestId="13504" Type="KillMob" MobId="32861" KillCount="10" />
+	<If Condition="!HasItem(44979) &amp;&amp; (!HasQuest(13506) &amp;&amp; !IsQuestCompleted(13506)" >
+		<CustomBehavior File="CollectThings" CollectItemId="44979" CollectItemCount="1" MobId="32863" HuntingGroundRadius="200" MobState="Alive" >
+			<Hotspot X="7314.286" Y="-856.3969" Z="28.52137" />
+			<Hotspot X="7253.632" Y="-879.3912" Z="33.36388" />
+		</CustomBehavior>
+	</If>
+	<If Condition="HasItem(44979) &amp;&amp; (!HasQuest(13506) &amp;&amp; !IsQuestCompleted(13506))" >
+		<PickUp Questname="Reason To Worry" QuestId="13506" GiverType="Item" GiverId="44979" />
+	</If>
+	<TurnIn QuestName="Reason To Worry" QuestId="13506" TurnInName="Lt. Morra Starbreeze" TurnInId="32963" />
+	<TurnIn QuestName="Shatterspear Laborers" QuestId="13504" TurnInName="Sentinel Tysha Moonblade" TurnInId="32965" />
+	<TurnIn QuestName="Remnants of the Highborne" QuestId="13505" TurnInName="Balthule Shadowstrike" TurnInId="32966" />
+
+<!-- Denying Manpower/Swift Response/WarSupplies/One Bitter Wish -->
+	<PickUp QuestName="Denying Manpower" QuestId="13507" GiverName="Sentinel Tysha Moonblade" GiverId="32965" />
+	<PickUp QuestName="Swift Response" QuestId="13508" GiverName="Lt. Morra Starbreeze" GiverId="32963" />
+	<PickUp QuestName="War Supplies" QuestId="13509" GiverName="Lt. Morra Starbreeze" GiverId="32963" />
+	<CustomBehavior File="InteractWith" QuestId="13509" MobId="33056" InteractByUsingItemId="44999" NumOfTimes="100" Range="10" MinRange="3" ProactiveCombatStrategy="ClearMobsTargetingUs" IgnoreLoSToTarget="True" CollectionDistance="1000" >
+		<HuntingGrounds>
+			<Hotspot X="7761.891" Y="-1021.49" Z="31.56167" />
+			<Hotspot X="7826.132" Y="-992.1518" Z="33.5038" />
+			<Hotspot X="7878.896" Y="-1054.592" Z="31.21404" />
+			<Hotspot X="7814.635" Y="-1070.348" Z="32.60263" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="Denying Manpower" QuestId="13507" Type="KillMob" MobId="32859" KillCount="6" />
+	<Objective QuestName="Denying Manpower" QuestId="13507" Type="KillMob" MobId="34248" KillCount="6" />
+	<TurnIn QuestName="Swift Response" QuestId="13508" TurnInName="Alanndarian Nightsong" TurnInId="33055" />
+	<PickUp QuestName="One Bitter Wish" QuestId="13511" GiverName="Alanndarian Nightsong" GiverId="33055" />
+	<Objective QuestName="One Bitter Wish" QuestId="13511" Type="KillMob" MobId="32970" KillCount="1" />
+	<If Condition="!HasItem(45040) &amp;&amp; (!HasQuest(13510) &amp;&amp; !IsQuestCompleted(13510))" >
+		<CustomBehavior File="CollectThings" CollectItemId="45040" CollectItemCount="1" MobId="32970" HuntingGroundRadius="100" MobState="Alive" >
+			<Hotspot X="7994.57" Y="-1128.02" Z="34.69" />
+		</CustomBehavior>
+		<RunTo X="7985.597" Y="-1150.966" Z="35.1687" />
+		<CustomBehavior File="InteractWith" MobId="194101" WaitTime="8000" X="7987.604" Y="-1153.112" Z="34.70811" />
+		<PickUp QuestName="Timely Arrival" QuestId="13510" GiverName="Sentinel Aynasha" GiverId="32964" />
+	<ElseIf Condition="HasItem(45040)" >
+		<RunTo X="7985.597" Y="-1150.966" Z="35.1687" />
+		<CustomBehavior File="InteractWith" MobId="194101" WaitTime="8000" X="7987.604" Y="-1153.112" Z="34.70811" />
+		<PickUp QuestName="Timely Arrival" QuestId="13510" GiverName="Sentinel Aynasha" GiverId="32964" />
+	</ElseIf>
+	</If>
+	<CustomBehavior File="UserSettings" QuestId="13510" PullDistance="15" />
+	<CustomBehavior File="EscortGroup" QuestId="13510" EscortNpcId="32964" EscortMaxFollowDistance="5" />
+	<TurnIn QuestName="Timely Arrival" QuestId="13510" TurnInName="Lt. Morra Starbreeze" TurnInId="32963" />
+	<TurnIn QuestName="One Bitter Wish" QuestId="13511" TurnInName="Lt. Morra Starbreeze" TurnInId="32963" />
+	<TurnIn QuestName="War Supplies" QuestId="13509" TurnInName="Lt. Morra Starbreeze" TurnInId="32963" />
+	<TurnIn QuestName="Denying Manpower" QuestId="13507" TurnInName="Sentinel Tysha Moonblade" TurnInId="32965" />
+	
+<!-- Strategic Strikes/On The Brink/The Looting of Althalaxx -->
+	<PickUp QuestName="Strategic Strikes" QuestId="13512" GiverName="Lt. Morra Starbreeze" GiverId="32963" />
+	<PickUp QuestName="On The Brink" QuestId="13513" GiverName="Balthule Shadowstrike" GiverId="32966" />
+	<PickUp QuestName="The Looting of Althalaxx" QuestId="13844" GiverName="Mathas Wildwood" GiverId="34041" />
+	<If Condition="HasQuest(13512) &amp;&amp; !IsObjectiveComplete(2,13512)" >
+		<RunTo X="7345.322" Y="-923.1655" Z="29.70484" />
+		<CustomBehavior File="SpecificQuests\Kalimdor\Darkshore\13512-StrategicStrikes" KillSheya="True" />
+	</If>
+	<If Condition="HasQuest(13512) &amp;&amp; !IsObjectiveComplete(1,13512)" >
+		<RunTo X="7122.167" Y="-652.5104" Z="52.36291" />
+		<CustomBehavior File="SpecificQuests\Kalimdor\Darkshore\13512-StrategicStrikes" KillSheya="False" KillLorenth="True" />
+	</If>
+	<Objective QuestName="On The Brink" QuestId="13513" Type="CollectItem" ItemId="44942" CollectCount="6" />
+	<Objective QuestName="The Looting of Althalaxx" QuestId="13844" Type="KillMob" MobId="34033" KillCount="1" />
+	<Objective QuestName="The Looting of Althalaxx" QuestId="13844" Type="CollectItem" ItemId="45944" CollectCount="1" />
+	<TurnIn QuestName="Strategic Strikes" QuestId="13512" TurnInName="Lt. Morra Starbreeze" TurnInId="32963" />
+	<TurnIn QuestName="On The Brink" QuestId="13513" TurnInName="Balthule Shadowstrike" TurnInId="32966" />
+	<TurnIn QuestName="The Looting of Althalaxx" QuestId="13844" TurnInName="Mathas Wildwood" TurnInId="34041" />
+
+	<CustomBehavior File="Message" Text="Fast forwarding memory to the Shatterspear Vale" LogColor="CornflowerBlue" />
+	
+<!-- The Front Line -->
+	<PickUp QuestName="The Front Line" QuestId="13590" GiverName="Lt. Morra Starbreeze" GiverId="32963" />
+	<If Condition="HasQuest(13590) &amp;&amp; !HasQuest(13514)" >
+		<CustomBehavior File="NoCombatMoveTo" X="7395.954" Y="-1445.602" Z="153.2246" />
+	</If>
+	<PickUp QuestName="The Ancients' Ire" QuestId="13514" GiverName="Kerlonian Evershade" GiverId="33176" />
+	<While Condition="HasQuest(13514) &amp;&amp; !IsQuestCompleted(13514)" >
+		<If Condition="!Me.IsOnTransport" >
+			<CustomBehavior File="Vehicles\MountVehOnly" QuestId="13514" VehicleMountId="43742" X="7380.45" Y="-1470.57" Z="150.80" />
+		</If>
+		<CustomBehavior File="SpecificQuests\Kalimdor\Darkshore\13514-TheAncientsIre" />
+	</While>
+	<If Condition="HasQuest(13514) &amp;&amp; IsQuestCompleted(13514)" >
+		<CustomBehavior File="EjectVeh" />
+		<CustomBehavior File="NoCombatMoveTo" X="7395.954" Y="-1445.602" Z="154.84" />
+	</If>
+	<TurnIn QuestName="The Ancients' Ire" QuestId="13514" TurnInName="Kerlonian Evershade" TurnInId="33176" />
+	<TurnIn QuestName="The Front Line" QuestId="13590" TurnInName="Huntress Sandrya Moonfall" TurnInId="33178" />
+
+<!-- Ending The Threat -->
+	<PickUp QuestName="Ending The Threat" QuestId="13515" GiverName="Huntress Sandrya Moonfall" GiverId="33178" />
+	<CustomBehavior File="InteractWith" QuestId="13515" MobId="33178" InteractByGossipOptions="1" InteractByQuestFrameDisposition="Ignore" WaitTime="5000" />
+	<Objective QuestName="Ending The Threat" QuestId="13515" Type="KillMob" MobId="32862" KillCount="1" />
+	<TurnIn QuestName="Ending The Threat" QuestId="13515" TurnInName="Huntress Sandrya Moonfall" TurnInId="33178" />
+
+	<If Condition="HasItem(46318) &amp;&amp; (!HasQuest(13591) &amp;&amp; !IsQuestCompleted(13591))" >
+		<PickUp QuestName="Disturbing Connections" QuestId="13591" GiverType="Item" GiverId="46318" />
+	</If>
+	<If Condition="HasQuest(13591)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="3000" />
+	</If>
+	<TurnIn QuestName="Disturbing Connections" QuestId="13591" TurnInName="Ranger Glynda Nal'Shea" TurnInId="32971" />
+	
+	<If Condition="!IsQuestCompleted(13570)" >
+		<CustomBehavior File="InteractWith" MobId="32959" NonCompeteDistance="0" /><!-- NEEDS XYZ -->
+		<If Condition="Me.Class == WoWClass.Hunter" >
+			<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(3)" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+		<ElseIf Condition="Me.Class == WoWClass.Priest || Me.Class == WoWClass.Mage || Me.Class == WoWClass.Warlock" >
+			<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(2)" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(1)" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+		</Else>
+		</If>
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Mist's Edge Quests" LogColor="CornflowerBlue" />
+
+<!-- The Twilight's Hammer/Twilight Plans -->
+	<PickUp QuestName="The Twilight's Hammer" QuestId="13519" GiverName="Sentinel Lendra" GiverId="32912" />
+	<PickUp QuestName="Twilight Plans" QuestId="13596" GiverName="Sentinel Lendra" GiverId="32912" />
+	<Objective QuestName="Twilight Plans" QuestId="13596" Type="CollectItem" ItemId="44968" CollectCount="6" />
+	<Objective QuestName="The Twilight's Hammer" QuestId="13519" Type="KillMob" MobId="32899" KillCount="1" />
+	<Objective QuestName="The Twilight's Hammer" QuestId="13519" Type="KillMob" MobId="32888" KillCount="10" />
+	<PickUp QuestName="Power Over the Tides" QuestId="13523" GiverName="Moon Priestess Tharill" GiverId="32932" />
+	<CustomBehavior File="InteractWith" QuestId="13523" MobId="32890" InteractByUsingItemId="44975" MobState="Dead" NumOfTimes="100" 
+		NonCompeteDistance="1" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="500" Range="20" MinRange="7" >
+		<HuntingGrounds>
+			<Hotspot X="6933.246" Y="144.752" Z="3.665087" />
+			<Hotspot X="7005.205" Y="135.0523" Z="9.665775" />
+			<Hotspot X="7041.917" Y="189.5441" Z="0.2249664" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="Power Over the Tides" QuestId="13523" TurnInName="Moon Priestess Tharill" TurnInId="32932" />
+	<TurnIn QuestName="The Twilight's Hammer" QuestId="13519" TurnInName="Sentinel Lendra" TurnInId="32912" />
+	<TurnIn QuestName="Twilight Plans" QuestId="13596" TurnInName="Sentinel Lendra" TurnInId="32912" />
+
+	<PickUp QuestName="In Aid of the Refugees" QuestId="13601" GiverName="Sentinel Lendra" GiverId="32912" />
+	<TurnIn QuestName="In Aid of the Refugees" QuestId="13601" TurnInName="Priestess Alinya" TurnInId="33107" />
+
+	<CustomBehavior File="Message" Text="Fast forwarding memory to Auberdine Refugee Camp" LogColor="CornflowerBlue" />
+	
+<!-- Three Hammers to Break/Coaxing the Spirits -->
+	<PickUp QuestName="Three Hammers to Break" QuestId="13543" GiverName="Corvine Moonrise" GiverId="32987" />
+	<PickUp QuestName="Malfurion's Return" QuestId="13573" GiverName="Corvine Moonrise" GiverId="32987" />
+	<PickUp QuestName="Against the Wind" QuestId="13542" GiverName="Sentinel Selarin" GiverId="3694" />
+	<PickUp QuestName="Coaxing the Spirits" QuestId="13547" GiverName="Yalda" GiverId="6887" />
+	<Objective QuestName="Three Hammers to Break" QuestId="13543" Type="KillMob" MobId="32988" KillCount="1" />
+	<CustomBehavior File="InteractWith" QuestId="13547" QuestObjectiveIndex="2" NumOfTimes="10" MobId="33033" InteractByGossipOptions="1"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" X="6436.236" Y="375.3557" Z="3.979487" />
+	<Objective QuestName="Three Hammers to Break" QuestId="13543" Type="KillMob" MobId="32989" KillCount="1" />
+	<Objective QuestName="Three Hammers to Break" QuestId="13543" Type="KillMob" MobId="32990" KillCount="1" />
+
+	<CustomBehavior File="InteractWith" QuestId="13547" QuestObjectiveIndex="1" NumOfTimes="10" MobId="33001" InteractByGossipOptions="1"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" X="6524.696" Y="469.1445" Z="7.188893" />
+	<CustomBehavior File="InteractWith" QuestId="13547" QuestObjectiveIndex="3" NumOfTimes="10" MobId="33035" InteractByGossipOptions="1"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" X="6415.244" Y="524.4853" Z="23.27206" />
+	<CustomBehavior File="InteractWith" QuestId="13547" QuestObjectiveIndex="4" NumOfTimes="10" MobId="33037" InteractByGossipOptions="1"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" X="6329.693" Y="553.7067" Z="12.69338" />
+	<TurnIn QuestName="Coaxing the Spirits" QuestId="13547" TurnInName="Yalda" TurnInId="6887" />
+	<PickUp QuestName="Call Down the Thunder" QuestId="13558" GiverName="Yalda" GiverId="6887" />
+
+<!-- Against the Wind -->
+	<While Condition="HasQuest(13542) &amp;&amp; !IsQuestCompleted(13542)" >
+		<CustomBehavior File="CollectThings" QuestId="13542" MobId="32985" CollectItemId="44868" CollectItemCount="8" NonCompeteDistance="1"
+			HuntingGroundRadius="200" >
+			<Hotspot X="6343.333" Y="422.1218" Z="12.30734" />
+			<Hotspot X="6356.488" Y="502.062" Z="14.10477" />
+			<Hotspot X="6432.915" Y="484.8564" Z="24.15659" />
+		</CustomBehavior>
+		<If Condition="HasQuest(13542) &amp;&amp; !IsQuestCompleted(13542) &amp;&amp; HasItem(44868)" >
+			<RunTo X="6408.583" Y="466.687" Z="17.07074" />
+			<While Condition="HasItem(44868) &amp;&amp; !IsQuestCompleted(13542)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(44868)" WaitTime="1000" />
+			</While>
+		</If>
+	</While>
+	
+<!-- Call Down the Thunder -->
+	<CustomBehavior File="InteractWith" QuestId="13558" MobId="194145" NonCompeteDistance="0" WaitTime="45000" 
+		ProactiveCombatStrategy="ClearMobsTargetingUs" X="6455.277" Y="653.5797" Z="21.84925" />
+	<Objective QuestName="Call Down the Thunder" QuestId="13558" Type="CollectItem" ItemId="44929" CollectCount="1" />
+
+<!-- The Last Refugee -->
+	<If Condition="!HasQuest(13605) &amp;&amp; !IsQuestCompleted(13605)" >
+		<CustomBehavior File="Message" Text="Picking up The Last Refugee quest. May take a minute, as NPC may be in motion." LogColor="CornflowerBlue" />
+	</If>
+	<PickUp QuestName="The Last Refugee" QuestId="13605" GiverName="Archaeologist Hollee" GiverId="33232" />
+	<CustomBehavior File="EscortGroup" QuestId="13605" EscortNpcId="33232" EscortCountMax="1" EscortMaxFollowDistance="5" />
+	
+	<TurnIn QuestName="The Last Refugee" QuestId="13605" TurnInName="Elisa Steelhand" TurnInId="33231" />
+	<TurnIn QuestName="Three Hammers to Break" QuestId="13543" TurnInName="Corvine Moonrise" TurnInId="32987" />
+	<TurnIn QuestName="Call Down the Thunder" QuestId="13558" TurnInName="Corvine Moonrise" TurnInId="32987" />
+	<TurnIn QuestName="Against the Wind" QuestId="13542" TurnInName="Sentinel Selarin" TurnInId="3694" />
+	
+	<If Condition="Me.LevelFraction &gt;= 20" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Malfurion Stormrage Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn QuestName="Malfurion's Return" QuestId="13573" TurnInName="Malfurion Stormrage" TurnInId="33091" />
+	
+	<PickUp QuestName="The Land is in Their Blood" QuestId="13575" GiverName="Malfurion Stormrage" GiverId="33091" />
+	<PickUp QuestName="The Last Wildkin" QuestId="13577" GiverName="Malfurion Stormrage" GiverId="33091" />
+	<PickUp QuestName="Protector of Ameth'Aran" QuestId="13579" GiverName="Malfurion Stormrage" GiverId="33091" />
+	
+	<TurnIn QuestName="The Last Wildkin" QuestId="13577" TurnInName="Aroom" TurnInId="33119" />
+
+<!-- Aroom's Farewell -->
+	<PickUp QuestName="Aroom's Farewell" QuestId="13578" GiverName="Aroom" GiverId="33119" />
+	<Objective QuestName="Aroom's Farewell" QuestId="13578" Type="CollectItem" ItemId="44960" CollectCount="8" />
+	<TurnIn QuestName="Aroom's Farewell" QuestId="13578" TurnInName="Aroom" TurnInId="33119" />
+
+<!-- Elune's Fire -->
+	<PickUp QuestName="Elune's Fire" QuestId="13582" GiverName="Aroom" GiverId="33119" />
+	<Objective QuestName="Elune's Fire" QuestId="13582" Type="CollectItem" ItemId="46692" CollectCount="1" />
+	<TurnIn QuestName="Elune's Fire" QuestId="13582" TurnInName="Aroom" TurnInId="33119" />
+	
+	<PickUp QuestName="The Wildkin's Oath" QuestId="13583" GiverName="Aroom" GiverId="33119" />
+	<TurnIn QuestName="The Wildkin's Oath" QuestId="13583" TurnInName="Malfurion Stormrage" TurnInId="33091" />
+	
+	<TurnIn QuestName="Protector of Ameth'Aran" QuestId="13579" TurnInName="Selenn" TurnInId="33112" />
+	
+	<If Condition="Me.LevelFraction &gt;= 20" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+
+<!-- Calming the Earth -->
+	<PickUp QuestName="Calming the Earth" QuestId="13584" GiverName="Selenn" GiverId="33112" />
+	<Objective QuestName="Calming the Earth" QuestId="13584" Type="KillMob" MobId="33083" KillCount="8" />
+	<TurnIn QuestName="Calming the Earth" QuestId="13584" TurnInName="Selenn" TurnInId="33112" />
+	
+	<PickUp QuestName="Sworn to Protect" QuestId="13585" GiverName="Selenn" GiverId="33112" />
+	<TurnIn QuestName="Sworn to Protect" QuestId="13585" TurnInName="Malfurion Stormrage" TurnInId="33091" />
+	
+	<TurnIn QuestName="The Land Is in Their Blood" QuestId="13575" TurnInName="Elder Brownpaw" TurnInId="33117" />
+
+<!-- Mutual Aid -->
+	<PickUp QuestName="Mutual Aid" QuestId="13576" GiverName="Elder Brownpaw" GiverId="33117" />
+	<CustomBehavior File="InteractWith" QuestId="13576" MobId="32999" InteractByUsingItemId="44959" MobState="Dead" NumOfTimes="100" >
+		<HuntingGrounds>
+			<Hotspot X="5667.675" Y="395.2835" Z="5.344266" />
+			<Hotspot X="5611.163" Y="427.3829" Z="3.761294" />
+			<Hotspot X="5527.169" Y="415.5703" Z="2.626416" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="Mutual Aid" QuestId="13576" TurnInName="Elder Brownpaw" TurnInId="33117" />
+	
+	<If Condition="Me.LevelFraction &gt;= 20" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+
+<!-- Soothing the Elements -->
+	<PickUp QuestName="Soothing the Elements" QuestId="13580" GiverName="Elder Brownpaw" GiverId="33117" />
+	<If Condition="HasQuest(13580) &amp;&amp; !IsQuestCompleted(13580)" >
+		<RunTo X="5526.241" Y="448.7385" Z="34.91965" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46546)" WaitTime="3000" />
+		<CustomBehavior File="EscortGroup" QuestId="13580" EscortNpcId="34367" EscortCountMax="1" EscortMaxFightDistance="5" EscortMaxFollowDistance="3" />
+	</If>
+	<TurnIn QuestName="Soothing the Elements" QuestId="13580" TurnInName="Elder Brownpaw" TurnInId="33117" />
+	
+	<PickUp QuestName="The Blackwood Pledge" QuestId="13581" GiverName="Elder Brownpaw" GiverId="33117" />
+	<TurnIn QuestName="The Blackwood Pledge" QuestId="13581" TurnInName="Malfurion Stormrage" TurnInId="33091" />
+	
+	<PickUp QuestName="The Emerald Dream" QuestId="13586" GiverName="Malfurion Stormrage" GiverId="33091" />
+	<If Condition="HasQuest(13586)" >
+		<CustomBehavior File="InteractWith" MobId="195071" NumOfTimes="100" TerminateWhen="Me.HasAura(65409)" ProactiveCombatStrategy="ClearMobsTargetingUs" X="5765.291" Y="-154.3826" Z="13.77099" />
+		<TurnIn QuestName="The Emerald Dream" QuestId="13586" TurnInName="Thessera" TurnInId="33166" />
+	</If>
+	
+	<PickUp QuestName="The Waking Nightmare" QuestId="13587" GiverName="Thessera" GiverId="33166" />
+	<Objective QuestName="The Waking Nightmare" QuestId="13587" Type="CollectItem" ItemId="46695" CollectCount="1" />
+	<TurnIn QuestName="The Waking Nightmare" QuestId="13587" TurnInName="Thessera" TurnInId="33166" />
+	
+	<PickUp QuestName="Leaving The Dream" QuestId="13940" GiverName="Thessera" GiverId="33166" />
+	<TurnIn QuestName="Leaving The Dream" QuestId="13940" TurnInName="Malfurion Stormrage" TurnInId="33091" />
+
+<!-- The Eye of All Storms -->
+	<PickUp QuestName="The Eye of All Storms" QuestId="13588" GiverName="Malfurion Stormrage" GiverId="33091" />
+	<If Condition="HasQuest(13588) &amp;&amp; !IsQuestCompleted(13588)" >
+		<CustomBehavior File="InteractWith" MobId="34401" TerminateWhen="Me.IsOnTransport" X="5900.882" Y="190.987" Z="62.61746" />
+		<CustomBehavior File="13588-EyeofAllStorms" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	
+	<TurnIn QuestName="The Eye of All Storms" QuestId="13588" TurnInName="Malfurion Stormrage" TurnInId="33091" />
+	
+	<PickUp QuestName="Mounting the Offensive" QuestId="13902" GiverName="Malfurion Stormrage" GiverId="33091" />
+	<TurnIn QuestName="Mounting the Offensive" QuestId="13902" TurnInName="Balren of the Claw" TurnInId="34402" />
+
+	<CustomBehavior File="Message" Text="Fast forwarding memory to the Grove of the Ancients" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Consumed" QuestId="13881" GiverName="Kathrena Winterwisp" GiverId="34301" />
+	<PickUp QuestName="What's Happening to the Blackwood Furbolg?" QuestId="13525" GiverName="Foriel Broadleaf" GiverId="33250" />
+	<PickUp QuestName="Leave No Tracks" QuestId="13892" GiverName="Barlen of the Claw" GiverId="34402" />
+
+<!-- Consumed -->
+	<Objective QuestName="Consumed" QuestId="13881" Type="KillMob" MobId="34302" KillCount="6" />
+	<If Condition="HasQuest(13881) &amp;&amp; !IsObjectiveComplete(2, 13881)" >
+		<RunTo X="4806.347" Y="102.7527" Z="41.55762" />
+	</If>
+	<TurnIn QuestName="Consumed" QuestId="13881" TurnInName="Kathrena Winterwisp" TurnInId="34301" />
+
+<!-- The Seeds of Life -->
+	<PickUp QuestName="The Seeds of Life" QuestId="13882" GiverName="Kathrena Winterwisp" GiverId="34301" />
+	<CustomBehavior File="InteractWith" QuestId="13882" QuestObjectiveIndex="1" MobId="33072" InteractByGossipOptions="1"
+		X="4994.493" Y="83.08939" Z="52.74683" />
+	<While Condition="HasQuest(13882) &amp;&amp; !IsObjectiveComplete(3, 13882)" >
+		<If Condition="!IsObjectiveComplete(3, 13882)" >
+			<RunTo X="4815.529" Y="303.6431" Z="44.46046" />
+			<If Condition="ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; u.Entry == 34306 &amp;&amp; u.Distance &lt;= 20)" >
+			<CustomBehavior File="InteractWith" QuestId="13882" QuestObjectiveIndex="3" MobId="34306" ProactiveCombatStrategy="ClearMobsTargetingUs" 
+				Range="5.8" CollectionDistance="4" />
+			</If>
+		</If>
+		<If Condition="!IsObjectiveComplete(3, 13882)" >
+			<RunTo X="4864.342" Y="333.5175" Z="35.20513" />
+			<If Condition="ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; u.Entry == 34306 &amp;&amp; u.Distance &lt;= 20)" >
+			<CustomBehavior File="InteractWith" QuestId="13882" QuestObjectiveIndex="3" MobId="34306" ProactiveCombatStrategy="ClearMobsTargetingUs" 
+				Range="5.8" CollectionDistance="4" />
+			</If>
+		</If>
+	</While>
+	<CustomBehavior File="InteractWith" QuestId="13882" QuestObjectiveIndex="2" MobId="195021" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="200" >
+		<HuntingGrounds>
+			<Hotspot X="4749.652" Y="617.3932" Z="0.2123956" />
+			<Hotspot X="4808.897" Y="555.4171" Z="0.1386139" />
+			<Hotspot X="4880.267" Y="572.2847" Z="2.938054" />
+			<Hotspot X="4953.552" Y="566.5378" Z="0.2170407" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="The Seeds of Life" QuestId="13882" TurnInName="Kathrena Winterwisp" TurnInId="34301" />
+
+<!-- An Ounce of Prevention -->
+	<PickUp QuestName="An Ounce of Prevention" QuestId="13925" GiverName="Kathrena Winterwisp" GiverId="34301" />
+	<CustomBehavior File="InteractWith" QuestId="13925" MobId="2165" MobId2="34318" MobState="Alive" InteractByUsingItemId="46363" >
+		<HuntingGrounds>
+			<Hotspot X="4944.12" Y="377.2256" Z="26.64225" />
+			<Hotspot X="4980.869" Y="211.8967" Z="38.89149" />
+			<Hotspot X="5144.118" Y="215.6196" Z="33.43438" />
+			<Hotspot X="5055.976" Y="368.8969" Z="31.93844" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="An Ounce of Prevention" QuestId="13925" TurnInName="Kathrena Winterwisp" TurnInId="34301" />
+
+<!-- In Defense of Darkshore -->
+	<PickUp QuestName="In Defense of Darkshore" QuestId="13885" GiverName="Kathrena Winterwisp" GiverId="34301" />
+	<While Condition="HasQuest(13885) &amp;&amp; !IsQuestCompleted(13885)" >
+		<CustomBehavior File="InteractWith" QuestId="13885" MobId="34392" TerminateWhen="Me.IsOnTransport" InteractByGossipOptions="1" 
+			NonCompeteDistance="0" WaitTime="6000" X="4976.846" Y="143.5329" Z="51.2189" />
+		<CustomBehavior File="13885-DefenseOfDarkshore" />
+		<While Condition="HasQuest(13885) &amp;&amp; IsQuestCompleted(13885) &amp;&amp; Me.IsOnTransport" />
+	</While>
+	<TurnIn QuestName="In Defense of Darkshore" QuestId="13885" TurnInName="Kathrena Winterwisp" TurnInId="34301" />
+
+<!-- The Devourer of Darkshore -->
+	<PickUp QuestName="The Devourer of Darkshore" QuestId="13891" GiverName="Kathrena Winterwisp" GiverId="34301" />
+	<If Condition="HasQuest(13891) &amp;&amp; !IsQuestCompleted(13891)" >
+		<RunTo X="4827.251" Y="97.18374" Z="49.14325" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46370)" />
+		<Objective QuestName="The Devourer of Darkshore" QuestId="13891" Type="KillMob" MobId="34331" KillCount="1" />
+	</If>
+	<TurnIn QuestName="The Devourer of Darkshore" QuestId="13891" TurnInName="Kathrena Winterwisp" TurnInId="34301" />
+
+	<TurnIn QuestName="What's Happening to the Blackwood Furbolg?" QuestId="13525" TurnInName="Elder Brolg" TurnInId="32967" />
+
+<!-- The Bear's Paw -->
+	<PickUp QuestName="The Bear's Paw" QuestId="13526" GiverName="Elder Brolg" GiverId="32967" />
+	<Objective QuestName="The Bear's Paw" QuestId="13526" Type="CollectItem" ItemId="44850" CollectCount="8" />
+	<TurnIn QuestName="The Bear's Paw" QuestId="13526" TurnInName="Elder Brolg" TurnInId="32967" />
+
+<!-- The Bear's Blessing -->
+	<PickUp QuestName="The Bear's Blessing" QuestId="13544" GiverName="Elder Brolg" GiverId="32967" />
+	<If Condition="!HasItem(44886)" >
+		<CustomBehavior File="CollectThings" QuestId="13544" MobId="32997" CollectItemId="44886" CollectItemCount="1" 
+			HuntingGroundRadius="200" NonCompeteDistance="1" >
+			<Hotspot X="4824.984" Y="67.99879" Z="53.06134" />
+			<Hotspot X="4845.313" Y="137.359" Z="51.23596" />
+		</CustomBehavior>
+	</If>
+	<If Condition="HasItem(44886) &amp;&amp; !IsQuestCompleted(13544)" >
+		<RunTo X="4914.678" Y="89.8423" Z="53.88358" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(44888)" />
+	</If>
+	<TurnIn QuestName="The Bear's Blessing" QuestId="13544" TurnInName="Elder Brolg" TurnInId="32967" />
+
+<!-- Cleansing the Afflicted/Jadefire Braziers -->
+	<PickUp QuestName="Cleansing the Afflicted" QuestId="13545" GiverName="Elder Brolg" GiverId="32967" />
+	<PickUp QuestName="Jadefire Braziers" QuestId="13572" GiverName="Gren Tornfur" GiverId="32968" />
+	<CustomBehavior File="InteractWith" QuestId="13572" MobId="194150" NonCompeteDistance="0" NumOfTimes="1000" >
+		<HuntingGrounds>
+			<Hotspot X="4637.255" Y="156.8403" Z="58.4544" />
+			<Hotspot X="4575.136" Y="133.0646" Z="58.84632" />
+			<Hotspot X="4593.315" Y="92.7533" Z="67.93819" />
+			<Hotspot X="4535.596" Y="87.06554" Z="65.9072" />
+			<Hotspot X="4487.177" Y="67.60831" Z="71.93296" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<CustomBehavior File="InteractWith" QuestId="13545" MobId="33044" MobId2="33043" InteractByUsingItemId="44889"
+		NonCompeteDistance="0" MobState="Alive" Range="20" MinRange="15" NumOfTimes="1000"	>
+		<HuntingGrounds>
+			<Hotspot X="4637.255" Y="156.8403" Z="58.4544" />
+			<Hotspot X="4575.136" Y="133.0646" Z="58.84632" />
+			<Hotspot X="4593.315" Y="92.7533" Z="67.93819" />
+			<Hotspot X="4535.596" Y="87.06554" Z="65.9072" />
+			<Hotspot X="4487.177" Y="67.60831" Z="71.93296" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="Cleansing the Afflicted" QuestId="13545" TurnInName="Elder Brolg" TurnInId="32967" />
+	<TurnIn QuestName="Jadefire Braziers" QuestId="13572" TurnInName="Gren Tornfur" TurnInId="32968" />
+
+<!-- The Defiler -->
+	<PickUp QuestName="The Defiler" QuestId="13546" GiverName="Elder Brolg" GiverId="32967" />
+	<Objective QuestName="The Defiler" QuestId="13546" Type="KillMob" MobId="32996" KillCollect="1" />
+	<TurnIn QuestName="The Defiler" QuestId="13546" TurnInName="Elder Brolg" TurnInId="32967" />
+
+<!-- Leave No Tracks -->
+	<While Condition="HasQuest(13892) &amp;&amp; !IsQuestCompleted(13892)" >
+		<CustomBehavior File="UserSettings" UseMount="False" PullDistance="0" />
+		<If Condition="!Me.HasAura(65426)" >
+			<RunTo X="4630.168" Y="334.3206" Z="18.99417" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46696)" />
+		</If>
+		<RunTo X="4581.678" Y="387.8666" Z="19.05211" />
+		<While Condition="!IsQuestCompleted(13892)" />
+	</While>
+	
+	<If Condition="HasQuest(13892) &amp;&amp; IsQuestCompleted(13892)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="13892" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+	</If>
+
+<!-- Stepping Up Surveillance -->
+	<While Condition="HasQuest(13948) &amp;&amp; !IsQuestCompleted(13948)" >
+		<CustomBehavior File="UserSettings" UseMount="False" PullDistance="0" />
+		<If Condition="!Me.HasAura(65426)" >
+			<RunTo X="4514.453" Y="332.7841" Z="59.00104" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46696)" WaitTime="1000" />
+		</If>
+		<RunTo X="4514.453" Y="332.7841" Z="59.00104" />
+		<If Condition="!Me.HasAura(65426)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46696)" WaitTime="1000" />
+		</If>
+		<RunTo X="4565.333" Y="435" Z="73.83829" />
+		<While Condition="!IsQuestCompleted(13948)" />
+		<CustomBehavior File="UserSettings" UseMount="True" PullDistance="25" />
+	</While>
+	<If Condition="HasQuest(13948) &amp;&amp; IsQuestCompleted(13948)" >
+		<CustomBehavior File="NoCombatMoveTo" X="4986.774" Y="90.19209" Z="52.8685" />
+	</If>
+	<TurnIn QuestName="Stepping Up Surveillance" QuestId="13948" TurnInName="Barlen of the Claw" TurnInId="34402" />
+
+	<CustomBehavior File="Message" Text="Fast forwarding memory to Remtravel's Excavation" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Unearthed Knowledge" QuestId="13896" GiverName="Larien" GiverId="34404" />
+	<TurnIn QuestName="Unearthed Knowledge" QuestId="13896" TurnInName="Archaeologist Groff" TurnInId="34340" />
+	
+	<PickUp QuestName="Sweeping Clean the Ruins" QuestId="13907" GiverName="Archaeologist Groff" GiverId="34340" />
+	<PickUp QuestName="Soggoth and Kronn" QuestId="13893" GiverName="Archaeologist Groff" GiverId="34340" />
+	<PickUp QuestName="Swamped Secrets" QuestId="13912" GiverName="Jr. Archaeologist Ferd" GiverId="34342" />
+	<PickUp QuestName="The Absent-Minded Prospector" QuestId="13911" GiverName="Prospector Remtravel" GiverId="34343" />
+	
+<!-- The Absent-Minded Prospector -->
+	<CustomBehavior File="EscortGroup" QuestId="13911" EscortNpcId="34343" CombatMaxEngagementRangeDistance="15" 
+		EscortMaxFollowDistance="10" EscortCountMax="1" />
+	<TurnIn QuestName="The Absent-Minded Prospector" QuestId="13911" TurnInName="Jr. Archaeologist Ferd" TurnInId="34342" />
+
+<!-- Swamped Secrets/Sweeping Clean the Ruins -->
+	<Objective QuestName="Swamped Secrets" QuestId="13912" Type="CollectItem" ItemId="46386" CollectCount="1" />
+	<Objective QuestName="Sweeping Clean the Ruins" QuestId="13907" Type="KillMob" MobId="34344" KillCount="10" />
+	<TurnIn QuestName="Sweeping Clean the Ruins" QuestId="13907" TurnInName="Archaeologist Groff" TurnInId="34340" />
+	<TurnIn QuestName="Swamped Secrets" QuestId="13912" TurnInName="Jr. Archaeologist Ferd" TurnInId="34342" />
+
+<!-- The Titan's Terminal/Got Some Flotsam? -->
+	<PickUp QuestName="The Titan's Terminal" QuestId="13918" GiverName="Jr. Archaeologist Ferd" GiverId="34342" />
+	<PickUp QuestName="Got Some Flotsam?" QuestId="13909" GiverName="Archaeologist Groff" GiverId="34340" />
+	<Objective QuestName="Got Some Flotsam?" QuestId="13909" Type="CollectItem" ItemId="46384" CollectCount="5" />
+	<While Condition="HasQuest(13918) &amp;&amp; !IsQuestCompleted(13918)" >
+		<If Condition="!IsQuestCompleted(13918)" >
+			<RunTo X="4714.408" Y="656.4237" Z="2.603395" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46388)" WaitTime="12000" />
+			<CustomBehavior File="CollectThings" QuestId="13918" MobId="195055" CollectItemId="46702" CollectItemCount="5"
+				CollectUntil="NoTargetsInArea" HuntingGroundRadius="40" NonCompeteDistance="1" />
+			<If Condition="GetItemCount(46702) &gt;= 5" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46702)" WaitTime="1000" />
+			</If>
+		</If>
+		<If Condition="!IsQuestCompleted(13918)" >
+			<RunTo X="4649.059" Y="698.8197" Z="4.512846" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46388)" WaitTime="12000" />
+			<CustomBehavior File="CollectThings" QuestId="13918" MobId="195055" CollectItemId="46702" CollectItemCount="5"
+				CollectUntil="NoTargetsInArea" HuntingGroundRadius="40" NonCompeteDistance="1" />
+			<If Condition="GetItemCount(46702) &gt;= 5" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46702)" WaitTime="1000" />
+			</If>
+		</If>
+		<If Condition="!IsQuestCompleted(13918)" >
+			<RunTo X="4607.306" Y="688.6744" Z="12.82716" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46388)" WaitTime="12000" />
+			<CustomBehavior File="CollectThings" QuestId="13918" MobId="195055" CollectItemId="46702" CollectItemCount="5"
+				CollectUntil="NoTargetsInArea" HuntingGroundRadius="40" NonCompeteDistance="1" />
+			<If Condition="GetItemCount(46702) &gt;= 5" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46702)" WaitTime="1000" />
+			</If>
+		</If>
+	</While>
+	<TurnIn QuestName="Got Some Flotsam?" QuestId="13909" TurnInName="Archaeologist Groff" TurnInId="34340" />
+	<TurnIn QuestName="The Titan's Terminal" QuestId="13918" TurnInName="Jr. Archaeologist Ferd" TurnInId="34342" />
+
+<!-- A New Home -->
+	<PickUp QuestName="A New Home" QuestId="13910" GiverName="Archaeologist Groff" GiverId="34340" />
+	<If Condition="HasQuest(13910) &amp;&amp; !IsQuestCompleted(13910)" >
+		<RunTo X="4690.229" Y="691.5045" Z="1.446722" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46385)" />
+	</If>
+	<TurnIn QuestName="A New Home" QuestId="13910" TurnInName="Archaeologist Groff" TurnInId="34340" />
+	
+	<TurnIn QuestName="Soggoth and Kronn" QuestId="13893" TurnInName="Larien" TurnInId="34404" />
+
+	<CustomBehavior File="Message" Text="Fast forwarding memory to Nazj'vel" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="The Slumbering Ancients" QuestId="13895" GiverName="Onu" GiverId="33072" />
+	<TurnIn QuestName="The Slumbering Ancients" QuestId="13895" TurnInName="Aros" TurnInId="34446" />
+	
+	<PickUp QuestName="Naga In Our Midst" QuestId="13953" GiverName="Darkscale Assassin" GiverId="34498" />
+	<TurnIn QuestName="Naga In Our Midst" QuestId="13953" TurnInName="Balren of the Claw" TurnInId="34402" />
+
+<!-- The Tides Turn Against Us/The Darkscale Warlord -->
+	<PickUp QuestName="The Darkscale Warlord" QuestId="13899" GiverName="Balren of the Claw" GiverId="34402" />
+	<PickUp QuestName="The Tides Turn Against Us" QuestId="13898" GiverName="Felros" GiverId="34403" />
+	<If Condition="HasQuest(13899)" >
+		<CustomBehavior File="InteractWith" MobId="34423" MobState="Dead" X="4543.063" Y="930.6397" Z="-37.41565" />
+		<TurnIn QuestName="The Darkscale Warlord" QuestId="13899" TurnInName="Warlord Wrathspine" TurnInId="34423" />
+		<PickUp QuestName="The Offering to Azshara" QuestId="13900" GiverName="Warlord Wrathspine" GiverId="34423" />
+	</If>
+	
+	<If Condition="!HasQuest(13900) &amp;&amp; !IsQuestCompleted(13900)" >
+		<CustomBehavior File="InteractWith" MobId="34423" MobState="Dead" X="4543.063" Y="930.6397" Z="-37.41565" />
+		<PickUp QuestName="The Offering to Azshara" QuestId="13900" GiverName="Warlord Wrathspine" GiverId="34423" />
+	</If>
+
+<!-- The Offering to Azshara -->
+	<CustomBehavior File="CollectThings" QuestId="13900" MobId="34415" MobState="Alive" CollectUntil="QuestComplete" NonCompeteDistance="1" X="4597.776" Y="891.5303" Z="40.06009" />
+	<If Condition="HasQuest(13900) &amp;&amp; IsQuestCompleted(13900)" >
+		<CustomBehavior File="WaitTimer" WaitTime="50000" />
+		<CustomBehavior File="InteractWith" MobId="34422" />
+		<If Condition="Me.Class == WoWClass.Hunter || Me.Class == WoWClass.Rogue || Me.Class == WoWClass.Monk || Me.Class == WoWClass.Druid" >
+			<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(4)" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+		<ElseIf Condition="Me.Class == WoWClass.Priest || Me.Class == WoWClass.Mage || Me.Class == WoWClass.Warlock" >
+			<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(1)" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+		</ElseIf>
+		<ElseIf Condition="Me.Class == WoWClass.Warrior || Me.Class == WoWClass.Paladin" >
+			<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(3)" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(4)" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+		</Else>
+		</If>
+	</If>
+	
+	<Objective QuestName="The Tides Turn Against Us" QuestId="13898" Type="KillMob" MobId="33079" KillCount="8" />
+	<TurnIn QuestName="The Tides Turn Against Us" QuestId="13898" TurnInName="Felros" TurnInId="34403" />
+	
+	<CustomBehavior File="Message" Text="Darkshore Quests Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\KalimdorMemBlock [Brodie]" />
+	
+</QuestOrder>
+</HBProfile>

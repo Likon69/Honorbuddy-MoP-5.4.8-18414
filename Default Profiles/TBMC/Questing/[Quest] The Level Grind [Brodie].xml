@@ -1,0 +1,357 @@
+<HBProfile>
+	
+	<Name>The Complete WoW Leveling Experience ($Rev$)</Name>
+	<UseMount>True</UseMount>
+	<TargetingDistance>30</TargetingDistance>
+	
+<QuestOrder>
+
+	<ClearVendor />
+	<CustomBehavior File="RunMacro" Macro="/script SetCVar('AutoLootDefault', 1)" WaitTime="1000" />
+	<CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+	<CustomBehavior File="UserSettings" AutoEquip="False" SelectTalents="True" />
+	
+	<If Condition="(Me.LevelFraction &gt;= 60) &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue == 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="[Quest] Mounts [Brodie]" />
+	</If>
+	
+	<If Condition="(Me.LevelFraction &gt;= 40) &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue == 75 &amp;&amp; Me.Gold &gt;= 50" >
+		<CustomBehavior File="LoadProfile" ProfileName="[Quest] Mounts [Brodie]" />
+	</If>
+	
+	<If Condition="(Me.LevelFraction &gt;= 20) &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue == 0 &amp;&amp; Me.Gold &gt;= 4" >
+		<CustomBehavior File="LoadProfile" ProfileName="[Quest] Mounts [Brodie]" />
+	</If>
+	
+	<If Condition="Me.Class == WoWClass.DeathKnight &amp;&amp; (!IsQuestCompleted(13189) || !IsQuestCompleted(13188))" >
+		<CustomBehavior File="LoadProfile" ProfileName="Northrend\[Quest] DK Start [Brodie]" />
+	</If>
+	
+	<CustomBehavior File="UserSettings" AutoEquip="True" />
+	
+	<If Condition="Me.IsHorde" >
+		<If Condition="Me.LevelFraction &gt;= 58 &amp;&amp; Me.LevelFraction &lt; 70" >
+			<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+				<CustomBehavior File="FlyTo" X="1773.506" Y="-4327.022" Z="-8.118139" />
+				<CustomBehavior File="InteractWith" MobId="195142" NonCompeteDistance="0" WaitTime="5000" X="1773.506" Y="-4327.022" Z="-8.118139" />
+			</If>
+			<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+				<CustomBehavior File="FlyTo" X="-11899.66" Y="-3208.164" Z="-14.73684" />
+				<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+				<CustomBehavior File="WaitTimer" WaitTime="10000" />
+			</If>
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 65" >
+			<CustomBehavior File="LoadProfile" ProfileName="Outlands\[Quest] Nagrand H [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 63" >
+			<CustomBehavior File="LoadProfile" ProfileName="Outlands\[Quest] Terokkar H [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 61" >
+			<CustomBehavior File="LoadProfile" ProfileName="Outlands\[Quest] Zangarmarsh H [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 58" >
+			<CustomBehavior File="LoadProfile" ProfileName="Outlands\[Quest] Hellfire H [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 40 &amp;&amp; Me.LevelFraction &lt; 58" >
+			<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+				<CustomBehavior File="UseTransport" TransportId="164871"
+					WaitAtX="1841.534" WaitAtY="-4392.502" WaitAtZ="135.2313"
+					TransportStartX="1833.509" TransportStartY="-4391.543" TransportStartZ="152.7679"
+					TransportEndX="2062.376" TransportEndY="292.998" TransportEndZ="114.973"
+					StandOnX="1834.745" StandOnY="-4386.24" StandOnZ="134.994"
+					GetOffX="2066.712" GetOffY="286.1477" GetOffZ="97.03135" /> <!-- Zeppelin to Tirisfal Glades -->
+			</If>
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 54" >
+			<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Blasted Lands H [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 52" >
+			<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Swamp of Sorrows [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 49" >
+			<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Burning Steppes H [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 47" >
+			<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Searing Gorge [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 45" >
+			<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Badlands [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 40" >
+			<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Eastern Plaguelands [Brodie]" />
+		</If>
+		<If Condition="Me.Race == WoWRace.Orc || Me.Race == WoWRace.Troll || Me.Race == WoWRace.Pandaren ||
+						Me.Race == WoWRace.Goblin || Me.Race == WoWRace.Tauren" >
+			<If Condition="Me.LevelFraction &gt;= 35" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Dustwallow Marsh H [Brodie]" />
+			</If>
+			<If Condition="Me.LevelFraction &gt;= 30" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Southern Barrens H [Brodie]" />
+			</If>
+			<If Condition="Me.LevelFraction &gt;= 25" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Stonetalon Mountains H [Brodie]" />
+			</If>
+			<If Condition="Me.LevelFraction &gt;= 20" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Ashenvale H [Brodie]" />
+			</If>
+		</If>
+		<If Condition="Me.Race == WoWRace.Goblin || Me.Race == WoWRace.Tauren" >
+			<If Condition="(Me.Race == WoWRace.Tauren &amp;&amp; Me.LevelFraction &gt;= 10 &amp;&amp; IsQuestCompleted(26397)) ||
+							(Me.Race == WoWRace.Goblin &amp;&amp; Me.LevelFraction &gt;= 10 &amp;&amp; IsQuestCompleted(25267))" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Azshara [Brodie]" />
+			</If>
+			<If Condition="Me.Race == WoWRace.Tauren &amp;&amp; Me.LevelFraction &gt;= 4 &amp;&amp; IsQuestCompleted(24215)" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Mulgore [Brodie]" />
+			</If>
+			<If Condition="Me.Race == WoWRace.Goblin" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\Starter\[Quest] Goblin Start [Brodie]" />
+			</If>
+			<If Condition="Me.Race == WoWRace.Tauren" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\Starter\[Quest] Tauren Start [Brodie]" />
+			</If>
+		</If>
+		<If Condition="Me.Race == WoWRace.Orc || Me.Race == WoWRace.Troll || Me.Race == WoWRace.Pandaren" >
+			<If Condition="Me.Race == WoWRace.Pandaren &amp;&amp; IsQuestCompleted(31014)" >
+				<If Condition="Me.LevelFraction &gt;= 10" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Northern Barrens [Brodie]" />
+				</If>
+			</If>
+			<If Condition="Me.LevelFraction &gt;= 10" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Northern Barrens [Brodie]" />
+			</If>
+			<If Condition="Me.Race == WoWRace.Orc &amp;&amp; Me.LevelFraction &gt;= 4 &amp;&amp; IsQuestCompleted(25133)" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Durotar [Brodie]" />
+			</If>
+			<If Condition="Me.Race == WoWRace.Troll &amp;&amp; Me.LevelFraction &gt;= 4 &amp;&amp; IsQuestCompleted(25073)" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Durotar [Brodie]" />
+			</If>
+			<If Condition="Me.Race == WoWRace.Orc" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\Starter\[Quest] Orc Start [Brodie]" />
+			</If>
+			<If Condition="Me.Race == WoWRace.Troll" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\Starter\[Quest] Troll Start [Brodie]" />
+			</If>
+		</If>
+		<If Condition="Me.Race == WoWRace.Undead || Me.Race == WoWRace.BloodElf" >
+			<If Condition="Me.LevelFraction &gt;= 35" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Western Plaguelands [Brodie]" />
+			</If>
+			<If Condition="Me.LevelFraction &gt;= 30" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Hinterlands H [Brodie]" />
+			</If>
+			<If Condition="Me.LevelFraction &gt;= 26" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Arathi Highlands H [Brodie]" />
+			</If>
+			<If Condition="Me.Race == WoWRace.Undead" >
+				<If Condition="Me.LevelFraction &gt;= 20" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Hillsbrad Foothills H [Brodie]" />
+				</If>
+				<If Condition="Me.LevelFraction &gt;= 10" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Silverpine Forest [Brodie]" />
+				</If>
+				<If Condition="Me.LevelFraction &gt;= 4 &amp;&amp; (!HasQuest(24972) &amp;&amp; IsQuestCompleted(24972))" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Tirisfal Glades [Brodie]" />
+				</If>
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\Starter\[Quest] Undead Start [Brodie]" />
+			</If>
+			<If Condition="Me.Race == WoWRace.BloodElf" >
+				<If Condition="Me.LevelFraction &gt;= 20 &amp;&amp; (!HasQuest(9621) &amp;&amp; IsQuestCompleted(9621))" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Hillsbrad Foothills H [Brodie]" />
+				</If>
+				<If Condition="Me.LevelFraction &gt;= 10" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Ghostlands [Brodie]" />
+				</If>
+				<If Condition="Me.LevelFraction &gt;= 4 &amp;&amp; (!HasQuest(8350) &amp;&amp; IsQuestCompleted(8350))" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Eversong Woods [Brodie]" />
+				</If>
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\Starter\[Quest] Blood Elf Start [Brodie]" />
+			</If>
+		</If>
+	</If>
+
+	<If Condition="Me.IsAlliance" >
+		<If Condition="Me.LevelFraction &gt;= 58 &amp;&amp; Me.LevelFraction &lt; 70" >
+			<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+				<CustomBehavior File="FlyTo" X="-3997.277" Y="-4723.235" Z="4.2373507" />
+				<CustomBehavior File="UseTransport" TransportId="176231"
+					WaitAtX="-3997.277" WaitAtY="-4723.235" WaitAtZ="4.2373507" 
+					TransportStartX="-4016.39" TransportStartY="-4740.588" TransportStartZ="0.03803937"
+					TransportEndX="-3872.35" TransportEndY="-639.944" TransportEndZ="-0.02619897"
+					StandOnX="-4009.505" StandOnY="-4738.07" StandOnZ="6.021125"
+					GetOffX="-3861.013" GetOffY="-656.758" GetOffZ="5.279493" />
+			</If>
+			<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+				<If Condition="Me.ZoneId == 1519" >
+					<CustomBehavior File="InteractWith" MobId="195141" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+						X="-9005.213" Y="868.702" Z="129.6925" />
+				</If>
+				<CustomBehavior File="FlyTo" X="-11899.66" Y="-3208.164" Z="-14.73684" />
+				<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+				<CustomBehavior File="WaitTimer" WaitTime="10000" />
+			</If>
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 64" >
+			<CustomBehavior File="LoadProfile" ProfileName="Outlands\[Quest] Terokkar A [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 62" >
+			<CustomBehavior File="LoadProfile" ProfileName="Outlands\[Quest] Zangarmarsh A [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 58" >
+			<CustomBehavior File="LoadProfile" ProfileName="Outlands\[Quest] Hellfire A [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 40 &amp;&amp; Me.LevelFraction &lt; 58" >
+			<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+				<CustomBehavior File="UseTransport" TransportId="176231"
+					WaitAtX="-3997.277" WaitAtY="-4723.235" WaitAtZ="4.2373507" 
+					TransportStartX="-4016.39" TransportStartY="-4740.588" TransportStartZ="0.03803937"
+					TransportEndX="-3872.35" TransportEndY="-639.944" TransportEndZ="-0.02619897"
+					StandOnX="-4009.505" StandOnY="-4738.07" StandOnZ="6.021125"
+					GetOffX="-3861.013" GetOffY="-656.758" GetOffZ="5.279493" />
+			</If>
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 54" >
+			<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Blasted Lands A [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 52" >
+			<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Swamp of Sorrows [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 49" >
+			<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Burning Steppes A [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 47" >
+			<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Searing Gorge [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 45" >
+			<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Badlands [Brodie]" />
+		</If>
+		<If Condition="Me.LevelFraction &gt;= 40" >
+			<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Eastern Plaguelands [Brodie]" />
+		</If>
+		<If Condition="Me.Race == WoWRace.Dwarf || Me.Race == WoWRace.Gnome || Me.Race == WoWRace.Human || Me.Race == WoWRace.Pandaren">
+			<If Condition="Me.LevelFraction &gt;= 35" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Western Plaguelands [Brodie]" />
+			</If>
+			<If Condition="Me.Race == WoWRace.Dwarf || Me.Race == WoWRace.Gnome">
+				<If Condition="Me.LevelFraction &gt;= 30" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Hinterlands A [Brodie]" />
+				</If>
+				<If Condition="Me.LevelFraction &gt;= 26" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Arathi Highlands A [Brodie]" />
+				</If>
+				<If Condition="Me.LevelFraction &gt;= 20" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Wetlands [Brodie]" />
+				</If>
+				<If Condition="Me.LevelFraction &gt;= 10" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Loch Modan [Brodie]" />
+				</If>
+				<If Condition="Me.LevelFraction &gt;= 8" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Dun Morogh 2 [Brodie]" />
+				</If>
+				<If Condition="Me.Race == WoWRace.Dwarf &amp;&amp; Me.LevelFraction &gt;= 4 &amp;&amp; IsQuestCompleted(24493)" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Dun Morogh [Brodie]" />
+				</If>
+				<If Condition="Me.Race == WoWRace.Gnome &amp;&amp; Me.LevelFraction &gt;= 4 &amp;&amp; IsQuestCompleted(26373)" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Dun Morogh [Brodie]" />
+				</If>
+				<If Condition="Me.Race == WoWRace.Dwarf" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\Starter\[Quest] Dwarf Start [Brodie]" />
+				</If>
+				<If Condition="Me.Race == WoWRace.Gnome" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\Starter\[Quest] Gnome Start [Brodie]" />
+				</If>
+			</If>
+			<If Condition="Me.Race == WoWRace.Human || Me.Race == WoWRace.Pandaren" >
+				<If Condition="Me.LevelFraction &gt;= 30" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Cape of Stranglethorn A [Brodie]" />
+				</If>
+				<If Condition="Me.LevelFraction &gt;= 25" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] N Stranglethorn A [Brodie]" />
+				</If>
+				<If Condition="Me.LevelFraction &gt;= 20" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Duskwood [Brodie]" />
+				</If>
+				<If Condition="Me.LevelFraction &gt;= 15" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Redridge Mountains [Brodie]" />
+				</If>
+				<If Condition="Me.Race == WoWRace.Human" >
+					<If Condition="Me.LevelFraction &gt;= 10" >
+						<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Westfall [Brodie]" />
+					</If>
+					<If Condition="Me.LevelFraction &gt;= 5" >
+						<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Elwynn Forest [Brodie]" />
+					</If>
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\Starter\[Quest] Human Start [Brodie]" />
+				</If>
+				<If Condition="Me.Race == WoWRace.Pandaren &amp;&amp; IsQuestCompleted(30989)" >
+					<If Condition="Me.LevelFraction &gt;= 10" >
+						<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Westfall [Brodie]" />
+					</If>
+				</If>
+			</If>
+		</If>
+		<If Condition="Me.Race == WoWRace.NightElf || Me.Race == WoWRace.Draenei || Me.Race == WoWRace.Worgen" >
+			<If Condition="Me.MapId == 0" >
+				<CustomBehavior File="FlyTo" X="-8641.401" Y="1324.443" Z="5.505301" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="UseTransport" TransportId="176310"
+					WaitAtX="-8641.401" WaitAtY="1324.443" WaitAtZ="5.505301" 
+					TransportStartX="-8650.719" TransportStartY="1346.051" TransportStartZ="0.04218207"
+					TransportEndX="8162.587" TransportEndY="1005.365" TransportEndZ="-0.04571009"
+					StandOnX="-8643.596" StandOnY="1342.503" StandOnZ="6.104574"
+					GetOffX="8179.11" GetOffY="1002.75" GetOffZ="6.817571" />
+			</If>
+			<If Condition="Me.LevelFraction &gt;= 35" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Dustwallow Marsh A [Brodie]" />
+			</If>
+			<If Condition="Me.LevelFraction &gt;= 30" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Southern Barrens A [Brodie]" />
+			</If>
+			<If Condition="Me.LevelFraction &gt;= 25" >
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Stonetalon Mountains A [Brodie]" />
+			</If>
+			<If Condition="Me.LevelFraction &gt;= 20" >
+				<If Condition="(Me.ZoneId == 3525 || Me.ZoneId == 3524)" >
+					<RunTo X="-4263.994" Y="-11336.4" Z="5.755999" />
+					<CustomBehavior File="UseTransport" TransportId="181646"
+						WaitAtX="-4263.994" WaitAtY="-11336.4" WaitAtZ="5.755999" 
+						TransportStartX="-4264.996" TransportStartY="-11317.2" TransportStartZ="0.002124419"
+						TransportEndX="8346.647" TransportEndY="1177.085" TransportEndZ="-0.04978042"
+						StandOnX="-4264.996" StandOnY="-11317.2" StandOnZ="5.5"
+						GetOffX="8345.038" GetOffY="1154.507" GetOffZ="4.971045" />
+				</If>
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Ashenvale A [Brodie]" />
+			</If>
+			<If Condition="Me.Race == WoWRace.NightElf" >
+				<If Condition="Me.LevelFraction &gt;= 10" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Darkshore [Brodie]" />
+				</If>
+				<If Condition="Me.LevelFraction &gt;= 4 &amp;&amp; IsQuestCompleted(28731)" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Teldrassil [Brodie]" />
+				</If>
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\Starter\[Quest] Night Elf Start [Brodie]" />
+			</If>
+			<If Condition="Me.Race == WoWRace.Worgen" >
+				<If Condition="Me.LevelFraction &gt;= 10 &amp;&amp; IsQuestCompleted(28517)" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Darkshore [Brodie]" />
+				</If>
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\Starter\[Quest] Worgen Start [Brodie]" />
+			</If>
+			<If Condition="Me.Race == WoWRace.Draenei" >
+				<If Condition="Me.LevelFraction &gt;= 11" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Bloodmyst Isle [Brodie]" />
+				</If>
+				<If Condition="Me.LevelFraction &gt;= 4 &amp;&amp; (!HasQuest(9313) &amp;&amp; IsQuestCompleted(9313)) &amp;&amp; (!HasQuest(9314) &amp;&amp; IsQuestCompleted(9314))" >
+					<CustomBehavior File="LoadProfile" ProfileName="Vanilla\[Quest] Azuremyst Isle [Brodie]" />
+				</If>
+				<CustomBehavior File="LoadProfile" ProfileName="Vanilla\Starter\[Quest] Draenei Start [Brodie]" />
+			</If>
+		</If>
+	</If>
+	
+	<If Condition="Me.Race == WoWRace.Pandaren &amp;&amp; (!IsQuestCompleted(31014) &amp;&amp; !IsQuestCompleted(30989))" >
+		<CustomBehavior File="LoadProfile" ProfileName="Vanilla\Starter\[Quest] Panda Start [Brodie]" />
+	</If>
+	
+</QuestOrder>
+</HBProfile>

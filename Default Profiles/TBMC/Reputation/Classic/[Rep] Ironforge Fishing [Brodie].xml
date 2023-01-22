@@ -1,0 +1,251 @@
+<HBProfile>
+
+	<Name>Ironforge Fishing Dailies ($Rev$)</Name>
+	<MinLevel>10</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="Message" Text="ERROR!! Somehow you ended up starting an Alliance profile. Terminating." LogColor="Red" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Ironforge Fishing Daily Routine...Checking Location" LogColor="Green" />
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Stormwind -->
+		<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684)) &gt;= 100" >
+			<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+			<CustomBehavior File="ForcedDismount" />
+		</If>
+		<UseMount Value="False" />
+		<CustomBehavior File="InteractWith" MobId="215118" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+		<UseMount Value="True" />
+	</If>
+	<If Condition="Me.MapId == 571" >
+		<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0"
+			TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+	</If>
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487
+					&amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557" >
+					<!-- Outlands, but not Ghostlands/Eversong/Silvermoon or Azure/Bloodmyst/Exodar -->
+		<CustomBehavior File="FlyTo" X="-338.0062" Y="969.5461" Z="54.29" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="195139" NonCompeteDistance="0"
+			TerminateWhen="Me.MapId != 530" X="-338.0062" Y="969.5461" Z="54.29" />
+	</If>
+	<If Condition="Me.MapId == 1" >
+		<CustomBehavior File="FlyTo" X="8179.11" Y="1002.75" Z="6.817571" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="UseTransport" TransportId="176310"
+			WaitAtX="8179.11" WaitAtY="1002.75" WaitAtZ="6.817571" 
+			TransportStartX="8162.587" TransportStartY="1005.365" TransportStartZ="-0.04571009"
+			TransportEndX="-8650.719" TransportEndY="1346.051" TransportEndZ="0.04218207"
+			StandOnX="8162.587" StandOnY="1005.365" StandOnZ="6.18"
+			GetOffX="-8641.401" GetOffY="1324.443" GetOffZ="5.505301" />
+	</If>
+	
+	<If Condition="!HasQuest(29342) &amp;&amp; !HasQuest(29344) &amp;&amp; !HasQuest(29347) &amp;&amp; !HasQuest(29343) &amp;&amp; !HasQuest(29350)" >
+		<CustomBehavior File="Message" Text="Grabbing Daily from Grimnur Stonebrand" LogColor="CornflowerBlue" />
+		<CustomBehavior File="FlyTo" X="-4617.465" Y="-1095.96" Z="503.0297" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.GetSkill(Styx.SkillLine.Fishing).CurrentValue &lt; 1" >
+			<CustomBehavior File="ForceTrainRiding" MobId="5161" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</If>
+		<While Condition="HasQuestAvailable(5161)" >
+			<CustomBehavior File="InteractWith" MobId="5161" InteractByQuestFrameDisposition="Ignore" NonCompeteDistance="0" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+	
+	<If Condition="HasQuest(29342)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Cold Water Fishing" LogColor="CornflowerBlue" />
+		<If Condition="!IsQuestCompleted(29342)" >
+			<If Condition="Random(100) &lt; 25" >
+				<CustomBehavior File="FlyTo" X="-5647.362" Y="-1966.898" Z="395.5187" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" QuestId="29342" CollectItemId="69931" CollectItemCount="5" X="-5633.098" Y="-1969.503" Z="394.3031" />
+			<ElseIf Condition="Random(100) &lt; 50" >
+				<CustomBehavior File="FlyTo" X="-5611.177" Y="-1972.828" Z="396.0667" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" QuestId="29342" CollectItemId="69931" CollectItemCount="5" X="-5627.683" Y="-1971.409" Z="394.3031" />
+			</ElseIf>
+			<ElseIf Condition="Random(100) &lt; 75" >
+				<CustomBehavior File="FlyTo" X="-5604.984" Y="-1997.833" Z="396.1751" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" QuestId="29342" CollectItemId="69931" CollectItemCount="5" X="-5622.559" Y="-1997.253" Z="394.3031" />
+			</ElseIf>
+			<Else>
+				<CustomBehavior File="FlyTo" X="-5634.715" Y="-2023.805" Z="395.8727" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" QuestId="29342" CollectItemId="69931" CollectItemCount="5" X="-5631.293" Y="-2008.582" Z="394.3031" />
+			</Else>
+			</If>
+		</If>
+		<TurnIn Nav="Fly" QuestName="Cold Water Fishing" QuestId="29342" TurnInName="Grimnur Stonebrand" TurnInId="5161" />
+	</If>
+	
+	<If Condition="HasQuest(29344)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Fish fer Squirky" LogColor="CornflowerBlue" />
+		<If Condition="!IsQuestCompleted(29344)" >
+			<If Condition="Random(100) &lt; 33" >
+				<CustomBehavior File="FlyTo" X="-4648.109" Y="-1099.698" Z="500.4446" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" QuestId="29344" CollectItemId="69933" CollectItemCount="3" X="-4664.627" Y="-1088.516" Z="500.4554" />
+			<ElseIf Condition="Random(100) &lt; 66" >
+				<CustomBehavior File="FlyTo" X="-4644.669" Y="-1091.203" Z="500.4053" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" QuestId="29344" CollectItemId="69933" CollectItemCount="3" X="-4664.627" Y="-1088.516" Z="500.4554" />
+			</ElseIf>
+			<Else>
+				<CustomBehavior File="FlyTo" X="-4645.222" Y="-1079.994" Z="500.4276" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" QuestId="29344" CollectItemId="69933" CollectItemCount="3" X="-4664.627" Y="-1088.516" Z="500.4554" />
+			</Else>
+			</If>
+			<While Condition="!IsQuestCompleted(29344)" >
+				<CustomBehavior File="InteractWith" MobId="53544" InteractByUsingItemId="69933" WaitTime="1000"
+					NonCompeteDistance="0" X="-4613.822" Y="-1095.711" Z="504.847" />
+			</While>
+		</If>
+		<TurnIn Nav="Fly" QuestName="Cold Water Fishing" QuestId="29342" TurnInName="Grimnur Stonebrand" TurnInId="5161" />
+	</If>
+	
+	<If Condition="HasQuest(29347)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Live Bait" LogColor="CornflowerBlue" />
+		<CustomBehavior File="FlyTo" QuestId="29347" X="-5586.166" Y="-1980.855" Z="396.372" />
+		<CustomBehavior File="ForcedDismount" />
+		<UseMount Value="False" />
+		<While Condition="!IsQuestCompleted(29347)" >
+			<While Condition="!Me.HasAura(99424)" >
+				<CustomBehavior File="FlyTo" QuestId="29347" X="-5586.166" Y="-1980.855" Z="396.372" />
+				<CustomBehavior File="ForcedDismount" />
+				<If Condition="!Me.HasAura(99435)" >
+					<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(69940)" WaitTime="3000" />
+				</If>
+				<MoveTo X="-5623.335" Y="-1988.716" Z="392.7786" />
+			</While>
+			<While Condition="Me.HasAura(99424)" >
+				<MoveTo X="-5664.949" Y="-1565.348" Z="383.2045" />
+			</While>
+		</While>
+		<UseMount Value="True" />
+		<TurnIn Nav="Fly" QuestName="Live Bait" QuestId="29347" TurnInName="Cook Ghilm" TurnInId="1355" />
+	</If>
+	
+	<If Condition="HasQuest(29343)" >
+		<CustomBehavior File="Message" Text="Starting Quest: One fer the Ages" LogColor="CornflowerBlue" />
+		<While Condition="!IsQuestCompleted(29343)" >
+			<If Condition="!HasItem(69932)" >
+				<If Condition="Random(100) &lt; 33" >
+					<CustomBehavior File="FlyTo" X="-4648.109" Y="-1099.698" Z="500.4446" />
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" />
+					<CustomBehavior File="MrFishIt" QuestId="29343" CollectItemId="69932" CollectItemCount="1" X="-4664.627" Y="-1088.516" Z="500.4554" />
+				<ElseIf Condition="Random(100) &lt; 66" >
+					<CustomBehavior File="FlyTo" X="-4644.669" Y="-1091.203" Z="500.4053" />
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" />
+					<CustomBehavior File="MrFishIt" QuestId="29343" CollectItemId="69932" CollectItemCount="1" X="-4664.627" Y="-1088.516" Z="500.4554" />
+				</ElseIf>
+				<Else>
+					<CustomBehavior File="FlyTo" X="-4645.222" Y="-1079.994" Z="500.4276" />
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" />
+					<CustomBehavior File="MrFishIt" QuestId="29343" CollectItemId="69932" CollectItemCount="1" X="-4664.627" Y="-1088.516" Z="500.4554" />
+				</Else>
+				</If>
+			</If>
+			<CustomBehavior File="InteractWith" QuestId="29343" MobId="208860" InteractByUsingItemId="69932" NonCompeteDistance="0"
+				WaitTime="3000" TerminateWhen="!HasItem(69932)" IgnoreLoSToTarget="True" X="-4629.937" Y="-1279.985" Z="503.3821" />
+		</While>
+		<TurnIn Nav="Fly" QuestName="One fer the Ages" QuestId="29343" TurnInName="Grimnur Stonebrand" TurnInId="5161" />
+	</If>
+	
+	<If Condition="HasQuest(29350)" >
+		<CustomBehavior File="Message" Text="Starting Quest: The Gnomish Bait-o-Matic" LogColor="CornflowerBlue" />
+		<If Condition="!IsQuestCompleted(29350)" >
+			<If Condition="GetItemCount(6529) &lt; 5" >
+				<CustomBehavior File="InteractWith" QuestId="29350" MobId="5162" InteractByBuyingItemId="6529" BuyItemCount="5"
+					NonCompeteDistance="0" WaitTime="3000" X="-4603.731" Y="-1091.774" Z="504.981" />
+			</If>
+			<If Condition="!HasItem(39684)" >
+				<CustomBehavior File="InteractWith" QuestId="29350" MobId="5175" InteractByBuyingItemId="39684" BuyItemCount="1"
+					NonCompeteDistance="0" WaitTime="3000" X="-4796.988" Y="-1251.005" Z="502.0028" />
+			</If>
+			<If Condition="GetItemCount(69980) &lt; 3" >
+				<If Condition="Me.ZoneId != 2257" >
+					<MoveTo X="-4838.753" Y="-1315.15" Z="501.8683" />
+					<CustomBehavior File="InInstance" X="-4840.24" Y="-1326.32" Z="501.87" />
+				</If>
+				<CustomBehavior File="InteractWith" QuestId="29350" MobId="208864" NonCompeteDistance="0" NumOfTimes="1000"
+					WaitTime="2000" TerminateWhen="GetItemCount(69980) &gt;= 3" CollectionDistance="250"
+					X="-20.52045" Y="-3.728727" Z="-4.296703" />
+			</If>
+			<If Condition="Me.ZoneId == 2257" >
+				<MoveTo X="63.25246" Y="10.30762" Z="-4.296029" />
+				<CustomBehavior File="InInstance" X="72.89" Y="10.57" Z="-4.30" />
+			</If>
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(69979)" WaitTime="3000" />
+		</If>
+		<TurnIn Nav="Fly" QuestName="The Gnomish Bait-o-Matic" QuestId="29350" TurnInName="Grimnur Stonebrand" TurnInId="5161" />
+	</If>
+	
+	<While Condition="HasItem(67414)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(67414)" WaitTime="2000" />
+	</While>
+	
+	<CustomBehavior File="Message" Text="Double checking for training..." LogColor="Orange" />
+	<CustomBehavior File="ForceTrainRiding" MobId="5161" />
+
+	<CustomBehavior File="Message" Text="Fishing Daily Complete, signing off!" LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+		
+</QuestOrder>
+</HBProfile>

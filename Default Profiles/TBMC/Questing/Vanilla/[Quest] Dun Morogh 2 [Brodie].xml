@@ -1,0 +1,142 @@
+<HBProfile>
+
+	<Name>Dun Morogh Part 2 Quests ($Rev$)</Name>
+	<MinLevel>5</MinLevel>
+	<MaxLevel>25</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>True</MailWhite>
+	<MailGreen>True</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>False</TargetElites>
+
+	<AvoidMobs>
+		<Mob Name="Raider's Training Dummy" Entry="31146" />
+		<Mob Name="Crazed Leper Gnome" Entry="46363" />
+		<Mob Name="Crazed Leper Gnome" Entry="46391" />
+		<Mob Name="Living Contamination" Entry="43089" />
+		<Mob Name="Crushcog Sentry-Bot" Entry="42291" />
+	</AvoidMobs>
+
+	<Blackspots>
+		<Blackspot X="-5527.078" Y="517.2145" Z="388.9192" Radius="3.217502" /> <!-- Tent by Jessup -->
+		<Blackspot X="-5200.985" Y="516.0198" Z="387.5609" Radius="1.386786" /> <!-- New Tinkertown Mailbox -->
+		<Blackspot X="-9151.938" Y="88.74734" Z="76.00366" Radius="20.25414" /> <!-- Defiant in Elwynn -->
+	</Blackspots>
+
+	<Mailboxes>
+		<!-- New Tinkertown -->
+		<Mailbox X="-5199.83" Y="517.0881" Z="387.3979" />
+		<!-- Kharanos -->
+		<Mailbox X="-5603.603" Y="-512.9031" Z="401.6768" />
+		<!-- Thelsamar -->
+		<Mailbox X="-5364.78" Y="-2953.748" Z="323.8507" />
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Kharanos -->
+		<Vendor Name="Grawn Thromwyn" Entry="1273" Type="Repair" X="-5590.67" Y="-428.416" Z="397.3266" />
+		<Vendor Name="Turuk Amberstill" Entry="3177" Type="Repair" X="-5514.975" Y="-1295.747" Z="405.9352" />
+		<Vendor Name="Frast Dokner" Entry="1698" Type="Repair" X="-5714.372" Y="-1589.517" Z="383.2044" />
+		<Vendor Name="Monann Coldforge" Entry="43384" Type="Food" X="-5522.49" Y="-1930.35" Z="398.9589" />
+		<Vendor Name="Jade Ramalot" Entry="46996" Type="Repair" X="-4594.17" Y="-1714.2" Z="503.476" />
+
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="25997" Name="Dark Iron Scheming"> 
+	<Objective Type="CollectItem" ItemId="56264" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Captain Beld" Entry="6124" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-5935.861" Y="-2034.323" Z="401.5829" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="6123" KillCount="5" >
+		<Hotspots>
+			<Hotspot X="-5935.861" Y="-2034.323" Z="401.5829" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	  
+<!-- Dun Morogh Quests -->
+
+	<CustomBehavior File="Message" Text="Compiling Dun Morogh (Part 2) Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Gol'Bolar Quarry Quests" LogColor="CornflowerBlue" />
+	
+<!-- Help for the Quarry -->
+	<If Condition="(!HasQuest(25933) &amp;&amp; !IsQuestCompleted(25933)) &amp;&amp; (IsQuestCompleted(25905) &amp;&amp; IsQuestCompleted(314))" >
+		<PickUp QuestName="Help for the Quarry" QuestId="25933" GiverName="Sergeant Flinthammer" GiverId="41578" />
+		<TurnIn QuestName="Help for the Quarry" QuestId="25933" TurnInName="Foreman Stonebrow" TurnInId="1254" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	<ElseIf Condition="HasQuest(25933)" >
+		<TurnIn QuestName="Help for the Quarry" QuestId="25933" TurnInName="Foreman Stonebrow" TurnInId="1254" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	</ElseIf>
+	</If>
+	
+<!-- Those Blasted Troggs!/The Public Servant/Priceless Treasures -->
+	<PickUp QuestName="Those Blasted Troggs!" QuestId="432" GiverName="Foreman Stonebrow" GiverId="1254" />
+	<PickUp QuestName="The Public Servant" QuestId="433" GiverName="Senator Mehr Stonehallow" GiverId="1977" />
+	<PickUp QuestName="Priceless Treasures" QuestId="25937" GiverName="Prospector Drugan" GiverId="50631" />
+	<Objective QuestName="Priceless Treasures" QuestId="25937" Type="CollectItem" ItemId="56225" CollectCount="8" />
+	<CustomBehavior File="InteractWith" QuestId="433" MobId="41671" InteractByUsingItemId="56222" NumOfTimes="200" CollectionDistance="1000" X="-5578.438" Y="-1722.538" Z="353.405" />
+	<Objective QuestName="Those Blasted Troggs!" QuestId="432" Type="KillMob" MobId="1115" KillCount="8" />
+	<Objective QuestName="Those Blasted Troggs!" QuestId="432" Type="KillMob" MobId="1117" KillCount="8" />
+	<TurnIn QuestName="Those Blasted Troggs!" QuestId="432" TurnInName="Foreman Stonebrow" TurnInId="1254" />
+	<TurnIn QuestName="Priceless Treasures" QuestId="25937" TurnInName="Prospector Drugan" TurnInId="50631" />
+	<TurnIn QuestName="The Public Servant" QuestId="433" TurnInName="Senator Mehr Stonehallow" TurnInId="1977" />
+	
+<!-- Trouble at the Lake -->
+	<PickUp QuestName="Trouble at the Lake" QuestId="25986" GiverName="Senator Mehr Stonehallow" GiverId="1977" />
+	<TurnIn QuestName="Trouble at the Lake" QuestId="25986" TurnInName="Sergeant Bahrum" TurnInId="41786" />
+	
+	<CustomBehavior File="Message" Text="Compiling Bahrum's Post Quests" LogColor="CornflowerBlue" />
+	
+<!-- Entombed in Ice/Dealing with the Surge -->
+	<PickUp QuestName="Entombed in Ice" QuestId="25978" GiverName="Sergeant Bahrum" GiverId="41786" />
+	<PickUp QuestName="Dealing with the Surge" QuestId="25979" GiverName="Khurgorn Singefeather" GiverId="41804" />
+	<Objective QuestName="Entombed in Ice" QuestId="25978" Type="KillMob" MobId="41768" KillCount="6" />
+	<Objective QuestName="Dealing with the Surge" QuestId="25979" Type="KillMob" MobId="41762" KillCount="6" />
+	<TurnIn QuestName="Dealing with the Surge" QuestId="25979" TurnInName="Khurgorn Singefeather" TurnInId="41804" />
+	<TurnIn QuestName="Entombed in Ice" QuestId="25978" TurnInName="Sergeant Bahrum" TurnInId="41786" />
+	
+<!-- Dark Iron Scheming -->
+	<PickUp QuestName="Dark Iron Scheming" QuestId="25997" GiverName="Sergeant Bahrum" GiverId="41786" />
+	<Objective QuestName="Dark Iron Scheming" QuestId="25997" Type="CollectItem" ItemId="56264" CollectCount="1" />
+	<Objective QuestName="Dark Iron Scheming" QuestId="25997" Type="KillMob" MobId="6123" KillCount="5" />
+	<TurnIn QuestName="Dark Iron Scheming" QuestId="25997" TurnInName="Sergeant Bahrum" TurnInId="41786" />
+	
+<!-- Get to the Airfield -->
+<!--<PickUp QuestName="Get to the Airfield" QuestId="25998" GiverName="Sergeant Bahrum" GiverId="41786" />
+	<While Condition="HasQuest(25998)" >
+		<CustomBehavior File="InteractWith" MobId="41848" X="-5665.079" Y="-1548.461" Z="387.1356" />
+		<TurnIn QuestName="Get to the Airfield" QuestId="25998" TurnInName="Commander Stonebreaker" TurnInId="41853" />
+	</While>-->
+	
+	<CustomBehavior File="Message" Text="Dun Morogh (Part 2) Section Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

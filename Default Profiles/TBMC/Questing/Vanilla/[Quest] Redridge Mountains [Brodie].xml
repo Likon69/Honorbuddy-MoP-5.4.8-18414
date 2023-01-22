@@ -1,0 +1,449 @@
+<HBProfile>
+
+	<Name>Redridge Mountains ($Rev$)</Name>
+	<MinLevel>14</MinLevel>
+	<MaxLevel>30</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>False</TargetElites>
+
+	<AvoidMobs>
+		<Mob Name="Ol' Gummers" Entry="43041" />
+		<Mob Name="Blackrock Battle Worg" Entry="43340" />
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+
+	<Mailboxes>
+		<Mailbox X="-9248.413" Y="-2144.225" Z="63.93343" />
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Lakeshire -->
+		<Vendor Name="Kimberly Hiett" Entry="789" Type="Repair" X="-9234.488" Y="-2158.749" Z="64.35907" />
+		<Vendor Name="Dorin Songblade" Entry="956" Type="Repair" X="-9247.676" Y="-2240.278" Z="63.93393" />
+		<Vendor Name="Karen Taylor" Entry="790" Type="Food" X="-9260.765" Y="-2219.875" Z="63.93512" />
+		<Vendor Name="Amy Davenport" Entry="777" Type="Food" X="-9260.208" Y="-2203.088" Z="63.93351" />
+		<Vendor Name="Lindsay Ashlock" Entry="791" Type="Food" X="-9260.255" Y="-2195.371" Z="63.93361" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Name="Weapons of War" Id="26571" >
+	<Objective Type="CollectItem" ItemId="58953" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Murdunk" Id="43327" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-9215.05" Y="-2801.451" Z="91.90818" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="58954" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Homurk" Id="43329" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-9215.05" Y="-2801.451" Z="91.90818" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Surveying Equipment" Id="26569" >
+	<Objective Type="CollectItem" ItemId="58952" CollectCount="5" >
+		<CollectFrom>
+			<Mob Name="Blackrock Tracker" Id="615" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-8708.244" Y="-2237.634" Z="154.6717" />
+			<Hotspot X="-8693.077" Y="-2172.16" Z="156.6495" />
+			<Hotspot X="-8740.088" Y="-2250.996" Z="154.1889" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Redridge Mountains Quests" LogColor="Green" />
+	
+	<If Condition="!HasQuest(26761) &amp;&amp; !IsQuestCompleted(26761)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Three Corners Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Wanted: Redridge Gnolls" QuestId="26504" GiverType="Object" GiverName="Wanted!" 
+		GiverId="204344" X="-9621.39" Y="-1891.03" Z="58.9165" />
+	<PickUp QuestName="Franks and Beans" QuestId="26506" GiverName="Darcy Parker" GiverId="379" />
+	<If Condition="HasQuest(26365)" >
+		<TurnIn QuestName="Hero's Call: Redridge Mountains!" QuestId="26365" TurnInName="Watch Captain Parker" TurnInId="464" />
+	<ElseIf Condition="HasQuest(28563)" >
+		<TurnIn QuestName="Hero's Call: Redridge Mountains!" QuestId="28563" TurnInName="Watch Captain Parker" TurnInId="464" />
+	</ElseIf>
+	</If>
+	<PickUp QuestName="Still Assessing The Threat" QuestId="26503" GiverName="Watch Captain Parker" GiverId="464" />
+	
+<!-- Still Assessing The Threat/Wanted: Redridge Gnolls/Franks and Beans -->
+	<CustomBehavior File="InteractWith" QuestId="26503" QuestObjectiveIndex="1" MobId="204345" NonCompeteDistance="0" 
+		WaitTime="1000" X="-9458.695" Y="-1894.371" Z="82.60084" />
+	<CustomBehavior File="InteractWith" QuestId="26503" QuestObjectiveIndex="3" MobId="204347" NonCompeteDistance="0" 
+		WaitTime="1000" X="-9580.044" Y="-2257.215" Z="85.66991" />
+	<CustomBehavior File="InteractWith" QuestId="26503" QuestObjectiveIndex="2" MobId="204346" NonCompeteDistance="0" 
+		WaitTime="1000" X="-9810.192" Y="-2200.657" Z="58.98882" />
+	<Objective QuestName="Wanted: Redridge Gnolls" QuestId="26504" Type="KillMob" MobId="423" KillCount="15" />
+	<Objective QuestName="Franks and Beans" QuestId="26506" Type="CollectItem" ItemId="58893" CollectCount="4" />
+	<While Condition="(Me.Class == WoWClass.Rogue) &amp;&amp; HasQuest(26506) &amp;&amp; IsObjectiveComplete(2,26506)" >
+		<CustomBehavior File="InteractWith" QuestId="26506" QuestObjectiveIndex="2" MobId="428" MobState="Alive" Range="30" TerminateWhen="Me.Combat" InteractByCastingSpellId="121733" >
+			<HuntingGrounds>
+				<Hotspot X="-9632.205" Y="-2009.591" Z="63.37442" />
+				<Hotspot X="-9519.535" Y="-1928.543" Z="75.38841" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<While Condition="(Me.Class == WoWClass.Warlock) &amp;&amp; HasQuest(26506) &amp;&amp; !IsObjectiveComplete(2,26506)" >
+		<CustomBehavior File="InteractWith" QuestId="26506" QuestObjectiveIndex="2" MobId="428" MobState="Alive" Range="30" TerminateWhen="Me.Combat" InteractByCastingSpellId="172" >
+			<HuntingGrounds>
+				<Hotspot X="-9632.205" Y="-2009.591" Z="63.37442" />
+				<Hotspot X="-9519.535" Y="-1928.543" Z="75.38841" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<While Condition="(Me.Class == WoWClass.Warrior) &amp;&amp; HasQuest(26506) &amp;&amp; !IsObjectiveComplete(2,26506)" >
+		<CustomBehavior File="InteractWith" QuestId="26506" QuestObjectiveIndex="2" MobId="428" MobState="Alive" Range="30" TerminateWhen="Me.Combat" InteractByCastingSpellId="355" >
+			<HuntingGrounds>
+				<Hotspot X="-9632.205" Y="-2009.591" Z="63.37442" />
+				<Hotspot X="-9519.535" Y="-1928.543" Z="75.38841" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<While Condition="(Me.Class == WoWClass.DeathKnight) &amp;&amp; HasQuest(26506) &amp;&amp; !IsObjectiveComplete(2,26506)" >
+		<CustomBehavior File="InteractWith" QuestId="26506" QuestObjectiveIndex="2" MobId="428" MobState="Alive" Range="30" TerminateWhen="Me.Combat" InteractByCastingSpellId="49576" >
+			<HuntingGrounds>
+				<Hotspot X="-9632.205" Y="-2009.591" Z="63.37442" />
+				<Hotspot X="-9519.535" Y="-1928.543" Z="75.38841" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<While Condition="(Me.Class == WoWClass.Druid) &amp;&amp; HasQuest(26506) &amp;&amp; !IsObjectiveComplete(2,26506)" >
+		<CustomBehavior File="InteractWith" QuestId="26506" QuestObjectiveIndex="2" MobId="428" MobState="Alive" Range="30" TerminateWhen="Me.Combat" InteractByCastingSpellId="8921" >
+			<HuntingGrounds>
+				<Hotspot X="-9632.205" Y="-2009.591" Z="63.37442" />
+				<Hotspot X="-9519.535" Y="-1928.543" Z="75.38841" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<While Condition="(Me.Class == WoWClass.Hunter) &amp;&amp; HasQuest(26506) &amp;&amp; !IsObjectiveComplete(2,26506)" >
+		<CustomBehavior File="InteractWith" QuestId="26506" QuestObjectiveIndex="2" MobId="428" MobState="Alive" Range="30" TerminateWhen="Me.Combat" InteractByCastingSpellId="3044" >
+			<HuntingGrounds>
+				<Hotspot X="-9632.205" Y="-2009.591" Z="63.37442" />
+				<Hotspot X="-9519.535" Y="-1928.543" Z="75.38841" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<While Condition="(Me.Class == WoWClass.Mage) &amp;&amp; HasQuest(26506) &amp;&amp; !IsObjectiveComplete(2,26506)" >
+		<CustomBehavior File="InteractWith" QuestId="26506" QuestObjectiveIndex="2" MobId="428" MobState="Alive" Range="30" TerminateWhen="Me.Combat" InteractByCastingSpellId="2136" >
+			<HuntingGrounds>
+				<Hotspot X="-9632.205" Y="-2009.591" Z="63.37442" />
+				<Hotspot X="-9519.535" Y="-1928.543" Z="75.38841" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<While Condition="(Me.Class == WoWClass.Paladin) &amp;&amp; HasQuest(26506) &amp;&amp; !IsObjectiveComplete(2,26506)" >
+		<CustomBehavior File="InteractWith" QuestId="26506" QuestObjectiveIndex="2" MobId="428" MobState="Alive" Range="30" TerminateWhen="Me.Combat" InteractByCastingSpellId="62124" >
+			<HuntingGrounds>
+				<Hotspot X="-9632.205" Y="-2009.591" Z="63.37442" />
+				<Hotspot X="-9519.535" Y="-1928.543" Z="75.38841" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<While Condition="(Me.Class == WoWClass.Priest) &amp;&amp; HasQuest(26506) &amp;&amp; !IsObjectiveComplete(2,26506)" >
+		<CustomBehavior File="InteractWith" QuestId="26506" QuestObjectiveIndex="2" MobId="428" MobState="Alive" Range="30" TerminateWhen="Me.Combat" InteractByCastingSpellId="589" >
+			<HuntingGrounds>
+				<Hotspot X="-9632.205" Y="-2009.591" Z="63.37442" />
+				<Hotspot X="-9519.535" Y="-1928.543" Z="75.38841" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<While Condition="(Me.Class == WoWClass.Shaman) &amp;&amp; HasQuest(26506) &amp;&amp; !IsObjectiveComplete(2,26506)" >
+		<CustomBehavior File="InteractWith" QuestId="26506" QuestObjectiveIndex="2" MobId="428" MobState="Alive" Range="30" TerminateWhen="Me.Combat" InteractByCastingSpellId="403" >
+			<HuntingGrounds>
+				<Hotspot X="-9632.205" Y="-2009.591" Z="63.37442" />
+				<Hotspot X="-9519.535" Y="-1928.543" Z="75.38841" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<While Condition="(Me.Class == WoWClass.Monk) &amp;&amp; HasQuest(26506) &amp;&amp; !IsObjectiveComplete(2,26506)" >
+		<CustomBehavior File="InteractWith" QuestId="26506" QuestObjectiveIndex="2" MobId="428" MobState="Alive" Range="30" TerminateWhen="Me.Combat" InteractByCastingSpellId="115546" >
+			<HuntingGrounds>
+				<Hotspot X="-9632.205" Y="-2009.591" Z="63.37442" />
+				<Hotspot X="-9519.535" Y="-1928.543" Z="75.38841" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<Objective QuestName="Franks and Beans" QuestId="26506" Type="CollectItem" ItemId="58891" CollectCount="4" />
+	<TurnIn QuestName="Franks and Beans" QuestId="26506" TurnInName="Darcy Parker" TurnInId="379" />
+	<TurnIn QuestName="Wanted: Redridge Gnolls" QuestId="26504" TurnInName="Watch Captain Parker" TurnInId="464" />
+	<TurnIn QuestName="Still Assessing The Threat" QuestId="26503" TurnInName="Watch Captain Parker" TurnInId="464" />
+
+<!-- Parker's Report -->
+	<PickUp QuestName="Parker's Report" QuestId="26505" GiverName="Watch Captain Parker" GiverId="464" />
+	<If Condition="HasQuest(26505)" >
+		<TurnIn QuestName="Parker's Report" QuestId="26505" TurnInName="Magistrate Solomon" TurnInId="344" />
+		<CustomBehavior File="SetHearthstone" MobId="6727" X="-9223.98" Y="-2157.12" Z="63.73" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	</If>
+	<If Condition="HasQuest(26761)" >
+		<TurnIn QuestName="Threat to the Kingdom" QuestId="26761" TurnInName="Magistrate Solomon" TurnInId="344" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Lakeshire Quests" LogColor="CornflowerBlue" />
+
+<!-- We Must Prepare!/Lake Everstill Clean Up/Nida's Necklace -->
+	<PickUp QuestName="We Must Prepare!" QuestId="26510" GiverName="Magistrate Solomon" GiverId="344" />
+	<PickUp QuestName="Lake Everstill Clean Up" QuestId="26511" GiverName="Bailiff Conacher" GiverId="900" />
+	<If Condition="!HasQuest(26508) &amp;&amp; !IsQuestCompleted(26508)" >
+		<PickUp QuestName="Nida's Necklace" QuestId="26508" GiverName="Shawn" GiverId="8965" />
+		<CustomBehavior File="MyCTM" X="-9359.235" Y="-2205.784" Z="54.52996" />
+	</If>
+	<If Condition="HasQuest(26508) &amp;&amp; !IsQuestCompleted(26508)" >
+		<RunTo X="-9359.235" Y="-2205.784" Z="54.52996" />
+		<CustomBehavior File="InteractWith" QuestId="26508" MobId="154357" NumOfTimes="100" CollectionDistance="1000" 
+			MovementBy="ClickToMoveOnly" ProactiveCombatStrategy="ClearMobsTargetingUs" PreInteractMountStrategy="Dismount" >
+			<HuntingGrounds>
+				<Hotspot X="-9357.604" Y="-2184.775" Z="44.65174" />
+				<Hotspot X="-9331.274" Y="-2103.467" Z="47.25359" />
+				<Hotspot X="-9385.071" Y="-2300.076" Z="46.00409" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="AscendInWater" />
+	</If>
+	<TurnIn QuestName="Nida's Necklace" QuestId="26508" TurnInName="Nida" TurnInId="8962" />
+	<Objective QuestName="We Must Prepare!" QuestId="26510" Type="CollectItem" ItemId="58894" CollectCount="1" />
+	<CustomBehavior File="CollectThings" QuestId="26511" MobId="422" MobId2="578" MobState="Alive" CollectUntil="QuestComplete" NonCompeteDistance="1" HuntingGroundRadius="200" >
+		<Hotspot X="-9327.436" Y="-2480.815" Z="43.58473" />
+	</CustomBehavior>
+	<TurnIn QuestName="Lake Everstill Clean Up" QuestId="26511" TurnInName="Bailiff Conacher" TurnInId="900" />
+	<TurnIn QuestName="We Must Prepare!" QuestId="26510" TurnInName="Magistrate Solomon" TurnInId="344" />
+	
+	<PickUp QuestName="Tuning the Gnomecorder" QuestId="26512" GiverName="Magistrate Solomon" GiverId="344" />
+	
+<!-- An Unwelcome Guest -->
+	<PickUp QuestName="An Unwelcome Guest" QuestId="26509" GiverName="Martie Jainrose" GiverId="342" />
+	<Objective QuestName="An Unwelcome Guest" QuestId="26509" Type="CollectItem" ItemId="3631" CollectCount="1" />
+	<TurnIn QuestName="An Unwelcome Guest" QuestId="26509" TurnInName="Martie Jainrose" TurnInId="342" />
+	
+	<PickUp QuestName="Like a Fart in the Wind" QuestId="26513" GiverName="Marshal Marris" GiverId="382" />
+	
+<!-- Tuning the Gnomecorder -->
+	<If Condition="HasQuest(26512) &amp;&amp; !IsQuestCompleted(26512)" >
+		<RunTo X="-9193.668" Y="-2312.105" Z="88.96943" />
+	</If>
+	<TurnIn QuestName="Tuning the Gnomecorder" QuestId="26512" />
+	
+<!-- Like a Fart in the Wind/Canyon Romp -->
+	<Objective QuestName="Like a Fart in the Wind" QuestId="26513" Type="CollectItem" ItemId="58896" CollectCount="8" />
+	<Objective QuestName="Canyon Romp" QuestId="26514" Type="CollectItem" ItemId="58897" CollectCount="10" />
+	<TurnIn QuestName="Canyon Romp" QuestId="26514" />
+	
+	<If Condition="!HasItem(58898) &amp;&amp; !HasQuest(26519) &amp;&amp; !IsQuestCompleted(26519)" >
+		<CustomBehavior File="CollectThings" MobId="446" MobId2="445" MobId3="430" MobId4="580" MobState="Alive"
+			HuntingGroundRadius="200" CollectItemId="58898" CollectItemCount="1" >
+			<Hotspot X="-9159.27" Y="-2271.288" Z="112.7101" />
+			<Hotspot X="-9119.627" Y="-2175.753" Z="123.2768" />
+			<Hotspot X="-9068.456" Y="-2115.62" Z="132.5681" />
+		</CustomBehavior>
+	</If>
+	<If Condition="HasItem(58898) &amp;&amp; !HasQuest(26519) &amp;&amp; !IsQuestCompleted(26519)" >
+		<PickUp QuestName="He Who Controls the Ettins" QuestId="26519" GiverType="Item" GiverId="58898" />
+	</If>
+	
+<!-- They've Wised Up.../He Who Controls the Ettins -->
+	<Objective QuestName="They've Wised Up..." QuestId="26544" Type="CollectItem" ItemId="58936" CollectCount="1" />
+	<TurnIn QuestName="They've Wised Up..." QuestId="26544" />
+	
+	<Objective QuestName="He Who Controls the Ettins" QuestId="26519" Type="KillMob" MobId="711" KillCount="1" X="-8832.64" Y="-1940.05" Z="132.97" />
+	<TurnIn QuestName="He Who Controls the Ettins" QuestId="26519" TurnInType="Object" TurnInName="Ettin Control Orb"
+		TurnInId="204351" X="-8833.42" Y="-1937.47" Z="132.928" />
+	<PickUp QuestName="Saving Foreman Oslow" QuestId="26520" GiverType="Object" GiverName="Ettin Control Orb"
+		GiverId="204351" X="-8833.42" Y="-1937.47" Z="132.928" />
+		
+	<Objective QuestName="Yowler Must Die!" QuestId="26545" Type="KillMob" MobId="518" KillCount="1" />
+	<Objective QuestName="Yowler Must Die!" QuestId="26545" Type="CollectItem" ItemId="58937" CollectCount="1" />
+	
+	<While Condition="!IsQuestCompleted(26520)" >
+		<CustomBehavior File="InteractWith" QuestId="26520" MobId="43094" MobState="Alive" ProactiveCombatStrategy="ClearMobsTargetingUs" 
+			InteractByUsingItemId="58895" TerminateWhen="Me.HasAura(82558)" Range="15" MinRange="8" >
+			<HuntingGrounds>
+				<Hotspot X="-8916.771" Y="-2195.897" Z="134.3517" />
+				<Hotspot X="-8916.262" Y="-2280.4" Z="132.4553" />
+				<Hotspot X="-8968.658" Y="-2333.053" Z="132.448" />
+				<Hotspot X="-9020.081" Y="-2405.212" Z="130.1967" />
+				<Hotspot X="-9074.338" Y="-2412.68" Z="126.0645" />
+				<Hotspot X="-9119.061" Y="-2363.143" Z="119.8181" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" QuestId="26520" MobId="43196" InteractByUsingItemId="58895" 
+			CollectionDistance="20" NonCompeteDistance="0" TerminateWhen="!Me.HasAura(82558)" X="-9270.972" Y="-2291.009" Z="68.68311" WaitTime="10000" />
+	</While>
+	<TurnIn QuestName="Like a Fart in the Wind" QuestId="26513" TurnInName="Marshal Marris" TurnInId="382" />
+	<TurnIn QuestName="Yowler Must Die!" QuestId="26545" TurnInName="Magistrate Solomon" TurnInId="344" />
+	<TurnIn QuestName="Saving Foreman Oslow" QuestId="26520" TurnInName="Magistrate Solomon" TurnInId="344" />
+	
+	<CustomBehavior File="Message" Text="Compiling Keeshan Storyline Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="John J. Keeshan" QuestId="26567" GiverName="Colonel Troteman" GiverId="43221" />
+	<If Condition="HasQuest(26567)" >
+		<TurnIn QuestName="John J. Keeshan" QuestId="26567" TurnInName="John J. Keeshan" TurnInId="43184" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	</If>
+	<PickUp QuestName="This Ain't My War" QuestId="26568" GiverName="John J. Keeshan" GiverId="43184" />
+	<TurnIn QuestName="This Ain't My War" QuestId="26568" TurnInName="Colonel Troteman" TurnInId="43221" />
+	
+	<PickUp QuestName="Weapons of War" QuestId="26571" GiverName="Colonel Troteman" GiverId="43221" />
+	<PickUp QuestName="In Search of Bravo Company" QuestId="26586" GiverName="Colonel Troteman" GiverId="43221" />
+	<PickUp QuestName="Surveying Equipment" QuestId="26569" GiverName="Foreman Oslow" GiverId="43194" />
+	<PickUp QuestName="Render's Army" QuestId="26570" GiverName="Marshal Marris" GiverId="382" />
+	
+<!-- Surveying Equipment/In Search of Bravo Company/Breaking Out is Hard to Do -->
+	<Objective QuestName="Surveying Equipment" QuestId="26569" Type="CollectItem" ItemId="58952" CollectCount="5" />
+	<TurnIn QuestName="In Search of Bravo Company" QuestId="26586" TurnInName="Messner" TurnInId="43270" />
+	<PickUp QuestName="Breaking Out is Hard to Do" QuestId="26587" GiverName="Messner" GiverId="43270" />
+	<While Condition="HasQuest(26587) &amp;&amp; !IsQuestCompleted(26587)" >
+		<CustomBehavior File="WaitForPatrol" AvoidMobId="43341" AvoidDistance="35"
+			X="-9211.345" Y="-2775.24" Z="90.38371" >
+			<FollowPath Strategy="StalkMobAtAvoidDistance" DismissPet="true" EgressDistance="25" >
+				<Hotspot X="-9202.807" Y="-2775.259" Z="90.38366" />
+				<Hotspot X="-9186.497" Y="-2770.601" Z="88.68089" />
+				<Hotspot X="-9165.448" Y="-2743.158" Z="88.74001" />
+			</FollowPath>
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" QuestId="26587" MobId="204389" ProactiveCombatStrategy="NoClear" 
+			NonCompeteDistance="0" NumOfTimes="1000" WaitTime="1000" X="-9165.448" Y="-2743.158" Z="88.74001" />
+		<MoveTo X="-9193.222" Y="-2799.153" Z="91.95142" />
+	</While>
+
+<!-- Weapons of War -->
+	<Objective QuestName="Weapons of War" QuestId="26571" Type="CollectItem" ItemId="58953" CollectCount="1" />
+	<Objective QuestName="Weapons of War" QuestId="26571" Type="CollectItem" ItemId="58954" CollectCount="1" />
+	<If Condition="HasQuest(26571) &amp;&amp; IsQuestCompleted(26571)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="26571" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+	</If>
+	
+	<If Condition="HasQuest(26587) &amp;&amp; IsQuestCompleted(26587)" >
+		<TurnIn QuestName="Breaking Out is Hard to Do" QuestId="26587" TurnInName="Messner" TurnInId="43270" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" />
+	</If>
+	
+	<PickUp QuestName="Jorgensen" QuestId="26560" GiverName="Messner" GiverId="43300" />
+
+<!-- Jorgensen -->
+	<Objective QuestName="Jorgensen" QuestId="26560" Type="CollectItem" ItemId="58969" CollectCount="1" />
+	<If Condition="HasQuest(26560) &amp;&amp; IsQuestCompleted(26560)" >
+		<TurnIn QuestName="Jorgensen" QuestId="26560" TurnInName="Jorgensen" TurnInId="43272" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" />
+	</If>
+	
+	<PickUp QuestName="Krakauer" QuestId="26561" GiverName="Jorgensen" GiverId="43305" />
+
+<!-- His Heart Must Be In It/Krakauer -->
+	<Objective QuestName="His Heart Must Be In It" QuestId="26573" Type="CollectItem" ItemId="58956" CollectCount="1" />
+	<Objective QuestName="His Heart Must Be In It" QuestId="26573" Type="CollectItem" ItemId="58957" CollectCount="1" />
+	<Objective QuestName="Krakauer" QuestId="26561" Type="KillMob" MobId="58956" KillCount="1" />
+	<If Condition="HasQuest(26561) &amp;&amp; IsQuestCompleted(26561)" >
+		<TurnIn QuestName="Krakauer" QuestId="26561" TurnInName="Krakauer" TurnInId="43274" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" />
+	</If>
+	
+	<PickUp QuestName="And Last But Not Least...Danforth" QuestId="26562" GiverName="Krakauer" GiverId="43303" />
+	<Objective QuestName="And Last But Not Least...Danforth" QuestId="26562" Type="KillMob" MobId="43369" KillCount="1" />
+	<Objective QuestName="And Last But Not Least...Danforth" QuestId="26562" Type="CollectItem" ItemId="59033" CollectCount="1" />
+	<While Condition="HasQuest(26562) &amp;&amp; IsQuestCompleted(26562)" >
+		<RunTo X="-8822.32" Y="-2190.498" Z="138.4219" />
+		<If Condition="Unit(43275) != null" >
+			<CustomBehavior File="InteractWith" MobId="204403" NonCompeteDistance="0" X="-8822.32" Y="-2190.498" Z="138.4219" />
+			<TurnIn QuestName="And Last But Not Least...Danforth" QuestId="26562" TurnInName="Danforth" TurnInId="43275" />
+			<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<CustomBehavior File="AscendInWater" />
+		</If>
+	</While>
+	
+	<PickUp QuestName="Return of the Bravo Company" QuestId="26563" GiverName="Danforth" GiverId="43302" />
+	<Objective QuestName="Render's Army" QuestId="26570" Type="KillMob" MobId="615" KillCount="25" />
+	<TurnIn QuestName="Surveying Equipment" QuestId="26569" TurnInName="Foreman Oslow" TurnInId="43194" />
+	<TurnIn QuestName="Render's Army" QuestId="26570" TurnInName="Marshal Marris" TurnInId="382" />
+	<TurnIn QuestName="Return of the Bravo Company" QuestId="26563" TurnInName="Colonel Troteman" TurnInId="43221" />
+	<TurnIn QuestName="His Heart Must be In It" QuestId="26573" TurnInName="Colonel Troteman" TurnInId="43221" />
+	
+	<PickUp QuestName="Hero's Call: Duskwood" QuestId="26728" GiverName="Bailiff Conacher" GiverId="900" />
+	
+	<PickUp QuestName="They Drew First Blood" QuestId="26607" GiverName="Colonel Troteman" GiverId="43221" />
+	<TurnIn QuestName="They Drew First Blood" QuestId="26607" TurnInName="John J. Keeshan" TurnInId="43184" />
+	
+	<PickUp QuestName="It's Never Over" QuestId="26616" GiverName="John J. Keeshan" GiverId="43184" />
+	<If Condition="HasQuest(26616) &amp;&amp; !IsQuestCompleted(26616)" >
+		<RunTo X="-9292.919" Y="-2361.018" Z="57.36534" />
+		<CustomBehavior File="InteractWith" QuestId="26616" MobId="43443" TerminateWhen="Me.IsOnTransport" NonCompeteDistance="0" WaitTime="5000" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="It's Never Over" QuestId="26616" TurnInName="John J. Keeshan" TurnInId="43458" />
+	
+	<CustomBehavior File="Message" Text="Compiling Camp Everstill Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Point of Contact: Brubaker" QuestId="26639" GiverName="John J. Keeshan" GiverId="43458" />
+	<PickUp QuestName="Hunting the Hunters" QuestId="26638" GiverName="Danforth" GiverId="43462" />
+	<PickUp QuestName="Bravo Company Field Kit: Chloroform" QuestId="26637" GiverName="Messner" GiverId="43459" />
+	<PickUp QuestName="Bravo Company Field Kit: Camouflage" QuestId="26636" GiverName="Krakauer" GiverId="43461" />
+
+<!-- Bravo Company Field Kit: Chloroform -->
+	<CustomBehavior File="CollectThings" QuestId="26637" MobId="43532" MobState="Alive" CollectItemId="59156" CollectItemCount="8" NonCompeteDistance="1" HuntingGroundRadius="200" >
+		<Hotspot X="-9482.397" Y="-2709.253" Z="33.61531" />
+		<Hotspot X="-9458.846" Y="-2628.47" Z="30.9606" />
+		<Hotspot X="-9429.686" Y="-2527.558" Z="29.50016" />
+	</CustomBehavior>
+	<TurnIn QuestName="Bravo Company Field Kit: Chloroform" QuestId="26637" TurnInName="Messner" TurnInId="43459" />
+	
+	<TurnIn QuestName="Point of Contact: Brubaker" QuestId="26639" TurnInName="Brubaker" TurnInId="43508" />
+	<PickUp QuestName="Unspeakable Atrocities" QuestId="26640" GiverName="Brubaker" GiverId="43508" />
+	<Objective QuestName="Bravo Company Field Kit: Camouflage" QuestId="26636" Type="CollectItem" ItemId="59152" CollectCount="5" />
+	<Objective QuestName="Bravo Company Field Kit: Camouflage" QuestId="26636" Type="CollectItem" ItemId="59153" CollectCount="5" />
+	<Objective QuestName="Hunting the Hunters" QuestId="26638" Type="KillMob" MobId="4462" KillCount="8" />
+	
+	<TurnIn QuestName="Bravo Company Field Kit: Camouflage" QuestId="26636" TurnInName="Krakauer" TurnInId="43461" />
+	<TurnIn QuestName="Hunting the Hunters" QuestId="26638" TurnInName="Danforth" TurnInId="43462" />
+	<TurnIn QuestName="Unspeakable Atrocities" QuestId="26640" TurnInName="John J. Keeshan" TurnInId="43458" />
+	
+<!--<PickUp QuestName="Prisoners of War" QuestId="26646" GiverName="John J. Keeshan" GiverId="43458" />
+	<While Condition="HasQuest(26646) &amp;&amp; !IsQuestCompleted(26646)" >
+		<If Condition="!Me.HasAura(82580)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60384)" WaitTime="1000" />
+		</If>
+		<CustomBehavior File="SpecificQuests\26646-PrisonersOfWar" />
+	</While>
+	<TurnIn QuestName="Prisoners of War" QuestId="26646" TurnInName="John J. Keeshan" TurnInId="43458" /> -->
+	
+	<CustomBehavior File="Message" Text="Redridge Mountains Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

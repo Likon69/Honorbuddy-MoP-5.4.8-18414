@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Scholomance</Name>
+  <DungeonId>2</DungeonId>
+  
+  <BossEncounters>
+    <Boss isFinal="false" entry="58633" name="Instructor Chillheart" killOrder="1" optional="false" X="200.3663" Y="6.079861" Z="119.2258"/>
+    <Boss isFinal="false" entry="59184" name="Jandice Barov" killOrder="2" optional="false" X="286.9189" Y="43.07346" Z="113.4088"/>
+    <Boss isFinal="false" entry="59153" name="Rattlegore" killOrder="3" optional="false" X="261.9058" Y="91.38342" Z="113.4891"/>
+    <Boss isFinal="false" entry="58722" name="Lilian Voss" killOrder="4" optional="false" X="200.4618" Y="86.05209" Z="107.7616"/>
+    <Boss isFinal="true" entry="59080" name="Darkmaster Gandling" killOrder="5" optional="false" X="20.15104" Y="57.74479" Z="73.79971"/>
+  </BossEncounters>
+  
+  <Blackspots>
+  </Blackspots>
+  <PullBlackspots>
+    <PullBlackspot X="137.903" Y="104.7297" Z="111.3575" Radius="17.72406" />
+  </PullBlackspots>
+</DungeonBuddyProfile>

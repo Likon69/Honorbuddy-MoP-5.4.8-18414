@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>A Brewing Storm Heroic</Name>
+  <DungeonId>639</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="true" entry="58739" name="Borokhula the Destroyer" killOrder="1" optional="false" X="2201.443" Y="-1019.821" Z="450.771"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+
+  </PullBlackspots>
+</DungeonBuddyProfile>

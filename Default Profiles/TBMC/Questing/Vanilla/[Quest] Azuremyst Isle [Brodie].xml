@@ -1,0 +1,354 @@
+<HBProfile>
+
+	<Name>Azuremyst Isle ($Rev$)</Name>
+	<MinLevel>4</MinLevel>
+	<MaxLevel>15</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+		<Blackspot X="-4601.432" Y="-11632.61" Z="17.4364" Radius="4.136899" />
+	</Blackspots>
+
+	<Mailboxes>
+		<Mailbox X="-4147.995" Y="-12490.41" Z="44.31753" />
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Azure Watch Vendors -->
+		<Vendor Name="Caregiver Chellan" Entry="16553" Type="Food" X="-4127.806" Y="-12467.68" Z="44.08744" />
+		<Vendor Name="Otonambusi" Entry="18810" Type="Food" X="-4209.451" Y="-12456.21" Z="45.54395" />
+		<Vendor Name="Nabek" Entry="17930" Type="Repair" X="-4235.529" Y="-12518.16" Z="46.20815" />
+		<Vendor Name="Diktynna" Entry="17101" Type="Sell" X="-4266.344" Y="-12985.36" Z="2.272953" />
+		<!-- Odesyus' Landing Vendors -->
+		<Vendor Name="Blacksmith Calypso" Entry="17245" Type="Repair" X="-4726.288" Y="-12387" Z="11.09189" />
+		<Vendor Name="Logan Daniel" Entry="17489" Type="Food" X="-4720.671" Y="-12381.52" Z="10.99136" />
+		<!-- Stillpine Hold Vendor -->
+		<Vendor Name="Parkat Steelfur" Entry="17446" Type="Repair" X="-3391.016" Y="-12412.07" Z="19.03258" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Name="The Great Moongraze Hunt" Id="10324" >
+	<Objective Type="CollectItem" ItemId="23677" CollectCount="6" >
+		<CollectFrom>
+			<Mob Name="Moongraze Buck" Id="17201" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-3960.199" Y="-12481.24" Z="23.90249" />
+			<Hotspot X="-3867.713" Y="-12526.81" Z="30.90292" />
+			<Hotspot X="-3790.804" Y="-12555.41" Z="4.21815" />
+			<Hotspot X="-3747.935" Y="-12629.58" Z="2.098173" />
+			<Hotspot X="-3663.553" Y="-12624.51" Z="9.7646" />
+			<Hotspot X="-3640.558" Y="-12533.86" Z="14.48265" />
+			<Hotspot X="-3696.2" Y="-12428.05" Z="-0.1226244" />
+			<Hotspot X="-3755.246" Y="-12358.4" Z="1.30382" />
+			<Hotspot X="-3783.795" Y="-12270.26" Z="4.948995" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Nightstalker Clean Up, Isle 2..." Id="9456" >
+	<Objective Type="KillMob" MobId="17202" KillCount="8" >
+		<Hotspots>
+			<Hotspot X="-3960.199" Y="-12481.24" Z="23.90249" />
+			<Hotspot X="-3867.713" Y="-12526.81" Z="30.90292" />
+			<Hotspot X="-3790.804" Y="-12555.41" Z="4.21815" />
+			<Hotspot X="-3747.935" Y="-12629.58" Z="2.098173" />
+			<Hotspot X="-3663.553" Y="-12624.51" Z="9.7646" />
+			<Hotspot X="-3640.558" Y="-12533.86" Z="14.48265" />
+			<Hotspot X="-3696.2" Y="-12428.05" Z="-0.1226244" />
+			<Hotspot X="-3755.246" Y="-12358.4" Z="1.30382" />
+			<Hotspot X="-3783.795" Y="-12270.26" Z="4.948995" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Warlord Sriss'tiz" Id="9515" >
+	<Objective Type="KillMob" MobId="17298" KillCount="1" >
+		<Hotspots>
+			<Hotspot X="-4810.98" Y="-11521.51" Z="-34.33" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="The Kurken is Lurkin'" Id="9570" >
+	<Objective Type="CollectItem" ItemId="23860" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="The Kurken" Id="17447" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-3155.733" Y="-12489.59" Z="-1.46436" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Chieftain Oomooroo" Id="9573" >
+	<Objective Type="KillMob" MobId="17448" KillCount="1" >
+		<Hotspots>
+			<Hotspot X="-3230.938" Y="-12396.76" Z="9.96162" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="17189" KillCount="9" >
+		<Hotspots>
+			<Hotspot X="-3230.938" Y="-12396.76" Z="9.96162" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="9506" Name="A Small Start">
+	<Objective Type="CollectItem" ItemId="23738" CollectCount="1">
+		<CollectFrom>
+			<GameObject Name="Nautical Compass" Id="181675" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-4629.54" Y="-12924.02" Z="8.49" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="23739" CollectCount="1">
+		<CollectFrom>
+			<GameObject Name="Nautical Map" Id="181674" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-4595.81" Y="-12887.89" Z="7.25" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Azuremyst Isle Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Azure Watch Quests" LogColor="CornflowerBlue" />
+	
+	<If Condition="!HasQuest(9603) &amp;&amp; !IsQuestCompleted(9603)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+	
+<!-- Beds, Bandages, and Beyond/Medicinal Purpose/The Great Moongraze Hunt -->
+	<If Condition="!HasQuest(9603) &amp;&amp; !IsQuestCompleted(9603)" >
+		<PickUp QuestName="Beds, Bandages, and Beyond" QuestId="9603" GiverName="Caregiver Chellan" GiverId="16553" />
+		<CustomBehavior File="SetHearthstone" MobId="16553" X="-4127.80" Y="-12467.71" Z="44.09" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	</If>
+	<PickUp QuestName="Medicinal Purpose" QuestId="9463" GiverName="Anchorite Fateema" GiverId="17214" />
+	<PickUp QuestName="The Great Moongraze Hunt" QuestId="9454" GiverName="Aceton" GiverId="17110" />
+	<TurnIn QuestName="Beds, Bandages, and Beyond" QuestId="9603" TurnInName="Zaldaan" TurnInId="43991" />
+	<Objective QuestName="Medicinal Purpose" QuestId="9463" Type="CollectItem" ItemId="23685" CollectCount="8" />
+	<Objective QuestName="The Great Moongraze Hunt" QuestId="9454" Type="CollectItem" ItemId="23676" CollectCount="6" />
+	<TurnIn QuestName="Medicinal Purpose" QuestId="9463" TurnInName="Anchorite Fateema" TurnInId="17214" />
+	<TurnIn QuestName="The Great Moongraze Hunt" QuestId="9454" TurnInName="Aceton" TurnInId="17110" />
+	
+<!-- The Great Moongraze Hunt/An Alternate Alternative/Strange Findings -->
+	<PickUp QuestName="The Great Moongraze Hunt" QuestId="10324" GiverName="Aceton" GiverId="17110" />
+	<PickUp QuestName="An Alternate Alternative" QuestId="9473" GiverName="Daedal" GiverId="17215" />
+	<Objective QuestName="The Great Moongraze Hunt" QuestId="10324" Type="CollectItem" ItemId="23677" CollectCount="6" />
+	<Objective QuestName="An Alternate Alternative" QuestId="9473" Type="CollectItem" ItemId="23692" CollectCount="6" />
+	<If Condition="!HasItem(23678) &amp;&amp; (!HasQuest(9455) &amp;&amp; !IsQuestCompleted(9455))" >
+		<CustomBehavior File="CollectThings" MobId="17202" CollectItemId="23678" MobState="Alive" HuntingGroundRadius="200" >
+			<Hotspot X="-3960.199" Y="-12481.24" Z="23.90249" />
+			<Hotspot X="-3867.713" Y="-12526.81" Z="30.90292" />
+			<Hotspot X="-3790.804" Y="-12555.41" Z="4.21815" />
+			<Hotspot X="-3747.935" Y="-12629.58" Z="2.098173" />
+			<Hotspot X="-3663.553" Y="-12624.51" Z="9.7646" />
+			<Hotspot X="-3640.558" Y="-12533.86" Z="14.48265" />
+			<Hotspot X="-3696.2" Y="-12428.05" Z="-0.1226244" />
+			<Hotspot X="-3755.246" Y="-12358.4" Z="1.30382" />
+			<Hotspot X="-3783.795" Y="-12270.26" Z="4.948995" />
+		</CustomBehavior>
+	</If>
+	<If Condition="HasItem(23678) &amp;&amp; (!HasQuest(9455) &amp;&amp; !IsQuestCompleted(9455))" >
+		<PickUp QuestName="Strange Findings" QuestId="9455" GiverType="Item" GiverId="23678" />
+	</If>
+	<TurnIn QuestName="The Great Moongraze Hunt" QuestId="10324" TurnInName="Aceton" TurnInId="17110" />
+	<TurnIn QuestName="An Alternate Alternative" QuestId="9473" TurnInName="Daedal" TurnInId="17215" />
+	<TurnIn QuestName="Strange Findings" QuestId="9455" TurnInName="Exarch Menelaous" TurnInId="17116" />
+	
+<!-- Nightstalker Clean Up, Isle 2.../The Prophecy of Velen -->
+	<PickUp QuestName="Nightstalker Clean Up, Isle 2..." QuestId="9456" GiverName="Exarch Menelaous" GiverId="17116" />
+	<PickUp QuestName="The Prophecy of Velen" QuestId="9505" GiverName="Daedal" GiverId="17215" />
+	<Objective QuestName="Nightstalker Clean Up, Isle 2..." QuestId="9456" Type="KillMob" MobId="17202" KillCount="8" />
+	<TurnIn QuestName="Nightstalker Clean Up, Isle 2..." QuestId="9456" TurnInName="Exarch Menelaous" TurnInId="17116" />
+	<TurnIn QuestName="The Prophecy of Velen" QuestId="9505" TurnInName="Admiral Odesyus" TurnInId="17240" />
+	
+	<CustomBehavior File="Message" Text="Compiling Odesyus' Landing Quests" LogColor="CornflowerBlue" />
+	
+<!-- A Small Start/Cookie's Jumbo Gumbo -->
+	<PickUp QuestName="A Small Start" QuestId="9506" GiverName="Admiral Odesyus" GiverId="17240" />
+	<PickUp QuestName="Cookie's Jumbo Gumbo" QuestId="9512" GiverName="Cookie McWeaksauce" GiverId="17246" />
+	<Objective QuestName="Cookie's Jumbo Gumbo" QuestId="9512" Type="CollectItem" ItemId="23757" CollectCount="6" />
+	<CustomBehavior File="InteractWith" QuestId="9506" QuestObjectiveIndex="2" MobId="181674"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" X="-4595.623" Y="-12885.63" Z="8.085496" />
+	<CustomBehavior File="InteractWith" QuestId="9506" QuestObjectiveIndex="1" MobId="181675"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" X="-4630.077" Y="-12925.27" Z="9.626981" />
+	<TurnIn QuestName="A Small Start" QuestId="9506" TurnInName="Admiral Odesyus" TurnInId="17240" />
+	<TurnIn QuestName="Cookie's Jumbo Gumbo" QuestId="9512" TurnInName="Cookie McWeaksauce" TurnInId="17246" />
+	
+<!-- I've Got a Plant/Reclaiming the Ruins/Precious and Fragile Things Need Special Handling/Tree's Company -->
+	<PickUp QuestName="I've Got a Plant" QuestId="9530" GiverName="Admiral Odesyus" GiverId="17240" />
+	<PickUp QuestName="Reclaiming the Ruins" QuestId="9513" GiverName="Priestess Kyleen Il'dinare" GiverId="17241" />
+	<PickUp QuestName="Precious and Fragile Things Need Special Handling" QuestId="9523" GiverName="Archaeologist Adamant Ironheart" GiverId="17242" />
+	<Objective QuestName="I've Got a Plant" QuestId="9530" Type="CollectItem" ItemId="23791" CollectCount="5" />
+	<Objective QuestName="I've Got a Plant" QuestId="9530" Type="CollectItem" ItemId="23790" CollectCount="1" />
+	<TurnIn QuestName="I've Got a Plant" QuestId="9530" TurnInName="Admiral Odesyus" TurnInId="17240" />
+	<PickUp QuestName="Tree's Company" QuestId="9531" GiverName="Admiral Odesyus" GiverId="17240" />
+	<Objective QuestName="Precious and Fragile Things Need Special Handling" QuestId="9523" Type="CollectItem" ItemId="23779" CollectCount="8" />
+	<Objective QuestName="Reclaiming the Ruins" QuestId="9513" Type="KillMob" MobId="17194" KillCount="5" />
+	<Objective QuestName="Reclaiming the Ruins" QuestId="9513" Type="KillMob" MobId="17193" KillCount="5" />
+	<Objective QuestName="Reclaiming the Ruins" QuestId="9513" Type="KillMob" MobId="17195" KillCount="5" />
+	<If Condition="!HasItem(23759) &amp;&amp; (!HasQuest(9514) &amp;&amp; !IsQuestCompleted(9514))" >
+		<CustomBehavior File="CollectThings" MobId="17194" MobId2="17193" MobId3="17195" CollectItemId="23759" MobState="Alive" HuntingGroundRadius="200" >
+			<Hotspot X="-4959.603" Y="-12055.88" Z="2.862961" />
+			<Hotspot X="-4916.678" Y="-12100.59" Z="2.902536" />
+			<Hotspot X="-4944.647" Y="-11997.73" Z="11.47637" />
+			<Hotspot X="-4896.501" Y="-11921.1" Z="21.66371" />
+			<Hotspot X="-4909.639" Y="-11822.51" Z="16.75307" />
+			<Hotspot X="-4910.666" Y="-11745.76" Z="23.6739" />
+		</CustomBehavior>
+	</If>
+	<If Condition="HasItem(23759) &amp;&amp; (!HasQuest(9514) &amp;&amp; !IsQuestCompleted(9514))" >
+		<PickUp QuestName="Rune Covered Tablet" QuestId="9514" GiverType="Item" GiverId="23759" />
+	</If>
+	<While Condition="HasQuest(9531) &amp;&amp; !IsQuestCompleted(9531)" >
+		<RunTo X="-5067.278" Y="-11250.18" Z="1.084298" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(23792)" WaitTime="3000" />
+		<While Condition="!IsQuestCompleted(9531) &amp;&amp; Me.HasAura(30298)" />
+	</While>
+	<TurnIn QuestName="Precious and Fragile Things Need Special Handling" QuestId="9523" TurnInName="Archaeologist Adamant Ironheart" TurnInId="17242" />
+	<TurnIn QuestName="Tree's Company" QuestId="9531" TurnInName="Admiral Odesyus" TurnInId="17240" />
+	<TurnIn QuestName="Reclaiming the Ruins" QuestId="9513" TurnInName="Priestess Kyleen Il'dinare" TurnInId="17241" />
+	<TurnIn QuestName="Rune Covered Tablet" QuestId="9514" TurnInName="Priestess Kyleen Il'dinare" TurnInId="17241" />
+
+<!-- Show Gnomercy/Warlord Sriss'tiz -->
+	<PickUp QuestName="Show Gnomercy" QuestId="9537" GiverName="Admiral Odesyus" GiverId="17240" />
+	<PickUp QuestName="Warlord Sriss'tiz" QuestId="9515" GiverName="Priestess Kyleen Il'dinare" GiverId="17241" />
+	<Objective QuestName="Warlord Sriss'tiz" QuestId="9515" Type="KillMob" MobId="17298" KillCount="1" />
+	<While Condition="HasQuest(9537) &amp;&amp; !IsQuestCompleted(9537)" >
+		<CustomBehavior File="InteractWith" QuestId="9537" MobId="17243" InteractByGossipOptions="1" WaitTime="10000" >
+			<HuntingGrounds>
+				<Hotspot X="-4769.064" Y="-12400.65" Z="2.493686" />
+				<Hotspot X="-4742.108" Y="-12478.45" Z="2.695272" />
+				<Hotspot X="-4703.226" Y="-12511.75" Z="3.105679" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<TurnIn QuestName="Warlord Sriss'tiz" QuestId="9515" TurnInName="Priestess Kyleen Il'dinare" TurnInId="17241" />
+	<TurnIn QuestName="Show Gnomercy" QuestId="9537" TurnInName="Admiral Odesyus" TurnInId="17240" />
+	
+<!-- Deliver Them From Evil... -->
+	<PickUp QuestName="Deliver Them From Evil..." QuestId="9602" GiverName="Admiral Odesyus" GiverId="17240" />
+	<TurnIn QuestName="Deliver Them From Evil..." QuestId="9602" TurnInName="Exarch Menelaous" TurnInId="17116" />
+
+	<CustomBehavior File="Message" Text="Compiling Azure Watch Round 2 Quests" LogColor="CornflowerBlue" />
+
+<!-- Learning the Language -->
+	<PickUp QuestName="Learning the Language" QuestId="9538" GiverName="Cryptographer Aurren" GiverId="17232" />
+	<CustomBehavior File="Misc\RunLua" QuestId="9538" Lua="UseItemByName(23818)" WaitTime="1000" />
+	<TurnIn QuestName="Learning the Language" QuestId="9538" TurnInName="Totem of Akida" TurnInId="17360" />
+	
+<!-- Totem of Coo -->
+	<PickUp QuestName="Totem of Coo" QuestId="9539" GiverName="Totem of Akida" GiverId="17360" />
+	<TurnIn QuestName="Totem of Coo" QuestId="9539" TurnInName="Totem of Coo" TurnInId="17361" />
+	
+<!-- Totem of Tikti -->
+	<PickUp QuestName="Totem of Coo" QuestId="9540" GiverName="Totem of Coo" GiverId="17361" />
+	<TurnIn QuestName="Totem of Coo" QuestId="9540" TurnInName="Totem of Tikti" TurnInId="17362" />
+	
+<!-- Totem of Yor -->
+	<PickUp QuestName="Totem of Yor" QuestId="9541" GiverName="Totem of Tikti" GiverId="17362" />
+	<TurnIn QuestName="Totem of Yor" QuestId="9541" TurnInName="Totem of Yor" TurnInId="17363" />
+	
+<!-- Totem of Vark -->
+	<PickUp QuestName="Totem of Vark" QuestId="9542" GiverName="Totem of Yor" GiverId="17363" />
+	<TurnIn QuestName="Totem of Vark" QuestId="9542" TurnInName="Totem of Vark" TurnInId="17364" />
+
+<!-- The Prophecy of Akida -->
+	<PickUp QuestName="The Prophecy of Akida" QuestId="9544" GiverName="Totem of Vark" GiverId="17364" />
+	<CustomBehavior File="CollectThings" QuestId="9544" MobId="17183" MobId2="17184" MobId3="17185" CollectItemId="23801" CollectItemCount="8" >
+		<Hotspot X="-4504.114" Y="-11618.4" Z="11.21694" />
+		<Hotspot X="-4599.796" Y="-11638.13" Z="17.64635" />
+		<Hotspot X="-4629.48" Y="-11523.7" Z="18.53337" />
+	</CustomBehavior>
+	<While Condition="!IsQuestCompleted(9544)" >
+		<CustomBehavior File="RunMacro" Macro="/cleartarget" />
+		<CustomBehavior File="9544-TheProphecyofAkida" />
+		<CustomBehavior File="WaitTimer" WaitTime="1000" />
+		<CustomBehavior File="InteractWith" QuestId="9544" MobId="181730" MobId2="181731" MobId3="181729" 
+			MobId4="181726" MobId5="181727" MobId6="181725" MobId7="181723" MobId8="181724" MobId9="181733"
+			MobId10="181714" MobId11="181728" MobId12="181732" MobId13="181721" MobId14="181720" MobId15="181722"
+			CollectionDistance="10" NonCompeteDistance="0" IgnoreLoSToTarget="True" WaitTime="10000" 
+			ProactiveCombatStrategy="ClearMobsTargetingUs" WaitForNpcs="False" />
+	</While>
+	<TurnIn QuestName="The Prophecy of Akida" QuestId="9544" TurnInName="Arugoo of the Stillpine" TurnInId="17114" />
+
+<!-- Stillpine Hold -->
+	<PickUp QuestName="Stillpine Hold" QuestId="9559" GiverName="Arugoo of the Stillpine" GiverId="17114" />
+	<TurnIn QuestName="Stillpine Hold" QuestId="9559" TurnInName="High Chief Stillpine" TurnInId="17440" />
+	
+	<CustomBehavior File="Message" Text="Compiling Stillpine Hold Quests" LogColor="CornflowerBlue" />
+	
+<!-- Beasts of the Apocalypse!/Murlocs...Why Here? Why Now? -->
+	<PickUp QuestName="Beasts of the Apocalypse!" QuestId="9560" GiverName="Moordo" GiverId="17442" />
+	<PickUp QuestName="Murlocs...Why Here? Why Now?" QuestId="9562" GiverName="Gurf" GiverId="17441" />
+	<Objective QuestName="Murlocs...Why Here? Why Now?" QuestId="9562" Type="CollectItem" ItemId="23849" CollectCount="5" />
+	<TurnIn QuestName="Murlocs...Why Here? Why Now?" QuestId="9562" TurnInName="Gurf" TurnInId="17441" />
+	<Objective QuestName="Beasts of the Apocalypse!" QuestId="9560" Type="CollectItem" ItemId="23845" CollectCount="8" />
+	<TurnIn QuestName="Beasts of the Apocalypse!" QuestId="9560" TurnInName="Moordo" TurnInId="17442" />
+
+<!-- Chieftain Oomooroo/Search Stillpine Hold/Blood Crystals -->
+	<PickUp QuestName="Chieftain Oomooroo" QuestId="9573" GiverName="Stillpine the Younger" GiverId="17445" />
+	<PickUp QuestName="Search Stillpine Hold" QuestId="9565" GiverName="High Chief Stillpine" GiverId="17440" />
+	<Objective QuestName="Chieftain Oomooroo" QuestId="9573" Type="KillMob" MobId="17448" KillCount="1" />
+	<TurnIn QuestName="Search Stillpine Hold" QuestId="9565" TurnInType="Object" TurnInName="Blood Crystal" TurnInId="181748"
+		X="-3107.881" Y="-12559.03" Z="-2.070621" />
+	<PickUp QuestName="Blood Crystals" QuestId="9566" GiverType="Object" GiverName="Blood Crystal" GiverId="181748"
+		X="-3107.881" Y="-12559.03" Z="-2.070621" />
+	<Objective QuestName="Chieftain Oomooroo" QuestId="9573" Type="KillMob" MobId="17189" KillCount="9" />
+	<TurnIn QuestName="Blood Crystals" QuestId="9566" TurnInName="High Chief Stillpine" TurnInId="17440" />
+	<TurnIn QuestName="Chieftain Oomooroo" QuestId="9573" TurnInName="Stillpine the Younger" TurnInId="17445" />
+
+<!-- The Kurken is Lurkin' -->
+	<PickUp QuestName="The Kurken is Lurkin'" QuestId="9570" GiverName="Kurz the Revelator" GiverId="17443" />
+	<Objective QuestName="The Kurken is Lurkin'" QuestId="9570" Type="CollectItem" ItemId="23860" CollectCount="1" />
+	<TurnIn QuestName="The Kurken is Lurkin'" QuestId="9570" TurnInName="Kurz the Revelator" TurnInId="17443" />
+	
+<!-- The Kurken Hide/Warn Your People -->
+	<PickUp QuestName="The Kurken Hide" QuestId="9571" GiverName="Kurz the Revelator" GiverId="17443" />
+	<PickUp QuestName="Warn Your People" QuestId="9622" GiverName="High Chief Stillpine" GiverId="17440" />
+	<TurnIn QuestName="The Kurken Hide" QuestId="9571" TurnInName="Moordo" TurnInId="17442" />
+	<TurnIn QuestName="Warn Your People" QuestId="9622" TurnInName="Exarch Menelaous" TurnInId="17116" />
+	<If Condition="HasItem(23910) &amp;&amp; (!HasQuest(9616) &amp;&amp; !IsQuestCompleted(9616)" >
+		<PickUp QuestName="Bandits!" QuestId="9616" GiverType="Item" GiverId="23910" />
+	</If>
+	<If Condition="HasQuest(9616)" >
+		<TurnIn QuestName="Bandits!" QuestId="9616" TurnInName="Exarch Menelaous" TurnInId="17116" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Azuremyst Isle Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<DungeonBuddyProfile>
+  <Name>Mogu'shan Palace</Name>
+  <DungeonId>467</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="61442" name="Kuai the Brute" killOrder="1" optional="false" X="-4225.462" Y="-2606.031" Z="16.47969"/>
+    <Boss isFinal="false" entry="61445" name="Haiyan the Unstoppable" killOrder="1" optional="false" X="-4225.462" Y="-2606.031" Z="16.47969"/>
+    <Boss isFinal="false" entry="61444" name="Ming the Cunning" killOrder="1" optional="false" X="-4225.462" Y="-2606.031" Z="16.47969"/>
+    <Boss isFinal="false" entry="61243" name="Gekkan" killOrder="2" optional="false" X="-4397.865" Y="-2581.22" Z="-54.55677"/>
+    <Boss isFinal="true" entry="61398" name="Xin the Weaponmaster" killOrder="3" optional="false" X="-4704.736" Y="-2613.609" Z="28.76614"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+    <!-- At entrance -->
+    <PullBlackspot X="-3969.011" Y="-2677.549" Z="24.5603" Radius="33.09181" />
+  </PullBlackspots>
+</DungeonBuddyProfile>

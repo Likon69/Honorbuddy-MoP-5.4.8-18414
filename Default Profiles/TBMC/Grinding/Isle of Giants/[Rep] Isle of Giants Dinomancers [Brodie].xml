@@ -1,0 +1,67 @@
+<HBProfile>
+	<Name>Isle of Giants - Dinomancers Giant Dinosaur Bones</Name>
+	
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	
+	<Blackspots>
+    </Blackspots>
+	
+	<Vendors>
+		<Vendor Name="Steelbender Doshu" Entry="64829" Type="Repair" X="4344.012" Y="874.0822" Z="108.4709" />
+	</Vendors>
+	
+	<Blacklist>
+		<Mob Name="Primal Direhorn" Entry="69983" Flags="Pull" />
+		<Mob Name="Primal Direhorn" Entry="70019" Flags="Pull" />
+		<Mob Name="Primal Direhorn" Entry="70018" Flags="Pull" />
+		<Mob Name="Primal Direhorn" Entry="70017" Flags="Pull" />
+		<Mob Name="Primal Direhorn" Entry="70016" Flags="Pull" />
+	</Blacklist>
+	
+	<AvoidMobs>
+		<Mob Name="Oondasta" Entry="69161" />
+		<Mob Name="Pterrorwing Skyscreamer" Entry="70020" />
+		<Mob Name="Primal Direhorn" Entry="70017" />
+		<Mob Name="Primal Devilsaur" Entry="69991" />
+		<Mob Name="Primal Devilsaur" Entry="70008" />
+		<Mob Name="Primal Devilsaur" Entry="70009" />
+		<Mob Name="Primal Devilsaur" Entry="70011" />
+		<Mob Name="Agrant Sharpshot" Entry="70030" />
+		<Mob Name="Nellie Sattler" Entry="70031" />
+		<Mob Name="Primal Direhorn" Entry="69983" />
+		<Mob Name="Primal Direhorn" Entry="70019" />
+		<Mob Name="Primal Direhorn" Entry="70016" />
+		<Mob Name="Primal Direhorn" Entry="70017" />
+	</AvoidMobs>
+	
+	<TargetElites>True</TargetElites>	
+  
+<QuestOrder>
+	
+	<If Condition="Me.ZoneId != 6661" >
+		<CustomBehavior File="Message" Text="Moving to Isle of Giants" LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="5772.52" Y="1212.49" Z="0.81" />
+	</If>
+	
+	<SetGrindArea>
+		<GrindArea>
+			<Factions>16</Factions>
+			<Hotspots>
+				<Hotspot X="5787.075" Y="828.9433" Z="3.176611" />
+				<Hotspot X="5796.92" Y="806.0452" Z="2.967033" />
+				<Hotspot X="5856.73" Y="781.8989" Z="17.27157" />
+				<Hotspot X="5851.909" Y="757.5194" Z="18.03519" />
+			</Hotspots>
+		</GrindArea>
+	</SetGrindArea>
+	<GrindTo Condition="False" GoalText="Dinosaur Bones" />
+
+</QuestOrder>
+</HBProfile>  

@@ -1,0 +1,200 @@
+<HBProfile>
+
+	<Name>Undercity Cooking Dailies ($Rev$)</Name>
+	<MinLevel>10</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Name="Fungus Among Us" Id="29315" >
+	<Objective Type="CollectItem" ItemId="69899" CollectCount="12" >
+		<CollectFrom>
+			<GameObject Name="Sewer Cap" Id="208816" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="1714.14" Y="441.8216" Z="0.2181021" />
+			<Hotspot X="1687.821" Y="540.4421" Z="-12.19176" />
+			<Hotspot X="1676.537" Y="580.3956" Z="-13.93035" />
+			<Hotspot X="1671.246" Y="641.1563" Z="15.15256" />
+			<Hotspot X="1604.379" Y="650.1315" Z="38.55229" />
+			<Hotspot X="1619.976" Y="728.6886" Z="70.77755" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Lily, Oh Lily" Id="29332" >
+	<Objective Type="CollectItem" ItemId="69917" CollectCount="10" >
+		<CollectFrom>
+			<GameObject Name="Stillwater Lily" Id="208833" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="2115.864" Y="781.934" Z="33.43732" />
+			<Hotspot X="2243.268" Y="745.9719" Z="33.75477" />
+			<Hotspot X="2295.446" Y="822.7336" Z="32.81026" />
+			<Hotspot X="2175.819" Y="867.0969" Z="36.17134" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Would You Like Some Flies With That?" Id="29360" >
+	<Objective Type="CollectItem" ItemId="69989" CollectCount="25" >
+		<CollectFrom>
+			<GameObject Name="Fly Covered Meat" Id="208876" />
+			<GameObject Name="Fly Covered Meat" Id="208874" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="1765.471" Y="333.8537" Z="-62.22491" />
+			<Hotspot X="1732.137" Y="43.45612" Z="-59.31683" />
+			<Hotspot X="1595.846" Y="64.1986" Z="-62.17471" />
+			<Hotspot X="1451.364" Y="82.19343" Z="-62.2829" />
+			<Hotspot X="1415.955" Y="364.8953" Z="-66.00164" />
+			<Hotspot X="1533.319" Y="206.3338" Z="-62.17748" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="Message" Text="ERROR!! Somehow you ended up starting an Horde profile. Terminating." LogColor="Red" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Undercity Cooking Daily Routine...Checking Location" LogColor="Green" />
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Undercity -->
+		<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326)) &gt;= 100" >
+			<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+			<CustomBehavior File="ForcedDismount" />
+		</If>
+		<CustomBehavior File="UserSettings" UseMount="False" />
+		<CustomBehavior File="InteractWith" MobId="215124" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1732.343" Y="881.7467" Z="487.0864" /> <!-- Undercity -->
+		<CustomBehavior File="UserSettings" UseMount="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+	</If>
+	
+	<!-- Needs conditional for Ghostlands -->
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487
+					&amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557" >
+	<!-- Outlands, but not Ghostlands/Eversong/Silvermoon or Azure/Bloodmyst/Exodar -->
+		<CustomBehavior File="FlyTo" X="-163.8283" Y="973.4586" Z="54.29" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="195140" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-163.8283" Y="973.4586" Z="54.29" />
+	</If>
+	
+	<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+		<CustomBehavior File="FlyTo" X="1844.718" Y="-4395.62" Z="135.2326" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="UseTransport" TransportId="164871"
+			WaitAtX="1844.718" WaitAtY="-4395.62" WaitAtZ="135.2326"
+			TransportStartX="1833.509" TransportStartY="-4391.543" TransportStartZ="152.7679"
+			TransportEndX="2062.376" TransportEndY="292.998" TransportEndZ="114.973"
+			StandOnX="1835.482" StandOnY="-4386.239" StandOnZ="135.0147" 
+			GetOffX="2070.155" GetOffY="289.2588" GetOffZ="97.0315" />
+	</If>
+	
+	<If Condition="!HasQuest(29333) &amp;&amp; !HasQuest(29315) &amp;&amp; !HasQuest(29332) &amp;&amp; !HasQuest(29334) &amp;&amp; !HasQuest(29360)" >
+		<CustomBehavior File="Message" Text="Grabbing Daily from Eunice Burch" LogColor="CornflowerBlue" />
+		<MoveTo X="1593.813" Y="273.6037" Z="-55.34292" />
+		<If Condition="Me.GetSkill(Styx.SkillLine.Cooking).CurrentValue &lt; 1" >
+			<CustomBehavior File="ForceTrainRiding" MobId="4552" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</If>
+		<While Condition="HasQuestAvailable(4552)" >
+			<CustomBehavior File="InteractWith" MobId="4552" InteractByQuestFrameDisposition="Ignore" NonCompeteDistance="0" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+	
+	<If Condition="HasQuest(29333)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Escargot A Go-Go" LogColor="CornflowerBlue" />
+		<If Condition="!IsQuestCompleted(29333)" >
+			<CustomBehavior File="FlyTo" QuestId="29333" TerminateWhen="Unit(53526) != null" X="2516.559" Y="-73.2798" Z="34.37878" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" QuestId="29333" MobId="53526" InteractByLooting="True" NumOfTimes="1000"
+				NonCompeteDistance="5" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000"
+				PreInteractMountStrategy="Dismount" MovementBy="NavigatorPreferred" >
+				<HuntingGrounds>
+					<Hotspot X="2428.091" Y="-80.4454" Z="21.11807" />
+					<Hotspot X="2303.089" Y="-96.6827" Z="21.11807" />
+					<Hotspot X="2578.75" Y="-184.8809" Z="20.54904" />
+					<Hotspot X="2657.083" Y="-45.22635" Z="20.54904" />
+					<Hotspot X="2509.089" Y="47.71346" Z="20.54904" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</If>
+		<TurnIn QuestName="Escargot A Go-Go" QuestId="29333" TurnInName="Eunice Burch" TurnInId="4552" />
+	</If>
+	
+	<If Condition="HasQuest(29315)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Fungus Among Us" LogColor="CornflowerBlue" />
+		<Objective QuestName="Fungus Among Us" QuestId="29315" Type="CollectItem" ItemId="69899" CollectCount="12" />
+		<TurnIn QuestName="Fungus Among Us" QuestId="29315" TurnInName="Eunice Burch" TurnInId="4552" />
+	</If>
+	
+	<If Condition="HasQuest(29332)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Lily, Oh Lily" LogColor="CornflowerBlue" />
+		<Objective QuestName="Lily, Oh Lily" QuestId="29332" Type="CollectItem" ItemId="69917" CollectCount="10" />
+		<TurnIn QuestName="Lily, Oh Lily" QuestId="29332" TurnInName="Eunice Burch" TurnInId="4552" />
+	</If>
+	
+	<If Condition="HasQuest(29334)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Roach Coach" LogColor="CornflowerBlue" />
+		<Objective QuestName="Roach Coach" QuestId="29334" Type="CollectItem" ItemId="69919" CollectCount="20" />
+		<TurnIn QuestName="Roach Coach" QuestId="29334" TurnInName="Chef Audrey" TurnInId="53528" />
+	</If>
+	
+	<If Condition="HasQuest(29360)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Would You Like Some Flies With That?" LogColor="CornflowerBlue" />
+		<Objective QuestName="Would You Like Some Flies With That?" QuestId="29360" Type="CollectItem" ItemId="69989" CollectCount="25" />
+		<TurnIn QuestName="Would You Like Some Flies With That?" QuestId="29360" TurnInName="Eunice Burch" TurnInId="4552" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Double checking for training..." LogColor="Orange" />
+	<CustomBehavior File="ForceTrainRiding" MobId="4552" />
+	
+	<CustomBehavior File="Message" Text="Cooking Daily Complete, signing off!" LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+		
+</QuestOrder>
+</HBProfile>

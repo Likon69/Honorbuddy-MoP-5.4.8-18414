@@ -1,0 +1,27 @@
+<HBProfile>
+	<Name>Chocoholic Achievement Grinder ($Rev$)</Name>
+	
+	<MinLevel>1</MinLevel>
+	<MaxLevel>100</MaxLevel>
+   
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>0</MinFreeBagSlots>
+	
+<QuestOrder>
+	
+	<CustomBehavior File="Message" Text="Please note this profile will only eat chocolate, not grind for it. To do so, please use my Noblegarden collector profile!" LogColor="Orange" />
+
+	<While Condition="HasItem(44791) || !IsAchievementCompleted(2418)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(44791)" WaitTime="1250" />
+	</While>
+
+	<If Condition="IsAchievementCompleted(2418)" >
+		<CustomBehavior File="Message" Text="Successfully ate all the chocolates needed! Grats!" LogColor="CornflowerBlue" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Not enough chocolate to finish the achievement...sorry!" LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+
+</QuestOrder>
+</HBProfile>

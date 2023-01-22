@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassProfile Class="Priest" Specialization="3" Name="Priest - Shadow">
+	<TalentTree>
+		<Talent Tier="1" Index="2" Name="Psyfiend" />
+		<Talent Tier="2" Index="1" Name="Body and Soul" />
+		<Talent Tier="3" Index="3" Name="Solace and Insanity" />
+		<Talent Tier="4" Index="1" Name="Desperate Prayer" />
+		<Talent Tier="5" Index="2" Name="Power Infusion" />
+		<Talent Tier="6" Index="3" Name="Halo" />
+	</TalentTree>
+	<WeightSet>
+		<Intellect>20</Intellect>
+		<SpellPower>18</SpellPower>
+		<Hit>18</Hit>
+		<Spirit>18</Spirit>
+		<Haste>16</Haste>
+		<Mastery>14</Mastery>
+		<CriticalStrike>14</CriticalStrike>
+		<Stamina>5</Stamina>
+		<Armor>0.01</Armor>
+		<DamagePerSecond>0.01</DamagePerSecond>
+	</WeightSet>
+</ClassProfile>

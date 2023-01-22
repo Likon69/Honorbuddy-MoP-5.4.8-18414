@@ -1,0 +1,207 @@
+<HBProfile>
+	<Name>Tillers PreReqs ($Rev$)</Name>
+	<MinLevel>85</MinLevel>
+	<MaxLevel>91</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Gina Mudclaw" Entry="58706" Type="Repair" X="-259.5399" Y="592.5469" Z="167.5478" />
+	</Vendors>
+  
+	<AvoidMobs>
+		<Mob Name="Kunzen Ravager" Entry="59119" />
+	</AvoidMobs>
+   
+	<Blackspots>
+		<Blackspot X="-229.8389" Y="1422.793" Z="223.3444" Radius="2" />
+		<Blackspot X="-260.692" Y="610.3264" Z="168.9762" Radius="2" /> <!-- Antheas Pot -->
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+<CustomBehavior File="Message" Text="Compiling Tiller PreReq Quests..." LogColor="Green" />
+
+	<If Condition="HasQuest(31372)" >
+		<CustomBehavior File="FlyTo" X="-181.0804" Y="631.8439" Z="165.4094" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<TurnIn QuestName="The Tillers" QuestId="31372" TurnInName="Farmer Yoon" TurnInId="58721" />
+	</If>
+	
+	<If Condition="HasQuest(31374)" >
+		<CustomBehavior File="FlyTo" X="-181.0804" Y="631.8439" Z="165.4094" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<TurnIn QuestName="The Tillers" QuestId="31374" TurnInName="Farmer Yoon" TurnInId="58721" />
+	</If>
+
+<!-- A Helping Hand -->
+	<If Condition="!HasQuest(30252) &amp;&amp; !IsQuestCompleted(30252)" >
+		<CustomBehavior File="FlyTo" X="-181.0804" Y="631.8439" Z="165.4094" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<PickUp QuestName="A Helping Hand" QuestId="30252" GiverName="Farmer Yoon" GiverId="58721" />
+	</If>
+	
+	<CustomBehavior File="InteractWith" QuestId="30252" MobId="58719" NumOfTimes="100" CollectionDistance="150"
+		NonCompeteDistance="0" X="-178.1711" Y="641.2398" Z="165.4093" />
+
+	<If Condition="HasQuest(30252) &amp;&amp; IsQuestCompleted(30252)" >
+		<TurnIn QuestName="A Helping Hand" QuestId="30252" TurnInName="Farmer Yoon" TurnInId="58646" />
+		<CustomBehavior File="WaitTimer" WaitTime="60000" />
+	</If>
+
+<!-- Learn and Grow I Seeds -->
+	<If Condition="!HasQuest(30535) &amp;&amp; !IsQuestCompleted(30535)" >
+		<CustomBehavior File="FlyTo" X="-181.0804" Y="631.8439" Z="165.4094" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<PickUp QuestName="Learn and Grow I: Seeds" QuestId="30535" GiverName="Farmer Yoon" GiverId="58646" />
+		<CustomBehavior File="FlyTo" X="-262.9048" Y="602.451" Z="167.5489" />
+		<CustomBehavior File="ForcedDismount" />
+	</If>
+	<While Condition="HasQuest(30535) &amp;&amp; !IsQuestCompleted(30535)" >
+		<CustomBehavior File="InteractWith" MobId="58718" GossipOptions="1,1" />
+	</While>
+	<If Condition="HasQuest(30535) &amp;&amp; IsQuestCompleted(30535)" >
+		<TurnIn QuestName="Learn and Grow I: Seeds" QuestId="30535" TurnInName="Farmer Yoon" TurnInId="58646" X="-179.0962" Y="633.9905" Z="165.4103" />
+	</If>
+
+<!-- Learn and Grow II Tilling and Planting -->
+	<If Condition="!HasQuest(30254) &amp;&amp; !IsQuestCompleted(30254)" >
+		<CustomBehavior File="FlyTo" X="-181.0804" Y="631.8439" Z="165.4094" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<PickUp QuestName="Learn and Grow II: Tilling and Planting"  QuestId="30254" GiverName="Farmer Yoon" GiverId="58646" X="-179.0962" Y="633.9905" Z="165.4103" />
+	</If>
+
+	<CustomBehavior File="InteractWith" QuestId="30254" QuestObjectiveIndex="1" MobId="59985" NumOfTimes="20" PreInteractMountStrategy="DismountOrCancelShapeshift" CollectionDistance="100" X="-169.0728" Y="638.5255" Z="165.4094" />
+	<CustomBehavior File="InteractWith" QuestId="30254" QuestObjectiveIndex="2" MobId="59990" InteractByUsingItemId="80302" PreInteractMountStrategy="DismountOrCancelShapeshift" CollectionDistance="100" X="-169.0728" Y="638.5255" Z="165.4094" />
+
+	<If Condition="HasQuest(30254) &amp;&amp; IsQuestCompleted(30254)" >
+		<TurnIn QuestName="Learn and Grow II: Tilling and Planting" QuestId="30254" TurnInName="Farmer Yoon" TurnInId="58646" X="-179.0962" Y="633.9905" Z="165.4103" />
+	</If>
+
+<!-- Learn and Grow III Tending Crops-->
+	<If Condition="!HasQuest(30255) &amp;&amp; !IsQuestCompleted(30255)" >
+		<PickUp QuestName="Learn and Grow III: Tending Crops" QuestId="30255" GiverName="Farmer Yoon" GiverId="58646" X="-179.0962" Y="633.9905" Z="165.4103" />
+	</If>
+
+	<CustomBehavior File="InteractWith" QuestId="30255" MobId="59987" InteractByUsingItemId="79104" NumOfTimes="20" CollectionDistance="100" X="-179.0962" Y="633.9905" Z="165.4103" />
+
+	<If Condition="HasQuest(30255) &amp;&amp; IsQuestCompleted(30255)" >
+		<TurnIn QuestName="Learn and Grow III: Tending Crops" QuestId="30255" TurnInName="Farmer Yoon" TurnInId="58646" X="-179.0962" Y="633.9905" Z="165.4103" />
+	</If>
+
+<!-- Learn and Grow IV Harvesting -->
+	<If Condition="!HasQuest(30256) &amp;&amp; !IsQuestCompleted(30256)" >
+		<PickUp QuestName="Learn and Grow IV: Harvesting" QuestId="30256" GiverName="Farmer Yoon" GiverId="58646" />
+	</If>
+
+	<CustomBehavior File="InteractWith" QuestId="30256" MobId="59833" CollectionDistance="100" NumOfTimes="20" X="-179.0962" Y="633.9905" Z="165.4103" />
+
+	<If Condition="HasQuest(30256) &amp;&amp; IsQuestCompleted(30256)" >
+		<TurnIn QuestName="Learn and Grow IV: Harvesting" QuestId="30256" TurnInName="Farmer Yoon" TurnInId="58646" />
+	</If>
+		
+<!-- Learn and Grow V HalfHill Market -->
+	<If Condition="!HasQuest(30257) &amp;&amp; !IsQuestCompleted(30257)" >
+		<PickUp QuestName="Learn and Grow V: Halfhill Market" QuestId="30257" GiverName="Farmer Yoon" GiverId="58646" />
+	</If>
+
+	<CustomBehavior File="InteractWith" QuestId="30257" MobId="210582" Range="10" X="-161.3544" Y="609.952" Z="168.9081" NumOfTimes="100" />
+
+	<If Condition="HasQuest(30257) &amp;&amp; IsQuestCompleted(30257)" >
+		<TurnIn QuestName="Learn and Grow V: Halfhill Market" QuestId="30257" TurnInName="Gina Mudclaw" TurnInId="58706" X="-259.5399" Y="592.5469" Z="167.5479" />
+	</If>
+
+<!-- Learn and Grow VI Gina's Vote -->
+	<If Condition="!HasQuest(31945) &amp;&amp; !IsQuestCompleted(31945)" >
+		<PickUp QuestName="Learn and Grow VI: Gina's Vote" QuestId="31945" GiverName="Gina Mudclaw" GiverId="58706" X="-259.5399" Y="592.5469" Z="167.5478" />
+	</If>
+
+	<If Condition="HasQuest(31945) &amp;&amp; !IsQuestCompleted(31945)" >
+		<If Condition="IsObjectiveComplete(1,31945)" >
+			<CustomBehavior File="Message" Text="Checking for plant." LogColor="Green" />
+			<CustomBehavior File="FlyTo" X="-169.0728" Y="638.5255" Z="165.4094" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="63165" NumOfTimes="16" WaitForNpcs="False" />
+		<Else>
+			<If Condition="!HasItem(80591)" >
+				<CustomBehavior File="Message" Text="I don't have the seed I need. Going to buy one." LogColor="LawnGreen" />
+				<CustomBehavior File="FlyTo" DestName="Buying Seeds" X="-267.1079" Y="603.3618" Z="167.5482"  />
+				<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="80591" BuyItemCount="1" />
+			</If>
+			<If Condition="HasItem(80591)" >
+				<CustomBehavior File="FlyTo" DestName="My Farm" X="-169.0728" Y="638.5255" Z="165.4094" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" MobId="58562" NumOfTimes="1" WaitForNpcs="False" />
+				<CustomBehavior File="UseItemOn" MobId="58563" ItemId="80591" NumOfTimes="1" WaitForNpcs="False" WaitTime="3000" />
+				<!-- Alluring -->
+				<CustomBehavior File="Message" Text="Alluring Crop" LogColor="Green" />
+				<CustomBehavior File="InteractWith" MobId="63159" NumOfTimes="1" WaitForNpcs="False" WaitTime="1000" />
+				<!-- Wiggling -->
+				<CustomBehavior File="Message" Text="Wiggling Crop" LogColor="Green" />
+				<CustomBehavior File="InteractWith" MobId="63169" NumOfTimes="1" WaitForNpcs="False" WaitTime="1000" />
+				<!-- Encroaching Weeds -->
+				<CustomBehavior File="Message" Text="Encroaching weeds..." LogColor="Green" />
+				<CustomBehavior File="InteractWith" MobId="60185" NumOfTimes="1" WaitForNpcs="False" WaitTime="1000" />
+				<If Condition="Me.IsOnTransport" >
+					<CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton1" NumOfTimes="20" WaitTime="250" />
+				</If>
+				<!-- Tangled -->
+				<CustomBehavior File="Message" Text="Tangled Crop" LogColor="Green" />
+				<CustomBehavior File="InteractWith" MobId="63168" NumOfTimes="1" WaitForNpcs="False" WaitTime="1000" />
+				<While Condition="Me.HasAura(116242)" >
+					<RunTo X="-186.6821" Y="642.2603" Z="165.4093" />
+					<RunTo X="-169.0728" Y="638.5255" Z="165.4094" />
+				</While>
+				<!-- Wild -->
+				<CustomBehavior File="Message" Text="Wild Crop" LogColor="Green" />
+				<CustomBehavior File="InteractWith" MobId="63170" NumOfTimes="1" WaitForNpcs="False" WaitTime="1000" />
+				<While Condition="Me.IsOnTransport" >
+					<CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton1" NumOfTimes="40" WaitTime="250" />
+				</While>
+				<!-- Runty -->
+				<CustomBehavior File="Message" Text="Runty Crop" LogColor="Green" />
+				<CustomBehavior File="InteractWith" MobId="63166" NumOfTimes="1" WaitForNpcs="False" WaitTime="1500" />
+				<CustomBehavior File="Misc\RunLua" Lua="JumpOrAscendStart()" />
+				<CustomBehavior File="WaitTimer" WaitTime="2000" />
+				<!-- Tool Time -->
+				<If Condition="!HasItem(80513)">
+					<CustomBehavior File="InteractWith" MobId="211331" ObjectType="GameObject"  WaitTime="5" X="-166.8677" Y="633.5659" Z="165.4094" />
+				</If>
+				<If Condition="!HasItem(79104)">
+					<CustomBehavior File="InteractWith" MobId="211330" ObjectType="GameObject"  WaitTime="5" X="-166.8677" Y="633.5659" Z="165.4094" />
+				</If>
+				<!-- Parched -->
+				<CustomBehavior File="Message" Text="Watering can" LogColor="Green" />
+				<CustomBehavior File="UseItemOn" MobType="Npc" MobId="63163" ItemId="79104" NumOfTimes="1" WaitForNpcs="False" WaitTime="1500" />
+				<!-- Infested -->
+				<CustomBehavior File="Message" Text="Infested Crop" LogColor="Green" />
+				<CustomBehavior File="UseItemOn" MobType="Npc" MobId="63162" ItemId="80513" NumOfTimes="1" WaitForNpcs="False" WaitTime="1500" />
+				<CustomBehavior File="UserDialog" Text="You're done for today. You have to come back tomorrow for the harvest. Return here tomorrow and restart this profile to finish up." AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" />
+			</If>
+		</Else>
+		</If>
+	</If>
+	
+	<CustomBehavior File="LoadProfile" ProfileName="[Rep] Tillers Dailies [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

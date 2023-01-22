@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+
+<!--
+  Original contribution by chinajade
+    $Rev: 3159 $
+    $Date: 2014-03-19 03:34:46 -0300 (qua, 19 mar 2014) $
+-->
+
+<!--
+Put this in your .emacs file to find the schema locator file:
+
+(setq rng-schema-locating-files
+'("./EmacsNxmlModeSchemaLocator.xml"
+"./Schemas/RelaxNG/EmacsNxmlModeSchemaLocator.xml"
+"./../Schemas/RelaxNG/EmacsNxmlModeSchemaLocator.xml"
+"./../../Schemas/RelaxNG/EmacsNxmlModeSchemaLocator.xml"
+"./../../../Schemas/RelaxNG/EmacsNxmlModeSchemaLocator.xml"
+"./../../../../Schemas/RelaxNG/EmacsNxmlModeSchemaLocator.xml"
+"./../../../../../Schemas/RelaxNG/EmacsNxmlModeSchemaLocator.xml"
+"./../../../../../../Schemas/RelaxNG/EmacsNxmlModeSchemaLocator.xml"
+"./../../../../../../../Schemas/RelaxNG/EmacsNxmlModeSchemaLocator.xml"
+"schemas.xml"
+"/usr/share/emacs/24.3/etc/schema/schemas.xml"))
+ -->
+
+<locatingRules xmlns="http://thaiopensource.com/ns/locating-rules/1.0">
+
+    <!-- ***** QUESTING PROFILES ***** -->
+    <!-- Classic-Alliance -->
+    <uri resource="[A - Quest] EK 12-58 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[A - Quest] 1-12 Auto-Loader [Kick].xml" typeId="HB QUEST PROFILE" />
+
+    <!-- Classic-Alliance-StarterZones -->
+    <uri resource="[A - Quest] Draenei 1-5 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[A - Quest] Dwarf 1-5 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[A - Quest] EK 5-12 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[A - Quest] Gnome 1-5 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[A - Quest] Human 1-5 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[A - Quest] Night Elf 1-5 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[A - Quest] Panda 1-12 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[A - Quest] Worgen 1-12 [Kick].xml" typeId="HB QUEST PROFILE" />
+
+    <!-- Classic-Horde -->
+    <uri resource="[H - Quest] 1-12 Auto-Loader [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[H - Quest] 12-58 K-EK [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="Horde Kalimdor 40-45.xml" typeId="HB QUEST PROFILE" />
+    <uri resource="Silithus.xml" typeId="HB QUEST PROFILE" />
+    <uri resource="Un'Goro.xml" typeId="HB QUEST PROFILE" />
+
+    <!-- Classic-Horde-StarterZones -->
+    <uri resource="[H - Quest] Blood Elf 1-5 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[H - Quest] Durotar 5-12 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[H - Quest] Goblin 1-12 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[H - Quest] Orc 1-5 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[H - Quest] Panda 1-12 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[H - Quest] Tauren 1-5 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[H - Quest] Troll 1-5 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="[H - Quest] Undead 1-5 [Kick].xml" typeId="HB QUEST PROFILE" />
+    <uri resource="EK to Kalimdor.xml" typeId="HB QUEST PROFILE" />
+    <uri resource="Kalimdor to EK.xml" typeId="HB QUEST PROFILE" />
+    <uri resource="To Outland.xml" typeId="HB QUEST PROFILE" />
+
+    <!-- Classic-DK -->
+    <uri resource="DK Starting revised by Bambam922.xml" typeId="HB QUEST PROFILE" />
+
+
+    <!-- ***** GRINDING PROFILES ***** -->
+
+
+    <!-- ***** GATHERBUDDY PROFILES ***** -->
+
+
+    <!-- *********************************************************************************************** -->
+    <!-- Default schema rule match -->
+    <documentElement localName="HBProfile" typeId="HB QUEST PROFILE" />
+
+    <!-- Schema types -->
+    <typeId id="HB GATHERBUDDY PROFILE" uri="HBSchema-GatherbuddyProfile.rnc"/>
+    <typeId id="HB GRIND PROFILE" uri="HBSchema-GrindProfile.rnc"/>
+    <typeId id="HB QUEST PROFILE" uri="HBSchema-QuestProfile.rnc"/>
+
+</locatingRules>

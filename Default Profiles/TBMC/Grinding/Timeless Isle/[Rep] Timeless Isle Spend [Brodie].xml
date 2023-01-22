@@ -1,0 +1,71 @@
+<HBProfile>
+	<Name>The Timeless Isle Coin Spender ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>0</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Mama Stormstout" Entry="73649" Type="Food" X="-614.8577" Y="-4913.071" Z="2.056075" />
+		<Vendor Name="Brewmaster Tzu" Entry="73618" Type="Food" X="-512.4288" Y="-4946.128" Z="2.056667" />
+		<Vendor Name="Crafter Kwon" Entry="73656" Type="Repair" X="-511.3785" Y="-5008.741" Z="2.056738" />
+	</Vendors>
+  
+	<AvoidMobs>
+		<Mob Name="Tushui Sentry" Entry="73361" /> <!-- Alliance Guards -->
+		<Mob Name="Huojin Sentry" Entry="73362" /> <!-- Horde Guards -->
+		<Mob Name="Elder Great Turtle" Entry="72765" />
+	</AvoidMobs>
+   
+	<Blackspots>
+		<Blackspot X="-911.9672" Y="-4640.844" Z="4.998785" Radius="35" /> <!-- Alliance Camp -->
+	</Blackspots>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<CustomBehavior File="RunMacro" Macro="/script SetCVar('AutoLootDefault', 1)" WaitTime="1000" />
+	<CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+	
+	<SetMailboxes>
+		<Mailbox Nav="Fly" UsableWhen="Me.IsAlliance" X="-908.8835" Y="-4635.785" Z="4.628042" />
+		<Mailbox Nav="Fly" UsableWhen="Me.IsHorde" X="-428.5745" Y="-4614.354" Z="4.3078" />
+	</SetMailboxes>
+
+	<CustomBehavior File="Message" Text="Starting Timeless Isle Coin Spender" LogColor="Green" />
+	<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: The point of this profile is to move to Kukuru's Cache and open chests until the end! \n\n Only use this profile if you plan to persistantly open the chests until you run out of coins. USE AT YOUR OWN DESCRETION AND RISK!!!" />
+
+	<If Condition="Me.ZoneId != 6757" >
+		<CustomBehavior File="FlyTo" X="-680.5806" Y="-4507.614" Z="0.1" />
+		<MoveTo X="-683.057" Y="-4819.213" Z="2.231921" />
+	</If>
+	
+	<MoveTo X="-417.1661" Y="-5501.82" Z="7.750228" />
+
+	<While Condition="Me.Level &gt;= 90" >
+		<CustomBehavior File="InteractWith" MobId="72007" InteractByGossipOptions="1" InteractByBuyingItemId="101538" NonCompeteDistance="0" TerminateWhen="HasItem(101538)" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="220994" MobId2="221010" MobId3="221013" MobId4="221014" MobId5="221015" MobId6="221016" MobId7="221017" MobId8="221018" MobId9="221019" MobId10="221020" 
+											MobId11="221021" MobId12="221023" MobId13="221024" MobId14="221009" MobId15="221008" MobId16="221007" MobId17="220995" MobId18="220996" MobId19="220997" MobId20="220998" 
+											MobId21="220999" MobId22="221000" MobId23="221001" MobId24="221002" MobId25="221003" MobId26="221004" MobId27="221005" MobId28="221006" MobId29="221026" 
+											NonCompeteDistance="0" WaitTime="2000" />
+	</While>
+
+</QuestOrder>
+</HBProfile>

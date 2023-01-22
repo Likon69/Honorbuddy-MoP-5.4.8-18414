@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+    On many vehicle quests, we must mount an unoccupied vehicle.   We want to ignore
+    occupied vehicles when searching for one we can use.
+    If a vehicle is occupied, it will possess an aura described here. 
+    
+    If you need code to read this file, and put it in a form suitable for use in
+    a quest behavior, the Development/DataAccess.cs file contains an implementation
+    of the GetOccupiedVehicleAuraIds() method for your cut-n-paste convenience.
+    
+    To use the assembled information in your Quest Behavior, you merely use it as
+    a qualifier in your LINQ query as thus:
+        IEnumerable<int> AuraIds_OccupiedVehicle = GetOccupiedVehicleAuraIds();
+        
+        private WoWUnit FindUnoccupiedVehicle()
+        {
+            return
+                (from vehicle in FindUnitsFromIds(VehicleIds)
+                 where !vehicle.Auras.Values.Any(aura => AuraIds_OccupiedVehicle.Contains(aura.SpellId))
+                 orderby vehicle.Distance
+                 select vehicle)
+                 .FirstOrDefault();
+        }
+    
+    Without this code, a botted toon can follow a vehicle occupied by another player
+    indefinitely.  The botted toon is trying to mount/interact with the vehicle, and will
+    never be successful.  It looks very bottish when this happens, and likely results
+    in botting reports.
+    
+    We've placed this information in a common area for use by all quest behaviors.  Thus,
+    when additional auras are discovered, there is only one place to come update them.
+    
+    ...28Feb2013-03:44UTC chinajade
+ -->
+<Auras>
+    <Aura Name="Ride Vehicle Hardcoded" SpellId="46598" /> <!-- Steemwheedle Rescue Balloon for "Rocket Rescue": http://wowhead.com/spell=46598 -->
+    <Aura Name="Stolen Horse" SpellId="52263" />  <!-- Havenshire Horse for "Grand Theft Palominio": http://wowhead.com/spell=52263 -->
+    <Aura Name="Ride Vehicle" SpellId="68503" />  <!-- Glaive Thrower for "They Have Allies, But So Do We": http://wowhead.com/spell=68503 -->
+    <Aura Name="Vehicle - Switch to Seat 2" SpellId="84224" /> <!-- Great White Plainshawk for "A Lesson in Bravery": http://wowhead.com/spell=84224 -->
+    <Aura Name="Ride Vehicle" SpellId="84495" />  <!-- http://wowhead.com/spell=84495 -->
+    <Aura Name="Ride Vehicle" SpellId="84499" />  <!-- http://wowhead.com/spell=84499 -->
+    <Aura Name="Ride Vehicle" SpellId="84896" />  <!-- http://wowhead.com/spell=84896 -->
+    <Aura Name="Ride Vehicle" SpellId="85380" />  <!-- http://wowhead.com/spell=85380 -->
+    <Aura Name="Ride Vehicle Hardcoded" SpellId="86319" />  <!-- http://wowhead.com/spell=86319 -->
+    <Aura Name="Ride Vehicle" SpellId="86826" />  <!-- http://wowhead.com/spell=86826 -->
+    <Aura Name="Ride Vehicle" SpellId="87088" />  <!-- http://wowhead.com/spell=87088 -->
+    <Aura Name="Ride Vehicle" SpellId="87171" />  <!-- http://wowhead.com/spell=87171 -->
+    <Aura Name="Ride Vehicle" SpellId="87338" />  <!-- http://wowhead.com/spell=87338 -->
+    <Aura Name="Ride Vehicle" SpellId="87716" />  <!-- http://wowhead.com/spell=87716 -->
+    <Aura Name="Ride Vehicle" SpellId="87749" />  <!-- http://wowhead.com/spell=87749 -->
+    <Aura Name="Ride Vehicle" SpellId="88066" />  <!-- http://wowhead.com/spell=88066 -->
+    <Aura Name="Ride Vehicle" SpellId="88360" />  <!-- http://wowhead.com/spell=88360 -->
+    <Aura Name="Ride Vehicle" SpellId="89397" />  <!-- http://wowhead.com/spell=89397 -->
+    <Aura Name="Ride Vehicle" SpellId="89731" />  <!-- http://wowhead.com/spell=89731 -->
+    <Aura Name="Ride Vehicle" SpellId="89743" />  <!-- http://wowhead.com/spell=89743 -->
+    <Aura Name="Ride Vehicle" SpellId="93970" />  <!-- http://wowhead.com/spell=93970 -->
+    <Aura Name="Ride Vehicle" SpellId="94507" />  <!-- http://wowhead.com/spell=94507 -->
+    <Aura Name="Ride Vehicle" SpellId="94586" />  <!-- http://wowhead.com/spell=94586 -->
+    <Aura Name="Ride Vehicle" SpellId="94587" />  <!-- http://wowhead.com/spell=94587 -->
+    <Aura Name="Ride Vehicle" SpellId="94654" />  <!-- Mountain Horse for "The Hungry Ettin": http://wowhead.com/spell=94654  -->
+    <Aura Name="Ride Vehicle" SpellId="94672" />  <!-- http://wowhead.com/spell=94672 -->
+    <Aura Name="Ride Vehicle" SpellId="94996" />  <!-- http://wowhead.com/spell=94996 -->
+    <Aura Name="Ride Vehicle" SpellId="95727" />  <!-- http://wowhead.com/spell=95727 -->
+    <Aura Name="Ride Vehicle" SpellId="95733" />  <!-- http://wowhead.com/spell=95733 -->
+    <Aura Name="Ride Vehicle" SpellId="96160" />  <!-- http://wowhead.com/spell=96160 -->
+    <Aura Name="Ride Vehicle" SpellId="96209" />  <!-- http://wowhead.com/spell=96209 -->
+    <Aura Name="Ride Vehicle" SpellId="96812" />  <!-- http://wowhead.com/spell=96812 -->
+    <Aura Name="Ride Vehicle" SpellId="98297" />  <!-- http://wowhead.com/spell=98297 -->
+    <Aura Name="Ride Vehicle" SpellId="98360" />  <!-- http://wowhead.com/spell=98360 -->
+    <Aura Name="Ride Vehicle" SpellId="98509" />  <!-- http://wowhead.com/spell=98509 -->
+    <Aura Name="Ride Vehicle" SpellId="98691" />  <!-- http://wowhead.com/spell=98691 -->
+    <Aura Name="Ride Vehicle" SpellId="98750" />  <!-- http://wowhead.com/spell=98750 -->
+    <Aura Name="Ride Vehicle" SpellId="98843" />  <!-- http://wowhead.com/spell=98843 -->
+    <Aura Name="Ride Vehicle" SpellId="98853" />  <!-- http://wowhead.com/spell=98853 -->
+    <Aura Name="Ride Vehicle" SpellId="99372" />  <!-- http://wowhead.com/spell=99372 -->
+    <Aura Name="Ride Vehicle" SpellId="99099" />  <!-- http://wowhead.com/spell=99099 -->
+    <Aura Name="Ride Vehicle" SpellId="110257" />  <!-- http://wowhead.com/spell=110257 -->
+    <Aura Name="Ride Vehicle" SpellId="113336" />  <!-- http://wowhead.com/spell=113336 -->
+    <Aura Name="Ride Vehicle" SpellId="114046" />  <!-- http://wowhead.com/spell=114046 -->
+    <Aura Name="Ride Vehicle" SpellId="115019" />  <!-- http://wowhead.com/spell=115019 -->
+    <Aura Name="Ride Vehicle" SpellId="115560" />  <!-- http://wowhead.com/spell=115560 -->
+    <Aura Name="Ride Vehicle" SpellId="115631" />  <!-- http://wowhead.com/spell=115631 -->
+    <Aura Name="Ride Vehicle" SpellId="119940" />  <!-- http://wowhead.com/spell=119940 -->
+    <Aura Name="Ride Vehicle" SpellId="120059" />  <!-- http://wowhead.com/spell=120059 -->
+    <Aura Name="Ride Vehicle" SpellId="121302" />  <!-- http://wowhead.com/spell=121302 -->
+    <Aura Name="Ride Vehicle Hardcoded" SpellId="125095" /> <!-- http://wowhead.com/spell=125095 -->
+    <Aura Name="Ride Vehicle Hardcoded" SpellId="125684" /> <!-- http://wowhead.com/spell=125684 -->
+    <Aura Name="Ride Vehicle" SpellId="127283" />  <!-- http://wowhead.com/spell=127283 -->
+    <Aura Name="Ride Vehicle" SpellId="127740" />  <!-- http://wowhead.com/spell=127740 -->
+    <Aura Name="Ride Vehicle" SpellId="127827" />  <!-- http://wowhead.com/spell=127827 -->
+    <Aura Name="Ride Vehicle" SpellId="129862" />  <!-- http://wowhead.com/spell=129862 -->
+    <Aura Name="Ride Vehicle" SpellId="130210" />  <!-- http://wowhead.com/spell=130210 -->
+    <Aura Name="Ride Vehicle" SpellId="130811" />  <!-- http://wowhead.com/spell=130811 -->
+</Auras>

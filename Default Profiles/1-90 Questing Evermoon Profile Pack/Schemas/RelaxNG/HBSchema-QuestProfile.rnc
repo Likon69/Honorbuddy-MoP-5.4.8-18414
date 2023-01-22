@@ -1,0 +1,96 @@
+default namespace = ""
+namespace xsi = "http://www.w3.org/2001/XMLSchema-instance"
+
+# =====
+# Original contribution by chinajade
+#   $Rev: 3160 $
+#   $Date: 2014-03-19 04:57:53 -0300 (qua, 19 mar 2014) $
+#
+# WARNING: DO NOT EDIT .xsd files.
+#   They are not authoritative and will be overwritten!
+#   Instead, regenerate the .xsd files from the .rnc 'sources'.
+#   Its a one-line command to do this. Please see README.txt
+#   for more information.
+# =====
+
+
+# =====
+# This schema is more restrictive than Honorbuddy allows.
+# For instance, the schema only allows the preferred name of attributes, and flags
+# the alias names as errors.  For instance, the schema prefers "Id" to "Entry",
+# "DestName" to "Name" (depending on context), etc.
+# The intent is to:
+# 1) Make the profile pack consistent throughout by using the same names
+#    for the same attributes within a given context.
+# 2) Maximize the readability and maintainability of the profile
+#    by using descriptive names when ambiguity is possible.
+#    An example of this, we prefer
+#      <UseItem ... QuestId="123" ... ItemId="234" ... />
+#    to
+#      <UseItem ... Id="234" ... />
+#    Since a quick read would be unclear whether the Id alias refers to
+#    the QuestId or the ItemId.
+
+
+# ********** Schema for HONORBUDDY CORE GRAMMAR **********
+start =
+  element HBProfile
+  {
+    attribute xsi:noNamespaceSchemaLocation { text }?,
+    (AvoidMobs
+     | Blacklist
+     | BlacklistedQuestGivers
+     | Blackspots
+     | ContinentId
+     | Mailboxes
+     | MailBlue
+     | MailGreen
+     | MailGrey
+     | MailPurple
+     | MailWhite
+     | MaxLevel
+     | MinDurability
+     | MinFreeBagSlots
+     | MinLevel
+     | Name
+     | ProtectedItems
+     | Quest
+     | QuestOrder
+     | SellBlue
+     | SellGreen
+     | SellGrey
+     | SellPurple
+     | SellWhite
+     | TargetElites
+     | TargetingDistance
+     | UseMount
+     | Vendors
+     )*
+  }
+
+
+# ********** Synthetic nodes **********
+
+Attributes-ObjectiveCore =
+  attribute Nav { HBType-Nav }?,
+  attribute QuestId { HBType-Id },
+  attribute QuestName { HBType-Name }?,
+  Attributes-XYZ?
+
+
+# ********** Schema for LEVELBOT core **********
+include "HBLevelbot-Types.rnc"
+include "HBLevelbot-CoreElements.rnc"
+
+# ********** Schema for CONDITIONS **********
+include "HBConditions.rnc"
+
+# ********** Schema for CUSTOM BEHAVIORS **********
+include "HBCustomBehaviors.rnc"
+include "HBCustomBehaviors-ArgentTournament.rnc"
+include "HBCustomBehaviors-ButtonPress.rnc"
+include "HBCustomBehaviors-General.rnc"
+include "HBCustomBehaviors-Hooks.rnc"
+include "HBCustomBehaviors-Misc.rnc"
+include "HBCustomBehaviors-SpecificQuests.rnc"
+include "HBCustomBehaviors-Vehicles.rnc"

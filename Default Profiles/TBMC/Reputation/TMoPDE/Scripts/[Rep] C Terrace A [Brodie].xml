@@ -1,0 +1,234 @@
+<HBProfile>
+	<Name>Conqueror's Terrace (Alliance) ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Teng of the Flying Daggers" Entry="70535" Type="Repair" X="6865.31" Y="5515.42" Z="1.28" />
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- Out of Enemy Hands -->
+	<Quest Id="32557" Name="Out of Enemy Hands">
+		<Objective Type="CollectItem" ItemId="93736" CollectCount="7">
+			<CollectFrom>
+				<GameObject Name="Loa-Infused Blade" Id="218055" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="6699.982" Y="5122.509" Z="29.53163" />
+				<Hotspot X="6706.123" Y="5212.516" Z="30.02921" />
+				<Hotspot X="6731.59" Y="5296.625" Z="29.76926" />
+				<Hotspot X="6802.548" Y="5369.425" Z="30.98167" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- All In the Family -->
+	<Quest Id="32558" Name="All In the Family">
+		<Objective Type="CollectItem" ItemId="93733" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Spiritbinder Tu'chek" Id="69301" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="6587.73" Y="5200.61" Z="32.91" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="CollectItem" ItemId="93734" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Spiritbinder Ra'kul" Id="69300" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="6875.18" Y="5304.74" Z="34.58" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+<CustomBehavior File="Message" Text="Compiling Conqueror's Terrace Quests..." LogColor="CornflowerBlue"  />
+
+	<If Condition="((!HasQuest(32555) &amp;&amp; IsQuestCompleted(32555)) ||
+					(!HasQuest(32558) &amp;&amp; IsQuestCompleted(32558)) ||
+					(!HasQuest(32560) &amp;&amp; IsQuestCompleted(32560)) ||
+					(!HasQuest(32557) &amp;&amp; IsQuestCompleted(32557)) ||
+					(!HasQuest(32559) &amp;&amp; IsQuestCompleted(32559)) ||
+					(!HasQuest(32556) &amp;&amp; IsQuestCompleted(32556)))" >
+		<CustomBehavior File="Message" Text="Previously Completed Quests Detected" LogColor="CornflowerBlue" />
+		<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: Previously completed quests detected! \n\n Either you have done some of you quests already, and have restarted the bot...\n OR your cache folder is NOT clean, and must be deleted, and bot restarted." />
+	</If>
+
+	<DisableBehavior Name="Pull, Combat" />
+	
+<!-- No Time to Rest (Kicker) -->
+	<If Condition="HasQuest(32568)" >
+		<CustomBehavior File="Message" Text="Starting Conqueror's Terrrace Kicker" LogColor="Green" />
+		<TurnIn QuestName="No Time to Rest" QuestId="32568" TurnInName="Scout Captain Daelin" TurnInId="67998" />
+	</If>
+	
+<!-- Scout Captain Daelin -->
+	<While Condition="HasQuestAvailable(67998)" >
+		<CustomBehavior File="InteractWith" MobId="67998" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Miura Brightweaver -->
+	<While Condition="HasQuestAvailable(67999)" >
+		<CustomBehavior File="InteractWith" MobId="67999" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+	<EnableBehavior Name="Pull, Combat" />
+	
+<!-- Even Giants Fall -->
+	<If Condition="HasQuest(32559) &amp;&amp; !IsQuestCompleted(32559)" >
+		<CustomBehavior File="Message" Text="Starting Even Giants Fall" LogColor="Green" />
+		<CustomBehavior File="CollectThings" QuestId="32559" CollectUntil="QuestComplete" MobId="69567" MobId2="69568" MobId3="69569" MobId4="69570" MobId5="69336" HuntingGroundRadius="200" NonCompeteDistance="1" >
+			<Hotspot X="6655.33" Y="5163.00" Z="31.78" />
+		</CustomBehavior>
+	</If>
+	
+<!-- All In the Family -->
+	<If Condition="HasQuest(32558) &amp;&amp; !IsQuestCompleted(32558)" >
+		<CustomBehavior File="Message" Text="Starting All In the Family" LogColor="Green" />
+		<Objective QuestName="All In the Family" QuestId="32558" Type="CollectItem" ItemId="93733" CollectCount="1" />
+		<Objective QuestName="All In the Family" QuestId="32558" Type="CollectItem" ItemId="93734" CollectCount="1" />
+	</If>
+	
+<!-- The More You Know -->
+	<If Condition="HasQuest(32556) &amp;&amp; !IsQuestCompleted(32556)" >
+		<CustomBehavior File="Message" Text="Starting The More You Know" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="32556" MobId="218049" MobId2="218050" MobId3="218052" MobId4="218053" NonCompeteDistance="0"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" IgnoreLoSToTarget="True" NumOfTimes="1000" WaitTime="1000" >
+			<HuntingGrounds>
+				<Hotspot X="6587.73" Y="5200.61" Z="32.91" />
+				<Hotspot X="6699.982" Y="5122.509" Z="29.53163" />
+				<Hotspot X="6706.123" Y="5212.516" Z="30.02921" />
+				<Hotspot X="6731.59" Y="5296.625" Z="29.76926" />
+				<Hotspot X="6802.548" Y="5369.425" Z="30.98167" />
+				<Hotspot X="6875.18" Y="5304.74" Z="34.58" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+	
+<!-- Out of Enemy Hands -->
+	<If Condition="HasQuest(32557) &amp;&amp; !IsQuestCompleted(32557)" >
+		<CustomBehavior File="Message" Text="Starting Out of Enemy Hands" LogColor="Green" />
+		<Objective QuestName="Out of Enemy Hands" QuestId="32557" Type="CollectItem" ItemId="93736" CollectCount="7" />
+	</If>
+	
+<!-- Centuries in Sentries -->
+	<If Condition="HasQuest(32555) &amp;&amp; !IsQuestCompleted(32555)" >
+		<CustomBehavior File="Message" Text="Starting Centuries in Sentries" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="32555" InteractByUsingItemId="93806" MobId="69335" MobState="Dead" AuraIdOnMob="136972" CollectionDistance="1000" NumOfTimes="100" >
+			<HuntingGrounds>
+				<Hotspot X="6699.982" Y="5122.509" Z="29.53163" />
+				<Hotspot X="6706.123" Y="5212.516" Z="30.02921" />
+				<Hotspot X="6731.59" Y="5296.625" Z="29.76926" />
+				<Hotspot X="6802.548" Y="5369.425" Z="30.98167" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+	
+<!-- Keep It Secret -->
+	<If Condition="HasQuest(32560) &amp;&amp; !IsQuestCompleted(32560)" >
+		<CustomBehavior File="Message" Text="Starting Keep It Secret" LogColor="Green" />
+		<Objective QuestName="Keep It Secret" QuestId="32560" Type="KillMob" MobId="69294" MobId2="62927" MobId3="62926" KillCOunt="8" />
+	</If>
+	
+<!-- Conqueror's Terrace Turn-ins -->
+	<If Condition="HasQuest(32558) &amp;&amp; IsQuestCompleted(32558) ||
+					HasQuest(32555) &amp;&amp; IsQuestCompleted(32555) ||
+					HasQuest(32560) &amp;&amp; IsQuestCompleted(32560) ||
+					HasQuest(32557) &amp;&amp; IsQuestCompleted(32557) ||
+					HasQuest(32559) &amp;&amp; IsQuestCompleted(32559) ||
+					HasQuest(32556) &amp;&amp; IsQuestCompleted(32556)" >
+		<CustomBehavior File="Message" Text="Heading back to Conqueror's Terrace to Turn-In" LogColor="Green" />
+		<DisableBehavior Name="Pull, Combat" />
+		<MoveTo X="6711.15" Y="5095.72" Z="31.21" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+	</If>
+	
+	<If Condition="HasQuest(32555) &amp;&amp; IsQuestCompleted(32555)" >
+		<TurnIn QuestName="Centuries in Sentries" QuestId="32555" TurnInName="Miura Brightweaver" TurnInId="67999" />
+	</If>
+	
+	<If Condition="HasQuest(32558) &amp;&amp; IsQuestCompleted(32558)" >
+		<TurnIn QuestName="All In the Family" QuestId="32558" TurnInName="Miura Brightweaver" TurnInId="67999" />
+	</If>
+	
+	<If Condition="HasQuest(32556) &amp;&amp; IsQuestCompleted(32556)" >
+		<TurnIn QuestName="The More You Know" QuestId="32556" TurnInName="Miura Brightweaver" TurnInId="67999" />
+	</If>
+	
+	<If Condition="HasQuest(32560) &amp;&amp; IsQuestCompleted(32560)" >
+		<TurnIn QuestName="Keep It Secret" QuestId="32560" TurnInName="Scout Captain Daelin" TurnInId="67998" />
+	</If>
+	
+	<If Condition="HasQuest(32557) &amp;&amp; IsQuestCompleted(32557)" >
+		<TurnIn QuestName="Out of Enemy Hands" QuestId="32557" TurnInName="Scout Captain Daelin" TurnInId="67998" />
+	</If>
+	
+	<If Condition="HasQuest(32559) &amp;&amp; IsQuestCompleted(32559)" >
+		<TurnIn QuestName="Even Giants Fall" QuestId="32559" TurnInName="Scout Captain Daelin" TurnInId="67998" />
+	</If>
+	
+	<CustomBehavior File="WaitTimer" WaitTime="1000" />
+	
+<!-- Double check for ender quests -->
+
+<!-- Scout Captain Daelin -->
+	<While Condition="HasQuestAvailable(67998)" >
+		<CustomBehavior File="InteractWith" MobId="67998" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Miura Brightweaver -->
+	<While Condition="HasQuestAvailable(67999)" >
+		<CustomBehavior File="InteractWith" MobId="67999" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+	<EnableBehavior Name="Pull, Combat" />
+
+	<If Condition="HasItem(94566)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(94566)" />
+	</If>
+	
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+
+<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Isle of Thunder A [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

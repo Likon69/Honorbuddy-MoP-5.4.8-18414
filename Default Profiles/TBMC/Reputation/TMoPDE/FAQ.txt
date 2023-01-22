@@ -1,0 +1,30 @@
+Frequently Asked Questions
+
+-) Great profile, but...how do I run it?
+-- Included in the profile set are many files. The individual reps each have their own profile, some multiple. There is one file I sent along called "[Rep] Daily Grind [Brodie].xml", which starts the set from the beginning and runs thru the intended order. (Also if you are not in pandaria, but can reach Org/SW by flight, it will go there and use the portal).
+-- PLEASE NOTE: If you start the profile set using DAILY GRIND, and need to stop for any reason, it is NOT smart enough to pick up where you left off. If you want it to do so, you WILL NEED TO start the bot on the profile you are on. EXAMPLE: I'm on phase 2 of Golden Lotus, but I had to reset the bot. Simply run Golden Lotus, and it will figure out where you are.
+
+-) My quests are getting skipped! Is your profile broken?
+-- Quests can get skipped from being properly done for many reasons. Here is a checklist to assure it doesn't happen:
+-- 1) Make sure you are using a fresh install. This means installing a new copy of HB, not just overwriting the old.  Make sure to include all plugins and questbehaviors if you deleted the old ones.
+-- 2) Make sure you have the newest revision. I update regularly.
+-- 3) Check Post #1 of my forum page for a FULL list of supported quests. If it doesn't have an X, or it's not on the list, it is NOT supported.
+
+-) Honorbuddy is giving me an error...
+-- I can figure out most of your errors, but I need to see what it is. If you're going to write me and tell me something's broken, PLEASE save us both time, and send me a good description of the problem, and a log file.
+
+-) Honorbuddy says it's missing QuestBehavior files?
+-- Make sure you copy the folder on my SVN marked Quest Behaviors to your HB folder. Merge the two, don't make a second folder, and don't put the Quest Behaviors folder into the original one. (i.e. HB/Quest Behaviors/Quest Behaviors <-- don't do this)
+
+-) When I try and run your bot, it says Object outside of reference...
+-- Make sure you are running it under Questing, upper right hand side of bot window.
+
+-) Your profile doesn't work!
+-- I assure you, it does work. If the issue you are reporting isn't listed on Post #2 "Known Bugs", then please, tell me what's wrong, what you were doing, what quest/profile, and send a log. I can't fix what I can't see. All of my profiles are tested before submitting to you, so it has worked at least once properly, but testing from the masses helps me make it perfect.
+
+-) Your profile is awesome, can I submit code to you?
+-- I appreciate all submissions, bug reports, suggestions. In the end, though, I decide what I put in and what I don't. Of course, I give full credit where credit is due, but just because something is sent my way doesn't mean I'm required to use it.
+
+-) Your profile is awesome, how can I thank you?
+-- Several ways! "Like" my forum page. The more likes, the more people will steer its way, and the more motivated I become. "+Rep me", click the star under my name/avatar on the forums and send me some rep and a message. Again, it motivates me and it makes me work harder! Lastly, I have a donations button on my forum signature "TheBrodieMan's Mountain Dew and Gummies Fund". Cash donations, while extremely awesome and well appreciated, are NOT required. Donating cash doesn't mean you get better profiles or hidden features, but it does make me want to make better profiles with plain to see awesome features.
+

@@ -1,0 +1,612 @@
+<HBProfile>
+
+	<Name>Southern Barrens ($Rev$)</Name>
+	<MinLevel>25</MinLevel>
+	<MaxLevel>40</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+		<Blackspot X="-1910.794" Y="-2432.745" Z="97.83916" Radius="9.685514" />
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Northwatch Hold -->
+		<Vendor Name="Quartermaster Rutherford" Entry="44303" Type="Food" X="-2147.79" Y="-3586.99" Z="91.88222" />
+		<Vendor Name="Camran" Entry="44283" Type="Repair" X="-2181.46" Y="-3634.85" Z="92.26626" />
+		<!-- Teegan's Expedition -->
+		<Vendor Name="Goucho" Entry="38873" Type="Repair" X="-1900.892" Y="-2794.582" Z="91.18691" />
+		<!-- Forward Command -->
+		<Vendor Name="Quartermaster Winfred" Entry="44302" Type="Food" X="-2240.52" Y="-2305.2" Z="93.69786" />
+		<Vendor Name="Donnach" Entry="44279" Type="Repair" X="-2278.48" Y="-2347.65" Z="94.4558" />
+		<!-- Fort Triumph -->
+		<Vendor Name="Serena Arclight" Entry="44280" Type="Repair" X="-3100.14" Y="-2304.42" Z="93.31437" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Name="Make 'em Squeal" Id="25015" >
+	<Objective Type="CollectItem" ItemId="52046" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Deviate Thornweaver" Id="38884" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-2179.446" Y="-2545.355" Z="91.76235" />
+			<Hotspot X="-2122.195" Y="-2605.842" Z="93.12283" />
+			<Hotspot X="-2079.109" Y="-2658.987" Z="93.81098" />
+			<Hotspot X="-2016.232" Y="-2703.563" Z="93.71422" />
+			<Hotspot X="-1958.936" Y="-2731.172" Z="94.22415" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="37521" KillCount="8" >
+		<Hotspots>
+			<Hotspot X="-2179.446" Y="-2545.355" Z="91.76235" />
+			<Hotspot X="-2122.195" Y="-2605.842" Z="93.12283" />
+			<Hotspot X="-2079.109" Y="-2658.987" Z="93.81098" />
+			<Hotspot X="-2016.232" Y="-2703.563" Z="93.71422" />
+			<Hotspot X="-1958.936" Y="-2731.172" Z="94.22415" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Filthy Animals" Id="25008" >
+	<Objective Type="KillMob" MobId="37086" KillCount="6" >
+		<Hotspots>
+			<Hotspot X="-2179.446" Y="-2545.355" Z="91.76235" />
+			<Hotspot X="-2122.195" Y="-2605.842" Z="93.12283" />
+			<Hotspot X="-2079.109" Y="-2658.987" Z="93.81098" />
+			<Hotspot X="-2016.232" Y="-2703.563" Z="93.71422" />
+			<Hotspot X="-1958.936" Y="-2731.172" Z="94.22415" />
+			<Hotspot X="-1837.138" Y="-2855.363" Z="83.69376" />
+			<Hotspot X="-1828.859" Y="-2912.86" Z="85.78187" />
+			<Hotspot X="-1837.784" Y="-2997.775" Z="88.2608" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="25106" Name="Hands Off Me Dig!">
+	<Objective Type="KillMob" MobId="39153" KillCount="8">
+		<Hotspots>
+			<Hotspot X="-4188.991" Y="-2213.362" Z="52.14957" />
+			<Hotspot X="-4138.162" Y="-2192.561" Z="50.24663" />
+			<Hotspot X="-4087.644" Y="-2156.85" Z="50.19099" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="52360" CollectCount="5">
+		<CollectFrom>
+			<GameObject Name="Bael Modan Artifact" Id="202533" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-4188.991" Y="-2213.362" Z="52.14957" />
+			<Hotspot X="-4138.162" Y="-2192.561" Z="50.24663" />
+			<Hotspot X="-4087.644" Y="-2156.85" Z="50.19099" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="HasQuest(25852)" >
+		<CustomBehavior File="Message" Text="Compiling Southern Barrens Breadcrumb Quest" LogColor="Green" />
+		<TurnIn QuestName="All's Clear" QuestId="25852" TurnInName="Commander Walpole" TurnInId="38378" />
+		<!-- Does not count towards Loremaster -->
+	</If>
+	
+	<If Condition="!HasQuest(24862) &amp;&amp; !IsQuestCompleted(24862)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Southern Barrens Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Stonetalon Pass Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Running the Gauntlet" QuestId="24862" GiverName="Commander Walpole" GiverId="38378" />
+	<PickUp QuestName="Breaking the Siege" QuestId="24863" GiverName="Commander Walpole" GiverId="38378" />
+	<Objective QuestName="Breaking the Siege" QuestId="24863" Type="CollectItem" ItemId="50445" CollectCount="10" />
+	<Objective QuestName="Running the Gauntlet" QuestId="24862" Type="KillMob" MobId="37170" KillCount="8" />
+	<TurnIn QuestName="Running the Gauntlet" QuestId="24862" TurnInName="Janice Mattingly" TurnInId="38380" />
+	<TurnIn QuestName="Breaking the Siege" QuestId="24863" TurnInName="Janice Mattingly" TurnInId="38380" />
+	
+	<PickUp QuestName="Futile Resistance" QuestId="25186" GiverName="Janice Mattingly" GiverId="38380" />
+	<Objective QuestName="Futile Resistance" QuestId="25186" Type="KillMob" MobId="38384" KillCount="1" />
+	<TurnIn QuestName="Futile Resistance" QuestId="25186" TurnInName="Commander Singleton" TurnInId="38379" />
+	
+	<PickUp QuestName="Survey the Destruction" QuestId="25191" GiverName="Nibb Spindlegear" GiverId="38383" />
+	<If Condition="HasQuest(25191) &amp;&amp; !IsQuestCompleted(25191)" >
+		<CustomBehavior File="InteractWith" QuestId="25191" MobId="38383" InteractByGossipOptions="1" NonCompeteDistance="0"
+			TerminateWhen="Me.IsOnTransport" WaitTime="2000" X="-360.6266" Y="-1537.344" Z="87.23657" />
+		<While Condition="!IsQuestCompleted(25191)" />
+	</If>
+	<TurnIn QuestName="Survey the Destruction" QuestId="25191" TurnInName="Horton Gimbleheart" TurnInId="39322" />
+	
+	<CustomBehavior File="Message" Text="Compiling Northwatch Hold Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="The Admiral Won't Back Down" QuestId="25197" GiverName="Horton Gimbleheart" GiverId="39322" />
+	<TurnIn QuestName="The Admiral Won't Back Down" QuestId="25197" TurnInName="Admiral Aubrey" TurnInId="38619" />
+	
+	<If Condition="!HasQuest(24934) &amp;&amp; !IsQuestCompleted(24934)" >
+		<PickUp QuestName="Repel Boarders!" QuestId="24934" GiverName="Admiral Aubrey" GiverId="38619" />
+		<CustomBehavior File="InteractWith" QuestId="24934" MobId="38619" InteractByGossipOptions="1"
+			NonCompeteDistance="0" TerminateWhen="Me.IsOnTransport" WaitTime="2000" X="-2218.819" Y="-3776.243" Z="130.8628" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<Objective QuestName="Repel Boarders!" QuestId="24934" Type="KillMob" MobId="38661" KillCount="6" />
+	<If Condition="HasQuest(24934) &amp;&amp; IsQuestCompleted(24934)" >
+		<TurnIn QuestName="Repel Boarders!" QuestId="24934" TurnInName="Captain Fisher" TurnInId="38622" />
+		<CustomBehavior File="InteractWith" MobId="38622" InteractByGossipOptions="1"
+			NonCompeteDistance="0" TerminateWhen="Me.IsOnTransport" WaitTime="2000" X="-2153.914" Y="-4086.107" Z="21.01621" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	
+	<PickUp QuestName="The Guns of Northwatch" QuestId="24938" GiverName="Admiral Aubrey" GiverId="38619" />
+	<PickUp QuestName="Langridge Shot" QuestId="24941" GiverName="Thomas Paxton" GiverId="38620" X="-2104.262" Y="-3605.129" Z="60.25986" />
+	<Objective QuestName="Langridge Shot" QuestId="24941" Type="CollectItem" ItemId="51957" CollectCount="15" />
+	<TurnIn QuestName="Langridge Shot" QuestId="24941" TurnInName="Paxton's Field Cannon" TurnInId="202335" 
+		TurnInType="Object" X="-2096.946" Y="-3611.111" Z="60.92205" />
+		
+	<PickUp QuestName="Re-Take the Courtyard" QuestId="24943" GiverName="Thomas Paxton" GiverId="38620" />
+	<PickUp QuestName="Back in the Fight" QuestId="24944" GiverName="Tolliver Houndstooth" GiverId="38804" X="-2104.262" Y="-3605.129" Z="60.25986" />
+	<CustomBehavior File="InteractWith" QuestId="24944" MobId="38805" MobHpPercentLeft="50" InteractByUsingItemId="52014" 
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="2000" Range="7" MinRange="2" >
+		<HuntingGrounds>
+			<Hotspot X="-2020.448" Y="-3570.483" Z="23.67825" />
+			<Hotspot X="-2008.159" Y="-3618.52" Z="21.77047" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="Re-Take the Courtyard" QuestId="24943" Type="KillMob" MobId="38658" KillCount="10" />
+	
+	<TurnIn QuestName="Back in the Fight" QuestId="24944" TurnInName="Tolliver Houndstooth" TurnInId="38804" />
+	<PickUp QuestName="Silencing Rageroar" QuestId="24956" GiverName="Tolliver Houndstooth" GiverId="38804" />
+	<TurnIn QuestName="Re-Take the Courtyard" QuestId="24943" TurnInName="Thomas Paxton" TurnInId="38620" />
+	<PickUp QuestName="Lifting the Siege" QuestId="24948" GiverName="Thomas Paxton" GiverId="38620" />
+	
+	<CustomBehavior File="InteractWith" QuestId="24948" QuestObjectiveIndex="1" MobId="38818" 
+		Range="10" NonCompeteDistance="0" InteractByUsingItemId="52017"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="2000" >
+		<HuntingGrounds>
+			<Hotspot X="-1819.122" Y="-3721.216" Z="2.574163" />
+			<Hotspot X="-1790.375" Y="-3676.585" Z="21.13469" />
+			<Hotspot X="-1801.91" Y="-3722.026" Z="4.262622" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="Silencing Rageroar" QuestId="24956" Type="CollectItem" ItemId="52036" CollectCount="1" />
+	<CustomBehavior File="InteractWith" QuestId="24948" QuestObjectiveIndex="2" MobId="38820" 
+		Range="10" NonCompeteDistance="0" InteractByUsingItemId="52017" IgnoreLoSToTarget="True"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="2000" X="-1652.734" Y="-3649.348" Z="77.13593" />
+	<Objective QuestName="Silencing Rageroar" QuestId="24956" Type="KillMob" MobId="38659" KillCount="4" />
+	<TurnIn QuestName="Silencing Rageroar" QuestId="24956" TurnInName="Tolliver Houndstooth" TurnInId="38804" />
+	<TurnIn QuestName="Lifting the Siege" QuestId="24948" TurnInName="Thomas Paxton" TurnInId="38620" />
+	
+	<TurnIn QuestName="The Guns of Northwatch" QuestId="24938" TurnInName="Cannoneer Smythe" TurnInId="3454" />
+	
+	<PickUp QuestName="Run Out the Guns" QuestId="24939" GiverName="Cannoneer Smythe" GiverId="3454" />
+	<While Condition="HasQuest(24939) &amp;&amp; !IsQuestCompleted(24939)" >
+		<CustomBehavior File="InteractWith" QuestId="24939" MobId="38754" NonCompeteDistance="2" NumOfTimes="100"
+			TerminateWhen="Me.IsOnTransport" Range="5" X="-2011.239" Y="-3740.749" Z="4.904752"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" />
+		<CustomBehavior File="24939-RunOutTheGuns" />
+	</While>
+	<TurnIn QuestName="Run Out the Guns" QuestId="24939" TurnInName="Cannoneer Smythe" TurnInId="3454" />
+	
+	<PickUp QuestName="Teegan's Troubles" QuestId="25036" GiverName="Thomas Paxton" GiverId="38620" />
+	<PickUp QuestName="Teegan's People" QuestId="25000" GiverName="Jeffrey Long" GiverId="38621" />
+	<PickUp QuestName="Scavenged" QuestId="25002" GiverName="Mangled Body" GiverId="38878" />
+	<Objective QuestName="Scavenged" QuestId="25002" Type="CollectItem" ItemId="52045" CollectCount="10" />
+	<Objective QuestName="Teegan's People" QuestId="25000" Type="CollectItem" ItemId="49772" CollectCount="8" />
+	<TurnIn QuestName="Teegan's People" QuestId="25000" TurnInName="Goucho" TurnInId="38873" />
+	<TurnIn QuestName="Teegan's Troubles" QuestId="25036" TurnInName="Corporal Teegan" TurnInId="38871" />
+	<TurnIn QuestName="Scavenged" QuestId="25002" TurnInName="Corporal Teegan" TurnInId="38871" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Teegan's Expedition Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Make 'em Squeal" QuestId="25015" GiverName="Corporal Teegan" GiverId="38871" />
+	<PickUp QuestName="A Failure to Communicate" QuestId="25022" GiverName="Corporal Teegan" GiverId="38871" />
+	<PickUp QuestName="Filthy Animals" QuestId="25008" GiverName="Goucho" GiverId="38873" />
+	
+	<CustomBehavior File="InteractWith" QuestId="25022" MobId="202419" MobId2="202418" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="2000" X="-2104.806" Y="-2583.836" Z="93.7909" />
+	<Objective QuestName="Make 'em Squeal" QuestId="25015" Type="CollectItem" ItemId="52046" CollectCount="1" />
+	<Objective QuestName="Make 'em Squeal" QuestId="25015" Type="KillMob" MobId="37521" KillCount="8" />
+	<Objective QuestName="Filthy Animals" QuestId="25008" Type="KillMob" MobId="37086" KillCount="6" />
+	<TurnIn QuestName="Filthy Animals" QuestId="25008" TurnInName="Goucho" TurnInId="38873" />
+	<TurnIn QuestName="Make 'em Squeal" QuestId="25015" TurnInName="Corporal Teegan" TurnInId="38871" />
+	<TurnIn QuestName="A Failure to Communicate" QuestId="25022" TurnInName="Corporal Teegan" TurnInId="38871" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="You Flicked a Fine Vine to Leaf Me" QuestId="25027" GiverName="Corporal Teegan" GiverId="38871" />
+	<PickUp QuestName="Trouble From the Ground Up" QuestId="25028" GiverName="Hannah Bridgewater" GiverId="38876" />
+	<CustomBehavior File="InteractWith" QuestId="25027" QuestObjectiveIndex="1" MobId="38941" InteractByUsingItemId="52073" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" Range="20" X="-2239.203" Y="-2589.312" Z="94.9463" />
+	<Objective QuestName="You Flicked a Fine Vine to Leaf Me" QuestId="25027" Type="KillMob" MobId="38940" KillCount="2" />
+	<TurnIn QuestName="You Flicked a Fine Vine to Leaf Me" QuestId="25027" TurnInName="Corporal Teegan" TurnInId="38871" />
+	
+	<PickUp QuestName="To the Front!" QuestId="25034" GiverName="Corporal Teegan" GiverId="38871" />
+	<Objective QuestName="Trouble From the Ground Up" QuestId="25028" Type="CollectItem" ItemId="49815" CollectCount="10" />
+	<TurnIn QuestName="Trouble From the Ground Up" QuestId="25028" TurnInName="Naralex" TurnInId="37570" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Overgrown Camp Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Biological Intervention" QuestId="24565" GiverName="Naralex" GiverId="37570" />
+	<PickUp QuestName="Adder Subtraction" QuestId="24570" GiverName="Muyoh" GiverId="38314" />
+	<PickUp QuestName="Lashvine Seeds" QuestId="24571" GiverName="Muyoh" GiverId="38314" />
+	<CustomBehavior File="InteractWith" QuestId="24570" MobId="37738" InteractByLooting="True" NumOfTimes="1000"
+		NonCompeteDistance="0" MobState="Alive" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+		<HuntingGrounds>
+			<Hotspot X="-1841.323" Y="-2389.094" Z="96.0425" />
+			<Hotspot X="-1786.146" Y="-2314.331" Z="92.1768" />
+			<Hotspot X="-1692.47" Y="-2379.716" Z="91.89741" />
+			<Hotspot X="-1642.257" Y="-2347.584" Z="93.04733" />
+			<Hotspot X="-1592.663" Y="-2315.838" Z="96.44556" />
+			<Hotspot X="-1569.054" Y="-2262.882" Z="96.23046" />
+			<Hotspot X="-1561.07" Y="-2203.708" Z="95.11488" />
+			<Hotspot X="-1557.138" Y="-2157.042" Z="92.37981" />
+			<Hotspot X="-1594.164" Y="-2087.492" Z="94.60062" />
+			<Hotspot X="-1565.776" Y="-2015.225" Z="91.85861" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="Lashvine Seeds" QuestId="24571" Type="CollectItem" ItemId="49876" CollectCount="4" />
+	<Objective QuestName="Biological Intervention" QuestId="24565" Type="KillMob" MobId="37090" KillCount="5" />
+	<Objective QuestName="Biological Intervention" QuestId="24565" Type="KillMob" MobId="37091" KillCount="5" />
+	<TurnIn QuestName="Biological Intervention" QuestId="24565" TurnInName="Naralex" TurnInId="37570" />
+	<PickUp QuestName="To Harvest Chaos" QuestId="24574" GiverName="Naralex" GiverId="37570" />
+	<TurnIn QuestName="Adder Subtraction" QuestId="24570" TurnInName="Muyoh" TurnInId="38314" />
+	<TurnIn QuestName="Lashvine Seeds" QuestId="24571" TurnInName="Muyoh" TurnInId="38314" />
+	<PickUp QuestName="Sowing a Solution" QuestId="24566" GiverName="Muyoh" GiverId="38314" />
+	
+	<CustomBehavior File="InteractWith" QuestId="24566" MobId="37091" MobId2="37090" InteractByUsingItemId="49882"
+		Range="25" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" MobState="Alive" >
+		<HuntingGrounds>
+			<Hotspot X="-1841.323" Y="-2389.094" Z="96.0425" />
+			<Hotspot X="-1786.146" Y="-2314.331" Z="92.1768" />
+			<Hotspot X="-1692.47" Y="-2379.716" Z="91.89741" />
+			<Hotspot X="-1642.257" Y="-2347.584" Z="93.04733" />
+			<Hotspot X="-1592.663" Y="-2315.838" Z="96.44556" />
+			<Hotspot X="-1569.054" Y="-2262.882" Z="96.23046" />
+			<Hotspot X="-1561.07" Y="-2203.708" Z="95.11488" />
+			<Hotspot X="-1557.138" Y="-2157.042" Z="92.37981" />
+			<Hotspot X="-1594.164" Y="-2087.492" Z="94.60062" />
+			<Hotspot X="-1565.776" Y="-2015.225" Z="91.85861" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="To Harvest Chaos" QuestId="24574" Type="CollectItem" ItemId="49883" CollectCount="1" />
+	<Objective QuestName="To Harvest Chaos" QuestId="24574" Type="KillMob" MobId="37092" KillCount="5" />
+	<TurnIn QuestName="Sowing a Solution" QuestId="24566" TurnInName="Muyoh" TurnInId="38314" />
+	<TurnIn QuestName="To Harvest Chaos" QuestId="24574" TurnInName="Naralex" TurnInId="37570" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="The Nightmare Scar" QuestId="24601" GiverName="Naralex" GiverId="37570" />
+	<If Condition="HasQuest(24601) &amp;&amp; !IsQuestCompleted(24601)" >
+		<MoveTo X="-1708.435" Y="-2217.44" Z="98.85008" />
+		<CustomBehavior File="EscortGroup" QuestId="24601" EscortNpcId="37570" StartNpcId="37570" StartEscortGossipOptions="1" 
+			CombatMaxEngagementRangeDistance="20" EscortMaxFightDistance="20" EscortMaxFollowDistance="10" >
+			<SearchPath>
+				<Hotspot X="-1708.435" Y="-2217.44" Z="98.85008" />
+			</SearchPath>
+		</CustomBehavior>
+	</If>
+	<TurnIn QuestName="The Nightmare Scar" QuestId="24601" TurnInName="Naralex" TurnInId="37570" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<TurnIn QuestName="To the Front!" QuestId="25034" TurnInName="Ambassador Gaines" TurnInId="38986" />
+	
+	<CustomBehavior File="Message" Text="Compiling Forward Command Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Diplomacy By Another Means" QuestId="25044" GiverName="Ambassador Gaines" GiverId="38986" />
+	<PickUp QuestName="Fields of Blood" QuestId="25043" GiverName="General Hawthorne" GiverId="38323" />
+	<PickUp QuestName="A Line in the Dirt" QuestId="25045" GiverName="General Hawthorne" GiverId="38323" />
+	<PickUp QuestName="Lion's Pride" QuestId="25041" GiverName="Sam Trawley" GiverId="39003" />
+	
+	<If Condition="HasQuest(25045) &amp;&amp; !IsQuestCompleted(25045)" >
+		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" Text="Quest: A Line in the Dirt has mobs attacking a flag. Although the QB will prioritize flag attackers, if its stuck in combat, it won't always swap. May need to be done manually." />
+	</If>
+	<While Condition="HasQuest(25045) &amp;&amp; !IsQuestCompleted(25045)" >
+		<MoveTo X="-2445.191" Y="-2311.672" Z="100.0656" />
+		<CustomBehavior File="InteractWith" QuestId="25045" MobId="201743" TerminateWhen="Object(201743) == null"
+			NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" WaitTime="3000" />
+		<CustomBehavior File="25045-ALineInTheDirt" />
+	</While>
+	
+	<Objective QuestName="Lion's Pride" QuestId="25041" Type="KillMob" MobId="37207" KillCount="5" />
+	<Objective QuestName="Fields of Blood" QuestId="25043" Type="KillMob" MobId="37706" KillCount="10" />
+	<If Condition="HasQuest(25044) &amp;&amp; !IsQuestCompleted(25044)" >
+		<MoveTo X="-1861.557" Y="-1834.629" Z="90.7806" />
+		<CustomBehavior File="Misc\RunLua" QuestId="25044" Lua="UseItemByName(49782)" WaitTime="2000" />
+		<Objective QuestName="Diplomacy By Another Means" QuestId="25044" Type="KillMob" MobId="37513" KillCount="1" X="-1861.557" Y="-1834.629" Z="90.7806" />
+	</If>
+	
+	<TurnIn QuestName="Diplomacy By Another Means" QuestId="25044" TurnInName="Ambassador Gaines" TurnInId="38986" />
+	<TurnIn QuestName="Fields of Blood" QuestId="25043" TurnInName="General Hawthorne" TurnInId="38323" />
+	<TurnIn QuestName="A Line in the Dirt" QuestId="25045" TurnInName="General Hawthorne" TurnInId="38323" />
+	<TurnIn QuestName="Lion's Pride" QuestId="25041" TurnInName="Sam Trawley" TurnInId="39003" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Marching On Our Stomachs" QuestId="25042" GiverName="Sam Trawley" GiverId="39003" />
+	<Objective QuestName="Marching On Our Stomachs" QuestId="25042" Type="CollectItem" ItemId="52198" CollectCount="4" />
+	<TurnIn QuestName="Marching On Our Stomachs" QuestId="25042" TurnInName="Sam Trawley" TurnInId="39003" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Clap 'Em In Irons" QuestId="25057" GiverName="General Hawthorne" GiverId="38323" />
+	<PickUp QuestName="The Taurajo Briefs" QuestId="25059" GiverName="Ambassador Gaines" GiverId="38986" />
+	<If Condition="HasQuest(25057) &amp;&amp; !IsQuestCompleted(25057)" >
+		<CustomBehavior File="Message" Text="WARNING! The Quest Clap 'Em In Irons requires TheBrodieMan's Compendium Plugin to be active to complete successfully. Make sure it's on!" LogColor="Red" />
+		<CustomBehavior File="InteractWith" QuestId="25057" MobId="37743" InteractByGossipOptions="1"
+			NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="1000"
+			X="-2356.971" Y="-1938.159" Z="96.25875" />
+	</If>
+	<Objective QuestName="The Taurajo Briefs" QuestId="25059" Type="CollectItem" ItemId="52277" CollectCount="3" />
+	<TurnIn QuestName="The Taurajo Briefs" QuestId="25059" TurnInName="Ambassador Gaines" TurnInId="38986" />
+	<TurnIn QuestName="Clap 'Em In Irons" QuestId="25057" TurnInName="General Hawthorne" TurnInId="38323" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Meet Me at Triumph" QuestId="25074" GiverName="General Hawthorne" GiverId="38323" />
+	<TurnIn QuestName="Meet Me at Triumph" QuestId="25074" TurnInName="Commander Roberts" TurnInId="39083" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Fort Triumph Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Claim the Battlescar" QuestId="25081" GiverName="Commander Roberts" GiverId="39083" />
+	<PickUp QuestName="Pick-a-Part" QuestId="25075" GiverName="Mizzy Pistonhammer" GiverId="39084" />
+	<PickUp QuestName="Working the Bugs Out" QuestId="25082" GiverName="Logan Talonstrike" GiverId="39085" />
+	
+	<While Condition="HasQuest(25082) &amp;&amp; !IsQuestCompleted(25082)" >
+		<If Condition="!IsQuestCompleted(25082)" >
+			<MoveTo X="-3181.51" Y="-2222.984" Z="99.63876" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(50128)" WaitTime="5000" />
+		</If>
+		<If Condition="!IsQuestCompleted(25082)" >
+			<MoveTo X="-3133.799" Y="-2175.691" Z="102.4657" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(50128)" WaitTime="5000" />
+		</If>
+	</While>
+	<Objective QuestName="Pick-a-Part" QuestId="25075" Type="CollectItem" ItemId="52285" CollectCount="8" />
+	<Objective QuestName="Claim the Battlescar" QuestId="25081" Type="KillMob" MobId="37922" KillCount="10" />
+	<CustomBehavior File="InteractWith" QuestId="25081" QuestObjectiveIndex="2" MobId="201877" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" X="-3245.815" Y="-2004.59" Z="87.92936" />
+	<TurnIn QuestName="Working the Bugs Out" QuestId="25082" TurnInName="Logan Talonstrike" TurnInId="39085" />
+	<PickUp QuestName="Firestone Point" QuestId="25086" GiverName="Logan Talonstrike" GiverId="39085" />
+	<TurnIn QuestName="Pick-a-Part" QuestId="25075" TurnInName="Mizzy Pistonhammer" TurnInId="39084" />
+	<PickUp QuestName="Powder Play" QuestId="25079" GiverName="Mizzy Pistonhammer" GiverId="39084" />
+	<TurnIn QuestName="Claim the Battlescar" QuestId="25081" TurnInName="Commander Roberts" TurnInId="39083" />
+	<PickUp QuestName="Report to Twinbraid" QuestId="25087" GiverName="Commander Roberts" GiverId="39083" />
+	
+	<Objective QuestName="Powder Play" QuestId="25079" Type="CollectItem" ItemId="52290" CollectCount="1" />
+	<TurnIn QuestName="Powder Play" QuestId="25079" TurnInName="Mizzy Pistonhammer" TurnInId="39084" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Batteries Not Yet Included" QuestId="25080" GiverName="Mizzy Pistonhammer" GiverId="39084" />
+	<Objective QuestName="Batteries Not Yet Included" QuestId="25080" Type="CollectItem" ItemId="52305" CollectCount="1" X="-3426.074" Y="-2193.407" Z="91.72184" />
+	<TurnIn QuestName="Batteries Not Yet Included" QuestId="25080" TurnInName="Mizzy Pistonhammer" TurnInId="39084" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<TurnIn QuestName="Report to Twinbraid" QuestId="25087" TurnInName="General Twinbraid" TurnInId="39118" />
+	
+	<CustomBehavior File="Message" Text="Compiling Twinbraid's Patrol Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Digsite Status" QuestId="25104" GiverName="General Twinbraid" GiverId="39118" />
+	<PickUp QuestName="No Bull" QuestId="25102" GiverName="Hurlston Stonesthrow" GiverId="39154" />
+	<Objective QuestName="No Bull" QuestId="25102" Type="KillMob" MobId="37556" KillCount="1" />
+	<Objective QuestName="No Bull" QuestId="25102" Type="KillMob" MobId="37555" KillCount="4" />
+	<TurnIn QuestName="No Bull" QuestId="25102" TurnInName="Hurlston Stonesthrow" TurnInId="39154" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<TurnIn QuestName="Firestone Point" QuestId="25086" TurnInName="Dorn Redearth" TurnInId="37835" />
+	
+	<CustomBehavior File="Message" Text="Compiling Firestone Point Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="A Growing Threat" QuestId="25084" GiverName="Dorn Redearth" GiverId="37835" />
+	<PickUp QuestName="The Disturbed Earth" QuestId="24824" GiverName="Tauna Skychaser" GiverId="37834" />
+	<Objective QuestName="The Disturbed Earth" QuestId="24824" Type="CollectItem" ItemId="50385" CollectCount="4" />
+	<Objective QuestName="A Growing Threat" QuestId="25084" Type="KillMob" MobId="37929" KillCount="13" />
+	<TurnIn QuestName="The Disturbed Earth" QuestId="24824" TurnInName="Tauna Skychaser" TurnInId="37834" />
+	<TurnIn QuestName="A Growing Threat" QuestId="25084" TurnInName="Dorn Redearth" TurnInId="37835" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Mangletooth" QuestId="25085" GiverName="Dorn Redearth" GiverId="37835" />
+	<Objective QuestName="Mangletooth" QuestId="25085" Type="KillMob" MobId="37940" KillCount="1" />
+	<TurnIn QuestName="Mangletooth" QuestId="25085" TurnInName="Dorn Redearth" TurnInId="37835" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<TurnIn QuestName="Digsite Status" QuestId="25104" TurnInName="Marley Twinbraid" TurnInId="39155" />
+	
+	<CustomBehavior File="Message" Text="Compiling Bael Modan Excavation Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Hands Off Me Dig!" QuestId="25106" GiverName="Marley Twinbraid" GiverId="39155" />
+	<PickUp QuestName="Feegly the Exiled" QuestId="25108" GiverName="Marley Twinbraid" GiverId="39155" />
+	<Objective QuestName="Feegly the Exiled" QuestId="25108" Type="KillMob" MobId="39174" KillCount="1" />
+	<CustomBehavior File="InteractWith" QuestId="25106" QuestObjectiveIndex="3" MobId="202542" IgnoreLoSToTarget="True"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="100" X="-4214.862" Y="-2274.342" Z="51.0316" />
+	<CustomBehavior File="InteractWith" QuestId="25106" QuestObjectiveIndex="2" MobId="202533" IgnoreLoSToTarget="True"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-4188.991" Y="-2213.362" Z="52.14957" />
+			<Hotspot X="-4138.162" Y="-2192.561" Z="50.24663" />
+			<Hotspot X="-4087.644" Y="-2156.85" Z="50.19099" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="Hands Off Me Dig!" QuestId="25106" Type="KillMob" MobId="39153" KillCount="8" />
+	<TurnIn QuestName="Hands Off Me Dig!" QuestId="25106" TurnInName="Marley Twinbraid" TurnInId="39155" />
+	<TurnIn QuestName="Feegly the Exiled" QuestId="25108" TurnInName="Marley Twinbraid" TurnInId="39155" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Marley's Final Flight" QuestId="25120" GiverName="Marley Twinbraid" GiverId="39155" />
+	<While Condition="HasQuest(25120) &amp;&amp; !IsQuestCompleted(25120)" >
+		<CustomBehavior File="InteractWith" QuestId="25120" MobId="39155" IgnoreLoSToTarget="True"
+			WaitTime="2000" X="-4170.133" Y="-2142.229" Z="83.03727" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<While Condition="Me.IsOnTransport" />
+	</While>
+	<TurnIn QuestName="Marley's Final Flight" QuestId="25120" TurnInName="Marley Twinbraid" TurnInId="39188" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Bael Modan Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="He Needs Ale!" QuestId="25151" GiverName="Marley Twinbraid" GiverId="39188" />
+	<PickUp QuestName="Bael'dun Rescue" QuestId="25153" GiverName="Bael'dun Survivor" GiverId="39218" />
+	<PickUp QuestName="Who Did This?" QuestId="25163" GiverName="Wounded Bael\'dun Officer" GiverId="39220" />
+	<Objective QuestName="He Needs Ale!" QuestId="25151" Type="CollectItem" ItemId="52491" CollectCount="1" />
+	<TurnIn QuestName="Who Did This?" QuestId="25163" TurnInName="Weezil Slipshadow" TurnInId="38152" />
+	<PickUp QuestName="Twinbraid Needs to Know" QuestId="25174" GiverName="Weezil Slipshadow" GiverId="38152" />
+	<If Condition="HasQuest(25153) &amp;&amp; !IsQuestCompleted(25153)" >
+		<CustomBehavior File="Message" Text="WARNING! Bael'dun Rescue is not bot friendly...with all the fires...and things...I could get it to pick up the fire ward but it doesn't always hit you. Recommend doing this manually!!!" LogColor="Red" />
+		<CustomBehavior File="InteractWith" QuestId="25153" MobId="39238" NonCompeteDistance="0" IgnoreLoSToTarget="True"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" X="-4070.561" Y="-2375.139" Z="126.1308" />
+	</If>
+	<If Condition="HasQuest(25153) &amp;&amp; IsQuestCompleted(25153)" >
+		<CustomBehavior File="InteractWith" MobId="39218" NonCompeteDistance="0" X="-4090.019" Y="-2305.441" Z="124.9136" />
+		<If Condition="Me.Class == WoWClass.Warrior || Me.Class == WoWClass.Paladin" >
+			<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(1)" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" WaitTime="1000" />
+		<ElseIf Condition="Me.Class == WoWClass.Priest || Me.Class == WoWClass.Mage || Me.Class == WoWClass.Warlock" >
+			<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(3)" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" WaitTime="1000" />
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(2)" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" WaitTime="1000" />
+		</Else>
+		</If>
+	</If>
+	<TurnIn QuestName="He Needs Ale!" QuestId="25151" TurnInName="Marley Twinbraid" TurnInId="39188" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="The Bad News" QuestId="25175" GiverName="Marley Twinbraid" GiverId="39188" />
+	<TurnIn QuestName="The Bad News" QuestId="25175" TurnInName="General Twinbraid" TurnInId="39118" />
+	<TurnIn QuestName="Twinbraid Needs to Know" QuestId="25174" TurnInName="General Twinbraid" TurnInId="39118" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Kill 'em All!" QuestId="25182" GiverName="General Twinbraid" GiverId="39118" />
+	<PickUp QuestName="...And Bury the Rest" QuestId="25183" GiverName="General Twinbraid" GiverId="39118" />
+	<CustomBehavior File="InteractWith" QuestId="25183" MobId="202596" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-3581.449" Y="-1622.14" Z="101.3728" />
+			<Hotspot X="-3542.892" Y="-1585.95" Z="101.921" />
+			<Hotspot X="-3481.845" Y="-1613.146" Z="95.77713" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="Kill 'em All!" QuestId="25182" Type="KillMob" MobId="39280" KillCount="10" />
+	<TurnIn QuestName="...And Bury the Rest" QuestId="25183" TurnInName="Big Nasty Plunger" TurnInId="202598" 
+		TurnInType="Object" X="-3638.918" Y="-1637.604" Z="102.4845" />
+	
+	<If Condition="Me.LevelFraction &gt;= 35" >
+		<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="The Deed Is Done" QuestId="25185" GiverName="Big Nasty Plunger" GiverId="202598" GiverType="Object" 
+		X="-3638.918" Y="-1637.604" Z="102.4845" />
+	<TurnIn QuestName="The Deed Is Done" QuestId="25185" TurnInName="General Twinbraid" TurnInId="39118" />
+	<TurnIn QuestName="Kill 'em All!" QuestId="25182" TurnInName="General Twinbraid" TurnInId="39118" />
+	
+	<PickUp QuestName="Reinforcements From Theramore" QuestId="26687" GiverName="General Twinbraid" GiverId="39118" />
+	
+	<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

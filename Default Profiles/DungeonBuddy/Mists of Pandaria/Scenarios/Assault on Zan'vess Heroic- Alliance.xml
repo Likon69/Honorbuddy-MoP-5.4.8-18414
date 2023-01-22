@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Assault on Zan'vess Heroic</Name>
+  <DungeonId>593</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="68143" name="Squad Leader Bosh" killOrder="1" optional="false" X="-1235.403" Y="4245.915" Z="58.31516"/>
+    <Boss isFinal="true" entry="67879" name="Commander Tel'vrak" killOrder="2" optional="false" X="-1258.175" Y="4580.548" Z="127.9338"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+
+  </PullBlackspots>
+</DungeonBuddyProfile>

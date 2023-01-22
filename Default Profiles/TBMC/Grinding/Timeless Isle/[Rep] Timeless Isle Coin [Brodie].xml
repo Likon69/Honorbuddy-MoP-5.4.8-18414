@@ -1,0 +1,434 @@
+<HBProfile>
+	<Name>The Timeless Isle Coins ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>0</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Mama Stormstout" Entry="73649" Type="Food" X="-614.8577" Y="-4913.071" Z="2.056075" />
+		<Vendor Name="Brewmaster Tzu" Entry="73618" Type="Food" X="-512.4288" Y="-4946.128" Z="2.056667" />
+		<Vendor Name="Crafter Kwon" Entry="73656" Type="Repair" X="-511.3785" Y="-5008.741" Z="2.056738" />
+	</Vendors>
+  
+	<AvoidMobs>
+		<Mob Name="Tushui Sentry" Entry="73361" /> <!-- Alliance Guards -->
+		<Mob Name="Huojin Sentry" Entry="73362" /> <!-- Horde Guards -->
+		<Mob Name="Elder Great Turtle" Entry="72765" />
+	</AvoidMobs>
+   
+	<Blackspots>
+		<Blackspot X="-911.9672" Y="-4640.844" Z="4.998785" Radius="35" /> <!-- Alliance Camp -->
+		<Blackspot X="-416.3032" Y="-4604.876" Z="3.685226" Radius="40" /> <!-- Horde Camp -->
+		<Blackspot X="-752.384" Y="-5110.958" Z="2.069843" Radius="4.822655" />
+	</Blackspots>
+	
+	<Blacklist>
+		<Mob Name="Royal Bodyguard" Entry="73484" Flags="Pull" />
+		<Mob Name="Spotted Swarmer" Entry="72908" Flags="Pull" />
+		<Mob Name="High Priest of Ordos" Entry="72898" Flags="Pull" />
+		<Mob Name="Eternal Kilnmaster" Entry="72896" Flags="Pull" />
+		<Mob Name="Molten Guardian" Entry="72888" Flags="Pull" />
+		<Mob Name="Blazebound Chanter" Entry="72897" Flags="Pull" />
+	</Blacklist>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<CustomBehavior File="RunMacro" Macro="/script SetCVar('AutoLootDefault', 1)" WaitTime="1000" />
+	<CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+
+	<CustomBehavior File="Message" Text="Starting Timeless Isle Coin Farm" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Checking for prerequisite quests..." LogColor="CornflowerBlue" />
+	
+	<SetMailboxes>
+		<Mailbox Nav="Fly" UsableWhen="Me.IsAlliance" X="-908.8835" Y="-4635.785" Z="4.628042" />
+		<Mailbox Nav="Fly" UsableWhen="Me.IsHorde" X="-428.5745" Y="-4614.354" Z="4.3078" />
+	</SetMailboxes>
+	
+	<If Condition="(!HasQuest(33161) &amp;&amp; !IsQuestCompleted(33161)) ||
+					(!HasQuest(33228) &amp;&amp; !IsQuestCompleted(33228))" >
+		<If Condition="HasQuest(33229)" >
+			<TurnIn Nav="Fly" QuestName="A Flash of Bronze..." QuestId="33229" TurnInName="Chromie" TurnInId="73691" X="1398.655" Y="429.4161" Z="548.2864" />
+		</If>
+		
+		<If Condition="HasQuest(33230)" >
+			<TurnIn Nav="Fly" QuestName="A Flash of Bronze..." QuestId="33230" TurnInName="Chromie" TurnInId="73691" X="1398.655" Y="429.4161" Z="548.2864" />
+		</If>
+		
+		<If Condition="Me.IsAlliance" >
+			<PickUp Nav="Fly" QuestName="Journey to the Timeless Isle" QuestId="33231" GiverName="Chromie" GiverId="73691" X="1398.655" Y="429.4161" Z="548.2864" />
+			<If Condition="HasItem(104113) &amp;&amp; Me.ZoneId != 6757" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(104113)" WaitTime="5000" />
+			</If>
+			<TurnIn QuestName="Journey to the Timeless Isle" QuestId="33231" TurnInName="Watcher Lara" TurnInId="73348" />
+			<PickUp QuestName="Time Keeper Kairoz" QuestId="33160" GiverName="Watcher Lara" GiverId="73348" />
+			<TurnIn QuestName="Time Keeper Kairoz" QuestId="33160" TurnInName="Kairoz" TurnInId="72870" />
+		</If>
+		
+		<If Condition="Me.IsHorde" >
+			<PickUp Nav="Fly" QuestName="Journey to the Timeless Isle" QuestId="33232" GiverName="Chromie" GiverId="73691" X="1398.655" Y="429.4161" Z="548.2864" />
+			<If Condition="HasItem(104110) &amp;&amp; Me.ZoneId != 6757" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(104110)" WaitTime="5000" />
+			</If>
+			<TurnIn QuestName="Journey to the Timeless Isle" QuestId="33232" TurnInName="Watcher Alundra" TurnInId="73353" />
+			<PickUp QuestName="Time Keeper Kairoz" QuestId="33156" GiverName="Watcher Alundra" GiverId="73353" />
+			<TurnIn QuestName="Time Keeper Kairoz" QuestId="33156" TurnInName="Kairoz" TurnInId="72870" />
+		</If>
+	</If>
+	
+	<If Condition="Me.ZoneId != 6757" >
+		<CustomBehavior File="FlyTo" X="-680.5806" Y="-4507.614" Z="0.1" />
+		<MoveTo X="-683.057" Y="-4819.213" Z="2.231921" />
+	</If>
+	
+	<PickUp QuestName="A Timeless Tour" QuestId="33161" GiverName="Kairoz" GiverId="72870" />
+	<PickUp QuestName="Time In Your Hands" QuestId="33228" GiverName="Kairoz" GiverId="72870" />
+	
+	<CustomBehavior File="InteractWith" QuestId="33228" QuestObjectiveIndex="2" MobId="73305"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" X="-659.8721" Y="-5111.042" Z="2.056954" />
+	<CustomBehavior File="InteractWith" QuestId="33228" QuestObjectiveIndex="3" MobId="73306"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" X="-642.0267" Y="-5112.436" Z="2.056954" />
+	
+	<CustomBehavior File="Message" Text="Checking for chests we can collect..." LogColor="CornflowerBlue" />
+	
+	<!-- Moss-Covered Chest, SE of Court, On Stump -->
+	<CustomBehavior File="InteractWith" MobId="223111" IgnoreLoSToTarget="True" Range="6" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33198)" NumOfTimes="10" WaitTime="5000" X="-815.4454" Y="-5149.715" Z="2.612066" />
+	
+	<!-- Moss-Covered Chest, Old Pi'jiu N House -->
+	<CustomBehavior File="InteractWith" MobId="223095" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33182)" NumOfTimes="10" WaitTime="5000" X="-917.7397" Y="-5022.425" Z="2.604132" />
+		
+	<!-- Moss-Covered Chest, Old Pi'jiu SE Trees -->
+	<CustomBehavior File="InteractWith" MobId="223098" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33185)" NumOfTimes="10" WaitTime="5000" X="-1117.767" Y="-5125.17" Z="2.270746" />
+	
+	<!-- Moss-Covered Chest, Old Pi'jiu SE House -->
+	<CustomBehavior File="InteractWith" MobId="223096" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33183)" NumOfTimes="10" WaitTime="5000" X="-1039.91" Y="-5033.164" Z="2.597819" />
+	
+	<!-- Moss-Covered Chest, Old Pi'jiu W House -->
+	<CustomBehavior File="InteractWith" MobId="223094" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33181)" NumOfTimes="10" WaitTime="5000" X="-995.028" Y="-4928.013" Z="2.756846" />
+	
+	<!-- Moss-Covered Chest, Old Pi'jiu W Trees -->
+	<CustomBehavior File="InteractWith" MobId="223093" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33180)" NumOfTimes="10" WaitTime="5000" X="-990.2767" Y="-4821.296" Z="2.642655" />
+	
+	<!-- Moss-Covered Chest, NE Alliance Base -->
+	<CustomBehavior File="InteractWith" MobId="223092" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33179)" NumOfTimes="10" WaitTime="5000" X="-868.4882" Y="-4727.666" Z="0.7524901" />
+	
+	<!-- Moss-Covered Chest, N Alliance Base -->
+	<CustomBehavior File="InteractWith" MobId="223091" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33178)" NumOfTimes="10" WaitTime="5000" X="-854.663" Y="-4617.685" Z="7.027118" />
+	
+	<!-- Moss-Covered Chest, N Alliance Base, On Stump -->
+	<CustomBehavior File="InteractWith" MobId="223112" IgnoreLoSToTarget="True" Range="6" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33199)" NumOfTimes="10" WaitTime="5000" X="-746.2036" Y="-4708.768" Z="12.35531" />
+	
+	<!-- Moss-Covered Chest, Mid Beach -->
+	<CustomBehavior File="InteractWith" MobId="223089" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33176)" NumOfTimes="10" WaitTime="5000" X="-613.0394" Y="-4683.093" Z="5.150291" />
+	
+	<!-- Moss-Covered Chest, S Horde Base -->
+	<CustomBehavior File="InteractWith" MobId="223088" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33175)" NumOfTimes="10" WaitTime="5000" X="-553.5062" Y="-4612.026" Z="5.676059" />
+	
+	<!-- Moss-Covered Chest, SE Horde Base -->
+	<CustomBehavior File="InteractWith" MobId="223090" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33177)" NumOfTimes="10" WaitTime="5000" X="-505.5847" Y="-4696.987" Z="1.244399" />
+	
+	<!-- Moss-Covered Chest, S Misty Strand, On Stump -->
+	<CustomBehavior File="InteractWith" MobId="223085" IgnoreLoSToTarget="True" Range="6" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33172)" NumOfTimes="10" WaitTime="5000" X="-395.9072" Y="-4740.222" Z="2.500449" />
+	
+	<!-- Moss-Covered Chest, N Horde Base, On Stump -->
+	<CustomBehavior File="InteractWith" MobId="223113" IgnoreLoSToTarget="True" Range="6" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33200)" NumOfTimes="10" WaitTime="5000" X="-380.4413" Y="-4676.021" Z="12.41234" />
+	
+	<!-- Moss-Covered Chest, N Horde Base, underwater -->
+	<CustomBehavior File="InteractWith" MobId="223087" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33174)" NumOfTimes="10" WaitTime="5000" X="-334.2529" Y="-4617.01" Z="-8.3275" />
+	
+	<!-- Moss-Covered Chest, N Misty Strand -->
+	<CustomBehavior File="InteractWith" MobId="223084" IgnoreLoSToTarget="True" Range="6" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33171)" NumOfTimes="10" WaitTime="5000" X="-201.5972" Y="-4695.542" Z="1.14536" />
+	
+	<!-- Moss-Covered Chest, Misty Strand Cliff -->
+	<CustomBehavior File="InteractWith" MobId="223115" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33202)" NumOfTimes="10" WaitTime="5000" X="-279.9395" Y="-4795.569" Z="18.02489" />
+	
+	<!-- Moss-Covered Chest, SE Misty Strand, On Stump -->
+	<CustomBehavior File="InteractWith" MobId="223086" IgnoreLoSToTarget="True" Range="6" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33173)" NumOfTimes="10" WaitTime="5000" X="-348.9363" Y="-4818.403" Z="2.057683" />
+	
+	<!-- Moss-Covered Chest, Three Breeze Terrace -->
+	<CustomBehavior File="InteractWith" MobId="221670" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33202)" NumOfTimes="10" WaitTime="5000" X="-315.7522" Y="-4965.662" Z="15.99861" />
+	
+	<!-- Skull-Covered Chest, Cavern of Lost Spirits -->
+	<CustomBehavior File="InteractWith" MobId="221617" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33203)" NumOfTimes="10" WaitTime="5000" X="-289.2543" Y="-5202.011" Z="-2.284698" />
+	
+	<!-- Moss-Covered Chest, N Central Lake -->
+	<CustomBehavior File="InteractWith" MobId="223100" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33187)" NumOfTimes="10" WaitTime="5000" X="-512.4592" Y="-5206.677" Z="7.826266" />
+	
+	<!-- Moss-Covered Chest, Central Lake, underwater -->
+	<CustomBehavior File="InteractWith" MobId="223099" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33186)" NumOfTimes="10" WaitTime="5000" X="-626.0736" Y="-5212.78" Z="-12.72281" />
+	
+	<!-- Moss-Covered Chest, Tsavo'ka's Den -->
+	<CustomBehavior File="InteractWith" MobId="223102" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33189)" NumOfTimes="10" WaitTime="5000" X="-479.7622" Y="-5416.669" Z="4.72146" />
+	
+	<!-- Sturdy Chest, Mysterious Den -->
+	<!--<CustomBehavior File="InteractWith" MobId="223118" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33207)" NumOfTimes="10" WaitTime="5000" X="-555.1385" Y="-5506.284" Z="5.877498" /> -->
+	
+	<!-- Moss-Covered Chest, outside Mysterious Den -->
+	<CustomBehavior File="InteractWith" MobId="223103" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33190)" NumOfTimes="10" WaitTime="5000" X="-577.1806" Y="-5478.813" Z="10.07147" />
+	
+	<!-- Moss-Covered Chest, N graveyard -->
+	<CustomBehavior File="InteractWith" MobId="223104" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33191)" NumOfTimes="10" WaitTime="5000" X="-534.6057" Y="-5670.588" Z="19.2222" />
+
+	<!-- Moss-Covered Chest, S graveyard -->
+	<CustomBehavior File="InteractWith" MobId="223105" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33192)" NumOfTimes="10" WaitTime="5000" X="-714.6217" Y="-5609.919" Z="11.02236" />
+	
+	<!-- Sturdy Chest, Croaking Hollow -->
+	<CustomBehavior File="InteractWith" MobId="223117" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33206)" NumOfTimes="10" WaitTime="5000" X="-894.4743" Y="-5639.6" Z="3.122456" />
+	
+	<!-- Moss-Covered Chest, Croaking Hollow -->
+	<CustomBehavior File="InteractWith" MobId="223106" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33193)" NumOfTimes="10" WaitTime="5000" X="-967.835" Y="-5639.082" Z="1.969444" />
+	
+	<!-- Moss-Covered Chest, Cpt. Zvezdan's Shipwreck -->
+	<!-- <If Condition="!IsQuestCompleted(33227)" >
+		<MoveTo X="-1173.602" Y="-5510.755" Z="-1" />
+		<CustomBehavior File="MyCTM" X="-1174.144" Y="-5512.895" Z="-58.73524" />
+		<CustomBehavior File="MyCTM" X="-1184.238" Y="-5556.129" Z="-76.38123" />
+		<CustomBehavior File="InteractWith" MobId="223204" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33227)" NumOfTimes="10" WaitTime="5000" />
+		<CustomBehavior File="MyCTM" X="-1174.144" Y="-5512.895" Z="-58.73524" />
+		<CustomBehavior File="AscendInWater" />
+	</If> -->
+	
+	<!-- Moss-Covered Chest, NW of Croaking Hollow -->
+	<CustomBehavior File="InteractWith" MobId="223107" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33194)" NumOfTimes="10" WaitTime="5000" X="-819.9009" Y="-5525.213" Z="4.618199" />
+	
+	<!-- Moss-Covered Chest, N of Firewalker Ruins -->
+	<CustomBehavior File="InteractWith" MobId="223109" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33196)" NumOfTimes="10" WaitTime="5000" X="-899.2408" Y="-5368.966" Z="4.833775" />
+	
+	<!-- Moss-Covered Chest, SE of Central Lake -->
+	<CustomBehavior File="InteractWith" MobId="223110" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33197)" NumOfTimes="10" WaitTime="5000" X="-761.7606" Y="-5357.122" Z="4.153669" />
+	
+	<!-- Moss-Covered Chest, S of Central Lake -->
+	<CustomBehavior File="InteractWith" MobId="223108" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33195)" NumOfTimes="10" WaitTime="5000" X="-816.134" Y="-5280.03" Z="7.493073" />
+	
+	<!-- Smoldering Chest, Firewalker Ruins -->
+	<CustomBehavior File="InteractWith" MobId="223119" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33209)" NumOfTimes="10" WaitTime="5000" X="-1022.248" Y="-5384.575" Z="55.9822" />
+	
+	<!-- Smoldering Chest, The Blazing Way -->
+	<!--<If Condition="!IsQuestCompleted(33208)" >
+		<DisableBehavior Name="Combat" />
+		<CustomBehavior File="InteractWith" MobId="221672" ProactiveCombatStrategy="NoClear"
+			NonCompeteDistance="0" TerminateWhen="IsQuestCompleted(33208)" NumOfTimes="10" WaitTime="5000" X="-299.7951" Y="-5745.791" Z="105.6042" />
+		<MoveTo X="-815.4454" Y="-5149.715" Z="2.612066" />
+		<EnableBehavior Name="Combat" />
+	</If> -->
+	
+	<If Condition="HasQuest(33161) &amp;&amp; IsQuestCompleted(33161)" >
+		<TurnIn QuestName="A Timeless Tour" QuestId="33161" TurnInName="Kairoz" TurnInId="72870" />
+	</If>
+	
+	<!-- End Chest Checks -->
+	
+	<CustomBehavior File="Message" Text="Beginning the grind:" LogColor="CornflowerBlue" />
+
+	<While Condition="Me.Level &gt;= 90" >
+	
+		<!-- Rolo's Riddle -->
+		<If Condition="HasItem(102225) &amp;&amp; !HasQuest(32974) &amp;&amp; !IsQuestCompleted(32974)" >
+			<PickUp QuestName="Rolo's Riddle" QuestId="32974" GiverType="Item" GiverId="102225" />
+		</If>
+		
+		<While Condition="HasQuest(32974) &amp;&amp; !IsQuestCompleted(32974)" >
+			<MoveTo X="-874.0601" Y="-5269.804" Z="3.601244" /> <!-- While, in case of lag -->
+		</While>
+		
+		<If Condition="HasQuest(32974) &amp;&amp; IsQuestCompleted(32974)" >
+			<TurnIn QuestName="Rolo's Riddle" QuestId="32974" TurnInName="Mound of Dirt" TurnInId="72751" />
+		</If>
+		
+		<If Condition="IsQuestCompleted(32974) &amp;&amp; !HasQuest(32975) &amp;&amp; !IsQuestCompleted(32975)" >
+			<PickUp QuestName="Rolo's Riddle" QuestId="32975" GiverName="Mound of Dirt" GiverId="72751" />
+		</If>
+		
+		<!-- Too dangerous an area, wait til after 90+ cap
+		<While Condition="HasQuest(32975) &amp;&amp; !IsQuestCompleted(32975)" >
+			<MoveTo X="-189.7437" Y="-4914.52" Z="15.7715" />
+		</While>
+		
+		<If Condition="HasQuest(32975) &amp;&amp; IsQuestCompleted(32975)" >
+			<TurnIn QuestName="Rolo's Riddle" QuestId="32975" TurnInName="Mound of Dirt" TurnInId="72754" />
+		</If>
+		
+		<If Condition="IsQuestCompleted(32975) &amp;&amp; !HasQuest(32976) &amp;&amp; !IsQuestCompleted(32976)" >
+			<PickUp QuestName="Rolo's Riddle" QuestId="32976" GiverName="Mound of Dirt" GiverId="72754" />
+		</If> -->
+		
+		<If Condition="!HasQuest(33228) &amp;&amp; IsQuestCompleted(33228) &amp;&amp;
+						(!HasQuest(33332) &amp;&amp; !IsQuestCompleted(33332))" >
+			<PickUp QuestName="Hints From The Past" QuestId="33332" GiverName="Kairoz" GiverId="72870" />
+		</If>
+		
+		<If Condition="!HasQuest(33228) &amp;&amp; IsQuestCompleted(33228) &amp;&amp;
+						(!HasQuest(33335) &amp;&amp; !IsQuestCompleted(33335))" >
+			<PickUp QuestName="The Last Emperor" QuestId="33335" GiverName="Kairoz" GiverId="72870" />
+		</If>
+		
+		<If Condition="HasQuest(33335) &amp;&amp; !IsQuestCompleted(33335)" >
+			<CustomBehavior File="InteractWith" QuestId="33335" MobId="73303" Range="7" IgnoreLoSToTarget="True"
+				NonCompeteDistance="0" X="-656.2868" Y="-5113.189" Z="2.056708" />
+		</If>
+		
+		<If Condition="HasQuest(33332) &amp;&amp; !IsQuestCompleted(33332)" >
+			<CustomBehavior File="InteractWith" QuestId="33332" MobId="73305" InteractByGossipOptions="1"
+				InteractByBuyingItemId="103977" NonCompeteDistance="0" X="-656.2868" Y="-5113.189" Z="2.056708" />
+		</If>
+		
+		<If Condition="HasQuest(33335) &amp;&amp; IsQuestCompleted(33335)" >
+			<CustomBehavior File="InteractWith" MobId="73303" Range="7" IgnoreLoSToTarget="True"
+				InteractByQuestFrameDisposition="Complete" NonCompeteDistance="0" X="-656.2868" Y="-5113.189" Z="2.056708" />
+		</If>
+		
+		<If Condition="!HasQuest(33335) &amp;&amp; IsQuestCompleted(33335) &amp;&amp;
+						!HasQuest(33340) &amp;&amp; !IsQuestCompleted(33340)" >
+			<CustomBehavior File="InteractWith" MobId="73303" Range="7" IgnoreLoSToTarget="True"
+				InteractByQuestFrameDisposition="Accept" NonCompeteDistance="0" X="-656.2868" Y="-5113.189" Z="2.056708" />
+		</If>
+
+		<If Condition="HasQuest(33332) &amp;&amp; IsQuestCompleted(33332)" >
+			<TurnIn QuestName="Hints From The Past" QuestId="33332" TurnInName="Kairoz" TurnInId="72870" />
+		</If>
+		
+		<If Condition="!HasQuest(33332) &amp;&amp; IsQuestCompleted(33332) &amp;&amp;
+						!HasQuest(33333) &amp;&amp; !IsQuestCompleted(33333)" >
+			<PickUp QuestName="Timeless Treasures" QuestId="33333" GiverName="Kairoz" GiverId="72870" />
+		</If>
+		
+		<While Condition="!(Me.FreeBagSlots &lt;= 2 || HasItem(102225) || HasItem(104257) || GetItemCount(104264) &gt;= 5 || GetItemCount(104265) &gt;= 5 || GetItemCount(104266) &gt;= 5 || GetItemCount(104267) &gt;= 5)" >
+			<SetGrindArea>
+				<GrindArea>
+					<Factions>16 2136</Factions>
+					<Hotspots>
+						<Hotspot X="-714.7323" Y="-4695.029" Z="2.822289" />
+						<Hotspot X="-661.6777" Y="-4691.417" Z="4.100584" />
+						<Hotspot X="-628.9286" Y="-4650.112" Z="2.004626" />
+						<Hotspot X="-590.9212" Y="-4638.871" Z="3.844312" />
+						<Hotspot X="-556.5987" Y="-4653.994" Z="4.489277" />
+						<Hotspot X="-554.9019" Y="-4725.399" Z="2.41795" />
+						<Hotspot X="-521.7626" Y="-4776.01" Z="2.476455" />
+						<Hotspot X="-465.8333" Y="-4803.468" Z="5.493793" />
+						<Hotspot X="-404.2234" Y="-4806.312" Z="2.181187" />
+						<Hotspot X="-423.5521" Y="-4890.886" Z="5.771502" />
+						<Hotspot X="-443.1651" Y="-4978.196" Z="5.67257" />
+						<Hotspot X="-459.2184" Y="-5052.545" Z="2.452995" />
+						<Hotspot X="-490.6628" Y="-5146.166" Z="1.052756" />
+						<Hotspot X="-560.7059" Y="-5191.445" Z="3.116802" />
+						<Hotspot X="-661.0441" Y="-5156.509" Z="2.046712" />
+						<Hotspot X="-738.3392" Y="-5188.239" Z="3.669286" />
+						<Hotspot X="-824.8189" Y="-5135.924" Z="4.504133" />
+						<Hotspot X="-889.2506" Y="-5118.967" Z="3.155537" />
+						<Hotspot X="-981.4622" Y="-5090.271" Z="3.642983" />
+						<Hotspot X="-958.311" Y="-5038.392" Z="3.104604" />
+						<Hotspot X="-1019.387" Y="-4976.701" Z="5.681397" />
+						<Hotspot X="-1098.108" Y="-4977.376" Z="4.124171" />
+						<Hotspot X="-1015.322" Y="-4863.266" Z="2.380057" />
+						<Hotspot X="-904.2833" Y="-4886.652" Z="3.112978" />
+						<Hotspot X="-847.6708" Y="-4902.417" Z="2.591235" />
+						<Hotspot X="-779.3306" Y="-4868.406" Z="2.314666" />
+						<Hotspot X="-745.7582" Y="-4809.562" Z="4.590337" />
+					</Hotspots>
+				</GrindArea> 
+			</SetGrindArea>
+			<GrindTo Condition="(HasQuest(33228) &amp;&amp; IsQuestCompleted(33228)) || (HasQuest(33334) &amp;&amp; IsQuestCompleted(33334)) || GetItemCount(105715) == 50 || Me.FreeBagSlots &lt;= 2 ||
+				HasItem(102225) || HasItem(104257) || GetItemCount(104264) &gt;= 5 || GetItemCount(104265) &gt;= 5 || GetItemCount(104266) &gt;= 5 || GetItemCount(104267) &gt;= 5" />
+
+			<If Condition="HasQuest(33228) &amp;&amp; IsQuestCompleted(33228)" >
+				<CustomBehavior File="InteractWith" MobId="72870" ProactiveCombatStrategy="ClearMobsTargetingUs" 
+					NonCompeteDistance="0" X="-627.8186" Y="-4916.034" Z="2.055832" WaitTime="1000" />
+				<If Condition="Me.Class == WoWClass.Priest || Me.Class == WoWClass.Warlock || Me.Class == WoWClass.Mage" >
+					<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(1)" WaitTime="1000" />
+				</If>
+				<If Condition="Me.Class == WoWClass.Monk || Me.Class == WoWClass.Druid || Me.Class == WoWClass.Rogue" >
+					<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(2)" WaitTime="1000" />
+				</If>
+				<If Condition="Me.Class == WoWClass.Hunter || Me.Class == WoWClass.Shaman" >
+					<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(3)" WaitTime="1000" />
+				</If>
+				<If Condition="Me.Class == WoWClass.Warrior || Me.Class == WoWClass.DeathKnight || Me.Class == WoWClass.Paladin" >
+					<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(4)" WaitTime="1000" />
+				</If>
+				<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+			</If>
+
+			<If Condition="HasQuest(33338) &amp;&amp; IsQuestCompleted(33338)" >
+				<TurnIn QuestName="Empowering the Hourglass" QuestId="33338" TurnInName="Kairoz" TurnInId="72870" />
+			</If>
+			
+			<If Condition="HasQuest(33334) &amp;&amp; IsQuestCompleted(33334)" >
+				<TurnIn QuestName="Strong Enough to Survive" QuestId="33334" TurnInName="Kairoz" TurnInId="72870" />
+			</If>
+		</While>
+		
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+		
+		<!-- Giant Meats -->
+		<If Condition="HasItem(104257) || HasItem(104264) || HasItem(104265) || HasItem(104266) || HasItem(104267)" >
+			<RunTo X="-781.8914" Y="-5084.907" Z="2.056682" />
+			<While Condition="HasItem(104257) || HasItem(104264) || HasItem(104265) || HasItem(104266) || HasItem(104267)" >
+				<CustomBehavior File="InteractWith" MobId="73657" NonCompeteDistance="0" Range="5"
+					WaitTime="2000" X="-781.8914" Y="-5084.907" Z="2.056682" PreInteractMountStrategy="Dismount" />
+				<CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton1:Click()" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+			</While>
+		</If>
+		
+		<While Condition="(GetItemCount(89112) &gt; 10)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+		</While>
+		
+	</While>
+
+</QuestOrder>
+</HBProfile>

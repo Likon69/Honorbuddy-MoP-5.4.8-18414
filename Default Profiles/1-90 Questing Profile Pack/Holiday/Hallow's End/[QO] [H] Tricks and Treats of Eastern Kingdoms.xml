@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!-- INFORMATION:
+		Last Updated: Oct 2013
+		Credits: Larc
+		
+		When using this profile, set the HonorBuddy bot to:
+			[ ] AutoAngler
+			[ ] GatherBuddy2
+			[ ] Grind Bot / Mixed Mode
+			[ ] ProfessionBuddy
+			[ ] PvP
+			[X] Questing
+
+		This profile was written for:
+			[ ] Alliance	[X] Achievement
+			[X] Horde		[ ] Farming
+							[ ] Leveling
+							[ ] PvP
+							[X] Questing
+							[X] Reputation
+							[X] Seasonal
+							
+		Route: Silvermoon City, Eversong Woods, Ghostlands, Eastern Plaguelands, Western Plaguelands, Tirisfal Glades, Undercity, Tirisfal Glades, Silverpine Forest, Hillsbrad Foothills, The Hinterlands, Arathi Highlands, Twilight Highlands, Badlands, Searing Gorge, Swamp of Sorrows, Blasted Lands, Northern Stranglethorn, The Cape of Stranglethorn
+	-->
+	<Name>[QO] [H] Tricks and Treats of Eastern Kingdoms (incl. Cataclysm, excl. Vashj'ir)</Name>
+	<MinDurability>0.4</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<MinLevel>60</MinLevel>
+	<MaxLevel>101</MaxLevel>
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>True</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>True</MailPurple>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	<TargetElites>False</TargetElites>
+	<AvoidMobs>
+		<Mob Name="Wildhammer Raider" Entry="49628" />
+	</AvoidMobs>
+	<QuestOrder>
+		<CustomBehavior File="UserSettings" KillBetweenHotspots="False" HarvestHerbs="False" HarvestMinerals="False" SkinMobs="False" NinjaSkin="False" />
+		<!-- Location and Level Message -->
+		<If Condition="Me.MapId != 0 &amp;&amp; Me.ZoneId != 3487 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3430">
+			<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCueInterval="1" Text="You must be Level 60 or higher with Flight Master's License to use this profile.\nGo to Eastern Kingdoms then press Continue Profile." />
+		</If>
+		<If Condition="Me.MapId == 0 || Me.ZoneId == 3487 || Me.ZoneId == 3433 || Me.ZoneId == 3430">
+			<!-- Candy Bucket Quest Check -->
+			<If Condition="!IsQuestCompleted(12369) || !IsQuestCompleted(12370) || !IsQuestCompleted(12364) || !IsQuestCompleted(12365) || !IsQuestCompleted(12373) || !IsQuestCompleted(12402) || !IsQuestCompleted(28987) || !IsQuestCompleted(28972) || !IsQuestCompleted(12368) || !IsQuestCompleted(12363) || !IsQuestCompleted(28966) || !IsQuestCompleted(12371) || !IsQuestCompleted(12376) || !IsQuestCompleted(28962) || !IsQuestCompleted(28971) || !IsQuestCompleted(12387) || !IsQuestCompleted(12380) || !IsQuestCompleted(28976) || !IsQuestCompleted(28973) || !IsQuestCompleted(28974) || !IsQuestCompleted(28955) || !IsQuestCompleted(28957) || !IsQuestCompleted(28965) || !IsQuestCompleted(28967) || !IsQuestCompleted(12384) || !IsQuestCompleted(28959) || !IsQuestCompleted(12382) || !IsQuestCompleted(28969) || !IsQuestCompleted(12397)">
+				<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Compiling Candy Bucket quest status..." />
+				<!-- Silvermoon City, The Royal Exchange -->
+				<If Condition="!IsQuestCompleted(12369)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Silvermoon City, The Royal Exchange" />
+					<!-- Move to Inn -->
+					<MoveTo DestName="Silvermoon City, The Royal Exchange" X="9688.543" Y="-7362.991" Z="11.9295" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="190072" ObjectType="Gameobject" CollectionDistance="200" X="9688.543" Y="-7362.991" Z="11.9295" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Silvermoon City, The Bazaar -->
+				<If Condition="!IsQuestCompleted(12370)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Silvermoon City, The Bazaar" />
+					<!-- Move to Inn -->
+					<MoveTo DestName="Silvermoon City, The Bazaar" X="9565.645" Y="-7219.543" Z="16.21225" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="190073" ObjectType="Gameobject" CollectionDistance="200" X="9565.645" Y="-7219.543" Z="16.21225" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Eversong Woods, Falconwing Square -->
+				<If Condition="!IsQuestCompleted(12364)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Eversong Woods, Falconwing Square" />
+					<!-- Move to Inn -->
+					<MoveTo DestName="Eversong Woods, Falconwing Square" X="9469.679" Y="-6861.261" Z="17.43587" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="190067" ObjectType="Gameobject" CollectionDistance="200" X="9469.679" Y="-6861.261" Z="17.43587" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Eversong Woods, Fairbreeze Village -->
+				<If Condition="!IsQuestCompleted(12365)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Eversong Woods, Fairbreeze Village" />
+					<!-- Move to Inn -->
+					<MoveTo DestName="Eversong Woods, Fairbreeze Village" X="8709.575" Y="-6639.759" Z="72.7443" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="190068" ObjectType="Gameobject" CollectionDistance="200" X="8709.575" Y="-6639.759" Z="72.7443" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Ghostlands, Tranquillien -->
+				<If Condition="!IsQuestCompleted(12373)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Ghostlands, Tranquillien" />
+					<!-- Move to Inn -->
+					<MoveTo DestName="Ghostlands, Tranquillien" X="7564.825" Y="-6889.672" Z="96.02664" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="190075" ObjectType="Gameobject" CollectionDistance="200" X="7564.825" Y="-6889.672" Z="96.02664" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Eastern Plaguelands, Light's Hope Chapel -->
+				<If Condition="!IsQuestCompleted(12402)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Eastern Plaguelands, Light's Hope Chapel" />
+					<!-- Move to Inn -->
+					<If Condition="Me.ZoneId != 139 ">
+						<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCueInterval="1" Text="There are some HB Nav issues moving from Tranquillien to Light's Hope Chapel, if you are seeing this message, please move to Eastern Plaguelands manually and then Continue Profile." />
+					</If>					
+					<If Condition="Me.ZoneId == 139">
+						<MoveTo DestName="Eastern Plaguelands, Light's Hope Chapel" X="2298.406" Y="-5333.795" Z="90.75191" />
+						<CustomBehavior File="ForcedDismount" />
+						<!-- Interact with Candy Bucket -->
+						<CustomBehavior File="InteractWith" MobId="190108" ObjectType="Gameobject" CollectionDistance="200" X="2298.406" Y="-5333.795" Z="90.75191" WaitTime="100" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+						<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+						<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+						<!-- Use Handful of Treats -->
+						<If Condition="HasItem(37586)">
+							<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+							<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+							<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+							<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+							<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+							<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						</If>
+						<!-- Cancel Costume -->
+						<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+						<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+							<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+						</If>
+					</If>
+				</If>
+				<!-- Western Plaguelands, Andorhal -->
+				<If Condition="!IsQuestCompleted(28987)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Western Plaguelands, Andorhal" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Western Plaguelands, Andorhal" X="1541.936" Y="-1659.474" Z="67.92234" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="208156" ObjectType="Gameobject" CollectionDistance="200" X="1541.936" Y="-1659.474" Z="67.92234" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Tirisfal Glades, The Bulwark -->
+				<If Condition="!IsQuestCompleted(28972)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Tirisfal Glades, The Bulwark" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Tirisfal Glades, The Bulwark" X="1666.339" Y="-719.3195" Z="58.91488" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="208149" ObjectType="Gameobject" CollectionDistance="200" X="1666.339" Y="-719.3195" Z="58.91488" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Undercity, The Trade Quarter -->
+				<If Condition="!IsQuestCompleted(12368)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Undercity, The Trade Quarter" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Undercity, The Trade Quarter" X="1638.492" Y="223.1143" Z="-43.10322" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="190071" ObjectType="Gameobject" CollectionDistance="200" X="1638.492" Y="223.1143" Z="-43.10322" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Tirisfal Glades, Brill -->
+				<If Condition="!IsQuestCompleted(12363)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Tirisfal Glades, Brill" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Tirisfal Glades, Brill" X="2288.753" Y="277.4983" Z="33.2513" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="190066" ObjectType="Gameobject" CollectionDistance="200" X="2288.753" Y="277.4983" Z="33.2513" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Silverpine Forest, Forsaken Rear Guard -->
+				<If Condition="!IsQuestCompleted(28966)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Silverpine Forest, Forsaken Rear Guard" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Silverpine Forest, Forsaken Rear Guard" X="1098.635" Y="1589.512" Z="28.53031" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="208146" ObjectType="Gameobject" CollectionDistance="200" X="1098.635" Y="1589.512" Z="28.53031" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Silverpine Forest, The Sepulcher -->
+				<If Condition="!IsQuestCompleted(12371)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Silverpine Forest, The Sepulcher" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Silverpine Forest, The Sepulcher" X="465.3785" Y="1499.092" Z="135.5258" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="190074" ObjectType="Gameobject" CollectionDistance="200" X="465.3785" Y="1499.092" Z="135.5258" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Hillsbrad Foothills, Tarren Mill -->
+				<If Condition="!IsQuestCompleted(12376)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Hillsbrad Foothills, Tarren Mill" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Hillsbrad Foothills, Tarren Mill" X="-51.1632" Y="-963.043" Z="53.4545" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="190078" ObjectType="Gameobject" CollectionDistance="200" X="-51.1632" Y="-963.043" Z="53.4545" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Hillsbrad Foothills, Eastpoint Tower -->
+				<If Condition="!IsQuestCompleted(28962)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Hillsbrad Foothills, Eastpoint Tower" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Hillsbrad Foothills, Eastpoint Tower" X="-584.9688" Y="-1080.177" Z="65.88029" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="208145" ObjectType="Gameobject" CollectionDistance="200" X="-584.9688" Y="-1080.177" Z="65.88029" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- The Hinterlands, Hiri'watha Research Station -->
+				<If Condition="!IsQuestCompleted(28971)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to The Hinterlands, Hiri'watha Research Station" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="The Hinterlands, Hiri'watha Research Station" X="-18.59549" Y="-2799.448" Z="121.9957" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="208148" ObjectType="Gameobject" CollectionDistance="200" X="-18.59549" Y="-2799.448" Z="121.9957" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- The Hinterlands, Revantusk Village -->
+				<If Condition="!IsQuestCompleted(12387)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to The Hinterlands, Revantusk Village" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="The Hinterlands, Revantusk Village" X="-624.4286" Y="-4585.313" Z="11.68709" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="190089" ObjectType="Gameobject" CollectionDistance="200" X="-624.4286" Y="-4585.313" Z="11.68709" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Arathi Highlands, Hammerfall -->
+				<If Condition="!IsQuestCompleted(12380)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Arathi Highlands, Hammerfall" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Arathi Highlands, Hammerfall" X="-913.1921" Y="-3526.897" Z="72.60242" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="190082" ObjectType="Gameobject" CollectionDistance="200" X="-913.1921" Y="-3526.897" Z="72.60242" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Twilight Highlands, The Krazzworks -->
+				<If Condition="!IsQuestCompleted(28976)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Twilight Highlands, The Krazzworks" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Twilight Highlands, The Krazzworks" X="-2737.351" Y="-6412.04" Z="242.3661" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="208153" ObjectType="Gameobject" CollectionDistance="200" X="-2737.351" Y="-6412.04" Z="242.3661" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Twilight Highlands, Bloodgulch -->
+				<If Condition="!IsQuestCompleted(28973)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Twilight Highlands, Bloodgulch" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Twilight Highlands, Bloodgulch" X="-3661.969" Y="-5251.943" Z="42.13794" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="208150" ObjectType="Gameobject" CollectionDistance="200" X="-3661.969" Y="-5251.943" Z="42.13794" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Twilight Highlands, Crushblow -->
+				<If Condition="!IsQuestCompleted(28974)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Twilight Highlands, Crushblow" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Twilight Highlands, Crushblow" X="-4855.976" Y="-4815.257" Z="196.6106" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="208151" ObjectType="Gameobject" CollectionDistance="200" X="-4855.976" Y="-4815.257" Z="196.6106" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Badlands, Fuselight -->
+				<If Condition="!IsQuestCompleted(28955)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Badlands, Fuselight" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Badlands, Fuselight" X="-6583.486" Y="-3924.451" Z="379.5417" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="208137" ObjectType="Gameobject" CollectionDistance="200" X="-6583.486" Y="-3924.451" Z="379.5417" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Badlands, New Kargath -->
+				<If Condition="!IsQuestCompleted(28957)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Badlands, New Kargath" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Badlands, New Kargath" X="-6728.281" Y="-2465.941" Z="274.5784" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="208143" ObjectType="Gameobject" CollectionDistance="200" X="-6728.281" Y="-2465.941" Z="274.5784" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Searing Gorge, Iron Summit -->
+				<If Condition="!IsQuestCompleted(28965)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Searing Gorge, Iron Summit" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Searing Gorge, Iron Summit" X="-7082.073" Y="-1203.79" Z="324.1689" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="208138" ObjectType="Gameobject" CollectionDistance="200" X="-7082.073" Y="-1203.79" Z="324.1689" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Swamp of Sorrows, Bogpaddle -->
+				<If Condition="!IsQuestCompleted(28967)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Swamp of Sorrows, Bogpaddle" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Swamp of Sorrows, Bogpaddle" X="-9771.268" Y="-3878.373" Z="21.89049" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="208139" ObjectType="Gameobject" CollectionDistance="200" X="-9771.268" Y="-3878.373" Z="21.89049" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Swamp of Sorrows, Stonard -->
+				<If Condition="!IsQuestCompleted(12384)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Swamp of Sorrows, Stonard" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Swamp of Sorrows, Stonard" X="-10487.72" Y="-3256.98" Z="21.02934" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="190086" ObjectType="Gameobject" CollectionDistance="200" X="-10487.72" Y="-3256.98" Z="21.02934" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Blasted Lands, Dreadmaul Hold -->
+				<If Condition="!IsQuestCompleted(28959)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Blasted Lands, Dreadmaul Hold" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Blasted Lands, Dreadmaul Hold" X="-10858.76" Y="-2676.095" Z="9.807701" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="208144" ObjectType="Gameobject" CollectionDistance="200" X="-10858.76" Y="-2676.095" Z="9.807701" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- Northern Stranglethorn, Grom'gol Base Camp -->
+				<If Condition="!IsQuestCompleted(12382)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to Northern Stranglethorn, Grom'gol Base Camp" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="Northern Stranglethorn, Grom'gol Base Camp" X="-12431.96" Y="211.2803" Z="2.365149" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="190084" ObjectType="Gameobject" CollectionDistance="200" X="-12431.96" Y="211.2803" Z="2.365149" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- The Cape of Stranglethorn, Hardwrench Hideaway -->
+				<If Condition="!IsQuestCompleted(28969)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to The Cape of Stranglethorn, Hardwrench Hideaway" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="The Cape of Stranglethorn, Hardwrench Hideaway" X="-13232.72" Y="725.5504" Z="3.356359" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="208147" ObjectType="Gameobject" CollectionDistance="200" X="-13232.72" Y="725.5504" Z="3.356359" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+				<!-- The Cape of Stranglethorn, Booty Bay -->
+				<If Condition="!IsQuestCompleted(12397)">
+					<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Moving to The Cape of Stranglethorn, Booty Bay" />
+					<!-- Move to Inn -->
+					<CustomBehavior File="FlyTo" DestName="The Cape of Stranglethorn, Booty Bay" X="-14456.39" Y="494.0956" Z="15.12607" />
+					<CustomBehavior File="ForcedDismount" />
+					<!-- Interact with Candy Bucket -->
+					<CustomBehavior File="InteractWith" MobId="190103" ObjectType="Gameobject" CollectionDistance="200" X="-14456.39" Y="494.0956" Z="15.12607" WaitTime="100" />
+					<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2000" />
+					<CustomBehavior File="Misc\RunLua" Lua="GetQuestReward(1)" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="2000" />
+					<!-- Use Handful of Treats -->
+					<If Condition="HasItem(37586)">
+						<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(37586)" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="CloseLoot()" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+						<CustomBehavior File="Misc\RunLua" Lua="local id,n=0; for b=0,4 do for s=1,GetContainerNumSlots(b) do id=GetContainerItemID(b,s) if (id == 37586) then ClearCursor() PickupContainerItem(b,s) DeleteCursorItem() end end end" />
+						<CustomBehavior File="WaitTimer" WaitTime="500" VariantTime="2500" />
+					</If>
+					<!-- Cancel Costume -->
+					<CustomBehavior File="Misc\RunLua" Lua="for i=1,40 do name,_ = UnitAura(&quot;player&quot;, i) if (name == nil) then break end if (strfind(name, &quot;Costume&quot;)) then CancelUnitBuff(&quot;player&quot;, i) end end" />
+					<CustomBehavior File="WaitTimer" WaitTime="700" VariantTime="1500" />
+					<If Condition="(Me.HasAura(&quot;Trick&quot;))">
+						<CustomBehavior File="WaitTimer" WaitTime="35000" VariantTime="5000" GoalText="Waiting for Trick to expire {TimeRemaining}" />
+					</If>
+				</If>
+			</If>
+			<!-- Candy Bucket Quest Check -->
+			<If Condition="IsQuestCompleted(12369) &amp;&amp; IsQuestCompleted(12370) &amp;&amp; IsQuestCompleted(12364) &amp;&amp; IsQuestCompleted(12365) &amp;&amp; IsQuestCompleted(12373) &amp;&amp; IsQuestCompleted(12402) &amp;&amp; IsQuestCompleted(28987) &amp;&amp; IsQuestCompleted(28972) &amp;&amp; IsQuestCompleted(12368) &amp;&amp; IsQuestCompleted(12363) &amp;&amp; IsQuestCompleted(28966) &amp;&amp; IsQuestCompleted(12371) &amp;&amp; IsQuestCompleted(12376) &amp;&amp; IsQuestCompleted(28962) &amp;&amp; IsQuestCompleted(28971) &amp;&amp; IsQuestCompleted(12387) &amp;&amp; IsQuestCompleted(12380) &amp;&amp; IsQuestCompleted(28976) &amp;&amp; IsQuestCompleted(28973) &amp;&amp; IsQuestCompleted(28974) &amp;&amp; IsQuestCompleted(28955) &amp;&amp; IsQuestCompleted(28957) &amp;&amp; IsQuestCompleted(28965) &amp;&amp; IsQuestCompleted(28967) &amp;&amp; IsQuestCompleted(12384) &amp;&amp; IsQuestCompleted(28959) &amp;&amp; IsQuestCompleted(12382) &amp;&amp; IsQuestCompleted(28969) &amp;&amp; IsQuestCompleted(12397)">
+				<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="Compiling Candy Bucket quest status..." />
+				<CustomBehavior File="Message" LogColor="LightSkyBlue" Text="You have completed all Candy Buckets for this continent." />
+				<CustomBehavior File="LoadProfile" ProfileName="[QO] [H] Tricks and Treats Auto-Loader" />
+			</If>
+		</If>
+	</QuestOrder>
+</HBProfile>

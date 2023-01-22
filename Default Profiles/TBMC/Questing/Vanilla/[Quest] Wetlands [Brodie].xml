@@ -1,0 +1,437 @@
+<HBProfile>
+
+	<Name>Wetlands ($Rev$)</Name>
+	<MinLevel>20</MinLevel>
+	<MaxLevel>35</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>False</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+		<Blackspot X="-2948.526" Y="-972.16" Z="2.223055" Radius="11.63511" Height="10" />
+		<Blackspot X="-2979.981" Y="-960.7966" Z="10.12135" Radius="21.80973" Height="10" />
+	</Blackspots>
+
+	<Mailboxes>
+		<Mailbox X="-3792.744" Y="-838.6713" Z="-0.1038347" />
+	</Mailboxes>
+
+	<Vendors>
+		<Vendor Name="Darvish Quickhammer" Entry="43998" Type="Repair" X="-4112.06" Y="-2776.33" Z="17.92434" />
+		<Vendor Name="Kixxle" Entry="8305" Type="Food" X="-3188.032" Y="-2465.57" Z="9.561984" />
+		<!-- Menethil Harbor -->
+		<Vendor Name="Gruham Rumdnul" Entry="1452" Type="Food" X="-3745.952" Y="-887.8718" Z="0.3050863" />
+		<Vendor Name="Murndan Derth" Entry="1461" Type="Repair" X="-3790.13" Y="-858.125" Z="1.302092" />
+		<Vendor Name="Jennabink Powerseam" Entry="1454" Type="Repair" X="-3775.439" Y="-805.4011" Z="0.6005868" />
+		<!-- Swiftgear Station -->
+		<Vendor Name="Teep Topup" Entry="44005" Type="Food" X="-2890.65" Y="-1490.08" Z="10.7562" />
+		<Vendor Name="Wenna Silkbeard" Entry="2679" Type="Repair" X="-2859.093" Y="-1448.462" Z="8.606179" />
+		<!-- Greenwarden's Grove -->
+		<Vendor Name="Victorina" Entry="41622" Type="Repair" X="-3270.458" Y="-2787.835" Z="12.77796" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Name="The Stolen Keg" Id="25395" >
+	<Objective Type="CollectItem" ItemId="55209" CollectCount="1" >
+		<CollectFrom>
+			<GameObject Name="Mountaineer's Ale" Id="203151" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-4197.22" Y="-2367.734" Z="216.8269" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Get Out of Here, Stalkers" Id="25733" >
+	<Objective Type="KillMob" MobId="1111" KillCount="7" >
+		<Hotspots>
+			<Hotspot X="-3904.467" Y="-2607.708" Z="41.41773" />
+			<Hotspot X="-3898.965" Y="-2667.508" Z="33.33089" />
+			<Hotspot X="-3930.492" Y="-2730.067" Z="26.57314" />
+			<Hotspot X="-3882.709" Y="-2755.115" Z="21.53975" />
+			<Hotspot X="-3810.867" Y="-2714.191" Z="24.43395" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Claws From The Deep" Id="25801" >
+	<Objective Type="CollectItem" ItemId="3618" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Gobbler" Id="1259" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-3179.073" Y="-950.5518" Z="9.165161" />
+			<Hotspot X="-3163.03" Y="-998.6942" Z="9.219035" />
+			<Hotspot X="-3141.783" Y="-1034.086" Z="10.13848" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="The Cursed Crew" Id="25817" >
+	<Objective Type="KillMob" MobId="41428" KillCount="5" >
+		<Hotspots>
+			<Hotspot X="-2914.201" Y="-958.6418" Z="-10.74507" />
+			<Hotspot X="-2901.623" Y="-992.4797" Z="-9.880967" />
+			<Hotspot X="-2866.954" Y="-984.7357" Z="-12.98193" />
+			<Hotspot X="-2835.621" Y="-909.5875" Z="-8.930629" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="41427" KillCount="5" >
+		<Hotspots>
+			<Hotspot X="-2914.201" Y="-958.6418" Z="-10.74507" />
+			<Hotspot X="-2901.623" Y="-992.4797" Z="-9.880967" />
+			<Hotspot X="-2866.954" Y="-984.7357" Z="-12.98193" />
+			<Hotspot X="-2835.621" Y="-909.5875" Z="-8.930629" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="The Angerfang Menace" QuestId="26189" >
+	<Objective Type="KillMob" MobId="42151" KillCount="16" >
+		<Hotspots>
+			<Hotspot X="-3502.934" Y="-2448.956" Z="47.24626" />
+			<Hotspot X="-3455.976" Y="-2424.422" Z="51.6597" />
+			<Hotspot X="-3439.699" Y="-2377.875" Z="51.89832" />
+			<Hotspot X="-3407.483" Y="-2323.845" Z="51.89966" />
+			<Hotspot X="-3354.501" Y="-2261.808" Z="51.94376" />
+			<Hotspot X="-3361.397" Y="-2166.531" Z="47.60854" />
+			<Hotspot X="-3315.681" Y="-2163.45" Z="32.96586" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Wetlands Quests" LogColor="Green" />
+	
+	<If Condition="HasQuest(26137)" >
+		<TurnIn QuestName="Checking on the Boys" QuestId="26137" TurnInName="Mountaineer Rharen" TurnInId="41075" />
+	</If>
+	
+	<If Condition="HasQuest(28565)" >
+		<TurnIn QuestName="Hero's Call: Wetlands!" QuestId="28565" TurnInName="Mountaineer Rharen" TurnInId="41075" />
+	</If>
+	
+	<If Condition="!HasQuest(25395) &amp;&amp; !IsQuestCompleted(25395)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Dun Algaz Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="The Stolen Keg" QuestId="25395" GiverName="Mountaineer Rharen" GiverId="41075" />
+	<PickUp QuestName="Cleaning Hovel" QuestId="25211" GiverName="Mountaineer Grugelm" GiverId="41074" />
+	<Objective QuestName="The Stolen Keg" QuestId="25395" Type="CollectItem" ItemId="55209" CollectCount="1" />
+	<Objective QuestName="Cleaning Hovel" QuestId="25211" Type="KillMob" MobId="41072" MobId2="42107" KillCount="5" />
+	<TurnIn QuestName="The Stolen Keg" QuestId="25395" TurnInName="Mountaineer Rharen" TurnInId="41075" />
+	<TurnIn QuestName="Cleaning Hovel" QuestId="25211" TurnInName="Mountaineer Grugelm" TurnInId="41074" />
+	
+	<PickUp QuestName="Keg Run" QuestId="25770" GiverName="Mountaineer Rharen" GiverId="41075" />
+	<TurnIn QuestName="Keg Run" QuestId="25770" TurnInName="Forba Slabchisel" TurnInId="41086" />
+	
+	<CustomBehavior File="Message" Text="Compiling Slabchisel Survey Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Fight the Flood" QuestId="25721" GiverName="Forba Slabchisel" GiverId="41086" />
+	<PickUp QuestName="Sedimentary, My Dear" QuestId="25722" GiverName="Surveyor Thurdan" GiverId="41129" />
+	<PickUp QuestName="Thresh Out of Luck" QuestId="25723" GiverName="Dunlor Marblebeard" GiverId="41128" />
+	<Objective QuestName="Thresh Out of Luck" QuestId="25723" Type="CollectItem" ItemId="55232" CollectCount="8" />
+	<Objective QuestName="Sedimentary, My Dear" QuestId="25722" Type="CollectItem" ItemId="55231" CollectCount="8" />
+	<Objective QuestName="Fight the Flood" QuestId="25721" Type="KillMob" MobId="41132" KillCount="10" />
+	
+	<TurnIn QuestName="Fight the Flood" QuestId="25721" TurnInName="Forba Slabchisel" TurnInId="41086" />
+	<PickUp QuestName="Drungeld Glowerglare" QuestId="25727" GiverName="Forba Slabchisel" GiverId="41086" />
+	<TurnIn QuestName="Sedimentary, My Dear" QuestId="25722" TurnInName="Surveyor Thurdan" TurnInId="41129" />
+	<PickUp QuestName="A Dumpy Job" QuestId="25726" GiverName="Surveyor Thurdan" GiverId="41129" />
+	<TurnIn QuestName="Thresh Out of Luck" QuestId="25723" TurnInName="Dunlor Marblebeard" TurnInId="41128" />
+	<PickUp QuestName="Fenbush Berries" QuestId="25725" GiverName="Dunlor Marblebeard" GiverId="41128" />
+	
+	<Objective QuestName="Fenbush Berries" QuestId="25725" Type="CollectItem" ItemId="55233" CollectCount="15" />
+	<Objective QuestName="Drungeld Glowerglare" QuestId="25727" Type="CollectItem" ItemId="55988" CollectCount="1" />
+	<Objective QuestName="A Dumpy Job" QuestId="25726" Type="CollectItem" ItemId="55234" CollectCount="1" />
+	<TurnIn QuestName="Drungeld Glowerglare" QuestId="25727" TurnInName="Forba Slabchisel" TurnInId="41086" />
+	<TurnIn QuestName="A Dumpy Job" QuestId="25726" TurnInName="Surveyor Thurdan" TurnInId="41129" />
+	<TurnIn QuestName="Fenbush Berries" QuestId="25725" TurnInName="Dunlor Marblebeard" TurnInId="41128" />
+	
+	<PickUp QuestName="Get Out Of Here, Stalkers" QuestId="25733" GiverName="Forba Slabchisel" GiverId="41086" />
+	<PickUp QuestName="Down in Thelgen Rock" QuestId="25734" GiverName="Surveyor Thurdan" GiverId="41129" />
+	<PickUp QuestName="Incendicite Ore" QuestId="25735" GiverName="Dunlor Marblebeard" GiverId="41128" />
+	<CustomBehavior File="InteractWith" QuestId="25735" MobId="203188" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		WaitTime="1000" NumOfTimes="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-3846.565" Y="-2510.131" Z="38.18564" />
+			<Hotspot X="-3874.971" Y="-2413.705" Z="25.97289" />
+			<Hotspot X="-3791.305" Y="-2333.032" Z="35.37153" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<If Condition="!HasItem(55243) &amp;&amp; (!HasQuest(25736) &amp;&amp; !IsQuestCompleted(25736)) &amp;&amp; (HasQuest(25734) &amp;&amp; !IsQuestCompleted(25734))" >
+		<CustomBehavior File="InteractWith" MobId="203184" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			WaitTime="1000" TerminateWhen="Unit(41167, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 50) != null" X="-3964.992" Y="-2364.308" Z="18.20792" />
+		<CustomBehavior File="CollectThings" CollectItemId="55243" CollectItemCount="1" MobId="41167" X="-3964.992" Y="-2364.308" Z="18.20792" />
+	</If>
+	<If Condition="HasItem(55243) &amp;&amp; (!HasQuest(25736) &amp;&amp; !IsQuestCompleted(25736))" >
+		<PickUp QuestName="The Floodsurge Core" QuestId="25736" GiverType="Item" GiverId="55243" />
+	</If>
+	<Objective QuestName="Down in Thelgen Rock" QuestId="25734" Type="CollectItem" ItemId="55242" CollectCount="1" />
+	<Objective QuestName="Get Out Of Here, Stalkers" QuestId="25733" Type="KillMob" MobId="4040" KillCount="7" />
+	<Objective QuestName="Get Out Of Here, Stalkers" QuestId="25733" Type="KillMob" MobId="1111" KillCount="7" />
+	<TurnIn QuestName="Down in Thelgen Rock" QuestId="25734" TurnInName="Surveyor Thurdan" TurnInId="41129" />
+	<TurnIn QuestName="Incendicite Ore" QuestId="25735" TurnInName="Dunlor Marblebeard" TurnInId="41128" />
+	<If Condition="HasQuest(25736)" >
+		<TurnIn QuestName="The Floodsurge Core" QuestId="25736" TurnInName="Forba Slabchisel" TurnInId="41086" />
+	</If>
+	<TurnIn QuestName="Get Out Of Here, Stalkers" QuestId="25733" TurnInName="Forba Slabchisel" TurnInId="41086" />
+	
+	<If Condition="!HasQuest(25777) &amp;&amp; !IsQuestCompleted(25777)">
+		<PickUp QuestName="Onwards to Menethil" QuestId="25777" GiverName="Forba Slabchisel" GiverId="41086" />
+		<CustomBehavior File="InteractWith" MobId="41260" TerminateWhen="Me.IsOnTransport || Me.Location.Distance(new WoWPoint(-4124.45, -2766.10, 17.93)) &gt; 100" NonCompeteDistance="0" WaitTime="1000" X="-4124.448" Y="-2766.102" Z="17.93092" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="Onwards to Menethil" QuestId="25777" TurnInName="Captain Stoutfist" TurnInId="2104" />
+	
+	<CustomBehavior File="Message" Text="Compiling Menethil Harbor Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Assault on Menethil Harbor" QuestId="25780" GiverName="Captain Stoutfist" GiverId="2104" />
+	<Objective QuestName="Assault on Menethil Harbor" QuestId="25780" Type="KillMob" MobId="41273" KillCount="1" />
+	<TurnIn QuestName="Assault on Menethil Harbor" QuestId="25780" TurnInName="Captain Stoutfist" TurnInId="2104" />
+	
+	<PickUp QuestName="A Mother's Worries" QuestId="25820" GiverName="Derina Rumdnul" GiverId="1484" />
+	<If Condition="!HasQuest(25800) &amp;&amp; !IsQuestCompleted(25800)" >
+		<PickUp QuestName="When Life Gives You Crabs" QuestId="25800" GiverName="Karl Boran" GiverId="41297" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" />
+	</If>
+	<If Condition="!HasQuest(25815) &amp;&amp; !IsQuestCompleted(25815)" >
+		<PickUp QuestName="The Third Fleet" QuestId="25815" GiverName="First Mate Fitzsimmons" GiverId="1239" />
+		<CustomBehavior File="SetHearthstone" MobId="1464" X="-3824.575" Y="-832.7057" Z="0.6488602" />
+	</If>
+	<Objective QuestName="The Third Fleet" QuestId="25815" Type="CollectItem" ItemId="56031" CollectCount="1" />
+	<TurnIn QuestName="The Third Fleet" QuestId="25815" TurnInName="First Mate Fitzsimmons" TurnInId="1239" />
+	<PickUp QuestName="Cursed To Roam" QuestId="25816" GiverName="First Mate Fitzsimmons" GiverId="1239" />
+	
+	<Objective QuestName="When Life Gives You Crabs" QuestId="25800" Type="CollectItem" ItemId="56013" CollectCount="5" />
+	<If Condition="HasQuest(25820) &amp;&amp; !IsQuestCompleted(25820)" >
+		<Objective QuestName="A Mother's Worries" QuestId="25820" Type="KillMob" MobId="44110" KillCount="10" />
+		<CustomBehavior File="AscendInWater" />
+	</If>
+	<TurnIn QuestName="A Mother's Worries" QuestId="25820" TurnInName="Derina Rumdnul" TurnInId="1484" />
+	<TurnIn QuestName="When Life Gives You Crabs" QuestId="25800" TurnInName="Karl Boran" TurnInId="41297" />
+	
+	<PickUp QuestName="Reclaiming Goods" QuestId="25802" GiverName="Karl Boran" GiverId="41297" />
+	<PickUp QuestName="Claws From The Deep" QuestId="25801" GiverName="Karl Boran" GiverId="41297" />
+	<TurnIn QuestName="Reclaiming Goods" QuestId="25802" TurnInType="Object" TurnInName="Damaged Crate" TurnInId="261" X="-3289.128" Y="-947.3325" Z="9.181645" />
+	<PickUp QuestName="The Search Continues" QuestId="25803" GiverType="Object" GiverName="Damaged Crate" GiverId="261" X="-3289.128" Y="-947.3325" Z="9.181645" />
+	
+	<Objective QuestName="Claws From The Deep" QuestId="25801" Type="CollectItem" ItemId="3618" CollectCount="1" />
+	
+	<TurnIn QuestName="The Search Continues" QuestId="25803" TurnInType="Object" TurnInName="Sealed Barrel" TurnInId="142151" X="-3200.843" Y="-953.837" Z="8.843141" />
+	<PickUp QuestName="Search More Hovels" QuestId="25804" GiverType="Object" GiverName="Sealed Barrel" GiverId="142151" X="-3200.843" Y="-953.837" Z="8.843141" />
+	
+	<TurnIn QuestName="Search More Hovels" QuestId="25804" TurnInType="Object" TurnInName="Half-Buried Barrel" TurnInId="259" X="-3107.677" Y="-966.4919" Z="8.899784" />
+	<PickUp QuestName="Return the Statuette" QuestId="25805" GiverType="Object" GiverName="Half-Buried Barrel" GiverId="259" X="-3107.677" Y="-966.4919" Z="8.899784" />
+	
+	<Objective QuestName="Claws From The Deep" QuestId="25801" Type="KillMob" MobId="42109" KillCount="12" />
+	
+	<TurnIn QuestName="Cursed To Roam" QuestId="25816" TurnInName="First Mate Snellig" TurnInId="41307" />
+	<PickUp QuestName="The Cursed Crew" QuestId="25817" GiverName="First Mate Snellig" GiverId="41307" />
+	<Objective QuestName="The Cursed Crew" QuestId="25817" Type="KillMob" MobId="41427" KillCount="5" />
+	<Objective QuestName="The Cursed Crew" QuestId="25817" Type="KillMob" MobId="41428" KillCount="5" />
+	<TurnIn QuestName="The Cursed Crew" QuestId="25817" TurnInName="First Mate Snellig" TurnInId="41307" />
+	
+	<PickUp QuestName="Lifting the Curse" QuestId="25818" GiverName="First Mate Snellig" GiverId="41307" />
+	<If Condition="HasQuest(25818) &amp;&amp; !IsQuestCompleted(25818)" >
+		<CustomBehavior File="CollectThings" CollectItemId="2629" CollectItemCount="1" MobId="41429" MobState="Alive" X="-2800.691" Y="-1015.521" Z="5.180782" />
+	</If>
+	<If Condition="HasQuest(25818) &amp;&amp; IsQuestCompleted(25818)" >
+		<RunTo X="-2791.938" Y="-973.8014" Z="0.2" />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="MyCTM" X="-2791.868" Y="-973.8267" Z="-13.34551" />
+		<CustomBehavior File="MyCTM" X="-2807.698" Y="-986.5234" Z="-13.22131" />
+		<TurnIn QuestName="Lifting the Curse" QuestId="25818" TurnInType="Object" TurnInName="Intrepid's Locked Strongbox" TurnInId="112948" X="-2807.698" Y="-986.5234" Z="-13.22131" />
+		<PickUp QuestName="The Eye of Paleth" QuestId="25819" GiverType="Object" GiverName="Intrepid's Locked Strongbox" GiverId="112948" X="-2807.698" Y="-986.5234" Z="-13.22131" />
+		<CustomBehavior File="MyCTM" X="-2807.698" Y="-986.5234" Z="-13.22131" />
+		<CustomBehavior File="MyCTM" X="-2791.868" Y="-973.8267" Z="-13.34551" />
+		<CustomBehavior File="AscendInWater" />
+		<EnableBehavior Name="Pull" />
+	</If>
+	
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Return the Statuette" QuestId="25805" TurnInName="Karl Boran" TurnInId="41297" />
+	<EnableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Claws From The Deep" QuestId="25801" TurnInName="Karl Boran" TurnInId="41297" />
+	
+	<TurnIn QuestName="The Eye of Paleth" QuestId="25819" TurnInName="Glorin Steelbrow" TurnInId="1217" />
+	
+	<PickUp QuestName="Swiftgear Station" QuestId="26980" GiverName="Captain Stoutfist" GiverId="2104" />
+	<TurnIn QuestName="Swiftgear Station" QuestId="26980" TurnInName="Shilah Slabchisel" TurnInId="41415" />
+	
+	<CustomBehavior File="Message" Text="Compiling Swiftgear Station Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Dinosaur Crisis" QuestId="25864" GiverName="Shilah Slabchisel" GiverId="41415" />
+	<PickUp QuestName="Crocolisk Hides" QuestId="25856" GiverName="James Halloran" GiverId="41433" />
+	<PickUp QuestName="I'll Call Him Bitey" QuestId="25854" GiverName="Fradd Swiftgear" GiverId="41435" />
+	<Objective QuestName="Crocolisk Hides" QuestId="25856" Type="CollectItem" ItemId="56087" CollectCount="10" />
+	<Objective QuestName="I'll Call Him Bitey" QuestId="25854" Type="CollectItem" ItemId="56058" CollectCount="6" />
+	<Objective QuestName="Dinosaur Crisis" QuestId="25864" Type="KillMob" MobId="41400" MobId2="41401" KillCount="8" />
+	<TurnIn QuestName="Dinosaur Crisis" QuestId="25864" TurnInName="Shilah Slabchisel" TurnInId="41415" />
+	<TurnIn QuestName="Crocolisk Hides" QuestId="25856" TurnInName="James Halloran" TurnInId="41433" />
+	<TurnIn QuestName="I'll Call Him Bitey" QuestId="25854" TurnInName="Fradd Swiftgear" TurnInId="41435" />
+	
+	<PickUp QuestName="The Mosshide Job" QuestId="25865" GiverName="Shilah Slabchisel" GiverId="41415" />
+	<PickUp QuestName="Hunting Horrorjaw" QuestId="25857" GiverName="James Halloran" GiverId="41433" />
+	<PickUp QuestName="Gizmos and Gadgets" QuestId="25855" GiverName="Fradd Swiftgear" GiverId="41435" />
+	<Objective QuestName="Gizmos and Gadgets" QuestId="25855" Type="CollectItem" ItemId="56085" CollectCount="7" />
+	<CustomBehavior File="CollectThings" QuestId="25865" CollectItemId="56088" CollectItemCount="8" MobId="41390" MobId2="41391"
+		NonCompeteDistance="5" >
+		<Hotspot X="-3102.414" Y="-1878.214" Z="10.11637" />
+		<Hotspot X="-3088.345" Y="-1947.146" Z="9.382724" />
+		<Hotspot X="-3038.633" Y="-1967.512" Z="10.20595" />
+		<Hotspot X="-3000.596" Y="-1978.674" Z="9.8326" />
+		<Hotspot X="-2961.864" Y="-1923.547" Z="9.454749" />
+		<Hotspot X="-2972.66" Y="-1850.332" Z="9.20813" />
+		<Hotspot X="-3012.156" Y="-1798.146" Z="6.135519" />
+		<Hotspot X="-3037.49" Y="-1745.409" Z="6.964657" />
+		<Hotspot X="-3039.234" Y="-1695.954" Z="9.969281" />
+	</CustomBehavior>
+	<Objective QuestName="Hunting Horrorjaw" QuestId="25857" Type="CollectItem" ItemId="56089" CollectCount="1" />
+	<TurnIn QuestName="The Mosshide Job" QuestId="25865" TurnInName="Shilah Slabchisel" TurnInId="41415" />
+	<TurnIn QuestName="Hunting Horrorjaw" QuestId="25857" TurnInName="James Halloran" TurnInId="41433" />
+	<TurnIn QuestName="Gizmos and Gadgets" QuestId="25855" TurnInName="Fradd Swiftgear" TurnInId="41435" />
+	
+	<PickUp QuestName="Dark Iron Trappers" QuestId="25866" GiverName="Shilah Slabchisel" GiverId="41415" />
+	<PickUp QuestName="Gnoll Escape" QuestId="25867" GiverName="Shilah Slabchisel" GiverId="41415" />
+	
+	<While Condition="HasQuest(25867) &amp;&amp; !IsQuestCompleted(25867)" >
+		<CustomBehavior File="CollectThings" QuestId="25867" CollectItemId="56081" CollectItemCount="1" MobId="41409" MobState="Alive" >
+			<Hotspot X="-2948.169" Y="-1964.039" Z="11.49938" />
+			<Hotspot X="-3009.592" Y="-1972.825" Z="7.844643" />
+			<Hotspot X="-3014.569" Y="-2043.309" Z="7.718037" />
+			<Hotspot X="-2994.369" Y="-2098.25" Z="7.961142" />
+			<Hotspot X="-3038.722" Y="-2144.688" Z="9.019397" />
+			<Hotspot X="-3068.993" Y="-2181.7" Z="8.533125" />
+			<Hotspot X="-3091.912" Y="-2214.531" Z="9.72799" />
+			<Hotspot X="-3103.846" Y="-2241.485" Z="9.208509" />
+			<Hotspot X="-3080.594" Y="-2279.265" Z="8.095273" />
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" QuestId="25867" MobId="41410" NotMoving="True" Range="6" IgnoreLoSToTarget="True" WaitTime="1000"
+			TerminateWhen="!HasItem(56081)" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+			<HuntingGrounds>
+				<Hotspot X="-3038.722" Y="-2144.688" Z="9.019397" />
+				<Hotspot X="-3068.993" Y="-2181.7" Z="8.533125" />
+				<Hotspot X="-3091.912" Y="-2214.531" Z="9.72799" />
+				<Hotspot X="-3103.846" Y="-2241.485" Z="9.208509" />
+				<Hotspot X="-3080.594" Y="-2279.265" Z="8.095273" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" QuestId="25867" MobId="203282" TerminateWhen="!HasItem(56081) || Unit(41410, u=&gt; u.Distance &lt;= 10) == null" CollectionDistance="10"
+			NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" />
+	</While>
+	<Objective QuestName="Dark Iron Trappers" QuestId="25866" Type="KillMob" MobId="41409" KillCount="10" />
+	<TurnIn QuestName="Dark Iron Trappers" QuestId="25866" TurnInName="Shilah Slabchisel" TurnInId="41415" />
+	<TurnIn QuestName="Gnoll Escape" QuestId="25867" TurnInName="Shilah Slabchisel" TurnInId="41415" />
+	
+	<PickUp QuestName="Yorla Darksnare" QuestId="25868" GiverName="Shilah Slabchisel" GiverId="41415" />
+	<Objective QuestName="Yorla Darksnare" QuestId="25868" Type="KillMob" MobId="41416" KillCount="1" />
+	<TurnIn QuestName="Yorla Darksnare" QuestId="25868" TurnInName="Shilah Slabchisel" TurnInId="41415" />
+	
+	<PickUp QuestName="Whelgar's Retreat" QuestId="26981" GiverName="Shilah Slabchisel" GiverId="41415" />
+	<TurnIn QuestName="Whelgar's Retreat" QuestId="26981" TurnInName="Prospector Whelgar" TurnInId="41411" />
+	
+	<CustomBehavior File="Message" Text="Compiling Whelgar's Retreat Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="When Archaeology Attacks" QuestId="25849" GiverName="Prospector Whelgar" GiverId="41411" />
+	<PickUp QuestName="Tooling Around" QuestId="25853" GiverName="Merrin Rockweaver" GiverId="41413" />
+	<PickUp QuestName="Strike the Earth!" QuestId="25850" GiverName="Ormer Ironbraid" GiverId="41412" />
+	<Objective QuestName="Tooling Around" QuestId="25853" Type="CollectItem" ItemId="56082" CollectCount="6" />
+	<Objective QuestName="Strike the Earth!" QuestId="25850" Type="KillMob" MobId="41389" KillCount="7" />
+	<Objective QuestName="When Archaeology Attacks" QuestId="25849" Type="CollectItem" ItemId="56083" CollectCount="20" />
+	<TurnIn QuestName="When Archaeology Attacks" QuestId="25849" TurnInName="Prospector Whelgar" TurnInId="41411" />
+	<TurnIn QuestName="Tooling Around" QuestId="25853" TurnInName="Merrin Rockweaver" TurnInId="41413" />
+	<TurnIn QuestName="Strike the Earth!" QuestId="25850" TurnInName="Ormer Ironbraid" TurnInId="41412" />
+	
+	<PickUp QuestName="The Angerfang Menace" QuestId="26189" GiverName="Prospector Whelgar" GiverId="41411" />
+	<Objective QuestName="The Angerfang Menace" QuestId="26189" Type="KillMob" MobId="42151" KillCount="16" />
+	<Objective QuestName="The Angerfang Menace" QuestId="26189" Type="KillMob" MobId="46122" KillCount="1" />
+	<TurnIn QuestName="The Angerfang Menace" QuestId="26189" TurnInName="Prospector Whelgar" TurnInId="41411" />
+	
+	<PickUp QuestName="Who Wards the Greenwarden" QuestId="26195" GiverName="Prospector Whelgar" GiverId="41411" />
+	<TurnIn QuestName="Who Wards the Greenwarden" QuestId="26195" TurnInName="Ferilon Leafborn" TurnInId="41615" />
+	
+	<CustomBehavior File="Message" Text="Compiling Greenwarden's Grove Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="The Crazed Dragonmaw" QuestId="26120" GiverName="Huntress Iczelia" GiverId="41612" />
+	<PickUp QuestName="Mired in Hatred" QuestId="25926" GiverName="Rethiel the Greenwarden" GiverId="41503" />
+	<Objective QuestName="The Crazed Dragonmaw" QuestId="26120" Type="KillMob" MobId="42041" KillCount="12" />
+	<Objective QuestName="Mired in Hatred" QuestId="25926" Type="KillMob" MobId="41424" KillCount="10" />
+	<TurnIn QuestName="The Crazed Dragonmaw" QuestId="26120" TurnInName="Huntress Iczelia" TurnInId="41612" />
+	<TurnIn QuestName="Mired in Hatred" QuestId="25926" TurnInName="Rethiel the Greenwarden" TurnInId="41503" />
+	
+	<PickUp QuestName="The Threat of Flame" QuestId="25927" GiverName="Rethiel the Greenwarden" GiverId="41503" />
+	<PickUp QuestName="For Peat's Sake" QuestId="25939" GiverName="Ferilon Leafborn" GiverId="41615" />
+	<CustomBehavior File="InteractWith" QuestId="25939" MobId="41628" InteractByUsingItemId="56134" 
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" NumOfTimes="1000" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-3097.055" Y="-2773.613" Z="22.80961" />
+			<Hotspot X="-3113.454" Y="-2808.808" Z="25.68962" />
+			<Hotspot X="-3098.328" Y="-2855.27" Z="24.36584" />
+			<Hotspot X="-3062.252" Y="-2894.429" Z="25.52152" />
+			<Hotspot X="-3071.36" Y="-2959.034" Z="30.25622" />
+			<Hotspot X="-3005.014" Y="-2945.043" Z="31.93255" />
+			<Hotspot X="-2951.325" Y="-2926.394" Z="33.21404" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="The Threat of Flame" QuestId="25927" Type="KillMob" MobId="41449" KillCount="8" />
+	<TurnIn QuestName="The Threat of Flame" QuestId="25927" TurnInName="Rethiel the Greenwarden" TurnInId="41503" />
+	<TurnIn QuestName="For Peat's Sake" QuestId="25939" TurnInName="Ferilon Leafborn" TurnInId="41615" />
+	
+	<PickUp QuestName="Longbraid the Grim" QuestId="26196" GiverName="Ferilon Leafborn" GiverId="41615" />
+	<TurnIn QuestName="Longbraid the Grim" QuestId="26196" TurnInName="Longbraid the Grim" TurnInId="1071" />
+	
+	<CustomBehavior File="Message" Text="Compiling Dun Modr Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Anvilmar the Hero" QuestId="26327" GiverName="Longbraid the Grim" GiverId="1071" />
+	<TurnIn QuestName="Anvilmar the Hero" QuestId="26327" TurnInName="Thargas Anvilmar" TurnInId="42160" />
+	
+	<PickUp QuestName="The Twilight's Hammer Revealed" QuestId="26127" GiverName="Thargas Anvilmar" GiverId="42160" />
+	<Objective QuestName="The Twilight's Hammer Revealed" QuestId="26127" Type="KillMob" MobId="42154" KillCount="12" />
+	<TurnIn QuestName="The Twilight's Hammer Revealed" QuestId="26127" TurnInName="Thargas Anvilmar" TurnInId="42160" />
+	
+	<PickUp QuestName="The Battle of Thandol Span" QuestId="26128" GiverName="Thargas Anvilmar" GiverId="42160" />
+	<CustomBehavior File="EscortGroup" QuestId="26128" EscortNpcId1="41560" EscortMaxFollowDistance="5" >
+		<SearchPath>
+			<Hotspot X="-2424.765" Y="-2504.394" Z="81.70681" />
+		</SearchPath>
+	</CustomBehavior>
+	<If Condition="HasQuest(26128) &amp;&amp; IsQuestCompleted(26128)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="26128" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+	</If>
+	
+	<PickUp QuestName="Into Arathi" QuestId="26139" GiverName="Thargas Anvilmar" GiverId="42160" />
+
+	<CustomBehavior File="Message" Text="Wetlands Quests Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

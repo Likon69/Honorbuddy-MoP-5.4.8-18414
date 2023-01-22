@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Scarlet Halls</Name>
+  <DungeonId>163</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="59191" name="Commander Lindon" killOrder="1" optional="false" X="940.0625" Y="540.1996" Z="12.93499"/>
+    <Boss isFinal="false" entry="59303" name="Houndmaster Braun" killOrder="2" optional="false" X="1009.557" Y="513.6875" Z="12.9061"/>
+    <Boss isFinal="false" entry="58632" name="Armsmaster Harlan" killOrder="3" optional="true" X="1206.015" Y="443.9851" Z="0.987926" />
+    <Boss isFinal="true" entry="59150" name="Flameweaver Koegler" killOrder="4" optional="false" X="1308.033" Y="549.0643" Z="12.81249"/>
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

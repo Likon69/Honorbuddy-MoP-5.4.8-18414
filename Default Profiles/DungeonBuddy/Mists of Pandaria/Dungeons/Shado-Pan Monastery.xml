@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<DungeonBuddyProfile>
+  <Name>Shado-Pan Monastery</Name>
+  <DungeonId>466</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="56747" name="Gu Cloudstrike" killOrder="1" optional="false" X="3722.51" Y="2674.14" Z="768.0359"/>
+    <Boss isFinal="false" entry="56541" name="Master Snowdrift" killOrder="2" optional="false" X="3713.436" Y="3091.417" Z="817.3194"/>
+    <Boss isFinal="false" entry="56719" name="Sha of Violence" killOrder="3" optional="false" X="3996.92" Y="2905.266" Z="770.3101"/>
+    <Boss isFinal="true" entry="56884" name="Corrupted Taran Zhu" killOrder="4" optional="false" X="3880.087" Y="2585.784" Z="757.2005"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+    <PullBlackspot X="3717.217" Y="2583.737" Z="769.5298" Radius="9.433087" />
+    <PullBlackspot X="3811.726" Y="3237.54" Z="799.0551" Radius="26.15091" />
+    <PullBlackspot X="3735.947" Y="3239.067" Z="808.1979" Radius="16.80934" />
+    <PullBlackspot X="3812.796" Y="2626.161" Z="756.4869" Radius="6.753263" />
+    <PullBlackspot X="3903.132" Y="2668.185" Z="757.7915" Radius="6.004269" />
+    <!-- group after 1st bridge towards last boss, Skiped because of shortcut.-->
+    <PullBlackspot X="3840.173" Y="2778.633" Z="744.5502" Radius="18.67788" />     
+  </PullBlackspots>
+</DungeonBuddyProfile>

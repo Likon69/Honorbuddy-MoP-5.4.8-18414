@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Theramore's Fall</Name>
+  <DungeonId>567</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="58936" name="Lieutenant Granders" killOrder="1" optional="false" X="-3914.006" Y="-4679.557" Z="13.01772"/>
+    <Boss isFinal="false" entry="58948" name="Squallshaper Lanara" killOrder="1" optional="false" X="-3906.733" Y="-4758.038" Z="13.4383"/>
+    <Boss isFinal="false" entry="59089" name="Captain Dashing" killOrder="1" optional="false" X="-4093.224" Y="-4531.799" Z="13.1249"/>
+    <Boss isFinal="false" entry="58777" name="Baldruc" killOrder="2" optional="false" X="-3799.259" Y="-4512.04" Z="12.54289"/>
+    <Boss isFinal="false" entry="58787" name="Big Bessa" killOrder="3" optional="false" X="-3762.877" Y="-4330.371" Z="9.89533"/>
+    <Boss isFinal="false" entry="58840" name="Hedric Evencane" killOrder="3" optional="false" X="-3732.189" Y="-4549.396" Z="27.11418"/>
+  </BossEncounters>
+  <Blackspots>
+  </Blackspots>
+  <PullBlackspots>
+    <PullBlackspot X="-4095.979" Y="-4537.793" Z="0.764341" Radius="25.94804" Height="10" />
+    <PullBlackspot X="-4102.644" Y="-4544.522" Z="18.30854" Radius="8.233085" />
+  </PullBlackspots>
+</DungeonBuddyProfile>

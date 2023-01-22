@@ -1,0 +1,199 @@
+# =====
+# Original contribution by chinajade
+#   $Rev: 3160 $
+#   $Date: 2014-03-19 04:57:53 -0300 (qua, 19 mar 2014) $
+#
+# WARNING: DO NOT EDIT .xsd files.
+#   They are not authoritative and will be overwritten!
+#   Instead, regenerate the .xsd files from the .rnc 'sources'.
+#   Its a one-line command to do this. Please see README.txt
+#   for more information.
+# =====
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "ButtonPress\ButtonPressOnAura" },
+    Attributes-QuestSpecifier-MandatoryQuestId,
+
+    attribute Button1TargetAuraId { HBType-Id }?,
+    attribute Button1TargetAuraId2 { HBType-Id }?,
+    attribute Button1TargetAuraId3 { HBType-Id }?,
+    attribute Button1TargetAuraId4 { HBType-Id }?,
+    attribute Button1TargetAuraId5 { HBType-Id }?,
+    attribute Button2TargetAuraId { HBType-Id }?,
+    attribute Button2TargetAuraId2 { HBType-Id }?,
+    attribute Button2TargetAuraId3 { HBType-Id }?,
+    attribute Button2TargetAuraId4 { HBType-Id }?,
+    attribute Button2TargetAuraId5 { HBType-Id }?,
+    attribute Button3TargetAuraId { HBType-Id }?,
+    attribute Button3TargetAuraId2 { HBType-Id }?,
+    attribute Button3TargetAuraId3 { HBType-Id }?,
+    attribute Button3TargetAuraId4 { HBType-Id }?,
+    attribute Button3TargetAuraId5 { HBType-Id }?,
+    attribute Button4TargetAuraId { HBType-Id }?,
+    attribute Button4TargetAuraId2 { HBType-Id }?,
+    attribute Button4TargetAuraId3 { HBType-Id }?,
+    attribute Button4TargetAuraId4 { HBType-Id }?,
+    attribute Button4TargetAuraId5 { HBType-Id }?,
+    attribute Button5TargetAuraId { HBType-Id }?,
+    attribute Button5TargetAuraId2 { HBType-Id }?,
+    attribute Button5TargetAuraId3 { HBType-Id }?,
+    attribute Button5TargetAuraId4 { HBType-Id }?,
+    attribute Button5TargetAuraId5 { HBType-Id }?,
+    attribute Button6TargetAuraId { HBType-Id }?,
+    attribute Button6TargetAuraId2 { HBType-Id }?,
+    attribute Button6TargetAuraId3 { HBType-Id }?,
+    attribute Button6TargetAuraId4 { HBType-Id }?,
+    attribute Button6TargetAuraId5 { HBType-Id }?,
+    attribute Button7TargetAuraId { HBType-Id }?,
+    attribute Button7TargetAuraId2 { HBType-Id }?,
+    attribute Button7TargetAuraId3 { HBType-Id }?,
+    attribute Button7TargetAuraId4 { HBType-Id }?,
+    attribute Button7TargetAuraId5 { HBType-Id }?,
+    attribute Button8TargetAuraId { HBType-Id }?,
+    attribute Button8TargetAuraId2 { HBType-Id }?,
+    attribute Button8TargetAuraId3 { HBType-Id }?,
+    attribute Button8TargetAuraId4 { HBType-Id }?,
+    attribute Button8TargetAuraId5 { HBType-Id }?,
+    attribute Button9TargetAuraId { HBType-Id }?,
+    attribute Button9TargetAuraId2 { HBType-Id }?,
+    attribute Button9TargetAuraId3 { HBType-Id }?,
+    attribute Button9TargetAuraId4 { HBType-Id }?,
+    attribute Button9TargetAuraId5 { HBType-Id }?,
+    attribute Button10TargetAuraId { HBType-Id }?,
+    attribute Button10TargetAuraId2 { HBType-Id }?,
+    attribute Button10TargetAuraId3 { HBType-Id }?,
+    attribute Button10TargetAuraId4 { HBType-Id }?,
+    attribute Button10TargetAuraId5 { HBType-Id }?,
+    attribute Button11TargetAuraId { HBType-Id }?,
+    attribute Button11TargetAuraId2 { HBType-Id }?,
+    attribute Button11TargetAuraId3 { HBType-Id }?,
+    attribute Button11TargetAuraId4 { HBType-Id }?,
+    attribute Button11TargetAuraId5 { HBType-Id }?,
+    attribute Button12TargetAuraId { HBType-Id }?,
+    attribute Button12TargetAuraId2 { HBType-Id }?,
+    attribute Button12TargetAuraId3 { HBType-Id }?,
+    attribute Button12TargetAuraId4 { HBType-Id }?,
+    attribute Button12TargetAuraId5 { HBType-Id }?,
+
+    attribute ButtonOnQuestComplete { QBType-HotbarButton }?,
+    Attributes-XYZ?,	# HuntingGroundAnchor
+    attribute HuntingGroundRadius { HBType-DistancePositive }?,
+    attribute IgnoreMobsInBlackspots { HBType-Boolean }?,
+
+    Attributes-MobIdN-Mandatory1,
+    attribute NonCompeteDistance { HBType-Distance }?,
+    attribute PostInteractDelay { HBType-TimeDuration }?
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "ButtonPress\ButtonPressOnChat" },
+    Attributes-QuestSpecifier-MandatoryQuestId,
+
+    attribute Button1Phrase { text }?,
+    attribute Button1Phrase2 { text }?,
+    attribute Button1Phrase3 { text }?,
+    attribute Button1Phrase4 { text }?,
+    attribute Button1Phrase5 { text }?,
+    attribute Button2Phrase { text }?,
+    attribute Button2Phrase2 { text }?,
+    attribute Button2Phrase3 { text }?,
+    attribute Button2Phrase4 { text }?,
+    attribute Button2Phrase5 { text }?,
+    attribute Button3Phrase { text }?,
+    attribute Button3Phrase2 { text }?,
+    attribute Button3Phrase3 { text }?,
+    attribute Button3Phrase4 { text }?,
+    attribute Button3Phrase5 { text }?,
+    attribute Button4Phrase { text }?,
+    attribute Button4Phrase2 { text }?,
+    attribute Button4Phrase3 { text }?,
+    attribute Button4Phrase4 { text }?,
+    attribute Button4Phrase5 { text }?,
+    attribute Button5Phrase { text }?,
+    attribute Button5Phrase2 { text }?,
+    attribute Button5Phrase3 { text }?,
+    attribute Button5Phrase4 { text }?,
+    attribute Button5Phrase5 { text }?,
+    attribute Button6Phrase { text }?,
+    attribute Button6Phrase2 { text }?,
+    attribute Button6Phrase3 { text }?,
+    attribute Button6Phrase4 { text }?,
+    attribute Button6Phrase5 { text }?,
+    attribute Button7Phrase { text }?,
+    attribute Button7Phrase2 { text }?,
+    attribute Button7Phrase3 { text }?,
+    attribute Button7Phrase4 { text }?,
+    attribute Button7Phrase5 { text }?,
+    attribute Button8Phrase { text }?,
+    attribute Button8Phrase2 { text }?,
+    attribute Button8Phrase3 { text }?,
+    attribute Button8Phrase4 { text }?,
+    attribute Button8Phrase5 { text }?,
+    attribute Button9Phrase { text }?,
+    attribute Button9Phrase2 { text }?,
+    attribute Button9Phrase3 { text }?,
+    attribute Button9Phrase4 { text }?,
+    attribute Button9Phrase5 { text }?,
+    attribute Button10Phrase { text }?,
+    attribute Button10Phrase2 { text }?,
+    attribute Button10Phrase3 { text }?,
+    attribute Button10Phrase4 { text }?,
+    attribute Button10Phrase5 { text }?,
+    attribute Button11Phrase { text }?,
+    attribute Button11Phrase2 { text }?,
+    attribute Button11Phrase3 { text }?,
+    attribute Button11Phrase4 { text }?,
+    attribute Button11Phrase5 { text }?,
+    attribute Button12Phrase { text }?,
+    attribute Button12Phrase2 { text }?,
+    attribute Button12Phrase3 { text }?,
+    attribute Button12Phrase4 { text }?,
+    attribute Button12Phrase5 { text }?,
+
+    attribute ButtonOnQuestComplete { QBType-HotbarButton }?,
+    attribute DebugShowText { HBType-Boolean }?,
+    attribute ExitVehicleAtQuestComplete { HBType-Boolean }?,
+
+    attribute FeedbackPhraseFail { text }?,
+    attribute FeedbackPhraseFail2 { text }?,
+    attribute FeedbackPhraseFail3 { text }?,
+    attribute FeedbackPhraseFail4 { text }?,
+    attribute FeedbackPhraseFail5 { text }?,
+
+    attribute FeedbackPhraseSuccess { text }?,
+    attribute FeedbackPhraseSuccess2 { text }?,
+    attribute FeedbackPhraseSuccess3 { text }?,
+    attribute FeedbackPhraseSuccess4 { text }?,
+    attribute FeedbackPhraseSuccess5 { text }?,
+
+    attribute InputResponseDelay { HBType-TimeDuration }?,
+
+    (attribute ItemId { HBType-Id }
+     | attribute MobId { HBType-Id }),
+    Attributes-XYZ?,		# Hunting Ground Anchor
+
+    attribute MonitorStartPhrase { text }?,
+    attribute MonitorStartPhrase2 { text }?,
+    attribute MonitorStartPhrase3 { text }?,
+    attribute MonitorStartPhrase4 { text }?,
+    attribute MonitorStartPhrase5 { text }?,
+
+    attribute MonitorStopPhrase { text }?,
+    attribute MonitorStopPhrase2 { text }?,
+    attribute MonitorStopPhrase3 { text }?,
+    attribute MonitorStopPhrase4 { text }?,
+    attribute MonitorStopPhrase5 { text }?,
+
+    attribute SupportedLocale { text }?,
+    attribute SupportedLocale2 { text }?,
+    attribute SupportedLocale3 { text }?,
+    attribute SupportedLocale4 { text }?,
+    attribute SupportedLocale5 { text }?
+  }
+

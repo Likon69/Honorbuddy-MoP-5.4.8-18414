@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassProfile Class="Warrior" Specialization="2" Name="Warrior - Fury">
+	<TalentTree>
+		<Talent Tier="1" Index="2" Name="Double Time" />
+		<Talent Tier="2" Index="2" Name="Second Wind" />
+		<Talent Tier="3" Index="3" Name="Disrupting Shout" />
+		<Talent Tier="4" Index="1" Name="Bladestorm" />
+		<Talent Tier="5" Index="2" Name="Safeguard" />
+		<Talent Tier="6" Index="1" Name="Avatar" />
+	</TalentTree>
+	<WeightSet>
+		<DamagePerSecond>22</DamagePerSecond>
+		<Expertise>20</Expertise>
+		<Hit>20</Hit>
+		<Strength>18</Strength>
+		<CriticalStrike>16</CriticalStrike>
+		<Mastery>14</Mastery>
+		<Haste>12</Haste>
+		<AttackPower>5</AttackPower>
+		<Stamina>5</Stamina>
+		<Armor>0.01</Armor>
+	</WeightSet>
+</ClassProfile>

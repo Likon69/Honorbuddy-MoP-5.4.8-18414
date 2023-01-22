@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Unga Ingoo</Name>
+  <DungeonId>499</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="62475" name="Unga Bird-Haver" killOrder="1" optional="false" X="-2992.632" Y="852.3806" Z="16.41096"/>
+    <Boss isFinal="false" entry="62466" name="Ba-Bam" killOrder="2" optional="true" X="-3005.076" Y="943.4003" Z="11.25377" />
+    <Boss isFinal="true" entry="62465" name="Captain Ook" killOrder="3" optional="false" X="-2883.559" Y="761.783" Z="0.6225085"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+
+  </PullBlackspots>
+</DungeonBuddyProfile>

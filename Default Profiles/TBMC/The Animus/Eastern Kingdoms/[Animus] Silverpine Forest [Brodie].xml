@@ -1,0 +1,512 @@
+<HBProfile>
+	<Name>Silverpine Forest Memory Block ($Rev$)</Name>
+	<MinLevel>60</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<!-- Forsaken High Command -->
+		<Vendor Name="Apothecary Harrington" Entry="45491" Type="Food" X="1445.27" Y="1072.9" Z="60.46034" />
+		<Vendor Name="Apothecary Marry" Entry="45490" Type="Food" X="1422.57" Y="1097.31" Z="60.47847" />
+		<Vendor Name="Apothecary Chase" Entry="45489" Type="Food" X="1413.72" Y="1104.02" Z="60.47847" />
+		<!-- Forsaken Rear Guard -->
+		<Vendor Name="Salty Gorgar" Entry="45497" Type="Food" X="1036.46" Y="1581" Z="27.57665" />
+		<!-- The Sepulcher -->
+		<Vendor Name="Nadia Vernon" Entry="9553" Type="Repair" X="556.339" Y="1568.4" Z="131.9676" />
+		<Vendor Name="Gwyn Farrow" Entry="5886" Type="Food" X="552.491" Y="1601.23" Z="129.0702" />
+		<!-- Forsaken Front -->
+		<Vendor Name="Harris Franklin" Entry="51709" Type="Food" X="-140.5608" Y="1292.561" Z="49.75538" />
+	</Vendors>
+	
+	<Mailboxes>
+		<!-- Forsaken Rear Guard -->
+		<Mailbox X="1080.075" Y="1587.028" Z="27.63019" />
+	</Mailboxes>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+	
+	<Blacklist>
+		<Mob Name="Archmage Ataeric" Entry="2120" Flags="Combat, Pull" />
+		<Mob Name="General Marstone" Entry="45995" Flags="Pull" />
+	</Blacklist>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<Quest Name="Skitterweb Menace" Id="27095" >
+	<Objective Type="KillMob" MobId="1781" KillCount="12" >
+		<Hotspots>
+			<Hotspot X="1263.242" Y="1983.7" Z="17.91073" />
+			<Hotspot X="1183.488" Y="1999.906" Z="10.86163" />
+			<Hotspot X="1228.712" Y="1922.267" Z="11.18507" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Vengeance for Our Soldiers" Id="27360" >
+	<Objective Type="KillMob" MobId="45403" KillCount="10" >
+		<Hotspots>
+			<Hotspot X="-1474.336" Y="1640.993" Z="20.48583" />
+			<Hotspot X="-1459.1" Y="1551.729" Z="20.48546" />
+			<Hotspot X="-1553.079" Y="1662.41" Z="20.48583" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="On Whose Orders?" Id="27364" >
+	<Objective Type="CollectItem" ItemId="60977" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Master Sergeant Pietro Zaren" Id="45405" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-1515.229" Y="1598.749" Z="20.66562" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Resistance is Futile" Id="27423" >
+	<Objective Type="KillMob" MobId="45495" MobId2="45481" MobId3="45483" KillCount="20" >
+		<Hotspots>
+			<Hotspot X="-1354.708" Y="1107.582" Z="32.98247" />
+			<Hotspot X="-1440.733" Y="1118.365" Z="28.29919" />
+			<Hotspot X="-1497.488" Y="1098.229" Z="30.27462" />
+			<Hotspot X="-1563.438" Y="1061.732" Z="24.63045" />
+			<Hotspot X="-1757.19" Y="1082.606" Z="39.82065" />
+			<Hotspot X="-1882.588" Y="994.5074" Z="73.74435" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="7th Legion Battle Plans" Id="27577" >
+	<Objective Type="CollectItem" ItemId="61510" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="General Marstone" Id="45995" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-536.1138" Y="1677.142" Z="14.16243" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Seek and Destroy" Id="27193" >
+	<Objective Type="CollectItem" ItemId="60867" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Caretaker Smithers" Id="45219" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="142.8711" Y="1532.819" Z="114.9757" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="Message" Text="Fatal Desynchronization: Incorrect faction linking." LogColor="Red" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<If Condition="HasQuest(26964)" >
+		<CustomBehavior File="Message" Text="Parsing for Breadcrumbs..." LogColor="CornflowerBlue" />
+		<TurnIn QuestName="Warchief's Command: Silverpine Forest" QuestId="26964" TurnInName="Grand Executor Mortuus" TurnInId="44615" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Beginning Memory Block: Silverpine Forest" LogColor="Green" />
+	<CustomBehavior File="UserSettings" LootMobs="True" PullDistance="20" />
+
+	<CustomBehavior File="Message" Text="Fast Forwarding Memory to Forsaken High Command" LogColor="CornflowerBlue"  />
+
+	<PickUp QuestName="The Warchief Cometh" QuestId="26965" GiverName="Grand Executor Mortuus" GiverId="44615" />
+	<While Condition="!IsQuestCompleted(26965)" />
+	<TurnIn QuestName="The Warchief Cometh" QuestId="26965" TurnInName="Grand Executor Mortuus" TurnInId="44615" />
+
+	<PickUp QuestName="The Gilneas Liberation Front" QuestId="26989" GiverName="Grand Executor Mortuus" GiverId="44615" />
+	<PickUp QuestName="Agony Abounds" QuestId="26992" GiverName="Apothecary Witherbloom" GiverId="44778" />
+	<PickUp QuestName="Guts and Gore" QuestId="26995" GiverName="High Apothecary Shana T'veen" GiverId="44784" />
+	<Objective QuestName="Agony Abounds" QuestId="26992" Type="CollectItem" ItemId="60741" CollectCount="8" />
+	<Objective QuestName="Guts and Gore" QuestId="26995" Type="CollectItem" ItemId="60742" CollectCount="6" />
+	<Objective QuestName="The Gilneas Liberation Front" QuestId="26989" Type="KillMob" MobId="44793" KillCount="10" />
+	<DisableBehavior Name="Combat" />
+	<TurnIn QuestName="The Gilneas Liberation Front" QuestId="26989" TurnInName="Grand Executor Mortuus" TurnInId="44615" />
+	<TurnIn QuestName="Agony Abounds" QuestId="26992" TurnInName="Apothecary Witherbloom" TurnInId="44778" />
+	<TurnIn QuestName="Guts and Gore" QuestId="26995" TurnInName="High Apothecary Shana T'veen" TurnInId="44784" />
+	<EnableBehavior Name="Combat" />
+
+	<PickUp QuestName="Iterating Upon Success" QuestId="26998" GiverName="High Apothecary Shana T'veen" GiverId="44784" />
+	<If Condition="HasQuest(26998) &amp;&amp; !IsQuestCompleted(26998)" >
+		<CustomBehavior File="InteractWith" MobId="44825" InteractByGossipOptions="1" NonCompeteDistance="0"
+			TerminateWhen="Me.IsOnTransport" X="1418.425" Y="1019.881" Z="52.7987" />
+		<DisableBehavior Name="Combat" />
+		<CustomBehavior File="Vehicles\NoControlVehicle" QuestId="26998" VehicleMountId="44821" TargetId="1908" AttackButton="1" OftenToUse="1000" MaxRange="200" TypeId="2" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="Iterating Upon Success" QuestId="26998" TurnInName="High Apothecary Shana T'veen" TurnInId="44784" />
+	<EnableBehavior Name="Combat" />
+
+	<PickUp QuestName="Dangerous Intentions" QuestId="27039" GiverName="Deathstalker Commander Belmont" GiverId="44789" />
+	<DisableBehavior Name="Combat, Loot" />
+	<TurnIn QuestName="Dangerous Intentions" QuestId="27039" TurnInName="Abandoned Outhouse" TurnInId="205143" TurnInType="Object" X="1304.34" Y="1188.18" Z="52.11" />
+
+	<PickUp QuestName="Waiting to Exsanguinate" QuestId="27045" GiverName="Abandoned Outhouse" GiverId="205143" GiverType="Object" X="1304.34" Y="1188.18" Z="52.11" />
+	<CustomBehavior File="InteractWith" QuestId="27045" MobId="44894" WaitTime="120000" X="1313.31" Y="1208.68" Z="58.52" />
+	<TurnIn QuestName="Waiting to Exsanguinate" QuestId="27045" TurnInName="Deathstalker Commander Belmont" TurnInId="44789" />
+
+	<PickUp QuestName="Belmont's Report" QuestId="27056" GiverName="Deathstalker Commander Belmont" GiverId="44789" />
+	<TurnIn QuestName="Belmont's Report" QuestId="27056" TurnInName="Lady Sylvanas Windrunner" TurnInId="44365" />
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding Memory to Forsaken Rear Guard" LogColor="CornflowerBlue"  />
+
+	<PickUp QuestName="The Warchief's Fleet" QuestId="27065" GiverName="Lady Sylvanas Windrunner" GiverId="44365" />
+	<TurnIn QuestName="The Warchief's Fleet" QuestId="27065" TurnInName="Admiral Hatchet" TurnInId="44916" />
+	<EnableBehavior Name="Combat, Loot" />
+
+	<PickUp QuestName="Steel Thunder" QuestId="27069" GiverName="Admiral Hatchet" GiverId="44916" />
+	<PickUp QuestName="Give Em Hell" QuestId="27073" GiverName="Warlord Torok" GiverId="44917" />
+	<PickUp QuestName="Playing Dirty" QuestId="27082" GiverName="Apothecary Wormcrud" GiverId="44912" />
+	<Objective QuestName="Playing Dirty" QuestId="27082" Type="CollectItem" ItemId="60793" CollectCount="8" />
+	<TurnIn QuestName="Playing Dirty" QuestId="27082" TurnInName="Apothecary Wormcrud" TurnInId="44912" />
+	
+	<PickUp QuestName="It's Only Poisonous if You Ingest It" QuestId="27088" GiverName="Apothecary Wormcrud" GiverId="44912" />
+	<While Condition="HasQuest(27069) &amp;&amp; !IsQuestCompleted(27069)" >
+		<CustomBehavior File="InteractWith" QuestId="27069" TerminateWhen="Unit(44914, u =&gt; u.Distance &lt; 50) == null" MobId="205165" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" >
+			<HuntingGrounds>
+				<Hotspot X="895.01" Y="1763.24" Z="15.25" />
+				<Hotspot X="912.62" Y="1856.64" Z="5.69" />
+				<Hotspot X="943.70" Y="1795.58" Z="12.72" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<If Condition="Unit(44914, u =&gt; u.Distance &lt; 50) == null &amp;&amp; !IsQuestCompleted(27069)" >
+			<CustomBehavior File="InteractWith" MobId="44916" InteractByGossipOptions="1" NonCompeteDistance="0" X="1067.506" Y="1603.202" Z="27.99665" />
+		</If>
+	</While>
+	<Objective QuestName="Give Em Hell" QuestId="27073" Type="KillMob" MobId="44547" KillCount="10" />
+
+	<CustomBehavior File="InteractWith" QuestId="27088" MobId="44367" MobState="Alive" InteractByUsingItemId="60808" 
+		CollectionDistance="1000" NumOfTimes="1000" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="15" X="854.54" Y="1759.30" Z="14.25" />
+	<TurnIn QuestName="It's Only Poisonous if You Ingest It" QuestId="27088" TurnInName="Apothecary Wormcrud" TurnInId="44912" />
+	<TurnIn QuestName="Steel Thunder" QuestId="27069" TurnInName="Admiral Hatchet" TurnInId="44916" />
+	<TurnIn QuestName="Give Em Hell" QuestId="27073" TurnInName="Warlord Torok" TurnInId="44917" />
+
+	<PickUp QuestName="Skitterweb Menace" QuestId="27095" GiverName="Warlord Torok" GiverId="44917" />
+	<PickUp QuestName="Lost In The Darkness" QuestId="27093" GiverName="Admiral Hatchet" GiverId="44916" />
+
+	<If Condition="!HasQuest(27094) &amp;&amp; !IsQuestCompleted(27094)" >
+		<RunTo DestName="Picking up Quest" X="1441.757" Y="1970.313" Z="12.52913" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+	</If>
+	<Objective QuestName="Deeper Into Darkness" QuestId="27094" Type="KillMob" MobId="44906" KillCount="1" />
+	
+	<CustomBehavior File="CollectThings" QuestId="27093" MobId="44941" CollectUntil="QuestComplete" HuntingGroundRadius="200" >
+		<Hotspot X="1255.345" Y="1976.089" Z="14.90537" />
+		<Hotspot X="1349.096" Y="1975.831" Z="14.95433" />
+	</CustomBehavior>
+	
+	<Objective QuestName="Skitterweb Menace" QuestId="27095" Type="KillMob" MobId="1781" KillCount="12" />
+	<If Condition="HasQuest(27095) &amp;&amp; IsQuestCompleted(27095)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="27095" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+	</If>
+
+	<TurnIn QuestName="Deeper into Darkness" QuestId="27094" TurnInName="Warlord Torok" TurnInId="44917" />
+	<TurnIn QuestName="Lost In The Darkness" QuestId="27093" TurnInName="Admiral Hatchet" TurnInId="44916" />
+
+	<DisableBehavior Name="Combat" />
+	<PickUp QuestName="Orcs Are In Order" QuestId="27096" GiverName="Admiral Hatchet" GiverId="44916" />
+	<TurnIn QuestName="Orcs Are In Order" QuestId="27096" TurnInName="Lady Sylvanas Windrunner" TurnInId="44365" />
+	<EnableBehavior Name="Combat" />
+
+	<PickUp QuestName="Rise, Forsaken" QuestId="27097" GiverName="Lady Sylvanas Windrunner" GiverId="44365" />
+	<CustomBehavior File="CollectThings" QuestId="27097" MobId="44966" MobId2="44954" CollectUntil="QuestComplete" HuntingGroundRadius="200" >
+		<Hotspot X="1098.769" Y="728.0944" Z="35.83883" />
+		<Hotspot X="986.8492" Y="729.2949" Z="59.28442" />
+		<Hotspot X="941.7596" Y="659.3531" Z="60.09419" />
+	</CustomBehavior>
+	<If Condition="HasQuest(27097) &amp;&amp; IsQuestCompleted(27097)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="27097" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+	</If>
+
+	<If Condition="HasQuest(27099) &amp;&amp; !IsQuestCompleted(27099)" >
+		<RunTo X="980.72" Y="689.14" Z="74.90" />
+		<CustomBehavior File="WaitTimer" WaitTime="140000" />
+	</If>
+	<TurnIn QuestName="No Escape" QuestId="27099" TurnInName="Lady Sylvanas Windrunner" TurnInId="44365" />
+
+	<PickUp QuestName="Lordaeron" QuestId="27098" GiverName="Lady Sylvanas Windrunner" GiverId="44365" />
+	<If Condition="HasQuest(27098) &amp;&amp; !IsQuestCompleted(27098)" >
+		<CustomBehavior File="WaitTimer" WaitTime="1000" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="Lordaeron" QuestId="27098" TurnInName="Lady Sylvanas Windrunner" TurnInId="44365" />
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding Memory to The Sepulcher" LogColor="CornflowerBlue"  />
+
+	<PickUp QuestName="Honor The Dead" QuestId="27180" GiverName="Lady Sylvanas Windrunner" GiverId="44365" />
+	<PickUp QuestName="Hair of the Dog" QuestId="27226" GiverName="Warlord Torok" GiverId="44917" />
+	<PickUp QuestName="Reinforcements from Fenris" QuestId="27231" GiverName="Admiral Hatchet" GiverId="44916" />
+
+<!-- Hair of the Dog -->
+	<CustomBehavior File="InteractWith" QuestId="27226" MobId="45196" MobState="Alive" InteractByUsingItemId="60870" AuraIdMissingFromMob="84528" WaitTime="5000" 
+		NumOfTimes="1000" CollectionDistance="500" NonCompeteDistance="0" X="674.79" Y="1206.71" Z="66.80" />
+
+	<Objective QuestName="Reinforcements from Fenris" QuestId="27231" Type="KillMob" MobId="45254" MobId2="45255" KillCount="10" />
+	<TurnIn QuestName="Reinforcements from Fenris" QuestId="27231" TurnInName="Horde Communication Panel" TurnInId="205350" TurnInType="Object" 
+		X="709.175" Y="964.656" Z="34.7558" />
+	<PickUp QuestName="The Waters Run Red..." QuestId="27232" GiverName="Horde Communication Panel" GiverId="205350" GiverType="Object" 
+		X="709.175" Y="964.656" Z="34.7558" />
+
+	<While Condition="!IsQuestCompleted(27232)" >
+		<CustomBehavior File="Vehicles\MountVehOnly" QuestId="27232" VehicleMountId="45263" X="717.16" Y="941.45" Z="34.76" />
+		<CustomBehavior File="Vehicles\CannonControl" QuestId="27232" VehicleId="45263" MaxAngle=".029204236" MinAngle=".058004070073366" Buttons="1" ExitButton="12" />
+		<!-- Awaiting BallisticVehicle Control, mobid = 45270 -->
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+	</While>
+
+	<TurnIn QuestName="Hair of the Dog" QuestId="27226" TurnInName="Warlord Torok" TurnInId="44917" />
+	<TurnIn QuestName="The Waters Run Red..." QuestId="27232" TurnInName="Admiral Hatchet" TurnInId="44916" />
+	
+<!-- Get Quest Excising the Taint -->
+	<If Condition="!HasQuest(27181) &amp;&amp; !IsQuestCompleted(27181)" >
+		<CustomBehavior File="InteractWith" MobId="45195" TerminateWhen="HasQuest(27181)" X="249.5636" Y="1509.562" Z="116.0992" />
+	</If>
+
+<!-- Honor the Dead/Excising the Taint -->
+	<CustomBehavior File="InteractWith" QuestId="27180" MobId="45197" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="1000" NumOfTimes="100" X="305.25" Y="1503.77" Z="117.32" />
+	<Objective QuestName="Excising the Taint" QuestId="27181" Type="KillMob" MobId="45195" KillCount="10" />
+	
+	<If Condition="HasQuest(27181) &amp;&amp; IsQuestCompleted(27181)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="27181" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+	</If>
+
+	<PickUp QuestName="Seek and Destroy" QuestId="27193" GiverName="Lady Sylvanas Windrunner" GiverId="44365" />
+	<If Condition="HasQuest(27193) &amp;&amp; !IsQuestCompleted(27193)" >
+		<RunTo X="142.8711" Y="1532.819" Z="114.9757" />
+		<Objective QuestName="Seek and Destroy" QuestId="27193" Type="CollectItem" ItemId="60867" CollectCount="1" />
+	</If>
+	<If Condition="HasQuest(27193) &amp;&amp; IsQuestCompleted(27193)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="27193" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+	</If>
+
+	<TurnIn QuestName="Honor the Dead" QuestId="27180" TurnInName="Lady Sylvanas Windrunner" TurnInId="44365" />
+	<TurnIn QuestName="Cornered and Crushed!" QuestId="27194" TurnInName="Master Forteski" TurnInId="45228" />
+
+	<PickUp QuestName="Nowhere to Run" QuestId="27195" GiverName="Master Forteski" GiverId="45228" />
+	<CustomBehavior File="EscortGroup" QuestId="27195" EscortNpcId="45228" EscortMaxFollowDistance="3" />
+	<TurnIn QuestName="Nowhere to Run" QuestId="27195" TurnInName="Lady Sylvanas Windrunner" TurnInId="44365" />
+	
+	<If Condition="!HasQuest(27290) &amp;&amp; !IsQuestCompleted(27290)" >
+		<DisableBehavior Name="Combat" />
+		<PickUp QuestName="To Forsaken Forward Command" QuestId="27290" GiverName="Lady Sylvanas Windrunner" GiverId="44365" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="To Forsaken Forward Command" QuestId="27290" TurnInName="Deathstalker Commander Belmont" TurnInId="45312" />
+	<EnableBehavior Name="Combat" />
+	
+	<CustomBehavior File="Message" Text="Compiling Forsaken Forward Command Quests" LogColor="CornflowerBlue"  />
+	
+	<PickUp QuestName="In Time, All Will Be Revealed" QuestId="27342" GiverName="Deathstalker Commander Belmont" GiverId="45312" />
+	<PickUp QuestName="Losing Ground" QuestId="27333" GiverName="Forward Commander Onslaught" GiverId="45315" />
+	<PickUp QuestName="The F.C.D." QuestId="27345" GiverName="Forward Commander Onslaught" GiverId="45315" />
+	<Objective QuestName="The F.C.D." QuestId="27345" Type="CollectItem" ItemId="60953" CollectCount="1" />
+	<Objective QuestName="In Time, All Will Be Revealed" QuestId="27342" Type="CollectItem" ItemId="60958" CollectCount="6" />
+	<Objective QuestName="Losing Ground" QuestId="27333" Type="KillMob" MobId="45292" KillCount="12" />
+	<TurnIn QuestName="In Time, All Will Be Revealed" QuestId="27342" TurnInName="Deathstalker Commander Belmont" TurnInId="45312" />
+	<TurnIn QuestName="Losing Ground" QuestId="27333" TurnInName="Forward Commander Onslaught" TurnInId="45315" />
+	<TurnIn QuestName="The F.C.D." QuestId="27345" TurnInName="Forward Commander Onslaught" TurnInId="45315" />
+	
+	<PickUp QuestName="Break In Communications: Dreadwatch Outpost" QuestId="27349" GiverName="Forward Commander Onslaught" GiverId="45315" />
+	<If Condition="HasQuest(27349) &amp;&amp; !IsQuestCompleted(27349)" >
+		<CustomBehavior File="NoCombatMoveTo" X="-1229.883" Y="1783.226" Z="19.97504" />
+	</If>
+	<If Condition="HasQuest(27349) &amp;&amp; IsQuestCompleted(27349)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="27349" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+	</If>
+	<If Condition="HasQuest(27350)" >
+		<DisableBehavior Name="Combat" />
+		<TurnIn QuestName="Break in Communications: Rutsak's Guard" QuestId="27350" TurnInName="Captain Rutsak" TurnInId="45389" />
+		<EnableBehavior Name="Combat" />
+	</If>
+	
+	<PickUp QuestName="Vengeance for our Soldiers" QuestId="27360" GiverName="Captain Rutsak" GiverId="45389" />
+	<Objective QuestName="Vengeance for our Soldiers" QuestId="27360" Type="KillMob" MobId="45403" KillCount="10" />
+	<If Condition="!HasQuest(27364) &amp;&amp; !IsQuestCompleted(27364)" >
+		<PickUp QuestName="On Whose Orders?" QuestId="27364" GiverName="Forward Commander Onslaught" GiverId="45315" />
+	</If>
+	<Objective QuestName="On Whose Orders?" QuestId="27364" Type="CollectItem" ItemId="60977" CollectCount="1" />
+	<If Condition="HasQuest(27364) &amp;&amp; IsQuestCompleted(27364)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="27364" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+	</If>
+	
+<!-- What Tomorrow Brings -->
+	<CustomBehavior File="InteractWith" QuestId="27401" MobId="205417" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" WaitTime="3000" X="-1462.538" Y="1704.804" Z="20.75259" />
+	<While Condition="!IsQuestCompleted(27401)" />
+	<If Condition="HasQuest(27401) &amp;&amp; IsQuestCompleted(27401)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="27401" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+	</If>
+	
+	<DisableBehavior Name="Combat" />
+	<TurnIn QuestName="Vengeance for our Soldiers" QuestId="27360" TurnInName="Captain Rutsak" TurnInId="45389" />
+	<TurnIn QuestName="Fall Back!" QuestId="27405" TurnInName="Deathstalker Commander Belmont" TurnInId="45312" />
+	<EnableBehavior Name="Combat" />
+	
+	<PickUp QuestName="A Man Named Godfrey" QuestId="27406" GiverName="Deathstalker Commander Belmont" GiverId="45312" />
+	<If Condition="!HasQuest(27423) &amp;&amp; !IsQuestCompleted(27423)" >
+		<RunTo X="-1389.57" Y="1144.944" Z="29.6341" />
+	</If>
+	<Objective QuestName="Resistance is Futile" QuestId="27423" Type="KillMob" MobId="45495" MobId2="45481" MobId3="45483" KillCount="20" />
+	<TurnIn QuestName="Resistance is Futile" QuestId="27423" TurnInName="Deathstalker Commander Belmont" TurnInId="45474" />
+	<CustomBehavior File="InteractWith" QuestId="27406" MobId="44369" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" X="-2122.029" Y="932.4421" Z="1.161076" />
+	<TurnIn QuestName="A Man Named Godfrey" QuestId="27406" TurnInName="Deathstalker Commander Belmont" TurnInId="45474" />
+	
+	<If Condition="!HasQuest(27438) &amp;&amp; !IsQuestCompleted(27438)" >
+		<CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for De/Respawn" />
+		<PickUp QuestName="The Great Escape" QuestId="27438" GiverName="Deathstalker Commander Belmont" GiverId="45312" X="-2120.263" Y="930.0151" Z="1.066463" />
+		<CustomBehavior File="WaitTimer" WaitTime="1000" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="The Great Escape" QuestId="27438" TurnInName="Lady Sylvanas Windrunner" TurnInId="45525" />
+	
+	<PickUp QuestName="Rise, Godfrey" QuestId="27472" GiverName="Lady Sylvanas Windrunner" GiverId="45525" />
+	<While Condition="HasQuest(27472) &amp;&amp; !IsQuestCompleted(27472)" />
+	<TurnIn QuestName="Rise, Godfrey" QuestId="27472" TurnInName="Lady Sylvanas Windrunner" TurnInId="45617" />
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding Memory to Forsaken Front" LogColor="CornflowerBlue" />
+	
+	<ClearVendor />
+	<SetVendor>
+		<Vendors>
+			<!-- The Sepulcher -->
+			<Vendor Name="Nadia Vernon" Entry="9553" Type="Repair" X="556.339" Y="1568.4" Z="131.9676" />
+			<Vendor Name="Gwyn Farrow" Entry="5886" Type="Food" X="552.491" Y="1601.23" Z="129.0702" />
+		</Vendors>
+	</SetVendor>
+
+	<PickUp QuestName="Breaking the Barrier" QuestId="27474" GiverName="Lady Sylvanas Windrunner" GiverId="45617" />
+	<PickUp QuestName="Unyielding Servitors" QuestId="27475" GiverName="Daschla" GiverId="45626" />
+	<Objective QuestName="Breaking the Barrier" QuestId="27474" Type="CollectItem" ItemId="61306" CollectCount="1" />
+	<Objective QuestName="Unyielding Servitors" QuestId="27475" Type="CollectItem" ItemId="61307" CollectCount="6" />
+	<TurnIn QuestName="Unyielding Servitors" QuestId="27475" TurnInName="Daschla" TurnInId="45626" />
+	<TurnIn QuestName="Breaking the Barrier" QuestId="27474" TurnInName="Lady Sylvanas Windrunner" TurnInId="45617" />
+	
+	<PickUp QuestName="Dalar Dawnweaver" QuestId="27476" GiverName="Lady Sylvanas Windrunner" GiverId="45617" />
+	<TurnIn QuestName="Dalar Dawnweaver" QuestId="27476" TurnInName="Dalar Dawnweaver" TurnInId="1938" />
+	
+	<PickUp QuestName="Practical Vengeance" QuestId="27483" GiverName="Dalar Dawnweaver" GiverId="1938" />
+	<If Condition="!HasQuest(27478) &amp;&amp; !IsQuestCompleted(27478)" >
+		<PickUp QuestName="Relios the Relic Keeper" QuestId="27478" GiverName="Dalar Dawnweaver" GiverId="1938" />
+		<CustomBehavior File="InteractWith" MobId="45731" NonCompeteDistance="0" X="458.3854" Y="1476.333" Z="126.3316" />
+	</If>
+	<Objective QuestName="Relios the Relic Keeper" QuestId="27478" Type="CollectItem" ItemId="61312" CollectCount="1" />
+	<Objective QuestName="Practical Vengeance" QuestId="27483" Type="KillMob" MobId="2358" KillCount="12" />
+	<If Condition="(!HasQuest(27480) &amp;&amp; !IsQuestCompleted(27480)) &amp;&amp; !HasItem(61310)" >
+		<CustomBehavior File="CollectThings" CollectItemId="61310" CollectItemCount="1" MobId="45728" >
+			<Hotspot X="265.7998" Y="300.3178" Z="-7.035695" />
+			<Hotspot X="241.4599" Y="369.2382" Z="-63.81738" />
+			<Hotspot X="271.1517" Y="400.156" Z="-66.08513" />
+		</CustomBehavior>
+	</If>
+	<If Condition="(!HasQuest(27480) &amp;&amp; !IsQuestCompleted(27480)) &amp;&amp; HasItem(61310)" >
+		<PickUp QuestName="Ley Energies" QuestId="27480" GiverType="Item" GiverId="61310" />
+	</If>
+	<Objective QuestName="Ley Energies" QuestId="27480" Type="CollectItem" ItemId="61311" CollectCount="8" />
+	<If Condition="Me.Location.Distance(new WoWPoint(293.7779, 377.4103, -64.14928)) &lt; 350" >
+		<CustomBehavior File="InteractWith" MobId="45732" TerminateWhen="Me.Location.Distance(new WoWPoint(293.7779, 377.4103, -64.14928)) &gt; 350" X="293.7779" Y="377.4103" Z="-64.14928" />
+	</If>
+	<TurnIn QuestName="Practical Vengeance" QuestId="27483" TurnInName="Dalar Dawnweaver" TurnInId="1938" />
+	<TurnIn QuestName="Relios the Relic Keeper" QuestId="27478" TurnInName="Dalar Dawnweaver" TurnInId="1938" />
+	<TurnIn QuestName="Ley Energies" QuestId="27480" TurnInName="Dalar Dawnweaver" TurnInId="1938" />
+	
+	<PickUp QuestName="Only One May Enter" QuestId="27484" GiverName="Dalar Dawnweaver" GiverId="1938" />
+	<TurnIn QuestName="Only One May Enter" QuestId="27484" TurnInName="Lady Sylvanas Windrunner" TurnInId="45617" />
+	
+	<PickUp QuestName="Transdimensional Warfare: Chapter 1" QuestId="27512" GiverName="Lady Sylvanas Windrunner" GiverId="45617" />
+	<PickUp QuestName="A Wolf in Bear's Clothing" QuestId="27510" GiverName="High Warlord Cromush" GiverId="45631" />
+	<Objective QuestName="A Wolf in Bear's Clothing" QuestId="27510" Type="KillMob" MobId="45750" KilCount="10" />
+	<TurnIn QuestName="Transdimensional Warfare: Chapter 1" QuestId="27512" TurnInName="Ambermill Dimensional Portal" TurnInId="45752" />
+	
+	<PickUp QuestName="Transdimensional Warfare: Chapter 2" QuestId="27513" GiverName="Ambermill Dimensional Portal" GiverId="45752" />
+	<If Condition="(HasQuest(27513) &amp;&amp; !IsQuestCompleted(27513)) &amp;&amp; !Me.HasAura(85361)" >
+		<CustomBehavior File="InteractWith" MobId="45752" InteractByGossipOptions="1" TerminateWhen="Me.HasAura(85361)" X="-291.0475" Y="1014.356" Z="113.9154" />
+	</If>
+	<Objective QuestName="Transdimensional Warfare: Chapter 2" QuestId="27513" Type="KillMob" MobId="45756" KillCount="20" />
+	<If Condition="HasQuest(27513) &amp;&amp; IsQuestCompleted(27513)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="27513" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+	</If>
+	<CustomBehavior File="KillUntilComplete" QuestId="27518" MobId="45766" X="-135.2832" Y="1071.235" Z="66.07266" />
+	<TurnIn QuestName="A Wolf in Bear's Clothing" QuestId="27510" TurnInName="High Warlord Cromush" TurnInId="45631" />
+	<TurnIn QuestName="Transdimensional Warfare: Chapter 3" QuestId="27518" TurnInName="Lady Sylvanas Windrunner" TurnInId="45617" />
+	
+	<If Condition="!IsQuestCompleted(27542)" >
+		<CustomBehavior File="InteractWith" MobId="45617" TerminateWhen="IsQuestCompleted(27542)" InteractByQuestFrameDisposition="Complete" NonCompeteDistance="0" X="-157.2542" Y="1271.968" Z="50.88951" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding Memory to Traveling Trio Block" LogColor="CornflowerBlue" />
+	
+	<If Condition="(!HasQuest(27547) &amp;&amp; !IsQuestCompleted(27547)) || 
+					(!HasQuest(27548) &amp;&amp; !IsQuestCompleted(27548)) ||
+					(!HasQuest(27550) &amp;&amp; !IsQuestCompleted(27550))" >
+		<CustomBehavior File="ForcedDismount" />
+	</If>
+	<PickUp QuestName="Of No Consequence" QuestId="27547" GiverName="Baron Ashbury" GiverId="45880" />
+	<PickUp QuestName="Lessons In Fear" QuestId="27548" GiverName="Lord Walden" GiverId="45879" />
+	<PickUp QuestName="Pyrewood's Fall" QuestId="27550" GiverName="Lord Godfrey" GiverId="45878" />
+<!-- Of No Consequence -->
+	<CustomBehavior File="InteractWith" QuestId="27547" MobId="45910" NonCompeteDistance="0" NotMoving="True" NumOfTimes="100" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+		<HuntingGrounds>
+			<Hotspot X="-386.3116" Y="1461.136" Z="25.684" />
+			<Hotspot X="-345.7643" Y="1482.833" Z="20.22718" />
+			<Hotspot X="-388.7205" Y="1521.238" Z="18.6592" />
+			<Hotspot X="-436.7707" Y="1544.729" Z="18.60322" />
+			<Hotspot X="-379.0568" Y="1592.36" Z="18.65808" />
+		</HuntingGrounds>
+	</CustomBehavior>
+<!-- Pyrewood's Fall -->
+	<CustomBehavior File="InteractWith" QuestId="27550" QuestObjectiveIndex="3" MobId="45939" IgnoreLoSToTarget="True" Range="30" InteractByUsingItemId="61374" NonCompeteDistance="0" 
+		ProactiveCombatStrategy="ClearMobsTargetingUs" X="-380.7071" Y="1600.595" Z="18.65808" />
+	<CustomBehavior File="InteractWith" QuestId="27550" QuestObjectiveIndex="2" MobId="45938" IgnoreLoSToTarget="True" Range="30" InteractByUsingItemId="61374" NonCompeteDistance="0" 
+		ProactiveCombatStrategy="ClearMobsTargetingUs" X="-389.7819" Y="1515.593" Z="18.65794" />
+	<CustomBehavior File="InteractWith" QuestId="27550" QuestObjectiveIndex="1" MobId="45937" IgnoreLoSToTarget="True" Range="30" InteractByUsingItemId="61374" NonCompeteDistance="0" 
+		ProactiveCombatStrategy="ClearMobsTargetingUs" X="-348.5695" Y="1555.883" Z="24.19674" />
+	<Objective QuestName="Lessons In Fear" QuestId="27548" Type="KillMob" MobId="45883" KillCount="12" />
+	<If Condition="(HasQuest(27547) &amp;&amp; IsQuestCompleted(27547)) || 
+					(HasQuest(27548) &amp;&amp; IsQuestCompleted(27548)) ||
+					(HasQuest(27550) &amp;&amp; IsQuestCompleted(27550))" >
+		<CustomBehavior File="ForcedDismount" />
+	</If>
+	<TurnIn QuestName="Of No Consequence" QuestId="27547" TurnInName="Baron Ashbury" TurnInId="45880" />
+	<TurnIn QuestName="Lessons In Fear" QuestId="27548" TurnInName="Lord Walden" TurnInId="45879" />
+	<TurnIn QuestName="Pyrewood's Fall" QuestId="27550" TurnInName="Lord Godfrey" TurnInId="45878" />
+	
+	<CustomBehavior File="Message" Text="Silverpine Forest Memory Synchronized" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\EKMemBlock [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

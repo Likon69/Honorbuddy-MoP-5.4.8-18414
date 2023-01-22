@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>A Little Patience</Name>
+  <DungeonId>589</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="68474" name="Commander Scargash" killOrder="1" optional="false" X="-1690.023" Y="1052.642" Z="29.42682"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+
+  </PullBlackspots>
+</DungeonBuddyProfile>

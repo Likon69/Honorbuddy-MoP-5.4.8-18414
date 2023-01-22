@@ -1,0 +1,43 @@
+<HBProfile>
+	<Name>The MoP Dailies Experience ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.1</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	
+	<UseMount>True</UseMount>
+
+<QuestOrder>
+
+	<CustomBehavior File="RunMacro" Macro="/script SetCVar('AutoLootDefault', 1)" NumOfTimes="1" WaitTime="1000" />
+	<CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+
+	<CustomBehavior File="Message" Text="Beginning the Dailies Experience!" LogColor="CornflowerBlue" />
+	<CustomBehavior File="WaitTimer" WaitTime="3000" />
+
+	<CustomBehavior File="ForcedDismount" />
+	<If Condition="HasItem(60498)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60498)" WaitTime="1500" />
+	<ElseIf Condition="HasItem(93672)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93672)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(54452)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(54452)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(64488)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(6948)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1500" />
+	</ElseIf>
+	<Else>
+		<CustomBehavior File="UserDialog" Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="No hearthstone detected in your inventory. Please make sure to have a hearthstone, or hearthstone-like item in your inventory!" />
+		<CustomBehavior File="Halt" />
+	</Else>
+	</If>
+	
+	<CustomBehavior File="UserDialog" Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="If you are seeing this message, it means ProfileSwapper did not load properly! \n\n Please check the following: \n 1) Is BrodiesPlugin activated \n 2) Do you have dailies enabled, reps selected, and started from within the plugin \n 3) Did you stop the bot during the run and restart thru the plugin? (You should not do this. If you stop the bot from HB, then restart from HB. Only start from the plugin for the initial start).\n 4) Is your Hearthstone on cooldown or missing? You must have a Hearthstone available to use." />
+
+</QuestOrder>
+</HBProfile>

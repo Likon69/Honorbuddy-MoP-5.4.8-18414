@@ -1,0 +1,318 @@
+<HBProfile>
+	
+	<Name>Timbermaw Hold Rep Grind ($Rev$)</Name>
+
+	<MinLevel>60</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<MinDurability>0.2</MinDurability>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	
+	<TargetElites>True</TargetElites>
+	
+	<Vendors>
+	</Vendors>
+
+	<Mailboxes>
+	</Mailboxes>
+	
+<!-- Quest Overrides -->
+
+<Quest Name="Threat of the Winterfall" Id="28460" >
+	<Objective Type="KillMob" MobId="48586" KillCount="15" >
+		<Hotspots>
+			<Hotspot X="6771.609" Y="-2672.352" Z="543.764" />
+			<Hotspot X="6649.107" Y="-2628.568" Z="520.1672" />
+			<Hotspot X="6675.054" Y="-2561.012" Z="527.0414" />
+			<Hotspot X="6688.513" Y="-2496.658" Z="537.9686" />
+			<Hotspot X="6737.148" Y="-2448.898" Z="541.6892" />
+			<Hotspot X="6793.132" Y="-2488.26" Z="548.7661" />
+			<Hotspot X="6841.371" Y="-2501.754" Z="560.6918" />
+			<Hotspot X="6812.955" Y="-2449.894" Z="551.1141" />
+			<Hotspot X="6782.975" Y="-2394.979" Z="555.7704" />
+			<Hotspot X="6465.195" Y="-3119.541" Z="570.9946" />
+			<Hotspot X="6493.243" Y="-3184.924" Z="569.6089" />
+			<Hotspot X="6496.017" Y="-3251.626" Z="572.176" />
+			<Hotspot X="6492.003" Y="-3322.765" Z="580.5667" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Winterfall Activity" Id="28522" >
+	<Objective Type="CollectItem" ItemId="21383" CollectCount="10" >
+		<CollectFrom>
+			<Mob Name="Winterfall Den Watcher" Id="7440" />
+			<Mob Name="Winterfall Shaman" Id="7439" />
+			<Mob Name="Winterfall Ursa" Id="7438" />
+			<Mob Name="Winterfall Pathfinder" Id="7442" />
+			<Mob Name="Winterfall Totemic" Id="7441" />
+			<Mob Name="Winterfall Runner" Id="10916" />
+			<Mob Name="High Chief Winterfall" Id="10738" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="6771.609" Y="-2672.352" Z="543.764" />
+			<Hotspot X="6649.107" Y="-2628.568" Z="520.1672" />
+			<Hotspot X="6675.054" Y="-2561.012" Z="527.0414" />
+			<Hotspot X="6688.513" Y="-2496.658" Z="537.9686" />
+			<Hotspot X="6737.148" Y="-2448.898" Z="541.6892" />
+			<Hotspot X="6793.132" Y="-2488.26" Z="548.7661" />
+			<Hotspot X="6841.371" Y="-2501.754" Z="560.6918" />
+			<Hotspot X="6812.955" Y="-2449.894" Z="551.1141" />
+			<Hotspot X="6782.975" Y="-2394.979" Z="555.7704" />
+			<Hotspot X="6465.195" Y="-3119.541" Z="570.9946" />
+			<Hotspot X="6493.243" Y="-3184.924" Z="569.6089" />
+			<Hotspot X="6496.017" Y="-3251.626" Z="572.176" />
+			<Hotspot X="6492.003" Y="-3322.765" Z="580.5667" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->	
+
+<QuestOrder>
+
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Darnassus/Orgrimmar -->
+		<If Condition="Me.IsAlliance" >
+			<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="UserSettings" UseMount="False" />
+			<CustomBehavior File="InteractWith" MobId="215116" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="UserSettings" UseMount="False" />
+			<CustomBehavior File="InteractWith" MobId="215127" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1732.343" Y="881.7467" Z="487.0864" />
+		</If>
+		<CustomBehavior File="UserSettings" UseMount="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+		</If>
+	</If>
+	
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557
+			&amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487" > <!-- Outlands, but not Azure/Bloodmyst/Exodar or Ghostlands/Eversong/Silvermoon -->
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="-338.0062" Y="969.5461" Z="54.29" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="195139" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-338.0062" Y="969.5461" Z="54.29" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="-163.8283" Y="973.4586" Z="54.29" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="195140" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-163.8283" Y="973.4586" Z="54.29" />
+		</If>
+	</If>
+
+	<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+		<If Condition="Me.IsAlliance" >
+			<If Condition="IsQuestCompleted(25316)" > <!-- If Has Hyjal Portal Available -->
+				<CustomBehavior File="FlyTo" X="-8211.945" Y="413.7261" Z="117.7627" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" MobId="207692" NonCompeteDistance="0" TerminateWhen="Me.MapId != 0" X="-8211.945" Y="413.7261" Z="117.7627" />
+			<Else> <!-- Boat to Darnassus -->
+				<CustomBehavior File="FlyTo" X="-8641.401" Y="1324.443" Z="5.505301" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="UseTransport" TransportId="176310"
+					WaitAtX="-8641.401" WaitAtY="1324.443" WaitAtZ="5.505301" 
+					TransportStartX="-8650.719" TransportStartY="1346.051" TransportStartZ="0.04218207"
+					TransportEndX="8162.587" TransportEndY="1005.365" TransportEndZ="-0.04571009"
+					StandOnX="-8643.596" StandOnY="1342.503" StandOnZ="6.104574"
+					GetOffX="8179.11" GetOffY="1002.75" GetOffZ="6.817571" />
+			</Else>
+			</If>
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="2067.239" Y="286.846" Z="97.03265" />
+			<CustomBehavior File="UseTransport" TransportId="164871"
+				WaitAtX="2067.239" WaitAtY="286.846" WaitAtZ="97.03265"
+				TransportStartX="2062.376" TransportStartY="292.998" TransportStartZ="114.973"
+				TransportEndX="1833.509" TransportEndY="-4391.543" TransportEndZ="152.7679"
+				StandOnX="2067.527" StandOnY="296.0905" StandOnZ="97.21635"
+				GetOffX="1842.996" GetOffY="-4393.846" GetOffZ="135.233" /> <!-- Zeppelin to Durotar -->
+		</If>
+	</If>
+	
+	<If Condition="Me.IsAlliance" >
+		<SetVendor>
+			<Vendors>
+				<!-- Talonbranch Glade - Felwood -->
+				<Vendor Nav="Fly" Name="Willard Harrington" Entry="48258" Type="Repair" X="6193.27" Y="-1946.21" Z="568.3517" />
+				<!-- Everlook -->
+				<Vendor Nav="Fly" Name="Blixxrak" Entry="11183" Type="Repair" X="6742.888" Y="-4694.972" Z="721.3699" />
+				<Vendor Nav="Fly" Name="Nixxrak" Entry="11182" Type="Repair" X="6740.854" Y="-4691.69" Z="721.3699" />
+				<Vendor Nav="Fly" Name="Wixxrak" Entry="11184" Type="Repair" X="6733.39" Y="-4699.038" Z="721.3698" />
+			</Vendors>
+		</SetVendor>
+	</If>
+	<If Condition="Me.IsHorde" >
+		<SetVendor>
+			<Vendors>
+				<!-- Irontree Clearing - Felwood -->
+				<Vendor Nav="Fly" Name="Kester Killbomb" Entry="48228" Type="Repair" X="6859.46" Y="-1569.65" Z="496.9925" />
+				<!-- Everlook -->
+				<Vendor Nav="Fly" Name="Blixxrak" Entry="11183" Type="Repair" X="6742.888" Y="-4694.972" Z="721.3699" />
+				<Vendor Nav="Fly" Name="Nixxrak" Entry="11182" Type="Repair" X="6740.854" Y="-4691.69" Z="721.3699" />
+				<Vendor Nav="Fly" Name="Wixxrak" Entry="11184" Type="Repair" X="6733.39" Y="-4699.038" Z="721.3698" />
+			</Vendors>
+		</SetVendor>
+	</If>
+	
+	<CustomBehavior File="Message" Text="Checking for some of the rep giving quests..." LogColor="Green" />
+	
+	<PickUp Nav="Fly" QuestName="Stupid Drizle!" QuestId="28362" GiverName="Ferli" GiverId="48461" />
+	<PickUp Nav="Fly" QuestName="Deadwood of the North" QuestId="28338" GiverName="Nafien" GiverId="15395" />
+	<PickUp Nav="Fly" QuestName="Disarming Bears" QuestId="28366" GiverName="Nafien" GiverId="15395" />
+	
+	<TurnIn Nav="Fly" QuestName="Stupid Drizle!" QuestId="28362" TurnInName="Drizle" TurnInId="47556" />
+	
+	<PickUp Nav="Fly" QuestName="The Chieftain's Key" QuestId="28364" GiverName="Drizle" GiverId="47556" />
+	<Objective Nav="Fly" QuestName="The Chieftain's Key" QuestId="28364" Type="CollectItem" ItemId="63695" CollectCount="1" />
+	<TurnIn Nav="Fly" QuestName="The Chieftain's Key" QuestId="28364" TurnInName="Drizle" TurnInId="47556" />
+	
+	<Objective Nav="Fly" QuestName="Disarming Bears" QuestId="28366" Type="CollectItem" ItemId="63689" CollectCount="7" />
+	<Objective Nav="Fly" QuestName="Deadwood of the North" QuestId="28338" Type="KillMob" MobId="7156" KillCount="15" />
+	
+	<TurnIn Nav="Fly" QuestName="Deadwood of the North" QuestId="28338" TurnInName="Nafien" TurnInId="15395" />
+	<TurnIn Nav="Fly" QuestName="Disarming Bears" QuestId="28366" TurnInName="Nafien" TurnInId="15395" />
+	
+	<If Condition="(!HasQuest(28524) &amp;&amp; !IsQuestCompleted(28524)) &amp;&amp; (!IsQuestCompleted(28544) || !IsQuestCompleted(28545)) &amp;&amp; !IsQuestCompleted(28768)
+					&amp;&amp; !IsQuestCompleted(28460)" >
+		<PickUp Nav="Fly" QuestName="Delivery for Donova" QuestId="28524" GiverName="Salfa" GiverId="11556" />
+	</If>
+	<PickUp Nav="Fly" QuestName="Winterfall Activity" QuestId="28522" GiverName="Salfa" GiverId="11556" />
+	<If Condition="HasQuest(28524) &amp;&amp; IsQuestCompleted(28524)" >
+		<TurnIn Nav="Fly" QuestName="Delivery for Donova" QuestId="28524" TurnInName="Donova Snowden" TurnInId="9298" />
+	</If>
+	<PickUp Nav="Fly" QuestName="Threat of the Winterfall" QuestId="28460" GiverName="Donova Snowden" GiverId="9298" />
+	<PickUp Nav="Fly" QuestName="Falling to Corruption" QuestId="28464" GiverName="Donova Snowden" GiverId="9298" />
+	
+	<TurnIn Nav="Fly" QuestName="Falling to Corruption" QuestId="28464" TurnInType="Object" TurnInName="Winterfall Cauldron" 
+		TurnInId="207179" X="6840.541" Y="-2499.189" Z="560.4856" />
+	<PickUp Nav="Fly" QuestName="Mystery Goo" QuestId="28467" GiverType="Object" GiverName="Winterfall Cauldron"
+		GiverId="207179" X="6840.541" Y="-2499.189" Z="560.4856" />
+	
+	<Objective Nav="Fly" QuestName="Winterfall Activity" QuestId="28522" Type="CollectItem" ItemId="21383" CollectCount="10" />
+	<Objective Nav="Fly" QuestName="Threat of the Winterfall" QuestId="28460" Type="KillMob" MobId="48586" KillCount="15" />
+	
+	<TurnIn Nav="Fly" QuestName="Mystery Goo" QuestId="28467" TurnInName="Donova Snowden" TurnInId="9298" />
+	<TurnIn Nav="Fly" QuestName="Threat of the Winterfall" QuestId="28460" TurnInName="Donova Snowden" TurnInId="9298" />
+	<PickUp Nav="Fly" QuestName="Winterfall Runners" QuestId="28469" GiverName="Donova Snowden" GiverId="9298" />
+	<PickUp Nav="Fly" QuestName="Scalding Signs" QuestId="28530" GiverName="Donova Snowden" GiverId="9298" />
+	
+	<If Condition="HasQuest(28656)" >
+		<TurnIn Nav="Fly" QuestName="Strange Life Forces" QuestId="28656" TurnInName="Witch Doctor Mau'ari" TurnInId="10307" />
+	</If>
+	
+	<Objective Nav="Fly" QuestName="Scalding Signs" QuestId="28530" Type="CollectItem" ItemId="64449" CollectCount="7" />
+	<Objective Nav="Fly" QuestName="Winterfall Runners" QuestId="28469" Type="CollectItem" ItemId="12829" CollectCount="1" />
+	
+	<TurnIn Nav="Fly" QuestName="Winterfall Runners" QuestId="28469" TurnInName="Donova Snowden" TurnInId="9298" />
+	<TurnIn Nav="Fly" QuestName="Scalding Signs" QuestId="28530" TurnInName="Donova Snowden" TurnInId="9298" />
+	<PickUp Nav="Fly" QuestName="High Chief Winterfall" QuestId="28470" GiverName="Donova Snowden" GiverId="9298" />
+	
+	<Objective Nav="Fly" QuestName="High Chief Winterfall" QuestId="28470" Type="KillMob" MobId="10738" KillCount="1" />
+	<If Condition="!HasItem(12842) &amp;&amp; HasQuest(28470) &amp;&amp; !IsQuestCompleted(28471)" >
+		<CustomBehavior File="CollectThings" MobId="10738" MobState="Alive" CollectItemId="12842" CollectItemCount="1"
+			X="6506.092" Y="-3263.684" Z="573.2089" />
+	</If>
+	<If Condition="HasItem(12842) &amp;&amp; !IsQuestCompleted(28471)" >
+		<PickUp QuestName="The Final Piece" QuestId="28471" GiverType="Item" GiverName="Crudely-written Log" GiverId="12842" />
+	</If>
+	
+	<TurnIn Nav="Fly" QuestName="High Chief Winterfall" QuestId="28470" TurnInName="Donova Snowden" TurnInId="9298" />
+	<TurnIn Nav="Fly" QuestName="The Final Piece" QuestId="28471" TurnInName="Donova Snowden" TurnInId="9298" />
+
+	<If Condition="HasQuest(28522)" >
+		<TurnIn Nav="Fly" QuestName="Winterfall Activity" QuestId="28522" TurnInName="Salfa" TurnInId="11556" />
+		<While Condition="GetItemCount(21383) &gt;= 5" >
+			<CustomBehavior File="InteractWith" MobId="11556" NonCompeteDistance="0" WaitTime="1000" X="6896.847" Y="-2289.764" Z="586.8688" />
+			<CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton1:Click()" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</While>
+	</If>
+	
+	<While Condition="Me.GetReputationLevelWith(576) &lt; WoWUnitReaction.Exalted">
+		<!-- Turn in the Winterfall Spirit Beads -->
+		<If Condition="GetItemCount(21383) &gt;= 5" >
+			<CustomBehavior File="FlyTo" X="6896.847" Y="-2289.764" Z="586.8688" />
+			<While Condition="GetItemCount(21383) &gt;= 5" >
+				<CustomBehavior File="InteractWith" MobId="11556" NonCompeteDistance="0" WaitTime="1000" X="6896.847" Y="-2289.764" Z="586.8688" />
+				<CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton1:Click()" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+			</While>
+		</If>
+		<!-- Turn in the Deadwood Headdress Feather -->
+		<If Condition="GetItemCount(21377) &gt;= 5" >
+			<CustomBehavior File="FlyTo" X="6815.132" Y="-2082.949" Z="624.2318" />
+			<While Condition="GetItemCount(21383) &gt;= 5" >
+				<CustomBehavior File="InteractWith" MobId="15395" NonCompeteDistance="0" WaitTime="1000" X="6815.132" Y="-2082.949" Z="624.2318" />
+				<CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton1:Click()" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+			</While>
+		</If>
+		<CustomBehavior File="FlyTo" X="6788.392" Y="-2001.37" Z="565.7265" />
+		<SetGrindArea>
+			<GrindArea>
+   
+            <TargetMinLevel>40</TargetMinLevel>
+            <TargetMaxLevel>63</TargetMaxLevel>
+   
+            <Factions>82</Factions>
+
+            <Hotspots>
+				<Hotspot X="6788.392" Y="-2001.37" Z="565.7265" />
+				<Hotspot X="6826.622" Y="-1958.529" Z="551.3492" />
+				<Hotspot X="6866.464" Y="-1904.136" Z="552.1811" />
+				<Hotspot X="6907.39" Y="-1850.546" Z="569.0536" />
+				<Hotspot X="6877.998" Y="-1815.704" Z="569.6924" />
+				<Hotspot X="6816.212" Y="-1842.992" Z="553.3897" />
+				<Hotspot X="6769.574" Y="-1878.444" Z="550.7959" />
+				<Hotspot X="6719.445" Y="-1897.012" Z="548.1373" />
+				<Hotspot X="6670.664" Y="-1939.418" Z="550.1642" />
+				<Hotspot X="6617.186" Y="-1928.8" Z="548.4045" />
+				<Hotspot X="6618.873" Y="-2012.368" Z="552.3138" />
+				<Hotspot X="6692.382" Y="-1993.306" Z="560.7837" />
+				<Hotspot X="6740.704" Y="-1952.141" Z="550.2806" />
+            </Hotspots>
+
+			</GrindArea>
+		</SetGrindArea>
+		<GrindTo Condition="GetItemCount(21377) &gt;= 20 || GetItemCount(21383) &gt;= 20 || Me.GetReputationLevelWith(576) &gt;= WoWUnitReaction.Exalted" GoalText="Collecting Headdress Feathers" />
+	</While>
+	
+	<CustomBehavior File="DeleteItems" Ids="21377, 21383" />
+	<CustomBehavior File="Message" Text="Congrats on hitting exalted! Profile will terminate." LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+
+</QuestOrder>
+</HBProfile>

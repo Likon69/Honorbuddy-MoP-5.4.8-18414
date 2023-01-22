@@ -1,0 +1,137 @@
+<HBProfile>
+
+	<Name>Stormwind Cooking Dailies ($Rev$)</Name>
+	<MinLevel>10</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="Message" Text="ERROR!! Somehow you ended up starting an Alliance profile. Terminating." LogColor="Red" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Stormwind Cooking Daily Routine...Checking Location" LogColor="Green" />
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Stormwind -->
+		<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684)) &gt;= 100" >
+			<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+			<CustomBehavior File="ForcedDismount" />
+		</If>
+		<UseMount Value="False" />
+		<CustomBehavior File="InteractWith" MobId="215119" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+		<UseMount Value="True" />
+	</If>
+	<If Condition="Me.MapId == 571" >
+		<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0"
+			TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+	</If>
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487
+					&amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557" >
+					<!-- Outlands, but not Ghostlands/Eversong/Silvermoon or Azure/Bloodmyst/Exodar -->
+		<CustomBehavior File="FlyTo" X="-338.0062" Y="969.5461" Z="54.29" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="195139" NonCompeteDistance="0"
+			TerminateWhen="Me.MapId != 530" X="-338.0062" Y="969.5461" Z="54.29" />
+	</If>
+	<If Condition="Me.MapId == 1" >
+		<CustomBehavior File="FlyTo" X="8179.11" Y="1002.75" Z="6.817571" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="UseTransport" TransportId="176310"
+			WaitAtX="8179.11" WaitAtY="1002.75" WaitAtZ="6.817571" 
+			TransportStartX="8162.587" TransportStartY="1005.365" TransportStartZ="-0.04571009"
+			TransportEndX="-8650.719" TransportEndY="1346.051" TransportEndZ="0.04218207"
+			StandOnX="8162.587" StandOnY="1005.365" StandOnZ="6.18"
+			GetOffX="-8641.401" GetOffY="1324.443" GetOffZ="5.505301" />
+	</If>
+	
+	<If Condition="!HasQuest(26190) &amp;&amp; !HasQuest(26177) &amp;&amp; !HasQuest(26192) &amp;&amp; !HasQuest(26153) &amp;&amp; !HasQuest(26183)" >
+		<CustomBehavior File="Message" Text="Grabbing Daily from Robby Flay" LogColor="CornflowerBlue" />
+		<CustomBehavior File="FlyTo" X="-8824.683" Y="845.2827" Z="99.46233" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.GetSkill(Styx.SkillLine.Cooking).CurrentValue &lt; 1" >
+			<CustomBehavior File="ForceTrainRiding" MobId="42288" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</If>
+		<While Condition="HasQuestAvailable(42288)" >
+			<CustomBehavior File="InteractWith" MobId="42288" InteractByQuestFrameDisposition="Ignore" NonCompeteDistance="0" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+	
+	<If Condition="HasQuest(26190)" >
+		<CustomBehavior File="Message" Text="Starting Quest: A Fisherman's Feast" LogColor="CornflowerBlue" />
+		<Objective Nav="Fly" QuestName="A Fisherman's Feast" QuestId="26190" Type="CollectItem" ItemId="57245" CollectCount="6" />
+		<TurnIn Nav="Fly" QuestName="A Fisherman's Feast" QuestId="26190" TurnInName="Robby Flay" TurnInId="42288" />
+	</If>
+	
+	<If Condition="HasQuest(26177)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Feeling Crabby? (untested, may fail underwater?)" LogColor="CornflowerBlue" />
+		<Objective Nav="Fly" QuestName="Feeling Crabby?" QuestId="26177" Type="CollectItem" ItemId="57175" CollectCount="6" />
+		<TurnIn Nav="Fly" QuestName="Feeling Crabby?" QuestId="26177" TurnInName="Robby Flay" TurnInId="42288" />
+	</If>
+	
+	<If Condition="HasQuest(26192)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Orphans Like Cookies Too!" LogColor="CornflowerBlue" />
+		<Objective Nav="Fly" QuestName="Orphans Like Cookies Too!" QuestId="26192" Type="CollectItem" ItemId="57246" CollectCount="4" />
+		<TurnIn Nav="Fly" QuestName="Orphans Like Cookies Too!" QuestId="26192" TurnInName="Robby Flay" TurnInId="42288" />
+	</If>
+	
+	<If Condition="HasQuest(26153)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Penny's Pumpkin Pancakes" LogColor="CornflowerBlue" />
+		<Objective Nav="Fly" QuestName="Penny's Pumpkin Pancakes" QuestId="26153" Type="CollectItem" ItemId="57137" CollectCount="6" />
+		<TurnIn Nav="Fly" QuestName="Penny's Pumpkin Pancakes" QuestId="26153" TurnInName="Robby Flay" TurnInId="42288" />
+	</If>
+	
+	<If Condition="HasQuest(26183)" >
+		<CustomBehavior File="Message" Text="Starting Quest: The King's Cider" LogColor="CornflowerBlue" />
+		<Objective Nav="Fly" QuestName="The King's Cider" QuestId="26183" Type="CollectItem" ItemId="57197" CollectCount="12" />
+		<TurnIn Nav="Fly" QuestName="The King's Cider" QuestId="26183" TurnInName="Robby Flay" TurnInId="42288" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Double checking for training..." LogColor="Orange" />
+	<CustomBehavior File="ForceTrainRiding" MobId="42288" />
+
+	<CustomBehavior File="Message" Text="Stormwind Cooking Daily Complete" LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+		
+</QuestOrder>
+</HBProfile>

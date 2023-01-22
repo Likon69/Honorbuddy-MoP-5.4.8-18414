@@ -1,0 +1,200 @@
+<HBProfile>
+	<Name>Eastern Kingdoms Memory Block ($Rev$)</Name>
+	<MinLevel>60</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<CustomBehavior File="Message" Text="Scanning for Eastern Kingdoms Memories..." LogColor="LawnGreen" />
+	
+	<If Condition="!(CanFly())" >
+		<If Condition="!(StyxWoW.FlightChecksDisabled)" >
+			<CustomBehavior File="Message" Text="WARNING: Detected that this HB Account can not fly! Flying mounts will not work!" LogColor="Red" />
+		<ElseIf Condition="Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt; 225" >
+			<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.Gold &gt;= 500" >
+				<CustomBehavior File="Message" Text="Flying not trained but can be afforded/we are eligible. If you wish to fly using these profiles, you must go train first!" LogColor="Red" />
+			<Else>
+				<CustomBehavior File="Message" Text="WARNING: Detected that this character needs flight training! Flying mounts will not work!" LogColor="Red" />
+			</Else>
+			</If>
+		</ElseIf>
+		<ElseIf Condition="Mount.FlyingMounts.Count() == 0" >
+			<CustomBehavior File="Message" Text="WARNING: Detected that this character has no flying mounts! Flying will not work!" LogColor="Red" />
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="Message" Text="WARNING: For reasons unknown, Animus detects you are not flight capable. If this is incorrect, ignore this message. Otherwise, please train for best results!" LogColor="Red" />
+		</Else>
+		</If>
+	</If>
+	
+	<If Condition="IsAchievementCompleted(1676)" > <!-- Eastern Kingdoms -->
+		<CustomBehavior File="Message" Text="Animus reports 100% syncronization. No unexperienced memories detected. Halting Animus (until linked parsing can be established)." LogColor="Orange" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<If Condition="Me.MapId != 0 &amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433" >
+		<CustomBehavior File="Message" Text="Current Location reads invalid. Moving to location relevant to memory recall." LogColor="Orange" />
+	</If>
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Stormwind/Undercity -->
+		<If Condition="Me.IsAlliance" >
+			<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684) &gt;= 100)" >
+				<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="UserSettings" UseMount="False" />
+			<CustomBehavior File="InteractWith" MobId="215119" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326) &gt;= 100)" >
+				<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="UserSettings" UseMount="False" />
+			<If Condition="!IsAchievementCompleted(4908)" > <!-- Ghostlands -->
+				<CustomBehavior File="InteractWith" MobId="215126" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1730.643" Y="922.8421" Z="470.7326" /> <!-- Silvermoon -->
+			<Else>
+				<CustomBehavior File="InteractWith" MobId="215124" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1730.643" Y="922.8421" Z="470.7326" /> <!-- Undercity -->
+			</Else>
+			</If>
+		</If>
+		<CustomBehavior File="UserSettings" UseMount="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+		</If>
+	</If>
+	
+	<!-- Needs conditional for Ghostlands -->
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487
+		&amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557" > <!-- Outlands, but not Ghostlands/Eversong/Silvermoon or Azure/Bloodmyst/Exodar -->
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="-338.0062" Y="969.5461" Z="54.29" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="195139" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-338.0062" Y="969.5461" Z="54.29" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="-163.8283" Y="973.4586" Z="54.29" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="195140" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-163.8283" Y="973.4586" Z="54.29" />
+		</If>
+	</If>
+	
+	<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.IsAlliance" >
+			<If Condition="Me.ZoneId == 3525 || Me.ZoneId == 3524 || Me.ZoneId == 3557" > <!-- If in Draenei starter area -->
+				<RunTo X="-4043.154" Y="-11570.57" Z="-138.442" />
+				<CustomBehavior File="InteractWith" MobId="207996" NonCompeteDistance="0" TerminateWhen="Me.ZoneId != 3557" X="-4043.154" Y="-11570.57" Z="-138.442" />
+			</If>
+			<!-- Boat from Darnassus -->
+			<CustomBehavior File="FlyTo" X="8179.11" Y="1002.75" Z="6.817571" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="UseTransport" TransportId="176310"
+				WaitAtX="8179.11" WaitAtY="1002.75" WaitAtZ="6.817571" 
+				TransportStartX="8162.587" TransportStartY="1005.365" TransportStartZ="-0.04571009"
+				TransportEndX="-8650.719" TransportEndY="1346.051" TransportEndZ="0.04218207"
+				StandOnX="8162.587" StandOnY="1005.365" StandOnZ="6.18"
+				GetOffX="-8641.401" GetOffY="1324.443" GetOffZ="5.505301" />
+		</If>
+		<If Condition="Me.IsHorde" > <!-- Org to UC -->
+			<CustomBehavior File="FlyTo" X="1844.718" Y="-4395.62" Z="135.2326" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="UseTransport" TransportId="164871"
+					WaitAtX="1844.718" WaitAtY="-4395.62" WaitAtZ="135.2326"
+					TransportStartX="1833.509" TransportStartY="-4391.543" TransportStartZ="152.7679"
+					TransportEndX="2062.376" TransportEndY="292.998" TransportEndZ="114.973"
+					StandOnX="1835.482" StandOnY="-4386.239" StandOnZ="135.0147" 
+					GetOffX="2070.155" GetOffY="289.2588" GetOffZ="97.0315" />
+		</If>
+	</If>
+	
+	<CustomBehavior File="Message" Text="Parsing Eastern Kingdoms Block for unexperienced memories..." LogColor="CornflowerBlue" />
+	
+<!-- Alliance Memory Blocks -->
+
+	<If Condition="Me.IsAlliance &amp;&amp; !IsAchievementCompleted(4903)" > <!-- Westfall and Duskwood -->
+		<CustomBehavior File="Message" Text="Westfall and Duskwood memories detected. Moving to synchronize." LogColor="CornflowerBlue" />
+		<CustomBehavior File="LoadProfile" ProfileName="Eastern Kingdoms\[Animus] Westfall [Brodie]" />
+	</If>
+
+	<!-- Loch and Wetlands -->
+	<!--<If Condition="Me.IsAlliance &amp;&amp; !IsAchievementCompleted(4899)" >
+		<CustomBehavior File="Message" Text="Loch Modan and Wetlands memories detected. Moving to synchronize." LogColor="CornflowerBlue" />
+		<CustomBehavior File="LoadProfile" ProfileName="Eastern Kingdoms\[Animus] Loch Modan [Brodie]" />
+	</If> -->
+	
+<!-- Horde Memory Blocks -->
+
+	<If Condition="Me.IsHorde &amp;&amp; !IsAchievementCompleted(4908)" > <!-- Ghostlands -->
+		<CustomBehavior File="Message" Text="Ghostlands memories detected. Moving to synchronize." LogColor="CornflowerBlue" />
+		<If Condition="Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487" >
+			<CustomBehavior File="FlyTo" X="1805.869" Y="340.3689" Z="70.66011" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="184503" NonCompeteDistance="0" TerminateWhen="Me.ZoneId == 3487" X="1805.869" Y="340.3689" Z="70.66011" />
+		</If>
+		<CustomBehavior File="LoadProfile" ProfileName="Eastern Kingdoms\[Animus] Ghostlands [Brodie]" />
+	</If>
+	
+	<If Condition="Me.ZoneId == 3430 || Me.ZoneId == 3433 || Me.ZoneId == 3487" >
+		<RunTo X="10039.67" Y="-7000.584" Z="61.97303" />
+		<CustomBehavior File="InteractWith" MobId="184502" NonCompeteDistance="0" TerminateWhen="Me.ZoneId != 3487" X="10039.67" Y="-7000.584" Z="61.97303" />
+	</If>
+
+	<If Condition="Me.IsHorde &amp;&amp; !IsAchievementCompleted(4894)" > <!-- Silverpine Forest -->
+		<CustomBehavior File="Message" Text="Silverpine Forest memories detected. Moving to synchronize." LogColor="CornflowerBlue" />
+		<CustomBehavior File="LoadProfile" ProfileName="Eastern Kingdoms\[Animus] Silverpine Forest [Brodie]" />
+	</If>
+	
+	<!-- Hillsbrad Foothills -->
+	<If Condition="Me.IsHorde &amp;&amp; !IsAchievementCompleted(4895)" > <!-- Hillsbrad Foothills -->
+		<CustomBehavior File="Message" Text="Hillsbrad Foothills memories detected. Moving to synchronize." LogColor="CornflowerBlue" />
+		<CustomBehavior File="LoadProfile" ProfileName="Eastern Kingdoms\[Animus] Hillsbrad Foothills H [Brodie]" />
+	</If>
+	
+	<!-- Arathi Highlands -->
+	<!--<If Condition="Me.IsHorde &amp;&amp; !IsAchievementCompleted(4896)" > 
+		<CustomBehavior File="Message" Text="Arathi Highlands memories detected. Moving to synchronize." LogColor="CornflowerBlue" />
+		<CustomBehavior File="LoadProfile" ProfileName="Eastern Kingdoms\[Animus] Arathi Highlands H [Brodie]" />
+	</If> -->
+
+</QuestOrder>
+</HBProfile>

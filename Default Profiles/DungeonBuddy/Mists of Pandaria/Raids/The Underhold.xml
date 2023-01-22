@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile xsi:noNamespaceSchemaLocation="../../DungeonbuddyProfile.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>The Underhold</Name>
+    <DungeonId>724</DungeonId>
+    <BossEncounters>
+        <Boss isFinal="false" entry="71454" name="Malkorok" killOrder="1" optional="false" X="1914.175" Y="-4951.174" Z="-198.9771"/>
+        <Boss isFinal="false" entry="72281" name="Spoils of Pandaria" killOrder="2" optional="false" X="1638.501" Y="-5126.527" Z="-271.0277" />
+        <Boss isFinal="true" entry="71529" name="Thok the Bloodthirsty" killOrder="3" optional="false" X="1257.95" Y="-5066.768" Z="-290.4679"/>      
+    </BossEncounters>
+    <Blackspots>
+        <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+    </Blackspots>
+</DungeonBuddyProfile>

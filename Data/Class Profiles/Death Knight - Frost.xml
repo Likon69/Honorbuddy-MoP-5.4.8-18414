@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassProfile Class="DeathKnight" Specialization="2" Name="Death Knight - Frost">
+	<TalentTree>
+		<Talent Tier="1" Index="3" Name="Unholy Blight" />
+		<Talent Tier="2" Index="1" Name="Lichborne" />
+		<Talent Tier="3" Index="3" Name="Asphyxiate" />
+		<Talent Tier="4" Index="1" Name="Death Pact" />
+		<Talent Tier="5" Index="1" Name="Blood Tap" />
+		<Talent Tier="6" Index="2" Name="Remorseless Winter" />
+	</TalentTree>
+	<WeightSet>
+		<DamagePerSecond>22</DamagePerSecond>
+		<Strength>20</Strength>
+		<Hit>18</Hit>
+		<Expertise>18</Expertise>
+		<CriticalStrike>17</CriticalStrike>
+		<Mastery>16</Mastery>
+		<Haste>15</Haste>
+		<AttackPower>5</AttackPower>
+		<Stamina>5</Stamina>
+		<Armor>0.01</Armor>
+	</WeightSet>
+</ClassProfile>

@@ -1,0 +1,368 @@
+<HBProfile>
+	<Name>Lorewalkers ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>91</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<QuestOrder IgnoreCheckpoints="True" >
+
+<CustomBehavior File="Message" Text="Checking Your Achievements..." LogColor="Green" />
+
+<!-- Starting Achievement Grind -->
+
+<!-- Jade Forest -->
+
+	<!-- Hozen Speech :: Hozen in the Mist 26,28 -->
+		<If Condition="!IsAchievementCompleted(6850, 1)">
+			<CustomBehavior File="FlyTo" X="2334.634" Y="-395.7367" Z="340.9126" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="211990" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The First Monks :: What is Worth Fighting For 35,30 -->
+		<While Condition="!IsAchievementCompleted(6858,3)">
+			<CustomBehavior File="FlyTo" X="2228.745" Y="-1043.703" Z="450.7707" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213415" WaitForNpcs="False" WaitTime="100" />
+		</While>
+
+	<!-- Xin Wo Yin the Broken Hearted :: Legend of the Brewfathers 37,30 -->
+		<If Condition="!IsAchievementCompleted(7230,2)">
+			<CustomBehavior File="FlyTo" X="2251.338" Y="-1148.391" Z="485.9378" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="12" MobId="213512" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- Spirits Binders :: The Dark Heart of the Mogu 42,17 -->
+		<If Condition="!IsAchievementCompleted(6754,3)">
+			<CustomBehavior File="FlyTo" X="2841.215" Y="-1494.876" Z="278.4822" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213333" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The Saurok :: Between a Saurok and a Hard Place 67,29 -->
+		<If Condition="!IsAchievementCompleted(6716,1)">
+			<CustomBehavior File="FlyTo" X="2280.264" Y="-3281.597" Z="4.69321" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213327" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The Emperor's Burden Part 1 :: The Seven Burdens of Shaohao 47,45 -->
+		<If Condition="!IsAchievementCompleted(6855,1)">
+			<CustomBehavior File="FlyTo" X="1544.397" Y="-1830.091" Z="244.6359" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="215799" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The Emperor's Burden Part 3 :: The Seven Burdens of Shaohao 55,56 -->
+		<If Condition="!IsAchievementCompleted(6855,3)">
+			<CustomBehavior File="FlyTo" X="1010.968" Y="-2444.642" Z="168.5979" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213421" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- Watersmithing :: Fish Tales 65,87 -->
+		<If Condition="!IsAchievementCompleted(6846,1)">
+			<CustomBehavior File="FlyTo" X="-419.9901" Y="-3159.355" Z="31.3167" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="215779" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+<!-- Krasarang Wilds -->
+
+	<!-- Legend of the Brewfathers - Quan Tou Kuo the Two Fisted 81,11 -->
+		<If Condition="!IsAchievementCompleted(7230,1)">
+			<CustomBehavior File="FlyTo" X="-471.5294" Y="-872.0529" Z="238.2615" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="12" MobId="213407" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- Ballad of Liu Lang - Waiting for the Turtle 72,30 -->
+		<If Condition="!IsAchievementCompleted(6856,4)">
+			<CustomBehavior File="FlyTo" X="-1082.229" Y="-435.3617" Z="0.4309874" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="215765" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The Dark Heart of the Mogu - The Lost Dynasty 50,31 -->
+		<If Condition="!IsAchievementCompleted(6754,2)">
+			<CustomBehavior File="FlyTo" X="-1102.646" Y="557.8542" Z="61.18446" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213332" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The Seven Burdens of Shaohao - The Emperor's Burden Part 4 40,56 -->
+		<If Condition="!IsAchievementCompleted(6855,4)">
+			<CustomBehavior File="FlyTo" X="-1656.415" Y="1053.903" Z="52.10649" />
+			<CustomBehavior File="FlyTo" X="-1772.862" Y="1054.125" Z="29.52081" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="MyCTM" X="-1828.245" Y="1053.021" Z="18.07574" />
+			<CustomBehavior File="MyCTM" X="-1851.722" Y="1090.378" Z="19.05372" />
+			<CustomBehavior File="MyCTM" X="-1875.91" Y="1090.374" Z="32.75456" />
+			<CustomBehavior File="MyCTM" X="-1877.859" Y="1050.391" Z="46.99002" />
+			<If Condition="!IsAchievementCompleted(6855,4)">
+				<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213422" WaitForNpcs="False" WaitTime="100" />
+			</If>
+			<CustomBehavior File="MyCTM" X="-1875.91" Y="1090.374" Z="32.75456" />
+			<CustomBehavior File="MyCTM" X="-1851.722" Y="1090.378" Z="19.05372" />
+			<CustomBehavior File="MyCTM" X="-1828.245" Y="1053.021" Z="18.07574" />
+			<CustomBehavior File="MyCTM" X="-1772.862" Y="1054.125" Z="29.52081" />
+			<CustomBehavior File="FlyTo" X="-1656.415" Y="1053.903" Z="52.10649" />
+		</If>
+
+	<!-- Hozen in the Mist - Hozen Maturity 52,87 -->
+		<If Condition="!IsAchievementCompleted(6850,2)">
+			<CustomBehavior File="FlyTo" X="-2803.497" Y="500.4576" Z="6.576682" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="MyCTM" X="-2846.362" Y="494.2367" Z="7.33888" />
+			<If Condition="!IsAchievementCompleted(6850,2)">
+				<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="211993" WaitForNpcs="False" WaitTime="100" />
+			</If>
+			<CustomBehavior File="MyCTM" X="-2803.497" Y="500.4576" Z="6.576682" />
+		</If>
+
+	<!-- Fish Tales - Origins 30,38 -->
+		<If Condition="!IsAchievementCompleted(6846,3)">
+			<CustomBehavior File="FlyTo" X="-1291.395" Y="1513.865" Z="14.11545" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="215782" WaitForNpcs="False" WaitTime="100" />
+			<MoveTo X="-1291.395" Y="1513.865" Z="14.11545" />
+		</If>
+
+	<!-- Between a Saurok and a Hard Place - Last Stand 32,29 -->
+		<If Condition="!IsAchievementCompleted(6716,4)">
+			<CustomBehavior File="FlyTo" X="-1094.306" Y="1326.061" Z="15.08876" />
+			<MoveTo X="-1036.793" Y="1414.273" Z="24.30009" />
+			<CustomBehavior File="InteractWith" MovementBy="ClickToMoveOnly" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213330" WaitForNpcs="False" WaitTime="100" X="-1036.793" Y="1414.273" Z="24.30009" />
+		</If>
+
+<!-- Valley of the Four Winds -->
+
+	<!-- Hozen in the Mist - Embracing the Passions 83,21 -->
+		<If Condition="!IsAchievementCompleted(6850,3)">
+			<CustomBehavior File="FlyTo" X="540.5446" Y="-581.9913" Z="258.388" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="215785" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- Fish Tales - Waterspeakers 61,34 -->
+		<If Condition="!IsAchievementCompleted(6846,2)">
+			<CustomBehavior File="FlyTo" X="192.5846" Y="280.8602" Z="153.7958" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="215780" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- Ballad of Liu Lang - A Most Famous Bill of Sale 55,47 -->
+		<If Condition="!IsAchievementCompleted(6856,2)">
+			<CustomBehavior File="FlyTo" X="-133.775" Y="512.4309" Z="214.2107" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213460" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- Ballad of Liu Lang - Wandering Widow 34,63 -->
+		<If Condition="!IsAchievementCompleted(6856,3)">
+			<CustomBehavior File="FlyTo" X="-579.3117" Y="1319.506" Z="148.7419" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213461" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- Ballad of Liu Lang - The Birthplace of Liu Lang 20,55 -->
+		<If Condition="!IsAchievementCompleted(6856,1)">
+			<CustomBehavior File="FlyTo" X="-366.07" Y="1882.07" Z="142.68" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213459" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- What Is Worth Fighting For :: Pandaren Fighting Tactics 18,31 -->
+		<If Condition="!IsAchievementCompleted(6858,1)">
+			<CustomBehavior File="FlyTo" X="253.9914" Y="1941.74" Z="163.6642" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="5" MobId="213413" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+<!-- Dread Wastes -->
+
+	<!-- Between a Saurok and a Hard Place - The Deserters 67,60 -->
+		<If Condition="!IsAchievementCompleted(6716,3)">
+			<CustomBehavior File="FlyTo" X="-751.8508" Y="2522.7" Z="131.8658" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213329" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- Mantid Society :: Heart of the Mantid Swarm 59,55 -->
+		<If Condition="!IsAchievementCompleted(6857,2)">
+			<CustomBehavior File="FlyTo" X="-544.569" Y="2932.057" Z="166.2875" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213410" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- Cycle of the Mantid :: Heart of the Mantid Swarm -->
+		<If Condition="!IsAchievementCompleted(6857,1)">
+			<CustomBehavior File="FlyTo" X="249.8448" Y="3543.879" Z="243.4411" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213409" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The Empress :: Heart of the Mantid Swarm 35,32 -->
+		<If Condition="!IsAchievementCompleted(6857,4)">
+			<CustomBehavior File="FlyTo" X="259.8452" Y="4235.083" Z="269.1455" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213412" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- Amber :: Heart of the Mantid Swarm 52,10 -->
+		<If Condition="!IsAchievementCompleted(6857,3)">
+			<CustomBehavior File="FlyTo" X="860.9221" Y="3270.872" Z="219.5824" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213411" TerminateWhen="IsAchievementCompleted(6857,3)" WaitTime="100" />
+		</If>
+
+<!-- Townlong Steppes -->
+
+	<!-- The Song of Yaungol :: Trapped in a Strange Land 84,73 -->
+		<If Condition="!IsAchievementCompleted(6847,4)">
+			<CustomBehavior File="FlyTo" X="1772.287" Y="2251.217" Z="389.3224" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213420" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The Emperor's Burden Part 5 :: The Seven Burdens of Shaohao 37,62 -->
+		<If Condition="!IsAchievementCompleted(6855,5)">
+			<CustomBehavior File="FlyTo" X="2146.604" Y="4911.781" Z="198.5034" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213445" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The Song of Yaungol :: Dominance 65,50 -->
+		<If Condition="!IsAchievementCompleted(6847,2)">
+			<CustomBehavior File="FlyTo" X="2643.001" Y="3320.186" Z="428.4346" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213418" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+<!-- Kun-Lai Summit -->
+
+	<!-- The Song of Yaungol :: Yaungol Tactics 50,79 -->
+		<If Condition="!IsAchievementCompleted(6847,1)">
+			<CustomBehavior File="FlyTo" X="2313.5" Y="1691.85" Z="507.2287" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213417" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- Hozen in the Mist - The Hozen Ravage 45,61 -->
+		<If Condition="!IsAchievementCompleted(6850,4)">
+			<CustomBehavior File="FlyTo" X="3030.748" Y="1980.186" Z="642.9791" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="211994" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- Legend of the Brewfathers - Ren Yun the Blind 44,53 -->
+		<If Condition="!IsAchievementCompleted(7230,3)">
+			<CustomBehavior File="FlyTo" X="3433.502" Y="2041.166" Z="1215.926" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="12" MobId="213438" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The Emperor's Burden Part 2 :: The Seven Burdens of Shaohao 43,51 -->
+		<If Condition="!IsAchievementCompleted(6855,2)">
+			<CustomBehavior File="FlyTo" X="3480.005" Y="2102.063" Z="1084.04" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="215797" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The Emperor's Burden Part 7 :: The Seven Burdens of Shaohao 41,42 -->
+		<If Condition="!IsAchievementCompleted(6855,7)">
+			<CustomBehavior File="FlyTo" X="3849.682" Y="2269.881" Z="754.5825" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213455" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The Dark Heart of the Mogu - Valley of the Emperors 53,46 -->
+		<If Condition="!IsAchievementCompleted(6754,1)">
+			<CustomBehavior File="FlyTo" X="3681.819" Y="1517.052" Z="782.5496" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="MyCTM" X="3648.91" Y="1551.254" Z="769.8936" />
+			<CustomBehavior File="MyCTM" X="3632.512" Y="1558.066" Z="769.6773" />
+			<CustomBehavior File="MyCTM" X="3599.082" Y="1561.95" Z="757.9631" />
+			<CustomBehavior File="MyCTM" X="3603.684" Y="1605.704" Z="742.9809" />
+			<CustomBehavior File="MyCTM" X="3617.014" Y="1670.76" Z="743.8058" />
+			<If Condition="!IsAchievementCompleted(6754,1)">
+				<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213331" WaitForNpcs="False" WaitTime="100" />
+			</If>
+			<CustomBehavior File="MyCTM" X="3617.014" Y="1670.76" Z="743.8058" />
+			<CustomBehavior File="MyCTM" X="3603.684" Y="1605.704" Z="742.9809" />
+			<CustomBehavior File="MyCTM" X="3599.082" Y="1561.95" Z="757.9631" />
+			<CustomBehavior File="MyCTM" X="3632.512" Y="1558.066" Z="769.6773" />
+			<CustomBehavior File="MyCTM" X="3648.91" Y="1551.254" Z="769.8936" />
+			<CustomBehavior File="MyCTM" X="3681.819" Y="1517.052" Z="782.5496" />
+		</If>
+
+	<!-- What Is Worth Fighting For :: Victory in Kun-Lai 63,40 -->
+		<If Condition="!IsAchievementCompleted(6858,5)">
+			<CustomBehavior File="FlyTo" X="3914.105" Y="887.9652" Z="416.9436" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213511" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The Emperor's Burden Part 6 :: The Seven Burdens of Shaohao 67,48 -->
+		<If Condition="!IsAchievementCompleted(6855,6)">
+			<CustomBehavior File="FlyTo" X="3599.926" Y="592.1598" Z="615.4874" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213443" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The Song of Yaungol :: Yaungoil 72,63 -->
+		<If Condition="!IsAchievementCompleted(6847,3)">
+			<CustomBehavior File="FlyTo" X="2992.472" Y="355.2368" Z="500.0352" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="215798" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- Fish Tales - Role Call 74,83 -->
+		<If Condition="!IsAchievementCompleted(6846,4)">
+			<CustomBehavior File="FlyTo" X="2160.821" Y="183.6607" Z="478.0115" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="215783" WaitForNpcs="False" WaitTime="100" />
+			<RunTo X="2160.821" Y="183.6607" Z="478.0115" />
+		</If>
+
+<!-- Vale of Eternal Blossoms -->
+
+	<!-- What Is Worth Fighting For :: Together, We Are Strong 26,21 -->
+		<If Condition="!IsAchievementCompleted(6858,4)">
+			<CustomBehavior File="FlyTo" X="1580.561" Y="1807.981" Z="428.6351" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213416" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The Dark Heart of the Mogu - The Thunder King 40,77 -->
+		<If Condition="!IsAchievementCompleted(6754,4)">
+			<CustomBehavior File="FlyTo" X="640.3976" Y="1465.509" Z="410.9394" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213334" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- What Is Worth Fighting For :: Always Remember 52,68 -->
+		<If Condition="!IsAchievementCompleted(6858,2)">
+			<CustomBehavior File="FlyTo" X="802.3854" Y="1143.355" Z="483.7931" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213414" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+	<!-- The Emperor's Burden Part 8 :: The Seven Burdens of Shaohao 68,44 -->
+		<If Condition="!IsAchievementCompleted(6855,8)">
+			<CustomBehavior File="FlyTo" X="1196.933" Y="742.1113" Z="378.719" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213456" WaitForNpcs="False" WaitTime="100" />
+		</If>
+
+<!-- The Veiled Stair -->
+
+	<!-- Between a Saurok and a Hard Place - The Defiant 54,15 -->
+		<If Condition="!IsAchievementCompleted(6716,2)">
+			<CustomBehavior File="ForcedMount" MountType="Flying" />
+			<CustomBehavior File="FlyTo" X="1528.2" Y="-223.5002" Z="474.6359" />
+			<CustomBehavior File="MyCTM" X="1352.891" Y="9.459554" Z="486.8774" />
+			<CustomBehavior File="MyCTM" X="1483.445" Y="-20.20754" Z="488.1646" />
+			<CustomBehavior File="MyCTM" X="1507.874" Y="-52.20378" Z="487.9016" />
+			<CustomBehavior File="MyCTM" X="1593.341" Y="2.811497" Z="488.8774" />
+			<CustomBehavior File="MyCTM" X="1639.667" Y="-9.933112" Z="483.2637" />
+			<CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="4" MobId="213328" IgnoreCombat="true" WaitForNpcs="False" WaitTime="100" />
+			<DisableBehavior Name="Pull" />
+			<CustomBehavior File="ForcedMount" MountType="Flying" />
+			<CustomBehavior File="FlyTo" X="1528.2" Y="-223.5002" Z="474.6359" />
+			<EnableBehavior Name="Pull" />
+		</If>
+
+<CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="Did we win?!" />
+
+</QuestOrder>
+</HBProfile>

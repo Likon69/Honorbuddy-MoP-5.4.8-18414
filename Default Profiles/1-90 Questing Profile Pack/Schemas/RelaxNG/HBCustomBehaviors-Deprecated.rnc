@@ -1,0 +1,96 @@
+# =====
+# Original contribution by chinajade
+#   $Rev: 3160 $
+#   $Date: 2014-03-19 04:57:53 -0300 (qua, 19 mar 2014) $
+#
+# WARNING: DO NOT EDIT .xsd files.
+#   They are not authoritative and will be overwritten!
+#   Instead, regenerate the .xsd files from the .rnc 'sources'.
+#   Its a one-line command to do this. Please see README.txt
+#   for more information.
+# =====
+
+
+# We leave these 'undefined' to encourage the migration to non-deprecated behaviors.
+#
+
+# CustomBehavior |=
+#   element CustomBehavior
+#   {
+#     attribute File { "BasicInteractWith" },
+# 
+#     # DEPRECATED
+#   }
+
+
+ CustomBehavior |=
+   element CustomBehavior
+   {
+     attribute File { "BasicUseObject" },
+ 
+     # DEPRECATED
+   }
+
+
+# CustomBehavior |=
+#   element CustomBehavior
+#   {
+#     attribute File { "CastSpellOn" },
+# 
+#     # DEPRECATED
+#   }
+
+
+# CustomBehavior |=
+#   element CustomBehavior
+#   {
+#     attribute File { "Escort6641" },
+# 
+#     # DEPRECATED
+#   }
+
+
+# CustomBehavior |=
+#   element CustomBehavior
+#   {
+#     attribute File { "FindAndBeatNpcs" },
+# 
+#     # DEPRECATED
+#   }
+
+
+# CustomBehavior |=
+#   element CustomBehavior
+#   {
+#     attribute File { "IntotheRealmofShadows" },
+# 
+#     # DEPRECATED
+#   }
+
+
+# CustomBehavior |=
+#   element CustomBehavior
+#   {
+#     attribute File { "TheGiftThatKeepsOnGiving" },
+# 
+#     # DEPRECATED
+#   }
+
+
+# CustomBehavior |=
+#   element CustomBehavior
+#   {
+#     attribute File { "UseGameObject" },
+# 
+#     # DEPRECATED
+#   }
+
+
+# CustomBehavior |=
+#   element CustomBehavior
+#   {
+#     attribute File { "UseItemOn" },
+# 
+#     # DEPRECATED
+#   }
+

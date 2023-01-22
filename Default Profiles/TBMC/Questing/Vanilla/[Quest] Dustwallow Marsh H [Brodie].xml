@@ -1,0 +1,379 @@
+<HBProfile>
+
+	<Name>Dustwallow Marsh ($Rev$)</Name>
+	<MinLevel>30</MinLevel>
+	<MaxLevel>45</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Brackenwall Village -->
+		<Vendor Name="Zulrg" Entry="4884" Type="Repair" X="-3146.327" Y="-2873.776" Z="34.27455" />
+		<Vendor Name="Krak" Entry="4883" Type="Repair" X="-3112.938" Y="-2885.783" Z="35.2659" />
+		<!-- Tabetha's Farm -->
+		<Vendor Name="Regina Salister" Entry="44383" Type="Repair" X="-4042.56" Y="-3385.49" Z="38.05656" />
+		<!-- Mudsprocket -->
+		<Vendor Name="Razbo Rustgear" Entry="23571" Type="Repair" X="-4603.661" Y="-3210.939" Z="34.92611" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="25051" Name="Darkmist Extermination">
+	<Objective Type="UseObject" ObjectId="205267" UseCount="8">
+		<Hotspots>
+			<Hotspot X="-2816.503" Y="-2656.17" Z="33.25094" />
+			<Hotspot X="-2792.317" Y="-2565.209" Z="30.03977" />
+			<Hotspot X="-2747.168" Y="-2610.418" Z="28.12601" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="27229" Name="SMASH BROODQUEEN">
+	<Objective Type="CollectItem" ItemId="60883" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Darkmist Broodqueen" Id="45227" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-2747.168" Y="-2610.418" Z="28.12601" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="27256" Name="The Black Shield">
+	<Objective Type="CollectItem" ItemId="5959" CollectCount="5">
+		<CollectFrom>
+			<Mob Name="Darkmist Spider" Id="4376" />
+			<Mob Name="Darkmist Recluse" Id="4378" />
+			<Mob Name="Darkmist Silkspinner" Id="4379" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-2816.503" Y="-2656.17" Z="33.25094" />
+			<Hotspot X="-2792.317" Y="-2565.209" Z="30.03977" />
+			<Hotspot X="-2813.709" Y="-2662.961" Z="32.62172" />
+			<Hotspot X="-2828.228" Y="-2738.634" Z="34.27819" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="1168" Name="Army of the Black Dragon">
+	<Objective Type="KillMob" MobId="4328" KillCount="5">
+		<Hotspots>
+			<Hotspot X="-4708.686" Y="-3604.407" Z="45.92888" />
+			<Hotspot X="-4873.822" Y="-3644.856" Z="48.22576" />
+			<Hotspot X="-4954.823" Y="-3778.999" Z="44.74829" />
+			<Hotspot X="-4860.83" Y="-3890.835" Z="48.56344" />
+			<Hotspot X="-4748.48" Y="-3987.017" Z="46.19267" />
+			<Hotspot X="-4675.949" Y="-3912.646" Z="41.58908" />
+			<Hotspot X="-4618.002" Y="-3793.961" Z="39.23668" />
+			<Hotspot X="-4636.291" Y="-3712.518" Z="39.81807" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="HasQuest(25292)" >
+		<DisableBehavior Name="Pull, Combat" />
+		<CustomBehavior File="Message" Text="Compiling Kicker Quest..." LogColor="CornflowerBlue" />
+		<TurnIn QuestName="Next of Kin" QuestId="25292" TurnInName="Alto Stonespire" TurnInId="39144" />
+		<EnableBehavior Name="Pull, Combat" />
+	</If>
+	
+	<If Condition="!HasQuest(1201) &amp;&amp; !IsQuestCompleted(1201)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Dustwallow Marsh Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Brackenwall Village Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Theramore Spies" QuestId="1201" GiverName="Nazeer Bloodpike" GiverId="4791" />
+	<PickUp QuestName="Twilight of the Dawn Runner" QuestId="9437" GiverName="Balandar Brightstar" GiverId="17095" />
+	<PickUp QuestName="A Shambling Threat" QuestId="26682" GiverName="Krog" GiverId="4926" />
+	<PickUp QuestName="Darkmist Extermination" QuestId="25051" GiverName="Krog" GiverId="4926" />
+	<PickUp QuestName="Inspecting the Ruins" QuestId="27253" GiverName="Krog" GiverId="4926" />
+	<PickUp QuestName="The Hermit of Witch Hill" QuestId="27182" GiverName="Draz\'Zilb" GiverId="4501" />
+	<PickUp QuestName="SMASH BROODQUEEN" QuestId="27229" GiverName="Wanted Poster" GiverId="205332" />
+	
+	<DisableBehavior Name="Pull" />
+	<TurnIn QuestName="Inspecting the Ruins" QuestId="27253" TurnInName="Inspector Tarem" TurnInId="23567" />
+	<PickUp QuestName="Suspicious Hoofprints" QuestId="27259" GiverName="Suspicious Hoofprint" GiverId="187273" 
+		GiverType="Object" X="-3698.716" Y="-2535.293" Z="69.25311" />
+	<PickUp QuestName="Lieutenant Paval Reethe" QuestId="27260" GiverName="Theramore Guard Badge" GiverId="21042"
+		GiverType="Object" X="-3721.712" Y="-2539.027" Z="69.5668" />
+	<PickUp QuestName="The Black Shield" QuestId="27254" GiverName="Black Shield" GiverId="20992" 
+		GiverType="Object" X="-3730.354" Y="-2531.032" Z="69.62418" />
+	<TurnIn QuestName="Suspicious Hoofprints" QuestId="27259" TurnInName="Krog" TurnInId="4926" />
+	<TurnIn QuestName="Lieutenant Paval Reethe" QuestId="27260" TurnInName="Krog" TurnInId="4926" />
+	<TurnIn QuestName="The Black Shield" QuestId="27254" TurnInName="Krog" TurnInId="4926" />
+	
+	<PickUp QuestName="The Black Shield" QuestId="27255" GiverName="Krog" GiverId="4926" />
+	<PickUp QuestName="Talk to Ogron" QuestId="27306" GiverName="Krog" GiverId="4926" />
+	<TurnIn QuestName="The Black Shield" QuestId="27255" TurnInName="Do'gol" TurnInId="5087" />
+	<PickUp QuestName="The Black Shield" QuestId="27256" GiverName="Do'gol" GiverId="5087" />
+	<EnableBehavior Name="Pull" />
+	
+	<Objective QuestName="Darkmist Extermination" QuestId="25051" Type="UseObject" ObjectId="205267" UseCount="8" />
+	<Objective QuestName="SMASH BROODQUEEN" QuestId="27229" Type="CollectItem" ItemId="60883" CollectCount="1" />
+	<Objective QuestName="The Black Shield" QuestId="27256" Type="CollectItem" ItemId="5959" CollectCount="5" />
+
+	<DisableBehavior Name="Pull" />
+	<TurnIn QuestName="The Black Shield" QuestId="27256" TurnInName="Do'gol" TurnInId="5087" />
+	<PickUp QuestName="The Black Shield" QuestId="27257" GiverName="Do'gol" GiverId="5087" />
+	<TurnIn QuestName="The Black Shield" QuestId="27257" TurnInName="Krog" TurnInId="4926" />
+	<TurnIn QuestName="Darkmist Extermination" QuestId="25051" TurnInName="Krog" TurnInId="4926" />
+	<TurnIn QuestName="SMASH BROODQUEEN" QuestId="27229" TurnInName="Krog" TurnInId="4926" />
+	<EnableBehavior Name="Pull" />
+	
+	<Objective QuestName="Theramore Spies" QuestId="1201" Type="KillMob" MobId="4834" KillCount="9" />
+	<Objective QuestName="A Shambling Threat" QuestId="26682" Type="KillMob" MobId="4382" KillCount="7" />
+	<CustomBehavior File="InteractWith" QuestId="9437" QuestObjectiveIndex="1" MobId="17119" InteractByGossipOptions="1" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" X="-2883.668" Y="-3429.476" Z="40.05256" />
+	<DisableBehavior Name="Pull" />
+	<Objective QuestName="Twilight of the Dawn Runner" QuestId="9437" Type="CollectItem" ItemId="23657" CollectCount="1" />
+	
+	<DisableBehavior Name="Combat" />
+	<TurnIn QuestName="A Shambling Threat" QuestId="26682" TurnInName="Krog" TurnInId="4926" />
+	<TurnIn QuestName="Twilight of the Dawn Runner" QuestId="9437" TurnInName="Balandar Brightstar" TurnInId="17095" />
+	<TurnIn QuestName="Theramore Spies" QuestId="1201" TurnInName="Nazeer Bloodpike" TurnInId="4791" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<TurnIn QuestName="Talk to Ogron" QuestId="27306" TurnInName="Ogron" TurnInId="4983" />
+	<PickUp QuestName="Questioning Reethe" QuestId="27261" GiverName="Ogron" GiverId="4983" />
+	<While Condition="HasQuest(27261) &amp;&amp; !IsQuestCompleted(27261)" >
+		<CustomBehavior File="EscortGroup" QuestId="27261" EscortCompleteWhen="QuestCompleteOrFails" EscortNpcId="4983" />
+		<If Condition="!IsQuestCompleted(27261)" >
+			<CustomBehavior File="AbandonQuest" QuestId="27261" />
+			<PickUp QuestName="Questioning Reethe" QuestId="27261" GiverName="Ogron" GiverId="4983" />
+		</If>
+	</While>
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Questioning Reethe" QuestId="27261" TurnInName="Krog" TurnInId="4926" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<PickUp QuestName="The Black Shield" QuestId="27258" GiverName="Krog" GiverId="4926" />
+	<PickUp QuestName="Overlord Mok'Morokk's Concern" QuestId="27424" GiverName="Overlord Mok'Morokk" GiverId="4500" />
+	<PickUp QuestName="Check Up on Tabetha" QuestId="11213" GiverName="Nazeer Bloodpike" GiverId="4791" />
+	<PickUp QuestName="Identifying the Brood" QuestId="27414" GiverName="Draz'Zilb" GiverId="4501" />
+	<PickUp QuestName="Army of the Black Dragon" QuestId="1168" GiverName="Tharg" GiverId="4502" />
+
+	<TurnIn QuestName="The Black Shield" QuestId="27258" TurnInName="Mosarn" TurnInId="4943" />
+	
+	<PickUp QuestName="Return to Krog" QuestId="27292" GiverName="Mosarn" GiverId="4943" />
+	<TurnIn QuestName="Return to Krog" QuestId="27292" TurnInName="Krog" TurnInId="4926" />
+	
+	<PickUp QuestName="More than Coincidence" QuestId="27294" GiverName="Krog" GiverId="4926" />
+	<PickUp QuestName="The Grimtotem Plot" QuestId="27293" GiverName="Krog" GiverId="4926" />
+	
+	<CustomBehavior File="Message" Text="Compiling Swamplight Manor Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn QuestName="The Hermit of Witch Hill" QuestId="27182" TurnInName="Swamp Eye Jarl" TurnInId="4792" />
+	
+	<PickUp QuestName="Marsh Frog Legs" QuestId="27183" GiverName="Swamp Eye Jarl" GiverId="4792" />
+	<PickUp QuestName="What's Haunting Witch Hill?" QuestId="27188" GiverName="Mordant Grimsby" GiverId="23843" />
+	<PickUp QuestName="The Orc Report" QuestId="27244" GiverName="Loose Dirt" GiverId="20985" 
+		GiverType="Object" X="-2942.604" Y="-3885.491" Z="34.73953" />
+	<Objective QuestName="Marsh Frog Legs" QuestId="27183" Type="CollectItem" ItemId="33202" CollectCount="10" />
+	<Objective QuestName="What's Haunting Witch Hill?" QuestId="27188" Type="KillMob" MobId="23861" KillCount="10" />
+	<TurnIn QuestName="Marsh Frog Legs" QuestId="27183" TurnInName="Swamp Eye Jarl" TurnInId="4792" />
+	<PickUp QuestName="Jarl Needs Eyes" QuestId="27184" GiverName="Swamp Eye Jarl" GiverId="4792" />
+	<TurnIn QuestName="What's Haunting Witch Hill?" QuestId="27188" TurnInName="Mordant Grimsby" TurnInId="23843" />
+	<PickUp QuestName="The Witch's Bane" QuestId="27189" GiverName="Mordant Grimsby" GiverId="23843" />
+	
+	<Objective QuestName="The Witch's Bane" QuestId="27189" Type="CollectItem" ItemId="33112" CollectCount="9" />
+	<Objective QuestName="Jarl Needs Eyes" QuestId="27184" Type="CollectItem" ItemId="5884" CollectCount="20" />
+	<Objective QuestName="More than Coincidence" QuestId="27294" Type="CollectItem" ItemId="33071" CollectCount="7" />
+	
+	<While Condition="HasQuest(27293) &amp;&amp; !IsQuestCompleted(27293)" >
+		<Objective QuestName="The Grimtotem Plot" QuestId="27293" Type="CollectItem" ItemId="33050" CollectCount="4" />
+		<If Condition="GetItemCount(33050) &gt;= 4" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(33050)" WaitTime="2000" />
+		</If>
+	</While>
+	
+	<TurnIn QuestName="The Witch's Bane" QuestId="27189" TurnInName="Mordant Grimsby" TurnInId="23843" />
+	<PickUp QuestName="Cleansing Witch Hill" QuestId="27190" GiverName="Mordant Grimsby" GiverId="23843" />
+	<TurnIn QuestName="Jarl Needs Eyes" QuestId="27184" TurnInName="Swamp Eye Jarl" TurnInId="4792" />
+	<PickUp QuestName="Hungry as an Ogre!" QuestId="27191" GiverName="Swamp Eye Jarl" GiverId="4792" />
+	<PickUp QuestName="Jarl Needs a Blade" QuestId="27186" GiverName="Swamp Eye Jarl" GiverId="4792" />
+	
+	<Objective QuestName="Jarl Needs a Blade" QuestId="27186" Type="CollectItem" ItemId="33110" CollectCount="1" />
+	<Objective QuestName="Hungry as an Ogre!" QuestId="27191" Type="CollectItem" ItemId="5847" CollectCount="8" />
+	<TurnIn QuestName="Jarl Needs a Blade" QuestId="27186" TurnInName="Swamp Eye Jarl" TurnInId="4792" />
+	<TurnIn QuestName="Hungry as an Ogre!" QuestId="27191" TurnInName="Swamp Eye Jarl" TurnInId="4792" />
+	
+	<CustomBehavior File="InteractWith" QuestId="27190" MobId="23868" InteractByUsingItemId="33113" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" Range="10" WaitTime="2000" X="-2965.292" Y="-3874.803" Z="31.42879" />
+	<TurnIn QuestName="Cleansing Witch Hill" QuestId="27190" TurnInName="Mordant Grimsby" TurnInId="23843" />
+	
+	<TurnIn QuestName="The Lost Report" QuestId="27244" TurnInName="Nazeer Bloodpike" TurnInId="4791" />
+	<TurnIn QuestName="The Grimtotem Plot" QuestId="27293" TurnInName="Krog" TurnInId="4926" />
+	<TurnIn QuestName="More than Coincidence" QuestId="27294" TurnInName="Krog" TurnInId="4926" />
+	<PickUp QuestName="Seek Out Tabetha" QuestId="27295" GiverName="Krog" GiverId="4926" />
+	
+	<CustomBehavior File="Message" Text="Compiling Stonemaul Ruins Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn QuestName="Check Up on Tabetha" QuestId="11213" TurnInName="Tabetha" TurnInId="6546" />
+	<TurnIn QuestName="Seek Out Tabetha" QuestId="27295" TurnInName="Tabetha" TurnInId="6546" />
+	
+	<PickUp QuestName="Raze Direhorn Post!" QuestId="27296" GiverName="Tabetha" GiverId="6546" />
+	<PickUp QuestName="The Grimtotem Weapon" QuestId="27336" GiverName="Apprentice Garion" GiverId="23601" />
+	<PickUp QuestName="The Reagent Thief" QuestId="27339" GiverName="Apprentice Garion" GiverId="23601" />
+	<PickUp QuestName="Direhorn Raiders" QuestId="27340" GiverName="Apprentice Morlann" GiverId="23600" />
+	<PickUp QuestName="The Zeppelin Crash" QuestId="27346" GiverName="Apprentice Morlann" GiverId="23600" />
+	
+	<CustomBehavior File="InteractWith" QuestId="27296" QuestObjectiveIndex="1" MobId="23751" InteractByUsingItemId="33072" Range="10"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" WaitTime="3000" X="-3653.351" Y="-3425.282" Z="37.01981" />
+	<CustomBehavior File="InteractWith" QuestId="27296" QuestObjectiveIndex="2" MobId="23752" InteractByUsingItemId="33072" Range="10"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" WaitTime="3000" X="-3674.023" Y="-3445.173" Z="37.16084" />
+	<CustomBehavior File="InteractWith" QuestId="27296" QuestObjectiveIndex="3" MobId="23753" InteractByUsingItemId="33072" Range="10"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" WaitTime="3000" X="-3704.251" Y="-3457.313" Z="37.28071" />
+		
+	<Objective QuestName="Direhorn Raiders" QuestId="27340" Type="KillMob" MobId="23594" KillCount="12" />
+	
+	<CustomBehavior File="InteractWith" QuestId="27336" MobId="4344" MobState="Alive" InteractByUsingItemId="33101" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" Range="10" NumOfTimes="1000" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-4021.725" Y="-3281.194" Z="29.71048" />
+			<Hotspot X="-4086.99" Y="-3183.168" Z="37.88689" />
+			<Hotspot X="-4100.321" Y="-3088.742" Z="29.1768" />
+			<Hotspot X="-4076.667" Y="-2961.42" Z="36.74816" />
+			<Hotspot X="-4000.983" Y="-2859.415" Z="37.12354" />
+			<Hotspot X="-3817.367" Y="-2824.776" Z="35.80804" />
+			<Hotspot X="-3636.163" Y="-2905.88" Z="37.44152" />
+			<Hotspot X="-3682.844" Y="-3040.448" Z="38.97098" />
+			<Hotspot X="-3761.02" Y="-3131.384" Z="34.91151" />
+			<Hotspot X="-3922.938" Y="-3213.431" Z="36.09959" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="The Reagent Thief" QuestId="27339" Type="CollectItem" ItemId="33103" CollectCount="6" />
+	
+	<TurnIn QuestName="The Zeppelin Crash" QuestId="27346" TurnInName="Moxie Steelgrille" TurnInId="23797" />
+	<PickUp QuestName="Corrosion Prevention" QuestId="27347" GiverName="Moxie Steelgrille" GiverId="23797" />
+	<PickUp QuestName="Secure the Cargo!" QuestId="27348" GiverName="Moxie Steelgrille" GiverId="23797" />
+	
+	<While Condition="HasQuest(27347) &amp;&amp; !IsQuestCompleted(27347)" >
+		<CustomBehavior File="InteractWith" QuestId="27347" MobId="186441" CollectionDistance="30" 
+			NonCompeteDistance="0" TerminateWhen="Me.HasAura(42490)" NumOfTimes="1000" >
+			<HuntingGrounds>
+				<Hotspot X="-3998.194" Y="-3792.574" Z="38.67852" />
+				<Hotspot X="-3857.14" Y="-3759.874" Z="36.487" />
+				<Hotspot X="-3968.539" Y="-3601.763" Z="36.06032" />
+				<Hotspot X="-4093.533" Y="-3760.367" Z="38.89018" />
+				<Hotspot X="-4083.852" Y="-3686.325" Z="43.90271" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" QuestId="27347" MobId="4393" MobId2="4394" MobState="Alive" InteractByUsingItemId="33108" NumOfTimes="1000" 
+			TerminateWhen="!Me.HasAura(42490)" Range="30" NonCompeteDistance="0" CollectionDistance="60" />
+	</While>
+	<Objective QuestName="Secure the Cargo!" QuestId="27348" Type="CollectItem" ItemId="33163" CollectCount="8" />
+	<TurnIn QuestName="Secure the Cargo!" QuestId="27348" TurnInName="Moxie Steelgrille" TurnInId="23797" />
+	<TurnIn QuestName="Corrosion Prevention" QuestId="27347" TurnInName="Moxie Steelgrille" TurnInId="23797" />
+	
+	<PickUp QuestName="Delivery for Drazzit" QuestId="11208" GiverName="Moxie Steelgrille" GiverId="23797" />
+	
+	<TurnIn QuestName="Direhorn Raiders" QuestId="27340" TurnInName="Apprentice Morlann" TurnInId="23600" />
+	<TurnIn QuestName="The Grimtotem Weapon" QuestId="27336" TurnInName="Apprentice Garion" TurnInId="23601" />
+	<TurnIn QuestName="The Reagent Thief" QuestId="27339" TurnInName="Apprentice Garion" TurnInId="23601" />
+	<TurnIn QuestName="Raze Direhorn Post!" QuestId="27296" TurnInName="Tabetha" TurnInId="6546" />
+	
+	<PickUp QuestName="Help for Mudsprocket" QuestId="11211" GiverName="Tabetha" GiverId="6546" />
+	<PickUp QuestName="Justice Dispensed" QuestId="27297" GiverName="Tabetha" GiverId="6546" />
+	
+	<Objective QuestName="Overlord Mok'Morokk's Concern" QuestId="27424" Type="CollectItem" ItemId="5834" CollectCount="1" />
+	<Objective QuestName="Overlord Mok'Morokk's Concern" QuestId="27424" Type="CollectItem" ItemId="5835" CollectCount="1" />
+	<Objective QuestName="Overlord Mok'Morokk's Concern" QuestId="27424" Type="CollectItem" ItemId="5836" CollectCount="1" />
+	
+	<Objective QuestName="Army of the Black Dragon" QuestId="1168" Type="KillMob" MobId="4329" KillCount="10" />
+	<Objective QuestName="Army of the Black Dragon" QuestId="1168" Type="KillMob" MobId="4331" KillCount="10" />
+	<Objective QuestName="Army of the Black Dragon" QuestId="1168" Type="KillMob" MobId="4328" KillCount="5" />
+	
+	<Objective QuestName="Identifying the Brood" QuestId="27414" Type="CollectItem" ItemId="5840" CollectCount="7" />
+	<Objective QuestName="Identifying the Brood" QuestId="27414" Type="CollectItem" ItemId="5841" CollectCount="7" />
+	
+	<TurnIn QuestName="Delivery for Drazzit" QuestId="11208" TurnInName="Drazzit Dripvalve" TurnInId="23572" />
+	<TurnIn QuestName="Help for Mudsprocket" QuestId="11211" TurnInName="Drazzit Dripvalve" TurnInId="23572" />
+	
+	<TurnIn QuestName="Overlord Mok'Morokk's Concern" QuestId="27424" TurnInName="Overlord Mok'Morokk" TurnInId="4500" />
+	<TurnIn QuestName="Justice Dispensed" QuestId="27297" TurnInName="Krog" TurnInId="4926" />
+	<TurnIn QuestName="Army of the Black Dragon" QuestId="1168" TurnInName="Tharg" TurnInId="4502" />
+	<If Condition="HasQuest(27414) &amp;&amp; IsQuestCompleted(27414)" >
+		<TurnIn QuestName="Identifying the Brood" QuestId="27414" TurnInName="Draz'Zilb" TurnInId="4501" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" />
+	</If>
+	
+	<PickUp QuestName="The Brood of Onyxia" QuestId="27416" GiverName="Draz'Zilb" GiverId="4501" />
+	<TurnIn QuestName="The Brood of Onyxia" QuestId="27416" TurnInName="Overlord Mok'Morokk" TurnInId="4500" />
+	<PickUp QuestName="The Brood of Onyxia" QuestId="27417" GiverName="Overlord Mok'Morokk" GiverId="4500" />
+	<TurnIn QuestName="The Brood of Onyxia" QuestId="27417" TurnInName="Draz'Zilb" TurnInId="4501" />
+	<PickUp QuestName="The Brood of Onyxia" QuestId="27415" GiverName="Draz'Zilb" GiverId="4501" />
+	
+	<CustomBehavior File="Message" Text="Compiling Mudsprocket Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Catch a Dragon by the Tail" QuestId="27413" GiverName="Gizzix Grimegurgle" GiverId="23570" />
+	<PickUp QuestName="WANTED: Goreclaw the Ravenous" QuestId="27412" GiverName="Wanted Poster" GiverType="Object" GiverId="186426" X="-4590.823" Y="-3166.712" Z="34.16133" />
+	<PickUp QuestName="Bloodfen Feathers" QuestId="27407" GiverName="Brogg" GiverId="23579" />
+	
+	<Objective QuestName="WANTED: Goreclaw the Ravenous" QuestId="27412" Type="KillMob" MobId="23873" KillCount="1" />
+	<Objective QuestName="Bloodfen Feathers" QuestId="27407" Type="CollectItem" ItemId="33085" CollectCount="5" />
+	<TurnIn QuestName="WANTED: Goreclaw the Ravenous" QuestId="27412" TurnInName="Drazzit Dripvalve" TurnInId="23572" />
+	<TurnIn QuestName="Bloodfen Feathers" QuestId="27407" TurnInName="Brogg" TurnInId="23579" />
+	
+	<PickUp QuestName="Banner of the Stonemaul" QuestId="27408" GiverName="Brogg" GiverId="23579" />
+	<PickUp QuestName="The Essence of Enmity" QuestId="27409" GiverName="Brogg" GiverId="23579" />
+	<Objective QuestName="Banner of the Stonemaul" QuestId="27408" Type="CollectItem" ItemId="33086" CollectCount="1" X="-4458.811" Y="-2976.442" Z="30.67079" />
+	<CustomBehavior File="InteractWith" QuestId="27409" MobId="4328" MobId2="4331" MobId3="4329" MobState="Dead" InteractByUsingItemId="33088" NumOfTimes="1000" 
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" >
+		<HuntingGrounds>
+			<Hotspot X="-4313.449" Y="-3046.735" Z="28.52626" />
+			<Hotspot X="-4340.616" Y="-2997.954" Z="34.34061" />
+			<Hotspot X="-4416.051" Y="-2998.25" Z="28.09649" />
+			<Hotspot X="-4458.811" Y="-2976.442" Z="30.67079" />
+			<Hotspot X="-4448.695" Y="-2912.219" Z="20.26869" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="The Essence of Enmity" QuestId="27409" TurnInName="Brogg" TurnInId="23579" />
+	<TurnIn QuestName="Banner of the Stonemaul" QuestId="27408" TurnInName="Brogg" TurnInId="23579" />
+	
+	<Objective QuestName="The Brood of Onyxia" QuestId="27415" Type="UseObject" ObjectId="20359" UseCount="5" />
+	<Objective QuestName="Catch a Dragon by the Tail" QuestId="27413" Type="CollectItem" ItemId="33175" CollectCount="8" />
+	<TurnIn QuestName="Catch a Dragon by the Tail" QuestId="27413" TurnInName="Gizzix Grimegurgle" TurnInId="23570" />
+	<TurnIn QuestName="The Brood of Onyxia" QuestId="27415" TurnInName="Draz'Zilb" TurnInId="4501" />
+
+	<CustomBehavior File="Message" Text="Dustwallow Marsh Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <!--
+    =====
+    Original contribution by chinajade
+      $Rev: 3159 $
+      $Date: 2014-03-19 01:34:46 -0500 (Wed, 19 Mar 2014) $
+    
+    WARNING: DO NOT EDIT .xsd files.
+      They are not authoritative and will be overwritten!
+      Instead, regenerate the .xsd files from the .rnc 'sources'.
+      Its a one-line command to do this. Please see README.txt
+      for more information.
+    =====
+  -->
+  <!-- BEGIN: Misc\InstanceTimer -->
+  <xs:simpleType name="QBType-Misc-InstanceTimer-Timer">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Check"/>
+      <xs:enumeration value="Start"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- END: Misc\InstanceTimer -->
+  <!-- BEGIN: Misc\TargetAndMoveToMob -->
+  <xs:attributeGroup name="Attributes-Misc-TargetAndMoveToMob-TargetOnlyIfMobHasAuraIdN">
+    <xs:attribute name="TargetOnlyIfMobHasAuraId" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobHasAuraId2" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobHasAuraId3" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobHasAuraId4" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobHasAuraId5" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobHasAuraId6" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobHasAuraId7" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobHasAuraId8" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobHasAuraId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-Misc-TargetAndMoveToMob-TargetOnlyIfMobMissingAuraIdN">
+    <xs:attribute name="TargetOnlyIfMobMissingAuraId" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobMissingAuraId2" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobMissingAuraId3" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobMissingAuraId4" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobMissingAuraId5" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobMissingAuraId6" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobMissingAuraId7" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobMissingAuraId8" type="HBType-Id"/>
+    <xs:attribute name="TargetOnlyIfMobMissingAuraId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+</xs:schema>
+<!-- END: Misc\TargetAndMoveToMob -->

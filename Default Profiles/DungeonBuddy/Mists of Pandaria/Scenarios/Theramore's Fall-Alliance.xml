@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Theramore's Fall</Name>
+  <DungeonId>566</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="65609" name="Sky-Captain Dashing Dazrip" killOrder="1" optional="false" X="-3921.927" Y="-4610.316" Z="10.4182"/>
+    <Boss isFinal="false" entry="65151" name="Captain Seahoof" killOrder="1" optional="false" X="-4062.986" Y="-4535.467" Z="9.215132"/>
+    <Boss isFinal="false" entry="65154" name="Blood Guard Grunk" killOrder="1" optional="false" X="-3816.569" Y="-4794.304" Z="9.728957"/>
+    <Boss isFinal="false" entry="64900" name="Gash'nul" killOrder="2" optional="false" X="-3823.97" Y="-4535.86" Z="9.218159"/>
+    <Boss isFinal="false" entry="64479" name="Gatecrusher" killOrder="3" optional="false" X="-3757.743" Y="-4340.609" Z="10.72893"/>
+    <Boss isFinal="true" entry="65442" name="Warlord Rok'nah" killOrder="4" optional="false" X="-3683.198" Y="-4445.455" Z="-16.15886"/>
+  </BossEncounters>
+  <Blackspots>
+    <Blackspot X="-3873.75" Y="-4592.027" Z="8.658026" Radius="6.572289" /> <!-- pile of crates the bot likes runing into.-->
+  </Blackspots>
+  <PullBlackspots>
+
+  </PullBlackspots>
+</DungeonBuddyProfile>

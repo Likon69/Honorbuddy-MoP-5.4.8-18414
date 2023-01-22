@@ -1,0 +1,60 @@
+# =====
+# Original contribution by chinajade
+#   $Rev: 3160 $
+#   $Date: 2014-03-19 04:57:53 -0300 (qua, 19 mar 2014) $
+#
+# WARNING: DO NOT EDIT .xsd files.
+#   They are not authoritative and will be overwritten!
+#   Instead, regenerate the .xsd files from the .rnc 'sources'.
+#   Its a one-line command to do this. Please see README.txt
+#   for more information.
+# =====
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "AtTheEnemysGates" },
+    Attributes-QuestSpecifier-MandatoryQuestId,
+    Attributes-XYZ
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "BattleofTheCitadel" },
+    Attributes-QuestSpecifier-MandatoryQuestId,
+    Attributes-XYZ
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "GetKraken" }
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecialTurnin" },
+    Attributes-QuestSpecifier-MandatoryQuestId,
+    attribute LootId { HBType-Id },
+    attribute QuestName { string },
+    attribute TurnInName { string },
+    attribute TurnInId { HBType-Id }
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "TheGrandMelee" },
+    Attributes-QuestSpecifier-MandatoryQuestId,
+    attribute Enemys { list { HBType-Id+ } },
+    attribute EnemesDebuff { list { HBType-Id* } },
+    Attributes-XYZ
+  }
+

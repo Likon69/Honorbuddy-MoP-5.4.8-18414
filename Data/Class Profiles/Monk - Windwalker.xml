@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassProfile Class="Monk" Specialization="3" Name="Monk - Windwalker">
+	<TalentTree>
+		<Talent Tier="1" Index="1" Name="Celerity" />
+		<Talent Tier="2" Index="3" Name="Chi Burst" />
+		<Talent Tier="3" Index="2" Name="Ascension" />
+		<Talent Tier="4" Index="3" Name="Leg Sweep" />
+		<Talent Tier="5" Index="3" Name="Diffuse Magic" />
+		<Talent Tier="6" Index="2" Name="Invoke Xuen,the White Tiger" />
+	</TalentTree>
+	<WeightSet>
+		<DamagePerSecond>22</DamagePerSecond>
+		<Agility>20</Agility>
+		<Hit>18</Hit>
+		<Expertise>17</Expertise>
+		<CriticalStrike>16</CriticalStrike>
+		<Mastery>12</Mastery>
+		<AttackPower>5</AttackPower>
+		<Stamina>5</Stamina>
+		<Armor>0.01</Armor>
+	</WeightSet>
+</ClassProfile>

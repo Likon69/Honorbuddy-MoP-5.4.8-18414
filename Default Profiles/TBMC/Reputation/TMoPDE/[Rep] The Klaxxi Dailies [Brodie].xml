@@ -1,0 +1,1032 @@
+<HBProfile>
+	<Name>The Klaxxi ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Nav="Fly" Name="Ambersmith Zikk" Entry="64599" Type="Repair" X="147.88" Y="3194.92" Z="214.76" />
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+		<Blackspot X="305.832" Y="3985.062" Z="241.5258" Radius="5" />
+		<Blackspot X="-934.1515" Y="2799.411" Z="107.0393" Radius="5" Height="5" />
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- Specimen Request -->
+	<Quest Id="31508" Name="Specimen Request">
+		<Objective Type="CollectItem" ItemId="87874" CollectCount="6">
+			<CollectFrom>
+				<Mob Name="Kypari Crawler" Id="65231" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-1143.80" Y="4166.77" Z="53.56" />
+				<Hotspot X="-1190.14" Y="4157.39" Z="56.84" />
+				<Hotspot X="-1263.235" Y="4129.526" Z="58.788" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+	
+<!-- Shackles of Manipulation-->
+	<Quest Id="31506" Name="Shackles of Manipulation">
+		<Objective Type="CollectItem" ItemId="87813" CollectCount="6" >
+			<CollectFrom>
+				<Mob Name="Thought-Bound Miner" Id="64970" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-1734.067" Y="4618.938" Z="61.92159" />
+				<Hotspot X="-1760.292" Y="4555.795" Z="34.31723" />
+				<Hotspot X="-1726.133" Y="4526.628" Z="53.45988" />
+				<Hotspot X="-1733.789" Y="4623.91" Z="62.31763" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Brain Food -->
+	<Quest Id="31238" Name="Brain Food">
+		<Objective Type="CollectItem" ItemId="85665" CollectCount="4">
+			<CollectFrom>
+				<Mob Name="Greatback Mushan" Id="62029" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="568.8157" Y="3187.079" Z="270.0579" />
+				<Hotspot X="490.1386" Y="3151.108" Z="264.8391" />
+				<Hotspot X="539.0498" Y="3051.902" Z="262.0885" />
+				<Hotspot X="556.811" Y="2940.164" Z="256.1861" />
+				<Hotspot X="482.8191" Y="2978.015" Z="266.3961" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Kunchong Treats -->
+	<Quest Id="31024" Name="Kunchong Treats">
+		<Objective Type="CollectItem" ItemId="82869" KillCount="4">
+			<CollectFrom>
+				<Mob Name="Chillwater Turtle" Id="62160" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-391.7397" Y="3045.054" Z="189.3456" />
+				<Hotspot X="-523.003" Y="3102.001" Z="182.9502" />
+				<Hotspot X="-501.7597" Y="2994.869" Z="183.0958" />
+				<Hotspot X="-525.0459" Y="2872.698" Z="158.4398" />
+				<Hotspot X="-593.9484" Y="2916.206" Z="169.5264" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- A Little Brain Work -->
+	<Quest Id="31268" Name="A Little Brain Work">
+		<Objective Type="CollectItem" ItemId="85885" KillCount="3">
+			<CollectFrom>
+				<Mob Name="Ik'thik Amberstinger" Id="63728" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-946.3294" Y="2873.563" Z="105.7765" />
+				<Hotspot X="-850.7465" Y="2849.359" Z="129.0686" />
+				<Hotspot X="-963.9423" Y="2694.718" Z="125.9468" />
+				<Hotspot X="-1052.78" Y="2665.994" Z="109.8186" />
+				<Hotspot X="-1114.066" Y="2851.27" Z="78.55829" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- The Fight Against Fear -->
+	<Quest Id="31270" Name="The Fight Against Fear">
+		<Objective Type="KillMob" MobId="62162" KillCount="15">
+			<Hotspots>
+				<Hotspot X="-391.7397" Y="3045.054" Z="189.3456" />
+				<Hotspot X="-523.003" Y="3102.001" Z="182.9502" />
+				<Hotspot X="-501.7597" Y="2994.869" Z="183.0958" />
+				<Hotspot X="-525.0459" Y="2872.698" Z="158.4398" />
+				<Hotspot X="-593.9484" Y="2916.206" Z="169.5264" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Dreadspinner Extermination -->
+	<Quest Id="31231" Name="Dreadspinner Extermination">
+		<Objective Type="KillMob" MobId="61981" KillCount="8">
+			<Hotspots>
+				<!-- Only bottom tier -->
+				<Hotspot X="408.7178" Y="2293.982" Z="237.9843" />
+				<Hotspot X="463.3672" Y="2294.108" Z="243.2828" />
+				<Hotspot X="354.6864" Y="2251.086" Z="232.7641" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Mistblade Destruction -->
+	<Quest Id="31267" Name="Mistblade Destruction">
+		<Objective Type="KillMob" MobId="61970" KillCount="6">
+			<Hotspots>
+				<Hotspot X="-826.9786" Y="2738.488" Z="133.7699" />
+				<Hotspot X="-859.6467" Y="2668.667" Z="130.49" />
+				<Hotspot X="-846.0546" Y="2582.641" Z="131.4656" />
+				<Hotspot X="-826.6318" Y="2515.147" Z="132.6192" />
+				<Hotspot X="-755.3067" Y="2539.758" Z="131.7426" />
+				<Hotspot X="-644.6288" Y="2528.032" Z="131.3578" />
+				<Hotspot X="-535.481" Y="2666.294" Z="132.156" />
+				<Hotspot X="-569.222" Y="2772.151" Z="130.5822" />
+				<Hotspot X="-637.3094" Y="2817.033" Z="135.9959" />
+				<Hotspot X="-715.0997" Y="2786.347" Z="130.5183" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- An Ancient Empire -->
+	<Quest Id="31232" Name="An Ancient Empire">
+		<Objective Type="CollectItem" ItemId="85634" CollectCount="8">
+			<CollectFrom>
+				<GameObject Name="Gurthani Tablet" Id="213314" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="408.7178" Y="2293.982" Z="237.9843" />
+				<Hotspot X="463.3672" Y="2294.108" Z="243.2828" />
+				<Hotspot X="354.6864" Y="2251.086" Z="232.7641" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Putting an Eye Out -->
+	<Quest Id="31234" Name="Putting an Eye Out">
+		<Objective Type="CollectItem" ItemId="85635" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Mire Beast" Id="63731" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="136.43" Y="2541.28" Z="148.77" />
+				<Hotspot X="64.44" Y="2511.30" Z="148.79" />
+				<Hotspot X="2.21" Y="2514.28" Z="151.92" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Bad Genes -->
+	<Quest Id="31271" Name="Bad Genes">
+		<Objective Type="KillMob" MobId="63257" KillCount="3">
+			<Hotspots>
+				<Hotspot X="-959.0073" Y="2815.508" Z="104.5094" />
+				<Hotspot X="-1058.553" Y="2810.459" Z="93.06223" />
+				<Hotspot X="-1111.397" Y="2765.706" Z="80.81642" />
+				<Hotspot X="-1168.414" Y="2728.548" Z="77.5346" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="63176" KillCount="6">
+			<Hotspots>
+				<Hotspot X="-959.0073" Y="2815.508" Z="104.5094" />
+				<Hotspot X="-1058.553" Y="2810.459" Z="93.06223" />
+				<Hotspot X="-1111.397" Y="2765.706" Z="80.81642" />
+				<Hotspot X="-1168.414" Y="2728.548" Z="77.5346" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Sonic Disruption -->
+	<Quest Id="31487" Name="Sonic Disruption">
+		<Objective Type="KillMob" MobId="64717" KillCount="4">
+			<Hotspots>
+				<Hotspot X="133.52" Y="3516.55" Z="233.87" />
+				<Hotspot X="239.88" Y="3512.89" Z="244.15" />
+				<Hotspot X="364.78" Y="3535.86" Z="229.69" />
+				<Hotspot X="379.43" Y="3662.66" Z="236.38" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="64720" KillCount="6">
+			<Hotspots>
+				<Hotspot X="133.52" Y="3516.55" Z="233.87" />
+				<Hotspot X="239.88" Y="3512.89" Z="244.15" />
+				<Hotspot X="364.78" Y="3535.86" Z="229.69" />
+				<Hotspot X="379.43" Y="3662.66" Z="236.38" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Wing Clip -->
+	<Quest Id="31502" Name="Wing Clip">
+		<Objective Type="CollectItem" ItemId="87401" CollectCount="24">
+			<CollectFrom>
+				<Mob Name="Shek'zeer Needler" Id="64714" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="310.5345" Y="4060.702" Z="253.0492" />
+				<Hotspot X="367.60" Y="4097.22" Z="248.50" />
+				<Hotspot X="292.40" Y="4238.96" Z="258.48" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Culling the Swarm -->
+	<Quest Id="31109" Name="Culling the Swarm">
+		<Objective Type="KillMob" MobId="62563" KillCount="40">
+			<Hotspots>
+				<Hotspot X="310.5345" Y="4060.702" Z="253.0492" />
+				<Hotspot X="367.60" Y="4097.22" Z="248.50" />
+				<Hotspot X="292.40" Y="4238.96" Z="258.48" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Meltdown -->
+	<Quest Id="31507" Name="Meltdown">
+		<Objective Type="KillMob" MobId="64982" KillCount="6">
+			<Hotspots>
+				<Hotspot X="-1419.12" Y="4918.8" Z="29.57" />
+				<Hotspot X="-1293.054" Y="4930.099" Z="20.542" />
+				<Hotspot X="-1331.026" Y="4865.011" Z="24.6" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Ordnance Disposal -->
+	<Quest Id="31504" Name="Ordnance Disposal">
+		<Objective Type="CollectItem" ItemId="214341" CollectCount="8">
+			<CollectFrom>
+				<GameObject Name="Pheromone Mine" Id="214341" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="117.7218" Y="3590.625" Z="233.62" />
+				<Hotspot X="130.3713" Y="3542.942" Z="233.6735" />
+				<Hotspot X="186.3374" Y="3509.302" Z="243.0377" />
+				<Hotspot X="240.1888" Y="3479.064" Z="243.509" />
+				<Hotspot X="253.3184" Y="3539.905" Z="243.4481" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Eradicating the Zan'thik -->
+	<Quest Id="31111" Name="Eradicating the Zan'thik">
+		<Objective Type="KillMob" MobId="64971" KillCount="6">
+			<Hotspots>
+				<Hotspot X="-1752.77" Y="4557.33" Z="32.45" />
+				<Hotspot X="-1785.14" Y="4575.39" Z="33.49" />
+				<Hotspot X="-1733.94" Y="4627.21" Z="61.97" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="64973" KillCount="6">
+			<Hotspots>
+				<Hotspot X="-1752.77" Y="4557.33" Z="32.45" />
+				<Hotspot X="-1785.14" Y="4575.39" Z="33.49" />
+				<Hotspot X="-1733.94" Y="4627.21" Z="61.97" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<CustomBehavior File="RunMacro" Macro="/script SetCVar('AutoLootDefault', 1)" NumOfTimes="1" WaitTime="1000" />
+	<CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+
+	<!-- If I am in EK, take the SW portal -->
+	<If Condition="(Me.MapId == 0 &amp;&amp; Me.IsAlliance)" >
+		<CustomBehavior File="FlyTo" DestName="SW Portal" X="-8199.441" Y="529.3228" Z="117.0738" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="215457" Range="4" X="-8194.479" Y="528.1129" Z="117.2901" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+	</If>
+
+	<If Condition=" (Me.MapId == 1 &amp;&amp; Me.IsHorde)" >
+		<CustomBehavior File="FlyTo" DestName="Org Portal" X="2013.813" Y="-4699.559" Z="28.61817" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="215424" Range="4.75" X="2014.819" Y="-4700.274" Z="28.62439" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Klaxxi Quests..." LogColor="Green" />
+
+	<If Condition="!IsAchievementCompleted(6540,2) || !IsQuestCompleted(31398)" >
+		<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="Unable to start Klaxxi Dailies: You must progress further in the storyline for Dread Wastes. Recommend downloading and using Kick's Dread Wastes profile. Press Continue to move on to next area." />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="HasItem(60498)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60498)" />
+		<ElseIf Condition="HasItem(93672)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93672)" />
+		</ElseIf>
+		<ElseIf Condition="HasItem(54452)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(54452)" />
+		</ElseIf>
+		<ElseIf Condition="HasItem(64488)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" />
+		</ElseIf>
+		<ElseIf Condition="HasItem(6948)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" />
+		</ElseIf>
+		</If>
+	</If>
+
+	<If Condition="(!HasQuest(31216) &amp;&amp; IsQuestCompleted(31216) ||
+			!HasQuest(31272) &amp;&amp; IsQuestCompleted(31272) ||
+			!HasQuest(31504) &amp;&amp; IsQuestCompleted(31504) ||
+			!HasQuest(31510) &amp;&amp; IsQuestCompleted(31510) ||
+			!HasQuest(31237) &amp;&amp; IsQuestCompleted(31237) ||
+			!HasQuest(31487) &amp;&amp; IsQuestCompleted(31487) ||
+			!HasQuest(31268) &amp;&amp; IsQuestCompleted(31268) ||
+			!HasQuest(31024) &amp;&amp; IsQuestCompleted(31024) ||
+			!HasQuest(31238) &amp;&amp; IsQuestCompleted(31238) ||
+			!HasQuest(31506) &amp;&amp; IsQuestCompleted(31506) ||
+			!HasQuest(31808) &amp;&amp; IsQuestCompleted(31808) ||
+			!HasQuest(31267) &amp;&amp; IsQuestCompleted(31267) ||
+			!HasQuest(31505) &amp;&amp; IsQuestCompleted(31505) ||
+			!HasQuest(31111) &amp;&amp; IsQuestCompleted(31111) ||
+			!HasQuest(31235) &amp;&amp; IsQuestCompleted(31235) ||
+			!HasQuest(31109) &amp;&amp; IsQuestCompleted(31109) ||
+			!HasQuest(31231) &amp;&amp; IsQuestCompleted(31231) ||
+			!HasQuest(31232) &amp;&amp; IsQuestCompleted(31232) ||
+			!HasQuest(31269) &amp;&amp; IsQuestCompleted(31269) ||
+			!HasQuest(31270) &amp;&amp; IsQuestCompleted(31270) ||
+			!HasQuest(31233) &amp;&amp; IsQuestCompleted(31233) ||
+			!HasQuest(31507) &amp;&amp; IsQuestCompleted(31507) ||
+			!HasQuest(31496) &amp;&amp; IsQuestCompleted(31496) ||
+			!HasQuest(31508) &amp;&amp; IsQuestCompleted(31508) ||
+			!HasQuest(31503) &amp;&amp; IsQuestCompleted(31503) ||
+			!HasQuest(31502) &amp;&amp; IsQuestCompleted(31502) ||
+			!HasQuest(31271) &amp;&amp; IsQuestCompleted(31271) ||
+			!HasQuest(31234) &amp;&amp; IsQuestCompleted(31234) ||
+			!HasQuest(31509) &amp;&amp; IsQuestCompleted(31509) ||
+			!HasQuest(31599) &amp;&amp; IsQuestCompleted(31599))" >
+		<CustomBehavior File="Message" Text="Previously Completed Quests Detected" LogColor="CornflowerBlue" />
+		<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: Previously completed quests detected! \n\n Either you have done some of you quests already, and have restarted the bot...\n OR your cache folder is NOT clean, and must be deleted, and bot restarted." />
+	</If>
+
+<!-- Checking if you have a quest. If you do, start, if not, fly to Klaxxi'Vess -->
+	<If Condition="(!HasQuest(31808) &amp;&amp; !HasQuest(31269) &amp;&amp; !HasQuest(31267)
+			&amp;&amp; !HasQuest(31024) &amp;&amp; !HasQuest(31270) &amp;&amp; !HasQuest(31496)
+			&amp;&amp; !HasQuest(31494) &amp;&amp; !HasQuest(31487) &amp;&amp; !HasQuest(31502)
+			&amp;&amp; !HasQuest(31755) &amp;&amp; !HasQuest(31131) &amp;&amp; !HasQuest(31504)
+			&amp;&amp; !HasQuest(31503) &amp;&amp; !HasQuest(31109) &amp;&amp; !HasQuest(31234)
+			&amp;&amp; !HasQuest(31232) &amp;&amp; !HasQuest(31235) &amp;&amp; !HasQuest(31238)
+			&amp;&amp; !HasQuest(31231) &amp;&amp; !HasQuest(31233) &amp;&amp; !HasQuest(31237)
+			&amp;&amp; !HasQuest(31268) &amp;&amp; !HasQuest(31271) &amp;&amp; !HasQuest(31272)
+			&amp;&amp; !HasQuest(31216) &amp;&amp; !HasQuest(31508) &amp;&amp; !HasQuest(31509)
+			&amp;&amp; !HasQuest(31506) &amp;&amp; !HasQuest(31511) &amp;&amp; !HasQuest(31505)
+			&amp;&amp; !HasQuest(31507) &amp;&amp; !HasQuest(31510))" >
+		<CustomBehavior File="Message" Text="Starting Klaxxi Dailies, moving to Klaxxi'Vess." LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="138.1091" Y="3221.354" Z="214.7599" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+	</If>
+
+<!-- Stay Klaxxi Check -->
+	<If Condition="!IsAchievementCompleted(7313, 1) || !IsAchievementCompleted(7313, 2) ||
+			!IsAchievementCompleted(7313, 3) || !IsAchievementCompleted(7313, 4) ||
+			!IsAchievementCompleted(7313, 5) || !IsAchievementCompleted(7313, 6) ||
+			!IsAchievementCompleted(7313, 7) || !IsAchievementCompleted(7313, 8) ||
+			!IsAchievementCompleted(7313, 9) || !IsAchievementCompleted(7313, 10)" >
+	<!-- Enhancements -->
+		<If Condition="(!IsAchievementCompleted(7313, 1) &amp;&amp; IsAchievementCompleted(7312, 1))" >
+			<If Condition="!Me.HasAura(131767)" >
+				<CustomBehavior File="InteractWith" MobId="62538" InteractByGossipOptions="1" WaitForNpcs="False" />
+			</If>
+		<ElseIf Condition="(!IsAchievementCompleted(7313, 6) &amp;&amp; IsAchievementCompleted(7312, 2))" >
+			<If Condition="!Me.HasAura(124529)" >
+				<CustomBehavior File="InteractWith" MobId="215872" InteractByGossipOptions="1" WaitForNpcs="False" />
+				<CustomBehavior File="InteractWith" MobId="63758" InteractByGossipOptions="2" TerminateWhen="Me.HasAura(124529)" WaitForNpcs="False" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="(!IsAchievementCompleted(7313, 7) &amp;&amp; IsAchievementCompleted(7312, 3))" >
+			<If Condition="!Me.HasAura(127382)" >
+				<CustomBehavior File="InteractWith" MobId="65305" InteractByGossipOptions="1" WaitForNpcs="False" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="(!IsAchievementCompleted(7313, 9) &amp;&amp; IsAchievementCompleted(7312, 7))" >
+			<If Condition="!Me.HasAura(127794)" >
+				<CustomBehavior File="InteractWith" MobId="63072" InteractByGossipOptions="1" WaitForNpcs="False" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="(!IsAchievementCompleted(7313, 5) &amp;&amp; IsAchievementCompleted(7312, 10))" >
+			<If Condition="!Me.HasAura(127370)" >
+				<CustomBehavior File="InteractWith" MobId="62151" InteractByGossipOptions="1" WaitForNpcs="False" />
+			</If>
+		</ElseIf>
+		</If>
+
+	<!-- Augmentations -->
+		<If Condition="(!IsAchievementCompleted(7313, 2) &amp;&amp; IsAchievementCompleted(7312, 4))" >
+			<If Condition="!Me.HasAura(127351)" >
+				<CustomBehavior File="InteractWith" MobId="63758" InteractByGossipOptions="1" WaitForNpcs="False" />
+			</If>
+		<ElseIf Condition="(!IsAchievementCompleted(7313, 3) &amp;&amp; IsAchievementCompleted(7312, 5))" >
+			<If Condition="!Me.HasAura(127703)" >
+				<CustomBehavior File="InteractWith" MobId="62180" InteractByGossipOptions="1" WaitForNpcs="False" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="(!IsAchievementCompleted(7313, 4) &amp;&amp; IsAchievementCompleted(7312, 9))" >
+			<If Condition="!Me.HasAura(127356)" >
+				<CustomBehavior File="InteractWith" MobId="63785" InteractByGossipOptions="1" WaitForNpcs="False" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="(!IsAchievementCompleted(7313, 8) &amp;&amp; IsAchievementCompleted(7312, 6))" >
+			<If Condition="!Me.HasAura(127375)" >
+				<CustomBehavior File="InteractWith" MobId="65303" InteractByGossipOptions="1" WaitForNpcs="False" />
+			</If>
+		</ElseIf>
+		<ElseIf Condition="(!IsAchievementCompleted(7313, 10) &amp;&amp; IsAchievementCompleted(7312, 8))" >
+			<If Condition="!Me.HasAura(123219)" >
+				<CustomBehavior File="InteractWith" MobId="63071" InteractByGossipOptions="1" WaitForNpcs="False" />
+			</If>
+		</ElseIf>
+		</If>
+	<Else>
+		<If Condition="!Me.HasAura(127370)" >
+			<CustomBehavior File="InteractWith" MobId="62151" InteractByGossipOptions="1" WaitForNpcs="False" />
+		</If>
+		<If Condition="!Me.HasAura(127356)" >
+			<CustomBehavior File="InteractWith" MobId="63785" InteractByGossipOptions="1" WaitForNpcs="False" />
+		</If>
+	</Else>
+	</If>
+
+<!-- Quest Pickups -->
+
+<!-- Kil'ruk the Wind-Reaver -->
+	<While Condition="HasQuestAvailable(62538)" > 
+		<CustomBehavior File="InteractWith" MobId="62538" CollectionDistance="200" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Xaril the Poisoned Mind -->
+	<While Condition="HasQuestAvailable(62151)" > 
+		<CustomBehavior File="InteractWith" InteractByQuestFrameDisposition="Ignore" MobId="62151" CollectionDistance="200" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Hisek the Swarmkeeper -->
+	<While Condition="HasQuestAvailable(63785)" > 
+		<CustomBehavior File="InteractWith" MobId="63785" CollectionDistance="200" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Korven the Prime -->
+	<While Condition="HasQuestAvailable(62180)" > 
+		<CustomBehavior File="InteractWith" MobId="62180" CollectionDistance="200" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Rik'kal the Dissector -->
+	<While Condition="HasQuestAvailable(63072)" > 
+		<CustomBehavior File="InteractWith" MobId="63072" CollectionDistance="200" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Kaz'tik the Manipulator -->
+	<While Condition="HasQuestAvailable(63758)" > 
+		<CustomBehavior File="InteractWith" MobId="63758" InteractByQuestFrameDisposition="Ignore" CollectionDistance="200" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Starting Quests -->
+
+<CustomBehavior File="Message" Text="Beginning Klaxxi Quests." LogColor="Green" />
+
+<!-- Dark Skies -->
+ 	<If Condition="HasQuest(31216) &amp;&amp; !IsQuestCompleted(31216)">
+		<CustomBehavior File="Message" Text="Starting Dark Skies" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="126" Y="3200.40" Z="214.76" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="62151" InteractByGossipOptions="1" TerminateWhen="Me.IsOnTransport" WaitTime="1000" />
+		<CustomBehavior File="SpecificQuests\31216-DreadWastes-DarkSkies" />
+	</If>
+
+<!-- Rampage Against the Machine -->
+ 	<If Condition="HasQuest(31808) &amp;&amp; !IsQuestCompleted(31808)">
+		<CustomBehavior File="Message" Text="Starting Rampage Against the Machine" LogColor="Green" />
+		<While Condition="!IsQuestCompleted(31808)" >
+			<CustomBehavior File="FlyTo" X="-47.40311" Y="3421.991" Z="105.6598" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="MountVehOnly" X="-59.69" Y="3421.45" Z="103.95" VehicleMountId="63765" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+			<CustomBehavior File="SpecificQuests\31808-DreadWastes-RampageAgainstTheMachine" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</While>
+	</If>
+
+<!-- Debugging The Terrace -->
+ 	<If Condition="HasQuest(31237) &amp;&amp; !IsQuestCompleted(31237)">
+		<CustomBehavior File="Message" Text="Starting Debugging The Terrace" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-41.11" Y="2667.56" Z="157.18" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="SpecificQuests\31237-DreadWastes-DebuggingTheTerrace" />
+	</If>
+
+<!-- Specimen Request -->
+ 	<If Condition="HasQuest(31508) &amp;&amp; !IsQuestCompleted(31508)">
+		<CustomBehavior File="Message" Text="Starting Specimen Request" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Specimen Request" QuestId="31508" Type="CollectItem" ItemId="87874" CollectCount="6" />
+	</If>
+
+<!-- Vess-Guard Duty -->
+ 	<If Condition="HasQuest(31505) &amp;&amp; !IsQuestCompleted(31505)">
+		<CustomBehavior File="Message" Text="Starting Vess-Guard Duty" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Vess-Guard Duty" QuestId="31505" Type="KillMob" MobId="64979" KillCount="1" X="-1227.62" Y="4561.13" Z="129.15" />
+	</If>
+
+<!-- Shackles of Manipulation -->
+ 	<If Condition="HasQuest(31506) &amp;&amp; !IsQuestCompleted(31506)">
+		<CustomBehavior File="Message" Text="Starting Shackles of Manipulation" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Shackles of Manipulation" QuestId="31506" Type="CollectItem" ItemId="87813" CollectCount="6" />
+	</If>
+
+<!-- Eradicating the Zan'thik -->
+ 	<If Condition="HasQuest(31111) &amp;&amp; !IsQuestCompleted(31111)">
+		<CustomBehavior File="Message" Text="Starting Eradicating the Zan'thik" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Eradicating the Zan'thik" QuestId="31111" Type="KillMob" MobId="64971" KillCount="6" />
+		<Objective Nav="Fly" QuestName="Eradicating the Zan'thik" QuestId="31111" Type="KillMob" MobId="64973" KillCount="6" />
+	</If>
+
+<!-- Free From Her Clutches -->
+ 	<If Condition="HasQuest(31494) &amp;&amp; !IsQuestCompleted(31494)" >
+		<CustomBehavior File="Message" Text="Starting Free From Her Clutches" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="FlyTo" X="117.7218" Y="3590.625" Z="233.62" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(31494)" >
+			<If Condition="!IsObjectiveComplete(1,31494)" >
+				<CustomBehavior File="FlyTo" X="117.7218" Y="3590.625" Z="233.62" />
+				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" Range="50" MinRange="8" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsObjectiveComplete(1,31494)" >
+				<RunTo X="124.2532" Y="3545.715" Z="233.6779" />
+				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsObjectiveComplete(1,31494)" >
+				<RunTo X="174.4177" Y="3522.092" Z="240.2173" />
+				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsObjectiveComplete(1,31494)" >
+				<RunTo X="195.3123" Y="3505.958" Z="243.612" />
+				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsObjectiveComplete(1,31494)" >
+				<RunTo X="223.2865" Y="3534.368" Z="243.4393" />
+				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsObjectiveComplete(1,31494)" >
+				<RunTo X="249.5217" Y="3543.792" Z="243.4423" />
+				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsObjectiveComplete(1,31494)" >
+				<RunTo X="271.6865" Y="3523.812" Z="243.8412" />
+				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsObjectiveComplete(1,31494)" >
+				<RunTo X="331.1143" Y="3585.448" Z="243.4435" />
+				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsObjectiveComplete(1,31494)" >
+				<RunTo X="312.3785" Y="3631.742" Z="243.7822" />
+				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsObjectiveComplete(1,31494)" >
+				<RunTo X="312.691" Y="3660.906" Z="245.142" />
+				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="8" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsObjectiveComplete(1,31494)" >
+				<RunTo X="312.078" Y="3689.349" Z="243.4429" />
+				<CustomBehavior File="InteractWith" MobId="214292" QuestId="31494" MinRange="6" Range="50" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" CollectionDistance="1000" WaitTime="1000" WaitForNpcs="False" />
+			</If>
+		</While>
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- Quiet Now -->
+ 	<If Condition="HasQuest(31510) &amp;&amp; !IsQuestCompleted(31510)">
+		<CustomBehavior File="Message" Text="Starting Quiet Now" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1661.374" Y="4837.988" Z="59.85" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="31510" MobId="214455" NumOfTimes="1000" NonCompeteDistance="0"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" X="-1661.374" Y="4837.988" Z="59.85" />
+	</If>
+
+<!-- Meltdown -->
+ 	<If Condition="HasQuest(31507) &amp;&amp; !IsQuestCompleted(31507)">
+		<CustomBehavior File="Message" Text="Starting Meltdown" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Meltdown" QuestId="31507" Type="KillMob" MobId="64982" KillCount="6" />
+	</If>
+
+<!-- Fear Takes Root -->
+ 	<If Condition="HasQuest(31509) &amp;&amp; !IsQuestCompleted(31509)">
+		<CustomBehavior File="Message" Text="Starting Fear Takes Root" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="FlyTo" X="-1168.03" Y="4896.25" Z="44.05" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="CollectThings" ObjectId="214543" ObjectId2="214549" CollectUntil="QuestComplete" QuestId="31509" HuntingGroundRadius="200" NonCompeteDistance="5" PostInteractDelay="100" >
+			<Hotspot X="-1210.71" Y="4859.17" Z="34.68" />
+			<Hotspot X="-1119.33" Y="4652.03" Z="67.44" />
+			<Hotspot X="-1063.94" Y="4522.37" Z="68.50" />
+			<Hotspot X="-1102.52" Y="4409.04" Z="79.39" />
+			<Hotspot X="-1187.26" Y="4329.15" Z="75.21" />
+		</CustomBehavior>
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- Ordnance Disposal -->
+ 	<If Condition="HasQuest(31504) &amp;&amp; !IsQuestCompleted(31504)">
+		<CustomBehavior File="Message" Text="Starting Ordnance Disposal" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<Objective Nav="Fly" QuestName="Ordnance Disposal" QuestId="31504" Type="CollectItem" ItemId="214341" CollectCount="8" />
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- Sonic Disruption -->
+ 	<If Condition="HasQuest(31487) &amp;&amp; !IsQuestCompleted(31487)">
+		<CustomBehavior File="Message" Text="Starting Sonic Disruption" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Sonic Disruption" QuestId="31487" Type="KillMob" MobId="64717" KillCount="4" />
+		<Objective Nav="Fly" QuestName="Sonic Disruption" QuestId="31487" Type="KillMob" MobId="64720" KillCount="6" />
+	</If>
+
+<!-- Sampling the Empire's Finest -->
+ 	<If Condition="HasQuest(31496) &amp;&amp; !IsQuestCompleted(31496)">
+		<CustomBehavior File="Message" Text="Starting Sampling the Empire's Finest" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<If Condition="!IsObjectiveComplete(1,31496)">
+			<CustomBehavior File="FlyTo" X="417.6611" Y="4158.743" Z="228.657" />
+			<CustomBehavior File="ForcedDismount" />
+			<While Condition="!IsObjectiveComplete(1,31496)">
+				<RunTo X="377.9952" Y="4140.55" Z="217.416" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(87400)" WaitTime="1000" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			</While>
+		</If>
+		<If Condition="!IsObjectiveComplete(2,31496)">
+			<CustomBehavior File="FlyTo" X="290.66" Y="4078.97" Z="252.10" />
+			<CustomBehavior File="ForcedDismount" />
+			<While Condition="!IsObjectiveComplete(2,31496)">
+				<RunTo X="240.0652" Y="4112.261" Z="246.2574" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(87400)" WaitTime="1000" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			</While>
+		</If>
+		<If Condition="!IsObjectiveComplete(3,31496)">
+			<CustomBehavior File="FlyTo" X="276.8039" Y="4216.432" Z="265.6828" />
+			<CustomBehavior File="ForcedDismount" />
+			<While Condition="!IsObjectiveComplete(3,31496)">
+				<RunTo X="246.6184" Y="4162.151" Z="261.7031" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(87400)" WaitTime="1000" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			</While>
+		</If>
+		<If Condition="!IsObjectiveComplete(4,31496)">
+			<CustomBehavior File="FlyTo" X="396.3942" Y="4026.442" Z="226.3343" />
+			<CustomBehavior File="ForcedDismount" />
+			<RunTo X="334.6885" Y="4048.261" Z="222.3636" />
+			<While Condition="!IsObjectiveComplete(4,31496)">
+				<RunTo X="333.5489" Y="4046.795" Z="222.3625" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(87400)" WaitTime="1000" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			</While>
+		</If>
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- Wing Clip -->
+ 	<If Condition="HasQuest(31502) &amp;&amp; !IsQuestCompleted(31502)">
+		<CustomBehavior File="Message" Text="Starting Wing Clip" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Wing Clip" QuestId="31502" Type="CollectItem" ItemId="87401" CollectCount="24" />
+	</If>
+
+<!-- Shortcut to Ruin -->
+ 	<If Condition="HasQuest(31503) &amp;&amp; !IsQuestCompleted(31503)">
+		<CustomBehavior File="Message" Text="Starting Shortcut to Ruin" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Shortcut to Ruin" QuestId="31503" Type="KillMob" MobId="64890" KillCount="1" X="310.5345" Y="4060.702" Z="253.0492" />
+	</If>
+
+<!-- Brain Food -->
+ 	<If Condition="HasQuest(31238) &amp;&amp; !IsQuestCompleted(31238)">
+		<CustomBehavior File="Message" Text="Starting Brain Food" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Brain Food" QuestId="31238" Type="CollectItem" ItemId="85665" CollectCount="4" />
+	</If>
+
+<!-- Nope Nope Nope -->
+	<If Condition="HasQuest(31235) &amp;&amp; !IsQuestCompleted(31235)">
+		<CustomBehavior File="Message" Text="Starting Nope Nope Nope" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="FlyTo" X="384.5976" Y="2385.874" Z="219.0938" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="31235" MobId="62077" InteractByUsingItemId="82807" Range="5"
+			NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="10000"
+			WaitTime="4000" NumOfTimes="1000" X="384.5976" Y="2385.874" Z="219.0938" />
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- Kunchong Treats -->
+ 	<If Condition="HasQuest(31024) &amp;&amp; !IsQuestCompleted(31024)">
+		<CustomBehavior File="Message" Text="Starting Kunchong Treats" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Kunchong Treats" QuestId="31024" Type="CollectItem" ItemId="82869" KillCount="4" />
+	</If>
+
+<!-- The Fight Against Fear -->
+ 	<If Condition="HasQuest(31270) &amp;&amp; !IsQuestCompleted(31270)">
+		<CustomBehavior File="Message" Text="Starting The Fight Against Fear" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="The Fight Against Fear" QuestId="31270" Type="KillMob" MobId="62162" KillCount="15" />
+	</If>
+
+<!-- Dreadspinner Extermination -->
+ 	<If Condition="HasQuest(31231) &amp;&amp; !IsQuestCompleted(31231)">
+		<CustomBehavior File="Message" Text="Starting Dreadspinner Extermination" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Dreadspinner Extermination" QuestId="31231" Type="KillMob" MobId="61981" KillCount="8" />
+	</If>
+
+<!-- The Scale-Lord -->
+ 	<If Condition="HasQuest(31269) &amp;&amp; !IsQuestCompleted(31269)">
+		<CustomBehavior File="Message" Text="Starting The Scale-Lord" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="The Scale-Lord" QuestId="31269" Type="KillMob" MobId="63179" KillCount="1" X="-933.80" Y="2581.90" Z="101.26" />
+	</If>
+
+<!-- Mistblade Destruction -->
+ 	<If Condition="HasQuest(31267) &amp;&amp; !IsQuestCompleted(31267)">
+		<CustomBehavior File="Message" Text="Starting Mistblade Destruction" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Mistblade Destruction" QuestId="31267" Type="KillMob" MobId="61970" KillCount="6" />
+	</If>
+
+<!-- Infection -->
+	<If Condition="HasQuest(31272) &amp;&amp; !IsQuestCompleted(31272)" >
+		<CustomBehavior File="Message" Text="Starting Infection" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-931.72" Y="2870.85" Z="110.00" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="CollectThings" QuestId="31272" MobId1="63726" MobId2="63729" MobId3="65118" CollectUntil="QuestComplete" HuntingGroundRadius="200" NonCompeteDistance="5" >
+			<Hotspot X="-936.68" Y="2746.52" Z="114.49" />
+			<Hotspot X="-1076.50" Y="2683.50" Z="102.11" />
+			<Hotspot X="-845.61" Y="2886.35" Z="129.94" />
+			<Hotspot X="-1015.48" Y="2939.23" Z="76.53" />
+		</CustomBehavior>
+	</If>
+
+<!-- A Little Brain Work -->
+ 	<If Condition="HasQuest(31268) &amp;&amp; !IsQuestCompleted(31268)">
+		<CustomBehavior File="Message" Text="Starting A Little Brain Work" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="A Little Brain Work" QuestId="31268" Type="CollectItem" ItemId="85885" CollectCount="3" />
+	</If>
+
+<!-- Bad Genes -->
+	<If Condition="((HasQuest(31271)) &amp;&amp; (!IsQuestCompleted(31271)))" >
+		<CustomBehavior File="Message" Text="Starting Bad Genes" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Bad Genes" QuestId="31271" Type="KillMob" KillCount="3" MobId="63257" />
+		<Objective Nav="Fly" QuestName="Bad Genes" QuestId="31271" Type="KillMob" KillCount="6" MobId="63176" />
+	</If>
+
+<!-- An Ancient Empire -->
+ 	<If Condition="HasQuest(31232) &amp;&amp; !IsQuestCompleted(31232)">
+		<CustomBehavior File="Message" Text="Starting An Ancient Empire" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<Objective Nav="Fly" QuestName="An Ancient Empire" QuestId="31232" Type="CollectItem" ItemId="85634" CollectCount="8" />
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- Sap Tapping -->
+	<If Condition="HasQuest(31233) &amp;&amp; !IsQuestCompleted(31233)">
+		<CustomBehavior File="Message" Text="Starting Sap Tapping" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="384.5976" Y="2385.874" Z="219.0938" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(31233)">
+			<CustomBehavior File="InteractWith" MobId="63740" WaitTime="6000" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				PreInteractMountStrategy="Dismount" NonCompeteDistance="0" >
+				<HuntingGrounds>
+					<Hotspot X="384.5976" Y="2385.874" Z="219.0938" />
+					<Hotspot X="559.2505" Y="2572.864" Z="275.9264" />
+					<Hotspot X="559.2505" Y="2572.864" Z="275.9264" />
+					<Hotspot X="629.1552" Y="2628.038" Z="287.5912" />
+					<Hotspot X="709.637" Y="2716.399" Z="295.0992" />
+					<Hotspot X="691.0659" Y="2524.741" Z="304.498" />
+				</HuntingGrounds>
+			</CustomBehavior>
+			<CustomBehavior File="InteractWith" MobId="213319" CollectionDistance="15" WaitForNpcs="False" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				PreInteractMountStrategy="Dismount" NonCompeteDistance="0" />
+		</While>
+ 	</If>
+ 
+
+<!-- Putting an Eye Out -->
+ 	<If Condition="HasQuest(31234) &amp;&amp; !IsQuestCompleted(31234)">
+		<CustomBehavior File="Message" Text="Starting Putting an Eye Out" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Putting an Eye Out" QuestId="31234" Type="CollectItem" ItemId="85635" CollectCount="1" />
+	</If>
+
+<!-- Culling the Swarm -->
+ 	<If Condition="HasQuest(31109) &amp;&amp; !IsQuestCompleted(31109)">
+		<CustomBehavior File="Message" Text="Starting Culling the Swarm" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Culling the Swarm" QuestId="31109" Type="KillMob" MobId="62563" MobId2="64720" MobId3="64714" KillCount="40" />
+	</If>
+
+<!-- Quest Turn ins -->
+
+	<CustomBehavior File="Message" Text="Quests Completed. Returning to Klaxxi'Vess." LogColor="Green" />
+
+<!-- The Matriarch's Maw -->
+	<If Condition="!HasQuest(31599) &amp;&amp; !IsQuestCompleted(31599) &amp;&amp; HasItem(87878)" >
+		<PickUp QuestName="The Matriarch's Maw" GiverType="Item" QuestId="31599" GiverId="87878" />
+	</If>
+	<If Condition="HasQuest(31599) &amp;&amp; IsQuestCompleted(31599)" >
+		<TurnIn Nav="Fly" QuestName="The Matriarch's Maw" QuestId="31599" TurnInName="Ambersmith Zikk" TurnInId="64599" />
+	</If>
+
+<!-- Seeds of Fear -->
+	<While Condition="GetItemCount(87903) &gt; 5" >
+		<CustomBehavior File="InteractWith" MobId="64599" InteractByQuestFrameDisposition="Ignore" CollectionDistance="200" WaitTime="1000" X="138.1091" Y="3221.354" Z="214.7599" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest()" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+		<CustomBehavior File="WaitTimer" WaitTime="1000" />
+	</While>
+
+<!-- Mistblade Destruction -->
+	<If Condition="HasQuest(31267) &amp;&amp; IsQuestCompleted(31267)" >
+		<TurnIn Nav="Fly" QuestName="Mistblade Destruction" QuestId="31267" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" X="137.09" Y="3192.54" Z="214.76" />
+	</If>
+
+<!-- Vess-Guard Duty -->
+	<If Condition="HasQuest(31505) &amp;&amp; IsQuestCompleted(31505)">
+		<TurnIn Nav="Fly" QuestName="Vess-Guard Duty" QuestId="31505" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" />
+	</If>
+
+<!-- Eradicating the Zan'thik -->
+	<If Condition="HasQuest(31111) &amp;&amp; IsQuestCompleted(31111)">
+		<TurnIn Nav="Fly" QuestName="Eradicating the Zan'thik" QuestId="31111" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" />
+	</If>
+
+<!-- Nope Nope Nope -->
+	<If Condition="HasQuest(31235) &amp;&amp; IsQuestCompleted(31235)">
+		<TurnIn Nav="Fly" QuestName="Nope Nope Nope" QuestId="31235" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" />
+	</If>
+
+<!-- Culling the Swarm -->
+	<If Condition="HasQuest(31109) &amp;&amp; IsQuestCompleted(31109)">
+		<TurnIn Nav="Fly" QuestName="Culling the Swarm" QuestId="31109" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" />
+	</If>
+
+<!-- Dreadspinner Extermination -->
+	<If Condition="HasQuest(31231) &amp;&amp; IsQuestCompleted(31231)">
+		<TurnIn Nav="Fly" QuestName="Dreadspinner Extermination" QuestId="31231" TurnInName="Kil'ruk the Wind-Reaver" TurnInId="62538" />
+	</If>
+
+<!-- Dark Skies -->
+	<If Condition="HasQuest(31216) &amp;&amp; IsQuestCompleted(31216)" >
+		<TurnIn Nav="Fly" QuestName="Dark Skies" QuestId="31216" TurnInName="Xaril the Poisoned Mind" TurnInId="62151" />
+	</If>
+
+<!-- Infection -->
+	<If Condition="HasQuest(31272) &amp;&amp; IsQuestCompleted(31272)" >
+		<TurnIn Nav="Fly" QuestName="Infection" QuestId="31272" TurnInName="Hisek the Swarmkeeper" TurnInId="63785" X="139.71" Y="3235.76" Z="212.32" />
+	</If>
+
+<!-- Ordnance Disposal -->
+	<If Condition="HasQuest(31504) &amp;&amp; IsQuestCompleted(31504)" >
+		<TurnIn Nav="Fly" QuestName="Ordnance Disposal" QuestId="31504" TurnInName="Hisek the Swarmkeeper" TurnInId="63785" X="139.71" Y="3235.76" Z="212.32" />
+	</If>
+
+<!-- Quiet Now -->
+	<If Condition="HasQuest(31510) &amp;&amp; IsQuestCompleted(31510)" >
+		<TurnIn Nav="Fly" QuestName="Quiet Now" QuestId="31510" TurnInName="Hisek the Swarmkeeper" TurnInId="63785" X="139.71" Y="3235.76" Z="212.32" />
+	</If>
+
+<!-- Debugging The Terrace -->
+	<If Condition="HasQuest(31237) &amp;&amp; IsQuestCompleted(31237)" >
+		<TurnIn Nav="Fly" QuestName="Debugging The Terrace" QuestId="31237" TurnInName="Hisek the Swarmkeeper" TurnInId="63785" X="139.71" Y="3235.76" Z="212.32" />
+	</If>
+
+<!-- An Ancient Empire -->
+	<If Condition="HasQuest(31232) &amp;&amp; IsQuestCompleted(31232)">
+		<TurnIn Nav="Fly" QuestName="An Ancient Empire" QuestId="31232" TurnInName="Korven the Prime" TurnInId="62180" />
+	</If>
+
+<!-- The Scale-Lord -->
+	<If Condition="HasQuest(31269) &amp;&amp; IsQuestCompleted(31269)" >
+		<TurnIn Nav="Fly" QuestName="The Scale-Lord" QuestId="31269" TurnInName="Korven the Prime" TurnInId="62180" X="128.88" Y="3232.75" Z="215.65" />
+	</If>
+
+<!-- The Fight Against Fear -->
+	<If Condition="HasQuest(31270) &amp;&amp; IsQuestCompleted(31270)" >
+		<TurnIn Nav="Fly" QuestName="The Fight Againts Fear" QuestId="31270" TurnInName="Korven the Prime" TurnInId="62180" X="128.88" Y="3232.75" Z="215.65" />
+	</If>
+
+<!-- Sap Tapping -->
+	<If Condition="HasQuest(31233) &amp;&amp; IsQuestCompleted(31233)">
+		<TurnIn Nav="Fly" QuestName="Sap Tapping" QuestId="31233" TurnInName="Korven the Prime" TurnInId="62180" />
+	</If>
+
+<!-- Meltdown -->
+	<If Condition="HasQuest(31507) &amp;&amp; IsQuestCompleted(31507)">
+		<TurnIn Nav="Fly" QuestName="Meltdown" QuestId="31507" TurnInName="Korven the Prime" TurnInId="62180" />
+	</If>
+
+<!-- Sampling the Empire's Finest -->
+	<If Condition="HasQuest(31496) &amp;&amp; IsQuestCompleted(31496)">
+		<TurnIn Nav="Fly" QuestName="Sampling the Empire's Finest" QuestId="31496" TurnInName="Korven the Prime" TurnInId="62180" />
+	</If>
+
+<!-- Specimen Request -->
+	<If Condition="HasQuest(31508) &amp;&amp; IsQuestCompleted(31508)" >
+		<TurnIn Nav="Fly" QuestName="Specimen Request" QuestId="31508" TurnInName="Rik'kal the Dissector" TurnInId="63072" X="134.24" Y="3229.79" Z="215.46" />
+	</If>
+
+<!-- Shortcut to Ruin -->
+	<If Condition="HasQuest(31503) &amp;&amp; IsQuestCompleted(31503)" >
+		<TurnIn Nav="Fly" QuestName="Shortcut to Ruin" QuestId="31503" TurnInName="Rik'kal the Dissector" TurnInId="63072" X="134.24" Y="3229.79" Z="215.46" />
+	</If>
+
+<!-- Wing Clip -->
+	<If Condition="HasQuest(31502) &amp;&amp; IsQuestCompleted(31502)" >
+		<TurnIn Nav="Fly" QuestName="Wing Clip" QuestId="31502" TurnInName="Rik'kal the Dissector" TurnInId="63072" X="134.24" Y="3229.79" Z="215.46" />
+	</If>
+
+<!-- Bad Genes -->
+	<If Condition="HasQuest(31271) &amp;&amp; IsQuestCompleted(31271)" >
+		<TurnIn Nav="Fly" QuestName="Bad Genes" QuestId="31271" TurnInName="Rik'kal the Dissector" TurnInId="63072" X="134.24" Y="3229.79" Z="215.46" />
+	</If>
+
+<!-- Putting an Eye Out -->
+	<If Condition="HasQuest(31234) &amp;&amp; IsQuestCompleted(31234)">
+		<TurnIn Nav="Fly" QuestName="Putting an Eye Out" QuestId="31234" TurnInName="Rik'kal the Dissector" TurnInId="63072" />
+	</If>
+
+<!-- Fear Takes Root -->
+	<If Condition="HasQuest(31509) &amp;&amp; IsQuestCompleted(31509)">
+		<TurnIn Nav="Fly" QuestName="Fear Takes Root" QuestId="31509" TurnInName="Rik'kal the Dissector" TurnInId="63072" />
+	</If>
+
+<!-- Sonic Disruption -->
+	<If Condition="HasQuest(31487) &amp;&amp; IsQuestCompleted(31487)" >
+		<TurnIn Nav="Fly" QuestName="Sonic Disruption" QuestId="31487" TurnInName="Kaz'tik the Manipulator" TurnInId="63758" X="139.71" Y="3235.76" Z="212.32" />
+	</If>
+
+<!-- Free From Her Clutches -->
+	<If Condition="HasQuest(31494) &amp;&amp; IsQuestCompleted(31494)" >
+		<TurnIn Nav="Fly" QuestName="Free From Her Clutches" QuestId="31494" TurnInName="Kaz'tik the Manipulator" TurnInId="63758" X="139.71" Y="3235.76" Z="212.32" />
+	</If>
+
+<!-- A Little Brain Work -->
+	<If Condition="HasQuest(31268) &amp;&amp; IsQuestCompleted(31268)" >
+		<TurnIn Nav="Fly" QuestName="A Little Brain Work" QuestId="31268" TurnInName="Kaz'tik the Manipulator" TurnInId="63758" X="139.71" Y="3235.76" Z="212.32" />
+	</If>
+
+<!-- Kunchong Treats -->
+	<If Condition="HasQuest(31024) &amp;&amp; IsQuestCompleted(31024)" >
+		<TurnIn Nav="Fly" QuestName="Kunchong Treats" QuestId="31024" TurnInName="Kaz'tik the Manipulator" TurnInId="63758" X="139.71" Y="3235.76" Z="212.32" />
+	</If>
+
+<!-- Brain Food -->
+	<If Condition="HasQuest(31238) &amp;&amp; IsQuestCompleted(31238)">
+		<TurnIn Nav="Fly" QuestName="Brain Food" QuestId="31238" TurnInName="Kaz'tik the Manipulator" TurnInId="63758" />
+	</If>
+
+<!-- Shackles of Manipulation -->
+	<If Condition="HasQuest(31506) &amp;&amp; IsQuestCompleted(31506)">
+		<TurnIn Nav="Fly" QuestName="Shackles of Manipulation" QuestId="31506" TurnInName="Kaz'tik the Manipulator" TurnInId="63758" />
+	</If>
+
+<!-- Rampaging Against The Machine -->
+	<If Condition="HasQuest(31808) &amp;&amp; IsQuestCompleted(31808)">
+		<TurnIn Nav="Fly" QuestName="Rampaging Against The Machine" QuestId="31808" TurnInName="Kaz'tik the Manipulator" TurnInId="63758" />
+	</If>
+
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+
+	<CustomBehavior File="ForcedDismount" />
+	<If Condition="HasItem(60498)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60498)" WaitTime="1500" />
+	<ElseIf Condition="HasItem(93672)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93672)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(54452)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(54452)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(64488)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(6948)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1500" />
+	</ElseIf>
+	</If>
+	
+	<CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of Klaxxi Dailies" />
+
+</QuestOrder>
+</HBProfile>

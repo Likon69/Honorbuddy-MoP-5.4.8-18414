@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <!--
+    =====
+    Original contribution by chinajade
+      $Rev: 3159 $
+      $Date: 2014-03-19 01:34:46 -0500 (Wed, 19 Mar 2014) $
+    
+    WARNING: DO NOT EDIT .xsd files.
+      They are not authoritative and will be overwritten!
+      Instead, regenerate the .xsd files from the .rnc 'sources'.
+      Its a one-line command to do this. Please see README.txt
+      for more information.
+    =====
+  -->
+  <!--
+    CustomBehavior schema is implemented via co-occurrence constraints.
+    
+    While co-occurrence constraints provide powerful capabilities, they
+    unfortunately don't survive conversion to DTDs or W3C XML
+    Schema. RELAX NG has fewer restrictions on the XML structures it can
+    describe than either of those, as you'll see this in Chapter
+    16. RELAX NG's co-occurrence constraints can't be expressed with W3C
+    XML Schema, because this type of schema isn't "deterministic." Some
+    co-occurrence constraints can be expressed in W3C XML Schema using
+    either xsi:type when possible or xs:key as a tricky hack
+  -->
+  <!-- ********** CUSTOMBEHAVIOR EXTENSIONS ********** -->
+  <xs:attributeGroup name="Attributes-AuraIdN">
+    <xs:attribute name="AuraId" type="HBType-Id"/>
+    <xs:attribute name="AuraId2" type="HBType-Id"/>
+    <xs:attribute name="AuraId3" type="HBType-Id"/>
+    <xs:attribute name="AuraId4" type="HBType-Id"/>
+    <xs:attribute name="AuraId5" type="HBType-Id"/>
+    <xs:attribute name="AuraId6" type="HBType-Id"/>
+    <xs:attribute name="AuraId7" type="HBType-Id"/>
+    <xs:attribute name="AuraId8" type="HBType-Id"/>
+    <xs:attribute name="AuraId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-AuraIdMissingFromMobN">
+    <xs:attribute name="AuraIdMissingFromMob" type="HBType-Id"/>
+    <xs:attribute name="AuraIdMissingFromMob2" type="HBType-Id"/>
+    <xs:attribute name="AuraIdMissingFromMob3" type="HBType-Id"/>
+    <xs:attribute name="AuraIdMissingFromMob4" type="HBType-Id"/>
+    <xs:attribute name="AuraIdMissingFromMob5" type="HBType-Id"/>
+    <xs:attribute name="AuraIdMissingFromMob6" type="HBType-Id"/>
+    <xs:attribute name="AuraIdMissingFromMob7" type="HBType-Id"/>
+    <xs:attribute name="AuraIdMissingFromMob8" type="HBType-Id"/>
+    <xs:attribute name="AuraIdMissingFromMob9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-AuraIdOnMobN">
+    <xs:attribute name="AuraIdOnMob" type="HBType-Id"/>
+    <xs:attribute name="AuraIdOnMob2" type="HBType-Id"/>
+    <xs:attribute name="AuraIdOnMob3" type="HBType-Id"/>
+    <xs:attribute name="AuraIdOnMob4" type="HBType-Id"/>
+    <xs:attribute name="AuraIdOnMob5" type="HBType-Id"/>
+    <xs:attribute name="AuraIdOnMob6" type="HBType-Id"/>
+    <xs:attribute name="AuraIdOnMob7" type="HBType-Id"/>
+    <xs:attribute name="AuraIdOnMob8" type="HBType-Id"/>
+    <xs:attribute name="AuraIdOnMob9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-FactionIdN">
+    <xs:attribute name="FactionId" type="HBType-Id"/>
+    <xs:attribute name="FactionId2" type="HBType-Id"/>
+    <xs:attribute name="FactionId3" type="HBType-Id"/>
+    <xs:attribute name="FactionId4" type="HBType-Id"/>
+    <xs:attribute name="FactionId5" type="HBType-Id"/>
+    <xs:attribute name="FactionId6" type="HBType-Id"/>
+    <xs:attribute name="FactionId7" type="HBType-Id"/>
+    <xs:attribute name="FactionId8" type="HBType-Id"/>
+    <xs:attribute name="FactionId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-FactionIdN-Mandatory1">
+    <xs:attribute name="FactionId" use="required" type="HBType-Id"/>
+    <xs:attribute name="FactionId2" type="HBType-Id"/>
+    <xs:attribute name="FactionId3" type="HBType-Id"/>
+    <xs:attribute name="FactionId4" type="HBType-Id"/>
+    <xs:attribute name="FactionId5" type="HBType-Id"/>
+    <xs:attribute name="FactionId6" type="HBType-Id"/>
+    <xs:attribute name="FactionId7" type="HBType-Id"/>
+    <xs:attribute name="FactionId8" type="HBType-Id"/>
+    <xs:attribute name="FactionId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-MobIdN">
+    <xs:attribute name="MobId" type="HBType-Id"/>
+    <xs:attribute name="MobId2" type="HBType-Id"/>
+    <xs:attribute name="MobId3" type="HBType-Id"/>
+    <xs:attribute name="MobId4" type="HBType-Id"/>
+    <xs:attribute name="MobId5" type="HBType-Id"/>
+    <xs:attribute name="MobId6" type="HBType-Id"/>
+    <xs:attribute name="MobId7" type="HBType-Id"/>
+    <xs:attribute name="MobId8" type="HBType-Id"/>
+    <xs:attribute name="MobId9" type="HBType-Id"/>
+    <xs:attribute name="MobId10" type="HBType-Id"/>
+    <xs:attribute name="MobId11" type="HBType-Id"/>
+    <xs:attribute name="MobId12" type="HBType-Id"/>
+    <xs:attribute name="MobId13" type="HBType-Id"/>
+    <xs:attribute name="MobId14" type="HBType-Id"/>
+    <xs:attribute name="MobId15" type="HBType-Id"/>
+    <xs:attribute name="MobId16" type="HBType-Id"/>
+    <xs:attribute name="MobId17" type="HBType-Id"/>
+    <xs:attribute name="MobId18" type="HBType-Id"/>
+    <xs:attribute name="MobId19" type="HBType-Id"/>
+    <xs:attribute name="MobId20" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-MobIdN-Mandatory1">
+    <xs:attribute name="MobId" use="required" type="HBType-Id"/>
+    <xs:attribute name="MobId2" type="HBType-Id"/>
+    <xs:attribute name="MobId3" type="HBType-Id"/>
+    <xs:attribute name="MobId4" type="HBType-Id"/>
+    <xs:attribute name="MobId5" type="HBType-Id"/>
+    <xs:attribute name="MobId6" type="HBType-Id"/>
+    <xs:attribute name="MobId7" type="HBType-Id"/>
+    <xs:attribute name="MobId8" type="HBType-Id"/>
+    <xs:attribute name="MobId9" type="HBType-Id"/>
+    <xs:attribute name="MobId10" type="HBType-Id"/>
+    <xs:attribute name="MobId11" type="HBType-Id"/>
+    <xs:attribute name="MobId12" type="HBType-Id"/>
+    <xs:attribute name="MobId13" type="HBType-Id"/>
+    <xs:attribute name="MobId14" type="HBType-Id"/>
+    <xs:attribute name="MobId15" type="HBType-Id"/>
+    <xs:attribute name="MobId16" type="HBType-Id"/>
+    <xs:attribute name="MobId17" type="HBType-Id"/>
+    <xs:attribute name="MobId18" type="HBType-Id"/>
+    <xs:attribute name="MobId19" type="HBType-Id"/>
+    <xs:attribute name="MobId20" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-ObjectIdN">
+    <xs:attribute name="ObjectId" type="HBType-Id"/>
+    <xs:attribute name="ObjectId2" type="HBType-Id"/>
+    <xs:attribute name="ObjectId3" type="HBType-Id"/>
+    <xs:attribute name="ObjectId4" type="HBType-Id"/>
+    <xs:attribute name="ObjectId5" type="HBType-Id"/>
+    <xs:attribute name="ObjectId6" type="HBType-Id"/>
+    <xs:attribute name="ObjectId7" type="HBType-Id"/>
+    <xs:attribute name="ObjectId8" type="HBType-Id"/>
+    <xs:attribute name="ObjectId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-ObjectIdN-Mandatory1">
+    <xs:attribute name="ObjectId" use="required" type="HBType-Id"/>
+    <xs:attribute name="ObjectId2" type="HBType-Id"/>
+    <xs:attribute name="ObjectId3" type="HBType-Id"/>
+    <xs:attribute name="ObjectId4" type="HBType-Id"/>
+    <xs:attribute name="ObjectId5" type="HBType-Id"/>
+    <xs:attribute name="ObjectId6" type="HBType-Id"/>
+    <xs:attribute name="ObjectId7" type="HBType-Id"/>
+    <xs:attribute name="ObjectId8" type="HBType-Id"/>
+    <xs:attribute name="ObjectId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:complexType name="QuestBehaviorBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="AvoidMobs"/>
+      <xs:group minOccurs="0" ref="QBCoreSubElement-Blackspots"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+    <xs:attribute name="IgnoreMobsInBlackspots" type="HBType-Boolean"/>
+    <xs:attribute name="MovementBy" type="QBCoreType-MovementBy"/>
+    <xs:attribute name="NonCompeteDistance" type="HBType-Distance"/>
+    <xs:attribute name="QuestObjectiveIndex" type="xs:positiveInteger"/>
+    <xs:attribute name="TerminateWhen" type="HBType-Condition"/>
+    <xs:attribute name="TerminationChecksQuestProgress" type="HBType-Boolean"/>
+  </xs:complexType>
+  <xs:attributeGroup name="Attributes-QuestSpecifier">
+    <xs:attribute name="QuestId" type="HBType-Id"/>
+    <xs:attribute name="QuestCompleteRequirement" type="QBType-QuestCompleteRequirement"/>
+    <xs:attribute name="QuestInLogRequirement" type="QBType-QuestInLogRequirement"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-QuestSpecifier-MandatoryQuestId">
+    <xs:attribute name="QuestId" use="required" type="HBType-Id"/>
+    <xs:attribute name="QuestCompleteRequirement" type="QBType-QuestCompleteRequirement"/>
+    <xs:attribute name="QuestInLogRequirement" type="QBType-QuestInLogRequirement"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-VehicleIdN">
+    <xs:attribute name="VehicleId" type="HBType-Id"/>
+    <xs:attribute name="VehicleId2" type="HBType-Id"/>
+    <xs:attribute name="VehicleId3" type="HBType-Id"/>
+    <xs:attribute name="VehicleId4" type="HBType-Id"/>
+    <xs:attribute name="VehicleId5" type="HBType-Id"/>
+    <xs:attribute name="VehicleId6" type="HBType-Id"/>
+    <xs:attribute name="VehicleId7" type="HBType-Id"/>
+    <xs:attribute name="VehicleId8" type="HBType-Id"/>
+    <xs:attribute name="VehicleId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-VehicleIdN-Mandatory1">
+    <xs:attribute name="VehicleId" use="required" type="HBType-Id"/>
+    <xs:attribute name="VehicleId2" type="HBType-Id"/>
+    <xs:attribute name="VehicleId3" type="HBType-Id"/>
+    <xs:attribute name="VehicleId4" type="HBType-Id"/>
+    <xs:attribute name="VehicleId5" type="HBType-Id"/>
+    <xs:attribute name="VehicleId6" type="HBType-Id"/>
+    <xs:attribute name="VehicleId7" type="HBType-Id"/>
+    <xs:attribute name="VehicleId8" type="HBType-Id"/>
+    <xs:attribute name="VehicleId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:group name="QBCoreSubElement-Blackspots">
+    <xs:sequence>
+      <xs:element name="Blackspots">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="Blackspot"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:element name="HuntingGrounds">
+    <xs:complexType>
+      <xs:group maxOccurs="unbounded" ref="QBCoreSubElement-Waypoint"/>
+      <xs:attribute name="WaypointVisitStrategy">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="InOrder"/>
+            <xs:enumeration value="PickOneAtRandom"/>
+            <xs:enumeration value="Random"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:group name="QBCoreSubElement-Waypoint">
+    <xs:sequence>
+      <xs:element name="Hotspot">
+        <xs:complexType>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+          <xs:attribute name="Name"/>
+          <xs:attribute name="Radius" type="HBType-Distance"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:simpleType name="QBCoreType-SafePathType-Strategy">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="StalkMobAtAvoidDistance"/>
+      <xs:enumeration value="WaitForAvoidDistance"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBCoreType-MovementBy">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ClickToMoveOnly"/>
+      <xs:enumeration value="FlightorPreferred"/>
+      <xs:enumeration value="NavigatorOnly"/>
+      <xs:enumeration value="NavigatorPreferred"/>
+      <xs:enumeration value="None"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBCoreType-MountStrategy">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="CancelShapeshift"/>
+      <xs:enumeration value="Dismount"/>
+      <xs:enumeration value="DismountOrCancelShapeshift"/>
+      <xs:enumeration value="Mount"/>
+      <xs:enumeration value="None"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBCoreType-ProactiveCombatStrategy">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="NoClear"/>
+      <xs:enumeration value="ClearMobsTargetingUs"/>
+      <xs:enumeration value="ClearMobsThatWillAggro"/>
+      <xs:enumeration value="ClearAll"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-Angle">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="-3.1415926"/>
+      <xs:maxInclusive value="6.2831853"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-GossipOptions">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="(1|2|3|4|5)((,\s*|\s+)(1|2|3|4|5))*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-HotbarButton">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="12"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-HotbarButtons">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="(1|2|3|4|5|6|7|8|9|10|11|12)((,|\s*)(1|2|3|4|5|6|7|8|9|10|11|12))*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-IdsList">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="[0-9]+((,\s*|\s+)[0-9]+)*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-MobState">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Alive"/>
+      <xs:enumeration value="AliveNotInCombat"/>
+      <xs:enumeration value="BelowHp"/>
+      <xs:enumeration value="Dead"/>
+      <xs:enumeration value="DontCare"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-QuestCompleteRequirement">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Complete"/>
+      <xs:enumeration value="CompleteOrFailed"/>
+      <xs:enumeration value="DontCare"/>
+      <xs:enumeration value="Failed"/>
+      <xs:enumeration value="NotComplete"/>
+      <xs:enumeration value="NotCompleteOrFailed"/>
+      <xs:enumeration value="NotFailed"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-QuestInLogRequirement">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="DontCare"/>
+      <xs:enumeration value="InLog"/>
+      <xs:enumeration value="NotInLog"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-WoWPoint">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="-?[0-9]+(\.[0-9]*)?(,\s*|\s+)-?[0-9]+(\.[0-9]*)?(,\s*|\s+)-?[0-9]+(\.[0-9]*)?"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="QBType-WoWPoints">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="-?[0-9]+(\.[0-9]*)?(,\s*|\s+)-?[0-9]+(\.[0-9]*)?(,\s*|\s+)-?[0-9]+(\.[0-9]*)?((\s*\|\s*)-?[0-9]+(\.[0-9]*)?(,\s*|\s+)-?[0-9]+(\.[0-9]*)?(,\s*|\s+)-?[0-9]+(\.[0-9]*)?)*"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,488 @@
+<HBProfile>
+	<Name>Westfall Quests Memory Block ($Rev$)</Name>
+	<MinLevel>60</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+	
+	<Mailboxes>
+		<Mailbox X="-10642.5" Y="1154.514" Z="33.35603" />
+	</Mailboxes>
+
+	<Vendors>
+		<Vendor Name="Mike Miller" Entry="1670" Type="Food" X="-10660.01" Y="1003.115" Z="32.87047" />
+		<Vendor Name="William MacGregor" Entry="1668" Type="Repair" X="-10653.31" Y="996.5868" Z="32.87414" />
+		<Vendor Name="Quartermaster Lewis" Entry="491" Type="Repair" X="-10500.6" Y="1021.591" Z="60.52729" />
+		<Vendor Name="Private Jackson" Entry="43948" Type="Repair" X="-10912.7" Y="1540.76" Z="54.70648" />
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+		<Blackspot X="-10097.17" Y="1088.543" Z="36.54481" Radius="2.508273" />
+		<Blackspot X="-11051.68" Y="1544.945" Z="43.28028" Radius="8.848822" />
+		<Blackspot X="-8788.063" Y="583.6953" Z="97.8705" Radius="2" />
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- In Defense of Westfall -->
+	<Quest Id="26286" Name="In Defense of Westfall">
+		<Objective Type="CollectItem" ItemId="58111" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Riverpaw Brute" Id="124" />
+				<Mob Name="Riverpaw Brute" Id="54372" />
+				<Mob Name="Riverpaw Bandit" Id="452" />
+				<Mob Name="Riverpaw Bandit" Id="54371" />
+				<Mob Name="Riverpaw Herbalist" Id="501" />
+				<Mob Name="Riverpaw Herbalist" Id="54373" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-10427.22" Y="1108.09" Z="33.02" />
+				<Hotspot X="-10518.79" Y="1122.71" Z="41.59" />
+				<Hotspot X="-10572.69" Y="1178.52" Z="34.41" />
+				<Hotspot X="-10626.04" Y="1224.30" Z="33.33" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- The Westfall Brigade -->
+	<Quest Id="26287" Name="The Westfall Brigade">
+		<Objective Type="KillMob" MobId="124" MobId2="54372" MobId3="452" MobId4="54371" MobId5="501" MobId6="54373" KillCount="12">
+			<Hotspots>
+				<Hotspot X="-10427.22" Y="1108.09" Z="33.02" />
+				<Hotspot X="-10518.79" Y="1122.71" Z="41.59" />
+				<Hotspot X="-10572.69" Y="1178.52" Z="34.41" />
+				<Hotspot X="-10626.04" Y="1224.30" Z="33.33" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Hot On the Trail: The Riverpaw Clan -->
+	<Quest Id="26213" Name="Hot On the Trail: The Riverpaw Clan">
+		<Objective Type="CollectItem" ItemId="57755" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Riverpaw Gnoll" Id="117" />
+				<Mob Name="Riverpaw Scout" Id="500" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-9713.863" Y="1033.187" Z="37.24542" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Hot On the Trail: Murlocs -->
+	<Quest Id="26214" Name="Hot On the Trail: Murlocs">
+		<Objective Type="CollectItem" ItemId="57756" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Murloc Coastrunner" Id="126" />
+				<Mob Name="Murloc Raider" Id="515" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-9597.701" Y="1049.205" Z="6.577845" />
+				<Hotspot X="-9619.249" Y="1144.195" Z="2.801281" />
+				<Hotspot X="-9601.485" Y="1437.452" Z="4.748016" />
+				<Hotspot X="-9614.049" Y="1500.524" Z="5.833923" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Lou's Parting Thoughts -->
+	<Quest Id="26232" Name="Lou's Parting Thoughts">
+		<Objective Type="KillMob" MobId="42417" KillCount="11">
+			<Hotspots>
+				<Hotspot X="-9861.49" Y="1333.955" Z="41.90353" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- I Take Candle -->
+	<Quest Id="26229" Name="I Take Candle">
+		<Objective Type="KillMob" MobId="1236" KillCount="12">
+			<Hotspots>
+				<Hotspot X="-9988.239" Y="1457.889" Z="42.78088" />
+				<Hotspot X="-9932.664" Y="1441.323" Z="39.12342" />
+				<Hotspot X="-9900.005" Y="1456.287" Z="40.95760" />
+				<Hotspot X="-9848.358" Y="1452.293" Z="40.18240" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Feast or Famine -->
+	<Quest Id="26230" Name="Feast or Famine">
+		<Objective Type="CollectItem" ItemId="57787" CollectCount="6">
+			<CollectFrom>
+				<Mob Name="Coyote" Id="834" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-9925.28" Y="1261.20" Z="42.21" />
+				<Hotspot X="-9899.60" Y="1207.23" Z="42.06" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="CollectItem" ItemId="57789" CollectCount="5">
+			<CollectFrom>
+				<GameObject Name="Fresh Dirt" Id="203972" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-9925.28" Y="1261.20" Z="42.21" />
+				<Hotspot X="-9899.60" Y="1207.23" Z="42.06" />
+				<Hotspot X="-9949.77" Y="1201.26" Z="42.64" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Times Are Tough -->
+	<Quest Id="26237" Name="Times Are Tough">
+		<Objective Type="KillMob" MobId="114" KillCount="10">
+			<Hotspots>
+				<Hotspot X="-10177.86" Y="1064.612" Z="36.61926" />
+				<Hotspot X="-10140.71" Y="1108.644" Z="36.53258" />
+				<Hotspot X="-10116.04" Y="1143.075" Z="36.77152" />
+				<Hotspot X="-10166.39" Y="1163.655" Z="36.28336" />
+				<Hotspot X="-10202.82" Y="1119.656" Z="36.40937" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Westfall Stew -->
+	<Quest Id="26241" Name="Westfall Stew">
+		<Objective Type="CollectItem" ItemId="57911" CollectCount="6">
+			<CollectFrom>
+				<GameObject Name="Okra" Id="203982" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-10177.86" Y="1064.612" Z="36.61926" />
+				<Hotspot X="-10140.71" Y="1108.644" Z="36.53258" />
+				<Hotspot X="-10116.04" Y="1143.075" Z="36.77152" />
+				<Hotspot X="-10166.39" Y="1163.655" Z="36.28336" />
+				<Hotspot X="-10202.82" Y="1119.656" Z="36.40937" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="CollectItem" ItemId="57788" CollectCount="6">
+			<CollectFrom>
+				<Mob Name="Goretusk" Id="157" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-10154.45" Y="1024.407" Z="37.43431" />
+				<Hotspot X="-10036.98" Y="1010.929" Z="37.70475" />
+				<Hotspot X="-10056.32" Y="1082.783" Z="38.6288" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="CollectItem" ItemId="57786" CollectCount="6">
+			<CollectFrom>
+				<Mob Name="Young Fleshripper" Id="199" />
+				<Mob Name="Fleshripper" Id="1109" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-10085.47" Y="1294.682" Z="42.57134" />
+				<Hotspot X="-9931.04" Y="1131.844" Z="42.99359" />
+				<Hotspot X="-9962.893" Y="1067.408" Z="41.03286" />
+				<Hotspot X="-10087.11" Y="905.4611" Z="36.80259" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="Message" Text="Fatal Desynchronization: Incorrect faction linking." LogColor="Red" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<If Condition="!HasQuest(184) &amp;&amp; !IsQuestCompleted(184)" >
+		<CustomBehavior File="Message" Text="Parsing for breadcrumbs..." LogColor="CornflowerBlue" />
+		<PickUp Nav="Fly" QuestName="Furlbrow's Deed" QuestId="184" GiverType="Object" GiverName="Westfall Deed"
+			GiverId="203734" X="-10144.4" Y="675.375" Z="35.9633" />
+	</If>
+	<If Condition="HasQuest(184)" >
+		<CustomBehavior File="Message" Text="Parsing for breadcrumbs..." LogColor="CornflowerBlue" />
+		<TurnIn Nav="Fly" QuestName="Furlbrow's Deed" QuestId="184" TurnInName="Horatio Laine" TurnInId="42308" />
+	</If>
+	
+	<If Condition="HasQuest(26378)" >
+		<TurnIn Nav="Fly" QuestName="Hero's Call: Westfall" QuestId="26378" TurnInName="Horatio Laine" TurnInId="42308" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Beginning Memory Block: Westfall" LogColor="Green"  />
+	<CustomBehavior File="UserSettings" LootMobs="True" UseFlightPaths="True" PullDistance="25" />
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding Memory to Jansen Stead" LogColor="CornflowerBlue" />
+
+<!-- Murder Was the Case That They Gave Me -->
+	<PickUp Nav="Fly" QuestName="Murder Was the Case That They Gave Me" QuestId="26209" GiverName="Lieutenant Horatio Laine" GiverId="42308" />
+	<CustomBehavior File="InteractWith" QuestId="26209" MobState="Alive" MobId="42386" MobId2="42384" MobId3="42391" MobId4="42383" NumOfTimes="1000" 
+		InteractByGossipOptions="1" WaitTime="2000" CollectionDistance="200" />
+	<TurnIn Nav="Fly" QuestName="Murder Was the Case That They Gave Me" QuestId="26209" TurnInName="Lieutenant Horatio Laine" TurnInId="42308" />
+	
+<!-- Hot on the Trail: The Riverpaw Clan & Murlocs -->
+	<PickUp Nav="Fly" QuestName="Hot on the Trail: The Riverpaw Clan" QuestId="26213" GiverName="Lieutenant Horatio Laine" GiverId="42308" />
+	<PickUp Nav="Fly" QuestName="Hot on the Trail: Murlocs" QuestId="26214" GiverName="Lieutenant Horatio Laine" GiverId="42308" />
+	<Objective QuestName="Hot On the Trail: The Riverpaw Clan" QuestId="26213" Type="CollectItem" ItemId="57755" CollectCount="1" />
+	<Objective QuestName="Hot On the Trail: Murlocs" QuestId="26214" Type="CollectItem" ItemId="57756" CollectCount="1" />
+	<If Condition="!HasItem(1357) &amp;&amp; !HasQuest(26353) &amp;&amp; !IsQuestCompleted(26353)" >
+		<CustomBehavior File="CollectThings" CollectItemId="1357" CollectItemCount="1" MobId="126" MobId2="515" MobId3="456" 
+			HuntingGroundRadius="200" MobState="Alive" >
+			<Hotspot X="-9636.091" Y="1305.837" Z="4.638324" />
+			<Hotspot X="-9602.542" Y="1415.651" Z="3.556948" />
+			<Hotspot X="-9598.081" Y="1481.834" Z="2.742361" />
+			<Hotspot X="-9639.283" Y="1107.247" Z="5.464029" />
+			<Hotspot X="-9622.539" Y="1075.164" Z="3.597556" />
+		</CustomBehavior>
+	</If>
+	<If Condition="HasItem(1357) &amp;&amp; !HasQuest(26353) &amp;&amp; !IsQuestCompleted(26353)" >
+		<PickUp Nav="Fly" QuestName="Captain Sanders' Hidden Treasure" QuestId="26353" GiverType="Item" GiverId="1357" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="Hot on the Trail: The Riverpaw Clan" QuestId="26213" TurnInName="Lieutenant Horatio Laine" TurnInId="42308" />
+	<TurnIn Nav="Fly" QuestName="Hot on the Trail: Murlocs" QuestId="26214" TurnInName="Lieutenant Horatio Laine" TurnInId="42308" />
+
+<!-- Meet Two-Shoed Lou -->
+	<PickUp Nav="Fly" QuestName="Meet Two-Shoed Lou" QuestId="26215" GiverName="Lieutenant Horatio Laine" GiverId="42308" />
+	<TurnIn Nav="Fly" QuestName="Meet Two-Shoed Lou" QuestId="26215" TurnInName="Two-Shoed Lou" TurnInId="42405" />
+	
+<!-- Livin' the Life/I Take Candle -->
+	<PickUp Nav="Fly" QuestName="Livin' the Life" QuestId="26228" GiverName="Two-Shoed Lou" GiverId="42405" />
+	<PickUp Nav="Fly" QuestName="I Take Candle" QuestId="26229" GiverName="Jimb McHannigan" GiverId="42498" />
+	<If Condition="HasQuest(26228)" >
+		<RunTo X="-9848.701" Y="1386.726" Z="38.68681" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(57761)" WaitTime="1000" />
+		<CustomBehavior File="WaitTimer" WaitTime="83000" />
+	</If>
+	<Objective QuestName="I Take Candle" QuestId="26229" Type="KillMob" MobId="1236" KillCount="12" />
+	<TurnIn Nav="Fly" QuestName="I Take Candle" QuestId="26229" TurnInName="Jimb McHannigan" TurnInId="42498" />
+	<TurnIn Nav="Fly" QuestName="Livin' the Life" QuestId="26228" TurnInName="Two-Shoed Lou" TurnInId="42405" />
+	
+<!-- Lou's Parting Thoughts/Feast or Famine -->
+	<PickUp Nav="Fly" QuestName="Feast or Famine" QuestId="26230" GiverName="Mama Celeste" GiverId="42497" />
+	<Objective QuestName="Feast or Famine" QuestId="26230" Type="CollectItem" ItemId="57789" CollectCount="5" />
+	<Objective QuestName="Feast or Famine" QuestId="26230" Type="CollectItem" ItemId="57787" CollectCount="6" />
+	<TurnIn Nav="Fly" QuestName="Feast or Famine" QuestId="26230" TurnInName="Mama Celeste" TurnInId="42497" />
+	<PickUp Nav="Fly" QuestName="Lou's Parting Thoughts" QuestId="26232" GiverName="Two-Shoed Lou" GiverId="42405" />
+	<While Condition="HasQuest(26232) &amp;&amp; !IsQuestCompleted(26232)" >
+		<RunTo QuestId="26232" X="-9854.185" Y="1326.49" Z="42.08814" />
+		<CustomBehavior File="WaitTimer" QuestId="26232" WaitTime="2000"/>
+	</While>
+	<TurnIn Nav="Fly" QuestName="Lou's Parting Thoughts" QuestId="26232" TurnInName="Lieutenant Horatio Laine" TurnInId="42558" />
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding Memory to Captain Sanders Treasure" LogColor="CornflowerBlue" />
+	<TurnIn Nav="Fly" QuestName="Captain Sanders' Hidden Treasure" QuestId="26353" TurnInType="Object" TurnInName="Captain's Footlocker" TurnInId="35" X="-10514.25" Y="2109.988" Z="2.688241" />
+	<PickUp Nav="Fly" QuestName="Captain Sanders' Hidden Treasure" QuestId="26354" GiverType="Object" GiverName="Captain's Footlocker" GiverId="35" X="-10514.25" Y="2109.988" Z="2.688241" />
+	<TurnIn Nav="Fly" QuestName="Captain Sanders' Hidden Treasure" QuestId="26354" TurnInType="Object" TurnInName="Broken Barrel" TurnInId="36" X="-10515.17" Y="1598.615" Z="27.6535" />
+	<PickUp Nav="Fly" QuestName="Captain Sanders' Hidden Treasure" QuestId="26355" GiverType="Object" GiverName="Broken Barrel" GiverId="36" X="-10515.17" Y="1598.615" Z="27.6535" />
+	<TurnIn Nav="Fly" QuestName="Captain Sanders' Hidden Treasure" QuestId="26355" TurnInType="Object" TurnInName="Old Jug" TurnInId="34" X="-9797.295" Y="1594.66" Z="39.69501" />
+	<PickUp Nav="Fly" QuestName="Captain Sanders' Hidden Treasure" QuestId="26356" GiverType="Object" GiverName="Old Jug" GiverId="34" X="-9797.295" Y="1594.66" Z="39.69501" />
+	<TurnIn Nav="Fly" QuestName="Captain Sanders' Hidden Treasure" QuestId="26356" TurnInType="Object" TurnInName="Locked Chest" TurnInId="33" />
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding Memory to Saldean/Molsen Farms" LogColor="CornflowerBlue" />
+	
+<!-- Shakedown at the Saldean's -->
+	<PickUp Nav="Fly" QuestName="Shakedown at the Saldean's" QuestId="26236" GiverName="Lieutenant Horatio Laine" GiverId="42558" />
+	<TurnIn Nav="Fly" QuestName="Shakedown at the Saldean's" QuestId="26236" TurnInName="Farmer Saldean" TurnInId="233" />
+	
+<!-- Times Are Tough/Westfall Stew -->
+	<PickUp Nav="Fly" QuestName="Times Are Tough" QuestId="26237" GiverName="Farmer Saldean" GiverId="233" />
+	<PickUp Nav="Fly" QuestName="Westfall Stew" QuestId="26241" GiverName="Salma Saldean" GiverId="235" />
+	<Objective QuestName="Westfall Stew" QuestId="26241" Type="CollectItem" ItemId="57911" CollectCount="6" />
+	<Objective QuestName="Westfall Stew" QuestId="26241" Type="CollectItem" ItemId="57788" CollectCount="6" />
+	<Objective QuestName="Westfall Stew" QuestId="26241" Type="CollectItem" ItemId="57786" CollectCount="6" />
+	<Objective QuestName="Times Are Tough" QuestId="26237" Type="KillMob" MobId="114" KillCount="10" />
+
+	<If Condition="!HasItem(57935) &amp;&amp; !IsQuestCompleted(26252)" >
+		<CustomBehavior File="CollectThings" CollectItemId="57935" CollectItemCount="1" MobId="114" HuntingGroundRadius="200" >
+			<Hotspot X="-10092.5" Y="1204.699" Z="35.06368" />
+			<Hotspot X="-10122.63" Y="1167.784" Z="36.28868" />
+			<Hotspot X="-10158.87" Y="1128.427" Z="36.70396" />
+			<Hotspot X="-10200.72" Y="1096.115" Z="37.19868" />
+		</CustomBehavior>
+	</If>
+
+<!-- Heart of the Watcher -->
+	<If Condition="HasItem(57935) &amp;&amp; !IsQuestCompleted(26252)" >
+		<PickUp Nav="Fly" QuestName="Heart of the Watcher" QuestId="26252" GiverType="Item" GiverId="57935" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="Heart of the Watcher" QuestId="26252" TurnInName="Farmer Saldean" TurnInId="233" />
+
+	<TurnIn Nav="Fly" QuestName="Westfall Stew" QuestId="26241" TurnInName="Salma Saldean" TurnInId="235" />
+	<TurnIn Nav="Fly" QuestName="Times Are Tough" QuestId="26237" TurnInName="Farmer Saldean" TurnInId="233" />
+
+<!-- You Have Our Thanks/Its Alive/Hope for the People -->
+	<PickUp Nav="Fly" QuestName="You Have Our Thanks" QuestId="26270" GiverName="Farmer Saldean" GiverId="233" />
+	<PickUp Nav="Fly" QuestName="Its Alive" QuestId="26257" GiverName="Farmer Saldean" GiverId="233" />
+	<TurnIn Nav="Fly" QuestName="You Have Our Thanks" QuestId="26270" TurnInName="Salma Saldean" TurnInId="235" />
+	<PickUp Nav="Fly" QuestName="Hope for the People" QuestId="26266" GiverName="Salma Saldean" GiverId="235" />
+	<CustomBehavior File="UserSettings" QuestId="26257" PullDistance="1" />
+	<While Condition="!IsQuestCompleted(26257)">
+		<If Condition="!Me.IsOnTransport" >
+			<CustomBehavior File="InteractWith" QuestId="26257" MobId="42381" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="NoClear"
+				InteractByUsingItemId="57954" TerminateWhen="Me.IsOnTransport" WaitTime="1000" Range="5" X="-10164.61" Y="1282.493" Z="37.70463" />
+			<RunTo X="-10221.79" Y="1374.515" Z="39.64949" />
+		</If>
+		<DisableBehavior Name="Combat" />
+		<While Condition="(Me.IsOnTransport) &amp;&amp; !IsQuestCompleted(26257)" >
+			<RunTo X="-10223.4" Y="1386.304" Z="40.2239" />
+			<CustomBehavior File="SpecificQuests\EasternKingdoms\Westfall\26257-ItsAlive" />
+		</While>
+		<EnableBehavior Name="Combat" />
+	</While>
+	<TurnIn Nav="Fly" QuestName="Its Alive" QuestId="26257" TurnInName="Farmer Saldean" TurnInId="233" />
+	<If Condition="HasQuest(26266)" >
+		<TurnIn Nav="Fly" QuestName="Hope for the People" QuestId="26266" TurnInName="Hope Saldean" TurnInId="42575" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding Memory to Sentinel Hill" LogColor="CornflowerBlue" />
+	
+<!-- Feeding the Hungry and the Hopeless/The Westfall Brigade/In Defense of Westfall -->
+	<PickUp Nav="Fly" QuestName="Feeding the Hungry and the Hopeless" QuestId="26271" GiverName="Hope Saldean" GiverId="42575" />
+	<PickUp Nav="Fly" QuestName="The Legend of Captain Grayson" QuestId="26371" GiverName="Scout Galiaan" GiverId="878" />
+	<PickUp Nav="Fly" QuestName="The Westfall Brigade" QuestId="26287" GiverName="Captain Danuvin" GiverId="821" />
+	<PickUp Nav="Fly" QuestName="In Defense of Westfall" QuestId="26286" GiverName="Marshal Gryan Stoutmantle" GiverId="234" />
+	<While Condition="!IsQuestCompleted(26271)" >
+		<RunTo QuestId="26271" X="-10334.87" Y="959.3511" Z="32.60481" />
+		<CustomBehavior File="Misc\RunLua" QuestId="26271" Lua="UseItemByName(57991)" WaitTime="1000" />
+		<CustomBehavior File="WaitTimer" QuestId="26271" WaitTime="5000" />
+		<RunTo QuestId="26271" X="-10332.24" Y="970.3827" Z="31.92281" />
+		<CustomBehavior File="Misc\RunLua" QuestId="26271" Lua="UseItemByName(57991)" WaitTime="1000" />
+		<CustomBehavior File="WaitTimer" QuestId="26271" WaitTime="5000" />
+		<RunTo QuestId="26271" X="-10328.59" Y="988.2416" Z="32.44891" />
+		<CustomBehavior File="Misc\RunLua" QuestId="26271" Lua="UseItemByName(57991)" WaitTime="1000" />
+		<CustomBehavior File="WaitTimer" QuestId="26271" WaitTime="5000" />
+		<RunTo QuestId="26271" X="-10330.02" Y="1004.24" Z="32.14748" />
+		<CustomBehavior File="Misc\RunLua" QuestId="26271" Lua="UseItemByName(57991)" WaitTime="1000" />
+		<CustomBehavior File="WaitTimer" QuestId="26271" WaitTime="5000" />
+		<RunTo QuestId="26271" X="-10370.12" Y="1050.645" Z="31.47139" />
+		<CustomBehavior File="Misc\RunLua" QuestId="26271" Lua="UseItemByName(57991)" WaitTime="1000" />
+		<CustomBehavior File="WaitTimer" QuestId="26271" WaitTime="5000" />
+		<RunTo QuestId="26271" X="-10407.09" Y="1091.241" Z="32.78276" />
+		<CustomBehavior File="Misc\RunLua" QuestId="26271" Lua="UseItemByName(57991)" WaitTime="1000" />
+		<CustomBehavior File="WaitTimer" QuestId="26271" WaitTime="5000" />
+	</While>
+	<Objective QuestName="In Defense of Westfall" QuestId="26286" Type="CollectItem" ItemId="58111" CollectCount="1" />
+	<Objective QuestName="The Westfall Brigade" QuestId="26287" Type="KillMob" MobId="54373" MobId2="54371" MobId3="54372" MobId4="54371" MobId5="501" MobId6="54373" KillCount="12" />
+	<TurnIn Nav="Fly" QuestName="Feeding the Hungry and the Hopeless" QuestId="26271" TurnInName="Hope Saldean" TurnInId="42575" />
+	<TurnIn Nav="Fly" QuestName="The Westfall Brigade" QuestId="26287" TurnInName="Captain Danuvin" TurnInId="821" />
+	<TurnIn Nav="Fly" QuestName="In Defense of Westfall" QuestId="26286" TurnInName="Marshal Gryan Stoutmantle" TurnInId="234" />
+	
+<!-- Jango Spothide/Find Agent Kearnen -->
+	<PickUp Nav="Fly" QuestName="Find Agent Kearnen" QuestId="26289" GiverName="Marshal Gryan Stoutmantle" GiverId="234" />
+	<PickUp Nav="Fly" QuestName="Jango Spothide" QuestId="26288" GiverName="Captain Danuvin" GiverId="821" />
+	<Objective QuestName="Jango Spothide" QuestId="26288" Type="KillMob" MobId="453" KillCount="5" />
+	<Objective QuestName="Jango Spothide" QuestId="26288" Type="KillMob" MobId="98" KillCount="5" />
+	<Objective QuestName="Jango Spothide" QuestId="26288" Type="KillMob" MobId="42653" KillCount="1" />
+
+<!-- Secrets of the Tower -->
+	<TurnIn Nav="Fly" QuestName="Find Agent Kearnen" QuestId="26289" TurnInName="Agent Kearnen" TurnInId="7024" />
+	<PickUp Nav="Fly" QuestName="Secrets of the Tower" QuestId="26290" GiverName="Agent Kearnen" GiverId="7024" />
+	<If Condition="HasQuest(26290) &amp;&amp; !IsQuestCompleted(26290)" >
+		<CustomBehavior File="UserSettings" PullDistance="1" />
+		<RunTo X="-11138.87" Y="551.4525" Z="35.95927" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(58112)" />
+		<RunTo X="-11132.32" Y="552.3943" Z="70.39657" />
+		<While Condition="!IsQuestCompleted(26290)" />
+		<RunTo X="-11138.87" Y="551.4525" Z="35.95927" />
+		<CustomBehavior File="NoCombatMoveTo" X="-11046.83" Y="626.5081" Z="34.32347" />
+		<CustomBehavior File="UserSettings" PullDistance="25" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="Secrets of the Tower" QuestId="26290" TurnInName="Agent Kearnen" TurnInId="7024" />
+	<PickUp Nav="Fly" QuestName="Big Trouble in Moonbrook" QuestId="26291" GiverName="Agent Kearnen" GiverId="7024" />
+	
+	<TurnIn Nav="Fly" QuestName="Jango Spothide" QuestId="26288" TurnInName="Captain Danuvin" TurnInId="821" />
+	<TurnIn Nav="Fly" QuestName="Big Trouble in Moonbrook" QuestId="26291" TurnInName="Marshal Gryan Stoutmantle" TurnInId="234" />
+	<PickUp Nav="Fly" QuestName="To Moonbrook!" QuestId="26292" GiverName="Marshal Gryan Stoutmantle" GiverId="234" />
+	<TurnIn Nav="Fly" QuestName="To Moonbrook!" QuestId="26292" TurnInName="Captain Alpert" TurnInId="42425" />
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding Memory to Moonbrook" LogColor="CornflowerBlue" />
+
+<!-- Propaganda/Evidence Collection -->
+	<PickUp Nav="Fly" QuestName="Propaganda" QuestId="26295" GiverName="Captain Alpert" GiverId="42425" />
+	<If Condition="!HasItem(58117) &amp;&amp; (!HasQuest(26296) &amp;&amp; !IsQuestCompleted(26296))" >
+		<CustomBehavior File="CollectThings" CollectItemId="58117" CollectItemCount="1" MobId="42677" HuntingGroundRadius="200" MobState="Alive" >
+			<Hotspot X="-11016.95" Y="1510.236" Z="43.16245" />
+			<Hotspot X="-11030.49" Y="1484.943" Z="43.28526" />
+		</CustomBehavior>
+	</If>
+	<If Condition="HasItem(58117) &amp;&amp; (!HasQuest(26296) &amp;&amp; !IsQuestCompleted(26296))" >
+		<PickUp Nav="Fly" QuestName="Evidence Collection" QuestId="26296" GiverType="Item" GiverId="58117" />
+	</If>
+	<CustomBehavior File="InteractWith" QuestId="26295" QuestObjectiveIndex="4" MobId="204017" X="-11016.95" Y="1510.236" Z="43.16245" />
+	<CustomBehavior File="InteractWith" QuestId="26295" QuestObjectiveIndex="2" MobId="204015" X="-11030.49" Y="1484.943" Z="43.28526" />
+	<CustomBehavior File="InteractWith" QuestId="26295" QuestObjectiveIndex="3" MobId="204016" X="-10956.55" Y="1495.737" Z="50.60764" />
+	<CustomBehavior File="InteractWith" QuestId="26295" QuestObjectiveIndex="1" MobId="204014" X="-10951.24" Y="1562.485" Z="46.97809" />
+	<Objective QuestName="Evidence Collection" QuestId="26296" Type="CollectItem" ItemId="58118" CollectCount="6" />
+	<TurnIn Nav="Fly" QuestName="Evidence Collection" QuestId="26296" TurnInName="Captain Alpert" TurnInId="42425" />
+	<TurnIn Nav="Fly" QuestName="Propaganda" QuestId="26295" TurnInName="Captain Alpert" TurnInId="42425" />
+
+<!-- The Dawning of a New Day -->
+	<PickUp Nav="Fly" QuestName="The Dawning of a New Day" QuestId="26297" GiverName="Captain Alpert" GiverId="42425" />
+	<If Condition="HasQuest(26297) &amp;&amp; !IsQuestCompleted(26297)" >
+		<RunTo X="-11017.32" Y="1490.857" Z="43.20362" />
+		<CustomBehavior File="WaitTimer" QuestId="26297" WaitTime="60000" />
+		<While Condition="!IsQuestCompleted(26297)" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="The Dawning of a New Day" QuestId="26297" TurnInName="Captain Alpert" TurnInId="42425" />
+
+<!-- Secrets Revealed/A Vision of the Past -->
+	<PickUp Nav="Fly" QuestName="Secrets Revealed" QuestId="26319" GiverName="Captain Alpert" GiverId="42425" />
+	<TurnIn Nav="Fly" QuestName="Secrets Revealed" QuestId="26319" TurnInName="Thoralius the Wise" TurnInId="42651" />
+	<PickUp Nav="Fly" QuestName="A Vision of the Past" QuestId="26320" GiverName="Thoralius the Wise" GiverId="42651" />
+	<If Condition="HasQuest(26320) &amp;&amp; !IsQuestCompleted(26320)" >
+		<RunTo X="-11208.71" Y="1673.787" Z="24.62994" />
+		<CustomBehavior File="Misc\InInstance" X="-11207.94" Y="1681.658" Z="24.0505" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(58147)" WaitTime="3000" />
+		<CustomBehavior File="WaitTimer" WaitTime="170000" />
+		<CustomBehavior File="Misc\InInstance" X="-14.81424" Y="-390.6493" Z="63.7428" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding Memory to Captain Grayson" LogColor="CornflowerBlue" />
+	
+	<TurnIn Nav="Fly" QuestName="The Legend of Captain Grayson" QuestId="26371" TurnInName="Captain Grayson" TurnInId="392" />
+	<PickUp Nav="Fly" QuestName="Keeper of the Flame" QuestId="26347" GiverName="Captain Grayson" GiverId="392" />
+	<PickUp Nav="Fly" QuestName="The Coast Isn't Clear" QuestId="26348" GiverName="Captain Grayson" GiverId="392" />
+	<PickUp Nav="Fly" QuestName="The Coastal Menace" QuestId="26349" GiverName="Captain Grayson" GiverId="392" />
+	<Objective QuestName="Keeper of the Flame" QuestId="26347" Type="CollectItem" ItemId="58204" CollectCount="5" />
+	<Objective QuestName="The Coastal Menace" QuestId="26349" Type="CollectItem" ItemId="3636" CollectCount="1" />
+	<Objective QuestName="The Coast Isn't Clear" QuestId="26348" Type="KillMob" MobId="127" KillCount="7" />
+	<Objective QuestName="The Coast Isn't Clear" QuestId="26348" Type="KillMob" MobId="517" KillCount="7" />
+	<TurnIn Nav="Fly" QuestName="Keeper of the Flame" QuestId="26347" TurnInName="Captain Grayson" TurnInId="392" />
+	<TurnIn Nav="Fly" QuestName="The Coast Isn't Clear" QuestId="26348" TurnInName="Captain Grayson" TurnInId="392" />
+	<TurnIn Nav="Fly" QuestName="The Coastal Menace" QuestId="26349" TurnInName="Captain Grayson" TurnInId="392" />
+	
+	<CustomBehavior File="Message" Text="Fast Forwarding Memory to the Sentinel Hill Attack" LogColor="CornflowerBlue" />
+	
+	<TurnIn Nav="Fly" QuestName="A Vision of the Past" QuestId="26320" TurnInName="Marshal Gryan Stoutmantle" TurnInId="234" />
+	
+	<PickUp Nav="Fly" QuestName="Rise of the Brotherhood" QuestId="26322" GiverName="Marshal Gryan Stoutmantle" GiverId="234" />
+	<If Condition="HasQuest(26322) &amp;&amp; !IsQuestCompleted(26322)" >
+		<CustomBehavior File="WaitTimer" WaitTime="110000" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="Rise of the Brotherhood" QuestId="26322" TurnInName="King Varian Wrynn" TurnInId="29611" />
+	
+	<PickUp Nav="Fly" QuestName="Return to Sentinel Hill" QuestId="26370" GiverName="King Varian Wrynn" GiverId="29611" />
+	<TurnIn Nav="Fly" QuestName="Return to Sentinel Hill" QuestId="26370" TurnInName="Marshal Gryan Stoutmantle" TurnInId="234" />
+	
+	<PickUp Nav="Fly" QuestName="Threat to the Kingdom" QuestId="26761" GiverName="Marshal Gryan Stoutmantle" GiverId="234" />
+	
+	<CustomBehavior File="Message" Text="Westfall Memory Synchronized" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="[Animus] Duskwood [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

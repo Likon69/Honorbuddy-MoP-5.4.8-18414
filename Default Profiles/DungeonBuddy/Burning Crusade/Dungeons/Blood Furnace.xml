@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Blood Furnace</Name>
+  <DungeonId>137</DungeonId>
+  <BossEncounters>
+    <!-- Clear 'The Maker's' room before killing him! -->
+    <Boss isFinal="false" entry="17381" name="The Maker" killOrder="1" optional="false" X="330.0381" Y="128.7361" Z="9.61755" />
+    <!-- MoveTo X="456.2928" Y="63.9902" Z="9.615136" /> and pull lever - but clear the room first!!! -->
+    <Boss isFinal="false" entry="17380" name="Broggok" killOrder="2" X="461.3173" Y="57.70611" Z="9.616555" />
+    <!-- Pull a channeler and LOS them all into the room! -->
+    <Boss isFinal="true" entry="17377" name="Keli'dan the Breaker" killOrder="3" optional="false" X="326.6071" Y="-91.41425" Z="-24.63426" />
+  </BossEncounters>
+  <Blackspots>
+    <Blackspot X="236.7808" Y="-126.6355" Z="-32.98265" Radius="14.97266" />
+    <Blackspot X="208.4648" Y="-129.4424" Z="-40.06127" Radius="13.67205" />
+    <Blackspot X="179.8726" Y="-135.9348" Z="-45.54985" Radius="15.64823" />
+    <Blackspot X="151.6895" Y="-141.4586" Z="-50.57447" Radius="13.08988" />
+    <Blackspot X="124.9374" Y="-144.7108" Z="-55.50777" Radius="13.87303" />
+    <Blackspot X="102.3485" Y="-143.1665" Z="-57.11077" Radius="9.204549" />
+    <Blackspot X="80.14531" Y="-138.2028" Z="-54.02339" Radius="13.60634" />
+    <Blackspot X="53.67477" Y="-135.4801" Z="-49.98459" Radius="13.05061" />
+    <Blackspot X="26.47266" Y="-135.1216" Z="-46.72466" Radius="14.16429" />
+    <Blackspot X="5.559558" Y="-130.641" Z="-44.79561" Radius="8.208347" />
+    <Blackspot X="-1.711489" Y="-118.7209" Z="-42.72176" Radius="7.26832" />
+  </Blackspots>
+</DungeonBuddyProfile>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile xsi:noNamespaceSchemaLocation="../../DungeonbuddyProfile.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Vale of Eternal Sorrows</Name>
+  <DungeonId>716</DungeonId>
+
+  <BossEncounters>
+    <Boss isFinal="false" entry="71543" name="Immerseus" killOrder="1" optional="false" X="1440.63" Y="751.731" Z="246.61"/>
+    <Boss isFinal="false" entry="71479" name="He Softfoot" killOrder="2" optional="false" X="1212.693" Y="1031.918" Z="418.0828"/>
+    <Boss isFinal="false" entry="71480" name="Sun Tenderheart" killOrder="2" optional="false" X="1212.693" Y="1031.918" Z="418.0828"/>
+    <Boss isFinal="false" entry="71475" name="Rook Stonetoe" killOrder="2" optional="false" X="1212.694" Y="1020.938" Z="418.0633"/>
+    <!--<Boss isFinal="false" entry="71967" name="Norushen" killOrder="3" optional="false" X="767.6754" Y="1015.564" Z="356.0916"/>-->
+    <Boss isFinal="false" entry="72276" name="Amalgam of Corruption" killOrder="3" optional="false" X="777.3924" Y="974.2292" Z="356.3398"/>
+    <Boss isFinal="true" entry="71734" name="Sha of Pride" killOrder="4" optional="false" X="749.1945" Y="1112.641" Z="357.3145"/>
+  </BossEncounters>
+
+  <Blackspots>
+
+  </Blackspots>
+  <PullBlackspots>
+  </PullBlackspots>
+</DungeonBuddyProfile>

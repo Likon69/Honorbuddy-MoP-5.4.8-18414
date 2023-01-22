@@ -1,0 +1,212 @@
+<HBProfile>
+
+	<Name>Thunder Bluff Cooking Dailies ($Rev$)</Name>
+	<MinLevel>10</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="29362" Name="Magic Mushrooms">
+	<Objective Type="CollectItem" ItemId="69994" CollectCount="6">
+		<CollectFrom>
+			<GameObject Name="Magic Mushroom" Id="208878" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-1022.815" Y="211.9528" Z="109.4548" />
+			<Hotspot X="-960.8126" Y="246.3827" Z="98.61788" />
+			<Hotspot X="-964.3781" Y="284.3864" Z="111.1509" />
+		</Hotspots>
+	</Objective>
+</Quest>
+	
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="Message" Text="ERROR!! Somehow you ended up starting an Horde profile. Terminating." LogColor="Red" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Thunder Bluff Cooking Daily Routine...Checking Location" LogColor="Green" />
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Thunder Bluff -->
+		<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326)) &gt;= 100" >
+			<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+			<CustomBehavior File="ForcedDismount" />
+		</If>
+		<CustomBehavior File="UserSettings" UseMount="False" />
+		<CustomBehavior File="InteractWith" MobId="215125" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1732.343" Y="881.7467" Z="487.0864" />
+		<CustomBehavior File="UserSettings" UseMount="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+	</If>
+	
+	<!-- Needs conditional for Ghostlands -->
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557
+			&amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487" > <!-- Outlands, but not Azure/Bloodmyst/Exodar or Ghostlands/Eversong/Silvermoon -->
+		<CustomBehavior File="FlyTo" X="-163.8283" Y="973.4586" Z="54.29" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="195140" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-163.8283" Y="973.4586" Z="54.29" />
+	</If>
+	
+	<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+		<CustomBehavior File="FlyTo" X="2070.155" Y="289.2588" Z="97.0315" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="UseTransport" TransportId="164871"
+				WaitAtX="2070.155" WaitAtY="289.2588" WaitAtZ="97.0315" 
+				TransportStartX="2062.376" TransportStartY="292.998" TransportStartZ="114.973"
+				TransportEndX="1833.509" TransportEndY="-4391.543" TransportEndZ="152.7679"
+				StandOnX="2067.979" StandOnY="295.2747" StandOnZ="97.23677" 
+				GetOffX="1840.225" GetOffY="-4390.912" GetOffZ="135.2337" />	
+	</If>
+	
+	<If Condition="!HasQuest(29362) &amp;&amp; !HasQuest(29364) &amp;&amp; !HasQuest(29363) &amp;&amp; !HasQuest(29365) &amp;&amp; !HasQuest(29358)" >
+		<CustomBehavior File="Message" Text="Grabbing Daily from Aska Mistrunner" LogColor="CornflowerBlue" />
+		<CustomBehavior File="FlyTo" X="-1214.591" Y="-21.32428" Z="165.369" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.GetSkill(Styx.SkillLine.Cooking).CurrentValue &lt; 1" >
+			<CustomBehavior File="ForceTrainRiding" MobId="3026" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</If>
+		<While Condition="HasQuestAvailable(3026)" >
+			<CustomBehavior File="InteractWith" MobId="3026" InteractByQuestFrameDisposition="Ignore" NonCompeteDistance="0" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+	
+	<If Condition="HasQuest(29362)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Magic Mushrooms" LogColor="CornflowerBlue" />
+		<Objective Nav="Fly" QuestName="Magic Mushrooms" QuestId="29362" Type="CollectItem" ItemId="69994" CollectCount="6" />
+		<TurnIn Nav="Fly" QuestName="Magic Mushrooms" QuestId="29362" TurnInName="Aska Mistrunner" TurnInId="3026" X="-1219.57" Y="-12.70" Z="165.86" />
+	</If>
+	
+	<If Condition="HasQuest(29364)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Corn Mash" LogColor="CornflowerBlue" />
+		<CustomBehavior File="InteractWith" QuestId="29364" MobId="208880" NumOfTimes="1000" WaitTime="1000" NonCompeteDistance="3"
+			CollectionDistance="250" >
+			<HuntingGrounds>
+				<Hotspot X="-1251.669" Y="108.0463" Z="128.5411" />
+				<Hotspot X="-1137.663" Y="35.07011" Z="143.5496" />
+				<Hotspot X="-1198.086" Y="-56.12405" Z="159.4518" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<TurnIn Nav="Fly" QuestName="Corn Mash" QuestId="29364" TurnInName="Aska Mistrunner" TurnInId="3026" X="-1219.57" Y="-12.70" Z="165.86" />
+	</If>
+	
+	<If Condition="HasQuest(29363)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Mulgore Spice Bread" LogColor="CornflowerBlue" />
+		<If Condition="!Me.KnownSpell(37836)" >
+			<CustomBehavior File="ForceTrainRiding" MobId="3026" />
+		</If>
+		<CustomBehavior File="FlyTo" X="-1217.311" Y="-18.60919" Z="165.8836" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(29363)" >
+			<While Condition="HasItem(30816) &amp;&amp; !IsQuestCompleted(29363)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(69997)" WaitTime="2000" />
+			</While>
+			<While Condition="HasItem(30817) &amp;&amp; HasItem(2678)" >
+				<CustomBehavior File="PerformTradeskillOn" TradeSkillId="185" TradeSkillItemId="30816" NumOfTimes="5" />
+			</While>
+			<If Condition="GetItemCount(30817) &lt; 5 &amp;&amp; GetItemCount(30816) &lt; 5" >
+				<CustomBehavior File="InteractWith" QuestId="29363" MobId="3027" InteractByBuyingItemId="30817" BuyItemCount="5"
+					NonCompeteDistance="0" WaitTime="1000" X="-1214.923" Y="-20.68122" Z="165.4769" />
+			</If>
+			<If Condition="GetItemCount(2678) &lt; 5 &amp;&amp; GetItemCount(30816) &lt; 5" >
+				<CustomBehavior File="InteractWith" QuestId="29363" MobId="3027" InteractByBuyingItemId="2678" BuyItemCount="5"
+					NonCompeteDistance="0" WaitTime="1000" X="-1214.923" Y="-20.68122" Z="165.4769" />
+			</If>
+		</While>
+		<TurnIn Nav="Fly" QuestName="Mulgore Spice Bread" QuestId="29363" TurnInName="Aska Mistrunner" TurnInId="3026" X="-1219.57" Y="-12.70" Z="165.86" />
+	</If>
+	
+	<If Condition="HasQuest(29365)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Perfectly Picked Portions" LogColor="CornflowerBlue" />
+		<If Condition="!IsObjectiveComplete(1,29365)" >
+			<CustomBehavior File="FlyTo" X="-1144.536" Y="19.14573" Z="145.0989" />
+			<CustomBehavior File="InteractWith" QuestId="29365" QuestObjectiveIndex="1" MobId="208887" NumOfTimes="1000" 
+				NonCompeteDistance="0" WaitTime="1000" X="-1144.536" Y="19.14573" Z="145.0989" />
+		</If>
+		<If Condition="!IsObjectiveComplete(2,29365)" >
+			<CustomBehavior File="FlyTo" X="-1138.215" Y="-2.619035" Z="143.4004" />
+			<CustomBehavior File="InteractWith" QuestId="29365" QuestObjectiveIndex="2" MobId="208888" NumOfTimes="1000" 
+				NonCompeteDistance="0" WaitTime="1000" X="-1138.215" Y="-2.619035" Z="143.4004" />
+		</If>
+		<If Condition="!IsObjectiveComplete(3,29365)" >
+			<CustomBehavior File="FlyTo" X="-1165.805" Y="-68.255" Z="162.1859" />
+			<CustomBehavior File="InteractWith" QuestId="29365" QuestObjectiveIndex="3" MobId="208889" NumOfTimes="1000" 
+				NonCompeteDistance="0" WaitTime="1000" X="-1165.805" Y="-68.255" Z="162.1859" />
+		</If>
+		<If Condition="!IsObjectiveComplete(4,29365)" >
+			<CustomBehavior File="FlyTo" X="-1178.77" Y="-12.36825" Z="165.2744" />
+			<CustomBehavior File="InteractWith" QuestId="29365" QuestObjectiveIndex="4" MobId="208890" NumOfTimes="1000" 
+				NonCompeteDistance="0" WaitTime="1000" X="-1178.77" Y="-12.36825" Z="165.2744" />
+		</If>
+		<TurnIn Nav="Fly" QuestName="Perfectly Picked Portions" QuestId="29365" TurnInName="Aska Mistrunner" TurnInId="3026" X="-1219.57" Y="-12.70" Z="165.86" />
+	</If>
+	
+	<If Condition="HasQuest(29358)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Pining For Nuts" LogColor="CornflowerBlue" />
+		<While Condition="!IsQuestCompleted(29358)" >
+			<CustomBehavior File="InteractWith" MobId="208875" NumOfTimes="1000" WaitTime="1000" NonCompeteDistance="3"
+				TerminateWhen="GetItemCount(69990) &gt;= 6" CollectionDistance="250" >
+				<HuntingGrounds>
+					<Hotspot X="-1251.669" Y="108.0463" Z="128.5411" />
+					<Hotspot X="-1137.663" Y="35.07011" Z="143.5496" />
+					<Hotspot X="-1198.086" Y="-56.12405" Z="159.4518" />
+				</HuntingGrounds>
+			</CustomBehavior>
+			<CustomBehavior File="FlyTo" X="-1218.002" Y="-19.4779" Z="165.8305" />
+			<While Condition="HasItem(69990)" >
+				<CustomBehavior File="InteractWith" MobId="3315" InteractByUsingItemId="69990" NonCompeteDistance="0"
+					WaitTime="2000" X="-1218.002" Y="-19.4779" Z="165.8305" />
+			</While>
+		</While>
+		<TurnIn Nav="Fly" QuestName="Pining For Nuts" QuestId="29358" TurnInName="Aska Mistrunner" TurnInId="3026" X="-1219.57" Y="-12.70" Z="165.86" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Double checking for training..." LogColor="Orange" />
+	<CustomBehavior File="ForceTrainRiding" MobId="3026" />
+	
+	<CustomBehavior File="Message" Text="Cooking Daily Complete, signing off!" LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+		
+</QuestOrder>
+</HBProfile>

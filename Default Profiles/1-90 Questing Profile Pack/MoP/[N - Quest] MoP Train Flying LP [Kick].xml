@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- Developed by Kickazz006 -->
+    <Name>[N - Quest] MoP Train Flying LP [Kick] ($Rev: 2887 $)</Name>
+    <QuestOrder>
+        <CustomBehavior File="Message" Text="Loading Profile: [N] MoP Train Flying" LogColor="CornflowerBlue" />
+        <CustomBehavior File="LoadProfile" ProfileName="..\GoTo\[N - Quest] MoP Train Flying LP [Kick]" /> 
+        <!-- If you need to look at the MoP Train Flying profile - it's in the GoTo folder, not this profile! -->
+    </QuestOrder>
+</HBProfile>

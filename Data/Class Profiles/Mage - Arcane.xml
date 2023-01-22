@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassProfile Class="Mage" Specialization="1" Name="Mage - Arcane">
+	<TalentTree>
+		<Talent Tier="1" Index="1" Name="Presence of Mind" />
+		<Talent Tier="2" Index="3" Name="Ice Barrier" />
+		<Talent Tier="3" Index="2" Name="Ice Ward" />
+		<Talent Tier="4" Index="3" Name="Cold Snap" />
+		<Talent Tier="5" Index="1" Name="Nether Tempest" />
+		<Talent Tier="6" Index="3" Name="Incanter's Ward" />
+	</TalentTree>
+	<WeightSet>
+		<Intellect>20</Intellect>
+		<SpellPower>18</SpellPower>
+		<Hit>18</Hit>
+		<Mastery>16</Mastery>
+		<Haste>15</Haste>
+		<CriticalStrike>12</CriticalStrike>
+		<Stamina>5</Stamina>
+		<Armor>0.01</Armor>
+		<DamagePerSecond>0.01</DamagePerSecond>
+	</WeightSet>
+</ClassProfile>

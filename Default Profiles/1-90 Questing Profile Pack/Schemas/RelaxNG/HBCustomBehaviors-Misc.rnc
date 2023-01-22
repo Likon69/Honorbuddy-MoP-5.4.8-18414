@@ -1,0 +1,129 @@
+# =====
+# Original contribution by chinajade
+#   $Rev: 3162 $
+#   $Date: 2014-03-19 07:54:02 -0300 (qua, 19 mar 2014) $
+#
+# WARNING: DO NOT EDIT .xsd files.
+#   They are not authoritative and will be overwritten!
+#   Instead, regenerate the .xsd files from the .rnc 'sources'.
+#   Its a one-line command to do this. Please see README.txt
+#   for more information.
+# =====
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "Misc\InInstance" },
+    
+    attribute DestName { string }?,
+    Attributes-XYZ
+  }
+
+
+# BEGIN: Misc\InstanceTimer
+QBType-Misc-InstanceTimer-Timer =
+  "Check"
+  | "Start"
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "Misc\InstanceTimer" },
+    
+    attribute GoalText { string }?,
+    attribute Timer { QBType-Misc-InstanceTimer-Timer },
+    attribute WaitTime { HBType-TimeDuration }
+  }
+# END: Misc\InstanceTimer
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "Misc\LoadProfileOn" },
+    
+    attribute MinLevel { HBType-Level }?,
+    attribute CheckRange { HBType-Distance }?,
+    (attribute ProfileName { string }
+     | attribute RemotePath { string })?
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "Misc\ProfileCompatibilityInfo" },
+
+    attribute AllowBrokenAddOns { HBType-Boolean }?,
+    attribute AllowBrokenPlugIns { HBType-Boolean }?,
+    attribute AllowMixedModeBot { HBType-Boolean }?
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "Misc\RunLua" },
+    
+    Attributes-QuestSpecifier,
+    attribute Lua { string },
+    attribute NumOfTimes { QBCoreType-NumOfTimes }?,
+    attribute WaitTime { HBType-TimeDuration }?
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "Misc\SafeQuestTurnin" },
+   
+   Attributes-QuestSpecifier,
+   Attributes-XYZ,
+   attribute QuestName { string },
+   attribute TurnInId { HBType-Id },
+   attribute TurnInName { string }
+  }
+
+
+# BEGIN: Misc\TargetAndMoveToMob
+Attributes-Misc-TargetAndMoveToMob-TargetOnlyIfMobHasAuraIdN =
+  attribute TargetOnlyIfMobHasAuraId { HBType-Id }?,
+  attribute TargetOnlyIfMobHasAuraId2 { HBType-Id }?,
+  attribute TargetOnlyIfMobHasAuraId3 { HBType-Id }?,
+  attribute TargetOnlyIfMobHasAuraId4 { HBType-Id }?,
+  attribute TargetOnlyIfMobHasAuraId5 { HBType-Id }?,
+  attribute TargetOnlyIfMobHasAuraId6 { HBType-Id }?,
+  attribute TargetOnlyIfMobHasAuraId7 { HBType-Id }?,
+  attribute TargetOnlyIfMobHasAuraId8 { HBType-Id }?,
+  attribute TargetOnlyIfMobHasAuraId9 { HBType-Id }?
+
+Attributes-Misc-TargetAndMoveToMob-TargetOnlyIfMobMissingAuraIdN =
+  attribute TargetOnlyIfMobMissingAuraId { HBType-Id }?,
+  attribute TargetOnlyIfMobMissingAuraId2 { HBType-Id }?,
+  attribute TargetOnlyIfMobMissingAuraId3 { HBType-Id }?,
+  attribute TargetOnlyIfMobMissingAuraId4 { HBType-Id }?,
+  attribute TargetOnlyIfMobMissingAuraId5 { HBType-Id }?,
+  attribute TargetOnlyIfMobMissingAuraId6 { HBType-Id }?,
+  attribute TargetOnlyIfMobMissingAuraId7 { HBType-Id }?,
+  attribute TargetOnlyIfMobMissingAuraId8 { HBType-Id }?,
+  attribute TargetOnlyIfMobMissingAuraId9 { HBType-Id }?
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "TargetAndMoveToMob" },
+
+    Attributes-Misc-TargetAndMoveToMob-TargetOnlyIfMobHasAuraIdN,
+    Attributes-Misc-TargetAndMoveToMob-TargetOnlyIfMobMissingAuraIdN,
+    Attributes-MobIdN-Mandatory1,
+    Attributes-XYZ?,
+    attribute IgnoreLosToTarget { HBType-Boolean }?,
+    attribute MoveWithinMaxRangeOfMob { HBType-Distance }?,
+    attribute TargetOnlyIfHealthPercentAbove { HBType-Percent }?,
+    attribute TargetOnlyIfHealthPercentBelow { HBType-Percent }?,
+    attribute WaitForNpcs { HBType-Boolean }?
+  }
+# END: Misc\TargetAndMoveToMob
+
+

@@ -1,0 +1,225 @@
+<HBProfile>
+
+	<Name>Orgrimmar Fishing Dailies ($Rev$)</Name>
+	<MinLevel>10</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="Message" Text="ERROR!! Somehow you ended up starting an Horde profile. Terminating." LogColor="Red" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Orgrimmar Fishing Daily Routine...Checking Location" LogColor="Green" />
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Orgrimmar -->
+		<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326)) &gt;= 100" >
+			<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+			<CustomBehavior File="ForcedDismount" />
+		</If>
+		<UseMount Value="False" />
+		<CustomBehavior File="InteractWith" MobId="215127" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1732.343" Y="881.7467" Z="487.0864" />
+		<UseMount Value="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+	</If>
+	
+	<!-- Needs conditional for Ghostlands -->
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557
+			&amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487" > <!-- Outlands, but not Azure/Bloodmyst/Exodar or Ghostlands/Eversong/Silvermoon -->
+		<CustomBehavior File="FlyTo" X="-163.8283" Y="973.4586" Z="54.29" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="195140" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-163.8283" Y="973.4586" Z="54.29" />
+	</If>
+	
+	<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+		<CustomBehavior File="FlyTo" X="2070.155" Y="289.2588" Z="97.0315" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="UseTransport" TransportId="164871"
+				WaitAtX="2070.155" WaitAtY="289.2588" WaitAtZ="97.0315" 
+				TransportStartX="2062.376" TransportStartY="292.998" TransportStartZ="114.973"
+				TransportEndX="1833.509" TransportEndY="-4391.543" TransportEndZ="152.7679"
+				StandOnX="2067.979" StandOnY="295.2747" StandOnZ="97.23677" 
+				GetOffX="1840.225" GetOffY="-4390.912" GetOffZ="135.2337" />	
+	</If>
+	
+	<If Condition="!HasQuest(26588) &amp;&amp; !HasQuest(26572) &amp;&amp; !HasQuest(26557) &amp;&amp; !HasQuest(26543) &amp;&amp; !HasQuest(26556)" >
+		<CustomBehavior File="Message" Text="Grabbing Daily from Razgar" LogColor="CornflowerBlue" />
+		<CustomBehavior File="FlyTo" X="2019.446" Y="-4655.723" Z="28.528" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.GetSkill(Styx.SkillLine.Fishing).CurrentValue &lt; 1" >
+			<CustomBehavior File="ForceTrainRiding" MobId="3332" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</If>
+		<While Condition="HasQuestAvailable(43239)" >
+			<CustomBehavior File="InteractWith" MobId="43239" InteractByQuestFrameDisposition="Ignore" NonCompeteDistance="0" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+	
+	<If Condition="HasQuest(26588)" >
+		<CustomBehavior File="Message" Text="Starting Quest: A Furious Catch" LogColor="CornflowerBlue" />
+		<If Condition="!IsQuestCompleted(26588)" >
+			<If Condition="Random(100) &lt; 25" >
+				<CustomBehavior File="FlyTo" X="1479.574" Y="-3864.761" Z="20.77724" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" CollectItemId="58951" CollectItemCount="1" X="1476.087" Y="-3886.647" Z="14.4706" />
+			<ElseIf Condition="Random(100) &lt; 50" >
+				<CustomBehavior File="FlyTo" X="1421.287" Y="-3913.125" Z="19.3863" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" CollectItemId="58951" CollectItemCount="1" X="1421.576" Y="-3889.563" Z="14.63527" />
+			</ElseIf>
+			<ElseIf Condition="Random(100) &lt; 75" >
+				<CustomBehavior File="FlyTo" X="1343.817" Y="-3864.137" Z="20.25513" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" CollectItemId="58951" CollectItemCount="1" X="1347.481" Y="-3890.093" Z="14.68435" />
+			</ElseIf>
+			<Else>
+				<CustomBehavior File="FlyTo" X="1300.348" Y="-3934.234" Z="18.08438" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" CollectItemId="58951" CollectItemCount="1" X="1289.529" Y="-3909.861" Z="13.8502" />
+			</Else>
+			</If>
+		</If>
+		<TurnIn Nav="Fly" QuestName="A Furious Catch" QuestId="26588" TurnInName="Razgar" TurnInId="43239" />
+	</If>
+	
+	<If Condition="HasQuest(26572)" >
+		<CustomBehavior File="Message" Text="Quest A Golden Opportunity is currently not supported. This quest requires a bit of testing and trial and error before I'm willing to release it. Sorry if this is your daily. Try back tomorrow!" LogColor="Red" />
+	</If>
+	
+	<If Condition="HasQuest(26557)" >
+		<CustomBehavior File="Message" Text="Starting Quest: A Staggering Effort" LogColor="CornflowerBlue" />
+		<While Condition="!IsQuestCompleted(26557)" >
+			<While Condition="!Me.HasAura(80868) &amp;&amp; !HasItem(58949)">
+				<CustomBehavior File="FlyTo" X="2715.908" Y="-4966.037" Z="115.9103" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="CollectThings" MobId="35096" CollectItemId="58949" CollectItemCount="1"
+					NonCompeteDistance="5" MobState="Alive" >
+					<Hotspot X="2715.908" Y="-4966.037" Z="115.9103" />
+					<Hotspot X="2804.156" Y="-4982.913" Z="121.851" />
+					<Hotspot X="2789.065" Y="-5073.832" Z="123.5687" />
+					<Hotspot X="2680.379" Y="-5093.43" Z="119.7964" />
+				</CustomBehavior>
+			</While>
+			<If Condition="Me.HasAura(80868) &amp;&amp; !IsQuestCompleted(26557)">
+				<If Condition="Random(100) &lt; 33" >
+					<CustomBehavior File="FlyTo" X="1930.732" Y="-4285.03" Z="25.96004" />
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" />
+					<If Condition="HasItem(58949)">
+						<CustomBehavior File="Misc\RunLua" QuestId="26557" Lua="UseItemByName(58949)" WaitTime="2000" />
+					</If>
+					<CustomBehavior File="MrFishIt" CollectItemId="58946" CollectItemCount="1" X="1952.82" Y="-4287.743" Z="20.92404" />
+				<ElseIf Condition="Random(100) &lt; 66" >
+					<CustomBehavior File="FlyTo" X="1935.108" Y="-4304.621" Z="23.76091" />
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" />
+					<If Condition="HasItem(58949)">
+						<CustomBehavior File="Misc\RunLua" QuestId="26557" Lua="UseItemByName(58949)" WaitTime="2000" />
+					</If>
+					<CustomBehavior File="MrFishIt" CollectItemId="58946" CollectItemCount="1" X="1949.853" Y="-4316.699" Z="20.14801" />
+				</ElseIf>
+				<Else>
+					<CustomBehavior File="FlyTo" X="1940.982" Y="-4336.816" Z="23.84008" />
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" />
+					<If Condition="HasItem(58949)">
+						<CustomBehavior File="Misc\RunLua" QuestId="26557" Lua="UseItemByName(58949)" WaitTime="2000" />
+					</If>
+					<CustomBehavior File="MrFishIt" CollectItemId="58946" CollectItemCount="1" X="1949.853" Y="-4316.699" Z="20.14801" />
+				</Else>
+				</If>
+			</If>
+		</While>
+		<TurnIn Nav="Fly" QuestName="A Staggering Effort" QuestId="26557" TurnInName="Razgar" TurnInId="43239" />
+	</If>
+	
+	<If Condition="HasQuest(26543)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Clammy Hands" LogColor="CornflowerBlue" />
+		<Objective Nav="Fly" QuestName="Clammy Hands" QuestId="26543" Type="CollectItem" ItemId="58934" CollectCount="10" />
+		<TurnIn Nav="Fly" QuestName="Clammy Hands" QuestId="26543" TurnInName="Razgar" TurnInId="43239" />
+	</If>
+	
+	<If Condition="HasQuest(26556)" >
+		<CustomBehavior File="Message" Text="Starting Quest: No Dumping Allowed" LogColor="CornflowerBlue" />
+		<If Condition="!IsQuestCompleted(26556)" >
+			<If Condition="Random(100) &lt; 33" >
+				<CustomBehavior File="FlyTo" X="1514.857" Y="-4184.012" Z="50.69845" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" CollectItemId="58945" CollectItemCount="6" X="1530.493" Y="-4168.287" Z="48.12281" />
+			<ElseIf Condition="Random(100) &lt; 66" >
+				<CustomBehavior File="FlyTo" X="1535.382" Y="-4135.967" Z="50.55804" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" CollectItemId="58945" CollectItemCount="6" X="1541.715" Y="-4149.136" Z="48.60625" />
+			</ElseIf>
+			<Else>
+				<CustomBehavior File="FlyTo" X="1563.808" Y="-4170.904" Z="51.37321" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" CollectItemId="58945" CollectItemCount="6" X="1546.353" Y="-4165.713" Z="47.68958" />
+			</Else>
+			</If>
+		</If>
+		<TurnIn Nav="Fly" QuestName="No Dumping Allowed" QuestId="26556" TurnInName="Razgar" TurnInId="43239" />
+	</If>
+	
+	<While Condition="HasItem(67414)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(67414)" WaitTime="2000" />
+	</While>
+	
+	<CustomBehavior File="Message" Text="Double checking for training..." LogColor="Orange" />
+	<CustomBehavior File="ForceTrainRiding" MobId="3332" />
+
+	<CustomBehavior File="Message" Text="Fishing Daily Complete, signing off!" LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+		
+</QuestOrder>
+</HBProfile>

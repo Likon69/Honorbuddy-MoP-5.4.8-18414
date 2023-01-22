@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <!--
+    =====
+    Original contribution by chinajade
+      $Rev: 3159 $
+      $Date: 2014-03-19 01:34:46 -0500 (Wed, 19 Mar 2014) $
+    
+    WARNING: DO NOT EDIT .xsd files.
+      They are not authoritative and will be overwritten!
+      Instead, regenerate the .xsd files from the .rnc 'sources'.
+      Its a one-line command to do this. Please see README.txt
+      for more information.
+    =====
+  -->
+  <!-- BEGIN: BasicVehicleBehaviour -->
+  <xs:attributeGroup name="Attributes-BasicVehicleBehaviour-MountXYZ">
+    <xs:attribute name="MountX" use="required" type="xs:decimal"/>
+    <xs:attribute name="MountY" use="required" type="xs:decimal"/>
+    <xs:attribute name="MountZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <!-- END: BasicVehicleBehaviour -->
+  <!-- BEGIN: NoControlVehicle -->
+  <xs:attributeGroup name="Attributes-NoControlVehicle-TargetIdN-Mandatory1">
+    <xs:attribute name="TargetId" use="required" type="HBType-Id"/>
+    <xs:attribute name="TargetId2" type="HBType-Id"/>
+    <xs:attribute name="TargetId3" type="HBType-Id"/>
+    <xs:attribute name="TargetId4" type="HBType-Id"/>
+    <xs:attribute name="TargetId5" type="HBType-Id"/>
+    <xs:attribute name="TargetId6" type="HBType-Id"/>
+    <xs:attribute name="TargetId7" type="HBType-Id"/>
+    <xs:attribute name="TargetId8" type="HBType-Id"/>
+    <xs:attribute name="TargetId9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-NoControlVehicle-TargetIdSecondaryN">
+    <xs:attribute name="TargetIdSecondary" type="HBType-Id"/>
+    <xs:attribute name="TargetIdSecondary2" type="HBType-Id"/>
+    <xs:attribute name="TargetIdSecondary3" type="HBType-Id"/>
+    <xs:attribute name="TargetIdSecondary4" type="HBType-Id"/>
+    <xs:attribute name="TargetIdSecondary5" type="HBType-Id"/>
+    <xs:attribute name="TargetIdSecondary6" type="HBType-Id"/>
+    <xs:attribute name="TargetIdSecondary7" type="HBType-Id"/>
+    <xs:attribute name="TargetIdSecondary8" type="HBType-Id"/>
+    <xs:attribute name="TargetIdSecondary9" type="HBType-Id"/>
+  </xs:attributeGroup>
+  <!-- END: NoControlVehicle -->
+  <!-- BEGIN: VehicleBehavior -->
+  <xs:attributeGroup name="Attributes-VehicleBehavior-EndPointXYZ">
+    <xs:attribute name="EndPointX" use="required" type="xs:decimal"/>
+    <xs:attribute name="EndPointY" use="required" type="xs:decimal"/>
+    <xs:attribute name="EndPointZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-VehicleBehavior-FireLocationXYZ">
+    <xs:attribute name="FireLocationX" use="required" type="xs:decimal"/>
+    <xs:attribute name="FireLocationY" use="required" type="xs:decimal"/>
+    <xs:attribute name="FireLocationZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-VehicleBehavior-PreviousFireLocationXYZ">
+    <xs:attribute name="PreviousFireLocationX" use="required" type="xs:decimal"/>
+    <xs:attribute name="PreviousFireLocationY" use="required" type="xs:decimal"/>
+    <xs:attribute name="PreviousFireLocationZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-VehicleBehavior-StartObjectivePointXYZ">
+    <xs:attribute name="StartObjectivePointX" use="required" type="xs:decimal"/>
+    <xs:attribute name="StartObjectivePointY" use="required" type="xs:decimal"/>
+    <xs:attribute name="StartObjectivePointZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-VehicleBehavior-StartPointXYZ">
+    <xs:attribute name="StartPointX" use="required" type="xs:decimal"/>
+    <xs:attribute name="StartPointY" use="required" type="xs:decimal"/>
+    <xs:attribute name="StartPointZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Attributes-VehicleBehavior-TargetLocationXYZ">
+    <xs:attribute name="TargetLocationX" use="required" type="xs:decimal"/>
+    <xs:attribute name="TargetLocationY" use="required" type="xs:decimal"/>
+    <xs:attribute name="TargetLocationZ" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <!-- END: VehicleBehavior -->
+</xs:schema>

@@ -1,0 +1,312 @@
+﻿<HBProfile>
+	<Name>Children's Week (Stormwind) ($Rev$)</Name>
+   
+	<MinLevel>1</MinLevel>
+	<MaxLevel>100</MaxLevel>
+   
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>True</MailPurple>
+   
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+   
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+	
+	<Blackspots>
+	</Blackspots>
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde" >
+		<CustomBehavior File="LoadProfile" ProfileName="[Hol] Kids - Horde Azeroth [Brodie]" />
+	</If>
+	
+	<If Condition="!HasSpell(90267)" >
+		<CustomBehavior File="UserDialog" AllowBotStop="true" Text="Flight capability in Azeroth is highly recommended!" />
+	</If>
+
+	<If Condition="!HasQuest(1468) &amp;&amp; !IsQuestCompleted(1468)" >
+		<PickUp Nav="Fly" QuestName="Children's Week" QuestId="1468" GiverName="Orphan Matron Nightingale" GiverId="51988" X="-8623.76" Y="744.0499" Z="96.92513" />
+	</If>
+	
+	<If Condition="HasQuest(1468) &amp;&amp; !IsQuestCompleted(1468)" >
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+		</While>
+	</If>
+	
+	<If Condition="HasQuest(1468) &amp;&amp; IsQuestCompleted(1468)" >
+		<TurnIn Nav="Fly" QuestName="Children's Week" QuestId="1468" TurnInName="Human Orphan" TurnInId="14305" />
+	</If>
+	
+	<While Condition="!Me.HasAura(58818) &amp;&amp; ((!HasQuest(29093) &amp;&amp; !IsQuestCompleted(29093)) ||
+						(!HasQuest(29107) &amp;&amp; !IsQuestCompleted(29107)) ||
+						(!HasQuest(29106) &amp;&amp; !IsQuestCompleted(29106)))" >
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+	</While>
+
+	<PickUp Nav="Fly" QuestName="Cruisin' the Chasm" QuestId="29093" GiverName="Human Orphan" GiverId="14305" />
+	<PickUp Nav="Fly" QuestName="Malfurion Has Returned!" QuestId="29107" GiverName="Human Orphan" GiverId="14305" />
+	<PickUp Nav="Fly" QuestName="The Biggest Diamond Ever!" QuestId="29106" GiverName="Human Orphan" GiverId="14305" />
+	
+<!-- Cruisin' the Chasm -->
+	<If Condition="HasQuest(29093)" >
+		<CustomBehavior File="FlyTo" X="-10638.28" Y="999.5894" Z="33.0731" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(29093)" >
+			<While Condition="!Me.HasAura(58818)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+			</While>
+			<CustomBehavior File="MountVehOnly" VehicleMountId="52189" X="-10638.08" Y="994.4167" Z="33.4013" />
+		</While>
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+		</While>
+		<TurnIn Nav="Fly" QuestName="Cruisin' the Chasm" QuestId="29093" TurnInName="Human Orphan" TurnInId="14305" />
+	</If>
+	
+<!-- The Biggest Diamond Ever! -->
+	<If Condition="HasQuest(29106)" >
+		<If Condition="!IsQuestCompleted(29106)" >
+			<CustomBehavior File="FlyTo" X="-5085.934" Y="-789.5145" Z="495.6928" />
+			<CustomBehavior File="ForcedDismount" />
+			<While Condition="!Me.HasAura(58818)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+			</While>
+		 
+			<MoveTo X="-4841.224" Y="-1054.214" Z="502.1885" />
+			<MoveTo X="-4821.876" Y="-977.6767" Z="464.7091" />
+		
+			<While Condition="!IsQuestCompleted(29106)" />
+		</If>
+		<If Condition="IsQuestCompleted(29106)" >
+			<While Condition="!Me.HasAura(58818)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+			</While>
+			<TurnIn Nav="Fly" QuestName="The Biggest Diamond Ever!" QuestId="29106" TurnInName="Human Orphan" TurnInId="14305" />
+		</If>
+	</If>
+	
+<!-- Malfurion Has Returned! -->
+	<!-- Move to Darnassas by Stormwind, if in Eastern Kingdoms -->
+	<If Condition="HasQuest(29107) &amp;&amp; !IsQuestCompleted(29107)" >
+		<If Condition="Me.MapId == 0" >
+			<CustomBehavior File="FlyTo" X="-8639.511" Y="1330.916" Z="5.232939" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="UseTransport" TransportId="176310"
+				WaitAtX="-8639.511" WaitAtY="1330.916" WaitAtZ="5.232939"
+				TransportStartX="-8650.719" TransportStartY="1346.051" TransportStartZ="-0.04151175"
+				StandOnX="-8645.277" StandOnY="1339.042" StandOnZ="6.114784"
+				TransportEndX="8162.587" TransportEndY="1005.365" TransportEndZ="0.04256689"
+				GetOffX="8178.701" GetOffY="1003.521" GetOffZ="6.73991" />
+		</If>
+		<If Condition="Me.ZoneId != 1657" >
+			<CustomBehavior File="FlyTo" X="8378.422" Y="998.663" Z="28.47813" />
+			<While Condition="Me.ZoneId != 1657" >
+				<CustomBehavior File="MyCTM" X="8390.02" Y="1001.96" Z="30.05" />
+				<CustomBehavior File="WaitTimer" TerminateWhen="Me.ZoneId == 1657" WaitTime="5000" />
+			</While>
+		</If>
+		<If Condition="Me.ZoneId == 1657" >
+			<CustomBehavior File="ForcedDismount" />
+			<While Condition="!Me.HasAura(58818)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+			</While>
+			<While Condition="!IsQuestCompleted(29107)" >
+				<MoveTo X="9662.495" Y="2524.327" Z="1359.997" />
+			</While>
+		</If>
+	</If>
+
+	<If Condition="HasQuest(29107) &amp;&amp; IsQuestCompleted(29107)" >
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+		</While>
+		<TurnIn Nav="Fly" QuestName="Malfurion Has Returned!" QuestId="29107" TurnInName="Human Orphan" TurnInId="14305" />
+	</If>
+	
+	<While Condition="!Me.HasAura(58818) &amp;&amp; ((!HasQuest(29119) &amp;&amp; !IsQuestCompleted(29119)) ||
+						(!HasQuest(29117) &amp;&amp; !IsQuestCompleted(29117)))" >
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+	</While>
+
+	<PickUp Nav="Fly" QuestName="You Scream, I Scream..." QuestId="29119" GiverName="Human Orphan" GiverId="14305" />
+	<PickUp Nav="Fly" QuestName="Let's Go Fly a Kite" QuestId="29117" GiverName="Human Orphan" GiverId="14305" />
+
+<!-- You Scream, I Scream -->
+	<If Condition="HasQuest(29119) &amp;&amp; !IsQuestCompleted(29119)" >
+		<If Condition="Me.ZoneId == 1657" >
+			<CustomBehavior File="Message" UpdateGoalText="true" Text="Attempting to use Hearthstone" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1000" />
+			<CustomBehavior File="WaitTimer" TerminateWhen="Me.ZoneId != 1657" WaitTime="20000" />
+		</If>
+		<!-- If hearth fails, hoof it back to Stormwind... -->
+		<If Condition="Me.MapId != 0" >
+			<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Stormwind -->
+				<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684) &gt;= 100)" >
+					<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+					<CustomBehavior File="ForcedDismount" />
+				</If>
+				<CustomBehavior File="UserSettings" UseMount="False" />
+				<CustomBehavior File="InteractWith" MobId="215119" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+				<CustomBehavior File="UserSettings" UseMount="True" />
+			</If>
+			<If Condition="Me.MapId == 571" >
+				<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+			</If>
+			<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487
+						&amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557" >
+						<!-- Outlands, but not Ghostlands/Eversong/Silvermoon or Azure/Bloodmyst/Exodar -->
+				<CustomBehavior File="FlyTo" X="-338.0062" Y="969.5461" Z="54.29" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" MobId="195139" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-338.0062" Y="969.5461" Z="54.29" />
+			</If>
+			
+			<!-- If we're in Rut'theran, move to Stormwind -->
+			<If Condition="Me.MapId == 1" >
+				<If Condition="Me.ZoneId == 1657" >
+					<CustomBehavior File="FlyTo" X="9946.069" Y="2610.65" Z="1316.251" />
+					<While Condition="Me.ZoneId == 1657" >
+						<CustomBehavior File="MyCTM" X="9946.80" Y="2624.89" Z="1318.14" />
+						<CustomBehavior File="WaitTimer" TerminateWhen="Me.ZoneId != 1657" WaitTime="5000" />
+					</While>
+				</If>
+				<!-- Boat from Darnassus -->
+				<CustomBehavior File="FlyTo" X="8179.11" Y="1002.75" Z="6.817571" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="UseTransport" TransportId="176310"
+					WaitAtX="8179.11" WaitAtY="1002.75" WaitAtZ="6.817571" 
+					TransportStartX="8162.587" TransportStartY="1005.365" TransportStartZ="-0.04571009"
+					TransportEndX="-8650.719" TransportEndY="1346.051" TransportEndZ="0.04218207"
+					StandOnX="8169.982" StandOnY="1007.957" StandOnZ="6.171846"
+					GetOffX="-8641.401" GetOffY="1324.443" GetOffZ="5.505301" />
+			</If>
+		</If>
+		
+		<If Condition="Unit(52421) == null" >
+			<If Condition="Chance(50.0)" >
+				<CustomBehavior File="FlyTo" DestName="Ice Cream Vendor (Blue Recluse)" X="-9032.402" Y="848.3094" Z="107.1096"  />
+			<Else>
+				<CustomBehavior File="FlyTo" DestName="Ice Cream Vendor(ramp)"  X="-9035.568" Y="865.3076" Z="108.9711"  />
+			</Else>
+			</If>
+		</If>
+
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+		</While>
+		<If Condition="!HasItem(69027)" >
+			<CustomBehavior File="InteractWith" QuestId="29119" MobId="52421" InteractByBuyingItemId="69027" NonCompeteDistance="0"
+				WaitTime="3000" X="-9035.099" Y="862.1296" Z="107.1131" />
+		</If>
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+		</While>
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(69027)" WaitTime="3000" />
+	</If>
+	<If Condition="HasQuest(29119) &amp;&amp; IsQuestCompleted(29119)" >
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+		</While>
+		<TurnIn Nav="Fly" QuestName="You Scream, I Scream..." QuestId="29119" TurnInName="Human Orphan" TurnInId="14305" />			
+	</If>
+	
+<!-- Let's Go Fly a Kite -->
+	<If Condition="HasQuest(29117) &amp;&amp; !IsQuestCompleted(29117)" >
+
+		<If Condition="Unit(52358) == null" >
+			<If Condition="Chance(25.0)" >
+				<CustomBehavior File="FlyTo" DestName="Stormwind Toy Vendor (Cathedral bridge)" X="-9033.96" Y="867.9114" Z="110.0335" />
+			<ElseIf Condition="Chance(50.0)" >
+				<CustomBehavior File="FlyTo" DestName="Stormwind Toy Vendor (Mage bridge)"  X="-8852.397" Y="735.397" Z="100.3052"  />
+			</ElseIf>
+			<ElseIf Condition="Chance(75.0)" >
+				<CustomBehavior File="FlyTo" DestName="Stormwind Toy Vendor (fishing dock)" X="-8793.981" Y="756.1476" Z="97.39317" />
+			</ElseIf>
+			<Else>
+				<CustomBehavior File="FlyTo" DestName="Stormwind Toy Vendor (wine store)"  X="-8877.096" Y="711.1381" Z="97.70181"  />
+			</Else>
+			</If>
+		</If>
+
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+		</While>
+		<While Condition="!HasItem(68890)" >	<!-- we must loop this because the vendor moves -->
+			<CustomBehavior File="InteractWith" MobId="52358" CollectionDistance="500" InteractByBuyingItemId="68890" NonCompeteDistance="0"
+				WaitTime="3000" X="-8736.825" Y="718.0811" Z="100.9486" />
+		</While>
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+		</While>
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(68890)" WaitTime="35000" />
+	</If>
+	<If Condition="HasQuest(29117) &amp;&amp; IsQuestCompleted(29117)" >
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+		</While>
+		<TurnIn Nav="Fly" QuestName="Let's Go Fly a Kite" QuestId="29117" TurnInName="Human Orphan" TurnInId="14305" />
+	</If>
+	
+	<PickUp QuestName="A Warden of the Alliance" QuestId="171" GiverName="Human Orphan" GiverId="14305" />
+
+	<!-- "Bad Example" Achievement: Consume the Stormwind treats in front of our Orphan -->
+	<If Condition="!IsAchievementCompleted(1788,1)" > <!-- Tigule and Foror's Strawberry Ice Cream -->
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+		</While>
+		<MoveTo X="-8867.883" Y="657.0567" Z="96.27794" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="!HasItem(7228)" >
+			<CustomBehavior File="InteractWith" MobId="14481" CollectionDistance="500" InteractByBuyingItemId="7228" NonCompeteDistance="0"
+				WaitTime="1000" X="-8864.87" Y="657.9913" Z="96.46141" />
+		</If>
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+		</While>
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(7228)" WaitTime="3000" />
+	</If>
+
+	<!-- A Warden of the Alliance -->
+	<If Condition="HasQuest(171) &amp;&amp; !IsQuestCompleted(171)" >
+		<CustomBehavior File="FlyTo" X="-8736.825" Y="718.0811" Z="100.9486" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(18598)" WaitTime="3000" />
+		</While>
+		<While Condition="!HasItem(69057)" > <!-- we must loop this since the vendor moves -->
+			<CustomBehavior File="InteractWith" MobId="52358" InteractByBuyingItemId="69057" CollectionDistance="500" 
+				NonCompeteDistance="0" WaitTime="3000" X="-8736.825" Y="718.0811" Z="100.9486" />
+		</While>
+	</If>
+	
+	<If Condition="HasQuest(171) &amp;&amp; IsQuestCompleted(171)" >
+		<CustomBehavior File="FlyTo" X="-8622.883" Y="744.1806" Z="96.91416" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="We're done! Select the pet you want." />
+		<!-- <TurnIn QuestName="A Warden of the Alliance" QuestId="171" TurnInName="Human Orphan" TurnInId="14305" /> -->
+	</If>
+	
+	<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="Stormwind Orphanage quest line complete!" />
+
+</QuestOrder>
+</HBProfile>

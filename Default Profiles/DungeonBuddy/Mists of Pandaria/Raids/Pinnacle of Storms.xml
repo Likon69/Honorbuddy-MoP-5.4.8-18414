@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile xsi:noNamespaceSchemaLocation="../../DungeonbuddyProfile.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Pinnacle of Storms</Name>
+  <DungeonId>613</DungeonId>
+
+  <BossEncounters>
+    <Boss isFinal="false" entry="68078" name="Iron Qon" killOrder="1" optional="false" X="6046.705" Y="4610.651" Z="142.8319"/>
+    <Boss isFinal="false" entry="68904" name="Suen" killOrder="2" optional="false" X="6180.766" Y="4247.465" Z="146.4968"/>
+    <Boss isFinal="false" entry="68905" name="Lu'lin" killOrder="2" optional="false" X="6166.987" Y="4231.749" Z="146.506"/>
+    <Boss isFinal="false" entry="68397" name="Lei Shen" killOrder="3" optional="false" X="5649.86" Y="4094.47" Z="156.463"/>
+  </BossEncounters>
+
+  <Blackspots>
+  </Blackspots>
+  <PullBlackspots>
+  </PullBlackspots>
+</DungeonBuddyProfile>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassProfile Class="Druid" Specialization="4" Name="Druid - Restoration">
+	<TalentTree>
+		<Talent Tier="1" Index="1" Name="Feline Swiftness" />
+		<Talent Tier="2" Index="3" Name="Cenarion Ward" />
+		<Talent Tier="3" Index="3" Name="Typhoon" />
+		<Talent Tier="4" Index="3" Name="Force of Nature" />
+		<Talent Tier="5" Index="3" Name="Mighty Bash" />
+		<Talent Tier="6" Index="3" Name="Nature's Vigil" />
+	</TalentTree>
+	<WeightSet>
+		<Spirit>21</Spirit>
+		<Intellect>20</Intellect>
+		<Haste>18</Haste>
+		<SpellPower>18</SpellPower>
+		<Mastery>16</Mastery>
+		<CriticalStrike>14</CriticalStrike>
+		<Stamina>5</Stamina>
+		<Armor>0.01</Armor>
+		<DamagePerSecond>0.01</DamagePerSecond>
+	</WeightSet>
+</ClassProfile>

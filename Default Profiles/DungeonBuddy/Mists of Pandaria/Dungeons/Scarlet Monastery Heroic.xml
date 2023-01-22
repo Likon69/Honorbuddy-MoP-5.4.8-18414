@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Scarlet Monastery Heroic</Name>
+  <DungeonId>474</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="59789" name="Thalnos the Soulrender" killOrder="1" optional="false" X="1124.715" Y="688.5121" Z="1.231716"/>
+    <Boss isFinal="false" entry="59223" name="Brother Korloff" killOrder="2" optional="false" X="864.9898" Y="604.6695" Z="9.9894"/>
+    <Boss isFinal="false" entry="60040" name="Commander Durand" killOrder="3" optional="false" X="747.9653" Y="605.9705" Z="15.02731"/>
+    <Boss isFinal="true" entry="3977" name="High Inquisitor Whitemane" killOrder="4" optional="false" X="747.9653" Y="605.9705" Z="15.02731"/>
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+    <PullBlackspot X="1168.032" Y="557.5326" Z="0.6547275" Radius="12.45993" />
+  </PullBlackspots>
+</DungeonBuddyProfile>

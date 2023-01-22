@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<DungeonBuddyProfile>
+  <Name>Stormstout Brewery Heroic</Name>
+  <DungeonId>469</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="56637" name="Ook-Ook" killOrder="1" optional="false" X="-759.618" Y="1365.061" Z="146.7896"/>
+    <Boss isFinal="false" entry="56717" name="Hoptallus" killOrder="2" optional="false" X="-696.0826" Y="1259.851" Z="162.7818"/>
+    <Boss isFinal="true" entry="59479" name="Yan-Zhu the Uncasked" killOrder="3" optional="false" X="-703.4462" Y="1162.429" Z="166.1415"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

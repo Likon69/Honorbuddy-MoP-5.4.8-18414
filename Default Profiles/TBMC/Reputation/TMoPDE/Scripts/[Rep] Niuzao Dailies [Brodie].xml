@@ -1,0 +1,305 @@
+<HBProfile>
+	<Name>Niuzao Temple ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+		<Blackspot X="2198.714" Y="4604.928" Z="155.8178" Radius="20"/> <!-- Too many enemies here -->
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- The Unending Siege -->
+	<Quest Id="30952" Name="The Unending Siege"> 
+		<Objective Type="KillMob" MobId="61502" KillCount="12">
+			<Hotspots>
+				<Hotspot X="2257.54" Y="4856.13" Z="155.07" />
+				<Hotspot X="2324.53" Y="4778.14" Z="155.08" />
+				<Hotspot X="2371.56" Y="4704.67" Z="155.08" />
+				<Hotspot X="2308.02" Y="4647.12" Z="155.10" />
+				<Hotspot X="2224.57" Y="4603.21" Z="155.09" />
+				<Hotspot X="2175.97" Y="4686.19" Z="155.07" />
+				<Hotspot X="2125.12" Y="4767.31" Z="155.08" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- The Siege Swells -->
+	<Quest Id="30956" Name="The Siege Swells"> 
+		<Objective Type="KillMob" MobId="61502" KillCount="12">
+			<Hotspots>
+				<Hotspot X="2257.54" Y="4856.13" Z="155.07" />
+				<Hotspot X="2324.53" Y="4778.14" Z="155.08" />
+				<Hotspot X="2371.56" Y="4704.67" Z="155.08" />
+				<Hotspot X="2308.02" Y="4647.12" Z="155.10" />
+				<Hotspot X="2224.57" Y="4603.21" Z="155.09" />
+				<Hotspot X="2175.97" Y="4686.19" Z="155.07" />
+				<Hotspot X="2125.12" Y="4767.31" Z="155.08" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+<CustomBehavior File="Message" Text="Beginning Niuzao Quests..." LogColor="Green"  />
+
+<!-- Defense at Niuzao Temple -->
+
+	<If Condition="HasQuest(31382)" >
+		<CustomBehavior File="Message" Text="Starting Niuzao Temple" LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="2181.13" Y="4820.81" Z="181.94" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<TurnIn QuestName="Defense at Niuzao Temple" QuestId="31382" TurnInName="Ogo the Elder" TurnInID="61580" />
+	</If>
+
+	<If Condition="HasQuest(31383)" >
+		<CustomBehavior File="Message" Text="Starting Niuzao Temple" LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="2181.13" Y="4820.81" Z="181.94" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<TurnIn QuestName="Defense at Niuzao Temple" QuestId="31383" TurnInName="Ogo the Elder" TurnInID="61580" />
+	</If>
+
+	<If Condition="((!HasQuest(30953) &amp;&amp; IsQuestCompleted(30953)) ||
+			(!HasQuest(30954) &amp;&amp; IsQuestCompleted(30954)) ||
+			(!HasQuest(30955) &amp;&amp; IsQuestCompleted(30955)) ||
+			(!HasQuest(30952) &amp;&amp; IsQuestCompleted(30952)) ||
+			(!HasQuest(30956) &amp;&amp; IsQuestCompleted(30956)) ||
+			(!HasQuest(30957) &amp;&amp; IsQuestCompleted(30957)) ||
+			(!HasQuest(30958) &amp;&amp; IsQuestCompleted(30958)) ||
+			(!HasQuest(30959) &amp;&amp; IsQuestCompleted(30959)))" >
+		<CustomBehavior File="Message" Text="Previously Completed Quests Detected." LogColor="CornflowerBlue" />
+		<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: Previously completed quests detected! \n\n Either you have done some of you quests already, and have restarted the bot...\n OR your cache folder is NOT clean, and must be deleted, and bot restarted." />
+	</If>
+
+<!-- Ogo the Elder -->
+	<While Condition="HasQuestAvailable(61580)" >
+		<CustomBehavior File="InteractWith" MobId="61580" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Ogo the Younger -->
+	<While Condition="HasQuestAvailable(61581)" >
+		<CustomBehavior File="InteractWith" MobId="61581" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Yak-Keeper Kyana -->
+	<While Condition="HasQuestAvailable(61585)" >
+		<CustomBehavior File="InteractWith" MobId="61585" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- High Adept Paosha -->
+	<While Condition="HasQuestAvailable(61583)" >
+		<CustomBehavior File="InteractWith" MobId="61583" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Sentinel Commander Qipan -->
+	<While Condition="HasQuestAvailable(61584)" >
+		<CustomBehavior File="InteractWith" MobId="61584" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Fallen Sentinels -->
+	<If Condition="HasQuest(30953) &amp;&amp; !IsQuestCompleted(30953)" >
+		<CustomBehavior File="Message" Text="Starting Fallen Sentinels" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2240.42" Y="4726.178" Z="146.8373" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30953)" >
+			<CustomBehavior File="InteractWith" InteractByUsingItemId="82381" QuestId="30953" MobId="61570" CollectionDistance="250" X="2240.42" Y="4726.178" Z="146.8373" />
+			<CustomBehavior File="WaitTimer" WaitTime="8000" />
+			<If Condition="HasQuest(30954) &amp;&amp; !IsQuestCompleted(30954)" >
+				<CustomBehavior File="CollectThings" QuestId="30954" CollectItemId="82353" ObjectId="211765" ObjectId2="211766" PostInteractDelay="1250" NonCompeteDistance="5" HuntingGroundRadius="15" CollectUntil="NoTargetsInArea" CollectItemCount="10" />
+			</If>
+			<If Condition="HasQuest(30955) &amp;&amp; !IsQuestCompleted(30955)" >
+				<CustomBehavior File="InteractWith" QuestId="30955" MobId="212132" MobId2="212133" MobId3="212131" NumOfTimes="3" WaitTime="100" WaitForNpcs="False" CollectionDistance="15" />
+			</If>
+			<RunTo X="2240.42" Y="4726.178" Z="146.8373" />
+		</While>
+	</If>
+
+<!-- A Blade is a Blade -->
+	<If Condition="HasQuest(30954) &amp;&amp; !IsQuestCompleted(30954)" >
+		<CustomBehavior File="Message" Text="Starting A Blade is a Blade" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2240.42" Y="4726.178" Z="146.8373" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="CollectThings" QuestId="30954" ObjectId="211765" ObjectId2="211766" PostInteractDelay="1250" NonCompeteDistance="5" HuntingGroundRadius="25" CollectUntil="QuestComplete" >
+			<Hotspot X="2251.32" Y="4800.74" Z="147.16" />
+			<Hotspot X="2315.652" Y="4719.133" Z="146.6088" />
+			<Hotspot X="2239.098" Y="4661.93" Z="146.497" />
+		</CustomBehavior>
+	</If>
+
+<!-- In Battle's Shadow -->
+	<If Condition="HasQuest(30958) &amp;&amp; !IsQuestCompleted(30958)" >
+		<CustomBehavior File="Message" Text="Starting In Battle's Shadow" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2240.42" Y="4726.178" Z="146.8373" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="30958" MobId="211752" NumOfTimes="1000" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="30" >
+			<HuntingGrounds>
+				<Hotspot X="2135.29" Y="4736.10" Z="155.08" />
+				<Hotspot X="2229.70" Y="4605.89" Z="155.08" />
+				<Hotspot X="2369.13" Y="4696.05" Z="155.09" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+
+<!-- Paying Tribute -->
+	<If Condition="HasQuest(30955) &amp;&amp; !IsQuestCompleted(30955)" >
+		<CustomBehavior File="Message" Text="Starting Paying Tribute" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2240.42" Y="4726.178" Z="146.8373" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="30955" MobId="212132" MobId2="212133" MobId3="212131" NonCompeteDistance="0" CollectionDistance="25" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" >
+			<HuntingGrounds>
+				<Hotspot X="2251.32" Y="4800.74" Z="147.16" />
+				<Hotspot X="2282.682" Y="4760.854" Z="146.1078" />
+				<Hotspot X="2315.652" Y="4719.133" Z="146.6088" />
+				<Hotspot X="2276.706" Y="4691.729" Z="146.3235" />
+				<Hotspot X="2239.098" Y="4661.93" Z="146.497" />
+				<Hotspot X="2211.231" Y="4708.462" Z="146.5645" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+
+<!-- The Siege Swells -->
+	<If Condition="HasQuest(30956) &amp;&amp; !IsQuestCompleted(30956)" >
+		<CustomBehavior File="Message" Text="Starting The Siege Swells" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2240.42" Y="4726.178" Z="146.8373" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="The Siege Swells" QuestId="30956" Type="KillMob" MobId="61502" KillCount="25" />
+	</If>
+
+<!-- The Unending Siege -->
+	<If Condition="HasQuest(30952) &amp;&amp; !IsQuestCompleted(30952)" >
+		<CustomBehavior File="Message" Text="Starting The Unending Siege" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2240.42" Y="4726.178" Z="146.8373" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="The Unending Siege" QuestId="30952" Type="KillMob" MobId="61502" KillCount="12" />
+	</If>
+
+<!-- The Big Guns -->
+ 	<If Condition="HasQuest(30959) &amp;&amp; !IsQuestCompleted(30959)">
+		<CustomBehavior File="Message" Text="Starting The Big Guns" LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="2155.876" Y="4574.692" Z="152.7922" />
+		<CustomBehavior File="ForcedDismount"/>	
+		<CustomBehavior File="InteractWith" QuestId="30959" MobId="61510" InteractByUsingItemId="82346" Range="30" NumOfTimes="1000" 
+			ProactiveCombatStrategy="ClearMobsTargetingUs" PreInteractMountStrategy="Dismount" >
+			<HuntingGrounds>
+				<Hotspot X="2155.876" Y="4574.692" Z="152.7922" />
+				<Hotspot X="2322.519" Y="4582.979" Z="157.6676" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+
+<!-- The Overwhelming Swarm -->
+	<If Condition="HasQuest(30957) &amp;&amp; !IsQuestCompleted(30957)" >
+		<CustomBehavior File="Message" Text="Starting The Overwhelming Swarm" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2205.567" Y="4556.066" Z="153.4633" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="The Overwhelming Swarm" QuestId="30957" Type="KillMob" MobId="61509" KillCount="4" />
+	</If>
+
+<!-- Niuzao Quest Turn ins -->
+
+	<If Condition="((HasQuest(30953) &amp;&amp; IsQuestCompleted(30953)) ||
+			(HasQuest(30954) &amp;&amp; IsQuestCompleted(30954)) ||
+			(HasQuest(30955) &amp;&amp; IsQuestCompleted(30955)) ||
+			(HasQuest(30952) &amp;&amp; IsQuestCompleted(30952)) ||
+			(HasQuest(30956) &amp;&amp; IsQuestCompleted(30956)) ||
+			(HasQuest(30957) &amp;&amp; IsQuestCompleted(30957)) ||
+			(HasQuest(30958) &amp;&amp; IsQuestCompleted(30958)) ||
+			(HasQuest(30959) &amp;&amp; IsQuestCompleted(30959)))" >
+		<CustomBehavior File="Message" Text="Quests Completed. Returning to Niuzao Temple." LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2180.123" Y="4822.747" Z="181.9505" />
+	</If>
+
+	<If Condition="HasQuest(30953) &amp;&amp; IsQuestCompleted(30953)" >
+		<TurnIn QuestName="Fallen Sentinels" QuestId="30953" TurnInName="Yak-Keeper Kyana" TurnInID="61585" />
+	</If>
+
+	<If Condition="HasQuest(30958) &amp;&amp; IsQuestCompleted(30958)" >
+		<TurnIn QuestName="In Battle's Shadow" QuestId="30958" TurnInName="Yak-Keeper Kyana" TurnInID="61585" />
+	</If>
+
+	<If Condition="HasQuest(30954) &amp;&amp; IsQuestCompleted(30954)" >
+		<TurnIn QuestName="A Blade is a Blade" QuestId="30954" TurnInName="Ogo the Younger" TurnInID="61581" />
+	</If>
+
+	<If Condition="HasQuest(30959) &amp;&amp; IsQuestCompleted(30959)" >
+		<TurnIn QuestName="The Big Guns" QuestId="30959" TurnInName="Ogo the Younger" TurnInID="61581" />
+	</If>
+
+	<If Condition="HasQuest(30952) &amp;&amp; IsQuestCompleted(30952)" >
+		<TurnIn QuestName="The Unending Siege" QuestId="30952" TurnInName="Ogo the Elder" TurnInID="61580" />
+	</If>
+
+	<If Condition="HasQuest(30956) &amp;&amp; IsQuestCompleted(30956)" >
+		<TurnIn QuestName="The Siege Swells" QuestId="30956" TurnInName="Ogo the Elder" TurnInID="61580" />
+	</If>
+
+	<If Condition="HasQuest(30955) &amp;&amp; IsQuestCompleted(30955)" >
+		<TurnIn QuestName="Paying Tribute" QuestId="30955" TurnInName="High Adept Paosha" TurnInID="61583" />
+	</If>
+
+	<If Condition="HasQuest(30957) &amp;&amp; IsQuestCompleted(30957)" >
+		<TurnIn QuestName="The Overwhelming Swarm" QuestId="30957" TurnInName="Sentinel Commander Qipan" TurnInId="61584" />
+	</If>
+
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+	
+	<CustomBehavior File="ForcedDismount" />
+	<If Condition="HasItem(60498)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60498)" WaitTime="1500" />
+	<ElseIf Condition="HasItem(93672)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93672)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(54452)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(54452)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(64488)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(6948)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1500" />
+	</ElseIf>
+	</If>
+
+<CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of August Celestials Dailies" />
+
+</QuestOrder>
+</HBProfile>

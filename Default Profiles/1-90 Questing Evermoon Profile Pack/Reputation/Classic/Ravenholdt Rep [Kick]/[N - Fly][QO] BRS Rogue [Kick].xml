@@ -1,0 +1,126 @@
+<HBProfile xsi:noNamespaceSchemaLocation="../../../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>[N] BRS Rogue Pickpocketing [Kick] ($Rev: 2925 $)</Name> 
+
+    <MinLevel>1</MinLevel> 
+    <MaxLevel>1001</MaxLevel> 
+
+    <MinDurability>0.2</MinDurability>
+    <MinFreeBagSlots>4</MinFreeBagSlots>
+
+    <TargetElites>False</TargetElites>\
+
+    <SellGrey>True</SellGrey>
+    <SellWhite>False</SellWhite>
+    <SellGreen>False</SellGreen>
+    <SellBlue>False</SellBlue>
+    <SellPurple>False</SellPurple>
+
+    <MailWhite>True</MailWhite>
+    <MailGreen>True</MailGreen>
+    <MailBlue>True</MailBlue>
+    <MailPurple>True</MailPurple>
+
+    <AvoidMobs>
+        <Mob Name="Summon Enabler Stalker" Entry="53488" />
+        <Mob Name="Scarshield Worg" Entry="9416" />
+        <Mob Name="Rage Talon Dragonspawn" Entry="9096" />
+        <Mob Name="Spirestone Enforcer" Entry="9199" />
+        <Mob Name="Spirestone Reaver" Entry="9200" />
+        <Mob Name="Spirestone Ogre Magus" Entry="9201" />
+        <Mob Name="Spirestone Mystic" Entry="9198" />
+        <Mob Name="Spirestone Battle Mage" Entry="9197" />
+        <Mob Name="Highlord Omokk" Entry="9196" />
+    </AvoidMobs>
+
+    <Mailboxes>
+        <Mailbox Nav="Fly" X="-7112.473" Y="-1199.301" Z="307.0302" />
+    </Mailboxes>
+
+    <Vendors>
+        <Vendor Name="Fergus Gravelsmash" Entry="47937" Type="Repair"
+            Nav="Fly" X="-7093.68" Y="-1268.31" Z="270.4849" />
+    </Vendors>
+
+    <QuestOrder>
+        <CustomBehavior File="Misc\ProfileCompatibilityInfo"
+            AllowBrokenAddOns="true" AllowBrokenPlugIns="true" />
+        <LootMobs Value="False" />
+        <TargetingDistance Value="20" />
+
+        <SetGrindArea>
+            <GrindArea>
+                <!--
+                    <TargetMinLevel>1</TargetMinLevel>
+                    <TargetMaxLevel>86</TargetMaxLevel>
+                    <Factions>40</Factions>
+                    <MaxDistance>15</MaxDistance>
+                -->
+                <Hotspots>
+                    <!-- Dragonspire Hall -->
+                    <Hotspot X="80.04137" Y="-281.7596" Z="60.70169" />
+                    <Hotspot X="78.81004" Y="-278.6798" Z="60.68965" />
+                    <Hotspot X="79.89117" Y="-272.2542" Z="60.69953" />
+                    <Hotspot X="79.69479" Y="-277.2309" Z="60.69748" />
+                    <Hotspot X="124.0716" Y="-341.1499" Z="70.91243" />
+                    <Hotspot X="155.1127" Y="-352.9182" Z="70.85785" />
+                    <Hotspot X="214.6222" Y="-333.9655" Z="76.85062" />
+                    <Hotspot X="228.87" Y="-301.8507" Z="76.94361" />
+                    <Hotspot X="194.1779" Y="-259.5207" Z="76.93114" />
+                    <Hotspot X="153.8955" Y="-292.4281" Z="70.95184" />
+                    <Hotspot X="124.0662" Y="-297.6193" Z="70.88351" />
+                    <!-- End of Dragonspire Hall -->
+
+                    <!-- Hall of Blackhand -->
+                    <Hotspot X="155.1127" Y="-352.9182" Z="70.85785" />
+                    <Hotspot X="214.6222" Y="-333.9655" Z="76.85062" />
+                    <Hotspot X="228.87" Y="-301.8507" Z="76.94361" />
+                    <Hotspot X="194.1779" Y="-259.5207" Z="76.93114" />
+                    <Hotspot X="153.8955" Y="-292.4281" Z="70.95184" />
+                    <Hotspot X="124.0662" Y="-297.6193" Z="70.88351" />
+                    <Hotspot X="87.95594" Y="-350.2365" Z="60.70203" />
+                    <Hotspot X="104.192" Y="-327.548" Z="53.91885" />
+                    <Hotspot X="85.16079" Y="-320.7271" Z="55.78402" />
+                    <Hotspot X="98.91267" Y="-311.918" Z="53.91592" />
+                    <Hotspot X="57.52752" Y="-312.9826" Z="53.91727" />
+                    <Hotspot X="45.6264" Y="-260.8409" Z="65.37315" />
+                    <Hotspot X="39.86482" Y="-287.7556" Z="65.37466" />
+                    <Hotspot X="13.80657" Y="-264.2794" Z="65.3493" />
+                    <Hotspot X="16.37925" Y="-326.506" Z="48.80323" />
+                    <!-- End of Hall of Blackhand -->
+
+                    <!-- Hordemar City -->
+                    <Hotspot X="37.78391" Y="-393.225" Z="48.6465" />
+                    <Hotspot X="73.76586" Y="-432.5872" Z="42.23237" />
+                    <Hotspot X="46.66626" Y="-466.3625" Z="24.39484" />
+                    <Hotspot X="54.41916" Y="-506.2292" Z="29.19385" />
+                    <Hotspot X="52.22073" Y="-568.1672" Z="30.57134" />
+                    <Hotspot X="-41.23258" Y="-570.1142" Z="29.19085" />
+                    <Hotspot X="-61.7298" Y="-532.3195" Z="29.19085" />
+                    <Hotspot X="-1.118763" Y="-527.8618" Z="29.23961" />
+                    <Hotspot X="-0.8162971" Y="-460.4511" Z="16.10709" />
+                    <!-- End of Hordemar City -->
+
+                    <!-- Tazz'Alaor -->
+                    <Hotspot X="-19.15702" Y="-469.1668" Z="16.43026" /> <!-- look at mesh here - BlackRockSpire and add jumplinks - add fires to mesh -->
+                    <Hotspot X="-21.76052" Y="-469.8569" Z="16.39515" />
+                    <Hotspot X="-52.91598" Y="-454.8093" Z="16.36641" />
+                    <Hotspot X="-49.836" Y="-484.8142" Z="16.26227" />
+                    <Hotspot X="-105.9425" Y="-481.4681" Z="24.25417" />
+                    <Hotspot X="-120.6237" Y="-482.0648" Z="24.52524" />
+                    <Hotspot X="-42.5854" Y="-548.4441" Z="16.13715" />
+                    <Hotspot X="-73.18584" Y="-573.9271" Z="-18.85472" />
+                    <Hotspot X="-17.13838" Y="-565.7938" Z="-18.77772" />
+                    <Hotspot X="15.23914" Y="-574.0691" Z="-18.60266" />
+                    <Hotspot X="-41.27647" Y="-516.4089" Z="-18.81046" />
+                    <Hotspot X="-35.39359" Y="-481.8758" Z="-18.78074" />
+                    <Hotspot X="-62.06126" Y="-450.683" Z="-18.64417" />
+                    <Hotspot X="-17.13732" Y="-456.0121" Z="-18.64417" />
+                    <!-- End of Tazz'Alaor -->
+                </Hotspots>
+            </GrindArea>
+        </SetGrindArea>
+        
+        <GrindTo Condition="false" GoalText="Farming" />    <!-- grind forever -->
+
+    </QuestOrder>
+</HBProfile>  

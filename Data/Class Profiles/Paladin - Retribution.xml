@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassProfile Class="Paladin" Specialization="3" Name="Paladin - Retribution">
+	<TalentTree>
+		<Talent Tier="1" Index="2" Name="Long Arm of the Law" />
+		<Talent Tier="2" Index="1" Name="Fist of Justice" />
+		<Talent Tier="3" Index="3" Name="Selfless Healer" />
+		<Talent Tier="4" Index="3" Name="Clemency" />
+		<Talent Tier="5" Index="3" Name="Holy Avenger" />
+		<Talent Tier="6" Index="1" Name="Holy Prism" />
+	</TalentTree>
+	<WeightSet>
+		<DamagePerSecond>22</DamagePerSecond>
+		<Strength>20</Strength>
+		<Hit>18</Hit>
+		<Expertise>17</Expertise>
+		<Haste>16</Haste>
+		<Mastery>14</Mastery>
+		<CriticalStrike>12</CriticalStrike>
+		<AttackPower>5</AttackPower>
+		<Stamina>5</Stamina>
+		<Armor>0.01</Armor>
+	</WeightSet>
+</ClassProfile>

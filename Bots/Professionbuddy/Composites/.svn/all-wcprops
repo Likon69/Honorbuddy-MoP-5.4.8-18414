@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites
+END
+TrainSkillAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/TrainSkillAction.cs
+END
+SellItemAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/SellItemAction.cs
+END
+BuyItemAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/BuyItemAction.cs
+END
+CsharpAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/CsharpAction.cs
+END
+Declaration.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/Declaration.cs
+END
+CastSpellAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/CastSpellAction.cs
+END
+ChangeBotAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/ChangeBotAction.cs
+END
+LoadProfileAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/LoadProfileAction.cs
+END
+SubRoutine.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/SubRoutine.cs
+END
+Settings.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/Settings.cs
+END
+WaitAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/WaitAction.cs
+END
+Comment.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/Comment.cs
+END
+PbDecorator.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/PbDecorator.cs
+END
+StackItemsAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/StackItemsAction.cs
+END
+InteractAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/InteractAction.cs
+END
+MoveToAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/MoveToAction.cs
+END
+CustomAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/CustomAction.cs
+END
+PutItemInBankAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/PutItemInBankAction.cs
+END
+BuyItemFromAhAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/BuyItemFromAhAction.cs
+END
+GetItemFromBankAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/GetItemFromBankAction.cs
+END
+CommonTypes.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/CommonTypes.cs
+END
+DisenchantAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/DisenchantAction.cs
+END
+CalSubRoutine.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/CalSubRoutine.cs
+END
+GetMailAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/GetMailAction.cs
+END
+SellItemOnAhAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/SellItemOnAhAction.cs
+END
+PbRootComposite.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/PbRootComposite.cs
+END
+FlyToAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/FlyToAction.cs
+END
+If.cs
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/If.cs
+END
+PBAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/PBAction.cs
+END
+MailItemAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/MailItemAction.cs
+END
+CancelAuctionAction.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/CancelAuctionAction.cs
+END
+While.cs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/686/trunk/Professionbuddy/Composites/While.cs
+END

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile xsi:noNamespaceSchemaLocation="../../DungeonbuddyProfile.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>Gates of Retribution</Name>
+    <DungeonId>717</DungeonId>
+    <BossEncounters>
+        <Boss isFinal="false" entry="72249" name="Galakras" killOrder="1" optional="false" X="1425.201" Y="-4888.474" Z="11.2178" />
+        <Boss isFinal="false" entry="71466" name="Iron Juggernaut" killOrder="2" optional="false" X="1328.135" Y="-4383.781" Z="26.03112"/>
+        <Boss isFinal="false" entry="71859" name="Earthbreaker Haromm" killOrder="3" optional="false" X="1601.822" Y="-4381.819" Z="24.81508"/>
+        <Boss isFinal="false" entry="71858" name="Wavebinder Kardris" killOrder="3" optional="false" X="1599.218" Y="-4376.866" Z="25.11218"/>
+        <Boss isFinal="true" entry="71515" name="General Nazgrim" killOrder="4" optional="false" X="1602.572" Y="-4633.421" Z="-66.68998"/>        
+    </BossEncounters>
+    <Blackspots>
+        <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+    </Blackspots>
+</DungeonBuddyProfile>

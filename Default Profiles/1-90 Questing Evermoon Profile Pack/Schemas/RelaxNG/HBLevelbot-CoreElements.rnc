@@ -1,0 +1,718 @@
+# =====
+# Original contribution by chinajade
+#   $Rev: 3207 $
+#   $Date: 2014-04-23 06:16:30 -0300 (qua, 23 abr 2014) $
+#
+# WARNING: DO NOT EDIT .xsd files.
+#   They are not authoritative and will be overwritten!
+#   Instead, regenerate the .xsd files from the .rnc 'sources'.
+#   Its a one-line command to do this. Please see README.txt
+#   for more information.
+# =====
+
+
+# =====
+# Attributes
+
+Attributes-XYZ =
+  attribute X { xsd:decimal },
+  attribute Y { xsd:decimal },
+  attribute Z { xsd:decimal }
+
+
+
+# =====
+# Elements
+
+AbandonQuest =
+  element AbandonQuest
+  {
+    attribute QuestId { HBType-Id }
+  }
+
+
+AvoidMobs =
+  element AvoidMobs
+  {
+    Mob*
+  }
+
+
+Blacklist =
+  element Blacklist
+  {
+    (Blacklist_Mob
+     | Blacklist_Object)*
+  }
+
+
+Blacklist_Mob =
+  element Mob
+  {
+    attribute Flags { HBType-BehaviorFlags }?,
+    attribute Id { HBType-Id },
+    attribute Name { HBType-Name }?
+  }
+
+
+Blacklist_Object =
+  element Object
+  {
+    attribute Flags { HBType-BehaviorFlags }?,
+    attribute Id { HBType-Id },
+    attribute Name { HBType-Name }?
+  }
+
+
+BlacklistedQuestGivers =
+  element BlacklistedQuestGivers
+  {
+    attribute Id { HBType-Id },
+    attribute Name { HBType-Name }
+  }
+
+
+Blackspot =
+  element Blackspot
+  {
+    attribute Height { xsd:decimal }?,
+    attribute Name { HBType-Name }?,
+    attribute Radius { HBType-DistancePositive }?,
+    Attributes-XYZ
+  }
+
+
+Blackspot_Aerial =
+  element AerialBlackspot
+  {
+    attribute Faction { HBType-Faction }?,
+    Attributes-XYZ,
+    attribute MapId { HBType-MapId }?,
+    attribute Name { HBType-Name }?
+  }
+
+
+Blackspots =
+  element Blackspots
+  {
+    (Blackspot
+     | Blackspot_Aerial)*
+  }
+
+
+Checkpoint =
+  element Checkpoint
+  {
+    attribute Level { HBType-Level }
+  }
+
+
+ClearGrindArea =
+  element ClearGrindArea
+  {
+    empty
+  }
+
+
+ClearMailbox =
+  element ClearMailbox
+  {
+    empty
+  }
+
+
+ClearVendor =
+  element ClearVendor
+  {
+    empty
+  }
+
+
+CollectFrom =
+  element CollectFrom
+  {
+    (element Mob { CollectFrom_Entry }
+     | element Object { CollectFrom_Entry }
+     | element Vendor
+       {
+         attribute Nav { HBType-Nav }?,
+         CollectFrom_Entry
+       }
+    )*
+  }
+
+
+CollectFrom_Entry =
+  attribute Id { HBType-Id },
+  attribute Name { HBType-Name }?,
+  attribute Type { HBType-CollectFromType }?
+
+
+ContinentId =
+  element ContinentId
+  {
+    HBType-MapId
+  }
+
+
+DisableBehavior =
+  element DisableBehavior
+  {
+    attribute Name { HBType-BehaviorFlags }
+  }
+
+
+DisableRepair =
+  element DisableRepair
+  {
+    empty
+  }
+
+
+EnableBehavior =
+  element EnableBehavior
+  {
+    attribute Name { HBType-BehaviorFlags }
+  }
+
+
+EnableRepair =
+  element EnableRepair
+  {
+    empty
+  }
+
+
+Factions =
+  element Factions
+  {
+    list { HBType-Id+ }
+  }
+
+
+ForceMail =
+  element ForceMail
+  {
+    element Item {
+      attribute Id { HBType-Id },
+      attribute Name { HBType-Name }?
+    }+
+  }
+
+
+GrindArea =
+  element GrindArea
+  {
+    Blacklist?
+    & (Factions
+       | MobIds
+       | (Factions, MobIds)
+       | (MobIds, Factions))
+    & LootMobs?
+    & LootRadius?
+    & MaximumHotspotTime?
+    & MaxDistance?
+    & Name?
+    & RandomizeHotspots?
+    & TargetElites?
+    & TargetingDistance?
+    & TargetMaxLevel?
+    & TargetMinLevel?
+    & UseMount?
+    & Hotspots
+  }
+
+
+GrindTo =
+  element GrindTo
+  {
+    (attribute Condition { HBType-Condition }
+     | attribute Level { HBType-Level }),
+    attribute GoalText { HBType-Name }?,
+    attribute Nav { HBType-Nav }?
+  }
+
+
+Hotspot =
+  element Hotspot
+  {
+    Attributes-XYZ,
+    attribute Name { HBType-Name }?
+  }
+
+
+Hotspots =
+  element Hotspots
+  {
+    Hotspot*
+  }
+
+
+If =
+  element If
+  {
+    attribute Condition { HBType-Condition },
+    (QuestOrder_Directives*
+     | element Else
+       {
+	 QuestOrder_Directives*
+       }
+     | element ElseIf
+       {
+         attribute Condition { HBType-Condition },
+	 QuestOrder_Directives*
+       })+
+  }
+
+
+LootMobs =
+  element LootMobs
+  {
+    attribute Value { HBType-MetaBoolean }
+  }
+
+
+LootRadius =
+  element LootRadius
+  {
+    HBType-MetaDecimalNonNegative
+  }
+
+
+Mailboxes =
+  element Mailboxes
+  {
+    element Mailbox
+    {
+      attribute Name { HBType-Name }?,
+      attribute Nav { HBType-Nav }?,
+      attribute UsableWhen { HBType-Condition }?,
+      Attributes-XYZ
+    }*
+  }
+
+
+MailBlue =
+  element MailBlue
+  {
+    HBType-Boolean
+  }
+
+
+MailGreen =
+  element MailGreen
+  {
+    HBType-Boolean
+  }
+
+
+MailGrey =
+  element MailGrey
+  {
+    HBType-Boolean
+  }
+
+
+MailPurple =
+  element MailPurple
+  {
+    HBType-Boolean
+  }
+
+
+MailWhite =
+  element MailWhite
+  {
+    HBType-Boolean
+  }
+
+
+MaximumHotspotTime =
+  element MaximumHotspotTime
+  {
+    HBType-TimeDuration
+  }
+
+
+MaxDistance =
+  element MaxDistance
+  {
+    HBType-DistancePositive
+  }
+
+
+MaxLevel =
+  element MaxLevel
+  {
+    HBType-Count
+  }
+
+
+MinDurability =
+  element MinDurability
+  {
+    xsd:decimal { minInclusive="0.0" }
+  }
+
+
+MinFreeBagSlots =
+  element MinFreeBagSlots
+  {
+    xsd:nonNegativeInteger
+  }
+
+
+MinLevel =
+  element MinLevel
+  {
+    HBType-Count
+  }
+
+
+Mob =
+  element Mob
+  {
+    attribute Id { HBType-Id },
+    attribute Name { HBType-Name }?
+  }
+
+
+MobIds =
+  element MobIds
+  {
+    list { HBType-Id+ }
+  }
+
+
+MoveTo =
+  element MoveTo
+  {
+    attribute DestName { HBType-Name }?,
+    attribute Nav { HBType-Nav }?,
+    attribute Precision { HBType-MetaDecimalNonNegative }?,
+    attribute QuestId { HBType-Id }?,
+    attribute QuestName { string }?,
+    Attributes-XYZ
+  }
+
+
+Name =
+  element Name
+  {
+    HBType-Name
+  }
+
+
+Object =
+  element Object
+  {
+    attribute Id { HBType-Id },
+    attribute Name { HBType-Name }?
+  }
+
+
+Objective |=
+  element Objective
+  {
+    attribute Type { "CollectItem" },
+    Attributes-ObjectiveCore,
+    attribute CollectCount { HBType-Count },    
+    attribute ItemId { HBType-Id },
+    attribute ItemName { HBType-Name }?
+  }
+
+
+Objective |=
+  element Objective
+  {
+    attribute Type { "KillMob" },
+    Attributes-ObjectiveCore,
+    attribute KillCount { HBType-Count },
+    attribute MobId { HBType-Id },
+    attribute MobName { HBType-Name }?
+  }
+
+
+Objective |=
+  element Objective
+  {
+    attribute Type { "UseObject" },
+    Attributes-ObjectiveCore,
+    attribute ObjectId { HBType-Id },
+    attribute ObjectName { HBType-Name }?,
+    attribute UseCount { HBType-Count }
+  }
+
+
+ObjectiveOverride |=
+  element Objective
+  {
+    attribute Type { "CollectItem" },
+    attribute CollectCount { HBType-Count },    
+    attribute ItemId { HBType-Id },
+    attribute ItemName { HBType-Name }?, # convenience, as HB doesn't support this
+    CollectFrom?,
+    ObjectiveOverride_GrindArea
+  }
+
+
+ObjectiveOverride |=
+  element Objective
+  {
+    attribute Type { "KillMob" },
+    attribute KillCount { HBType-Count },
+    attribute MobId { HBType-Id },
+    attribute MobName { HBType-Name }?, # convenience, as HB doesn't support this
+    CollectFrom?,
+    ObjectiveOverride_GrindArea
+  }
+
+
+ObjectiveOverride |=
+  element TurnIn
+  {
+    Attributes-XYZ
+  }
+
+
+ObjectiveOverride |=
+  element Objective
+  {
+    attribute Type { "UseObject" },
+    attribute ObjectId { HBType-Id },
+    attribute ObjectName { HBType-Name }?,
+    attribute UseCount { HBType-Count },
+    ObjectiveOverride_GrindArea
+  }
+
+
+ObjectiveOverride_GrindArea =
+  (TargetMinLevel?
+   & TargetMaxLevel?),
+  Hotspots
+  
+
+
+PickUp =
+  element PickUp
+  {
+    attribute GiverId { HBType-Id },
+    attribute GiverName { HBType-Name }?,
+    attribute GiverType { HBType-QuestGiverType }?,
+    attribute Nav { HBType-Nav }?,
+    attribute QuestId { HBType-Id },
+    attribute QuestName { HBType-Name }?,
+    Attributes-XYZ?
+  }
+
+
+ProtectedItems =
+  element ProtectedItems
+  {
+    element Item {
+      attribute Id { HBType-Id },
+      attribute Name { HBType-Name }?
+    }+
+  }
+
+
+Quest =
+  element Quest
+  {
+    attribute Id { HBType-Id },
+    attribute Name { HBType-Name }?,
+    ObjectiveOverride+
+  }
+
+
+QuestOrder =
+  element QuestOrder
+  {
+    attribute IgnoreCheckpoints { HBType-Boolean }?,
+    QuestOrder_Directives*
+  }
+
+
+QuestOrder_Directives =
+  (AbandonQuest
+   | Checkpoint
+   | ClearGrindArea
+   | ClearMailbox
+   | ClearVendor
+   | CustomBehavior
+   | DisableBehavior
+   | DisableRepair
+   | EnableBehavior
+   | EnableRepair
+   | GrindTo
+   | If
+   | LootMobs
+   | LootRadius
+   | MoveTo
+   | Objective
+   | PickUp
+   | SetGrindArea
+   | SetMailbox
+   | SetVendor
+   | TargetingDistance
+   | TurnIn
+   | UseItem
+   | UseMount
+   | While
+  )+
+
+
+RandomizeHotspots =
+  element RandomizeHotspots
+  {
+    HBType-Boolean
+  }
+
+
+SellBlue =
+  element SellBlue
+  {
+    HBType-Boolean
+  }
+
+
+SellGreen =
+  element SellGreen
+  {
+    HBType-Boolean
+  }
+
+
+SellGrey =
+  element SellGrey
+  {
+    HBType-Boolean
+  }
+
+
+SellPurple =
+  element SellPurple
+  {
+    HBType-Boolean
+  }
+
+
+SellWhite =
+  element SellWhite
+  {
+    HBType-Boolean
+  }
+
+
+SetGrindArea =
+  element SetGrindArea
+  {
+    GrindArea
+  }
+
+
+SetMailbox =
+  element SetMailbox
+  {
+    Mailboxes
+  }
+
+
+SetVendor =
+  element SetVendor
+  {
+    Vendors
+  }
+
+
+TargetingDistance =
+  element TargetingDistance
+  {
+    attribute Value { HBType-MetaDecimalNonNegative }?
+  }
+
+
+TargetElites =
+  element TargetElites
+  {
+    HBType-Boolean
+  }
+
+
+TargetMinLevel =
+  element TargetMinLevel
+  {
+    HBType-Count
+  }
+
+
+TargetMaxLevel =
+  element TargetMaxLevel
+  {
+    HBType-Count
+  }
+
+
+TurnIn =
+  element TurnIn
+  {
+    (attribute QuestId { HBType-Id },
+     attribute QuestName { HBType-Name }?
+    )
+    | (attribute Nav { HBType-Nav }?,
+       attribute QuestId { HBType-Id },
+       attribute QuestName { HBType-Name }?,
+       attribute TurnInId { HBType-Id },
+       attribute TurnInName { HBType-Name }?,
+       attribute TurnInType { HBType-QuestTurnInType }?,
+       Attributes-XYZ?)
+  }
+
+
+UseItem =
+  element UseItem
+  {
+    attribute ItemId { HBType-Id },
+    attribute ItemName { string }?,
+    attribute Nav { HBType-Nav }?,
+    attribute QuestId { HBType-Id },
+    attribute QuestName { HBType-Name }?,
+    attribute TargetId { HBType-Id }?,
+    attribute TargetType { HBType-UseItemType }?,
+    Attributes-XYZ
+  }
+
+
+UseMount =
+  element UseMount
+  {
+    attribute Value { HBType-Boolean }
+  }
+
+
+Vendor =
+  element Vendor
+  {
+    attribute Id { HBType-Id },
+    attribute Name { HBType-Name },
+    attribute Nav { HBType-Nav }?,
+    attribute TrainClass { HBType-TrainClass }?,
+    attribute Type { HBType-VendorType }?,
+    attribute UsableWhen { HBType-Condition }?,
+    Attributes-XYZ?
+  }
+
+
+Vendors =
+  element Vendors
+  {
+    Vendor*
+  }
+
+
+While =
+  element While
+  {
+    attribute Condition { HBType-Condition },
+    QuestOrder_Directives*
+  }

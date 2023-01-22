@@ -1,0 +1,623 @@
+<HBProfile>
+
+	<Name>Badlands ($Rev$)</Name>
+	<MinLevel>40</MinLevel>
+	<MaxLevel>50</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Fuselight By The Sea -->
+		<Vendor Name="Colt Carbine" Entry="49920" Type="Repair" X="-6627.604" Y="-4710.938" Z="8.643551" />
+		<!-- Fuselight -->
+		<Vendor Name="Artie Steelbolt" Entry="48057" Type="Repair" X="-6600.45" Y="-3898.99" Z="379.1219" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="27825" Name="Survival of the Fattest">
+	<Objective Type="CollectItem" ItemId="62544" CollectCount="6">
+		<CollectFrom>
+			<GameObject Name="Dustbelcher Meat" Id="206420" />
+			<GameObject Name="Dustbelcher Meat" Id="206499" />
+			<GameObject Name="Dustbelcher Meat" Id="206498" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-7340.878" Y="-2274.372" Z="239.5158" />
+			<Hotspot X="-7358.935" Y="-2322.576" Z="239.4753" />
+			<Hotspot X="-7420.963" Y="-2325.471" Z="241.1916" />
+			<Hotspot X="-7407.326" Y="-2265.942" Z="234.2329" />
+			<Hotspot X="-7382.619" Y="-2256.277" Z="235.7351" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="62547" CollectCount="10">
+		<CollectFrom>
+			<GameObject Name="Dustbelcher Chest" Id="206499" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-7340.878" Y="-2274.372" Z="239.5158" />
+			<Hotspot X="-7358.935" Y="-2322.576" Z="239.4753" />
+			<Hotspot X="-7420.963" Y="-2325.471" Z="241.1916" />
+			<Hotspot X="-7407.326" Y="-2265.942" Z="234.2329" />
+			<Hotspot X="-7382.619" Y="-2256.277" Z="235.7351" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="27879" Name="Survival of the Fattest">
+	<Objective Type="CollectItem" ItemId="62544" CollectCount="6">
+		<CollectFrom>
+			<GameObject Name="Dustbelcher Meat" Id="206420" />
+			<GameObject Name="Dustbelcher Meat" Id="206499" />
+			<GameObject Name="Dustbelcher Meat" Id="206498" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-7340.878" Y="-2274.372" Z="239.5158" />
+			<Hotspot X="-7358.935" Y="-2322.576" Z="239.4753" />
+			<Hotspot X="-7420.963" Y="-2325.471" Z="241.1916" />
+			<Hotspot X="-7407.326" Y="-2265.942" Z="234.2329" />
+			<Hotspot X="-7382.619" Y="-2256.277" Z="235.7351" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="62547" CollectCount="10">
+		<CollectFrom>
+			<GameObject Name="Dustbelcher Chest" Id="206499" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-7340.878" Y="-2274.372" Z="239.5158" />
+			<Hotspot X="-7358.935" Y="-2322.576" Z="239.4753" />
+			<Hotspot X="-7420.963" Y="-2325.471" Z="241.1916" />
+			<Hotspot X="-7407.326" Y="-2265.942" Z="234.2329" />
+			<Hotspot X="-7382.619" Y="-2256.277" Z="235.7351" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+	
+	<If Condition="!HasQuest(27763) &amp;&amp; !IsQuestCompleted(27763)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Badlands Quests" LogColor="Green" />
+	
+	<If Condition="!HasQuest(27763) &amp;&amp; !IsQuestCompleted(27763)" >
+		<CustomBehavior File="Message" Text="Compiling Fuselight Kicker Quest" LogColor="CornflowerBlue" />
+		<PickUp QuestName="To Fuselight Proper" QuestId="27763" GiverName="Eddie Flofizzle" GiverId="46650" />
+		<RunTo X="-6519.24" Y="-4605.19" Z="29.19" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<TurnIn QuestName="To Fuselight Proper" QuestId="27763" TurnInName="Dolph Blastus" TurnInId="46652" />
+	</If>
+	
+	<If Condition="HasQuest(27763)" >
+		<CustomBehavior File="Message" Text="Compiling Fuselight Kicker Quest" LogColor="CornflowerBlue" />
+		<If Condition="Me.Z &lt; 35" >
+			<RunTo X="-6519.24" Y="-4605.19" Z="29.19" />
+			<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		</If>
+		<TurnIn QuestName="To Fuselight Proper" QuestId="27763" TurnInName="Dolph Blastus" TurnInId="46652" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Fuselight Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Easily Swayed" QuestId="27774" GiverName="Dolph Blastus" GiverId="46652" />
+	<PickUp QuestName="When the Going Gets Tough, Cheat" QuestId="27775" GiverName="Garyanne Fleezlebop" GiverId="46653" />
+	<Objective QuestName="Easily Swayed" QuestId="27774" Type="KillMob" MobId="46695" KillCount="9" />
+	<Objective QuestName="When the Going Gets Tough, Cheat" QuestId="27775" Type="CollectItem" ItemId="62396" CollectCount="1" />
+	<TurnIn QuestName="When the Going Gets Tough, Cheat" QuestId="27775" TurnInName="Garyanne Fleezlebop" TurnInId="46653" />
+	<PickUp QuestName="It's Goat Time, Baby" QuestId="27776" GiverName="Garyanne Fleezlebop" GiverId="46653" />
+	
+	<TurnIn QuestName="Easily Swayed" QuestId="27774" TurnInName="Dolph Blastus" TurnInId="46652" />
+	<PickUp QuestName="A Strange Request" QuestId="27764" GiverName="Dolph Blastus" GiverId="46652" />
+	
+	<CustomBehavior File="InteractWith" QuestId="27776" MobId="46393" InteractByUsingItemId="62397" NumOfTimes="1000"
+		NonCompeteDistance="5" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-6615.112" Y="-3949.429" Z="380.6574" />
+			<Hotspot X="-6559.456" Y="-3922.465" Z="379.4768" />
+			<Hotspot X="-6603.311" Y="-3825.228" Z="379.436" />
+			<Hotspot X="-6656.736" Y="-3829.134" Z="383.7858" />
+			<Hotspot X="-6653.861" Y="-3878.697" Z="379.054" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="It's Goat Time, Baby" QuestId="27776" TurnInName="Garyanne Fleezlebop" TurnInId="46653" />
+	
+	<DisableBehavior Name="Pull" />
+	<TurnIn QuestName="A Strange Request" QuestId="27764" TurnInName="Rhea" TurnInId="46654" />
+	<EnableBehavior Name="Pull" />
+	
+	<CustomBehavior File="Message" Text="Compiling Rhea's Camp Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="First Sample: Wild Eggs" QuestId="27765" GiverName="Rhea" GiverId="46654" />
+	<PickUp QuestName="Second Sample: Whelps" QuestId="27766" GiverName="Rhea" GiverId="46654" />
+	<Objective QuestName="First Sample: Wild Eggs" QuestId="27765" Type="CollectItem" ItemId="62388" CollectCount="6" />
+	<Objective QuestName="Second Sample: Whelps" QuestId="27766" Type="CollectItem" ItemId="62390" CollectCount="10" />
+	<TurnIn QuestName="First Sample: Wild Eggs" QuestId="27765" TurnInName="Rhea" TurnInId="46654" />
+	<TurnIn QuestName="Second Sample: Whelps" QuestId="27766" TurnInName="Rhea" TurnInId="46654" />
+	
+	<PickUp QuestName="Lifting the Veil" QuestId="27770" GiverName="Rhea" GiverId="46654" />
+	<While Condition="HasQuest(27770) &amp;&amp; !IsQuestCompleted(27770)" />
+	<TurnIn QuestName="Lifting the Veil" QuestId="27770" TurnInName="Rhea" TurnInId="46654" />
+	
+	<PickUp QuestName="Third Sample: Implanted Eggs" QuestId="27771" GiverName="Rhea" GiverId="46654" />
+	<Objective QuestName="Third Sample: Implanted Eggs" QuestId="27771" Type="CollectItem" ItemId="62393" CollectCount="3" />
+	<TurnIn QuestName="Third Sample: Implanted Eggs" QuestId="27771" TurnInName="Rhea" TurnInId="46654" />
+	
+	<PickUp QuestName="Rhea Revealed" QuestId="27769" GiverName="Rhea" GiverId="46654" />
+	<While Condition="HasQuest(27769) &amp;&amp; !IsQuestCompleted(27769)" />
+	<TurnIn QuestName="Rhea Revealed" QuestId="27769" TurnInName="Rheastrasza" TurnInId="46655" />
+	
+	<PickUp QuestName="The Venerable Doctor Blam" QuestId="27772" GiverName="Rheastrasza" GiverId="46655" />
+	<TurnIn QuestName="The Venerable Doctor Blam" QuestId="27772" TurnInName="Dr. Hieronymus Blam" TurnInId="46664" />
+	
+	<If Condition="Me.IsAlliance" >
+		<CustomBehavior File="Message" Text="Compiling Dustwind Dig Quests" LogColor="CornflowerBlue" />
+	<Else>
+		<CustomBehavior File="Message" Text="Compiling Bloodwatcher Point Quests" LogColor="CornflowerBlue" />
+	</Else>
+	</If>
+	
+	<PickUp QuestName="Troggish Troubles" QuestId="27789" GiverName="Dr. Hieronymus Blam" GiverId="46664" X="-7010.07" Y="-3333.39" Z="241.7412" />
+	<If Condition="HasQuest(27789) &amp;&amp; !IsQuestCompleted(27789)" >
+		<CustomBehavior File="SpecificQuests\27789-Badlands-TroggishTroubles" />
+	</If>
+	<TurnIn QuestName="Troggish Troubles" QuestId="27789" TurnInName="Dr. Hieronymus Blam" TurnInId="46664" X="-7010.07" Y="-3333.39" Z="241.7412" />
+	
+	<If Condition="Me.IsAlliance" >
+		<PickUp QuestName="Dustwind Dig" QuestId="27791" GiverName="Dr. Hieronymus Blam" GiverId="46664" />
+		<TurnIn QuestName="Dustwind Dig" QuestId="27791" TurnInName="Lead Prospector Durdin" TurnInId="46760" />
+		<PickUp QuestName="All's Fair in Love, War, and Archaeology" QuestId="27792" GiverName="Lead Prospector Durdin" GiverId="46760" />
+		
+		<PickUp QuestName="A Dwarf's Got Needs" QuestId="27823" GiverName="Sigrun Ironhew" GiverId="2860" />
+		<Objective QuestName="A Dwarf's Got Needs" QuestId="27823" Type="CollectItem" ItemId="62510" CollectCount="15" />
+		<TurnIn QuestName="A Dwarf's Got Needs" QuestId="27823" TurnInName="Sigrun Ironhew" TurnInId="2860" />
+		<PickUp QuestName="The Good Stuff" QuestId="27824" GiverName="Sigrun Ironhew" GiverId="2860" />
+		<Objective QuestName="The Good Stuff" QuestId="27824" Type="CollectItem" ItemId="62509" CollectCount="1" />
+		<TurnIn QuestName="The Good Stuff" QuestId="27824" TurnInName="Sigrun Ironhew" TurnInId="2860" />
+		
+		<Objective QuestName="All's Fair in Love, War, and Archaeology" QuestId="27792" Type="CollectItem" ItemId="62485" CollectCount="1" />
+		<Objective QuestName="All's Fair in Love, War, and Archaeology" QuestId="27792" Type="CollectItem" ItemId="62486" CollectCount="1" />
+		<Objective QuestName="All's Fair in Love, War, and Archaeology" QuestId="27792" Type="CollectItem" ItemId="62487" CollectCount="1" />
+		<Objective QuestName="All's Fair in Love, War, and Archaeology" QuestId="27792" Type="CollectItem" ItemId="62488" CollectCount="1" />
+		<TurnIn QuestName="All's Fair in Love, War, and Archaeology" QuestId="27792" TurnInName="Lead Prospector Durdin" TurnInId="46760" />
+	<Else>
+		<PickUp QuestName="Bloodwatcher Point" QuestId="27881" GiverName="Dr. Hieronymus Blam" GiverId="46664" />
+		<TurnIn QuestName="Bloodwatcher Point" QuestId="27881" TurnInName="High Examiner Tae'thelan Bloodwatcher" TurnInId="46757" />
+		<PickUp QuestName="It's Not About History, It's About Power" QuestId="27882" GiverName="High Examiner Tae'thelan Bloodwatcher" GiverId="46757" />
+		<PickUp QuestName="Forcible Acquisition" QuestId="27878" GiverName="Aoren Sunglow" GiverId="46758" />
+		<PickUp QuestName="The Morons' League" QuestId="27877" GiverName="Lidia Sunglow" GiverId="46759" />
+		
+		<Objective QuestName="Forcible Acquisition" QuestId="27878" Type="CollectItem" ItemId="62509" CollectCount="1" />
+		<Objective QuestName="The Morons' League" QuestId="27877" Type="CollectItem" ItemId="62650" CollectCount="15" />
+		
+		<Objective QuestName="It's Not About History, It's About Power" QuestId="27882" Type="CollectItem" ItemId="62594" CollectCount="1" />
+		<Objective QuestName="It's Not About History, It's About Power" QuestId="27882" Type="CollectItem" ItemId="62595" CollectCount="1" />
+		<Objective QuestName="It's Not About History, It's About Power" QuestId="27882" Type="CollectItem" ItemId="62596" CollectCount="1" />
+		<Objective QuestName="It's Not About History, It's About Power" QuestId="27882" Type="CollectItem" ItemId="62597" CollectCount="1" />
+		
+		<TurnIn QuestName="The Morons' League" QuestId="27877" TurnInName="Lidia Sunglow" TurnInId="46759" />
+		<TurnIn QuestName="Forcible Acquisition" QuestId="27878" TurnInName="Aoren Sunglow" TurnInId="46758" />
+		<TurnIn QuestName="It's Not About History, It's About Power" QuestId="27882" TurnInName="High Examiner Tae\'thelan Bloodwatcher" TurnInId="46757" />
+	</Else>
+	</If>
+	
+	<If Condition="Me.IsAlliance" >
+		<PickUp QuestName="The Warden's Pawn" QuestId="27796" GiverName="Lead Prospector Durdin" GiverId="46760" />
+		<PickUp QuestName="The Sentinel's Pawn" QuestId="27797" GiverName="Lead Prospector Durdin" GiverId="46760" />
+		
+		<!-- Movements and locations taken from Cava's Alliance leveling profile -->
+		
+		<TurnIn QuestName="The Sentinel's Pawn" QuestId="27797" TurnInName="Stone Slab" TurnInType="GameObject" TurnInId="206336" X="-6895.39" Y="-3377.51" Z="202.29" />
+		<PickUp QuestName="The Sentinel's Game" QuestId="27709" GiverName="Stone Slab" GiverType="GameObject" GiverId="206336" X="-6895.39" Y="-3377.51" Z="202.29" />
+		
+		<While Condition="HasQuest(27709) &amp;&amp; !IsQuestCompleted(27709)" >
+			<RunTo QuestId="27709" X="-6896.217" Y="-3392.69" Z="202.2836" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27709" MobId="46395" WaitTime="1000" X="-6896.56" Y="-3395.07" Z="202.2843" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27709" MobId="46395" WaitTime="1000" X="-6896.56" Y="-3395.07" Z="202.2843" />
+			<RunTo QuestId="27709" X="-6902.132" Y="-3379.689" Z="202.2836" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27709" MobId="46395" WaitTime="1000" X="-6903.38" Y="-3377.21" Z="202.2832" />
+			<RunTo QuestId="27709" X="-6912.214" Y="-3403.055" Z="202.2836" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27709" MobId="46395" WaitTime="1000" X="-6912.45" Y="-3405.39" Z="202.2843" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27709" MobId="46395" WaitTime="1000" X="-6912.45" Y="-3405.39" Z="202.2843" />
+			<RunTo QuestId="27709" X="-6922.845" Y="-3389.118" Z="202.2836" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27709" MobId="46395" WaitTime="1000" X="-6923.67" Y="-3386.31" Z="202.2843" />
+			<RunTo QuestId="27709" X="-6931.47" Y="-3399.26" Z="202.2836" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27709" MobId="46395" WaitTime="1000" X="-6934.82" Y="-3399.87" Z="202.2843" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27709" MobId="46395" WaitTime="1000" X="-6934.82" Y="-3399.87" Z="202.2843" />
+			<RunTo QuestId="27709" X="-6940.386" Y="-3379.424" Z="202.2836" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27709" MobId="46395" WaitTime="1000" X="-6940.76" Y="-3377.07" Z="202.2843" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27709" MobId="46395" WaitTime="1000" X="-6940.76" Y="-3377.07" Z="202.2843" />
+			<If Condition="!IsQuestCompleted(27709)" >
+				<RunTo X="-6895.394" Y="-3377.514" Z="202.2827" />
+				<CustomBehavior File="AbandonQuest" QuestId="27709" />
+				<PickUp QuestName="The Sentinel's Game" QuestId="27709" GiverId="206336" GiverType="GameObject" X="-6895.394" Y="-3377.514" Z="202.2827" />
+			</If>
+		</While>
+		<TurnIn QuestName="The Sentinel's Game" QuestId="27709" />
+		
+		<TurnIn QuestName="The Warden's Pawn" QuestId="27796" TurnInName="Stone Slab" TurnInType="GameObject" TurnInId="206335" X="-6967.839" Y="-3445.01" Z="200.8964" />
+		<PickUp QuestName="The Warden's Game" QuestId="27693" GiverName="Stone Slab" GiverType="GameObject" GiverId="206335" X="-6967.839" Y="-3445.01" Z="200.8964" />
+		
+		<While Condition="HasQuest(27693) &amp;&amp; !IsQuestCompleted(27693)" >
+			<RunTo QuestId="27693" X="-6967.344" Y="-3441.898" Z="200.8964" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27693" MobId="46344" WaitTime="1000" X="-6966.399" Y="-3443.15" Z="200.8954" />
+			<RunTo QuestId="27693" X="-6961.458" Y="-3448.444" Z="200.8964" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27693" MobId="46344" WaitTime="1000" X="-6962.501" Y="-3447.25" Z="200.8954" />
+			<RunTo QuestId="27693" X="-6974.598" Y="-3444.723" Z="200.8964" />
+			<CustomBehavior File="MyCTM" QuestId="27693" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27693" MobId="46344" WaitTime="1000" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<RunTo QuestId="27693" X="-6967.733" Y="-3445.234" Z="200.8964" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27693" MobId="46344" WaitTime="1000" X="-6966.45" Y="-3445.15" Z="200.8954" />
+			<RunTo QuestId="27693" X="-6961.367" Y="-3445.375" Z="200.8964" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27693" MobId="46344" WaitTime="1000" X="-6962.451" Y="-3445.25" Z="200.8954" />
+			<RunTo QuestId="27693" X="-6974.598" Y="-3444.723" Z="200.8964" />
+			<CustomBehavior File="MyCTM" QuestId="27693" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27693" MobId="46344" WaitTime="1000" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<RunTo QuestId="27693" X="-6968.085" Y="-3448.499" Z="200.8964" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27693" MobId="46344" WaitTime="1000" X="-6966.5" Y="-3447.149" Z="200.8954" />
+			<RunTo QuestId="27693" X="-6961.037" Y="-3441.744" Z="200.8964" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27693" MobId="46344" WaitTime="1000" X="-6962.4" Y="-3443.251" Z="200.8954" />
+			<RunTo QuestId="27693" X="-6974.598" Y="-3444.723" Z="200.8964" />
+			<CustomBehavior File="MyCTM" QuestId="27693" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27693" MobId="46344" WaitTime="1000" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<RunTo QuestId="27693" X="-6964.146" Y="-3441.274" Z="200.896" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27693" MobId="46344" WaitTime="1000" X="-6964.4" Y="-3443.201" Z="200.8954" />
+			<RunTo QuestId="27693" X="-6964.732" Y="-3448.827" Z="200.896" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27693" MobId="46344" WaitTime="1000" X="-6964.5" Y="-3447.199" Z="200.8954" />
+			<RunTo QuestId="27693" X="-6974.598" Y="-3444.723" Z="200.8964" />
+			<CustomBehavior File="MyCTM" QuestId="27693" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27693" MobId="46344" WaitTime="1000" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<If Condition="!IsQuestCompleted(27693)" >
+				<CustomBehavior File="AbandonQuest" QuestId="27693" />
+				<PickUp QuestName="The Warden's Game" QuestId="27693" GiverName="Stone Slab" GiverType="GameObject" GiverId="206335" X="-6967.839" Y="-3445.01" Z="200.8964" />
+			</If>
+		</While>
+		<TurnIn QuestName="The Warden's Game" QuestId="27693" />
+		
+		<PickUp QuestName="Ancient Protectors" QuestId="27793" GiverName="Lead Prospector Durdin" GiverId="46760" />
+		<CustomBehavior File="InteractWith" QuestId="27793" QuestObjectiveIndex="1" MobId="46768" MobState="Alive" InteractByGossipOptions="1" 
+			NonCompeteDistance="0" WaitTime="1000" NumOfTimes="100" X="-6934.167" Y="-3445.875" Z="197.6489" />
+		<CustomBehavior File="InteractWith" QuestId="27793" QuestObjectiveIndex="2" MobId="46769" MobState="Alive" InteractByGossipOptions="1" 
+			NonCompeteDistance="0" WaitTime="1000" NumOfTimes="100" X="-6905.241" Y="-3447.192" Z="200.1992" />
+		<TurnIn QuestName="Ancient Protectors" QuestId="27793" />
+		
+		<TurnIn QuestName="The Titans' Trove" QuestId="27912" TurnInName="Trove of the Watchers" TurnInType="Object" TurnInId="206374" X="-6941.691" Y="-3445.637" Z="197.6487" />
+		
+		<PickUp QuestName="Return to Blam" QuestId="27794" GiverName="Trove of the Watchers" GiverType="Object" GiverId="206374" X="-6941.691" Y="-3445.637" Z="197.6487" />
+		<TurnIn QuestName="Return to Blam" QuestId="27794" TurnInName="Dr. Hieronymus Blam" TurnInId="46664" />
+		
+		<PickUp QuestName="Into the Dragon's Mouth" QuestId="27826" GiverName="Dr. Hieronymus Blam" GiverId="46664" />
+		<TurnIn QuestName="Into the Dragon's Mouth" QuestId="27826" TurnInName="Rhea" TurnInId="46654" X="-7036.01" Y="-2552.21" Z="252.3183" />
+		
+		
+	<Else>
+		<PickUp QuestName="The Warden's Pawn" QuestId="27883" GiverName="High Examiner Tae'thelan Bloodwatcher" GiverId="46757" />
+		<PickUp QuestName="The Sentinel's Pawn" QuestId="27884" GiverName="High Examiner Tae'thelan Bloodwatcher" GiverId="46757" />
+		
+		<!-- Movements and locations taken from Cava's Alliance leveling profile, and converted to Horde IDs -->
+		
+		<TurnIn QuestName="The Sentinel's Pawn" QuestId="27884" TurnInName="Stone Slab" TurnInType="GameObject" TurnInId="206336" X="-6895.39" Y="-3377.51" Z="202.29" />
+		<PickUp QuestName="The Sentinel's Game" QuestId="27886" GiverName="Stone Slab" GiverType="GameObject" GiverId="206336" X="-6895.39" Y="-3377.51" Z="202.29" />
+		
+		<While Condition="HasQuest(27886) &amp;&amp; !IsQuestCompleted(27886)" >
+			<RunTo QuestId="27886" X="-6896.22" Y="-3392.69" Z="202.28" />
+			<CustomBehavior File="InteractWith" QuestId="27886" MobId="46395" WaitTime="1000" NonCompeteDistance="0" X="-6896.56" Y="-3395.07" Z="202.29" />
+			<CustomBehavior File="InteractWith" QuestId="27886" MobId="46395" WaitTime="1000" NonCompeteDistance="0" X="-6896.56" Y="-3395.07" Z="202.29" />
+			<RunTo QuestId="27886" X="-6902.13" Y="-3379.69" Z="202.28" />
+			<CustomBehavior File="InteractWith" QuestId="27886" MobId="46395" WaitTime="1000" NonCompeteDistance="0" X="-6903.38" Y="-3377.21" Z="202.28" />
+			<RunTo QuestId="27886" X="-6912.21" Y="-3403.06" Z="202.28" />
+			<CustomBehavior File="InteractWith" QuestId="27886" MobId="46395" WaitTime="1000" NonCompeteDistance="0" X="-6912.45" Y="-3405.39" Z="202.29" />
+			<CustomBehavior File="InteractWith" QuestId="27886" MobId="46395" WaitTime="1000" NonCompeteDistance="0" X="-6912.45" Y="-3405.39" Z="202.29" />
+			<RunTo QuestId="27886" X="-6922.85" Y="-3389.12" Z="202.28" />
+			<CustomBehavior File="InteractWith" QuestId="27886" MobId="46395" WaitTime="1000" NonCompeteDistance="0" X="-6923.67" Y="-3386.31" Z="202.29" />
+			<RunTo QuestId="27886" X="-6931.47" Y="-3399.26" Z="202.28" />
+			<CustomBehavior File="InteractWith" QuestId="27886" MobId="46395" WaitTime="1000" NonCompeteDistance="0" X="-6934.82" Y="-3399.87" Z="202.29" />
+			<CustomBehavior File="InteractWith" QuestId="27886" MobId="46395" WaitTime="1000" NonCompeteDistance="0" X="-6934.82" Y="-3399.87" Z="202.29" />
+			<RunTo QuestId="27886" X="-6940.39" Y="-3379.42" Z="202.28" />
+			<CustomBehavior File="InteractWith" QuestId="27886" MobId="46395" WaitTime="1000" NonCompeteDistance="0" X="-6940.76" Y="-3377.07" Z="202.29" />
+			<CustomBehavior File="InteractWith" QuestId="27886" MobId="46395" WaitTime="1000" NonCompeteDistance="0" X="-6940.76" Y="-3377.07" Z="202.29" />
+			<If Condition="!IsQuestCompleted(27886)" >
+				<RunTo X="-6895.40" Y="-3377.52" Z="202.28" />
+				<CustomBehavior File="AbandonQuest" QuestId="27886" />
+				<PickUp QuestName="The Sentinel's Game" QuestId="27886" GiverName="Stone Slab" GiverType="GameObject" GiverId="206336" X="-6895.39" Y="-3377.51" Z="202.29" />
+			</If>
+		</While>
+		<TurnIn QuestName="The Sentinel's Game" QuestId="27886" />
+		
+		<TurnIn QuestName="The Warden's Pawn" QuestId="27883" TurnInName="Stone Slab" TurnInType="GameObject" TurnInId="206335" X="-6967.84" Y="-3445.01" Z="200.90" />
+		<PickUp QuestName="The Warden's Game" QuestId="27885" GiverName="Stone Slab" GiverType="GameObject" GiverId="206335" X="-6967.84" Y="-3445.01" Z="200.90" />
+		
+		<While Condition="HasQuest(27885) &amp;&amp; !IsQuestCompleted(27885)" >
+			<RunTo QuestId="27885" X="-6967.344" Y="-3441.898" Z="200.8964" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27885" MobId="46344" WaitTime="1000" X="-6966.399" Y="-3443.15" Z="200.8954" />
+			<RunTo QuestId="27885" X="-6961.458" Y="-3448.444" Z="200.8964" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27885" MobId="46344" WaitTime="1000" X="-6962.501" Y="-3447.25" Z="200.8954" />
+			<RunTo QuestId="27885" X="-6974.598" Y="-3444.723" Z="200.8964" />
+			<CustomBehavior File="MyCTM" QuestId="27885" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27885" MobId="46344" WaitTime="1000" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<RunTo QuestId="27885" X="-6967.733" Y="-3445.234" Z="200.8964" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27885" MobId="46344" WaitTime="1000" X="-6966.45" Y="-3445.15" Z="200.8954" />
+			<RunTo QuestId="27885" X="-6961.367" Y="-3445.375" Z="200.8964" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27885" MobId="46344" WaitTime="1000" X="-6962.451" Y="-3445.25" Z="200.8954" />
+			<RunTo QuestId="27885" X="-6974.598" Y="-3444.723" Z="200.8964" />
+			<CustomBehavior File="MyCTM" QuestId="27885" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27885" MobId="46344" WaitTime="1000" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<RunTo QuestId="27885" X="-6968.085" Y="-3448.499" Z="200.8964" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27885" MobId="46344" WaitTime="1000" X="-6966.5" Y="-3447.149" Z="200.8954" />
+			<RunTo QuestId="27885" X="-6961.037" Y="-3441.744" Z="200.8964" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27885" MobId="46344" WaitTime="1000" X="-6962.4" Y="-3443.251" Z="200.8954" />
+			<RunTo QuestId="27885" X="-6974.598" Y="-3444.723" Z="200.8964" />
+			<CustomBehavior File="MyCTM" QuestId="27885" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27885" MobId="46344" WaitTime="1000" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<RunTo QuestId="27885" X="-6964.146" Y="-3441.274" Z="200.896" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27885" MobId="46344" WaitTime="1000" X="-6964.4" Y="-3443.201" Z="200.8954" />
+			<RunTo QuestId="27885" X="-6964.732" Y="-3448.827" Z="200.896" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27885" MobId="46344" WaitTime="1000" X="-6964.5" Y="-3447.199" Z="200.8954" />
+			<RunTo QuestId="27885" X="-6974.598" Y="-3444.723" Z="200.8964" />
+			<CustomBehavior File="MyCTM" QuestId="27885" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<CustomBehavior File="InteractWith" NonCompeteDistance="0" QuestId="27885" MobId="46344" WaitTime="1000" X="-6964.45" Y="-3445.2" Z="200.8954" />
+			<If Condition="!IsQuestCompleted(27885)" >
+				<CustomBehavior File="AbandonQuest" QuestId="27885" />
+				<PickUp QuestName="The Warden's Game" QuestId="27885" GiverName="Stone Slab" GiverType="GameObject" GiverId="206335" X="-6967.84" Y="-3445.01" Z="200.90" />
+			</If>
+		</While>
+		<TurnIn QuestName="The Warden's Game" QuestId="27885" />
+		
+		<PickUp QuestName="Ancient Protectors" QuestId="27887" GiverName="High Examiner Tae'thelan Bloodwatcher" GiverId="46757" />
+		<CustomBehavior File="InteractWith" QuestId="27887" QuestObjectiveIndex="1" MobId="46768" MobState="Alive" InteractByGossipOptions="1" 
+			NonCompeteDistance="0" WaitTime="1000" NumOfTimes="100" X="-6934.167" Y="-3445.875" Z="197.6489" />
+		<CustomBehavior File="InteractWith" QuestId="27887" QuestObjectiveIndex="2" MobId="46769" MobState="Alive" InteractByGossipOptions="1" 
+			NonCompeteDistance="0" WaitTime="1000" NumOfTimes="100" X="-6905.241" Y="-3447.192" Z="200.1992" />
+		<TurnIn QuestName="Ancient Protectors" QuestId="27887" />
+		
+		<TurnIn QuestName="The Titans' Trove" QuestId="27913" TurnInName="Trove of the Watchers" TurnInType="Object" TurnInId="206374" X="-6941.691" Y="-3445.637" Z="197.6487" />
+		
+		<PickUp QuestName="Return to Blam" QuestId="27888" GiverName="Trove of the Watchers" GiverType="Object" GiverId="206374" X="-6941.691" Y="-3445.637" Z="197.6487" />
+		<TurnIn QuestName="Return to Blam" QuestId="27888" TurnInName="Dr. Hieronymus Blam" TurnInId="46664" />
+		
+		<PickUp QuestName="New Kargath" QuestId="27889" GiverName="Dr. Hieronymus Blam" GiverId="46664" />
+		<TurnIn QuestName="New Kargath" QuestId="27889" TurnInName="Rhea" TurnInId="46654" />
+	</Else>
+	</If>
+	
+	<If Condition="Me.IsAlliance" >
+		
+		<PickUp QuestName="The Swift, the Fierce, and the Stout" QuestId="27827" GiverName="Rhea" GiverId="46654" />
+		<PickUp QuestName="Half-Ton Holdouts" QuestId="27833" GiverName="Terrance Storm" GiverId="46972" />
+		<TurnIn QuestName="The Swift, the Fierce, and the Stout" QuestId="27827" TurnInName="Eric The Swift" TurnInId="46852" />
+		
+		<If Condition="(!HasQuest(27828) &amp;&amp; !IsQuestCompleted(27828)) || (!HasQuest(27834) &amp;&amp; !IsQuestCompleted(27834)) ||
+						(!HasQuest(27835) &amp;&amp; !IsQuestCompleted(27835))" >
+			<MoveTo X="-7002.696" Y="-2536.439" Z="241.7142" />
+		</If>
+		
+		<PickUp QuestName="Eric, the Utility Dwarf" QuestId="27828" GiverName="Eric The Swift" GiverId="46852" X="-7001.57" Y="-2533.98" Z="241.7148" />
+		<PickUp QuestName="Baelog, the Glass Cannon" QuestId="27834" GiverName="Baelog" GiverId="46856" X="-6993.829" Y="-2534.15" Z="241.7142" />
+		<PickUp QuestName="Olaf, the Big Fella'" QuestId="27835" GiverName="Olaf" GiverId="46857" X="-6994.573" Y="-2531.244" Z="241.7137" />
+		
+		<If Condition="!HasQuest(27713) &amp;&amp; !IsQuestCompleted(27713)" >
+			<PickUp QuestName="Down to the Scar" QuestId="27927" GiverName="Victoria Dolen" GiverId="46930" />
+		</If>
+		<PickUp QuestName="Survival of the Fattest" QuestId="27825" GiverName="Victoria Dolen" GiverId="46930" />
+		
+		<If Condition="HasQuest(27828) &amp;&amp; !IsQuestCompleted(27828)">
+			<While Condition="!IsObjectiveComplete(1, 27828)">
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="UsePetAbility" AttackButton="1" MobId="2730" MobId2="2734" MobState="Alive" UseType="ToObject" Range="24"
+					CollectionDistance="1000" X="-6967.67" Y="-2411.26" Z="240.75" />
+			</While>
+			<While Condition="!IsObjectiveComplete(2, 27828)">
+				<CustomBehavior File="UsePetAbility" AttackButton="2" />
+			</While>
+		</If>
+		
+		<If Condition="HasQuest(27834) &amp;&amp; !IsQuestCompleted(27834)">
+			<While Condition="!IsObjectiveComplete(1, 27834)">
+				<CustomBehavior File="UsePetAbility" AttackButton="4" MobId="2730" MobId2="2734" MobState="Alive" UseType="ToObject" Range="24"
+					CollectionDistance="1000" X="-6967.67" Y="-2411.26" Z="240.75" />
+			</While>
+			<While Condition="!IsObjectiveComplete(2, 27834)">
+				<CustomBehavior File="UsePetAbility" AttackButton="5" />
+			</While>
+		</If>
+		
+		<If Condition="HasQuest(27835) &amp;&amp; !IsQuestCompleted(27835)">
+			<While Condition="!IsQuestCompleted(27835)">
+				<CustomBehavior File="UsePetAbility" AttackButton="7" />
+				<CustomBehavior File="UsePetAbility" AttackButton="8" />
+			</While>
+		</If>
+		
+		<TurnIn QuestName="Eric, the Utility Dwarf" QuestId="27828" TurnInName="Eric &quot;The Swift&quot;" TurnInId="46855" X="-7000.114" Y="-2536.971" Z="241.7144" />
+		<TurnIn QuestName="Baelog, the Glass Cannon" QuestId="27834" TurnInName="Baelog" TurnInId="46856" X="-7000.114" Y="-2536.971" Z="241.7144" />
+		<TurnIn QuestName="Olaf, the Big Fella'" QuestId="27835" TurnInName="Olaf" TurnInId="46857" X="-7000.114" Y="-2536.971" Z="241.7144" />
+		
+		<PickUp QuestName="The Wrath of a Dragonflight" QuestId="27829" GiverName="Eric The Swift" GiverId="46855" X="-6995.69" Y="-2535.854" Z="241.7146" />
+
+		<Objective QuestName="Survival of the Fattest" QuestId="27825" Type="CollectItem" ItemId="62544" CollectCount="6" />
+		<Objective QuestName="Survival of the Fattest" QuestId="27825" Type="CollectItem" ItemId="62547" CollectCount="10" />
+		<Objective QuestName="Half-Ton Holdouts" QuestId="27833" Type="KillMob" MobId="2717" KillCount="12" />
+		
+		<If Condition="HasQuest(27927)" >
+			<TurnIn QuestName="Down to the Scar" QuestId="27927" TurnInName="Theldurin the Lost" TurnInId="2785" />
+		</If>
+		
+		<Objective QuestName="The Wrath of a Dragonflight" QuestId="27829" Type="KillMob" MobId="46859" KillCount="1" />
+		<Objective QuestName="The Wrath of a Dragonflight" QuestId="27829" Type="KillMob" MobId="46915" KillCount="4" />
+		<TurnIn QuestName="The Wrath of a Dragonflight" QuestId="27829" />
+
+		<TurnIn QuestName="Half-Ton Holdouts" QuestId="27833" TurnInName="Terrance Storm" TurnInId="46972" />
+		<TurnIn QuestName="Survival of the Fattest" QuestId="27825" TurnInName="Victoria Dolen" TurnInId="46930" />
+		
+		<PickUp QuestName="Their Hunt Continues" QuestId="27830" GiverName="Rhea" GiverId="46654" />
+		<Objective QuestName="Their Hunt Continues" QuestId="27830" Type="KillMob" MobId="46917" KillCount="6" />
+		<Objective QuestName="Their Hunt Continues" QuestId="27830" Type="KillMob" MobId="46860" KillCount="1" X="-6734.127" Y="-2374.578" Z="386.0443" />
+		<Objective QuestName="Their Hunt Continues" QuestId="27830" Type="KillMob" MobId="46938" KillCount="1" />
+		<TurnIn QuestName="Their Hunt Continues" QuestId="27830" TurnInName="Rhea" TurnInId="46654" />
+		
+		<PickUp QuestName="The Sorrow and the Fury" QuestId="27831" GiverName="Rhea" GiverId="46654" />
+		<Objective QuestName="The Sorrow and the Fury" QuestId="27831" Type="KillMob" MobId="46916" KillCount="12" />
+		<Objective QuestName="The Sorrow and the Fury" QuestId="27831" Type="KillMob" MobId="46861" KillCount="1" />
+		<TurnIn QuestName="The Sorrow and the Fury" QuestId="27831" TurnInName="Rhea" TurnInId="46654" />
+		
+		<PickUp QuestName="The Hidden Clutch" QuestId="27832" GiverName="Rhea" GiverId="46654" />
+		<TurnIn QuestName="The Hidden Clutch" QuestId="27832" TurnInName="Rhea" TurnInId="46654" />
+		
+		<PickUp QuestName="Rheastrasza's Gift" QuestId="27858" GiverName="Rhea" GiverId="46654" X="-6538.291" Y="-2394.472" Z="291.9582" />
+		<If Condition="HasQuest(27858)" >
+			<While Condition="!IsQuestCompleted(27858)" />
+			<TurnIn QuestName="Rheastrasza's Gift" QuestId="27858" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</If>
+		
+		<TurnIn QuestName="Devastation" QuestId="27930" TurnInType="Object" TurnInName="Rhea's Final Note" TurnInId="206504" X="-6470.666" Y="-2479.149" Z="305.6068" />
+		
+		<If Condition="!IsQuestCompleted(27859)" >
+			<CustomBehavior File="InteractWith" MobId="46664" InteractByQuestFrameDisposition="Complete" NonCompeteDistance="0"
+				TerminateWhen="IsQuestCompleted(27859)" WaitTime="2000" X="-6477.798" Y="-2456.232" Z="306.7507" />
+		</If>
+		
+		<PickUp QuestName="To the Aid of the Thorium Brotherhood" QuestId="28512" GiverName="Victoria Dolen" GiverId="46930" />
+	<Else>
+		<PickUp QuestName="The Bad Dogs" QuestId="27890" GiverName="Rhea" GiverId="46654" />
+		<TurnIn QuestName="The Bad Dogs" QuestId="27890" TurnInName="Amakkar" TurnInId="47011" />
+		<If Condition="!HasQuest(27891) &amp;&amp; !IsQuestCompleted(27891)" >
+			<CustomBehavior File="InteractWith" MobId="47011" InteractByQuestFrameDisposition="Accept" NonCompeteDistance="0" 
+				WaitTime="2000" TerminateWhen="HasQuest(27891)" X="-6730.957" Y="-2478.411" Z="274.1877" />
+		</If>
+		<If Condition="!HasQuest(27893) &amp;&amp; !IsQuestCompleted(27893)" >
+			<CustomBehavior File="InteractWith" MobId="47022" InteractByQuestFrameDisposition="Accept" NonCompeteDistance="0" 
+				WaitTime="2000" TerminateWhen="HasQuest(27893)" />
+		</If>
+		<If Condition="!HasQuest(27892) &amp;&amp; !IsQuestCompleted(27892)" >
+			<CustomBehavior File="InteractWith" MobId="47024" InteractByQuestFrameDisposition="Accept" NonCompeteDistance="0" 
+				WaitTime="2000" TerminateWhen="HasQuest(27892)" />
+		</If>
+		
+		<PickUp QuestName="Survival of the Fattest" QuestId="27879" GiverName="Aidan Summerwind" GiverId="46660" />
+		<If Condition="!HasQuest(27713) &amp;&amp; !IsQuestCompleted(27713)" >
+			<PickUp QuestName="Down to the Scar" QuestId="27927" GiverName="Aidan Summerwind" GiverId="46660" />
+		</If>
+		<PickUp QuestName="Half-Ton Holdouts" QuestId="27880" GiverName="Gorn" GiverId="1068" />
+		
+		<If Condition="HasQuest(27891) &amp;&amp; !IsQuestCompleted(27891)">
+			<While Condition="!IsObjectiveComplete(1, 27891)">
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="UsePetAbility" AttackButton="1" MobId="46917" MobId2="46918" MobState="Alive" UseType="ToObject" Range="24"
+					CollectionDistance="1000" X="-6780.588" Y="-2503.579" Z="245.1335" />
+			</While>
+			<While Condition="!IsObjectiveComplete(2, 27891)">
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="UsePetAbility" AttackButton="2" />
+			</While>
+		</If>
+		
+		<If Condition="HasQuest(27892) &amp;&amp; !IsQuestCompleted(27892)">
+			<While Condition="!IsObjectiveComplete(1, 27892)">
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="UsePetAbility" AttackButton="4" MobId="46917" MobId2="46918" MobState="Alive" UseType="ToObject" Range="24"
+					CollectionDistance="1000" X="-6780.588" Y="-2503.579" Z="245.1335" />
+			</While>
+			<While Condition="!IsObjectiveComplete(2, 27892)">
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="UsePetAbility" AttackButton="5" />
+			</While>
+		</If>
+		
+		<If Condition="HasQuest(27893) &amp;&amp; !IsQuestCompleted(27893)">
+			<While Condition="!IsQuestCompleted(27893)">
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="UsePetAbility" AttackButton="7" />
+				<CustomBehavior File="UsePetAbility" AttackButton="8" />
+			</While>
+		</If>
+		
+		<TurnIn QuestName="Amakkar, Jack of All Trades" QuestId="27891" TurnInName="Amakkar" TurnInId="47021" />
+		<TurnIn QuestName="Gargal, the Behemoth" QuestId="27893" TurnInName="Gargal" TurnInId="47022" />
+		<TurnIn QuestName="Jurrix the Striker" QuestId="27892" TurnInName="Jurrix" TurnInId="47024" />
+		
+		<PickUp QuestName="The Wrath of a Dragonflight" QuestId="27894" GiverName="Rhea" GiverId="46654" X="-6718.459" Y="-2461.385" Z="273.5369" />
+		
+		<Objective QuestName="Survival of the Fattest" QuestId="27879" Type="CollectItem" ItemId="62544" CollectCount="6" />
+		<Objective QuestName="Survival of the Fattest" QuestId="27879" Type="CollectItem" ItemId="62547" CollectCount="10" />
+		<Objective QuestName="Half-Ton Holdouts" QuestId="27880" Type="KillMob" MobId="2717" KillCount="12" />
+		
+		<Objective QuestName="The Wrath of a Dragonflight" QuestId="27894" Type="KillMob" MobId="46915" KillCount="4" />
+		<Objective QuestName="The Wrath of a Dragonflight" QuestId="27894" Type="KillMob" MobId="46859" KillCount="1" />
+		<TurnIn QuestName="The Wrath of a Dragonflight" QuestId="27894" />
+		
+		<PickUp QuestName="Their Hunt Continues" QuestId="27895" GiverName="Rhea" GiverId="46654" />
+		<Objective QuestName="Their Hunt Continues" QuestId="27895" Type="KillMob" MobId="46917" KillCount="6" />
+		<Objective QuestName="Their Hunt Continues" QuestId="27895" Type="KillMob" MobId="46860" KillCount="1" X="-6734.127" Y="-2374.578" Z="386.0443" />
+		<Objective QuestName="Their Hunt Continues" QuestId="27895" Type="KillMob" MobId="46938" KillCount="1" />
+		<TurnIn QuestName="Their Hunt Continues" QuestId="27895" TurnInName="Rhea" TurnInId="46654" />
+		
+		<PickUp QuestName="The Sorrow and the Fury" QuestId="27896" GiverName="Rhea" GiverId="46654" />
+		<Objective QuestName="The Sorrow and the Fury" QuestId="27896" Type="KillMob" MobId="46916" KillCount="12" />
+		<Objective QuestName="The Sorrow and the Fury" QuestId="27896" Type="KillMob" MobId="46861" KillCount="1" />
+		<TurnIn QuestName="The Sorrow and the Fury" QuestId="27896" TurnInName="Rhea" TurnInId="46654" />
+		
+		<PickUp QuestName="The Hidden Clutch" QuestId="27897" GiverName="Rhea" GiverId="46654" />
+		<TurnIn QuestName="The Hidden Clutch" QuestId="27897" TurnInName="Rhea" TurnInId="46654" X="-6541.082" Y="-2391.506" Z="292.2957" />
+		
+		<PickUp QuestName="Rheastrasza's Gift" QuestId="27898" GiverName="Rhea" GiverId="46654" X="-6538.291" Y="-2394.472" Z="291.9582" />
+		<If Condition="HasQuest(27898)" >
+			<While Condition="!IsQuestCompleted(27898)" />
+			<TurnIn QuestName="Rheastrasza's Gift" QuestId="27898" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</If>
+		
+		<TurnIn QuestName="Devastation" QuestId="27930" TurnInType="Object" TurnInName="Rhea's Final Note" TurnInId="206504" X="-6470.666" Y="-2479.149" Z="305.6068" />
+		
+		<If Condition="!IsQuestCompleted(27859)" >
+			<CustomBehavior File="InteractWith" MobId="46664" InteractByQuestFrameDisposition="Complete" NonCompeteDistance="0"
+				TerminateWhen="IsQuestCompleted(27859)" WaitTime="2000" X="-6477.798" Y="-2456.232" Z="306.7507" />
+		</If>
+		
+		<If Condition="HasQuest(27927)" >
+			<TurnIn QuestName="Down to the Scar" QuestId="27927" TurnInName="Theldurin the Lost" TurnInId="2785" />
+		</If>
+		
+		<TurnIn QuestName="Half-Ton Holdouts" QuestId="27880" TurnInName="Gorn" TurnInId="1068" />
+		<TurnIn QuestName="Survival of the Fattest" QuestId="27879" TurnInName="Aidan Summerwind" TurnInId="46660" />
+		
+		<PickUp QuestName="To the Aid of the Thorium Brotherhood" QuestId="28512" GiverName="Aidan Summerwind" GiverId="46660" />
+	</Else>
+	</If>
+	
+	<TurnIn QuestName="To the Aid of the Thorium Brotherhood" QuestId="28512" TurnInName="Jack Rockleg" TurnInId="47266" />
+
+	<CustomBehavior File="Message" Text="Badlands Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="[Quest] Searing Gorge [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

@@ -1,0 +1,319 @@
+<HBProfile>
+
+	<Name>Elwynn Forest ($Rev$)</Name>
+	<MinLevel>4</MinLevel>
+	<MaxLevel>15</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>False</TargetElites>
+
+	<AvoidMobs>
+		<Mob Name="Goldtooth" Entry="327" />
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+
+	<Mailboxes>
+		<Mailbox X="-9455.989" Y="45.82292" Z="56.43953" />
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Goldshire -->
+		<Vendor Name="Andrew Krighton" Entry="2046" Type="Repair" X="-9464.06" Y="88.934" Z="58.34372" />
+		<Vendor Name="Tharynn Bouden" Entry="66" Type="Food" X="-9492.55" Y="81.4931" Z="56.22633" />
+		<!-- Maclure/Stonefield -->
+		<Vendor Name="Joshua Maclure" Entry="258" Type="Food" X="-10008.29" Y="65.2117" Z="34.78301" />
+		<Vendor Name="Homer Stonefield" Entry="894" Type="Food" X="-9858.46" Y="365.9721" Z="36.25388" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="60" Name="Kobold Candles">
+	<Objective Type="CollectItem" ItemId="772" CollectCount="8">
+		<CollectFrom>
+			<Mob Name="Kobold Tunneler" Id="475" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-9796.332" Y="158.5646" Z="25.42431" />
+			<Hotspot X="-9749.913" Y="133.3687" Z="19.31796" />
+			<Hotspot X="-9796.447" Y="126.2667" Z="24.82968" />
+			<Hotspot X="-9830.828" Y="182.1673" Z="22.35401" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="47" Name="Gold Dust Exchange">
+	<Objective Type="CollectItem" ItemId="773" CollectCount="10">
+		<CollectFrom>
+			<Mob Name="Kobold Tunneler" Id="475" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-9796.332" Y="158.5646" Z="25.42431" />
+			<Hotspot X="-9749.913" Y="133.3687" Z="19.31796" />
+			<Hotspot X="-9796.447" Y="126.2667" Z="24.82968" />
+			<Hotspot X="-9830.828" Y="182.1673" Z="22.35401" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="88" Name="Princess Must Die!">
+	<Objective Type="CollectItem" ItemId="1006" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Princess" Id="330" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-9914.618" Y="403.6268" Z="35.24225" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="52" Name="Protect The Frontier">
+	<Objective Type="KillMob" MobId="118" KillCount="8">
+		<Hotspots>
+			<Hotspot X="-9382.822" Y="-906.3577" Z="64.56701" />
+			<Hotspot X="-9403.761" Y="-859.7379" Z="62.7404" />
+			<Hotspot X="-9413.91" Y="-815.6499" Z="64.76871" />
+			<Hotspot X="-9423.682" Y="-773.199" Z="65.07621" />
+			<Hotspot X="-9432.244" Y="-736.0009" Z="64.83089" />
+			<Hotspot X="-9442.451" Y="-691.6605" Z="64.38382" />
+			<Hotspot X="-9441.15" Y="-954.4294" Z="58.09715" />
+			<Hotspot X="-9464.071" Y="-993.6229" Z="57.49281" />
+			<Hotspot X="-9499.027" Y="-1040.864" Z="52.00885" />
+			<Hotspot X="-9508.128" Y="-1091.382" Z="49.72694" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="822" KillCount="5">
+		<Hotspots>
+			<Hotspot X="-9382.822" Y="-906.3577" Z="64.56701" />
+			<Hotspot X="-9403.761" Y="-859.7379" Z="62.7404" />
+			<Hotspot X="-9413.91" Y="-815.6499" Z="64.76871" />
+			<Hotspot X="-9423.682" Y="-773.199" Z="65.07621" />
+			<Hotspot X="-9432.244" Y="-736.0009" Z="64.83089" />
+			<Hotspot X="-9442.451" Y="-691.6605" Z="64.38382" />
+			<Hotspot X="-9441.15" Y="-954.4294" Z="58.09715" />
+			<Hotspot X="-9464.071" Y="-993.6229" Z="57.49281" />
+			<Hotspot X="-9499.027" Y="-1040.864" Z="52.00885" />
+			<Hotspot X="-9508.128" Y="-1091.382" Z="49.72694" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Elwynn Forest Quests" LogColor="Green" />
+	
+	<If Condition="!HasQuest(60) &amp;&amp; !IsQuestCompleted(60)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Goldshire Quests" LogColor="CornflowerBlue" />
+	
+	<If Condition="!HasQuest(60) &amp;&amp; !IsQuestCompleted(60)" >
+		<CustomBehavior File="SetHearthstone" MobId="295" X="-9462.66" Y="16.19" Z="56.96" />
+		<PickUp QuestName="Kobold Candles" QuestId="60" GiverName="William Pestle" GiverId="253" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	</If>
+	<If Condition="Me.Race == WoWRace.Human" >
+		<PickUp QuestName="A Swift Message" QuestId="26393" GiverName="Smith Argus" GiverId="514" />
+	</If>
+
+<!-- A Swift Message -->
+	<If Condition="Me.Race == WoWRace.Human" >
+		<TurnIn QuestName="A Swift Message" QuestId="26393" TurnInName="Bartlett the Brave" TurnInId="42983" />
+		<PickUp QuestName="Continue to Stormwind" QuestId="26394" GiverName="Bartlett the Brave" GiverId="42983" />
+		<TurnIn QuestName="Continue to Stormwind" QuestId="26394" TurnInName="Osric Strang" TurnInId="1323" />
+		<PickUp QuestName="Dungar Longdrink" QuestId="26395" GiverName="Osric Strang" GiverId="1323" />
+		<TurnIn QuestName="Dungar Longdrink" QuestId="26395" TurnInName="Dungar Longdrink" TurnInId="352" />
+		<PickUp QuestName="Return to Argus" QuestId="26396" GiverName="Dungar Longdrink" GiverId="352" />
+		<TurnIn QuestName="Return to Argus" QuestId="26396" TurnInName="Smith Argus" TurnInId="514" />
+	</If>
+	
+	<PickUp QuestName="Gold Dust Exchange" QuestId="47" GiverName="Remy Two Times" GiverId="241" />
+	<PickUp QuestName="The Fargodeep Mine" QuestId="62" GiverName="Marshal Dughan" GiverId="240" />
+
+<!-- The Fargodeep Mine/Gold Dust Exchange/Kobold Candles -->
+	<If Condition="HasQuest(62) &amp;&amp; !IsQuestCompleted(62)" >
+        <MoveTo QuestId="62" X="-9794.518" Y="149.2703" Z="24.2468" />
+    </If>
+
+	<Objective QuestName="Kobold Candles" QuestId="60" Type="CollectItem" ItemId="772" CollectCount="8" />
+	<Objective QuestName="Gold Dust Exchange" QuestId="47" Type="CollectItem" ItemId="773" CollectCount="10" />
+
+	
+ 	<TurnIn QuestName="The Fargodeep Mine" QuestId="62" TurnInName="Marshal Dughan" TurnInId="240" />
+	<PickUp QuestName="The Jasperlode Mine" QuestId="76" GiverName="Marshal Dughan" GiverId="240" />
+	<TurnIn QuestName="Kobold Candles" QuestId="60" TurnInName="William Pestle" TurnInId="253" />
+	<PickUp QuestName="A Visit With Maybell" QuestId="26150" GiverName="William Pestle" GiverId="253" />
+	
+	<TurnIn QuestName="Gold Dust Exchange" QuestId="47" TurnInName="Remy Two Times" TurnInId="241" />
+	
+	<CustomBehavior File="Message" Text="Compiling Maclure/Stonefield Quests" LogColor="CornflowerBlue" />
+	
+<!-- A Visit With Maybell -->
+	<TurnIn QuestName="A Visit With Maybell" QuestId="26150" TurnInName="Maybell Maclure" TurnInId="251" />
+	<PickUp QuestName="Young Lovers" QuestId="106" GiverName="Maybell Maclure" GiverId="251" />
+
+<!-- Young Lovers -->
+	<TurnIn QuestName="Young Lovers" QuestId="106" TurnInName="Tommy Joe Stonefield" TurnInId="252" />
+	<PickUp QuestName="Speak with Gramma" QuestId="111" GiverName="Tommy Joe Stonefield" GiverId="252" />
+	
+<!-- Speak with Gramma -->
+	<TurnIn QuestName="Speak with Gramma" QuestId="111" TurnInName="Gramma Stonefield" TurnInId="248" />
+	<PickUp QuestName="Note to William" QuestId="107" GiverName="Gramma Stonefield" GiverId="248" />
+	<PickUp QuestName="Lost Necklace" QuestId="85" GiverName="Auntie Bernice Stonefield" GiverId="246" />
+	<PickUp QuestName="Princess Must Die!" QuestId="88" GiverName="Ma Stonefield" GiverId="244" />
+	
+<!-- Princess Must Die! -->
+	<Objective QuestName="Princess Must Die!" QuestId="88" Type="CollectItem" ItemId="1006" CollectCount="1" />
+	<TurnIn QuestName="Princess Must Die!" QuestId="88" TurnInName="Ma Stonefield" TurnInId="244" />
+	
+	<TurnIn QuestName="Lost Necklace" QuestId="85" TurnInName="Billy Maclure" TurnInId="247" />
+	
+<!-- Pie for Billy -->
+	<PickUp QuestName="Pie For Billy" QuestId="86" GiverName="Billy Maclure" GiverId="247" />
+	<Objective QuestName="Pie For Billy" QuestId="86" Type="CollectItem" ItemId="60401" CollectCount="4" />
+	<TurnIn QuestName="Pie For Billy" QuestId="86" TurnInName="Auntie Bernice Stonefield" TurnInId="246" />
+	
+<!-- Back to Billy -->
+	<PickUp QuestName="Back to Billy" QuestId="84" GiverName="Auntie Bernice Stonefield" GiverId="246" />
+	<TurnIn QuestName="Back to Billy" QuestId="84" TurnInName="Billy Maclure" TurnInId="247" />
+	
+<!-- Goldtooth -->
+	<PickUp QuestName="Goldtooth" QuestId="87" GiverName="Billy Maclure" GiverId="247" />
+	<Objective QuestName="Goldtooth" QuestId="87" Type="CollectItem" ItemId="981" CollectCount="1" />
+	<TurnIn QuestName="Goldtooth" QuestId="87" TurnInName="Auntie Bernice Stonefield" TurnInId="246" />
+	
+<!-- Note to William/The Jasperlode Mine -->
+	<TurnIn QuestName="Note to William" QuestId="107" TurnInName="William Pestle" TurnInId="253" />
+	<PickUp QuestName="Collecting Kelp" QuestId="112" GiverName="William Pestle" GiverId="253" />
+	<If Condition="HasQuest(76) &amp;&amp; !IsQuestCompleted(76)" >
+		<MoveTo X="-9092.972" Y="-562.9011" Z="61.7988" />
+	</If>
+	<Objective QuestName="Collecting Kelp" QuestId="112" Type="CollectItem" ItemId="1256" CollectCount="4" />
+	<If Condition="HasQuest(112) &amp;&amp; IsQuestCompleted(112)" >
+		<DisableBehavior Name="Pull, Combat" />
+		<TurnIn QuestName="Collecting Kelp" QuestId="112" TurnInName="William Pestle" TurnInId="253" X="-9456.98" Y="56.43814" Z="56.11204" />
+		<CustomBehavior File="WaitTimer" WaitTime="8000" />
+		<EnableBehavior Name="Pull, Combat" />
+	</If>
+	<PickUp QuestName="The Escape" QuestId="114" GiverName="William Pestle" GiverId="253" />
+	<TurnIn QuestName="The Escape" QuestId="114" TurnInName="Maybell Maclure" TurnInId="251" />
+	<TurnIn QuestName="The Jasperlode Mine" QuestId="76" TurnInName="Marshal Dughan" TurnInId="240" />
+	
+	<PickUp QuestName="A Fishy Peril" QuestId="40" GiverName="Remy Two Times" GiverId="241" />
+	<TurnIn QuestName="A Fishy Peril" QuestId="40" TurnInName="Marshal Dughan" TurnInId="240" />
+	
+	<If Condition="Me.LevelFraction &gt;= 10" >
+		<PickUp QuestName="Hero's Call: Westfall" QuestId="26378" GiverName="Deputy Rainer" GiverId="963" />
+		<TurnIn QuestName="Hero's Call: Westfall" QuestId="26378" TurnInName="Horatio Caine" TurnInId="42308" />
+		<CustomBehavior File="Message" Text="Elwynn Forest Leveling Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Guard Thomas' Bridge Quests" LogColor="CornflowerBlue" />
+	
+<!-- Further Concerns -->
+	<If Condition="!HasQuest(35) &amp;&amp; !IsQuestCompleted(35)" >
+		<PickUp QuestName="Further Concerns" QuestId="35" GiverName="Marshal Dughan" GiverId="240" />
+		<CustomBehavior File="WaitTimer" WaitTime="1000" />
+		<CustomBehavior File="InteractWith" MobId="240" InteractByGossipOptions="1" NonCompeteDistance="0"
+			NumOfTimes="1" X="-9462.989" Y="73.41283" Z="56.59271" />
+			
+		<!-- <While Condition="Me.IsOnTransport" /> -->
+	</If>
+	<TurnIn QuestName="Further Concerns" QuestId="35" TurnInName="Guard Thomas" TurnInId="261" />
+	<PickUp QuestName="Find the Lost Guards" QuestId="37" GiverName="Guard Thomas" GiverId="261" />
+	<PickUp QuestName="Protect the Frontier" QuestId="52" GiverName="Guard Thomas" GiverId="261" />
+	
+	<PickUp QuestName="Bounty on Murlocs" QuestId="46" GiverType="Object" GiverName="Bounty Board"
+		GiverId="203733" X="-9613.295" Y="-1034.03" Z="40.15746" />
+	<PickUp QuestName="Wanted: James Clark" QuestId="26152" GiverType="Object" GiverName="Bounty Board"
+		GiverId="203733" X="-9613.295" Y="-1034.03" Z="40.15746" />
+
+	<Objective QuestName="Protect the Frontier" QuestId="52" Type="KillMob" MobId="118" KillCOunt="8" />
+	<Objective QuestName="Protect the Frontier" QuestId="52" Type="KillMob" MobId="822" KillCOunt="5" />
+	<TurnIn QuestName="Protect the Frontier" QuestId="52" TurnInName="Guard Thomas" TurnInId="261" />
+
+	<TurnIn QuestName="Find the Lost Guards" QuestId="37" TurnInType="Object" TurnInName="A Half Eaten Body"
+		TurnInId="55" X="-9336.17" Y="-986.3837" Z="67.19099" />
+		
+	<Objective QuestName="Wanted: James Clark" QuestId="26152" Type="CollectItem" ItemId="57122" CollectCount="1" />
+	<TurnIn QuestName="Wanted: James Clark" QuestId="26152" TurnInName="Marshall McCree" TurnInId="42256" />
+	
+	<PickUp QuestName="A Bundle of Trouble" QuestId="5545" GiverName="Supervisor Raelen" GiverId="10616" />
+	<PickUp QuestName="Fine Linen Goods" QuestId="83" GiverName="Sara Timberlain" GiverId="278" />
+	<CustomBehavior File="CollectThings" QuestId="83" CollectItemId="1019" CollectItemCount="6" MobId="116" 
+		MobState="Alive" NonCompeteDistance="5" >
+		<Hotspot X="-9748.648" Y="-927.6796" Z="39.67229" />
+		<Hotspot X="-9738.7" Y="-884.7048" Z="39.83247" />
+		<Hotspot X="-9775.328" Y="-845.1832" Z="39.8517" />
+		<Hotspot X="-9812.291" Y="-875.2061" Z="40.13757" />
+	</CustomBehavior>
+	<Objective QuestName="A Bundle of Trouble" QuestId="5545" Type="CollectItem" ItemId="13872" CollectCount="8" />
+	<TurnIn QuestName="A Bundle of Trouble" QuestId="5545" TurnInName="Supervisor Raelen" TurnInId="10616" />
+	
+	<If Condition="HasItem(1307) &amp;&amp; (!HasQuest(123) &amp;&amp; !IsQuestCompleted(123))" >
+		<PickUp QuestName="The Collector" QuestId="123" GiverType="Item" GiverId="1307" />
+	</If>
+	<If Condition="HasQuest(123)" >
+		<TurnIn QuestName="The Collector" QuestId="123" TurnInName="Marshall McCree" TurnInId="42256" />
+	</If>
+		
+	<If Condition="Me.LevelFraction &gt;= 10" >
+		<PickUp QuestName="Hero's Call: Westfall" QuestId="26378" GiverName="Deputy Rainer" GiverId="963" />
+		<TurnIn QuestName="Hero's Call: Westfall" QuestId="26378" TurnInName="Horatio Caine" TurnInId="42308" />
+		<CustomBehavior File="Message" Text="Elwynn Forest Leveling Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+		
+	<CustomBehavior File="Message" Text="Compiling Westbrook Garrison Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Westbrook Garrison Needs Help!" QuestId="239" GiverName="Marshal Dughan" GiverId="240" />
+	<TurnIn QuestName="Westbrook Garrison Needs Help!" QuestId="239" TurnInName="Deputy Rainer" TurnInId="963" />
+	<PickUp QuestName="Riverpaw Gnoll Bounty" QuestId="11" GiverName="Deputy Rainer" GiverId="963" />
+	<PickUp QuestName="Wanted: Hogger" QuestId="176" GiverType="Object" GiverName="Wanted Poster"
+		GiverId="68" X="-9668.232" Y="683.3906" Z="36.3331" />
+		
+<!-- Riverpaw Gnoll Bounty/Wanted: Hogger -->
+	<Objective QuestName="Riverpaw Gnoll Bounty" QuestId="11" Type="CollectItem" ItemId="782" CollectCount="8" />
+	<Objective QuestName="Wanted: Hogger" QuestId="176" Type="KillMob" MobId="448" KillCount="1" />
+	<PickUp QuestName="Furlbrow's Deed" QuestId="184" GiverType="Object" GiverName="Westfall Deed"
+		GiverId="203734" X="-10144.4" Y="675.375" Z="35.9633" />
+	<TurnIn QuestName="Wanted: Hogger" QuestId="176" TurnInName="Marshal Dughan" TurnInId="240" />
+	<TurnIn QuestName="Riverpaw Gnoll Bounty" QuestId="11" TurnInName="Deputy Rainer" TurnInId="963" />
+	
+	<If Condition="Me.LevelFraction &gt;= 10" >
+		<PickUp QuestName="Hero's Call: Westfall" QuestId="26378" GiverName="Deputy Rainer" GiverId="963" />
+		<TurnIn QuestName="Hero's Call: Westfall" QuestId="26378" TurnInName="Horatio Caine" TurnInId="42308" />
+		<CustomBehavior File="Message" Text="Elwynn Forest Leveling Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Hero's Call: Westfall" QuestId="26378" GiverName="Deputy Rainer" GiverId="963" />
+
+	<CustomBehavior File="Message" Text="Elwynn Forest Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

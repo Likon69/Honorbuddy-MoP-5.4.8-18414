@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Blood in the Snow Heroic</Name>
+  <DungeonId>637</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="70468" name="Bonechiller Barafu" killOrder="1" optional="false" X="-5267.733" Y="-124.2135" Z="434.6763"/>
+    <Boss isFinal="false" entry="70474" name="Farastu" killOrder="2" optional="false" X="-5030.729" Y="-216.3108" Z="445.0301"/>
+    <Boss isFinal="true" entry="70544" name="Hekima the Wise" killOrder="3" optional="false" X="-5167.668" Y="-256.1667" Z="434.8963"/>
+  </BossEncounters>
+  <Blackspots>
+  </Blackspots>
+  <PullBlackspots>
+
+  </PullBlackspots>
+</DungeonBuddyProfile>

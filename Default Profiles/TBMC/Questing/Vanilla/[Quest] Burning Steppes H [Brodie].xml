@@ -1,0 +1,570 @@
+<HBProfile>
+
+	<Name>Burning Steppes ($Rev$)</Name>
+	<MinLevel>45</MinLevel>
+	<MaxLevel>58</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<Vendor Name="Gruna" Entry="3708" Type="Food" X="-7492.08" Y="-2170.92" Z="165.4146" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="28423" Name="Warlocks Have the Neatest Stuff">
+	<Objective Type="CollectItem" ItemId="63134" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Blackrock Warlock" Id="7028" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-7669.906" Y="-692.3987" Z="183.0608" />
+			<Hotspot X="-7653.655" Y="-642.8481" Z="200.4522" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="63132" CollectCount="1">
+		<CollectFrom>
+			<GameObject Name="Slumber Sand" Id="206881" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-7655.713" Y="-635.7683" Z="200.6299" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="63133" CollectCount="1">
+		<CollectFrom>
+			<GameObject Name="Fel Slider Cider" Id="206882" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-7636.674" Y="-629.0126" Z="200.4527" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="28443" Name="Blackened Ashes">
+	<Objective Type="CollectItem" ItemId="63421" CollectCount="9">
+		<CollectFrom>
+			<Mob Name="Greater Obsidian Elemental" Id="7032" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-7752.164" Y="-2447.931" Z="145.5776" />
+			<Hotspot X="-7843.212" Y="-2454.401" Z="136.4671" />
+			<Hotspot X="-7917.736" Y="-2457.606" Z="136.5725" />
+			<Hotspot X="-7981.306" Y="-2424.866" Z="128.1889" />
+			<Hotspot X="-7942.249" Y="-2366.358" Z="122.0994" />
+			<Hotspot X="-7910.258" Y="-2346.476" Z="129.0912" />
+			<Hotspot X="-7813.223" Y="-2382.795" Z="146.2237" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+
+	<If Condition="HasQuest(28515)" >
+		<CustomBehavior File="Message" Text="Compiling Kicker Quest..." LogColor="Green" />
+		<TurnIn QuestName="Mouton Flamestar" QuestId="28515" TurnInName="Mouton Flamestar" TurnInId="47779" X="-8062.17" Y="-1002.955" Z="131.4847" />
+	</If>
+	
+	<If Condition="!HasQuest(28417) &amp;&amp; !IsQuestCompleted(28417)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Burning Steppes Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Flamestar Post Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Done Nothing Wrong" QuestId="28417" GiverName="Mouton Flamestar" GiverId="47779" X="-8062.17" Y="-1002.955" Z="131.4847" />
+	<PickUp QuestName="Burning Vengeance" QuestId="28418" GiverName="Ariok" GiverId="48559" />
+	
+	<CustomBehavior File="InteractWith" QuestId="28417" QuestObjectiveIndex="4" MobId="47822" MobState="Alive" NumOfTimes="100" 
+		NonCompeteDistance="5" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" CollectionDistance="200" >
+		<HuntingGrounds>
+			<Hotspot X="-8391.077" Y="-1280.144" Z="216.2224" />
+			<Hotspot X="-8433.074" Y="-1231.055" Z="209.3907" />
+			<Hotspot X="-8325.221" Y="-1216.052" Z="181.8474" />
+			<Hotspot X="-8281.369" Y="-1217.205" Z="173.6071" />
+			<Hotspot X="-8234.09" Y="-1217.073" Z="142.5577" />
+			<Hotspot X="-8208.39" Y="-1113.514" Z="147.3526" />
+			<Hotspot X="-8255.283" Y="-1059.915" Z="144.7379" />
+			<Hotspot X="-8343.531" Y="-975.2729" Z="185.4329" />
+			<Hotspot X="-8362.384" Y="-971.1354" Z="187.9568" />
+			<Hotspot X="-8418.376" Y="-941.7089" Z="210.6982" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<CustomBehavior File="InteractWith" QuestId="28417" QuestObjectiveIndex="3" MobId="47821" MobState="Alive" NumOfTimes="100" 
+		NonCompeteDistance="5" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" CollectionDistance="200" >
+		<HuntingGrounds>
+			<Hotspot X="-8391.077" Y="-1280.144" Z="216.2224" />
+			<Hotspot X="-8433.074" Y="-1231.055" Z="209.3907" />
+			<Hotspot X="-8325.221" Y="-1216.052" Z="181.8474" />
+			<Hotspot X="-8281.369" Y="-1217.205" Z="173.6071" />
+			<Hotspot X="-8234.09" Y="-1217.073" Z="142.5577" />
+			<Hotspot X="-8208.39" Y="-1113.514" Z="147.3526" />
+			<Hotspot X="-8255.283" Y="-1059.915" Z="144.7379" />
+			<Hotspot X="-8343.531" Y="-975.2729" Z="185.4329" />
+			<Hotspot X="-8362.384" Y="-971.1354" Z="187.9568" />
+			<Hotspot X="-8418.376" Y="-941.7089" Z="210.6982" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<CustomBehavior File="InteractWith" QuestId="28417" QuestObjectiveIndex="2" MobId="47820" MobState="Alive" NumOfTimes="100" 
+		NonCompeteDistance="5" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" CollectionDistance="200" >
+		<HuntingGrounds>
+			<Hotspot X="-8391.077" Y="-1280.144" Z="216.2224" />
+			<Hotspot X="-8433.074" Y="-1231.055" Z="209.3907" />
+			<Hotspot X="-8325.221" Y="-1216.052" Z="181.8474" />
+			<Hotspot X="-8281.369" Y="-1217.205" Z="173.6071" />
+			<Hotspot X="-8234.09" Y="-1217.073" Z="142.5577" />
+			<Hotspot X="-8208.39" Y="-1113.514" Z="147.3526" />
+			<Hotspot X="-8255.283" Y="-1059.915" Z="144.7379" />
+			<Hotspot X="-8343.531" Y="-975.2729" Z="185.4329" />
+			<Hotspot X="-8362.384" Y="-971.1354" Z="187.9568" />
+			<Hotspot X="-8418.376" Y="-941.7089" Z="210.6982" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<CustomBehavior File="InteractWith" QuestId="28417" QuestObjectiveIndex="1" MobId="47814" MobState="Alive" NumOfTimes="100" 
+		NonCompeteDistance="5" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" CollectionDistance="200" >
+		<HuntingGrounds>
+			<Hotspot X="-8391.077" Y="-1280.144" Z="216.2224" />
+			<Hotspot X="-8433.074" Y="-1231.055" Z="209.3907" />
+			<Hotspot X="-8325.221" Y="-1216.052" Z="181.8474" />
+			<Hotspot X="-8281.369" Y="-1217.205" Z="173.6071" />
+			<Hotspot X="-8234.09" Y="-1217.073" Z="142.5577" />
+			<Hotspot X="-8208.39" Y="-1113.514" Z="147.3526" />
+			<Hotspot X="-8255.283" Y="-1059.915" Z="144.7379" />
+			<Hotspot X="-8343.531" Y="-975.2729" Z="185.4329" />
+			<Hotspot X="-8362.384" Y="-971.1354" Z="187.9568" />
+			<Hotspot X="-8418.376" Y="-941.7089" Z="210.6982" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	
+	<Objective QuestName="Burning Vengeance" QuestId="28418" Type="KillMob" MobId="47782" KillCount="5" />
+	<Objective QuestName="Burning Vengeance" QuestId="28418" Type="KillMob" MobId="7049" KillCount="5" />
+	
+	<TurnIn QuestName="Done Nothing Wrong" QuestId="28417" TurnInName="Mouton Flamestar" TurnInId="47779" X="-8062.17" Y="-1002.955" Z="131.4847" />
+	<TurnIn QuestName="Burning Vengeance" QuestId="28418" TurnInName="Ariok" TurnInId="48559" />
+	
+	<PickUp QuestName="Stocking Up" QuestId="28419" GiverName="Ariok" GiverId="48559" />
+	<PickUp QuestName="A Future Project" QuestId="28420" GiverName="Ariok" GiverId="48559" />
+	<PickUp QuestName="Mud Hunter" QuestId="28421" GiverName="Ariok" GiverId="48559" />
+	
+	<Objective QuestName="Mud Hunter" QuestId="28421" Type="CollectItem" ItemId="63124" CollectCount="9" />
+	<Objective QuestName="Stocking Up" QuestId="28419" Type="CollectItem" ItemId="63135" CollectCount="5" />
+	<Objective QuestName="A Future Project" QuestId="28420" Type="CollectItem" ItemId="63136" CollectCount="11" />
+	
+	<TurnIn QuestName="Mud Hunter" QuestId="28421" TurnInName="Ariok" TurnInId="48559" />
+	<TurnIn QuestName="Stocking Up" QuestId="28419" TurnInName="Ariok" TurnInId="48559" />
+	<TurnIn QuestName="A Future Project" QuestId="28420" TurnInName="Ariok" TurnInId="48559" />
+	
+	<PickUp QuestName="The Sand, the Cider, and the Orb" QuestId="28422" GiverName="Ariok" GiverId="48559" />
+	<TurnIn QuestName="The Sand, the Cider, and the Orb" QuestId="28422" TurnInName="Gorzeeki Wildeyes" TurnInId="14437" />
+	
+	<PickUp QuestName="Warlocks Have the Neatest Stuff" QuestId="28423" GiverName="Gorzeeki Wildeyes" GiverId="14437" />
+	<PickUp QuestName="Shadow Boxing" QuestId="28424" GiverName="Gorzeeki Wildeyes" GiverId="14437" />
+	
+	<Objective QuestName="Warlocks Have the Neatest Stuff" QuestId="28423" Type="CollectItem" ItemId="63134" CollectCount="1" />
+	<Objective QuestName="Warlocks Have the Neatest Stuff" QuestId="28423" Type="CollectItem" ItemId="63132" CollectCount="1" />
+	<Objective QuestName="Warlocks Have the Neatest Stuff" QuestId="28423" Type="CollectItem" ItemId="63133" CollectCount="1" />
+	<Objective QuestName="Shadow Boxing" QuestId="28424" Type="KillMob" MobId="47805" KillCount="1" X="-7612.573" Y="-759.7867" Z="190.8112" />
+	
+	<TurnIn QuestName="Shadow Boxing" QuestId="28424" TurnInName="Gorzeeki Wildeyes" TurnInId="14437" />
+	<TurnIn QuestName="Warlocks Have the Neatest Stuff" QuestId="28423" TurnInName="Gorzeeki Wildeyes" TurnInId="14437" />
+	
+	<PickUp QuestName="Return to Ariok" QuestId="28425" GiverName="Gorzeeki Wildeyes" GiverId="14437" />
+	<TurnIn QuestName="Return to Ariok" QuestId="28425" TurnInName="Ariok" TurnInId="48559" />
+	
+	<PickUp QuestName="Chiselgrip, the Heart of the Steppes" QuestId="28426" GiverName="Ariok" GiverId="48559" />
+	<Objective QuestName="Chiselgrip, the Heart of the Steppes" QuestId="28426" Type="KillMob" MobId="7025" KillCount="15" />
+	<TurnIn QuestName="Chiselgrip, the Heart of the Steppes" QuestId="28426" TurnInName="Stebben Oreknuckle" TurnInId="48033" />
+	
+	<CustomBehavior File="Message" Text="Compiling Chiselgrip Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Prove Yer Allegiance" QuestId="28225" GiverName="Stebben Oreknuckle" GiverId="48033" />
+	<PickUp QuestName="Scrapped Golems" QuestId="28226" GiverName="Stebben Oreknuckle" GiverId="48033" />
+	<PickUp QuestName="A Needle in a Hellhole" QuestId="28427" GiverName="Eitrigg" GiverId="48568" />
+	<TurnIn QuestName="A Needle in a Hellhole" QuestId="28427" TurnInName="Thelaron Direneedle" TurnInId="48001" />
+	
+	<If Condition="!HasQuest(28428) &amp;&amp; !IsQuestCompleted(28428) &amp;&amp;
+					!HasQuest(28429) &amp;&amp; !IsQuestCompleted(28429) &amp;&amp;
+					!HasQuest(28430) &amp;&amp; !IsQuestCompleted(28430) &amp;&amp;
+					!HasQuest(28431) &amp;&amp; !IsQuestCompleted(28431)" >
+		<MoveTo X="-7954.52" Y="-1898.461" Z="131.944" />
+		<While Condition="HasQuestAvailable(48001)" >
+			<CustomBehavior File="InteractWith" MobId="48001" InteractByQuestFrameDisposition="Accept" 
+				WaitTime="3000" TerminateWhen="HasQuest(28428) || HasQuest(28429) || HasQuest(28430) || HasQuest(28431)"
+				X="-7954.52" Y="-1898.461" Z="131.944" />
+		</While>
+	</If>
+	
+	<If Condition="HasQuest(28428) &amp;&amp; !IsQuestCompleted(28428) ||
+					HasQuest(28429) &amp;&amp; !IsQuestCompleted(28429) ||
+					HasQuest(28430) &amp;&amp; !IsQuestCompleted(28430) ||
+					HasQuest(28431) &amp;&amp; !IsQuestCompleted(28431)" >
+		<If Condition="Me.Race == WoWRace.Orc" >
+			<CustomBehavior File="InteractWith" MobId="206947" InteractByGossipOptions="1,2,4,2" WaitTime="3000" X="-7954.52" Y="-1898.461" Z="131.944" />
+		</If>
+		<If Condition="Me.Race == WoWRace.Undead" >
+			<CustomBehavior File="InteractWith" MobId="206947" InteractByGossipOptions="1,2,4,2" WaitTime="3000" X="-7954.52" Y="-1898.461" Z="131.944" />
+		</If>
+		<If Condition="Me.Race == WoWRace.Tauren" >
+			<CustomBehavior File="InteractWith" MobId="206947" InteractByGossipOptions="1,4,1,3" WaitTime="3000" X="-7954.52" Y="-1898.461" Z="131.944" />
+		</If>
+		<If Condition="Me.Race == WoWRace.Troll" >
+			<CustomBehavior File="InteractWith" MobId="206947" InteractByGossipOptions="1,3,2,1" WaitTime="3000" X="-7954.52" Y="-1898.461" Z="131.944" />
+		</If>
+		<If Condition="Me.Race == WoWRace.BloodElf" >
+			<CustomBehavior File="InteractWith" MobId="206947" InteractByGossipOptions="1,3,2,1" WaitTime="3000" X="-7954.52" Y="-1898.461" Z="131.944" />
+		</If>
+		<If Condition="Me.Race == WoWRace.Goblin" >
+			<CustomBehavior File="InteractWith" MobId="206947" InteractByGossipOptions="1,1,3,4" WaitTime="3000" X="-7954.52" Y="-1898.461" Z="131.944" />
+		</If>
+		<If Condition="Me.Race == WoWRace.Pandaren" >
+			<CustomBehavior File="InteractWith" MobId="206947" InteractByGossipOptions="1,4,1,3" WaitTime="3000" X="-7954.52" Y="-1898.461" Z="131.944" />
+		</If>
+		<CustomBehavior File="InteractWith" MobId="48001" InteractByGossipOptions="1" WaitTime="3000" X="-7954.52" Y="-1898.461" Z="131.944" />
+	</If>
+	
+	<If Condition="HasQuest(28428) &amp;&amp; IsQuestCompleted(28428)" >
+		<TurnIn QuestName="A Perfect Costume" QuestId="28428" TurnInName="Eitrigg" TurnInId="48568" />
+	</If>
+	<If Condition="HasQuest(28429) &amp;&amp; IsQuestCompleted(28429)" >
+		<TurnIn QuestName="A Perfect Costume" QuestId="28429" TurnInName="Eitrigg" TurnInId="48568" />
+	</If>
+	<If Condition="HasQuest(28430) &amp;&amp; IsQuestCompleted(28430)" >
+		<TurnIn QuestName="A Perfect Costume" QuestId="28430" TurnInName="Eitrigg" TurnInId="48568" />
+	</If>
+	<If Condition="HasQuest(28431) &amp;&amp; IsQuestCompleted(28431)" >
+		<TurnIn QuestName="A Perfect Costume" QuestId="28431" TurnInName="Eitrigg" TurnInId="48568" />
+	</If>
+	<PickUp QuestName="Into the Black Tooth Hovel" QuestId="28432" GiverName="Eitrigg" GiverId="48568" />
+
+	<While Condition="HasQuest(28226) &amp;&amp; !IsQuestCompleted(28226)" >
+		<CustomBehavior File="InteractWith" QuestId="28226" MobId="7039" MobState="Alive" TerminateWhen="Me.Combat"
+			NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" >
+			<HuntingGrounds>
+				<Hotspot X="-7753.718" Y="-1823.532" Z="132.3864" />
+				<Hotspot X="-7784.965" Y="-1949.107" Z="133.6135" />
+				<Hotspot X="-7704.059" Y="-1991.863" Z="133.4389" />
+				<Hotspot X="-7711.296" Y="-2068.626" Z="133.3002" />
+				<Hotspot X="-7703.429" Y="-2130.127" Z="132.2899" />
+				<Hotspot X="-7739.023" Y="-2210.399" Z="133.4395" />
+				<Hotspot X="-7753.345" Y="-2280.221" Z="133.5343" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<If Condition="!IsObjectiveComplete(4,28226) || !IsObjectiveComplete(3,28226)" >
+			<CustomBehavior File="InteractWith" MobId="206974" MobId2="206973" MobId3="206972" MobId4="206971" InteractByGossipOptions="2"
+				MobState="Alive" NonCompeteDistance="3" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="1000"
+				TerminateWhen="(Object(206974) == null &amp;&amp; Object(206973) == null &amp;&amp; Object(206972) == null &amp;&amp; Object(206971) == null)
+								|| (IsObjectiveComplete(4,28226) &amp;&amp; IsObjectiveComplete(3,28226))" />
+		</If>
+		<If Condition="!IsObjectiveComplete(2,28226) || !IsObjectiveComplete(1,28226)" >
+			<CustomBehavior File="InteractWith" MobId="206974" MobId2="206973" MobId3="206972" MobId4="206971" InteractByGossipOptions="1"
+				MobState="Alive" NonCompeteDistance="3" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="1000"
+				TerminateWhen="(Object(206974) == null &amp;&amp; Object(206973) == null &amp;&amp; Object(206972) == null &amp;&amp; Object(206971) == null)
+								|| (IsObjectiveComplete(2,28226) &amp;&amp; IsObjectiveComplete(1,28226))" />
+		</If>
+	</While>
+	<Objective QuestName="Prove Yer Allegiance" QuestId="28225" Type="KillMob" MobId="7038" KillCount="10" />
+	
+	<TurnIn QuestName="Scrapped Golems" QuestId="28226" TurnInName="Stebben Oreknuckle" TurnInId="48033" />
+	<TurnIn QuestName="Prove Yer Allegiance" QuestId="28225" TurnInName="Stebben Oreknuckle" TurnInId="48033" />
+	<PickUp QuestName="Golem Training" QuestId="28227" GiverName="Stebben Oreknuckle" GiverId="48033" />
+	
+	<CustomBehavior File="InteractWith" QuestId="28227" MobId="48037" MobState="Alive" InteractByGossipOptions="1"
+		WaitTime="2000" NonCompeteDistance="5" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" >
+		<HuntingGrounds>
+			<Hotspot X="-7871.559" Y="-1925.136" Z="144.3763" />
+			<Hotspot X="-7922.529" Y="-1916.854" Z="132.8765" />
+			<Hotspot X="-7956.293" Y="-1934.073" Z="133.4268" />
+			<Hotspot X="-7948.252" Y="-1882.59" Z="132.0625" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	
+	<TurnIn QuestName="Golem Training" QuestId="28227" TurnInName="Stebben Oreknuckle" TurnInId="48033" />
+	
+	<If Condition="HasQuest(28432)" >
+		<MoveTo X="-8002.888" Y="-1914.22" Z="133.4568" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<If Condition="!Me.HasAura(89261)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(63357)" WaitTime="2000" />
+		</If>
+		<TurnIn QuestName="Into the Black Tooth Hovel" QuestId="28432" TurnInName="Quartermaster Kaoshin" TurnInId="48085" />
+	</If>
+	
+	<PickUp QuestName="Grunt Work" QuestId="28433" GiverName="Quartermaster Kaoshin" GiverId="48085" />
+	<PickUp QuestName="Strategic Cuts" QuestId="28434" GiverName="Eitrigg" GiverId="48568" />
+	
+	<While Condition="HasQuest(28434) &amp;&amp; !IsObjectiveComplete(3,28434)" >
+		<If Condition="!Me.HasAura(89261)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(63357)" WaitTime="2000" />
+		</If>
+		<CustomBehavior File="InteractWith" MobId="48100" MobState="Alive" InteractByUsingItemId="63350"
+			NonCompeteDistance="0" WaitTime="500" TerminateWhen="!Me.HasAura(89261)" X="-8088.665" Y="-1885.934" Z="182.4966" />
+	</While>
+	<CustomBehavior File="InteractWith" QuestId="28433" MobId="206977" NumOfTimes="1000" WaitTime="2000"
+		NonCompeteDistance="5" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+		<HuntingGrounds>
+			<Hotspot X="-8067.108" Y="-1893.916" Z="132.4155" />
+			<Hotspot X="-8098.553" Y="-1774.818" Z="133.0612" />
+			<Hotspot X="-8081.474" Y="-1650.345" Z="133.0014" />
+			<Hotspot X="-8108.934" Y="-1542.424" Z="133.514" />
+			<Hotspot X="-8109.633" Y="-1431.045" Z="131.126" />
+			<Hotspot X="-8145.105" Y="-1577.398" Z="133.5233" />
+			<Hotspot X="-8143.88" Y="-1701.351" Z="134.807" />
+			<Hotspot X="-8220.904" Y="-1928.839" Z="142.8384" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<While Condition="HasQuest(28434) &amp;&amp; !IsObjectiveComplete(2,28434)" >
+		<If Condition="!Me.HasAura(89261)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(63357)" WaitTime="2000" />
+		</If>
+		<CustomBehavior File="InteractWith" MobId="48099" MobState="Alive" InteractByUsingItemId="63350"
+			NonCompeteDistance="0" TerminateWhen="!Me.HasAura(89261)" WaitTime="500" X="-8160.5" Y="-1701.087" Z="137.8386" />
+	</While>
+	<While Condition="HasQuest(28434) &amp;&amp; !IsObjectiveComplete(1,28434)" >
+		<If Condition="!Me.HasAura(89261)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(63357)" WaitTime="2000" />
+		</If>
+		<CustomBehavior File="InteractWith" MobId="9176" MobState="Alive" InteractByUsingItemId="63350"
+			NonCompeteDistance="0" TerminateWhen="!Me.HasAura(89261)" WaitTime="500" X="-8257.458" Y="-1728.866" Z="140.7166" />
+	</While>
+	
+	<TurnIn QuestName="Strategic Cuts" QuestId="28434" />
+	<TurnIn QuestName="Grunt Work" QuestId="28433" TurnInName="Quartermaster Kaoshin" TurnInId="48085" />
+	
+	<PickUp QuestName="The Kodocaller's Horn" QuestId="28435" GiverName="Quartermaster Kaoshin" GiverId="48085" />
+	<CustomBehavior File="InteractWith" QuestId="28435" MobId="48111" InteractByUsingItemId="63356"
+		NumOfTimes="100" WaitTime="1000" NonCompeteDistance="5" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+		<HuntingGrounds>
+			<Hotspot X="-8191.684" Y="-1968.033" Z="142.3976" />
+			<Hotspot X="-8261.717" Y="-1934.659" Z="147.973" />
+			<Hotspot X="-8266.9" Y="-1864.325" Z="145.4442" />
+			<Hotspot X="-8254.94" Y="-1778.662" Z="145.6953" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="The Kodocaller's Horn" QuestId="28435" />
+	
+	<PickUp QuestName="Taking the Horn For Ourselves" QuestId="28436" GiverName="Eitrigg" GiverId="48568" />
+	<TurnIn QuestName="Taking the Horn For Ourselves" QuestId="28436" TurnInName="Eitrigg" TurnInId="48568" />
+	
+	<PickUp QuestName="General Thorg'izog" QuestId="28437" GiverName="Eitrigg" GiverId="48568" />
+	<If Condition="!(Me.HasAura(89261)) &amp;&amp; HasItem(63357)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(63357)" WaitTime="2000" />
+	</If>
+	<TurnIn QuestName="General Thorg'izog" QuestId="28437" TurnInName="General Thorg'izog" TurnInId="48133" />
+	
+	<PickUp QuestName="Trial by Magma" QuestId="28438" GiverName="General Thorg'izog" GiverId="48133" />
+	<While Condition="HasQuest(28438) &amp;&amp; !IsQuestCompleted(28438)" >
+		<CustomBehavior File="InteractWith" MobId="48159" InteractByGossipOptions="1" NonCompeteDistance="0"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" TerminateWhen="IsQuestCompleted(28438)" WaitTime="5000"
+			X="-7689.18" Y="-1435.915" Z="140.9364" />
+	</While>
+	<TurnIn QuestName="Trial by Magma" QuestId="28438" TurnInName="General Thorg'izog" TurnInId="48133" />
+	
+	<PickUp QuestName="I Am the Law and I Am the Lash" QuestId="28439" GiverName="General Thorg\'izog" GiverId="48133" />
+	<PickUp QuestName="Abuse of Power" QuestId="28440" GiverName="Eitrigg" GiverId="48568" />
+	<While Condition="HasQuest(28440) &amp;&amp; !IsQuestCompleted(28440)" >
+		<If Condition="!(Me.HasAura(89261))" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(63357)" WaitTime="2000" />
+		</If>
+		<EnableBehavior Name="Pull" />
+		<CustomBehavior File="InteractWith" MobId="48201" MobState="Alive" InteractByUsingItemId="63390" NonCompeteDistance="5"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" KeepTargetSelected="True" TerminateWhen="Me.Combat || !(Me.HasAura(89261)) || IsQuestCompleted(28440)" >
+			<HuntingGrounds>
+				<Hotspot X="-7726.973" Y="-1503.387" Z="132.8384" />
+				<Hotspot X="-7711.274" Y="-1567.328" Z="131.9912" />
+				<Hotspot X="-7789.999" Y="-1547.617" Z="133.4375" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<DisableBehavior Name="Pull" />
+	</While>
+	<EnableBehavior Name="Pull" />
+	<If Condition="!(Me.HasAura(89261)) &amp;&amp; HasItem(63357)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(63357)" WaitTime="2000" />
+	</If>
+	<TurnIn QuestName="Abuse of Power" QuestId="28440" />
+	
+	<PickUp QuestName="Enough Damage For One Day" QuestId="28441" GiverName="Eitrigg" GiverId="48568" />
+	
+	<While Condition="HasQuest(28439) &amp;&amp; !IsQuestCompleted(28439)" >
+		<If Condition="!(Me.HasAura(89261))" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(63357)" WaitTime="2000" />
+		</If>
+		<EnableBehavior Name="Pull" />
+		<CustomBehavior File="InteractWith" MobId="7025" MobState="Alive" InteractByUsingItemId="63390" NonCompeteDistance="5"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" KeepTargetSelected="True" TerminateWhen="Me.Combat || !(Me.HasAura(89261)) || IsQuestCompleted(28439)" >
+			<HuntingGrounds>
+				<Hotspot X="-7726.973" Y="-1503.387" Z="132.8384" />
+				<Hotspot X="-7711.274" Y="-1567.328" Z="131.9912" />
+				<Hotspot X="-7789.999" Y="-1547.617" Z="133.4375" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<DisableBehavior Name="Pull" />
+	</While>
+	<EnableBehavior Name="Pull" />
+	<If Condition="!(Me.HasAura(89261)) &amp;&amp; HasItem(63357)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(63357)" WaitTime="2000" />
+	</If>
+	<TurnIn QuestName="I Am the Law and I Am the Lash" QuestId="28439" TurnInName="General Thorg'izog" TurnInId="48133" />
+	
+	<TurnIn QuestName="Enough Damage For One Day" QuestId="28441" TurnInName="Eitrigg" TurnInId="48568" />
+	
+	<PickUp QuestName="Flame Crest" QuestId="28442" GiverName="Eitrigg" GiverId="48568" />
+	<TurnIn QuestName="Flame Crest" QuestId="28442" TurnInName="Kibler" TurnInId="10260" />
+	
+	<CustomBehavior File="Message" Text="Compiling Flame Crest Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Not Fireflies, Flameflies" QuestId="28491" GiverName="Kibler" GiverId="10260" />
+	<PickUp QuestName="Blackened Ashes" QuestId="28443" GiverName="Eitrigg" GiverId="48569" />
+	<PickUp QuestName="Latent Demons of the Land" QuestId="28444" GiverName="Eitrigg" GiverId="48569" />
+	<PickUp QuestName="A Heap of Delicious Worg" QuestId="28445" GiverName="Eitrigg" GiverId="48569" />
+	
+	<While Condition="HasQuest(28444) &amp;&amp; !IsQuestCompleted(28444)" >
+		<CustomBehavior File="InteractWith" MobId="9776" MobId2="9779" MobId3="9778" NonCompeteDistance="5" WaitTime="1000" 
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" TerminateWhen="Unit(48649) != null || IsQuestCompleted(28444)" >
+			<HuntingGrounds>
+				<Hotspot X="-7556.365" Y="-2172.724" Z="157.0942" />
+				<Hotspot X="-7650.89" Y="-2141.977" Z="135.5394" />
+				<Hotspot X="-7737.406" Y="-2087.601" Z="133.4388" />
+				<Hotspot X="-7619.183" Y="-2061.399" Z="130.2432" />
+				<Hotspot X="-7536.091" Y="-2118.446" Z="129.4462" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" MobId="48649" NonCompeteDistance="5" NumOfTimes="1000" WaitTime="1000" 
+			ProactiveCombatStrategy="ClearMobsTargetingUs" TerminateWhen="Unit(48649) == null || IsQuestCompleted(28444)" />
+	</While>
+	
+	<CustomBehavior File="InteractWith" QuestId="28491" MobId="48671" NonCompeteDistance="5"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-7556.365" Y="-2172.724" Z="157.0942" />
+			<Hotspot X="-7650.89" Y="-2141.977" Z="135.5394" />
+			<Hotspot X="-7737.406" Y="-2087.601" Z="133.4388" />
+			<Hotspot X="-7619.183" Y="-2061.399" Z="130.2432" />
+			<Hotspot X="-7536.091" Y="-2118.446" Z="129.4462" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	
+	<Objective QuestName="Blackened Ashes" QuestId="28443" Type="CollectItem" ItemId="63421" CollectCount="9" />
+	
+	<CustomBehavior File="InteractWith" QuestId="28445" MobId="9697" MobState="Dead" InteractByUsingItemId="63427"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" WaitTime="1000" NumOfTimes="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-7699.897" Y="-2469.169" Z="147.9932" />
+			<Hotspot X="-7581.163" Y="-2519.961" Z="134.2942" />
+			<Hotspot X="-7567.768" Y="-2623.974" Z="138.4069" />
+			<Hotspot X="-7655.719" Y="-2683.808" Z="131.7879" />
+			<Hotspot X="-7656.965" Y="-2779.433" Z="131.9843" />
+			<Hotspot X="-7675.346" Y="-2955.863" Z="132.0048" />
+			<Hotspot X="-7774.48" Y="-2943.316" Z="131.5603" />
+			<Hotspot X="-7868.838" Y="-2903.001" Z="132.245" />
+			<Hotspot X="-7962.017" Y="-2863.189" Z="137.0153" />
+			<Hotspot X="-8095.441" Y="-2805.732" Z="136.7438" />
+			<Hotspot X="-8168.097" Y="-2847.573" Z="134.0783" />
+			<Hotspot X="-8211.239" Y="-2783.596" Z="137.4941" />
+			<Hotspot X="-8253.854" Y="-2696.763" Z="135.9487" />
+			<Hotspot X="-8143.586" Y="-2672.461" Z="133.3803" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	
+	<TurnIn QuestName="A Heap of Delicious Worg" QuestId="28445" TurnInName="Eitrigg" TurnInId="48569" />
+	<TurnIn QuestName="Latent Demons of the Land" QuestId="28444" TurnInName="Eitrigg" TurnInId="48569" />
+	<TurnIn QuestName="Blackened Ashes" QuestId="28443" TurnInName="Eitrigg" TurnInId="48569" />
+	<TurnIn QuestName="Not Fireflies, Flameflies" QuestId="28491" TurnInName="Kibler" TurnInId="10260" />
+	
+	<PickUp QuestName="A Deal With a Dragon" QuestId="28448" GiverName="Ariok" GiverId="48565" X="-7503.677" Y="-2189.165" Z="165.4414" />
+	<PickUp QuestName="Blood Tour" QuestId="28446" GiverName="Ariok" GiverId="48567" />
+	<PickUp QuestName="Draconic Vanguard" QuestId="28447" GiverName="Ariok" GiverId="48567" />
+	
+	<Objective QuestName="Draconic Vanguard" QuestId="28447" Type="KillMob" MobId="48287" KillCount="1" />
+	<Objective QuestName="Draconic Vanguard" QuestId="28447" Type="KillMob" MobId="48288" KillCount="1" />
+	<Objective QuestName="Draconic Vanguard" QuestId="28447" Type="KillMob" MobId="48289" KillCount="1" />
+	<Objective QuestName="Draconic Vanguard" QuestId="28447" Type="KillMob" MobId="48291" KillCount="1" />
+	
+	<TurnIn QuestName="Draconic Vanguard" QuestId="28447" TurnInName="Ariok" TurnInId="48567" />
+	<TurnIn QuestName="A Deal With a Dragon" QuestId="28448" TurnInName="Acride" TurnInId="48292" />
+	
+	<Objective QuestName="Blood Tour" QuestId="28446" Type="KillMob" MobId="7040" KillCount="25" />
+	
+	<TurnIn QuestName="Blood Tour" QuestId="28446" TurnInName="Ariok" TurnInId="48567" />
+	
+	<PickUp QuestName="Placing the Pawns" QuestId="28449" GiverName="Eitrigg" GiverId="48569" />
+	<TurnIn QuestName="Placing the Pawns" QuestId="28449" TurnInName="Eitrigg" TurnInId="48569" />
+	
+	<PickUp QuestName="A Delivery for Thorg'izog" QuestId="28450" GiverName="Eitrigg" GiverId="48569" />
+	<PickUp QuestName="A Delivery for Neeralak" QuestId="28451" GiverName="Eitrigg" GiverId="48569" />
+	<PickUp QuestName="A Delivery for Xi'lun" QuestId="28452" GiverName="Eitrigg" GiverId="48569" />
+	
+	<If Condition="HasItem(63357) &amp;&amp; !(Me.HasAura(89261))" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(63357)" WaitTime="2000" />
+	</If>
+	<TurnIn QuestName="A Delivery for Neeralak" QuestId="28451" TurnInName="Dragon-Lord Neeralak" TurnInId="48314" X="-7976.483" Y="-2678.815" Z="156.8136" />
+	<TurnIn QuestName="A Delivery for Thorg'izog" QuestId="28450" TurnInName="General Thorg'izog" TurnInId="48316" X="-7839.185" Y="-2559.728" Z="126.2408" />
+	<TurnIn QuestName="A Delivery for Xi'lun" QuestId="28452" TurnInName="High Warlock Xi'lun" TurnInId="48312" X="-7890.288" Y="-2656.25" Z="220.0098" />
+	
+	<PickUp QuestName="Locked and Loaded" QuestId="28453" GiverName="Eitrigg" GiverId="48569" />
+	<TurnIn QuestName="Locked and Loaded" QuestId="28453" TurnInName="Eitrigg" TurnInId="48569" />
+	
+	<PickUp QuestName="Assault on Dreadmaul Rock" QuestId="28454" GiverName="Ariok" GiverId="48565" />
+	<If Condition="HasQuest(28454) &amp;&amp; !IsQuestCompleted(28454)" >
+		<CustomBehavior File="SpecificQuests\28454-BurningSteppes-HordeAssaultonDreadmaulRock" />
+	</If>
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Assault on Dreadmaul Rock" QuestId="28454" TurnInName="Eitrigg" TurnInId="48569" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<PickUp QuestName="Glory Amidst Chaos" QuestId="28455" GiverName="Eitrigg" GiverId="48569" />
+	<Objective QuestName="Glory Amidst Chaos" QuestId="28455" Type="KillMob" MobId="48316" KillCount="1" />
+	<Objective QuestName="Glory Amidst Chaos" QuestId="28455" Type="KillMob" MobId="48312" KillCount="1" X="-7969.005" Y="-2699.855" Z="158.4292" />
+	<Objective QuestName="Glory Amidst Chaos" QuestId="28455" Type="KillMob" MobId="48314" KillCount="1" X="-7901.553" Y="-2644.985" Z="220.4454" />
+	<TurnIn QuestName="Glory Amidst Chaos" QuestId="28455" TurnInName="Eitrigg" TurnInId="48569" />
+	
+	<PickUp QuestName="The Spoils of War" QuestId="28456" GiverName="Eitrigg" GiverId="48569" />
+	<TurnIn QuestName="The Spoils of War" QuestId="28456" TurnInName="Crate of Left Over Supplies" TurnInId="207125" 
+		TurnInType="Object" X="-7501.753" Y="-2190.227" Z="165.6344" />
+	
+	<PickUp QuestName="The Bogpaddle Bullet" QuestId="28570" GiverName="Kibler" GiverId="10260" />
+	<If Condition="Me.ZoneId == 46 &amp;&amp; HasQuest(28570)" >
+		<CustomBehavior File="InteractWith" MobId="48948" InteractByGossipOptions="1" NonCompeteDistance="0" TerminateWhen="Me.IsOnTransport || Me.ZoneId == 8"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="100" X="-8221.444" Y="-2935.276" Z="152.3146" />
+		<DisableBehavior Name="Pull, Combat" />
+		<While Condition="Me.IsOnTransport" />
+		<EnableBehavior Name="Pull, Combat" />
+	</If>
+	<TurnIn QuestName="The Bogpaddle Bullet" QuestId="28570" TurnInName="Trade Baron Silversnap" TurnInId="45786" />
+
+	<CustomBehavior File="Message" Text="Burning Steppes Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="[Quest] Swamp of Sorrows [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

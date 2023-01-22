@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Temple of the Jade Serpent</Name>
+  <DungeonId>464</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="56448" name="Wise Mari" killOrder="1" optional="false" X="1047.01" Y="-2560.259" Z="174.1569"/>
+    <Boss isFinal="false" entry="56843" name="Lorewalker Stonestep" killOrder="2" optional="false" X="845.4167" Y="-2459.356" Z="174.9611"/>
+    <Boss isFinal="false" entry="56732" name="Liu Flameheart" killOrder="3" optional="false" X="930.005" Y="-2560.36" Z="180.0692"/>
+    <Boss isFinal="true" entry="56439" name="Sha of Doubt" killOrder="4" optional="false" X="900.5347" Y="-2648.632" Z="184.4594"/>
+  </BossEncounters>
+</DungeonBuddyProfile>

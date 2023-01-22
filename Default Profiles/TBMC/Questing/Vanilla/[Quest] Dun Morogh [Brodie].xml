@@ -1,0 +1,221 @@
+<HBProfile>
+
+	<Name>Dun Morogh Quests ($Rev$)</Name>
+	<MinLevel>5</MinLevel>
+	<MaxLevel>20</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>True</MailWhite>
+	<MailGreen>True</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>False</TargetElites>
+
+<AvoidMobs>
+	<Mob Name="Raider's Training Dummy" Entry="31146" />
+	<Mob Name="Crazed Leper Gnome" Entry="46363" />
+	<Mob Name="Crazed Leper Gnome" Entry="46391" />
+	<Mob Name="Living Contamination" Entry="43089" />
+	<Mob Name="Crushcog Sentry-Bot" Entry="42291" />
+</AvoidMobs>
+
+<Blackspots>
+	<Blackspot X="-5527.078" Y="517.2145" Z="388.9192" Radius="3.217502" /> <!-- Tent by Jessup -->
+	<Blackspot X="-5200.985" Y="516.0198" Z="387.5609" Radius="1.386786" /> <!-- New Tinkertown Mailbox -->
+	<Blackspot X="-9151.938" Y="88.74734" Z="76.00366" Radius="20.25414" /> <!-- Defiant in Elwynn -->
+</Blackspots>
+
+<Mailboxes>
+	<!-- New Tinkertown Mailbox -->
+	<Mailbox X="-5199.83" Y="517.0881" Z="387.3979" />
+	<!-- Kharanos Mailbox -->
+	<Mailbox X="-5603.603" Y="-512.9031" Z="401.6768" />
+	<!-- Thelsamar Mailbox -->
+	<Mailbox X="-5364.78" Y="-2953.748" Z="323.8507" />
+</Mailboxes>
+
+<Vendors>
+	<!-- Kharanos -->
+	<Vendor Name="Grawn Thromwyn" Entry="1273" Type="Repair" X="-5590.67" Y="-428.416" Z="397.3266" />
+	<Vendor Name="Turuk Amberstill" Entry="3177" Type="Repair" X="-5514.975" Y="-1295.747" Z="405.9352" />
+	<Vendor Name="Frast Dokner" Entry="1698" Type="Repair" X="-5714.372" Y="-1589.517" Z="383.2044" />
+	<Vendor Name="Monann Coldforge" Entry="43384" Type="Food" X="-5522.49" Y="-1930.35" Z="398.9589" />
+	<Vendor Name="Jade Ramalot" Entry="46996" Type="Repair" X="-4594.17" Y="-1714.2" Z="503.476" />
+</Vendors>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>	
+	  
+<!-- Dun Morogh Quests -->
+
+	<CustomBehavior File="Message" Text="Compiling Dun Morogh Quests" LogColor="Green" />
+	
+<!-- Gnomes Only -->
+	<If Condition="HasQuest(26373)" >
+		<PickUp QuestName="Bound for Kharanos" QuestId="26380" GiverName="Ciara Deepstone" GiverId="42933" />
+		<TurnIn QuestName="On to Kharanos" QuestId="26373" TurnInName="Captain Tharran" TurnInId="40950" />
+		<TurnIn QuestName="Bound for Kharanos" QuestId="26380" TurnInName="Innkeeper Belm" TurnInId="1247" />
+		<CustomBehavior File="SetHearthstone" MobId="1247" X="-5601.6" Y="-531.203" Z="399.6541" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	<ElseIf Condition="!HasQuest(26380) &amp;&amp; !IsQuestCompleted(26380) &amp;&amp; Me.Race == WoWRace.Gnome" >
+		<PickUp QuestName="Bound for Kharanos" QuestId="26380" GiverName="Ciara Deepstone" GiverId="42933" />
+		<TurnIn QuestName="Bound for Kharanos" QuestId="26380" TurnInName="Innkeeper Belm" TurnInId="1247" />
+		<CustomBehavior File="SetHearthstone" MobId="1247" X="-5601.6" Y="-531.203" Z="399.6541" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	</ElseIf>
+	<ElseIf Condition="HasQuest(26380)" >
+		<TurnIn QuestName="Bound for Kharanos" QuestId="26380" TurnInName="Innkeeper Belm" TurnInId="1247" />
+		<CustomBehavior File="SetHearthstone" MobId="1247" X="-5601.6" Y="-531.203" Z="399.6541" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	</ElseIf>
+	</If>
+<!-- End of Gnomes Only -->
+	
+	<CustomBehavior File="Message" Text="Compiling Kharanos Quests" LogColor="CornflowerBlue" />
+	
+<!-- Frostmane Aggression/The Perfect Stout/Beer Blasted Boar Ribs/Honor Students-->
+	<PickUp QuestName="Frostmane Aggression" QuestId="25724" GiverName="Captain Tharran" GiverId="40950" />
+	<PickUp QuestName="The Perfect Stout" QuestId="315" GiverName="Rejold Barleybrew" GiverId="1374" />
+	<PickUp QuestName="Beer Blasted Boar Ribs" QuestId="384" GiverName="Ragnar Thunderbrew" GiverId="1267" />
+	<PickUp QuestName="Honor Students" QuestId="6387" GiverName="Gremlock Pilsnor" GiverId="1699" />
+	
+	<If Condition="HasQuest(384) &amp;&amp; !IsObjectiveComplete(2,384)" >
+		<CustomBehavior File="InteractWith" QuestId="384" MobId="1247" InteractByGossipOptions="3" InteractByBuyingItemId="2894" BuyItemCount="1" 
+			ProactiveCombatStrategy="ClearMobsTargetingUs" X="-5595.386" Y="-543.4492" Z="398.7645" />
+	</If>
+	
+	<TurnIn QuestName="Honor Students" QuestId="6387" TurnInName="Brolan Galebeard" TurnInId="43701" />
+	<PickUp QuestName="Ride to Ironforge" QuestId="6391" GiverName="Brolan Galebeard" GiverId="43701" />
+	<TurnIn QuestName="Ride to Ironforge" QuestId="6391" TurnInName="Golnir Bouldertoe" TurnInId="4256" />
+	<PickUp QuestName="Gryth Thurden" QuestId="6388" GiverName="Golnir Bouldertoe" GiverId="4256" />
+	<TurnIn QuestName="Gryth Thurden" QuestId="6388" TurnInName="Gryth Thurden" TurnInId="1573" />
+	<PickUp QuestName="Return to Gremlock" QuestId="6392" GiverName="Gryth Thurden" GiverId="1573" />
+	<TurnIn QuestName="Return to Gremlock" QuestId="6392" TurnInName="Gremlok Pilsnor" TurnInId="1699" />
+	
+	<Objective QuestName="Beer Blasted Boar Ribs" QuestId="384" Type="CollectItem" ItemId="60496" CollectCount="4" />
+	<TurnIn QuestName="Beer Blasted Boar Ribs" QuestId="384" TurnInName="Ragnar Thunderbrew" TurnInId="1267" />
+	<Objective QuestName="The Perfect Stout" QuestId="315" Type="CollectItem" ItemId="2676" CollectCount="7" />
+	<Objective QuestName="Frostmane Aggression" QuestId="25724" Type="KillMob" MobId="41121" KillCount="5" />
+	<Objective QuestName="Frostmane Aggression" QuestId="25724" Type="KillMob" MobId="41122" KillCount="7" />
+	<TurnIn QuestName="The Perfect Stout" QuestId="315" TurnInName="Rejold Barleybrew" TurnInId="1374" />
+	<TurnIn QuestName="Frostmane Aggression" QuestId="25724" TurnInName="Captain Tharran" TurnInId="40950" />
+	
+<!-- Culling the Wendigos/Forced to Watch from Afar/Pilfered Supplies -->
+	<PickUp QuestName="Culling the Wendigos" QuestId="25667" GiverName="Captain Tharran" GiverId="40950" />
+	<PickUp QuestName="Forced to Watch from Afar" QuestId="313" GiverName="Captain Tharran" GiverId="40950" />
+	<PickUp QuestName="Pilfered Supplies" QuestId="25668" GiverName="Quartermaster Glynna" GiverId="40951" />
+	<CustomBehavior File="InteractWith" QuestId="313" QuestObjectiveIndex="1" MobId="40991" InteractByGossipOptions="1" 
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" X="-5475.986" Y="-229.2361" Z="354.3773" />
+    <CustomBehavior File="InteractWith" QuestId="313" QuestObjectiveIndex="2" MobId="40994" InteractByGossipOptions="1" 
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" X="-5502.422" Y="-271.9618" Z="354.2406" />
+    <CustomBehavior File="InteractWith" QuestId="313" QuestObjectiveIndex="3" MobId="41056" InteractByGossipOptions="1" 
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" X="-5387.958" Y="-278.2431" Z="363.053" />
+	<Objective QuestName="Pilfered Supplies" QuestId="25668" Type="CollectItem" ItemId="55151" CollectCount="6" />
+	<Objective QuestName="Culling the Wendigos" QuestId="25667" Type="KillMob" MobId="40941" KillCount="10" />
+	<TurnIn QuestName="Pilfered Supplies" QuestId="25668" TurnInName="Quartermaster Glynna" TurnInId="40951" />
+	<TurnIn QuestName="Culling the Wendigos" QuestId="25667" TurnInName="Captain Tharran" TurnInId="40950" />
+	<TurnIn	QuestName="Forced to Watch from Afar" QuestId="313" TurnInName="Captain Tharran" TurnInId="40950" />
+	
+<!-- Pushing Forward/Operation Recombobulation -->
+	<PickUp QuestName="Pushing Forward" QuestId="25792" GiverName="Captain Tharran" GiverId="40950" />
+	<PickUp QuestName="Operation Recombobulation" QuestId="412" GiverName="Razzle Sprysprocket" GiverId="1269" />
+	<CustomBehavior File="InteractWith" QuestId="25792" MobId="41202" CollectionDistance="1000" NumOfTimes="100" NonCOmpeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" InteractByUsingItemId="56009" X="-5837.621" Y="-628.6479" Z="397.0455" />
+	<Objective QuestName="Operation Recombobulation" QuestId="412" Type="CollectItem" ItemId="3084" CollectCount="8" />
+	<TurnIn QuestName="Pushing Forward" QuestId="25792" TurnInName="Captain Tharran" TurnInId="40950" />
+	<TurnIn QuestName="Operation Recombobulation" QuestId="412" TurnInName="Razzle Sprysprocket" TurnInId="1269" />
+	
+<!-- Help from Steelgrill's Depot -->
+	<PickUp QuestName="Help from Steelgrill's Depot" QuestId="25838" GiverName="Captain Tharran" GiverId="40950" />
+	<TurnIn QuestName="Help from Steelgrill's Depot" QuestId="25838" TurnInName="Delber Cranktoggle" TurnInId="41363" />
+	
+<!-- The Ultrasafe Personnel Launcher -->
+	<PickUp QuestName="The Ultrasafe Personnel Launcher" QuestId="25839" GiverName="Delber Cranktoggle" GiverId="41363" />
+	<CustomBehavior File="InteractWith" QuestId="25839" MobId="41398" NonCompeteDistance="0" WaitTime="3000" X="-5462.186" Y="-641.0383" Z="394.4818" />
+	<TurnIn QuestName="The Ultrasafe Personnel Launcher" QuestId="25839" TurnInName-="Slamp Wobblecog" TurnInId="41298" />
+	
+<!-- Eliminate the Resistance/Strike From Above/The View From Down Here -->
+	<PickUp QuestName="Eliminating the Resistance" QuestId="25840" GiverName="Slamp Wobblecog" GiverId="41298" />
+	<PickUp QuestName="Strike From Above" QuestId="25841" GiverName="Slamp Wobblecog" GiverId="41298" />
+	<PickUp QuestName="The View From Down Here" QuestId="28868" GiverName="Snevik the Blade" GiverId="50601" />
+	<CustomBehavior File="InteractWith" QuestId="28868" MobId="41251" MobState="Alive" InteractByUsingItemId="67249" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="10" NumOfTimes="100" CollectionDistance="1000" X="-5771.98" Y="-978.99" Z="393.45" />
+	<While Condition="HasQuest(25841) &amp;&amp; !IsQuestCompleted(25841)" >
+		<If Condition="HasQuest(25841) &amp;&amp; !IsObjectiveComplete(1,25841)" >
+			<RunTo X="-5713.721" Y="-1019.998" Z="394.834" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(56048)" />
+		</If>
+		<If Condition="HasQuest(25841) &amp;&amp; !IsObjectiveComplete(2,25841)" >
+			<RunTo X="-5812.8" Y="-955.6105" Z="393.453" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(56048)" />
+		</If>
+	</While>
+	<Objective QuestName="Eliminating the Resistance" QuestId="25840" Type="KillMob" MobId="41258" KillCount="5" />
+	<Objective QuestName="Eliminating the Resistance" QuestId="25840" Type="KillMob" MobId="41284" KillCount="1" />
+	<TurnIn QuestName="The View From Down Here" QuestId="28868" TurnInName="Snevik the Blade" TurnInId="50601" />
+	<TurnIn QuestName="Eliminating the Resistance" QuestId="25840" TurnInName="Slamp Wobblecog" TurnInId="41298" />
+	<TurnIn QuestName="Strike From Above" QuestId="25841" TurnInName="Slamp Wobblecog" TurnInId="41298" />
+	
+<!-- A Hand at the Ranch -->
+	<PickUp QuestName="A Hand at the Ranch" QuestId="25882" GiverName="Slamp Wobblecog" GiverId="41298" />
+	
+	<CustomBehavior File="Message" Text="Compiling Amberstill Ranch Quests" LogColor="CornflowerBlue" />
+
+	<If Condition="(!HasQuest(25882) &amp;&amp; !IsQuestCompleted(25882)) &amp;&amp; IsQuestCompleted(25841)" >
+		<PickUp QuestName="A Hand at the Ranch" QuestId="25882" GiverName="Slamp Wobblecog" GiverId="41298" />
+		<TurnIn QuestName="A Hand at the Ranch" QuestId="25882" TurnInName="Sergeant Flinthammer" TurnInId="41578" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	<ElseIf Condition="HasQuest(25882)" >
+		<TurnIn QuestName="A Hand at the Ranch" QuestId="25882" TurnInName="Sergeant Flinthammer" TurnInId="41578" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	</ElseIf>
+	</If>
+	
+<!-- It's Raid Night Every Night -->
+	<While Condition="!HasQuest(25932) &amp;&amp; !IsQuestCompleted(25932)" >
+		<CustomBehavior File="InteractWith" MobId="41578" KeepTargetSelected="True" X="-5538.592" Y="-1311.104" Z="398.7943" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestFrameAcceptButton" />
+		<CustomBehavior File="WaitTimer" WaitTime="1000" />
+	</While>
+	<CustomBehavior File="KillUntilComplete" QuestId="25932" MobId="41603" X="-5547.468" Y="-1308.665" Z="398.062" />
+	<TurnIn QuestName="It's Raid Night Every Night" QuestId="25932" TurnInName="Sergeant Flinthammer" TurnInId="41578" />
+	
+<!-- Rams on the Lam/Protecting the Herd -->
+	<PickUp QuestName="Rams on the Lam" QuestId="25905" GiverName="Veron Amberstill" GiverId="1261" />
+	<PickUp QuestName="Protecting the Herd" QuestId="314" GiverName="Rudra Amberstill" GiverId="1265" />
+	<Objective QuestName="Protecting the Herd" QuestId="314" Type="CollectItem" ItemId="3627" CollectCount="1" />
+	<TurnIn QuestName="Protecting the Herd" QuestId="314" TurnInName="Rudra Amberstill" TurnInId="1265" />
+	<While Condition="HasQuest(25905) &amp;&amp; !IsQuestCompleted(25905)" >
+		<CustomBehavior File="InteractWith" QuestId="25905" MobId="41539" KeepTargetSelected="True" MobState="Alive" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="250" >
+			<HuntingGrounds>
+				<Hotspot X="-5739.796" Y="-1163.459" Z="380.0575" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="RunMacro" Macro="/whistle" QuestId="25905" />
+	</While>
+	<TurnIn QuestName="Rams on the Lam" QuestId="25905" TurnInName="Veron Amberstill" TurnInId="1261" />
+	
+<!-- Help for the Quarry -->
+	<PickUp QuestName="Help for the Quarry" QuestId="25933" GiverName="Sergeant Flinthammer" GiverId="41578" />
+	<TurnIn QuestName="Help for the Quarry" QuestId="25933" TurnInName="Foreman Stonebrow" TurnInId="1254" />
+
+	<CustomBehavior File="Message" Text="Kharanos/Ambermill Section Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="[Quest] Dun Morogh 2 [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

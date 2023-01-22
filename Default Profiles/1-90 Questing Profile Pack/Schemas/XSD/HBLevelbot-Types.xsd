@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <!--
+    =====
+    Original contribution by chinajade
+      $Rev: 3159 $
+      $Date: 2014-03-19 01:34:46 -0500 (Wed, 19 Mar 2014) $
+    
+    WARNING: DO NOT EDIT .xsd files.
+      They are not authoritative and will be overwritten!
+      Instead, regenerate the .xsd files from the .rnc 'sources'.
+      Its a one-line command to do this. Please see README.txt
+      for more information.
+    =====
+  -->
+  <xs:simpleType name="HBType-BehaviorFlags">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="All|((Combat|Death|Interact|Loot|Pull|Rest|Roam|Vendor)(,\s*(Combat|Death|Interact|Loot|Pull|Rest|Roam|Vendor))*)"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-Boolean">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="false"/>
+      <xs:enumeration value="true"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-CollectFromType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Mob"/>
+      <xs:enumeration value="Object"/>
+      <xs:enumeration value="Vendor"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-Count">
+    <xs:restriction base="xs:positiveInteger"/>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-Distance">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0.0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-DistancePositive">
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="0.0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-Faction">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Alliance"/>
+      <xs:enumeration value="Horde"/>
+      <xs:enumeration value="Neutral"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-HotbarIndex">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="12"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-Id">
+    <xs:restriction base="xs:positiveInteger"/>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-InventorySlot">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AmmoSlot"/>
+      <xs:enumeration value="BackSlot"/>
+      <xs:enumeration value="Bag0Slot"/>
+      <xs:enumeration value="Bag1Slot"/>
+      <xs:enumeration value="Bag2Slot"/>
+      <xs:enumeration value="Bag3Slot"/>
+      <xs:enumeration value="ChestSlot"/>
+      <xs:enumeration value="FeetSlot"/>
+      <xs:enumeration value="Finger0Slot"/>
+      <xs:enumeration value="Finger1Slot"/>
+      <xs:enumeration value="HandsSlot"/>
+      <xs:enumeration value="HeadSlot"/>
+      <xs:enumeration value="LegsSlot"/>
+      <xs:enumeration value="MainHandSlot"/>
+      <xs:enumeration value="NeckSlot"/>
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="RangedSlot"/>
+      <xs:enumeration value="SecondaryHandSlot"/>
+      <xs:enumeration value="ShirtSlot"/>
+      <xs:enumeration value="ShoulerSlot"/>
+      <xs:enumeration value="TabardSlot"/>
+      <xs:enumeration value="Trinket0Slot"/>
+      <xs:enumeration value="Trinket1Slot"/>
+      <xs:enumeration value="WaistSlot"/>
+      <xs:enumeration value="WristSlot"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-Level">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="1.0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-LogLevel">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Diagnostic"/>
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="Normal"/>
+      <xs:enumeration value="Quiet"/>
+      <xs:enumeration value="Verbose"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-MapId">
+    <xs:restriction base="xs:nonNegativeInteger"/>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-MetaBoolean">
+    <xs:union memberTypes="HBType-Boolean">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="null"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-MetaDecimal">
+    <xs:union memberTypes="xs:decimal">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="null"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-MetaDecimalNonNegative">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:decimal">
+          <xs:minInclusive value="0.0"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="null"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-Nav">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Fly"/>
+      <xs:enumeration value="Run"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-ObjectiveType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="CollectItem"/>
+      <xs:enumeration value="KillMob"/>
+      <xs:enumeration value="UseObject"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-Percent">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0.0"/>
+      <xs:maxInclusive value="100.0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-RecognizedPluginNames">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Anti Drown"/>
+      <xs:enumeration value="Questhelper - ItemForAura"/>
+      <xs:enumeration value="Refreshment Detection"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-QuestGiverType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Item"/>
+      <xs:enumeration value="Npc"/>
+      <xs:enumeration value="Object"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-QuestTurnInType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Npc"/>
+      <xs:enumeration value="Object"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-UseItemType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="GameObject"/>
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="Npc"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-TimeDuration">
+    <xs:restriction base="xs:positiveInteger"/>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-TrainClass">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Deathknight"/>
+      <xs:enumeration value="Druid"/>
+      <xs:enumeration value="Hunter"/>
+      <xs:enumeration value="Mage"/>
+      <xs:enumeration value="Monk"/>
+      <xs:enumeration value="Paladin"/>
+      <xs:enumeration value="Priest"/>
+      <xs:enumeration value="Rogue"/>
+      <xs:enumeration value="Shaman"/>
+      <xs:enumeration value="Warlock"/>
+      <xs:enumeration value="Warrior"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-VendorType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Food"/>
+      <xs:enumeration value="Repair"/>
+      <xs:enumeration value="Sell"/>
+      <xs:enumeration value="Train"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-WeaponStyle">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Automatic"/>
+      <xs:enumeration value="DualWieldTwoHanders"/>
+      <xs:enumeration value="MainHandAndOffHand"/>
+      <xs:enumeration value="TwoHander"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HBType-WoWItemQuality">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Artifact"/>
+      <xs:enumeration value="Common"/>
+      <xs:enumeration value="Epic"/>
+      <xs:enumeration value="Heirloom"/>
+      <xs:enumeration value="Legendary"/>
+      <xs:enumeration value="Poor"/>
+      <xs:enumeration value="Rare"/>
+      <xs:enumeration value="Uncommon"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

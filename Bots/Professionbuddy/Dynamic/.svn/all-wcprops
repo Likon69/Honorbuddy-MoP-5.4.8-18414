@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/704/trunk/Professionbuddy/Dynamic
+END
+DynamicProperty.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/686/trunk/Professionbuddy/Dynamic/DynamicProperty.cs
+END
+DynamicCodeCompiler.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/704/trunk/Professionbuddy/Dynamic/DynamicCodeCompiler.cs
+END
+HBRelogApi.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/686/trunk/Professionbuddy/Dynamic/HBRelogApi.cs
+END
+Helpers.cs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/704/trunk/Professionbuddy/Dynamic/Helpers.cs
+END
+IDynamicProperty.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/686/trunk/Professionbuddy/Dynamic/IDynamicProperty.cs
+END
+ICSharpCode.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/686/trunk/Professionbuddy/Dynamic/ICSharpCode.cs
+END

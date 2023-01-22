@@ -1,0 +1,394 @@
+<HBProfile>
+	
+	<Name>Kurenai / The Mag'har Rep Grind ($Rev$)</Name>
+	<MinLevel>70</MinLevel>
+	<MaxLevel>100</MaxLevel>
+	
+	<MinDurability>0.1</MinDurability>
+	<MinFreeBagSlots>1</MinFreeBagSlots>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Vendors>
+	</Vendors>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<AvoidMobs>
+		<Mob Name="Dark Worg" Entry="18033" />
+		<Mob Name="Talbuk Stag" Entry="17130" />
+		<Mob Name="Clefthoof" Entry="18205" />
+		<Mob Name="Wild Elekk" Entry="18334" />
+		<Mob Name="Dust Howler" Entry="17158" />
+		<Mob Name="Windroc" Entry="17128" />
+		<Mob Name="Tortured Earth Spirit" Entry="17156" />
+	</AvoidMobs>
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde" >
+		<CustomBehavior File="Message" Text="Beginning The Mag'har Reputation Grind" LogColor="Green" />
+	<Else>
+		<CustomBehavior File="Message" Text="Beginning Kurenai Reputation Grind" LogColor="Green" />
+	</Else>
+	</If>
+	
+	<CustomBehavior File="UserSettings" KillBetweenHotspots="False" />
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Shattrath -->
+		<If Condition="Me.IsAlliance" >
+			<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<UseMount Value="False" />
+			<CustomBehavior File="InteractWith" MobId="215120" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<UseMount Value="False" />
+			<CustomBehavior File="InteractWith" MobId="215113" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1732.343" Y="881.7467" Z="487.0864" />
+		</If>
+		<UseMount Value="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+		</If>
+	</If>
+	
+	<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="-3997.277" Y="-4723.235" Z="4.2373507" />
+			<CustomBehavior File="UseTransport" TransportId="176231"
+				WaitAtX="-3997.277" WaitAtY="-4723.235" WaitAtZ="4.2373507" 
+				TransportStartX="-4016.39" TransportStartY="-4740.588" TransportStartZ="0.03803937"
+				TransportEndX="-3872.35" TransportEndY="-639.944" TransportEndZ="-0.02619897"
+				StandOnX="-4009.505" StandOnY="-4738.07" StandOnZ="6.021125"
+				GetOffX="-3861.013" GetOffY="-656.758" GetOffZ="5.279493" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="1773.506" Y="-4327.022" Z="-8.118139" />
+			<CustomBehavior File="InteractWith" MobId="195142" NonCompeteDistance="0" WaitTime="5000" X="1773.506" Y="-4327.022" Z="-8.118139" />
+		</If>
+	</If>
+
+	<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.IsAlliance" >
+			<If Condition="Me.ZoneId == 1519" >
+				<CustomBehavior File="InteractWith" MobId="195141" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+					X="-9005.213" Y="868.702" Z="129.6925" />
+			</If>
+			<CustomBehavior File="FlyTo" X="-11899.66" Y="-3208.164" Z="-14.73684" />
+			<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+			<CustomBehavior File="WaitTimer" WaitTime="10000" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="-11899.66" Y="-3208.164" Z="-14.73684" />
+			<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+			<CustomBehavior File="WaitTimer" WaitTime="10000" />
+		</If>
+	</If>
+
+	<If Condition="Me.IsHorde" >
+		<SetVendor>
+			<Vendors>
+				<Vendor Nav="Fly" Name="Osrok the Immovable" Entry="19011" Type="Repair" X="-1332.878" Y="7197.079" Z="34.19083" />
+			</Vendors>
+		</SetVendor>
+	<Else>
+		<SetVendor>
+			<Vendors>
+				<Vendor Nav="Fly" Name="Sparik" Entry="19012" Type="Repair" X="-2530.663" Y="7354.053" Z="9.283456" />
+			</Vendors>
+		</SetVendor>
+	</Else>
+	</If>
+	
+	<While Condition="(Me.IsAlliance &amp;&amp; Me.GetReputationLevelWith(978) &lt; WoWUnitReaction.Exalted) ||
+						(Me.IsHorde &amp;&amp; Me.GetReputationLevelWith(941) &lt; WoWUnitReaction.Exalted)" >
+
+		<If Condition="Me.IsAlliance &amp;&amp; Me.GetReputationLevelWith(978) &gt;= WoWUnitReaction.Neutral" >
+			<If Condition="!HasQuest(10476) &amp;&amp; !IsQuestCompleted(10476)" >
+				<PickUp Nav="Fly" QuestName="Fierce Enemies" QuestId="10476" GiverName="Warden Moi'bff Jill" GiverId="18408" />
+			</If>
+			<PickUp Nav="Fly" QuestName="Wanted: Giselda the Crone" QuestId="9936" GiverName="Telaar Bulletin Board" GiverId="182393" />
+			<PickUp Nav="Fly" QuestName="Wanted: Zorbo the Advisor" QuestId="9940" GiverName="Telaar Bulletin Board" GiverId="182393" />
+		</If>
+		<If Condition="Me.IsHorde &amp;&amp; Me.GetReputationLevelWith(941) &gt;= WoWUnitReaction.Neutral" >
+			<If Condition="!HasQuest(10479) &amp;&amp; !IsQuestCompleted(10479)" >
+				<PickUp Nav="Fly" QuestName="Proving Your Strength" QuestId="10479" GiverName="Warden Bullrok" GiverId="18407" />
+			</If>
+			<PickUp Nav="Fly" QuestName="Wanted: Giselda the Crone" QuestId="9935" GiverName="Garadar Bulletin Board" GiverId="182392" />
+			<PickUp Nav="Fly" QuestName="Wanted: Zorbo the Advisor" QuestId="9939" GiverName="Garadar Bulletin Board" GiverId="182392" />
+		</If>
+		
+		<If Condition="HasQuest(9936) &amp;&amp; !IsQuestCompleted(9936)" >
+			<If Condition="!IsObjectiveComplete(1,9936)" >
+				<CustomBehavior File="FlyTo" QuestId="9936" TerminateWhen="Unit(18391, u =&gt; u.Distance &lt; 75) != null" X="-2918.196" Y="6387.085" Z="85.19514" />
+			</If>
+			<Objective Nav="Fly" QuestName="Wanted: Giselda the Crone" QuestId="9936" Type="KillMob" MobId="18391" KillCount="1" X="-2991.933" Y="6364.394" Z="95.18288" />
+			<If Condition="!IsObjectiveComplete(2,9936)" >
+				<CustomBehavior File="FlyTo" QuestId="9936" TerminateWhen="Unit(17148) != null || Unit(17146) != null || Unit(17147) != null" X="-2918.196" Y="6387.085" Z="85.19514" />
+			</If>
+			<Objective Nav="Fly" QuestName="Wanted: Giselda the Crone" QuestId="9936" Type="KillMob" MobId="21276" KillCount="10" />
+		</If>
+		<If Condition="HasQuest(9939) &amp;&amp; !IsQuestCompleted(9939)" >
+			<If Condition="!IsObjectiveComplete(1,9939)" >
+				<CustomBehavior File="FlyTo" QuestId="9939" TerminateWhen="Unit(18413, u =&gt; u.Distance &lt; 50) != null" X="-668.4965" Y="7755.979" Z="85.31725" />
+			</If>
+			<Objective Nav="Fly" QuestName="Wanted: Zorbo the Advisor" QuestId="9939" Type="KillMob" MobId="18413" KillCount="1" />
+			<If Condition="!IsObjectiveComplete(2,9939) || !IsObjectiveComplete(3,9939)" >
+				<CustomBehavior File="FlyTo" QuestId="9939" TerminateWhen="Unit(18064) != null || Unit(17138) != null" X="-788.6088" Y="7586.119" Z="51.40489" />
+			</If>
+			<Objective Nav="Fly" QuestName="Wanted: Zorbo the Advisor" QuestId="9939" Type="KillMob" MobId="18064" KillCount="5" />
+			<Objective Nav="Fly" QuestName="Wanted: Zorbo the Advisor" QuestId="9939" Type="KillMob" MobId="17138" KillCount="5" />
+		</If>
+		<If Condition="HasQuest(9940) &amp;&amp; !IsQuestCompleted(9940)" >
+			<If Condition="!IsObjectiveComplete(1,9940)" >
+				<CustomBehavior File="FlyTo" QuestId="9940" TerminateWhen="Unit(18413, u =&gt; u.Distance &lt; 50) != null" X="-668.4965" Y="7755.979" Z="85.31725" />
+			</If>
+			<Objective Nav="Fly" QuestName="Wanted: Zorbo the Advisor" QuestId="9940" Type="KillMob" MobId="18413" KillCount="1" />
+			<If Condition="!IsObjectiveComplete(2,9940) || !IsObjectiveComplete(3,9940)" >
+				<CustomBehavior File="FlyTo" QuestId="9940" TerminateWhen="Unit(18064) != null || Unit(17138) != null" X="-788.6088" Y="7586.119" Z="51.40489" />
+			</If>
+			<Objective Nav="Fly" QuestName="Wanted: Zorbo the Advisor" QuestId="9940" Type="KillMob" MobId="18064" KillCount="5" />
+			<Objective Nav="Fly" QuestName="Wanted: Zorbo the Advisor" QuestId="9940" Type="KillMob" MobId="17138" KillCount="5" />
+		</If>
+		<If Condition="HasQuest(9935) &amp;&amp; !IsQuestCompleted(9935)" >
+			<If Condition="!IsObjectiveComplete(1,9935)" >
+				<CustomBehavior File="FlyTo" QuestId="9935" TerminateWhen="Unit(18391, u =&gt; u.Distance &lt; 75) != null" X="-2918.196" Y="6387.085" Z="85.19514" />
+			</If>
+			<Objective Nav="Fly" QuestName="Wanted: Giselda the Crone" QuestId="9935" Type="KillMob" MobId="18391" KillCount="1" />
+			<If Condition="!IsObjectiveComplete(2,9935)" >
+				<CustomBehavior File="FlyTo" QuestId="9935" TerminateWhen="Unit(17148) != null || Unit(17146) != null || Unit(17147) != null" X="-2918.196" Y="6387.085" Z="85.19514" />
+			</If>
+			<Objective Nav="Fly" QuestName="Wanted: Giselda the Crone" QuestId="9935" Type="KillMob" MobId="21276" KillCount="10" />
+		</If>
+		
+		<If Condition="HasQuest(9936) &amp;&amp; IsQuestCompleted(9936)" >
+			<TurnIn Nav="Fly" QuestName="Wanted: Giselda the Crone" QuestId="9936" TurnInName="Warden Moi'bff Jill" TurnInId="18408" />
+		</If>
+		<If Condition="HasQuest(9940) &amp;&amp; IsQuestCompleted(9940)" >
+			<TurnIn Nav="Fly" QuestName="Wanted: Zorbo the Advisor" QuestId="9940" TurnInName="Warden Moi'bff Jill" TurnInId="18408" />
+		</If>
+		<If Condition="HasQuest(10476) &amp;&amp; IsQuestCompleted(10476) &amp;&amp; Unit(18408) != null" >
+			<TurnIn Nav="Fly" QuestName="Fierce Enemies" QuestId="10476" TurnInName="Warden Moi'bff Jill" TurnInId="18408" />
+		</If>
+		<If Condition="HasQuest(9935) &amp;&amp; IsQuestCompleted(9935)" >
+			<TurnIn Nav="Fly" QuestName="Wanted: Giselda the Crone" QuestId="9935" TurnInName="Warden Bullrok" TurnInId="18407" />
+		</If>
+		<If Condition="HasQuest(9939) &amp;&amp; IsQuestCompleted(9939)" >
+			<TurnIn Nav="Fly" QuestName="Wanted: Zorbo the Advisor" QuestId="9939" TurnInName="Warden Bullrok" TurnInId="18407" />
+		</If>
+		<If Condition="!HasQuest(10479) &amp;&amp; !IsQuestCompleted(10479) &amp;&amp; Unit(18407) != null" >
+			<TurnIn Nav="Fly" QuestName="Proving Your Strength" QuestId="10479" TurnInName="Warden Bullrok" TurnInId="18407" />
+		</If>
+	
+		<If Condition="Me.IsAlliance &amp;&amp; Me.GetReputationLevelWith(978) &gt;= WoWUnitReaction.Neutral" >
+			<PickUp Nav="Fly" QuestName="Wanted: Durn the Hungerer" QuestId="9938" GiverName="Warden Moi'bff Jill" GiverId="18408" />
+		</If>
+		<If Condition="Me.IsHorde &amp;&amp; Me.GetReputationLevelWith(941) &gt;= WoWUnitReaction.Neutral" >
+			<PickUp Nav="Fly" QuestName="Wanted: Durn the Hungerer" QuestId="9937" GiverName="Warden Bullrok" GiverId="18407" />
+		</If>
+		
+		<CustomBehavior File="InteractWith" QuestId="9938" MobId="18411" MobState="Alive" NonCompeteDistance="0"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000"
+			WaitTime="1000" CollectionDistance="250" InteractBlacklistTimeInSeconds="1" >
+			<HuntingGrounds WaypointVisitStrategy="InOrder" >
+				<Hotspot X="-2223.463" Y="8223.886" Z="-26.52057" />
+				<Hotspot X="-2228.378" Y="8377.427" Z="-28.91022" />
+				<Hotspot X="-2245.186" Y="8532.633" Z="-17.6446" />
+				<Hotspot X="-2325.147" Y="8638.601" Z="-17.15375" />
+				<Hotspot X="-2490.929" Y="8606.265" Z="-27.73114" />
+				<Hotspot X="-2617.252" Y="8567.73" Z="-35.41666" />
+				<Hotspot X="-2764.797" Y="8571.724" Z="-37.06285" />
+				<Hotspot X="-2862.592" Y="8470.933" Z="-28.50771" />
+				<Hotspot X="-2853.42" Y="8329.775" Z="-32.81269" />
+				<Hotspot X="-2844.244" Y="8165.675" Z="-42.49865" />
+				<Hotspot X="-2792.894" Y="8009.703" Z="-37.68195" />
+				<Hotspot X="-2684.817" Y="7911.523" Z="-33.38706" />
+				<Hotspot X="-2568.968" Y="7799.329" Z="-42.17071" />
+				<Hotspot X="-2437.588" Y="7734.124" Z="-21.50966" />
+				<Hotspot X="-2278.263" Y="7803.21" Z="-26.11182" />
+				<Hotspot X="-2274.789" Y="7949.62" Z="-33.86587" />
+				<Hotspot X="-2271.305" Y="8077.466" Z="-35.14019" />
+			</HuntingGrounds>
+		</CustomBehavior>
+			
+		<CustomBehavior File="InteractWith" QuestId="9937" MobId="18411" MobState="Alive" NonCompeteDistance="0"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000"
+			WaitTime="1000" CollectionDistance="250" InteractBlacklistTimeInSeconds="1" >
+			<HuntingGrounds WaypointVisitStrategy="InOrder" >
+				<Hotspot X="-2223.463" Y="8223.886" Z="-26.52057" />
+				<Hotspot X="-2228.378" Y="8377.427" Z="-28.91022" />
+				<Hotspot X="-2245.186" Y="8532.633" Z="-17.6446" />
+				<Hotspot X="-2325.147" Y="8638.601" Z="-17.15375" />
+				<Hotspot X="-2490.929" Y="8606.265" Z="-27.73114" />
+				<Hotspot X="-2617.252" Y="8567.73" Z="-35.41666" />
+				<Hotspot X="-2764.797" Y="8571.724" Z="-37.06285" />
+				<Hotspot X="-2862.592" Y="8470.933" Z="-28.50771" />
+				<Hotspot X="-2853.42" Y="8329.775" Z="-32.81269" />
+				<Hotspot X="-2844.244" Y="8165.675" Z="-42.49865" />
+				<Hotspot X="-2792.894" Y="8009.703" Z="-37.68195" />
+				<Hotspot X="-2684.817" Y="7911.523" Z="-33.38706" />
+				<Hotspot X="-2568.968" Y="7799.329" Z="-42.17071" />
+				<Hotspot X="-2437.588" Y="7734.124" Z="-21.50966" />
+				<Hotspot X="-2278.263" Y="7803.21" Z="-26.11182" />
+				<Hotspot X="-2274.789" Y="7949.62" Z="-33.86587" />
+				<Hotspot X="-2271.305" Y="8077.466" Z="-35.14019" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		
+		<If Condition="HasQuest(9938) &amp;&amp; !IsQuestCompleted(9938)" >
+			<TurnIn Nav="Fly" QuestName="Wanted: Durn the Hungerer" QuestId="9938" TurnInName="Warden Moi'bff Jill" TurnInId="18408" />
+		</If>
+		<If Condition="HasQuest(10476) &amp;&amp; IsQuestCompleted(10476) &amp;&amp; Unit(18408) != null" >
+			<TurnIn Nav="Fly" QuestName="Fierce Enemies" QuestId="10476" TurnInName="Warden Moi'bff Jill" TurnInId="18408" />
+		</If>
+		<If Condition="HasQuest(9937) &amp;&amp; IsQuestCompleted(9937)" >
+			<TurnIn Nav="Fly" QuestName="Wanted: Durn the Hungerer" QuestId="9937" TurnInName="Warden Bullrok" TurnInId="18407" />
+		</If>
+		<If Condition="!HasQuest(10479) &amp;&amp; !IsQuestCompleted(10479) &amp;&amp; Unit(18407) != null" >
+			<TurnIn Nav="Fly" QuestName="Proving Your Strength" QuestId="10479" TurnInName="Warden Bullrok" TurnInId="18407" />
+		</If>
+		
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" TerminateWhen="Unit(17135) != null || Unit(17134) != null || Me.GetReputationLevelWith(978) &gt;= WoWUnitReaction.Exalted ||
+				(GetItemCount(25433) &gt;= 50 &amp;&amp; Me.GetReputationLevelWith(978) &gt;= WoWUnitReaction.Neutral)" X="-2256.836" Y="6205.413" Z="46.78626" />
+			<CustomBehavior File="UserSettings" KillBetweenHotspots="True" />
+			<SetGrindArea>
+				<GrindArea>
+
+				<TargetMinLevel>60</TargetMinLevel>
+				<TargetMaxLevel>80</TargetMaxLevel>
+
+				<Factions>45</Factions>
+
+				<Hotspots>
+					<Hotspot X="-2256.836" Y="6205.413" Z="46.78626" />
+					<Hotspot X="-2295.197" Y="6159.514" Z="57.49977" />
+					<Hotspot X="-2270.916" Y="6101.98" Z="75.86553" />
+					<Hotspot X="-2359.372" Y="6166.311" Z="54.85738" />
+					<Hotspot X="-2472.514" Y="6112.156" Z="91.44241" />
+					<Hotspot X="-2520.17" Y="6168.524" Z="59.93992" />
+					<Hotspot X="-2448.083" Y="6270.667" Z="30.79221" />
+					<Hotspot X="-2537.342" Y="6289.539" Z="14.01005" />
+					<Hotspot X="-2564.469" Y="6237.028" Z="17.72677" />
+					<Hotspot X="-2592.667" Y="6187.735" Z="21.5922" />
+				</Hotspots>
+
+				</GrindArea>
+			</SetGrindArea>
+			<GrindTo Condition="Me.GetReputationLevelWith(978) &gt;= WoWUnitReaction.Exalted ||
+							(GetItemCount(25433) &gt;= 50 &amp;&amp; Me.GetReputationLevelWith(978) &gt;= WoWUnitReaction.Neutral) ||
+							Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3"
+				GoalText="Farming Ogres for Obsidian Warbeads" />
+			<CustomBehavior File="UserSettings" KillBetweenHotspots="False" />
+			<If Condition="Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3" >
+				<CustomBehavior File="ForceSetVendor" DoRepair="True" DoSell="True" />
+			</If>
+			
+			<If Condition="HasQuest(10476) &amp;&amp; IsQuestCompleted(10476)" >
+				<TurnIn Nav="Fly" QuestName="Fierce Enemies" QuestId="10476" TurnInName="Warden Moi'bff Jill" TurnInId="18408" />
+			</If>
+			
+			<While Condition="GetItemCount(25433) &gt;= 10 &amp;&amp; Me.GetReputationLevelWith(978) &gt;= WoWUnitReaction.Neutral" >
+				<CustomBehavior File="InteractWith" MobId="18408" MobState="Alive" NonCompeteDistance="0"
+					WaitTime="1000" X="-2565.747" Y="7274.146" Z="15.47959" />
+				<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+			</While>
+		</If>
+		
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" TerminateWhen="Unit(17138) != null || Unit(18064) != null || Me.GetReputationLevelWith(941) &gt;= WoWUnitReaction.Exalted ||
+				(GetItemCount(25433) &gt;= 50 &amp;&amp; Me.GetReputationLevelWith(941) &gt;= WoWUnitReaction.Neutral)" X="-788.6088" Y="7586.119" Z="51.40489" />
+			<CustomBehavior File="UserSettings" KillBetweenHotspots="True" />
+			<SetGrindArea>
+				<GrindArea>
+
+				<TargetMinLevel>60</TargetMinLevel>
+				<TargetMaxLevel>80</TargetMaxLevel>
+
+				<Factions>45 1693</Factions>
+
+				<Hotspots>
+					<Hotspot X="-788.6088" Y="7586.119" Z="51.40489" />
+					<Hotspot X="-829.7521" Y="7648.386" Z="44.20272" />
+					<Hotspot X="-822.3506" Y="7704.255" Z="39.48505" />
+					<Hotspot X="-822.2465" Y="7780.709" Z="35.17488" />
+					<Hotspot X="-769.418" Y="7828.897" Z="42.85569" />
+					<Hotspot X="-708.0261" Y="7832.783" Z="54.51163" />
+					<Hotspot X="-717.7397" Y="7758.558" Z="70.92342" />
+					<Hotspot X="-673.6508" Y="7752.404" Z="84.70916" />
+					<Hotspot X="-739.6505" Y="7691.665" Z="78.58963" />
+					<Hotspot X="-745.7587" Y="7635.672" Z="57.07924" />
+				</Hotspots>
+
+				</GrindArea>
+			</SetGrindArea>
+			<GrindTo Condition="Me.GetReputationLevelWith(941) &gt;= WoWUnitReaction.Exalted ||
+							(GetItemCount(25433) &gt;= 50 &amp;&amp; Me.GetReputationLevelWith(941) &gt;= WoWUnitReaction.Neutral) ||
+							Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3"
+				GoalText="Farming Ogres for Obsidian Warbeads" />
+				
+			<CustomBehavior File="UserSettings" KillBetweenHotspots="False" />
+			
+			<If Condition="Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3" >
+				<CustomBehavior File="ForceSetVendor" DoRepair="True" DoSell="True" />
+			</If>
+				
+			<If Condition="!HasQuest(10479) &amp;&amp; !IsQuestCompleted(10479)" >
+				<TurnIn Nav="Fly" QuestName="Proving Your Strength" QuestId="10479" TurnInName="Warden Bullrok" TurnInId="18407" />
+			</If>
+			
+			<While Condition="GetItemCount(25433) &gt;= 10 &amp;&amp; Me.GetReputationLevelWith(941) &gt;= WoWUnitReaction.Neutral" >
+				<CustomBehavior File="InteractWith" MobId="18407" MobState="Alive" NonCompeteDistance="0"
+					WaitTime="1000" X="-1358.138" Y="7211.298" Z="34.07729" />
+				<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+			</While>
+		</If>
+	</While>
+	
+	<If Condition="Me.IsHorde" >
+		<CustomBehavior File="Message" Text="Congratulations on reaching exalted with the Mag'har" LogColor="Orange" />
+	<Else>
+		<CustomBehavior File="Message" Text="Congratulations on reaching exalted with the Kurenai" LogColor="Orange" />
+	</Else>
+	</If>
+	
+</QuestOrder>
+</HBProfile>

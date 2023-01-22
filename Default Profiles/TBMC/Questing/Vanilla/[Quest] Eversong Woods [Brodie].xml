@@ -1,0 +1,239 @@
+<HBProfile>
+
+	<Name>Eversong Woods ($Rev$)</Name>
+	<MinLevel>4</MinLevel>
+	<MaxLevel>15</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>False</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+
+	<Mailboxes>
+		<Mailbox X="9500.135" Y="-6842.25" Z="16.40702" />
+		<Mailbox X="8719.927" Y="-6665.389" Z="70.21574" />
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Falconwing Square -->
+		<Vendor Name="Sleyin" Entry="18926" Type="Repair" X="9482.344" Y="-6805.512" Z="16.4937" />
+		<Vendor Name="Kyrenna" Entry="18929" Type="Food" X="9552.017" Y="-6825.112" Z="16.49393" />
+		<Vendor Name="Vara" Entry="16186" Type="Repair" X="9473.869" Y="-6845.838" Z="28.37909" />
+		<!-- Fairbreeze Village -->
+		<Vendor Name="Halis Dawnstrider" Entry="16444" Type="Food" X="8731.693" Y="-6656.498" Z="70.58613" />
+		<Vendor Name="Sathiel" Entry="16261" Type="Repair" X="8692.212" Y="-6639.568" Z="72.74725" />
+		<!-- Farstrider Retreat -->
+		<Vendor Name="Paelarin" Entry="16263" Type="Repair" X="8983.74" Y="-7443.48" Z="87.07597" />
+		<Vendor Name="Zalene Firstlight" Entry="16443" Type="Food" X="8990.876" Y="-7462.583" Z="86.68652" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="8472" Name="Major Malfunction" >
+	<Objective Type="CollectItem" ItemId="21808" CollectCount="6" >
+		<CollectFrom>
+			<Mob Name="Arcane Patroller" Id="15638" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="9774.053" Y="-6727.989" Z="0.06079133" />
+			<Hotspot X="9757.738" Y="-6814.75" Z="15.1751" />
+			<Hotspot X="9816.181" Y="-6806.507" Z="14.89831" />
+			<Hotspot X="9887.765" Y="-6770.129" Z="12.01179" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest QuestName="The Dwarven Spy" QuestId="8483" >
+	<Objective Type="CollectItem" ItemId="20764" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Prospector Anvilward" Id="15420" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="9288.754" Y="-6656.354" Z="31.83179" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest QuestName="Lost Armaments" QuestId="8480" >
+	<Objective Type="CollectItem" ItemId="22413" CollectCount="8" >
+		<CollectFrom>
+			<GameObject Name="Weapon Container" Id="181107" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="8727.127" Y="-6020.813" Z="7.572158" />
+			<Hotspot X="8713.812" Y="-6072.044" Z="13.22209" />
+			<Hotspot X="8691.811" Y="-6102.394" Z="17.0581" />
+			<Hotspot X="8749.129" Y="-6101.317" Z="20.04753" />
+			<Hotspot X="8723.976" Y="-6153.951" Z="14.02361" />
+			<Hotspot X="8757.019" Y="-6197.975" Z="11.64304" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="!HasQuest(8463) &amp;&amp; !IsQuestCompleted(8463)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Eversong Woods Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Falconwing Square Quests" LogColor="CornflowerBlue" />
+
+<!-- Unstable Mana Crystals/Wanted: Thaelis the Hungerer/Major Malfunction -->
+	<PickUp QuestName="Unstable Mana Crystals" QuestId="8463" GiverName="Aeldon Sunbrand" GiverId="15403" />
+	<PickUp QuestName="Wanted: Thaelis the Hungerer" QuestId="8468" GiverType="Object" GiverName="Wanted: Thaelis the Hungerer" 
+		GiverId="180918" X="9521.192" Y="-6860.127" Z="18.72193" />
+	<PickUp QuestName="Major Malfunction" QuestId="8472" GiverName="Magister Jaronis" GiverId="15418" />
+	<Objective QuestName="Unstable Mana Crystals" QuestId="8463" Type="CollectItem" ItemId="20743" CollectCount="6" />
+	<Objective QuestName="Wanted: Thaelis the Hungerer" QuestId="8468" Type="CollectItem" ItemId="21781" CollectCount="1" />
+	<Objective QuestName="Major Malfunction" QuestId="8472" Type="CollectItem" ItemId="21808" CollectCount="6" />
+	<TurnIn QuestName="Major Malfunction" QuestId="8472" TurnInName="Magister Jaronis" TurnInId="15418" />
+	<TurnIn QuestName="Wanted: Thaelis the Hungerer" QuestId="8468" TurnInName="Sergeant Kan'ren" TurnInId="16924" />
+	<TurnIn QuestName="Unstable Mana Crystals" QuestId="8463" TurnInName="Aeldon Sunbrand" TurnInId="15403" />
+	
+	<PickUp QuestName="Darnassian Intrusions" QuestId="9352" GiverName="Aeldon Sunbrand" GiverId="15403" />
+	<PickUp QuestName="Delivery to the North Sanctum" QuestId="8895" GiverName="Magister Jaronis" GiverId="15418" />
+	<TurnIn QuestName="Delivery to the North Sanctum" QuestId="8895" TurnInName="Ley-Keeper Caidanis" TurnInId="15405" />
+	
+	<PickUp QuestName="Malfunction at the West Sanctum" QuestId="9119" GiverName="Ley-Keeper Caidanis" GiverId="15405" />
+	<PickUp QuestName="Roadside Ambush" QuestId="9035" GiverName="Apprentice Ralen" GiverId="15941" />
+	<TurnIn QuestName="Roadside Ambush" QuestId="9035" TurnInName="Apprentice Meledor" TurnInId="15945" />
+
+<!-- Soaked Pages -->
+	<PickUp QuestName="Soaked Pages" QuestId="9062" GiverName="Apprentice Meledor" GiverId="15945" />
+	<Objective QuestName="Soaked Pages" QuestId="9062" Type="CollectItem" ItemId="22414" CollectCount="1" />
+	<TurnIn QuestName="Soaked Pages" QuestId="9062" TurnInName="Apprentice Meledor" TurnInId="15945" />
+	
+	<PickUp QuestName="Taking the Fall" QuestId="9064" GiverName="Apprentice Meledor" GiverId="15945" />
+	<TurnIn QuestName="Taking the Fall" QuestId="9064" TurnInName="Instructor Antheol" TurnInId="15970" />
+
+<!-- Swift Discipline -->
+	<PickUp QuestName="Swift Discipline" QuestId="9066" GiverName="Instructor Antheol" GiverId="15970" />
+	<CustomBehavior File="InteractWith" QuestId="9066" QuestObjectiveIndex="2" MobId="15941" InteractByUsingItemId="22473"
+		Range="10" MinRange="5" X="9187.997" Y="-6719.933" Z="26.03933" />
+	<CustomBehavior File="InteractWith" QuestId="9066" QuestObjectiveIndex="1" MobId="15945" InteractByUsingItemId="22473"
+		Range="10" MinRange="5" X="9038.511" Y="-6700.229" Z="12.76909" />
+	<TurnIn QuestName="Swift Discipline" QuestId="9066" TurnInName="Instructor Antheol" TurnInId="15970" />
+
+	<TurnIn QuestName="Malfunction at the West Sanctum" QuestId="9119" TurnInName="Ley-Keeper Velania" TurnInId="15401" />
+	<PickUp QuestName="Arcane Instability" QuestId="8486" GiverName="Ley-Keeper Velania" GiverId="15401" />
+	
+<!-- Darnassian Intrusions/Arcane Instability/Incriminating Documents -->
+	<Objective QuestName="Darnassian Intrusions" QuestId="9352" Type="KillMob" MobId="15968" KillCount="1" />
+	<If Condition="HasItem(20765)" >
+		<PickUp QuestName="Incriminating Documents" QuestId="8482" GiverType="Item" GiverId="20765" />
+	</If>
+	<Objective QuestName="Arcane Instability" QuestId="8486" Type="KillMob" MobId="15648" KillCount="5" />
+	<Objective QuestName="Arcane Instability" QuestId="8486" Type="KillMob" MobId="15647" KillCount="5" />
+	<TurnIn QuestName="Darnassian Intrusions" QuestId="9352" TurnInName="Ley-Keeper Velania" TurnInId="15401" />
+	<TurnIn QuestName="Arcane Instability" QuestId="8486" TurnInName="Ley-Keeper Velania" TurnInId="15401" />
+	<If Condition="HasQuest(8482)" >
+		<TurnIn QuestName="Incriminating Documents" QuestId="8482" TurnInName="Aeldon Sunbrand" TurnInId="15403" />
+	</If>
+
+<!-- The Dwarven Spy -->
+	<PickUp QuestName="The Dwarven Spy" QuestId="8483" GiverName="Aeldon Sunbrand" GiverId="15403" />
+	<If Condition="HasQuest(8483) &amp;&amp; !IsQuestCompleted(8483)" >
+		<CustomBehavior File="InteractWith" QuestId="8483" MobId="15420" InteractByGossipOptions="1,1" 
+			NonCompeteDistance="0" X="9294.647" Y="-6683.676" Z="22.42652" />
+		<RunTo X="9288.754" Y="-6656.354" Z="31.83179" />
+		<Objective QuestName="The Dwarven Spy" QuestId="8483" Type="CollectItem" ItemId="20764" CollectCount="1" />
+	</If>
+	<TurnIn QuestName="The Dwarven Spy" QuestId="8483" TurnInName="Aeldon Sunbrand" TurnInId="15403" />
+	
+	<PickUp QuestName="Fairbreeze Village" QuestId="9256" GiverName="Aeldon Sunbrand" GiverId="15403" />
+	<If Condition="HasQuest(9256)" >
+		<TurnIn QuestName="Fairbreeze Village" QuestId="9256" TurnInName="Ranger Degolien" TurnInId="15939" />
+		<CustomBehavior File="SetHearthstone" MobId="15397" X="8700.38" Y="-6638.36" Z="72.75" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Fairbreeze Village Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Situation at Sunsail Anchorage" QuestId="8892" GiverName="Ranger Degolien" GiverId="15939" />
+	<PickUp QuestName="Saltheril's Haven" QuestId="9395" GiverName="Magistrix Landra Dawnstrider" GiverId="16210" />
+	<PickUp QuestName="The Wayward Apprentice" QuestId="9254" GiverName="Magistrix Landra Dawnstrider" GiverId="16210" />
+	<PickUp QuestName="The Scorched Grove" QuestId="9258" GiverName="Ardeyn Riverwind" GiverId="16397" />
+	<PickUp QuestName="Ranger Sareyn" QuestId="9358" GiverName="Marniel Amberlight" GiverId="15397" />
+	<PickUp QuestName="Goods from Silvermoon City" QuestId="9130" GiverName="Sathiel" GiverId="16261" />
+	<PickUp QuestName="Pelt Collection" QuestId="8491" GiverName="Velan Brightoak" GiverId="15417" />
+	
+	<TurnIn QuestName="Goods from Silvermoon City" QuestId="9130" TurnInName="Skymaster Brightdawn" TurnInId="44036" />
+	<TurnIn QuestName="Ranger Sareyn" QuestId="9358" TurnInName="Ranger Sareyn" TurnInId="15942" />
+
+<!-- Defending Fairbreeze Village -->
+	<PickUp QuestName="Defending Fairbreeze Village" QuestId="9252" GiverName="Ranger Sareyn" GiverId="15942" />
+	<Objective QuestName="Defending Fairbreeze Village" QuestId="9252" Type="KillMob" MobId="15658" KillCount="4" />
+	<Objective QuestName="Defending Fairbreeze Village" QuestId="9252" Type="KillMob" MobId="15657" KillCount="4" />
+	<TurnIn QuestName="Defending Fairbreeze Village" QuestId="9252" TurnInName="Ranger Sareyn" TurnInId="15942" />
+
+	<PickUp QuestName="Runewarden Deryan" QuestId="9253" GiverName="Ranger Sareyn" GiverId="15942" />
+
+<!-- Pelt Collection -->
+	<Objective QuestName="Pelt Collection" QuestId="8491" Type="CollectItem" ItemId="20772" CollectCount="6" />
+	<TurnIn QuestName="Pelt Collection" QuestId="8491" TurnInName="Velan Brightoak" TurnInId="15417" />
+	
+	<TurnIn QuestName="Saltheril's Haven" QuestId="9395" TurnInName="Lord Saltheril" TurnInId="16144" />
+	
+	<PickUp QuestName="Grimscale Pirates!" QuestId="8886" GiverName="Captain Kelisendra" GiverId="15921" />
+	<PickUp QuestName="Lost Armaments" QuestId="8480" GiverName="Velendris Whitemorn" GiverId="15404" />
+	
+	<Objective QuestName="Lost Armaments" QuestId="8480" Type="CollectItem" ItemId="22413" CollectCount="8" />
+	<Objective QuestName="Situation at Sunsail Anchorage" QuestId="8892" Type="KillMob" MobId="15645" KillCount="5" />
+	<Objective QuestName="Situation at Sunsail Anchorage" QuestId="8892" Type="KillMob" MobId="16162" KillCount="5" />
+	
+	<Objective QuestName="Grimscale Pirates!" QuestId="8886" Type="CollectItem" ItemId="21771" CollectCount="6" />
+	<If Condition="HasItem(21776)" >
+		<PickUp QuestName="Captain Kelisendra's Lost Rutters" QuestId="8887" GiverType="Item" GiverId="21776" />
+	</If>
+	<TurnIn QuestName="Grimscale Pirates!" QuestId="8886" TurnInName="Captain Kelisendra" TurnInId="15921" />
+	<If Condition="HasQuest(8887)" >
+		<TurnIn QuestName="Captain Kelisendra's Lost Rutters" QuestId="8887" TurnInName="Captain Kelisendra" TurnInId="15921" />
+	</If>
+	<TurnIn QuestName="Lost Armaments" QuestId="8480" TurnInName="Velendris Whitemorn" TurnInId="15404" />
+	
+	<PickUp QuestName="Wretched Ringleader" QuestId="9076" GiverName="Velendris Whitemorn" GiverId="15404" />
+	<CustomBehavior File="CollectThings" QuestId="9076" MobId="16294" MobState="Alive" CollectItemId="22487" CollectItemCount="1" X="8757.638" Y="-6101.254" Z="73.08946" />
+	<TurnIn QuestName="Wretched Ringleader" QuestId="9076" TurnInName="Velendris Whitemorn" TurnInId="15404" />
+	
+	<TurnIn QuestName="Situation at Sunsail Anchorage" QuestId="8892" TurnInName="Ranger Degolien" TurnInId="15939" />
+	
+	<PickUp QuestName="Farstrider Retreat" QuestId="9359" GiverName="Ranger Degolien" GiverId="15939" />
+	
+	<TurnIn QuestName="The Wayward Apprentice" QuestId="9254" TurnInName="Apprentice Mirveda" TurnInId="15402" />
+	
+	<PickUp QuestName="Corrupted Soil" QuestId="8487" GiverName="Apprentice Mirveda" GiverId="15402" />
+	<Objective QuestName="Corrupted Soil" QuestId="8487" Type="CollectItem" ItemId="20771" CollectCount="8" />
+	<TurnIn QuestName="Corrupted Soil" QuestId="8487" TurnInName="Apprentice Mirveda" TurnInId="15402" />
+	
+	<TurnIn QuestName="Farstrider Retreat" QuestId="9359" TurnInName="Lieutenant Dawnrunner" TurnInId="15399" />
+	
+	<CustomBehavior File="Message" Text="Eversong Woods Quests Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

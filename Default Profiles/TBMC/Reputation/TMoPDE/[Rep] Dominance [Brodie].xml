@@ -1,0 +1,1049 @@
+<HBProfile>
+	<Name>Dominance Offensive ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+		<Blackspot X="-1964.895" Y="1994.898" Z="17.15557" Radius="4.92802" Height="2" />
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- Death on Two Legs -->
+   	<Quest Id="32123" Name="Death on Two Legs">
+		<Objective Type="KillMob" MobId="67354" MobId2="67425" MobId3="67913" KillCount="10">
+			<Hotspots>
+				<Hotspot X="-2205.11" Y="2423.12" Z="2.37" />
+				<Hotspot X="-2226.45" Y="2373.67" Z="3.19" />
+				<Hotspot X="-2256.07" Y="2312.30" Z="2.98" />
+			</Hotspots>
+		</Objective>
+   	</Quest>
+
+<!-- Worker Harassment -->
+   	<Quest Id="32132" Name="Worker Harassment">
+		<Objective Type="KillMob" MobId="67423"  KillCount="30">
+			<Hotspots>
+				<Hotspot X="-843.04" Y="-1018.12" Z="14.93" />
+				<Hotspot X="-805.61" Y="-970.17" Z="15.61" />
+				<Hotspot X="-775.84" Y="-1005.23" Z="23.68" />
+				<Hotspot X="-806.27" Y="-943.06" Z="15.52" />
+				<Hotspot X="-770.04" Y="-847.69" Z="13.22" />
+			</Hotspots>
+		</Objective>
+   	</Quest>
+
+<!-- Ogudei's Lieutenants -->
+   	<Quest Id="32343" Name="Ogudei's Lieutenants">
+		<Objective Type="CollectItem" ItemId="92736" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Gen-li, Twister of Words" Id="68169" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-816.82" Y="-975.38" Z="-82.32" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="CollectItem" ItemId="92375" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Meng-do, Strength of Mountains" Id="68170" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-816.82" Y="-975.38" Z="-82.32" />
+			</Hotspots>
+		</Objective>
+   	</Quest>
+
+<!-- Good Luck, Have Fun -->
+   	<Quest Id="32130" Name="Good Luck, Have Fun">
+		<Objective Type="CollectItem" ItemId="92474" CollectCount="10">
+			<CollectFrom>
+				<Mob Name="Shieldwall Vindicator" Id="67296" />
+				<Mob Name="Shieldwall Footman" Id="67304" />
+				<Mob Name="Shieldwall Rifleman" Id="67297" />
+				<Mob Name="Shieldwall Huntress" Id="67317" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-923.45" Y="-853.28" Z="6.31" />
+			</Hotspots>
+		</Objective>
+   	</Quest>
+
+<!-- Runnin On Empty -->
+	<Quest Id="32137" Name="Runnin On Empty">
+		<Objective Type="CollectItem" ItemId="91846" CollectCount="9">
+			<CollectFrom>
+				<GameObject Name="Distilled Fuel" Id="216314" />
+				<GameObject Name="Distilled Fuel" Id="216176" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-2033.483" Y="1754.825" Z="-0.2666285" />
+				<Hotspot X="-2119.656" Y="1785.014" Z="1.881254" />
+				<Hotspot X="-2123.813" Y="1758.504" Z="1.006732" />
+				<Hotspot X="-2102.939" Y="1718.518" Z="-2.081028" />
+				<Hotspot X="-2108.988" Y="1709.735" Z="-1.306956" />
+				<Hotspot X="-2144.143" Y="1698.098" Z="-1.823825" />
+				<Hotspot X="-2074.917" Y="1690.826" Z="-0.638281" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+ 
+<!-- Krasarang Steampot -->
+	<Quest Id="32199" Name="Krasarang Steampot">
+		<Objective Type="CollectItem" ItemId="91869" CollectCount="5">
+			<CollectFrom>
+				<Mob Name="Polluted Viseclaw Fry" Id="68583" />
+				<Mob Name="Polluted Viseclaw" Id="67896" />
+				<Mob Name="Polluted Viseclaw Scuttler" Id="68584" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-2049.798" Y="1782.826" Z="-0.7303758" />
+				<Hotspot X="-2119.979" Y="1781.818" Z="1.841014" />
+				<Hotspot X="-2219.958" Y="1826.19" Z="0.9225706" />
+				<Hotspot X="-2264.076" Y="1965.294" Z="1.989139" />
+				<Hotspot X="-2214.408" Y="1916.218" Z="-0.7799273" />
+				<Hotspot X="-2127.684" Y="1910.254" Z="-0.7461271" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- We Require More Minerals -->
+	<Quest Id="32131" Name="We Require More Minerals">
+		<Objective Type="CollectItem" ItemId="91823" CollectCount="20">
+			<CollectFrom>
+				<Mob Name="Shieldwall Engineer" Id="67441" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-691.89" Y="-684.78" Z="17.09" />
+				<Hotspot X="-684.04" Y="-771.36" Z="15.45" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+	
+<!-- Bilgewater Infiltrators -->
+	<Quest Id="32214" Name="Bilgewater Infiltrators">
+		<Objective Type="KillMob" MobId="67689" KillCount="10">
+			<Hotspots>
+				<Hotspot X="-2024.921" Y="2456.381" Z="6.846819" />
+				<Hotspot X="-1991.656" Y="2493.09" Z="8.411781" />
+				<Hotspot X="-2056.05" Y="2533.65" Z="8.923109" />
+				<Hotspot X="-2103.991" Y="2488.924" Z="4.671427" />
+				<Hotspot X="-2127.432" Y="2391.077" Z="5.737707" />
+				<Hotspot X="-2120.4" Y="2338.787" Z="6.366756" />
+				<Hotspot X="-2007.586" Y="2346.042" Z="5.885516" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+	
+<!-- Hard Counter -->
+	<Quest Id="32134" Name="Hard Counter">
+		<Objective Type="KillMob" MobId="67541" KillCount="2">
+			<Hotspots>
+				<Hotspot X="-913.1929" Y="-909.3918" Z="3.209585" />
+				<Hotspot X="-864.0526" Y="-918.2073" Z="6.283766" />
+				<Hotspot X="-895.9004" Y="-956.0966" Z="7.38683" />
+				<Hotspot X="-921.8217" Y="-1010.994" Z="10.17015" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="67545" KillCount="8">
+			<Hotspots>
+				<Hotspot X="-913.1929" Y="-909.3918" Z="3.209585" />
+				<Hotspot X="-864.0526" Y="-918.2073" Z="6.283766" />
+				<Hotspot X="-895.9004" Y="-956.0966" Z="7.38683" />
+				<Hotspot X="-921.8217" Y="-1010.994" Z="10.17015" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+	
+<!-- Power Metal -->
+   	<Quest Id="32141" Name="Power Metal">
+		<Objective Type="CollectItem" ItemId="91848" CollectCount="7">
+			<CollectFrom>
+				<GameObject Name="Energized Iron" Id="216178" />
+				<GameObject Name="Energized Iron Ore Chunk" Id="216716" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-2090.55" Y="1975.52" Z="24.65" />
+				<Hotspot X="-2067.24" Y="1945.62" Z="23.05" />
+				<Hotspot X="-2111.60" Y="1999.59" Z="5.97" />
+				<Hotspot X="-2116.60" Y="1968.47" Z="-1.06" />
+				<Hotspot X="-2107.06" Y="1927.64" Z="0.86" />
+				<Hotspot X="-2079.64" Y="1914.19" Z="2.91" />
+				<Hotspot X="-1955.44" Y="1861.40" Z="31.18" />
+				<Hotspot X="-1980.32" Y="1885.04" Z="23.13" />
+			</Hotspots>
+		</Objective>
+   	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<CustomBehavior File="RunMacro" Macro="/script SetCVar('AutoLootDefault', 1)" NumOfTimes="1" WaitTime="1000" />
+	<CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+
+	<If Condition="Me.IsAlliance" >
+		<CustomBehavior File="LoadProfile" ProfileName="[Rep] Shieldwall [Brodie]" />
+	</If>
+	
+	<If Condition="Me.MapId == 1" >
+		<CustomBehavior File="FlyTo" DestName="Org Portal" X="2013.813" Y="-4699.559" Z="28.61817" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="215424" Range="4.75" X="2014.819" Y="-4700.274" Z="28.62439" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+	</If>
+
+<!-- Starting Quests -->
+
+	<CustomBehavior File="Message" Text="Compiling Dominance Offensive Quests..." LogColor="Green" />
+
+	<If Condition="!IsAchievementCompleted(7929, 1)">
+		<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Domination Point H [Brodie]" />
+	</If>
+
+<CustomBehavior File="Message" Text="Beginning Dominance Offensive Quests." LogColor="Green" />
+
+	<If Condition="!HasQuest(32450) &amp;&amp; !HasQuest(32134) &amp;&amp; !HasQuest(32130) &amp;&amp;
+			!HasQuest(32133) &amp;&amp; !HasQuest(32132) &amp;&amp; !HasQuest(32135) &amp;&amp;
+			!HasQuest(32222) &amp;&amp; !HasQuest(32214) &amp;&amp; !HasQuest(32136) &amp;&amp;
+			!HasQuest(32199) &amp;&amp; !HasQuest(32343) &amp;&amp; !HasQuest(32342) &amp;&amp;
+			!HasQuest(32345) &amp;&amp; !HasQuest(32120) &amp;&amp; !HasQuest(32237) &amp;&amp;
+			!HasQuest(32137) &amp;&amp; !HasQuest(32235) &amp;&amp; !HasQuest(32126) &amp;&amp;
+			!HasQuest(32123) &amp;&amp; !HasQuest(32128) &amp;&amp; !HasQuest(32127) &amp;&amp;
+			!HasQuest(32141) &amp;&amp; !HasQuest(32197) &amp;&amp; !HasQuest(32221) &amp;&amp;
+			!HasQuest(32223) &amp;&amp; !HasQuest(32236) &amp;&amp; !HasQuest(32449) &amp;&amp;
+			!HasQuest(32118) &amp;&amp; !HasQuest(32138) &amp;&amp; !HasQuest(32139) &amp;&amp;
+			!HasQuest(32238)" >
+		<CustomBehavior File="Message" Text="Flying to Domination Point." LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1800.39" Y="2466.03" Z="24.58" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+	</If>
+
+<!-- Blood Guard Gro'tash -->
+	<While Condition="HasQuestAvailable(67880)" >
+		<CustomBehavior File="InteractWith" MobId="67880" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Brolic -->
+	<While Condition="HasQuestAvailable(67767)" >
+		<CustomBehavior File="InteractWith" MobId="67767" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Shokia -->
+	<While Condition="HasQuestAvailable(67618)" >
+		<CustomBehavior File="InteractWith" MobId="67618" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+	<If Condition="!HasQuest(32450) &amp;&amp; !HasQuest(32134) &amp;&amp; !HasQuest(32130) &amp;&amp;
+			!HasQuest(32133) &amp;&amp; !HasQuest(32132) &amp;&amp; !HasQuest(32135) &amp;&amp;
+			!HasQuest(32222) &amp;&amp; !HasQuest(32214) &amp;&amp; !HasQuest(32136) &amp;&amp;
+			!HasQuest(32199) &amp;&amp; !HasQuest(32343) &amp;&amp; !HasQuest(32342) &amp;&amp;
+			!HasQuest(32345) &amp;&amp; !HasQuest(32120) &amp;&amp; !HasQuest(32237) &amp;&amp;
+			!HasQuest(32137) &amp;&amp; !HasQuest(32235) &amp;&amp; !HasQuest(32126) &amp;&amp;
+			!HasQuest(32123) &amp;&amp; !HasQuest(32128) &amp;&amp; !HasQuest(32127) &amp;&amp;
+			!HasQuest(32141) &amp;&amp; !HasQuest(32197) &amp;&amp; !HasQuest(32221) &amp;&amp;
+			!HasQuest(32223) &amp;&amp; !HasQuest(32236) &amp;&amp; !HasQuest(32449) &amp;&amp;
+			!HasQuest(32118)" >
+		<CustomBehavior File="FlyTo" X="-1875.92" Y="2328.38" Z="9.44" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+	</If>
+
+<!-- Bounty Board -->
+	<While Condition="HasQuestAvailable(216322)" >
+		<CustomBehavior File="InteractWith" MobId="216322" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Rivett Clutchpop -->
+	<While Condition="HasQuestAvailable(67608)" >
+		<CustomBehavior File="InteractWith" MobId="67608" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Boss-Lady Trixel -->
+	<While Condition="HasQuestAvailable(67535)" >
+		<CustomBehavior File="InteractWith" MobId="67535" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Duke -->
+	<While Condition="HasQuestAvailable(67562)" >
+		<CustomBehavior File="InteractWith" MobId="67562" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- KICKERS -->
+	<If Condition="HasQuest(32450) || HasQuest(32449)" >
+		<CustomBehavior File="Message" Text="Starting Kicker Quest" LogColor="Green" />
+		<If Condition="Me.Location.Distance(new WoWPoint(-1819.04, 2471.87, 25.09)) &lt; 250" >
+			<CustomBehavior File="FlyTo" X="-1819.04" Y="2471.87" Z="25.09" />
+			<CustomBehavior File="ForcedDismount" />
+			<If Condition="(ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; u.Entry == 67648 &amp;&amp; u.Distance &lt;= 30))" >
+				<CustomBehavior File="InteractWith" MobId="67648" WaitForNpcs="False" Range="3" />
+				<CustomBehavior File="WaitTimer" WaitTime="3000" />
+			<ElseIf Condition="HasItem(92056)" >
+				<CustomBehavior File="FlyTo" X="-1819.04" Y="2471.87" Z="25.09" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(92056)" />
+				<CustomBehavior File="WaitTimer" WaitTime="3000" />
+				<CustomBehavior File="InteractWith" MobId="67648" WaitForNpcs="False" Range="3" />
+				<CustomBehavior File="WaitTimer" WaitTime="3000" />
+			</ElseIf>
+			<ElseIf Condition="GetItemCount(91838) &gt;= 5" >
+				<CustomBehavior File="FlyTo" X="-1784.86" Y="2447.03" Z="24.80" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" MobId="67751" InteractByBuyingItemId="92056" BuyItemCount="1" X="-1785.43" Y="2442.93" Z="25.23" />
+				<CustomBehavior File="FlyTo" X="-1819.04" Y="2471.87" Z="25.09" />
+				<CustomBehavior File="WaitTimer" WaitTime="3000" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(92056)" />
+				<CustomBehavior File="WaitTimer" WaitTime="3000" />
+				<CustomBehavior File="InteractWith" MobId="67648" WaitForNpcs="False" Range="3" />
+				<CustomBehavior File="WaitTimer" WaitTime="3000" />
+			</ElseIf>
+			</If>
+		</If>
+		<If Condition="Me.Location.Distance(new WoWPoint(-1184.37, -618.91, 23.9819)) &lt; 20" >
+			<RunTo X="-1183.228" Y="-610.1541" Z="23.77427" />
+		</If>
+		<CustomBehavior File="FlyTo" X="-1183.228" Y="-610.1541" Z="23.77427" />
+		<CustomBehavior File="ForcedDismount" /> 
+	</If>
+
+	<If Condition="HasQuest(32450)" >
+		<TurnIn QuestName="The Time Is Now" QuestId="32450" TurnInName="Shademaster Kiryn" TurnInId="67628" />
+	</If>
+
+	<If Condition="HasQuest(32449)" >
+		<CustomBehavior File="FlyTo" X="-1175.17" Y="-629.53" Z="24.11" />
+		<TurnIn QuestName="The Ruins of Ogudei" QuestId="32449" TurnInName="Belloc Brightblade" TurnInId="67847" />
+		<PickUp QuestName="Taking Advantage" QuestId="32118" GiverName="Belloc Brightblade" GiverId="67847" />
+		<CustomBehavior File="InteractWith" MobId="216491" WaitForNpcs="False" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<RunTo X="-681.50" Y="-873.57" Z="-84.43" />
+		<TurnIn QuestName="Taking Advantage" QuestId="32118" TurnInName="Kaelis Sunsoar" TurnInId="68274" />
+	</If>
+
+	<If Condition="HasQuest(32118)" >
+		<CustomBehavior File="FlyTo" X="-1172.48" Y="-624.09" Z="23.79" />
+		<CustomBehavior File="InteractWith" MobId="216491" WaitForNpcs="False" X="-1172.48" Y="-624.09" Z="23.79" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<RunTo X="-681.50" Y="-873.57" Z="-84.43" />
+		<TurnIn QuestName="Taking Advantage" QuestId="32118" TurnInName="Kaelis Sunsoar" TurnInId="68274" />
+	</If>
+
+<!-- Shademaster Kiryn -->
+	<While Condition="HasQuestAvailable(67628)" >
+		<CustomBehavior File="InteractWith" MobId="67628" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Zazzix Sparkrocket -->
+	<While Condition="HasQuestAvailable(67402)" >
+		<CustomBehavior File="InteractWith" MobId="67402" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Hero Killer -->
+	<If Condition="HasQuest(32135) &amp;&amp; !IsQuestCompleted(32135)" >
+		<CustomBehavior File="Message" Text="Starting Hero Killer" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-943.44" Y="-873.70" Z="1.14" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Hero Killer" QuestId="32135" Type="KillMob" MobId="67636" KillCount="1" X="-943.44" Y="-873.70" Z="1.14" />
+	</If>
+
+<!-- Good Luck, Have Fun -->
+	<If Condition="HasQuest(32130) &amp;&amp; !IsQuestCompleted(32130)" >
+		<CustomBehavior File="Message" Text="Starting Good Luck, Have Fun" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-943.44" Y="-873.70" Z="1.14" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Good Luck, Have Fun" QuestId="32130" Type="CollectItem" ItemId="92474" CollectCount="10" />
+	</If>
+	
+<!-- Hard Counter -->
+	<If Condition="HasQuest(32134) &amp;&amp; !IsQuestCompleted(32134)" >
+		<CustomBehavior File="Message" Text="Starting Hard Counter" LogColor="Green" />
+		<CustomBehavior File="FlyTo"  X="-892.36" Y="-910.21" Z="5.44" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Hard Counter" QuestId="32134" Type="KillMob" MobId="67541" KillCount="2" />
+		<Objective QuestName="Hard Counter" QuestId="32134" Type="KillMob" MobId="67545" KillCount="8" />
+	</If>
+
+<!-- Worker Harassment -->
+	<If Condition="HasQuest(32132) &amp;&amp; !IsQuestCompleted(32132)" >
+		<CustomBehavior File="Message" Text="Starting Worker Harassment" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-827.05" Y="-974.23" Z="18.55" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Worker Harassment" QuestId="32132" Type="KillMob" MobId="67423" KillCount="30" />
+	</If>
+
+<!-- We Require More Minerals -->
+	<If Condition="HasQuest(32131) &amp;&amp; !IsQuestCompleted(32131)" >
+		<CustomBehavior File="Message" Text="Starting We Require More Minerals" LogColor="Green" />
+		<CustomBehavior File="FlyTo"  X="-783.64" Y="-743.95" Z="12.00" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="We Require More Minerals" QuestId="32131" Type="CollectItem" ItemId="91823" CollectCount="20" />
+	</If>
+
+<!-- Sentry Wards -->
+	<If Condition="HasQuest(32133) &amp;&amp; !IsQuestCompleted(32133)" >
+		<CustomBehavior File="Message" Text="Starting Sentry Wards" LogColor="Green" />
+		<While Condition="!IsQuestCompleted(32133)" >
+			<If Condition="!IsObjectiveComplete(2,32133)" >
+				<CustomBehavior File="FlyTo" X="-1227.92" Y="-956.90" Z="16.07" />
+				<CustomBehavior File="FlyTo" X="-1146.11" Y="-1087.18" Z="5.15" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" QuestId="32133" MobId="67742" CollectionDistance="15" X="-1146.109" Y="-1087.181" Z="5.144545" WaitTime="1000" />	
+			</If>
+			<If Condition="!IsObjectiveComplete(1,32133)" >
+				<CustomBehavior File="FlyTo" X="-1097.306" Y="-1087.093" Z="16.22491" />
+				<CustomBehavior File="FlyTo" X="-1083.577" Y="-1108.683" Z="25.41268" />
+				<CustomBehavior File="FlyTo" X="-1082.221" Y="-1134.743" Z="13.61495" />
+				<CustomBehavior File="FlyTo" X="-966.2871" Y="-1066.585" Z="46.11906" />
+				<CustomBehavior File="FlyTo" X="-948.2597" Y="-1075.886" Z="14.86751" />
+				<CustomBehavior File="ForcedDismount" />
+				<RunTo X="-910.9766" Y="-1095.688" Z="14.84775" />
+				<CustomBehavior File="InteractWith" QuestId="32133" MobId="67744" CollectionDistance="15" X="-910.9766" Y="-1095.688" Z="14.84775" WaitTime="1000" />
+				<RunTo X="-947.4448" Y="-1075.943" Z="14.86842" />
+			</If>
+			<If Condition="!IsObjectiveComplete(3,32133)" >
+				<CustomBehavior File="FlyTo" X="-1079.62" Y="-1132.98" Z="13.62" />
+				<CustomBehavior File="ForcedDismount" />
+				<RunTo X="-1128.64" Y="-1161.94" Z="21.72" />
+				<CustomBehavior File="InteractWith" QuestId="32133" MobId="67743" CollectionDistance="15" X="-1131.242" Y="-1163.728" Z="21.72105" WaitTime="1000" />
+				<RunTo X="-1079.62" Y="-1132.98" Z="13.62" />
+			</If>
+		</While>
+	</If>
+
+<!-- Work Order: Iron -->
+	<If Condition="HasQuest(32140)" >
+		<CustomBehavior File="Message" Text="Starting Work Order: Iron" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2057.03" Y="1887.69" Z="0.94" />
+		<While Condition="HasQuest(32140)" >
+			<TurnIn QuestName="Work Order: Iron" QuestId="32140" TurnInName="Daxil Oregrind" TurnInId="67537" />
+		</While>
+
+		<!-- Daxil Oregrind -->
+		<While Condition="HasQuestAvailable(67537)" >
+			<CustomBehavior File="InteractWith" MobId="67537" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+
+		<!-- Bixy Buzzsaw -->
+		<If Condition="HasQuestAvailable(67554)" >
+			<PickUp QuestName="Bug Off" QuestId="32236" GiverName="Bixy Buzzsaw" GiverId="67554" />
+		</If>
+	</If>
+
+<!-- Work Order: Fuel -->
+	<If Condition="HasQuest(32136)">
+		<CustomBehavior File="Message" Text="Starting Work Order: Fuel" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1993.84" Y="1755.70" Z="2.13" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="HasQuest(32136)">
+			<TurnIn QuestName="Work Order: Fuel" QuestId="32136" TurnInName="Grizzle Gearslip" TurnInId="67542" />
+		</While>
+
+		<!-- Grizzle Gearslip -->
+		<While Condition="HasQuestAvailable(67542)" >
+			<CustomBehavior File="InteractWith" MobId="67542" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+
+		<!-- Bixy Buzzsaw -->
+		<While Condition="HasQuestAvailable(67553)" >
+			<CustomBehavior File="InteractWith" MobId="67553" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+	
+<!-- Work Order: Lumber -->
+	<If Condition="HasQuest(32138)">
+		<CustomBehavior File="Message" Text="Starting Work Order: Lumber" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1930.89" Y="1984.88" Z="9.93" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="HasQuest(32138)">
+			<TurnIn QuestName="Work Order: Lumber" QuestId="32138" TurnInName="Zino Quickchop" TurnInId="67534" />
+		</While>
+
+		<!-- Zino Quickchop -->
+		<While Condition="HasQuestAvailable(67534)" >
+			<CustomBehavior File="InteractWith" MobId="67534" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+
+		<!-- Bixy Buzzsaw -->
+		<While Condition="HasQuestAvailable(67533)" >
+			<CustomBehavior File="InteractWith" MobId="67533" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+	
+<!-- Stacked! -->
+	<If Condition="HasQuest(32139) &amp;&amp; !IsQuestCompleted(32139)">
+		<CustomBehavior File="Message" Text="Starting Stacked!" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1930.89" Y="1984.88" Z="9.93" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="CollectThings" QuestId="32139" CollectUntil="QuestComplete" ObjectId="216177" HuntingGroundRadius="100" NonCompeteDistance="2" PostInteractDelay="1000" >
+			<Hotspot X="-1984.842" Y="2016.927" Z="8.870264" />
+			<Hotspot X="-1968.908" Y="1967.277" Z="9.214913" />
+			<Hotspot X="-1995.995" Y="2001.503" Z="8.420388" />
+			<Hotspot X="-2012.881" Y="2051.05" Z="8.410788" />
+		</CustomBehavior>
+	</If>
+	
+<!-- Universal Remote-Explode -->
+	<If Condition="HasQuest(32238) &amp;&amp; !IsQuestCompleted(32238)">
+		<CustomBehavior File="Message" Text="Starting Universal Remote-Explode" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1930.89" Y="1984.88" Z="9.93" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="CombatUseItemOnV2" QuestId="32238" MobId="67967" ItemId="91902" ItemAppliesAuraId="133955" UseWhenMobMissingAuraId="133955" >
+			<HuntingGrounds>
+				<Hotspot X="-1984.842" Y="2016.927" Z="8.870264" />
+				<Hotspot X="-1968.908" Y="1967.277" Z="9.214913" />
+				<Hotspot X="-1995.995" Y="2001.503" Z="8.420388" />
+				<Hotspot X="-2012.881" Y="2051.05" Z="8.410788" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+	
+	<If Condition="HasQuest(32139) &amp;&amp; IsQuestCompleted(32139)" >
+		<CustomBehavior File="FlyTo" X="-1930.89" Y="1984.88" Z="9.93" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Stacked!" QuestId="32139" TurnInName="Zino Quickchop" TurnInId="67534" />
+	</If>
+	
+	<If Condition="HasQuest(32238) &amp;&amp; IsQuestCompleted(32238)" >
+		<CustomBehavior File="FlyTo" X="-1930.89" Y="1984.88" Z="9.93" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Universal Remote-Explode" QuestId="32238" TurnInName="Bixy Buzzsaw" TurnInId="67533" />
+	</If>
+
+<!-- Precious Resource -->
+	<If Condition="HasQuest(32237) &amp;&amp; !IsQuestCompleted(32237)">
+		<CustomBehavior File="Message" Text="Starting Precious Resource" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2011.34" Y="1732.65" Z="2.32" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="CollectThings" QuestId="32237" CollectUntil="QuestComplete" MobId="216253" HuntingGroundRadius="200" NonCompeteDistance="3" PostInteractDelay="1000" >
+			<Hotspot X="-2035.178" Y="1711.146" Z="7.181152" />
+		</CustomBehavior>
+	</If>
+
+<!-- Bug Off -->
+	<If Condition="HasQuest(32236) &amp;&amp; !IsQuestCompleted(32236)" >
+		<CustomBehavior File="Message" Text="Starting Bug Off" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2035.62" Y="1904.40" Z="0.44" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(32236)" >
+			<CustomBehavior File="CombatUseItemOnV2" QuestId="32236" MobId="67759" ItemId="93026" UseWhenMobHasHealthPercent="100" UseItemStrategy="UseItemContinuouslyOnTarget" WaitTimeAfterItemUse="3000" X="-2035.62" Y="1904.40" Z="0.44" />
+		</While>
+	</If>
+
+	<If Condition="HasQuest(32236) &amp;&amp; IsQuestCompleted(32236)" >
+		<CustomBehavior File="FlyTo" X="-2035.62" Y="1904.40" Z="0.44" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Bug Off" QuestId="32236" TurnInName="Bixy Buzzsaw" TurnInId="67554" />
+	</If>
+
+<!-- Power Metal -->
+	<If Condition="(HasQuest(32141) &amp;&amp; !IsQuestCompleted(32141))" >
+		<CustomBehavior File="Message" Text="Starting Power Metal" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2090.55" Y="1975.52" Z="24.65" />
+		<CustomBehavior File="CollectThings" QuestId="32141" CollectUntil="QuestComplete" ObjectId="216178" ObjectId2="216716" HuntingGroundRadius="100" NonCompeteDistance="5" >
+			<Hotspot X="-2090.55" Y="1975.52" Z="24.65" />
+			<Hotspot X="-2067.24" Y="1945.62" Z="23.05" />
+			<Hotspot X="-2111.60" Y="1999.59" Z="5.97" />
+			<Hotspot X="-2116.60" Y="1968.47" Z="-1.06" />
+			<Hotspot X="-2107.06" Y="1927.64" Z="0.86" />
+			<Hotspot X="-2079.64" Y="1914.19" Z="2.91" />
+			<Hotspot X="-1955.44" Y="1861.40" Z="31.18" />
+			<Hotspot X="-1980.32" Y="1885.04" Z="23.13" />
+		</CustomBehavior>
+	</If>
+
+<!-- Runnin On Empty -->
+	<If Condition="HasQuest(32137) &amp;&amp; !IsQuestCompleted(32137)" >
+		<CustomBehavior File="Message" Text="Starting Runnin On Empty" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2138.175" Y="1772.779" Z="0.03" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Runnin On Empty" QuestId="32137" Type="CollectItem" ItemId="91846" CollectCount="9" />
+	</If>
+	
+<!-- Mystery Meatloaf -->
+	<If Condition="HasQuest(32197) &amp;&amp; !IsQuestCompleted(32197)" >
+		<CustomBehavior File="Message" Text="Starting Mystery Meatloaf" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2138.175" Y="1772.779" Z="0.02675502" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Mystery Meatloaf" QuestId="32197" Type="CollectItem" ItemId="91874" CollectCount="7" />
+	</If>
+	
+	<If Condition="HasQuest(32197) &amp;&amp; IsQuestCompleted(32197)" >
+		<CustomBehavior File="FlyTo" X="-1922.754" Y="1731.3" Z="1.924688" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn QuestName="Mystery Meatloaf" QuestId="32197" TurnInName="Sezik Steampot" TurnInId="67536" />
+	</If>
+
+<!-- Krasarang Steampot -->
+	<If Condition="HasQuest(32199) &amp;&amp; !IsQuestCompleted(32199)" >
+		<CustomBehavior File="Message" Text="Starting Krasarang Steampot" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2138.175" Y="1772.779" Z="0.02675502" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Krasarang Steampot" QuestId="32199" Type="CollectItem" ItemId="91869" CollectCount="5" />
+	</If>
+
+	<If Condition="HasQuest(32237) &amp;&amp; IsQuestCompleted(32237) ||
+			HasQuest(32199) &amp;&amp; IsQuestCompleted(32199)">
+		<CustomBehavior File="FlyTo" X="-1993.84" Y="1755.70" Z="2.13" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="HasQuest(32199)" >
+			<TurnIn QuestName="Krasarang Steampot" QuestId="32199" TurnInName="Sezik Steampot" TurnInId="67536" />
+		</If>
+		<If Condition="HasQuest(32237)">
+			<TurnIn QuestName="Precious Resource" QuestId="32237" TurnInName="Bixy Buzzsaw" TurnInId="67553" />
+		</If>
+	</If>
+
+<!-- Wanted: Lieutenant Ethan Jacobson -->
+	<If Condition="(HasQuest(32223) &amp;&amp; !IsQuestCompleted(32223))" >
+		<CustomBehavior File="Message" Text="Starting Wanted: Lieutenant Ethan Jacobson" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2330.62" Y="2060.64" Z="7.52" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Wanted: Lieutenant Ethan Jacobson" QuestId="32223" Type="KillMob" MobId="68028" KillCount="1" />
+	</If>
+
+<!-- Wanted: Chief Engineer Cogwrench -->
+	<If Condition="HasQuest(32222) &amp;&amp; !IsQuestCompleted(32222)" >
+		<CustomBehavior File="Message" Text="Starting Wanted: Chief Engineer Cogwrench" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1711.18" Y="1932.07" Z="12.45" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Wanted: Chief Engineer Cogwrench" QuestId="32222" Type="KillMob" MobId="68012" KillCount="1" X="-1707.38" Y="1932.07" Z="13.00" />
+	</If>
+
+<!-- Bilgewater Infiltrators -->
+	<If Condition="HasQuest(32214) &amp;&amp; !IsQuestCompleted(32214)">
+		<CustomBehavior File="Message" Text="Starting Bilgewater Infiltrators" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2005.43" Y="2429.95" Z="4.09" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="!Me.HasAura(133937)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(92475)" />
+		</If>
+		<Objective QuestName="Bilgewater Infiltrators" QuestId="32214" Type="KillMob" MobId="67689" KillCount="10" />
+	</If>
+	
+<!-- Storming the Beach -->
+	<If Condition="(HasQuest(32221) &amp;&amp; !IsQuestCompleted(32221))" >
+		<CustomBehavior File="Message" Text="Starting Storming the Beach" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1930.89" Y="1984.88" Z="9.93" />
+		<Objective QuestName="Storming the Beach" QuestId="32221" Type="KillMob" MobId="67971" KillCount="10" />
+	</If>
+
+<!-- Flash! Aaaaaahhhh! -->
+	<If Condition="HasQuest(32235) &amp;&amp; !IsQuestCompleted(32235)">
+		<CustomBehavior File="Message" Text="Starting Flash! Aaaaaahhhh!" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1911.61" Y="2414.90" Z="57.35" />
+		<CustomBehavior File="InteractWith" MovementBy="ClickToMoveOnly" QuestId="32235" MobId="67359" PreInteractMountStrategy="Mount" InteractByUsingItemId="92019" 
+			NonCompeteDistance="0" CollectionDistance="3000" Range="30" MinRange="20" NumOfTimes="1000" WaitTime="1000" />
+	</If>
+
+<!-- Tear It Up -->
+	<If Condition="HasQuest(32126) &amp;&amp; !IsQuestCompleted(32126)">
+		<CustomBehavior File="Message" Text="Starting Tear It Up" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2227.53" Y="2369.53" Z="3.52" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="32126" MobId="67639" CollectionDistance="50" NumOfTimes="1000" >
+			<HuntingGrounds>
+				<Hotspot X="-2208.587" Y="2411.288" Z="2.277247" />
+				<Hotspot X="-2228.915" Y="2367.839" Z="3.576885" />
+				<Hotspot X="-2247.511" Y="2318.407" Z="1.530192" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+
+<!-- Death on Two Legs -->
+	<If Condition="HasQuest(32123) &amp;&amp; !IsQuestCompleted(32123)">
+		<CustomBehavior File="Message" Text="Starting Death on Two Legs" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2167.76" Y="2374.60" Z="3.86" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Death on Two Legs" QuestId="32123" Type="KillMob" MobId="67354" MobId2="67425" MobId3="67913" KillCount="10" />
+	</If>
+
+	<If Condition="HasQuest(32135) &amp;&amp; IsQuestCompleted(32135) ||
+			HasQuest(32130) &amp;&amp; IsQuestCompleted(32130) ||
+			HasQuest(32131) &amp;&amp; IsQuestCompleted(32131) ||
+			HasQuest(32133) &amp;&amp; IsQuestCompleted(32133) ||
+			HasQuest(32132) &amp;&amp; IsQuestCompleted(32132)">
+		<CustomBehavior File="Message" Text="Quests Completed. Returning to Domination Point." LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1183.228" Y="-610.1541" Z="23.77427" />
+		<CustomBehavior File="ForcedDismount" />
+	</If>
+
+	<If Condition="HasQuest(32135) &amp;&amp; IsQuestCompleted(32135)" >
+		<TurnIn QuestName="Hero Killer" QuestId="32135" TurnInName="Shademaster Kiryn" TurnInId="67628" />
+	</If>
+
+	<If Condition="HasQuest(32132) &amp;&amp; IsQuestCompleted(32132)" >
+		<TurnIn QuestName="Worker Harassment" QuestId="32132" TurnInName="Shademaster Kiryn" TurnInId="67628" />
+	</If>
+
+	<If Condition="HasQuest(32133) &amp;&amp; IsQuestCompleted(32133)" >
+		<TurnIn QuestName="Sentry Wards" QuestId="32133" TurnInName="Shademaster Kiryn" TurnInId="67628" />
+	</If>
+
+	<If Condition="HasQuest(32130) &amp;&amp; IsQuestCompleted(32130)" >
+		<TurnIn QuestName="Good Luck, Have Fun" QuestId="32130" TurnInName="Zazzix Sparkrocket" TurnInId="67402" />
+	</If>
+
+	<If Condition="HasQuest(32131) &amp;&amp; IsQuestCompleted(32131)" >
+		<TurnIn QuestName="We Require More Minerals" QuestId="32131" TurnInName="Zazzix Sparkrocket" TurnInId="67402" />
+	</If>
+
+	<If Condition="HasQuest(32235) &amp;&amp; IsQuestCompleted(32235) ||
+			HasQuest(32126) &amp;&amp; IsQuestCompleted(32126) ||
+			HasQuest(32123) &amp;&amp; IsQuestCompleted(32123)">
+		<CustomBehavior File="Message" Text="Quests Completed. Returning to Domination Point." LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1800.39" Y="2466.03" Z="24.58" />
+		<CustomBehavior File="ForcedDismount" />
+	</If>
+
+	<If Condition="HasQuest(32235) &amp;&amp; IsQuestCompleted(32235)" >
+		<TurnIn QuestName="Flash! Aaaaaahhhh!" QuestId="32235" TurnInName="Blood Guard Gro'tash" TurnInId="67880" />
+	</If>
+
+	<If Condition="HasQuest(32126) &amp;&amp; IsQuestCompleted(32126)" >
+		<TurnIn QuestName="Tear It Up" QuestId="32126" TurnInName="Brolic" TurnInId="67767" />
+	</If>
+
+	<If Condition="HasQuest(32123) &amp;&amp; IsQuestCompleted(32123)" >
+		<CustomBehavior File="ForcedMount" />
+		<CustomBehavior File="FlyTo" X="-1847.84" Y="2464.21" Z="26.81" />
+		<TurnIn QuestName="Death on Two Legs" QuestId="32123" TurnInName="Shokia" TurnInId="67618" />
+	</If>
+
+<!-- Blood Guard Gro'tash -->
+	<While Condition="HasQuestAvailable(67880)" >
+		<CustomBehavior File="InteractWith" MobId="67880" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Brolic -->
+	<While Condition="HasQuestAvailable(67767)" >
+		<CustomBehavior File="InteractWith" MobId="67767" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Another One Bites The Dust -->
+	<If Condition="HasQuest(32128) &amp;&amp; !IsQuestCompleted(32128)">
+		<CustomBehavior File="Message" Text="Starting Another One Bites The Dust" LogColor="Green" />
+		<If Condition="!IsObjectiveComplete(1,32128)" >
+			<CustomBehavior File="FlyTo" X="-2496.60" Y="2268.81" Z="27.23" />
+			<CustomBehavior File="FlyTo" X="-2503.57" Y="2264.48" Z="12.86" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="MyCTM" X="-2498.20" Y="2249.45" Z="12.60" />
+			<CustomBehavior File="MyCTM" X="-2508.49" Y="2244.65" Z="7.55" />
+			<CustomBehavior File="MyCTM" X="-2509.84" Y="2261.36" Z="7.55" />
+			<If Condition="HasQuest(32127) &amp;&amp; !IsObjectiveComplete(2,32127)" >
+				<CustomBehavior File="MyCTM" X="-2498.90" Y="2252.26" Z="7.55" />
+				<CustomBehavior File="MyCTM" X="-2496.95" Y="2231.44" Z="7.55" />
+				<Objective QuestName="All Dead, All Dead" QuestId="32127" Type="KillMob" MobId="67627" KillCount="1" X="-2496.95" Y="2231.44" Z="7.55" />
+				<CustomBehavior File="MyCTM" X="-2498.90" Y="2252.26" Z="7.55" />
+				<CustomBehavior File="MyCTM" X="-2509.84" Y="2261.36" Z="7.55" />
+			</If>
+			<CustomBehavior File="MyCTM" X="-2514.73" Y="2264.07" Z="7.55" />
+			<CustomBehavior File="MyCTM" X="-2513.87" Y="2279.05" Z="7.55" />
+			<CustomBehavior File="MyCTM" X="-2519.15" Y="2288.74" Z="4.29" />
+			<CustomBehavior File="MyCTM" X="-2515.77" Y="2263.14" Z="0.23" />
+			<CustomBehavior File="MyCTM" X="-2507.60" Y="2242.57" Z="0.23" />
+			<While Condition="!IsObjectiveComplete(1,32128)" >
+				<CustomBehavior File="InteractWith" ObjectType="GameObject" MobId="216231" QuestId="32128" CollectionDistance="100" WaitForNpcs="False" />
+			</While>
+			<CustomBehavior File="MyCTM" X="-2515.77" Y="2263.14" Z="0.23" />
+			<CustomBehavior File="MyCTM" X="-2519.15" Y="2288.74" Z="4.29" />
+			<CustomBehavior File="MyCTM" X="-2513.87" Y="2279.05" Z="7.55" />
+			<CustomBehavior File="MyCTM" X="-2514.73" Y="2264.07" Z="7.55" />
+			<CustomBehavior File="MyCTM" X="-2508.49" Y="2244.65" Z="7.55" />
+			<CustomBehavior File="MyCTM" X="-2498.20" Y="2249.45" Z="12.60" />
+			<CustomBehavior File="MyCTM" X="-2503.57" Y="2264.48" Z="12.86" />
+		</If>
+		<If Condition="!IsObjectiveComplete(2,32128)" >
+			<CustomBehavior File="FlyTo" X="-2455.07" Y="2382.04" Z="23.65" />
+			<CustomBehavior File="FlyTo" X="-2468.27" Y="2380.10" Z="12.97" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="MyCTM" X="-2466.94" Y="2366.77" Z="12.85" />
+			<CustomBehavior File="MyCTM" X="-2468.31" Y="2363.89" Z="12.57" />
+			<CustomBehavior File="MyCTM" X="-2479.30" Y="2367.17" Z="7.53" />
+			<CustomBehavior File="MyCTM" X="-2468.70" Y="2379.55" Z="7.53" />
+			<If Condition="HasQuest(32127) &amp;&amp; !IsObjectiveComplete(1,32127)" >
+				<CustomBehavior File="MyCTM" X="-2466.90" Y="2366.30" Z="7.53" />
+				<CustomBehavior File="MyCTM" X="-2477.98" Y="2351.81" Z="7.53" />
+				<Objective QuestName="All Dead, All Dead" QuestId="32127" Type="KillMob" MobId="67626" KillCount="1" X="-2496.95" Y="2231.44" Z="7.55" />
+				<CustomBehavior File="MyCTM" X="-2466.90" Y="2366.30" Z="7.53" />
+				<CustomBehavior File="MyCTM" X="-2468.70" Y="2379.55" Z="7.53" />
+			</If>
+			<CustomBehavior File="MyCTM" X="-2470.45" Y="2385.87" Z="7.53" />
+			<CustomBehavior File="MyCTM" X="-2459.64" Y="2396.56" Z="7.53" />
+			<CustomBehavior File="MyCTM" X="-2457.68" Y="2406.72" Z="4.27" />
+			<CustomBehavior File="MyCTM" X="-2472.47" Y="2386.50" Z="0.20" />
+			<CustomBehavior File="MyCTM" X="-2474.14" Y="2369.87" Z="0.20" />
+			<While Condition="!IsObjectiveComplete(2,32128)" >
+				<CustomBehavior File="InteractWith" ObjectType="GameObject" MobId="216231" QuestId="32128" CollectionDistance="100" WaitForNpcs="False" />
+			</While>
+			<CustomBehavior File="MyCTM" X="-2472.47" Y="2386.50" Z="0.20" />
+			<CustomBehavior File="MyCTM" X="-2457.68" Y="2406.72" Z="4.27" />
+			<CustomBehavior File="MyCTM" X="-2459.64" Y="2396.56" Z="7.53" />
+			<CustomBehavior File="MyCTM" X="-2470.45" Y="2385.87" Z="7.53" />
+			<CustomBehavior File="MyCTM" X="-2468.70" Y="2379.55" Z="7.53" />
+			<CustomBehavior File="MyCTM" X="-2479.20" Y="2368.50" Z="7.53" />
+			<CustomBehavior File="MyCTM" X="-2468.31" Y="2363.89" Z="12.57" />
+			<CustomBehavior File="MyCTM" X="-2466.94" Y="2366.77" Z="12.85" />
+			<CustomBehavior File="MyCTM" X="-2468.27" Y="2380.10" Z="12.97" />
+		</If>
+	</If>
+
+<!-- All Dead, All Dead -->
+	<If Condition="HasQuest(32127) &amp;&amp; !IsQuestCompleted(32127)">
+		<CustomBehavior File="Message" Text="Starting All Dead, All Dead" LogColor="Green" />
+		<If Condition="!IsObjectiveComplete(1,32127)" >
+			<CustomBehavior File="FlyTo" X="-2455.07" Y="2382.04" Z="23.65" />
+			<CustomBehavior File="FlyTo" X="-2468.27" Y="2380.10" Z="12.97" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="MyCTM" X="-2466.94" Y="2366.77" Z="12.85" />
+			<CustomBehavior File="MyCTM" X="-2468.31" Y="2363.89" Z="12.57" />
+			<CustomBehavior File="MyCTM" X="-2479.20" Y="2368.50" Z="7.53" />
+			<CustomBehavior File="MyCTM" X="-2468.70" Y="2379.55" Z="7.53" />
+			<CustomBehavior File="MyCTM" X="-2466.90" Y="2366.30" Z="7.53" />
+			<CustomBehavior File="MyCTM" X="-2477.98" Y="2351.81" Z="7.53" />
+			<Objective QuestName="All Dead, All Dead" QuestId="32127" Type="KillMob" MobId="67626" KillCount="1" X="-2496.95" Y="2231.44" Z="7.55" />
+			<CustomBehavior File="MyCTM" X="-2466.90" Y="2366.30" Z="7.53" />
+			<CustomBehavior File="MyCTM" X="-2468.70" Y="2379.55" Z="7.53" />
+			<CustomBehavior File="MyCTM" X="-2479.20" Y="2368.50" Z="7.53" />
+			<CustomBehavior File="MyCTM" X="-2468.31" Y="2363.89" Z="12.57" />
+			<CustomBehavior File="MyCTM" X="-2466.94" Y="2366.77" Z="12.85" />
+			<CustomBehavior File="MyCTM" X="-2468.27" Y="2380.10" Z="12.97" />
+		</If>
+		<If Condition="!IsObjectiveComplete(2,32127)" >
+			<CustomBehavior File="FlyTo" X="-2496.60" Y="2268.81" Z="27.23" />
+			<CustomBehavior File="FlyTo" X="-2503.57" Y="2264.48" Z="12.86" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="MyCTM" X="-2498.20" Y="2249.45" Z="12.60" />
+			<CustomBehavior File="MyCTM" X="-2508.49" Y="2244.65" Z="7.55" />
+			<CustomBehavior File="MyCTM" X="-2509.84" Y="2261.36" Z="7.55" />
+			<CustomBehavior File="MyCTM" X="-2466.90" Y="2366.30" Z="7.53" />
+			<CustomBehavior File="MyCTM" X="-2477.98" Y="2351.81" Z="7.53" />
+			<Objective QuestName="All Dead, All Dead" QuestId="32127" Type="KillMob" MobId="67627" KillCount="1" X="-2496.95" Y="2231.44" Z="7.55" />
+			<CustomBehavior File="MyCTM" X="-2498.90" Y="2252.26" Z="7.55" />
+			<CustomBehavior File="MyCTM" X="-2509.84" Y="2261.36" Z="7.55" />
+			<CustomBehavior File="MyCTM" X="-2508.49" Y="2244.65" Z="7.55" />
+			<CustomBehavior File="MyCTM" X="-2498.20" Y="2249.45" Z="12.60" />
+			<CustomBehavior File="MyCTM" X="-2503.57" Y="2264.48" Z="12.86" />
+		</If>
+	</If>
+
+<!-- Kaelis Sunsoar -->
+	<While Condition="HasQuestAvailable(68274)" >
+		<CustomBehavior File="InteractWith" MobId="68274" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton5" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Ogudei's Lieutenants -->
+	<If Condition="HasQuest(32343) &amp;&amp; !IsQuestCompleted(32343)">
+		<CustomBehavior File="Message" Text="Starting Ogudei's Lieutenants" LogColor="Green" />
+		<Objective QuestName="Ogudei's Lieutenants" QuestId="32343" Type="CollectItem" ItemId="92736" CollectCount="1" />
+		<Objective QuestName="Ogudei's Lieutenants" QuestId="32343" Type="CollectItem" ItemId="92735" CollectCount="1" />
+	</If>
+
+<!-- The Spirit Trap -->
+	<If Condition="HasQuest(32342) &amp;&amp; !IsQuestCompleted(32342)">
+		<CustomBehavior File="Message" Text="Starting The Spirit Trap" LogColor="Green" />
+		<CustomBehavior File="CollectThings" QuestId="32342" MobId="68061" MobState="Alive" CollectUntil="QuestComplete" HuntingGroundRadius="60" >
+			<Hotspot X="-776.16" Y="-937.45" Z="-64.27" />
+			<Hotspot X="-692.05" Y="-988.52" Z="-70.44" />
+			<Hotspot X="-595.68" Y="-999.29" Z="-65.76" />
+			<Hotspot X="-596.55" Y="-845.27" Z="-68.41" />
+		</CustomBehavior>
+	</If>
+
+<!-- We're Not Monsters! -->
+	<If Condition="HasQuest(32345) &amp;&amp; !IsQuestCompleted(32345)">
+		<CustomBehavior File="Message" Text="Starting We're Not Monsters" LogColor="Green" />
+		<Objective QuestName="We're Not Monsters" QuestId="32345" Type="KillMob" MobId="68074" KillCount="14" />
+	</If>
+	
+<!-- It Is a Mystery -->
+	<If Condition="HasQuest(32344) &amp;&amp; !IsQuestCompleted(32344)">
+		<CustomBehavior File="Message" Text="Starting It Is A Mystery" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<RunTo X="-638.0913" Y="-925.3087" Z="-64.07933" />
+		<RunTo X="-621.0759" Y="-939.0984" Z="-63.40317" />
+		<EnableBehavior Name="Pull" />
+	</If>
+	
+<!-- Kick 'em While They're Down -->
+	<If Condition="HasQuest(32348) &amp;&amp; !IsQuestCompleted(32348)">
+		<CustomBehavior File="Message" Text="Starting Kick 'em While They're Down" LogColor="Green" />
+		<Objective QuestName="Kick 'em While They're Down" QuestId="32348" Type="KillMob" MobId="67297" MobId2="68310" KillCount="12" />
+	</If>
+
+<!-- Legacy of Ogudei -->
+	<If Condition="HasQuest(32120) &amp;&amp; !IsQuestCompleted(32120)">
+		<CustomBehavior File="Message" Text="Starting Legacy of Ogudei" LogColor="Green" />
+		<Objective QuestName="Legacy of Ogudei" QuestId="32120" Type="CollectItem" ItemId="92704" CollectCount="5" />
+	</If>
+	
+	<If Condition="HasQuest(32343) &amp;&amp; IsQuestCompleted(32343) ||
+				HasQuest(32342) &amp;&amp; IsQuestCompleted(32342) ||
+				HasQuest(32345) &amp;&amp; IsQuestCompleted(32345) ||
+				HasQuest(32348) &amp;&amp; IsQuestCompleted(32348) ||
+				HasQuest(32344) &amp;&amp; IsQuestCompleted(32344) ||
+				HasQuest(32120) &amp;&amp; IsQuestCompleted(32120)" >
+		<CustomBehavior File="Message" Text="Quests Completed. Returning to Lower Ogudei." LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<MoveTo X="-681.50" Y="-873.57" Z="-84.43" />
+	</If>
+	
+	<If Condition="HasQuest(32343) &amp;&amp; IsQuestCompleted(32343)" >
+		<TurnIn QuestName="Ogudei's Lieutenants" QuestId="32343" TurnInName="Kaelis Sunsoar" TurnInId="68274" />
+	</If>
+	
+	<If Condition="HasQuest(32342) &amp;&amp; IsQuestCompleted(32342)" >
+		<TurnIn QuestName="The Spirit Trap" QuestId="32342" TurnInName="Kaelis Sunsoar" TurnInId="68274" />
+	</If>
+	
+	<If Condition="HasQuest(32345) &amp;&amp; IsQuestCompleted(32345)" >
+		<TurnIn QuestName="We're Not Monsters!" QuestId="32345" TurnInName="Kaelis Sunsoar" TurnInId="68274" />
+	</If>
+	
+	<If Condition="HasQuest(32348) &amp;&amp; IsQuestCompleted(32348)" >
+		<TurnIn QuestName="Kick 'em While They're Down" QuestId="32348" TurnInName="Kaelis Sunsoar" TurnInId="68274" />
+	</If>
+	
+	<If Condition="HasQuest(32120) &amp;&amp; IsQuestCompleted(32120)" >
+		<TurnIn QuestName="Legacy of Ogudei" QuestId="32120" TurnInName="Kaelis Sunsoar" TurnInId="68274" />
+	</If>
+	
+	<If Condition="HasQuest(32344) &amp;&amp; IsQuestCompleted(32344)" >
+		<TurnIn QuestName="It Is A Mystery" QuestId="32344" TurnInName="Kaelis Sunsoar" TurnInId="68274" />
+	</If>
+	
+	<If Condition="Me.Location.Distance(new WoWPoint(-681.36, -873.96, -84.45)) &lt; 30" >
+		<RunTo X="-684.42" Y="-875.02" Z="-84.48" />
+		<CustomBehavior File="InteractWith" MobId="216492" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+	</If>
+	
+	<EnableBehavior Name="Pull" />
+
+	<If Condition="HasQuest(32214) &amp;&amp; IsQuestCompleted(32214) ||
+			HasQuest(32199) &amp;&amp; IsQuestCompleted(32199) ||
+			HasQuest(32137) &amp;&amp; IsQuestCompleted(32137) ||
+			HasQuest(32222) &amp;&amp; IsQuestCompleted(32222) ||
+			HasQuest(32221) &amp;&amp; IsQuestCompleted(32221)" >
+		<CustomBehavior File="Message" Text="Quests Completed. Returning to Domination Point, East." LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1875.92" Y="2328.38" Z="9.44" />
+		<CustomBehavior File="ForcedDismount" />
+	</If>
+
+	<If Condition="HasQuest(32214) &amp;&amp; IsQuestCompleted(32214)" >
+		<TurnIn QuestName="Bilgewater Infiltrators" QuestId="32214" TurnInName="Rivett Clutchpop" TurnInId="67608" />
+	</If>
+	
+	<If Condition="HasQuest(32221) &amp;&amp; IsQuestCompleted(32221)" >
+		<TurnIn QuestName="Storming the Beach" QuestId="32221" TurnInName="Rivett Clutchpop" TurnInId="67608" />
+	</If>
+
+	<If Condition="HasQuest(32137) &amp;&amp; IsQuestCompleted(32137)" >
+		<TurnIn QuestName="Runnin On Empty" QuestId="32137" TurnInName="Boss-Lady Trixel" TurnInId="67535" />
+	</If>
+
+	<If Condition="HasQuest(32127) &amp;&amp; IsQuestCompleted(32127) ||
+			HasQuest(32128) &amp;&amp; IsQuestCompleted(32128) ||
+			HasQuest(32222) &amp;&amp; IsQuestCompleted(32222) ||
+			HasQuest(32223) &amp;&amp; IsQuestCompleted(32223)">
+		<CustomBehavior File="Message" Text="Quests Completed. Returning to Domination Point, West." LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1800.39" Y="2466.03" Z="24.58" />
+		<CustomBehavior File="ForcedDismount" />
+	</If>
+
+	<If Condition="HasQuest(32222) &amp;&amp; IsQuestCompleted(32222)" >
+		<TurnIn QuestName="Wanted: Chief Engineer Cogwrench" QuestId="32222" TurnInName="Blood Guard Gro'tash" TurnInId="67880" />
+	</If>
+	
+	<If Condition="HasQuest(32223) &amp;&amp; IsQuestCompleted(32223)" >
+		<TurnIn QuestName="Wanted: Lieutenant Ethan Jacobson" QuestId="32223" TurnInName="Blood Guard Gro'tash" TurnInId="67880" />
+	</If>
+
+	<If Condition="HasQuest(32128) &amp;&amp; IsQuestCompleted(32128)" >
+		<TurnIn QuestName="Another One Bites The Dust" QuestId="32128" TurnInName="Blood Guard Gro'tash" TurnInId="67880" />
+	</If>
+
+	<If Condition="HasQuest(32127) &amp;&amp; IsQuestCompleted(32127)" >
+		<TurnIn QuestName="All Dead, All Dead" QuestId="32127" TurnInName="Brolic" TurnInId="67767" />
+	</If>
+
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+
+	<CustomBehavior File="ForcedDismount" />
+	<If Condition="HasItem(60498)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60498)" WaitTime="1500" />
+	<ElseIf Condition="HasItem(93672)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93672)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(54452)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(54452)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(64488)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(6948)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1500" />
+	</ElseIf>
+	</If>
+
+<CustomBehavior File="UserDialog" Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of Dailies" />
+
+</QuestOrder>
+</HBProfile>

@@ -1,0 +1,216 @@
+<HBProfile>
+	<Name>Flame Warden and Extinguishing - Northrend (Horde) ($Rev$)</Name>
+	<MinLevel>70</MinLevel>
+	<MaxLevel>100</MaxLevel>
+	
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<QuestOrder>
+
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Dalaran -->
+		<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326)) &gt;= 100" >
+			<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+			<CustomBehavior File="ForcedDismount" />
+		</If>
+		<UseMount Value="False" />
+		<CustomBehavior File="InteractWith" MobId="215127" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" WaitTime="10000" X="1732.343" Y="881.7467" Z="487.0864" />
+		<UseMount Value="True" />
+	</If>
+	
+	<!-- Needs conditional for Ghostlands -->
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557
+			&amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487" > <!-- Outlands, but not Azure/Bloodmyst/Exodar or Ghostlands/Eversong/Silvermoon -->
+		<CustomBehavior File="FlyTo" X="-163.8283" Y="973.4586" Z="54.29" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="195140" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" WaitTime="10000" X="-163.8283" Y="973.4586" Z="54.29" />
+	</If>
+	
+	<If Condition="Me.MapId == 0" >
+		<CustomBehavior File="FlyTo" X="2070.155" Y="289.2588" Z="97.0315" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="UseTransport" TransportId="164871"
+			WaitAtX="2070.155" WaitAtY="289.2588" WaitAtZ="97.0315" 
+			TransportStartX="2062.376" TransportStartY="292.998" TransportStartZ="114.973"
+			TransportEndX="1833.509" TransportEndY="-4391.543" TransportEndZ="152.7679"
+			StandOnX="2067.979" StandOnY="295.2747" StandOnZ="97.23677" 
+			GetOffX="1840.225" GetOffY="-4390.912" GetOffZ="135.2337" />
+	</If>
+	
+	<If Condition="Me.MapId == 1" >
+		<CustomBehavior File="FlyTo" X="1763.389" Y="-4283.858" Z="133.1073" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="UseTransport" TransportId="186238"
+			WaitAtX="1763.203" WaitAtY="-4284.529" WaitAtZ="133.1072"
+			TransportStartX="1775.066" TransportStartY="-4299.745" TransportStartZ="151.0326"
+			StandOnX="1770.22" StandOnY="-4292.056" StandOnZ="133.1872"
+			TransportEndX="2837.908" TransportEndY="6187.443" TransportEndZ="140.1648"
+			GetOffX="2836.831" GetOffY="6185.15" GetOffZ="121.9923" />
+	</If>
+
+	<!-- Bor'gorok Outpost - Borean Tundra (Keeper) -->
+	<While Condition="!IsQuestCompleted(13493)" >
+		<CustomBehavior File="InteractWith" MobId="32809" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13493)" WaitTime="1000"
+			X="4439.892" Y="5621.048" Z="55.71478" />
+		<If Condition="!IsQuestCompleted(13493)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Fizzcrank Airstrip - Borean Tundra (Extinguish) -->
+	<While Condition="!IsQuestCompleted(13440)" >
+		<CustomBehavior File="InteractWith" MobId="194032" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13440)" WaitTime="1000"
+			X="4123.968" Y="5399.146" Z="28.84127" />
+		<If Condition="!IsQuestCompleted(13440)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- River's Heart - Sholazar Basin (Extinguish) -->
+	<While Condition="!IsQuestCompleted(13442)" >
+		<CustomBehavior File="InteractWith" MobId="194035" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13442)" WaitTime="1000"
+			X="5368.633" Y="4831.057" Z="-197.6357" />
+		<If Condition="!IsQuestCompleted(13442)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+	
+	<!-- River's Heart - Sholazar Basin (Keeper) -->
+	<While Condition="!IsQuestCompleted(13494)" >
+		<CustomBehavior File="InteractWith" MobId="32810" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13494)" WaitTime="1000"
+			X="5496.193" Y="4866.287" Z="-198.1532" />
+		<If Condition="!IsQuestCompleted(13494)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<If Condition="Me.ZoneId == 3711" >
+		<CustomBehavior File="FlyTo" X="6106.92" Y="2078.80" Z="956.20" />
+	</If>
+
+	<!-- K3 - Storm Peaks (Extinguish) -->
+	<While Condition="!IsQuestCompleted(13446)" >
+		<CustomBehavior File="InteractWith" MobId="194044" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13446)" WaitTime="1000"
+			X="6090.094" Y="-1100.845" Z="416.2886" />
+		<If Condition="!IsQuestCompleted(13446)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- K3 - Storm Peaks (Keeper) -->
+	<While Condition="!IsQuestCompleted(13498)" >
+		<CustomBehavior File="InteractWith" MobId="32814" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13498)" WaitTime="1000"
+			X="6142.439" Y="-1020.48" Z="408.4789" />
+		<If Condition="!IsQuestCompleted(13498)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Sunreaver's Command - Crystalsong Forest (Keeper) -->
+	<While Condition="!IsQuestCompleted(13499)" >
+		<CustomBehavior File="InteractWith" MobId="32815" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13499)" WaitTime="1000"
+			X="5539.267" Y="-748.1262" Z="151.7633" />
+		<If Condition="!IsQuestCompleted(13499)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Windrunners Overlook - Crystalsong Forest (Extinguish) -->
+	<While Condition="!IsQuestCompleted(13447)" >
+		<CustomBehavior File="InteractWith" MobId="194045" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13447)" WaitTime="1000"
+			X="5147.867" Y="-687.2969" Z="169.7115" />
+		<If Condition="!IsQuestCompleted(13447)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Agmar's Hammer - Dragonblight (Keeper) -->
+	<While Condition="!IsQuestCompleted(13495)" >
+		<CustomBehavior File="InteractWith" MobId="32811" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13495)" WaitTime="1000"
+			X="3764.261" Y="1466.661" Z="92.67467" />
+		<If Condition="!IsQuestCompleted(13495)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Wintergarde Keep - Dragonblight (Extinguish) -->
+	<While Condition="!IsQuestCompleted(13443)" >
+		<CustomBehavior File="InteractWith" MobId="194036" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13443)" WaitTime="1000"
+			X="3940.71" Y="-591.5834" Z="240.8404" />
+		<If Condition="!IsQuestCompleted(13443)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Argent Stand - Zul'Drak (Extinguish) -->
+	<While Condition="!IsQuestCompleted(13449)" >
+		<CustomBehavior File="InteractWith" MobId="194049" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13449)" WaitTime="1000"
+			X="5628.038" Y="-2613.774" Z="292.4189" />
+		<If Condition="!IsQuestCompleted(13449)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Argent Stand - Zul'Drak (Keeper) -->
+	<While Condition="!IsQuestCompleted(13500)" >
+		<CustomBehavior File="InteractWith" MobId="32816" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13500)" WaitTime="1000"
+			X="5287.337" Y="-2757.071" Z="292.4192" />
+		<If Condition="!IsQuestCompleted(13500)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Amberpine Lodge - Grizzly Hills (Extinguish) -->
+	<While Condition="!IsQuestCompleted(13445)" >
+		<CustomBehavior File="InteractWith" MobId="194040" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13445)" WaitTime="1000"
+			X="3399.675" Y="-2886.461" Z="201.2697" />
+		<If Condition="!IsQuestCompleted(13445)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Conquest Hold - Grizzly Hills (Keeper) -->
+	<While Condition="!IsQuestCompleted(13497)" >
+		<CustomBehavior File="InteractWith" MobId="32813" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13497)" WaitTime="1000"
+			X="3374.573" Y="-2112.131" Z="123.3139" />
+		<If Condition="!IsQuestCompleted(13497)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Fort Wildervar - Howling Fjord (Extinguish) -->
+	<While Condition="!IsQuestCompleted(13444)" >
+		<CustomBehavior File="InteractWith" MobId="194038" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13444)" WaitTime="1000"
+			X="2465.15" Y="-4890.649" Z="261.8209" />
+		<If Condition="!IsQuestCompleted(13444)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Camp Winterhoof - Howling Fjord (Keeper) -->
+	<While Condition="!IsQuestCompleted(13496)" >
+		<CustomBehavior File="InteractWith" MobId="32812" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(13496)" WaitTime="1000"
+			X="2572.639" Y="-4332.419" Z="276.3951" />
+		<If Condition="!IsQuestCompleted(13496)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+</QuestOrder>
+</HBProfile>

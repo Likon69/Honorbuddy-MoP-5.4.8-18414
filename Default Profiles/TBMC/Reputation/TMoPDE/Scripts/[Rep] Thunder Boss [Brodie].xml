@@ -1,0 +1,390 @@
+<HBProfile>
+	<Name>Thunder Bosses ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+
+	<Mailboxes>
+	</Mailboxes>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+<!-- Competing Magic -->
+	<If Condition="HasQuest(32576) &amp;&amp; !IsQuestCompleted(32576)" >
+		<CustomBehavior File="Message" Text="Starting Competing Magic" LogColor="Green" />
+		<Objective QuestName="Competing Magic" QuestId="32576" Type="KillMob" MobId="69665" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32579) &amp;&amp; !IsQuestCompleted(32579)" >
+		<CustomBehavior File="Message" Text="Starting Competing Magic" LogColor="Green" />
+		<Objective QuestName="Competing Magic" QuestId="32579" Type="KillMob" MobId="69665" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32561) &amp;&amp; !IsQuestCompleted(32561)" >
+		<CustomBehavior File="Message" Text="Starting Competing Magic" LogColor="Green" />
+		<Objective QuestName="Competing Magic" QuestId="32561" Type="KillMob" MobId="69665" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32520) &amp;&amp; !IsQuestCompleted(32520)" >
+		<CustomBehavior File="Message" Text="Starting Competing Magic" LogColor="Green" />
+		<Objective QuestName="Competing Magic" QuestId="32520" Type="KillMob" MobId="69665" KillCount="1" />
+	</If>
+
+<!-- Among the Bones -->
+	<If Condition="HasQuest(32578) &amp;&amp; !IsQuestCompleted(32578)" >
+		<CustomBehavior File="Message" Text="Starting Among the Bones" LogColor="Green" />
+		<Objective QuestName="Among the Bones" QuestId="32578" Type="KillMob" MobId="69666" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32293) &amp;&amp; !IsQuestCompleted(32293)" >
+		<CustomBehavior File="Message" Text="Starting Among the Bones" LogColor="Green" />
+		<Objective QuestName="Among the Bones" QuestId="32293" Type="KillMob" MobId="69666" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32577) &amp;&amp; !IsQuestCompleted(32577)" >
+		<CustomBehavior File="Message" Text="Starting Imposing Threat" LogColor="Green" />
+		<Objective QuestName="Imposing Threat" QuestId="32577" Type="KillMob" MobId="70176" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32581) &amp;&amp; !IsQuestCompleted(32581)" >
+		<CustomBehavior File="Message" Text="Starting Imposing Threat" LogColor="Green" />
+		<Objective QuestName="Imposing Threat" QuestId="32581" Type="KillMob" MobId="70176" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32562) &amp;&amp; !IsQuestCompleted(32562)" >
+		<CustomBehavior File="Message" Text="Starting Imposing Threat" LogColor="Green" />
+		<Objective QuestName="Imposing Threat" QuestId="32562" Type="KillMob" MobId="70176" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32522) &amp;&amp; !IsQuestCompleted(32522)" >
+		<CustomBehavior File="Message" Text="Starting Imposing Threat" LogColor="Green" />
+		<Objective QuestName="Imposing Threat" QuestId="32522" Type="KillMob" MobId="70176" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32580) &amp;&amp; !IsQuestCompleted(32580)" >
+		<CustomBehavior File="Message" Text="Starting Encroaching Force" LogColor="Green" />
+		<Objective QuestName="Encroaching Force" QuestId="32580" Type="KillMob" MobId="69663" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32584) &amp;&amp; !IsQuestCompleted(32584)" >
+		<CustomBehavior File="Message" Text="Starting Encroaching Force" LogColor="Green" />
+		<Objective QuestName="Encroaching Force" QuestId="32584" Type="KillMob" MobId="69663" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32585) &amp;&amp; !IsQuestCompleted(32585)" >
+		<CustomBehavior File="Message" Text="Starting Encroaching Force" LogColor="Green" />
+		<Objective QuestName="Encroaching Force" QuestId="32585" Type="KillMob" MobId="69663" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32521) &amp;&amp; !IsQuestCompleted(32521)" >
+		<CustomBehavior File="Message" Text="Starting Encroaching Force" LogColor="Green" />
+		<Objective QuestName="Encroaching Force" QuestId="32521" Type="KillMob" MobId="69663" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32563) &amp;&amp; !IsQuestCompleted(32563)" >
+		<CustomBehavior File="Message" Text="Starting Encroaching Force" LogColor="Green" />
+		<Objective QuestName="Encroaching Force" QuestId="32563" Type="KillMob" MobId="69663" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32565) &amp;&amp; !IsQuestCompleted(32565)" >
+		<CustomBehavior File="Message" Text="Starting Encroaching Force" LogColor="Green" />
+		<Objective QuestName="Encroaching Force" QuestId="32565" Type="KillMob" MobId="69663" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32583) &amp;&amp; !IsQuestCompleted(32583)" >
+		<CustomBehavior File="Message" Text="Starting Zandalari on the Rise" LogColor="Green" />
+		<Objective QuestName="Zandalari on the Rise" QuestId="32583" Type="KillMob" MobId="69665" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32564) &amp;&amp; !IsQuestCompleted(32564)" >
+		<CustomBehavior File="Message" Text="Starting Zandalari on the Rise" LogColor="Green" />
+		<Objective QuestName="Zandalari on the Rise" QuestId="32564" Type="KillMob" MobId="69665" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32582) &amp;&amp; !IsQuestCompleted(32582)" >
+		<CustomBehavior File="Message" Text="Starting Raining Bones" LogColor="Green" />
+		<Objective QuestName="Raining Bones" QuestId="32582" Type="KillMob" MobId="69666" KillCount="1" />
+	</If>
+	
+	<If Condition="HasQuest(32294) &amp;&amp; !IsQuestCompleted(32294)" >
+		<CustomBehavior File="Message" Text="Starting Raining Bones" LogColor="Green" />
+		<Objective QuestName="Raining Bones" QuestId="32294" Type="KillMob" MobId="69666" KillCount="1" />
+	</If>
+
+<!-- Quest Turn Ins -->
+
+<!-- Alliance Phase 3 Turn In -->
+	<If Condition="HasQuest(32583) &amp;&amp; IsQuestCompleted(32583) ||
+					HasQuest(32582) &amp;&amp; IsQuestCompleted(32582) ||
+					HasQuest(32584) &amp;&amp; IsQuestCompleted(32584) ||
+					HasQuest(32585) &amp;&amp; IsQuestCompleted(32585)" >
+		<DisableBehavior Name="Pull, Combat" />
+		<If Condition="HasQuest(32583) &amp;&amp; IsQuestCompleted(32583)" >
+			<TurnIn QuestName="Zandalari on the Rise" QuestId="32583" TurnInName="Scout Captain Daelin" TurnInId="67998" />
+		</If>
+		<If Condition="HasQuest(32582) &amp;&amp; IsQuestCompleted(32582)" >
+			<TurnIn QuestName="Raining Bones" QuestId="32582" TurnInName="Scout Captain Daelin" TurnInId="67998" />
+		</If>
+		<If Condition="HasQuest(32585) &amp;&amp; IsQuestCompleted(32585)">
+			<TurnIn QuestName="Encroaching Force" QuestId="32585" TurnInName="Scout Captain Daelin" TurnInId="67998" />
+		</If>
+		<If Condition="HasQuest(32584) &amp;&amp; IsQuestCompleted(32584)">
+			<TurnIn QuestName="Encroaching Force" QuestId="32584" TurnInName="Scout Captain Daelin" TurnInId="67998" />
+		</If>
+		<If Condition="IsQuestCompleted(32644)" >
+			<If Condition="HasItem(95567) &amp;&amp; !(Me.Location.Distance(new WoWPoint(6134.63, 5008.49, 36.78)) &lt; 100)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(95567)" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<Else>
+				<RunTo X="6122.84" Y="4980.87" Z="36.89" />
+			</Else>
+			</If>
+		<ElseIf Condition="!IsQuestCompleted(32644)" >
+			<If Condition="HasItem(95567) &amp;&amp; !(Me.Location.Distance(new WoWPoint(5675.27, 6216.83, 13.02)) &lt; 100)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(95567)" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<ElseIf Condition="Me.Location.Distance(new WoWPoint(5675.27, 6216.83, 13.02)) &lt; 100" >
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			</ElseIf>
+			<Else>
+				<RunTo X="5840.453" Y="6349.841" Z="1.706437" />
+				<CustomBehavior File="InteractWith" MobId="218838" WaitForNpcs="True" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			</Else>
+			</If>
+		</ElseIf>
+		</If>
+	</If>
+
+<!-- Horde Phase 3 Turn In -->
+	<If Condition="HasQuest(32563) &amp;&amp; IsQuestCompleted(32563) ||
+					HasQuest(32565) &amp;&amp; IsQuestCompleted(32565) ||
+					HasQuest(32564) &amp;&amp; IsQuestCompleted(32564) ||
+					HasQuest(32294) &amp;&amp; IsQuestCompleted(32294)" >
+		<DisableBehavior Name="Pull, Combat" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<If Condition="HasQuest(32563) &amp;&amp; IsQuestCompleted(32563)">
+			<TurnIn QuestName="Encroaching Force" QuestId="32563" TurnInName="Scout Captain Elsia" TurnInId="67985" />
+		</If>
+		<If Condition="HasQuest(32565) &amp;&amp; IsQuestCompleted(32565)">
+			<TurnIn QuestName="Encroaching Force" QuestId="32565" TurnInName="Scout Captain Elsia" TurnInId="67985" />
+		</If>
+		<If Condition="HasQuest(32294) &amp;&amp; IsQuestCompleted(32294)">
+			<TurnIn QuestName="Raining Bones" QuestId="32294" TurnInName="Scout Captain Elsia" TurnInId="67985" />
+		</If>
+		<If Condition="HasQuest(32564) &amp;&amp; IsQuestCompleted(32564)">
+			<TurnIn QuestName="Zandalari On The Rise" QuestId="32564" TurnInName="Scout Captain Elsia" TurnInId="67985" />
+		</If>
+		<If Condition="IsQuestCompleted(32212)" >
+			<If Condition="HasItem(95568) &amp;&amp; !(Me.Location.Distance(new WoWPoint(7198.78, 6285.94, 12.47)) &lt; 100)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(95568)" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<Else>
+				<RunTo X="7167.23" Y="6309.77" Z="16.02" />
+			</Else>
+			</If>
+		<ElseIf Condition="!IsQuestCompleted(32212)" >
+			<If Condition="HasItem(95568) &amp;&amp; !(Me.Location.Distance(new WoWPoint(6712.60, 6481.39, 4.85)) &lt; 100)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(95568)" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<ElseIf Condition="Me.Location.Distance(new WoWPoint(6712.60, 6481.39, 4.85)) &lt; 100" >
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			</ElseIf>
+			<Else>
+				<RunTo X="6691.65" Y="6286.90" Z="1.52" />
+				<CustomBehavior File="InteractWith" MobId="218840" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			</Else>
+			</If>
+		</ElseIf>
+		</If>
+	</If>
+	
+	<EnableBehavior Name="Pull, Combat" />
+	
+<!-- Alliance Return to Base-->
+	<If Condition="HasQuest(32576) &amp;&amp; IsQuestCompleted(32576) ||
+					HasQuest(32579) &amp;&amp; IsQuestCompleted(32579) ||
+					HasQuest(32578) &amp;&amp; IsQuestCompleted(32578) ||
+					HasQuest(32577) &amp;&amp; IsQuestCompleted(32577) ||
+					HasQuest(32580) &amp;&amp; IsQuestCompleted(32580) ||
+					HasQuest(32584) &amp;&amp; IsQuestCompleted(32584) ||
+					HasQuest(32585) &amp;&amp; IsQuestCompleted(32585) ||
+					HasQuest(32581) &amp;&amp; IsQuestCompleted(32581)">
+		<If Condition="IsQuestCompleted(32644)" >
+			<If Condition="HasItem(95567) &amp;&amp; !(Me.Location.Distance(new WoWPoint(6134.63, 5008.49, 36.78)) &lt; 100)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(95567)" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<Else>
+				<RunTo X="6122.84" Y="4980.87" Z="36.89" />
+			</Else>
+			</If>
+		<ElseIf Condition="!IsQuestCompleted(32644)" >
+			<If Condition="HasItem(95567) &amp;&amp; !(Me.Location.Distance(new WoWPoint(5675.27, 6216.83, 13.02)) &lt; 100)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(95567)" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<ElseIf Condition="Me.Location.Distance(new WoWPoint(5675.27, 6216.83, 13.02)) &lt; 100" >
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			</ElseIf>
+			<Else>
+				<RunTo X="5840.453" Y="6349.841" Z="1.706437" />
+				<CustomBehavior File="InteractWith" MobId="218838" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			</Else>
+			</If>
+		</ElseIf>
+		</If>
+	</If>
+	
+<!-- Horde Return to Base-->
+	<If Condition="HasQuest(32561) &amp;&amp; IsQuestCompleted(32561) ||
+					HasQuest(32520) &amp;&amp; IsQuestCompleted(32520) ||
+					HasQuest(32293) &amp;&amp; IsQuestCompleted(32293) ||
+					HasQuest(32562) &amp;&amp; IsQuestCompleted(32562) ||
+					HasQuest(32521) &amp;&amp; IsQuestCompleted(32521) ||
+					HasQuest(32563) &amp;&amp; IsQuestCompleted(32563) ||
+					HasQuest(32565) &amp;&amp; IsQuestCompleted(32565) ||
+					HasQuest(32564) &amp;&amp; IsQuestCompleted(32564) ||
+					HasQuest(32522) &amp;&amp; IsQuestCompleted(32522)">
+		<If Condition="IsQuestCompleted(32212)" >
+			<If Condition="HasItem(95568) &amp;&amp; !(Me.Location.Distance(new WoWPoint(7198.78, 6285.94, 12.47)) &lt; 100)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(95568)" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<Else>
+				<RunTo X="7167.23" Y="6309.77" Z="16.02" />
+			</Else>
+			</If>
+		<ElseIf Condition="!IsQuestCompleted(32212)" >
+			<If Condition="HasItem(95568) &amp;&amp; !(Me.Location.Distance(new WoWPoint(6712.60, 6481.39, 4.85)) &lt; 100)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(95568)" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<ElseIf Condition="Me.Location.Distance(new WoWPoint(6712.60, 6481.39, 4.85)) &lt; 100" >
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			</ElseIf>
+			<Else>
+				<RunTo X="6691.65" Y="6286.90" Z="1.52" />
+				<CustomBehavior File="InteractWith" MobId="218840" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			</Else>
+			</If>
+		</ElseIf>
+		</If>
+	</If>
+	
+	<If Condition="HasQuest(32576) &amp;&amp; IsQuestCompleted(32576)">
+		<TurnIn QuestName="Competing Magic" QuestId="32576" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
+	</If>
+	
+	<If Condition="HasQuest(32579) &amp;&amp; IsQuestCompleted(32579)">
+		<TurnIn QuestName="Competing Magic" QuestId="32579" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
+	</If>
+	
+	<If Condition="HasQuest(32578) &amp;&amp; IsQuestCompleted(32578)">
+		<TurnIn QuestName="Among the Bones" QuestId="32578" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
+	</If>
+	
+	<If Condition="HasQuest(32577) &amp;&amp; IsQuestCompleted(32577)">
+		<TurnIn QuestName="Imposing Threat" QuestId="32577" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
+	</If>
+	
+	<If Condition="HasQuest(32581) &amp;&amp; IsQuestCompleted(32581)">
+		<TurnIn QuestName="Imposing Threat" QuestId="32581" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
+	</If>
+	
+	<If Condition="HasQuest(32580) &amp;&amp; IsQuestCompleted(32580)">
+		<TurnIn QuestName="Encroaching Force" QuestId="32580" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
+	</If>
+	
+	<If Condition="HasQuest(32584) &amp;&amp; IsQuestCompleted(32584)">
+		<TurnIn QuestName="Encroaching Force" QuestId="32584" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
+	</If>
+	
+	<If Condition="HasQuest(32561) &amp;&amp; IsQuestCompleted(32561)">
+		<TurnIn QuestName="Competing Magic" QuestId="32561" TurnInName="Lor'themar Theron" TurnInId="67990" />
+	</If>
+	
+	<If Condition="HasQuest(32520) &amp;&amp; IsQuestCompleted(32520)">
+		<TurnIn QuestName="Competing Magic" QuestId="32520" TurnInName="Lor'themar Theron" TurnInId="67990" />
+	</If>
+	
+	<If Condition="HasQuest(32293) &amp;&amp; IsQuestCompleted(32293)">
+		<TurnIn QuestName="Among the Bones" QuestId="32293" TurnInName="Lor'themar Theron" TurnInId="67990" />
+	</If>
+	
+	<If Condition="HasQuest(32562) &amp;&amp; IsQuestCompleted(32562)">
+		<TurnIn QuestName="Imposing Threat" QuestId="32562" TurnInName="Lor'themar Theron" TurnInId="67990" />
+	</If>
+	
+	<If Condition="HasQuest(32522) &amp;&amp; IsQuestCompleted(32522)">
+		<TurnIn QuestName="Imposing Threat" QuestId="32522" TurnInName="Lor'themar Theron" TurnInId="67990" />
+	</If>
+	
+	<If Condition="HasQuest(32521) &amp;&amp; IsQuestCompleted(32521)">
+		<TurnIn QuestName="Encroaching Force" QuestId="32521" TurnInName="Lor'themar Theron" TurnInId="67990" />
+	</If>
+	
+	<If Condition="HasQuest(32563) &amp;&amp; IsQuestCompleted(32563)">
+		<TurnIn QuestName="Encroaching Force" QuestId="32563" TurnInName="Lor'themar Theron" TurnInId="67990" />
+	</If>
+	
+	<If Condition="HasQuest(32565) &amp;&amp; IsQuestCompleted(32565)">
+		<TurnIn QuestName="Encroaching Force" QuestId="32565" TurnInName="Lor'themar Theron" TurnInId="67990" />
+	</If>
+	
+	<If Condition="HasQuest(32564) &amp;&amp; IsQuestCompleted(32564)">
+		<TurnIn QuestName="Zandalari on the Rise" QuestId="32564" TurnInName="Lor'themar Theron" TurnInId="67990" />
+	</If>
+
+<!-- Use Arcane Trove (Alliance Only) -->
+	<While Condition="HasItem(94219)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(94219)" WaitTime="1500" />
+	</While>
+	
+<!-- Use Sunreaver Bounty (Horde Only) -->
+	<While Condition="HasItem(94220)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(94220)" WaitTime="1500" />
+	</While>
+
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+	
+	<If Condition="Me.IsAlliance" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Isle of Thunder A [Brodie]" />
+	</If>
+	
+	<If Condition="Me.IsHorde" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Isle of Thunder H [Brodie]" />
+	</If>
+
+</QuestOrder>
+</HBProfile>

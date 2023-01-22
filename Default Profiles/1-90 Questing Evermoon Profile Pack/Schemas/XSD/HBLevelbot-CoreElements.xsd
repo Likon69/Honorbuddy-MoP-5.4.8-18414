@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <!--
+    =====
+    Original contribution by chinajade
+      $Rev: 3159 $
+      $Date: 2014-03-19 01:34:46 -0500 (Wed, 19 Mar 2014) $
+    
+    WARNING: DO NOT EDIT .xsd files.
+      They are not authoritative and will be overwritten!
+      Instead, regenerate the .xsd files from the .rnc 'sources'.
+      Its a one-line command to do this. Please see README.txt
+      for more information.
+    =====
+  -->
+  <!--
+    =====
+    Attributes
+  -->
+  <xs:attributeGroup name="Attributes-XYZ">
+    <xs:attribute name="X" use="required" type="xs:decimal"/>
+    <xs:attribute name="Y" use="required" type="xs:decimal"/>
+    <xs:attribute name="Z" use="required" type="xs:decimal"/>
+  </xs:attributeGroup>
+  <!--
+    =====
+    Elements
+  -->
+  <xs:element name="AbandonQuest">
+    <xs:complexType>
+      <xs:attribute name="QuestId" use="required" type="HBType-Id"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AvoidMobs">
+    <xs:complexType>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="Mob"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Blacklist">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:group ref="Blacklist_Mob"/>
+        <xs:group ref="Blacklist_Object"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:group name="Blacklist_Mob">
+    <xs:sequence>
+      <xs:element name="Mob">
+        <xs:complexType>
+          <xs:attribute name="Flags" type="HBType-BehaviorFlags"/>
+          <xs:attribute name="Id" use="required" type="HBType-Id"/>
+          <xs:attribute name="Name"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="Blacklist_Object">
+    <xs:sequence>
+      <xs:element name="Object">
+        <xs:complexType>
+          <xs:attribute name="Flags" type="HBType-BehaviorFlags"/>
+          <xs:attribute name="Id" use="required" type="HBType-Id"/>
+          <xs:attribute name="Name"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:element name="BlacklistedQuestGivers">
+    <xs:complexType>
+      <xs:attribute name="Id" use="required" type="HBType-Id"/>
+      <xs:attribute name="Name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Blackspot">
+    <xs:complexType>
+      <xs:attribute name="Height" type="xs:decimal"/>
+      <xs:attribute name="Name"/>
+      <xs:attribute name="Radius" type="HBType-DistancePositive"/>
+      <xs:attributeGroup ref="Attributes-XYZ"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AerialBlackspot">
+    <xs:complexType>
+      <xs:attribute name="Faction" type="HBType-Faction"/>
+      <xs:attributeGroup ref="Attributes-XYZ"/>
+      <xs:attribute name="MapId" type="HBType-MapId"/>
+      <xs:attribute name="Name"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:group name="Blackspots">
+    <xs:sequence>
+      <xs:element name="Blackspots">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="Blackspot"/>
+            <xs:element ref="AerialBlackspot"/>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:element name="Checkpoint">
+    <xs:complexType>
+      <xs:attribute name="Level" use="required" type="HBType-Level"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ClearGrindArea">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="ClearMailbox">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="ClearVendor">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="CollectFrom">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Mob">
+          <xs:complexType>
+            <xs:attributeGroup ref="CollectFrom_Entry"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Object">
+          <xs:complexType>
+            <xs:attributeGroup ref="CollectFrom_Entry"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Vendor">
+          <xs:complexType>
+            <xs:attributeGroup ref="CollectFrom_Entry"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="CollectFrom_Entry">
+    <xs:attribute name="Id" use="required" type="HBType-Id"/>
+    <xs:attribute name="Name"/>
+    <xs:attribute name="Type" type="HBType-CollectFromType"/>
+  </xs:attributeGroup>
+  <xs:element name="ContinentId" type="HBType-MapId"/>
+  <xs:element name="DisableBehavior">
+    <xs:complexType>
+      <xs:attribute name="Name" use="required" type="HBType-BehaviorFlags"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisableRepair">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="EnableBehavior">
+    <xs:complexType>
+      <xs:attribute name="Name" use="required" type="HBType-BehaviorFlags"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnableRepair">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="Factions">
+    <xs:simpleType>
+      <xs:restriction>
+        <xs:simpleType>
+          <xs:list itemType="HBType-Id"/>
+        </xs:simpleType>
+        <xs:minLength value="1"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ForceMail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Item"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Item">
+    <xs:complexType>
+      <xs:attribute name="Id" use="required" type="HBType-Id"/>
+      <xs:attribute name="Name"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="GrindArea">
+    <xs:sequence>
+      <xs:element ref="GrindArea"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GrindArea">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="Blacklist"/>
+        <xs:choice>
+          <xs:element ref="Factions"/>
+          <xs:element ref="MobIds"/>
+          <xs:choice>
+            <xs:element ref="Factions"/>
+            <xs:element ref="MobIds"/>
+          </xs:choice>
+          <xs:choice>
+            <xs:element ref="MobIds"/>
+            <xs:element ref="Factions"/>
+          </xs:choice>
+        </xs:choice>
+        <xs:element ref="LootMobs"/>
+        <xs:element ref="LootRadius"/>
+        <xs:element ref="MaximumHotspotTime"/>
+        <xs:element ref="MaxDistance"/>
+        <xs:element ref="Name"/>
+        <xs:element ref="RandomizeHotspots"/>
+        <xs:element ref="TargetElites"/>
+        <xs:element ref="TargetingDistance"/>
+        <xs:element ref="TargetMaxLevel"/>
+        <xs:element ref="TargetMinLevel"/>
+        <xs:element ref="UseMount"/>
+        <xs:element ref="Hotspots"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GrindTo">
+    <xs:complexType>
+      <xs:attribute name="Condition" type="HBType-Condition"/>
+      <xs:attribute name="Level" type="HBType-Level"/>
+      <xs:attribute name="GoalText"/>
+      <xs:attribute name="Nav" type="HBType-Nav"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:group name="Hotspot">
+    <xs:sequence>
+      <xs:element name="Hotspot">
+        <xs:complexType>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+          <xs:attribute name="Name"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:element name="Hotspots">
+    <xs:complexType>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="Hotspot"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="If">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:group minOccurs="0" maxOccurs="unbounded" ref="QuestOrder_Directives"/>
+        <xs:element ref="Else"/>
+        <xs:element ref="ElseIf"/>
+      </xs:choice>
+      <xs:attribute name="Condition" use="required" type="HBType-Condition"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Else">
+    <xs:complexType>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="QuestOrder_Directives"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ElseIf">
+    <xs:complexType>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="QuestOrder_Directives"/>
+      <xs:attribute name="Condition" use="required" type="HBType-Condition"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LootMobs">
+    <xs:complexType>
+      <xs:attribute name="Value" use="required" type="HBType-MetaBoolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LootRadius" type="HBType-MetaDecimalNonNegative"/>
+  <xs:element name="Mailboxes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Mailbox"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Mailbox">
+    <xs:complexType>
+      <xs:attribute name="Name"/>
+      <xs:attribute name="Nav" type="HBType-Nav"/>
+      <xs:attributeGroup ref="Attributes-XYZ"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MailBlue" type="HBType-Boolean"/>
+  <xs:element name="MailGreen" type="HBType-Boolean"/>
+  <xs:element name="MailGrey" type="HBType-Boolean"/>
+  <xs:element name="MailPurple" type="HBType-Boolean"/>
+  <xs:element name="MailWhite" type="HBType-Boolean"/>
+  <xs:element name="MaximumHotspotTime" type="HBType-TimeDuration"/>
+  <xs:element name="MaxDistance" type="HBType-DistancePositive"/>
+  <xs:element name="MaxLevel" type="HBType-Count"/>
+  <xs:element name="MinDurability">
+    <xs:simpleType>
+      <xs:restriction base="xs:decimal">
+        <xs:minInclusive value="0.0"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="MinFreeBagSlots" type="xs:nonNegativeInteger"/>
+  <xs:element name="MinLevel" type="HBType-Count"/>
+  <xs:group name="Mob">
+    <xs:sequence>
+      <xs:element name="Mob">
+        <xs:complexType>
+          <xs:attribute name="Id" use="required" type="HBType-Id"/>
+          <xs:attribute name="Name"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:element name="MobIds">
+    <xs:simpleType>
+      <xs:restriction>
+        <xs:simpleType>
+          <xs:list itemType="HBType-Id"/>
+        </xs:simpleType>
+        <xs:minLength value="1"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="MoveTo">
+    <xs:complexType>
+      <xs:attribute name="DestName"/>
+      <xs:attribute name="Nav" type="HBType-Nav"/>
+      <xs:attribute name="Precision" type="HBType-MetaDecimalNonNegative"/>
+      <xs:attribute name="QuestId" type="HBType-Id"/>
+      <xs:attributeGroup ref="Attributes-XYZ"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Name" type="xs:string"/>
+  <xs:group name="Object">
+    <xs:sequence>
+      <xs:element name="Object">
+        <xs:complexType>
+          <xs:attribute name="Id" use="required" type="HBType-Id"/>
+          <xs:attribute name="Name"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="Objective">
+    <xs:choice>
+      <xs:element name="Objective">
+        <xs:complexType>
+          <xs:attribute name="Type" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="CollectItem"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-ObjectiveCore"/>
+          <xs:attribute name="CollectCount" use="required" type="HBType-Count"/>
+          <xs:attribute name="ItemId" use="required" type="HBType-Id"/>
+          <xs:attribute name="ItemName"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Objective">
+        <xs:complexType>
+          <xs:attribute name="Type" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="KillMob"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-ObjectiveCore"/>
+          <xs:attribute name="KillCount" use="required" type="HBType-Count"/>
+          <xs:attribute name="MobId" use="required" type="HBType-Id"/>
+          <xs:attribute name="MobName"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Objective">
+        <xs:complexType>
+          <xs:attribute name="Type" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="UseObject"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-ObjectiveCore"/>
+          <xs:attribute name="ObjectId" use="required" type="HBType-Id"/>
+          <xs:attribute name="ObjectName"/>
+          <xs:attribute name="UseCount" use="required" type="HBType-Count"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="ObjectiveOverride">
+    <xs:choice>
+      <xs:element name="Objective">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="CollectFrom"/>
+            <xs:group ref="ObjectiveOverride_GrindArea"/>
+          </xs:sequence>
+          <xs:attribute name="Type" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="CollectItem"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="CollectCount" use="required" type="HBType-Count"/>
+          <xs:attribute name="ItemId" use="required" type="HBType-Id"/>
+          <xs:attribute name="ItemName"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Objective">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="CollectFrom"/>
+            <xs:group ref="ObjectiveOverride_GrindArea"/>
+          </xs:sequence>
+          <xs:attribute name="Type" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="KillMob"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="KillCount" use="required" type="HBType-Count"/>
+          <xs:attribute name="MobId" use="required" type="HBType-Id"/>
+          <xs:attribute name="MobName"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Objective">
+        <xs:complexType>
+          <xs:attribute name="Type" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="TurnIn"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Objective">
+        <xs:complexType>
+          <xs:group ref="ObjectiveOverride_GrindArea"/>
+          <xs:attribute name="Type" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="UseObject"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="ObjectId" use="required" type="HBType-Id"/>
+          <xs:attribute name="ObjectName"/>
+          <xs:attribute name="UseCount" use="required" type="HBType-Count"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="ObjectiveOverride_GrindArea">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="TargetMinLevel"/>
+        <xs:element ref="TargetMaxLevel"/>
+      </xs:choice>
+      <xs:element ref="Hotspots"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:element name="PickUp">
+    <xs:complexType>
+      <xs:attribute name="GiverId" use="required" type="HBType-Id"/>
+      <xs:attribute name="GiverName"/>
+      <xs:attribute name="GiverType" type="HBType-QuestGiverType"/>
+      <xs:attribute name="Nav" type="HBType-Nav"/>
+      <xs:attribute name="QuestId" use="required" type="HBType-Id"/>
+      <xs:attribute name="QuestName"/>
+      <xs:attribute name="X" type="xs:decimal"/>
+      <xs:attribute name="Y" type="xs:decimal"/>
+      <xs:attribute name="Z" type="xs:decimal"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProtectedItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Item"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Quest">
+    <xs:complexType>
+      <xs:group maxOccurs="unbounded" ref="ObjectiveOverride"/>
+      <xs:attribute name="Id" use="required" type="HBType-Id"/>
+      <xs:attribute name="Name"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QuestOrder">
+    <xs:complexType>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="QuestOrder_Directives"/>
+      <xs:attribute name="IgnoreCheckpoints" type="HBType-Boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:group name="QuestOrder_Directives">
+    <xs:sequence>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="AbandonQuest"/>
+        <xs:element ref="Checkpoint"/>
+        <xs:element ref="ClearGrindArea"/>
+        <xs:element ref="ClearMailbox"/>
+        <xs:element ref="ClearVendor"/>
+        <xs:group ref="CustomBehavior"/>
+        <xs:element ref="DisableBehavior"/>
+        <xs:element ref="DisableRepair"/>
+        <xs:element ref="EnableBehavior"/>
+        <xs:element ref="EnableRepair"/>
+        <xs:element ref="GrindTo"/>
+        <xs:element ref="If"/>
+        <xs:element ref="LootMobs"/>
+        <xs:element ref="LootRadius"/>
+        <xs:element ref="MoveTo"/>
+        <xs:group ref="Objective"/>
+        <xs:element ref="PickUp"/>
+        <xs:element ref="SetGrindArea"/>
+        <xs:element ref="SetMailbox"/>
+        <xs:element ref="SetVendor"/>
+        <xs:element ref="TargetingDistance"/>
+        <xs:element ref="TurnIn"/>
+        <xs:element ref="UseItem"/>
+        <xs:element ref="UseMount"/>
+        <xs:element ref="While"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  <xs:element name="RandomizeHotspots" type="HBType-Boolean"/>
+  <xs:element name="SellBlue" type="HBType-Boolean"/>
+  <xs:element name="SellGreen" type="HBType-Boolean"/>
+  <xs:element name="SellGrey" type="HBType-Boolean"/>
+  <xs:element name="SellPurple" type="HBType-Boolean"/>
+  <xs:element name="SellWhite" type="HBType-Boolean"/>
+  <xs:element name="SetGrindArea" type="GrindArea"/>
+  <xs:element name="SetMailbox">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Mailboxes"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetVendor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Vendors"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TargetingDistance">
+    <xs:complexType>
+      <xs:attribute name="Value" type="HBType-MetaDecimalNonNegative"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TargetElites" type="HBType-Boolean"/>
+  <xs:element name="TargetMinLevel" type="HBType-Count"/>
+  <xs:element name="TargetMaxLevel" type="HBType-Count"/>
+  <xs:element name="TurnIn">
+    <xs:complexType>
+      <xs:attribute name="QuestId" use="required" type="HBType-Id"/>
+      <xs:attribute name="QuestName"/>
+      <xs:attribute name="Nav" type="HBType-Nav"/>
+      <xs:attribute name="TurnInId" type="HBType-Id"/>
+      <xs:attribute name="TurnInName"/>
+      <xs:attribute name="TurnInType" type="HBType-QuestTurnInType"/>
+      <xs:attribute name="X" type="xs:decimal"/>
+      <xs:attribute name="Y" type="xs:decimal"/>
+      <xs:attribute name="Z" type="xs:decimal"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UseItem">
+    <xs:complexType>
+      <xs:attribute name="ItemId" use="required" type="HBType-Id"/>
+      <xs:attribute name="Nav" type="HBType-Nav"/>
+      <xs:attribute name="QuestId" use="required" type="HBType-Id"/>
+      <xs:attribute name="QuestName"/>
+      <xs:attribute name="TargetId" type="HBType-Id"/>
+      <xs:attribute name="TargetType" type="HBType-UseItemType"/>
+      <xs:attributeGroup ref="Attributes-XYZ"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UseMount">
+    <xs:complexType>
+      <xs:attribute name="Value" use="required" type="HBType-Boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Vendor">
+    <xs:complexType>
+      <xs:attribute name="Id" use="required" type="HBType-Id"/>
+      <xs:attribute name="Name" use="required"/>
+      <xs:attribute name="Nav" type="HBType-Nav"/>
+      <xs:attribute name="TrainClass" type="HBType-TrainClass"/>
+      <xs:attribute name="Type" type="HBType-VendorType"/>
+      <xs:attribute name="X" type="xs:decimal"/>
+      <xs:attribute name="Y" type="xs:decimal"/>
+      <xs:attribute name="Z" type="xs:decimal"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Vendors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Vendor"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="While">
+    <xs:complexType>
+      <xs:group minOccurs="0" maxOccurs="unbounded" ref="QuestOrder_Directives"/>
+      <xs:attribute name="Condition" use="required" type="HBType-Condition"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

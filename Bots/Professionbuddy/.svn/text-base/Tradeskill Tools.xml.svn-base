@@ -1,0 +1,110 @@
+﻿<TradeskillTools>
+    <!-- Don't bother editing this file since it'll get overriden anyways. Just send me any tools not listed in here. -->
+    
+    <!-- Trade Tools: Blacksmithing (also see Trade Tools: Multi-purpose) -->
+    <Item Name="Blacksmith Hammer" Entry="5956" />
+
+    <!-- Trade Tools: Cooking -->
+    <Item Name="Simple Wood" Entry="4470" />
+    <Item Name="Frying Pan" Entry="86559" />
+
+    <!-- Trade Tools: Enchanting (ordered by skill to use) -->
+    <Item Name="Runed Copper Rod" Entry="6218" />
+    <Item Name="Runed Silver Rod" Entry="6339" />
+    <Item Name="Runed Truesilver Rod" Entry="11145" />
+    <Item Name="Runed Golden Rod" Entry="11130" />
+    <Item Name="Runed Arcanite Rod" Entry="16207" />
+    <Item Name="Runed Fel Iron Rod" Entry="22461" />
+    <Item Name="Runed Adamantite Rod" Entry="22462" />
+    <Item Name="Runed Eternium Rod" Entry="22463" />
+    <Item Name="Runed Titanium Rod" Entry="44452" />
+    <Item Name="Runed Elementium Rod" Entry="92370" />
+    <Item Name="Ghost Iron Rod" Entry="82981" />
+
+    <!-- Trade Tools: Engineering (alphabetical) -->
+    <Item Name="Authentic Jr. Engineer Goggles" Entry="84406" />
+    <Item Name="Delicate Arcanite Converter" Entry="16006" />
+    <Item Name="Dimensional Ripper - Area 52" Entry="30542" />
+    <Item Name="Dimensional Ripper - Everlook" Entry="18984" />
+    <Item Name="Electrified Ether" Entry="94748" />
+    <Item Name="Electrostatic Condenser" Entry="95703" />
+    <Item Name="Engineer's Ink" Entry="10647" />
+    <Item Name="Field Repair Bot 74A" Entry="18232" />
+    <Item Name="Field Repair Bot 110G" Entry="34113" />
+    <Item Name="Gnomish Army Knife" Entry="40772" />
+    <Item Name="Goblin Barbecue" Entry="84429" />
+    <Item Name="Goblin Jumper Cables" Entry="7148" />
+    <Item Name="Goblin Jumper Cables XL" Entry="18587" />
+    <Item Name="Heat-Treated Spinning Lure" Entry="84430" />
+    <Item Name="Jeeves" Entry="49040" />
+    <Item Name="MOLL-E" Entry="40768" />
+    <Item Name="Scrapbot Construction Kit" Entry="40769" />
+    <Item Name="Ultrasafe Transporter: Gadgetzan" Entry="18986" />
+    <Item Name="Ultrasafe Transporter: Toshley's Station" Entry="30544" />
+    <Item Name="Wormhole Generator: Northrend" Entry="48933" />
+    <Item Name="Zapthrottle Mote Extractor" Entry="23821" />
+    <Item Name="Wormhole Generator: Pandaria" Entry="87215" />
+    <Item Name="Blingtron 4000" Entry="87214" />
+    <Item Name="Gyromatic Micro-Adjustor" Entry="10498" />
+    <Item Name="Arclight Spanner" Entry="6219" />
+
+    <!-- Trade Tools: Fishing (alphabetical) -->
+    <Item Name="Arcanite Fishing Pole" Entry="19970" />
+    <Item Name="Big Iron Fishing Pole" Entry="6367" />
+    <Item Name="Blump Family Fishing Pole" Entry="12225" />
+    <Item Name="Bone Fishing Pole" Entry="45991" />
+    <Item Name="Boots of the Bay" Entry="50287" />
+    <Item Name="Captain Rumsey's Lager" Entry="34832" />
+    <Item Name="Darkwood Fishing Pole" Entry="6366" />
+    <Item Name="Fishing Chair" Entry="33223" />
+    <Item Name="Fishing Pole" Entry="6256" />
+    <Item Name="High Test Eternium Fishing Line" Entry="19971" />
+    <Item Name="Jeweled Fishing Pole" Entry="45992" />
+    <Item Name="Lucky Fishing Hat" Entry="19972" />
+    <Item Name="Mastercraft Kalu'ak Fishing Pole" Entry="44050" />
+    <Item Name="Nat's Lucky Fishing Pole" Entry="45858" />
+    <Item Name="Nat Pagle's Extreme Anglin' Boots" Entry="19969" />
+    <Item Name="Seth's Graphite Fishing Pole" Entry="25978" />
+    <Item Name="Spun Truesilver Fishing Line" Entry="34836" />
+    <Item Name="Strong Fishing Pole" Entry="6365" />
+    <Item Name="Underbelly Elixir" Entry="44012" />
+    <Item Name="Weather-Beaten Fishing Hat" Entry="33820" />
+    <Item Name="Sharpened Tuskarr Spear" Entry="88535" />
+    <Item Name="Dragon Fishing Pole" Entry="84661" />
+    <Item Name="Pandaren Fishing Pole" Entry="84660" />
+
+    <!-- Trade Tools: Herbalist (alphabetical) -->
+    <Item Name="Blood Scythe" Entry="19727" />
+    <Item Name="Herbalist's Spade" Entry="85663" />
+
+    <!-- Trade Tools: Inscription (ordered by item level) -->
+    <Item Name="Virtuoso Inking Set" Entry="39505" />
+
+    <!-- Trade Tools: Jewelcrafting (alphabetical) -->
+    <Item Name="Jeweler's Kit" Entry="20815" />
+    <Item Name="Simple Grinder" Entry="20824" />
+
+    <!-- Trade Tools: Leatherworking (alphabetical) -->
+    <Item Name="Salt Shaker" Entry="15846" />
+
+    <!-- Trade Tools: Mining Tools  (also see Trade Tools: Multi-purpose) -->
+    <Item Name="Brann's Trusty Pick" Entry="20723" />
+    <Item Name="Cold Iron Pick" Entry="1959" />
+    <Item Name="Digmaster 5000" Entry="9465" />
+    <Item Name="Gouging Pick" Entry="1819" />
+    <Item Name="Kobold Excavation Pick" Entry="778" />
+    <Item Name="Mining Pick" Entry="2901" />
+    <Item Name="Tunnel Pick" Entry="756" />
+    <Item Name="Mist-Piercing Goggles" Entry="87213" />
+
+
+    <!-- Trade Tools: Multi-purpose [Blacksmith/Mining/Skinning] Tools (alphabetical) -->
+    <Item Name="Bladed Pickaxe" Entry="40893" />
+    <Item Name="Hammer Pick" Entry="40892" />
+
+    <!-- Trade Tools: Skinning Tools  (also see Trade Tools: Multi-purpose) -->
+    <Item Name="Finkle's Skinner" Entry="12709" />
+    <Item Name="Skinning Knife" Entry="7005" />
+    <Item Name="Zulian Slicer" Entry="19901" />
+
+</TradeskillTools>

@@ -1,0 +1,277 @@
+<HBProfile>
+
+	<Name>The Hinterlands (Alliance) ($Rev$)</Name>
+	<MinLevel>25</MinLevel>
+	<MaxLevel>40</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+		<Blackspot X="-514.3972" Y="-4541.964" Z="14.70839" Radius="50" />
+	</Blackspots>
+
+	<Blacklist>
+		<Mob Name="Revantusk Watcher" Entry="14730" Flags="Pull" />
+	</Blacklist>
+	
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Stormfeather Outpost -->
+		<Vendor Name="Brannik Ironbelly" Entry="12040" Type="Repair" X="333.38" Y="-4139.95" Z="117.2163" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="26485" Name="Snapjaws, Lad!">
+	<Objective Type="CollectItem" ItemId="58867" CollectCount="8">
+		<CollectFrom>
+			<Mob Name="Saltwater Snapjaw" Id="2505" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-419.4391" Y="-4522.516" Z="8.780399" />
+			<Hotspot X="-369.4988" Y="-4515.485" Z="8.172618" />
+			<Hotspot X="-311.2676" Y="-4548.133" Z="12.40349" />
+			<Hotspot X="-259.9228" Y="-4527.707" Z="12.27349" />
+			<Hotspot X="-194.6601" Y="-4516.159" Z="13.41706" />
+			<Hotspot X="-133.9858" Y="-4576.895" Z="13.18169" />
+			<Hotspot X="-83.21808" Y="-4609.906" Z="12.1197" />
+			<Hotspot X="-74.85281" Y="-4615.963" Z="12.20711" />
+			<Hotspot X="5.746361" Y="-4671.296" Z="10.46017" />
+			<Hotspot X="140.4971" Y="-4715.254" Z="14.07185" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="26486" Name="99 Bottles of Booze on the Beach">
+	<Objective Type="CollectItem" ItemId="3900" CollectCount="12">
+		<CollectFrom>
+			<GameObject Name="Pupellyverbos Port" Id="2068" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-345.0714" Y="-4514.376" Z="10.03499" />
+			<Hotspot X="-74.85281" Y="-4615.963" Z="12.20711" />
+			<Hotspot X="5.746361" Y="-4671.296" Z="10.46017" />
+			<Hotspot X="140.4971" Y="-4715.254" Z="14.07185" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Hinterlands Quests" LogColor="Green" />
+	
+	<If Condition="HasQuest(26542)" >
+		<TurnIn QuestName="Hero's Call: The Hinterlands!" QuestId="26542" TurnInName="Gryphon Master Talonaxe" TurnInId="5636" />
+	</If>
+	
+	<If Condition="!HasQuest(26546) &amp;&amp; !IsQuestCompleted(26546)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Aerie Peak Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Razorbeak Friends" QuestId="26546" GiverName="Gryphon Master Talonaxe" GiverId="5636" />
+	<PickUp QuestName="A Mangy Threat" QuestId="26547" GiverName="Gryphon Master Talonaxe" GiverId="5636" />
+	<CustomBehavior File="InteractWith" QuestId="26547" MobId="2657" InteractByUsingItemId="58935" Range="20" WaitTime="1000"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" NumOfTimes="1000" >
+		<HuntingGrounds>
+			<Hotspot X="166.5539" Y="-2115.451" Z="102.8907" />
+			<Hotspot X="155.3394" Y="-2158.204" Z="102.2177" />
+			<Hotspot X="153.1344" Y="-2270.499" Z="101.9522" />
+			<Hotspot X="94.26655" Y="-2347.042" Z="116.4029" />
+			<Hotspot X="57.7758" Y="-2416.563" Z="124.0173" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="A Mangy Threat" QuestId="26547" Type="KillMob" MobId="2923" KillCount="8" />
+	<TurnIn QuestName="Razorbeak Friends" QuestId="26546" TurnInName="Gryphon Master Talonaxe" TurnInId="5636" />
+	<TurnIn QuestName="A Mangy Threat" QuestId="26547" TurnInName="Gryphon Master Talonaxe" TurnInId="5636" />
+	
+	<If Condition="!HasQuest(26548) &amp;&amp; !IsQuestCompleted(26548)" >
+		<PickUp QuestName="Out to the Front" QuestId="26548" GiverName="Gryphon Master Talonaxe" GiverId="5636" />
+		<CustomBehavior File="InteractWith" MobId="8018" InteractByGossipOptions="2" WaitTime="2000" 
+			PreInteractMountStrategy="DismountOrCancelShapeshift" NonCompeteDistance="0" X="284.3839" Y="-2002.485" Z="194.1264" />
+	</If>
+	<TurnIn QuestName="Out to the Front" QuestId="26548" TurnInName="Kerr Ironsight" TurnInId="43108" />
+	
+	<CustomBehavior File="Message" Text="Compiling Stormfeather Outpost Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="The Wicked Revantusk" QuestId="26462" GiverName="Kerr Ironsight" GiverId="43108" />
+	<PickUp QuestName="Gan'dranda" QuestId="26483" GiverName="Kerr Ironsight" GiverId="43108" />
+	<PickUp QuestName="Snapjaws, Lad!" QuestId="26485" GiverName="Dron Blastbrew" GiverId="43109" />
+	<PickUp QuestName="99 Bottles of Booze on the Beach" QuestId="26486" GiverName="Dron Blastbrew" GiverId="43109" />
+	
+	<Objective QuestName="Gan'dranda" QuestId="26483" Type="KillMob" MobId="42609" KillCount="1" />
+	<Objective QuestName="The Wicked Revantusk" QuestId="26462" Type="KillMob" MobId="42536" KillCount="10" />
+	<Objective QuestName="99 Bottles of Booze on the Beach" QuestId="26486" Type="CollectItem" ItemId="3900" CollectCount="12" />
+	<Objective QuestName="Snapjaws, Lad!" QuestId="26485" Type="CollectItem" ItemId="58867" CollectCount="8" />
+	<TurnIn QuestName="The Wicked Revantusk" QuestId="26462" TurnInName="Kerr Ironsight" TurnInId="43108" />
+	<TurnIn QuestName="Gan'dranda" QuestId="26483" TurnInName="Kerr Ironsight" TurnInId="43108" />
+	<PickUp QuestName="Skulk Rock Clean-Up" QuestId="26491" GiverName="Kerr Ironsight" GiverId="43108" />
+	<PickUp QuestName="Skulk Rock Supplies" QuestId="26492" GiverName="Kerr Ironsight" GiverId="43108" />
+	<TurnIn QuestName="Snapjaws, Lad!" QuestId="26485" TurnInName="Dron Blastbrew" TurnInId="43109" />
+	<TurnIn QuestName="99 Bottles of Booze on the Beach" QuestId="26486" TurnInName="Dron Blastbrew" TurnInId="43109" />
+	<PickUp QuestName="Prime Slime" QuestId="26490" GiverName="Dron Blastbrew" GiverId="43109" />
+	
+	<Objective QuestName="Skulk Rock Supplies" QuestId="26492" Type="CollectItem" ItemId="57989" CollectCount="5" />
+	<Objective QuestName="Prime Slime" QuestId="26490" Type="CollectItem" ItemId="58082" CollectCount="1" />
+	<Objective QuestName="Skulk Rock Clean-Up" QuestId="26491" Type="KillMob" MobId="2656" KillCount="10" />
+	
+	<TurnIn QuestName="Prime Slime" QuestId="26490" TurnInName="Dron Blastbrew" TurnInId="43109" />
+	<TurnIn QuestName="Skulk Rock Supplies" QuestId="26492" TurnInName="Kerr Ironsight" TurnInId="43108" />
+	<TurnIn QuestName="Skulk Rock Clean-Up" QuestId="26491" TurnInName="Kerr Ironsight" TurnInId="43108" />
+	
+	<PickUp QuestName="Down with the Vilebranch" QuestId="26496" GiverName="Kerr Ironsight" GiverId="43108" />
+	<TurnIn QuestName="Down with the Vilebranch" QuestId="26496" TurnInName="Doran Steelwing" TurnInId="43157" />
+	
+	<CustomBehavior File="Message" Text="Compiling Jintha'alor Quests (due to low respawn rate, this area is SLOW)" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Vilebranch Scum" QuestId="26497" GiverName="Doran Steelwing" GiverId="43157" />
+	<PickUp QuestName="Heads Up" QuestId="26518" GiverName="Doran Steelwing" GiverId="43157" />
+	<PickUp QuestName="Faces of Evil" QuestId="26521" GiverName="Fraggar Thundermantle" GiverId="43156" />
+	
+	<Objective QuestName="Heads Up" QuestId="26518" Type="CollectItem" ItemId="58236" CollectCount="1" />
+	<CustomBehavior File="InteractWith" QuestId="26521" MobId="42704" InteractByUsingItemId="58209" NumOfTimes="1000"
+		Range="10" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-287.7979" Y="-4185.172" Z="136.873" />
+			<Hotspot X="-325.4442" Y="-4055.691" Z="174.6242" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="Vilebranch Scum" QuestId="26497" Type="KillMob" MobId="2641" KillCount="5" />
+	<Objective QuestName="Vilebranch Scum" QuestId="26497" Type="KillMob" MobId="2640" KillCount="5" />
+	<!--<CustomBehavior File="InteractWith" QuestId="26523" MobId="42689" InteractByLooting="True" NumOfTimes="1000"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-248.8102" Y="-4034.742" Z="174.2438" />
+			<Hotspot X="-354.4691" Y="-4043.929" Z="174.0717" />
+			<Hotspot X="-390.1622" Y="-4145.802" Z="173.9556" />
+		</HuntingGrounds>
+	</CustomBehavior> -->
+	
+	<TurnIn QuestName="Vilebranch Scum" QuestId="26497" TurnInName="Doran Steelwing" TurnInId="43157" />
+	<TurnIn QuestName="Heads Up" QuestId="26518" TurnInName="Doran Steelwing" TurnInId="43157" />
+	<TurnIn QuestName="Faces of Evil" QuestId="26521" TurnInName="Fraggar Thundermantle" TurnInId="43156" />
+	
+	<PickUp QuestName="Death to the Vilebranch" QuestId="26498" GiverName="Doran Steelwing" GiverId="43157" />
+	<PickUp QuestName="Ongo'longo's Revenge" QuestId="26515" GiverName="Doran Steelwing" GiverId="43157" />
+	<Objective QuestName="Ongo'longo's Revenge" QuestId="26515" Type="KillMob" MobId="42815" KillCount="1" />
+	<Objective QuestName="Death to the Vilebranch" QuestId="26498" Type="KillMob" MobId="2643" KillCount="5" />
+	<Objective QuestName="Death to the Vilebranch" QuestId="26498" Type="KillMob" MobId="2642" KillCount="5" />
+	<TurnIn QuestName="Death to the Vilebranch" QuestId="26498" TurnInName="Doran Steelwing" TurnInId="43157" />
+	<TurnIn QuestName="Ongo'longo's Revenge" QuestId="26515" TurnInName="Doran Steelwing" TurnInId="43157" />
+	
+	<If Condition="!HasQuest(26516) &amp;&amp; !IsQuestCompleted(26516)" >
+		<PickUp QuestName="It's Ours Now" QuestId="26516" GiverName="Doran Steelwing" GiverId="43157" />
+		<CustomBehavior File="InteractWith" MobId="43157" InteractByGossipOptions="1" NonCompeteDistance="0" 
+			TerminateWhen="Me.IsOnTransport" WaitTime="3000" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<Objective QuestName="It's Ours Now" QuestId="26516" Type="KillMob" MobId="2647" KillCount="5" />
+	<Objective QuestName="It's Ours Now" QuestId="26516" Type="KillMob" MobId="2646" KillCount="5" />
+	<TurnIn QuestName="It's Ours Now" QuestId="26516" TurnInName="Doran Steelwing" TurnInId="43157" />
+	
+	<If Condition="!HasQuest(26517) &amp;&amp; !IsQuestCompleted(26517)" >
+		<PickUp QuestName="Summit of Fate" QuestId="26517" GiverName="Fraggar Thundermantle" GiverId="43156" />
+		<CustomBehavior File="InteractWith" MobId="43157" InteractByGossipOptions="1" NonCompeteDistance="0" 
+			TerminateWhen="Me.IsOnTransport" WaitTime="3000" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<CustomBehavior File="InteractWith" QuestId="26517" MobId="42857" InteractByLooting="True" NonCompeteDistance="0" 
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="1000" X="-536.3221" Y="-3868.559" Z="230.5652" />
+	<TurnIn QuestName="Summit of Fate" QuestId="26517" TurnInName="Fraggar Thundermantle" TurnInId="43156" />
+	
+	<If Condition="(!HasQuest(26526) &amp;&amp; !IsQuestCompleted(26526)) || (!HasQuest(26525) &amp;&amp; !IsQuestCompleted(26525))" >
+		<PickUp QuestName="Hunt the Keeper" QuestId="26526" GiverName="Fraggar Thundermantle" GiverId="43156" />
+		<PickUp QuestName="Venomous Secrets" QuestId="26525" GiverName="Fraggar Thundermantle" GiverId="43156" />
+		<CustomBehavior File="InteractWith" MobId="43157" InteractByGossipOptions="1" NonCompeteDistance="0" 
+			TerminateWhen="Me.IsOnTransport" WaitTime="3000" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<Objective QuestName="Hunt the Keeper" QuestId="26526" Type="CollectItem" ItemId="58241" CollectCount="1" />
+	<Objective QuestName="Venomous Secrets" QuestId="26525" Type="KillMob" MobId="42879" KillCount="8" />
+	<TurnIn QuestName="Hunt the Keeper" QuestId="26526" TurnInName="Fraggar Thundermantle" TurnInId="43156" />
+	<TurnIn QuestName="Venomous Secrets" QuestId="26525" TurnInName="Fraggar Thundermantle" TurnInId="43156" />
+	
+	<PickUp QuestName="Quel'Danil Lodge" QuestId="27725" GiverName="Tracker Yoro" GiverId="46476" />
+	<TurnIn QuestName="Quel'Danil Lodge" QuestId="27725" TurnInName="Anchorite Traska" TurnInId="46475" />
+	
+	<CustomBehavior File="Message" Text="Compiling Quel'Danil Lodge Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="In Defense of Quel'Danil" QuestId="27625" GiverName="Anchorite Traska" GiverId="46475" />
+	<PickUp QuestName="The Highvale Documents" QuestId="27626" GiverName="Anchorite Traska" GiverId="46475" />
+	<Objective QuestName="The Highvale Documents" QuestId="27626" Type="CollectItem" ItemId="61973" CollectCount="1" X="262.5276" Y="-2803.545" Z="123.3692" />
+	<Objective QuestName="The Highvale Documents" QuestId="27626" Type="CollectItem" ItemId="61974" CollectCount="1" X="215.2324" Y="-2714.039" Z="121.8574" />
+	<Objective QuestName="The Highvale Documents" QuestId="27626" Type="CollectItem" ItemId="61972" CollectCount="1" X="279.4523" Y="-2676.206" Z="119.171" />
+	<Objective QuestName="In Defense of Quel'Danil" QuestId="27625" Type="KillMob" MobId="43541" KillCount="16" />
+	<TurnIn QuestName="In Defense of Quel'Danil" QuestId="27625" TurnInName="Anchorite Traska" TurnInId="46475" />
+	<TurnIn QuestName="The Highvale Documents" QuestId="27626" TurnInName="Anchorite Traska" TurnInId="46475" />
+	
+	<PickUp QuestName="The Eye of Shadra" QuestId="26528" GiverName="Gilda Cloudcaller" GiverId="43200" />
+	<PickUp QuestName="Can't Make An Omelette Without..." QuestId="26641" GiverName="Gilda Cloudcaller" GiverId="43200" />
+	<Objective QuestName="Can't Make An Omelette Without..." QuestId="26641" Type="CollectItem" ItemId="58252" CollectCount="5" />
+	<Objective QuestName="The Eye of Shadra" QuestId="26528" Type="CollectItem" ItemId="58282" CollectCount="1" X="459.7156" Y="-3332.434" Z="120.2234" />
+	<TurnIn QuestName="The Eye of Shadra" QuestId="26528" TurnInName="Gilda Cloudcaller" TurnInId="43200" />
+	<TurnIn QuestName="Can't Make An Omelette Without..." QuestId="26641" TurnInName="Gilda Cloudcaller" TurnInId="43200" />
+	
+	<PickUp QuestName="The Fang of Shadra" QuestId="26529" GiverName="Gilda Cloudcaller" GiverId="43200" />
+	<PickUp QuestName="Starvation Diet" QuestId="26643" GiverName="Gilda Cloudcaller" GiverId="43200" />
+	<Objective QuestName="Starvation Diet" QuestId="26643" Type="KillMob" MobId="42907" KillCount="6" />
+	<Objective QuestName="The Fang of Shadra" QuestId="26529" Type="CollectItem" ItemId="58281" CollectCount="1" />
+	<TurnIn QuestName="The Fang of Shadra" QuestId="26529" TurnInName="Gilda Cloudcaller" TurnInId="43200" />
+	<TurnIn QuestName="Starvation Diet" QuestId="26643" TurnInName="Gilda Cloudcaller" TurnInId="43200" />
+	
+	<PickUp QuestName="The Shell of Shadra" QuestId="26530" GiverName="Gilda Cloudcaller" GiverId="43200" />
+	<Objective QuestName="The Shell of Shadra" QuestId="26530" Type="CollectItem" ItemId="58779" CollectCount="1" X="-277.5193" Y="-3443.419" Z="187.4273" />
+	<TurnIn QuestName="The Shell of Shadra" QuestId="26530" TurnInName="Gilda Cloudcaller" TurnInId="43200" />
+	
+	<PickUp QuestName="Summoning Shadra" QuestId="26531" GiverName="Gilda Cloudcaller" GiverId="43200" />
+	<CustomBehavior File="InteractWith" QuestId="26531" QuestObjectiveIndex="1" MobId="43067" InteractByUsingItemId="58784" Range="12" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" IgnoreLoSToTarget="True" NumOfTimes="1000" X="-280.0046" Y="-2823.956" Z="109.283" />
+	<CustomBehavior File="InteractWith" QuestId="26531" QuestObjectiveIndex="3" MobId="43068" InteractByUsingItemId="58784" Range="12" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" IgnoreLoSToTarget="True" NumOfTimes="1000" X="-470.0247" Y="-2834.183" Z="110.2693" />
+	<CustomBehavior File="InteractWith" QuestId="26531" QuestObjectiveIndex="2" MobId="43069" InteractByUsingItemId="58784" Range="12" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" IgnoreLoSToTarget="True" NumOfTimes="1000" X="-368.0384" Y="-2983.741" Z="105.3923" />
+	<TurnIn QuestName="Summoning Shadra" QuestId="26531" TurnInName="Wildhammer Lookout" TurnInId="43298" />
+	
+	<PickUp QuestName="Shadra the Venom Queen" QuestId="26532" GiverName="Wildhammer Lookout" GiverId="43298" />
+	<Objective QuestName="Shadra the Venom Queen" QuestId="26532" Type="KillMob" MobId="43007" KillCount="1" />
+	<TurnIn QuestName="Shadra the Venom Queen" QuestId="26532" TurnInName="Gryphon Master Talonaxe" TurnInId="5636" />
+	
+	<If Condition="!HasQuest(28505) &amp;&amp; !IsQuestCompleted(28505)" >
+		<PickUp QuestName="The Battle for Andorhal" QuestId="28505" GiverName="Gryphon Master Talonaxe" GiverId="5636" />
+		<CustomBehavior File="InteractWith" MobId="8018" InteractByGossipOptions="2" NonCompeteDistance="0" 
+			PreInteractMountStrategy="DismountOrCancelShapeshift" WaitTime="3000" X="285.3342" Y="-2002.852" Z="194.1264" />
+	</If>
+	<TurnIn QuestName="The Battle for Andorhal" QuestId="28505" TurnInName="Thassarian" TurnInId="44453" />
+
+	<CustomBehavior File="Message" Text="The Hinterlands Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="[Quest] Western Plaguelands [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

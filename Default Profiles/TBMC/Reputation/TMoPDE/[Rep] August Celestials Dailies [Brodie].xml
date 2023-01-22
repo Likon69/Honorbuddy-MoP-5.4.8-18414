@@ -1,0 +1,150 @@
+<HBProfile>
+	<Name>August Celestials ($Rev$)</Name>
+	<MinLevel>89</MinLevel>
+	<MaxLevel>91</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+		<Blackspot X="2198.714" Y="4604.928" Z="155.8178" Radius="20" /> <!-- Too many enemies here -->
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<CustomBehavior File="RunMacro" Macro="/script SetCVar('AutoLootDefault', 1)" NumOfTimes="1" WaitTime="1000" />
+	<CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+
+	<!-- If I am in EK, take the SW portal -->
+	<If Condition="(Me.MapId == 0 &amp;&amp; Me.IsAlliance)" >
+		<CustomBehavior File="FlyTo" DestName="SW Portal" X="-8199.441" Y="529.3228" Z="117.0738" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="215457" Range="4" X="-8194.479" Y="528.1129" Z="117.2901" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+	</If>
+
+	<If Condition="(Me.MapId == 1 &amp;&amp; Me.IsHorde)" >
+		<CustomBehavior File="FlyTo" DestName="Org Portal" X="2013.813" Y="-4699.559" Z="28.61817" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="215424" Range="4.75" X="2014.819" Y="-4700.274" Z="28.62439" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling August Celestials Quests..." LogColor="Green" />
+
+<!-- Checking if you have a quest. If you do, start, if not, fly to Factional City Daily Giver -->
+	<If Condition="!HasQuest(31382) &amp;&amp; !HasQuest(31383) &amp;&amp; !HasQuest(31380) &amp;&amp;
+			!HasQuest(31381) &amp;&amp; !HasQuest(30879) &amp;&amp; !HasQuest(30881) &amp;&amp;
+			!HasQuest(30883) &amp;&amp; !HasQuest(30907) &amp;&amp; !HasQuest(30955) &amp;&amp; 
+			!HasQuest(30953) &amp;&amp; !HasQuest(30954) &amp;&amp; !HasQuest(30952) &amp;&amp; 
+			!HasQuest(31517) &amp;&amp; !HasQuest(30880) &amp;&amp; !HasQuest(30882) &amp;&amp;
+			!HasQuest(30885) &amp;&amp; !HasQuest(30902) &amp;&amp; !HasQuest(30959) &amp;&amp;
+			!HasQuest(30716) &amp;&amp; !HasQuest(30717) &amp;&amp; !HasQuest(30718) &amp;&amp;
+			!HasQuest(30740) &amp;&amp; !HasQuest(30730) &amp;&amp; !HasQuest(30725) &amp;&amp;
+			!HasQuest(30739) &amp;&amp; !HasQuest(30727) &amp;&amp; !HasQuest(30732) &amp;&amp;
+			!HasQuest(30728) &amp;&amp; !HasQuest(30734) &amp;&amp; !HasQuest(30729) &amp;&amp;
+			!HasQuest(30731) &amp;&amp; !HasQuest(30735) &amp;&amp; !HasQuest(30726) &amp;&amp;
+			!HasQuest(30733) &amp;&amp; !HasQuest(30736) &amp;&amp; !HasQuest(31376) &amp;&amp;
+			!HasQuest(31377) &amp;&amp; !HasQuest(30063) &amp;&amp; !HasQuest(30064) &amp;&amp;
+			!HasQuest(30065) &amp;&amp; !HasQuest(30068) &amp;&amp; !HasQuest(30066) &amp;&amp;
+			!HasQuest(30006) &amp;&amp; !HasQuest(30067) &amp;&amp; !HasQuest(31378) &amp;&amp;
+			!HasQuest(31379)" >
+		<CustomBehavior File="Message" Text="Starting Dailies, moving to Factional City Daily Giver" LogColor="Green" />
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" DestName="Alliance Starter" X="944.6064" Y="339.0539" Z="455.8447" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="4000" />
+			<While Condition="HasQuestAvailable(64032)" >
+				<CustomBehavior File="InteractWith" MobId="64032" WaitTime="1000" CollectionDistance="500"
+					X="871.24" Y="337.62" Z="456.53" />
+				<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			</While>
+			<RunTo X="963.9176" Y="350.7879" Z="450.1089" />
+			<CustomBehavior File="FlyTo" X="963.9176" Y="350.7879" Z="650.1089" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" DestName="Horde Starter" X="1511.082" Y="911.3512" Z="423.8227" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="4000" />
+			<While Condition="HasQuestAvailable(64001)" >
+				<CustomBehavior File="InteractWith" MobId="64001" WaitTime="1000" CollectionDistance="500"
+					X="1556.569" Y="895.2076" Z="423.9735" />
+				<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(1)" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			</While>
+			<RunTo X="1511.082" Y="911.3512" Z="423.8227" />
+			<CustomBehavior File="FlyTo" X="1511.082" Y="911.3512" Z="623.8227" />
+		</If>
+	</If>
+
+<!-- Starting Quests -->
+
+<CustomBehavior File="Message" Text="Beginning August Celestials Quests." LogColor="Green" />
+
+<!-- Defense at Niuzao Temple -->
+
+	<If Condition="HasQuest(30953) || HasQuest(30954) || HasQuest(30955) ||
+			HasQuest(30952) || HasQuest(30957) || HasQuest(30959) ||
+			HasQuest(31382) || HasQuest(31383) || HasQuest(30956) ||
+			HasQuest(30958)" >
+		<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Niuzao Dailies [Brodie]" />
+	</If>
+
+<!-- Temple of the Red Crane -->
+
+	<If Condition="HasQuest(30716) || HasQuest(30717) || HasQuest(30718) ||
+			HasQuest(30740) || HasQuest(30730) || HasQuest(30725) ||
+			HasQuest(30739) || HasQuest(30727) || HasQuest(30732) ||
+			HasQuest(30728) || HasQuest(30734) || HasQuest(30737) ||
+			HasQuest(30729) || HasQuest(30731) || HasQuest(30735) ||
+			HasQuest(30726) || HasQuest(30733) || HasQuest(30736) ||
+			HasQuest(31378) || HasQuest(31379)" >
+		<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Red Crane Dailies [Brodie]" />
+	</If>
+
+<!-- Temple of the Jade Serpent -->
+
+	<If Condition="HasQuest(31376) || HasQuest(30063) || HasQuest(30066) || HasQuest(30064) ||
+			HasQuest(30068) || HasQuest(30065) || HasQuest(30006) || HasQuest(31377) ||
+			HasQuest(30067)" >
+		<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Jade Serpent Dailies [Brodie]" />
+	</If>
+
+<!-- Temple of the White Tiger -->
+
+	<If Condition="HasQuest(31380) || HasQuest(31381) || HasQuest(31517) ||
+			HasQuest(30879) || HasQuest(30880) || HasQuest(30881) ||
+			HasQuest(30882) || HasQuest(30883) || HasQuest(30885) ||
+			HasQuest(30907) || HasQuest(30902)" >
+		<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] White Tiger Dailies [Brodie]" />
+	</If>
+
+<CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of August Celestials Dailies" />
+
+</QuestOrder>
+</HBProfile>

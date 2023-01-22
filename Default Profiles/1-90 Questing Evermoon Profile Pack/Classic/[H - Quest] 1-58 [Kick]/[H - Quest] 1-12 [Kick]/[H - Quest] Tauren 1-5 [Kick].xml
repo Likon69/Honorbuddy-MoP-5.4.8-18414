@@ -1,0 +1,474 @@
+<HBProfile xsi:noNamespaceSchemaLocation="../../../Schemas/QuestProfileSchema.xsd"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <!-- Original contribution by Kickazz006 -->
+    <Name>[H - Quest] Tauren 1-5 [Kick] ($Rev: 3162 $)</Name>
+
+    <MinLevel>1</MinLevel>
+    <MaxLevel>1001</MaxLevel>
+
+    <MinDurability>0.3</MinDurability>
+    <MinFreeBagSlots>3</MinFreeBagSlots>
+
+    <!-- NB: Honorbuddy sells before mailing -->
+    <SellGrey>true</SellGrey>
+    <SellWhite>true</SellWhite>
+    <SellGreen>true</SellGreen>
+    <SellBlue>false</SellBlue>
+    <SellPurple>false</SellPurple>
+
+    <MailGrey>false</MailGrey>
+    <MailWhite>true</MailWhite>
+    <MailGreen>true</MailGreen>
+    <MailBlue>true</MailBlue>
+    <MailPurple>true</MailPurple>
+
+
+    <AvoidMobs>
+        <Mob Name="Enforcer Emilgund" Id="5787"/>
+        <!-- <Mob Name="Training Dummy" Id="44937"/>-->
+        <!-- <Mob Name="Training Dummy" Id="44848"/> -->
+    </AvoidMobs>
+
+
+    <Blackspots>
+        <Blackspot Name="Meat Rack" X="-2402.485" Y="-399.1347" Z="-2.200567" Radius="5.970284" />
+        <Blackspot Name="Tent" X="-2959.828" Y="-539.1895" Z="51.21999" Radius="24.89415" />
+    </Blackspots>
+
+
+    <Mailboxes>
+        <Mailbox Name="Camp Narache" X="-2898.371" Y="-240.4763" Z="60.04997"/>
+        <Mailbox Name="Bloodhoof Village" X="-2336.538" Y="-368.1059" Z="-8.463984"/>
+    </Mailboxes>
+
+
+    <Vendors>
+        <!--Camp Narache Vendors-->
+        <Vendor Name="Moodan Sungrain" Id="3883" Type="Food" X="-2942.083" Y="-243.3767" Z="59.66931"/>
+        <Vendor Name="Marjak Keenblade" Id="3073" Type="Repair" X="-2926.32" Y="-215.72" Z="61.07577"/>
+
+        <!--Bloodhoof Village Vendors-->
+        <Vendor Name="Jhawna Oatwind" Id="3884" Type="Food" X="-2378.957" Y="-399.2678" Z="-3.88913"/>
+        <Vendor Name="Mahnott Roughwound" Id="3077" Type="Repair" X="-2280.133" Y="-297.7678" Z="-9.424784"/>
+    </Vendors>
+
+
+    <!-- BEGIN: Quest Overrrides -->
+    <Quest Id="26179" Name="The Venture Co.">
+        <Objective Type="KillMob" MobId="2978" KillCount="7">
+            <Hotspots>
+                <Hotspot X="-1953.439" Y="-1005.805" Z="31.89158"/>
+                <Hotspot X="-1910.015" Y="-989.0756" Z="46.44513"/>
+                <Hotspot X="-1928.834" Y="-1119.344" Z="76.70527"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="26180" Name="Supervisor Fizsprocket">
+        <Objective Type="CollectItem" ItemId="4819" CollectCount="1">
+            <CollectFrom>
+                <Mob Name="Supervisor Fizsprocket" Id="3051"/>
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-1871.552" Y="-1119.748" Z="96.68433"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="761" Name="Swoop Hunting">
+        <Objective Type="CollectItem" ItemId="4769" CollectCount="8">
+            <CollectFrom>
+                <Mob Name="Swoop" Id="2970"/>
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-2413.254" Y="-677.5309" Z="-4.478985"/>
+                <Hotspot X="-2449.91" Y="-658.3047" Z="-4.430669"/>
+                <Hotspot X="-2517.941" Y="-564.2294" Z="-7.720027"/>
+                <Hotspot X="-2600.191" Y="-540.9617" Z="-6.265002"/>
+                <Hotspot X="-2647.118" Y="-555.3084" Z="-3.50658"/>
+                <Hotspot X="-2646.238" Y="-635.8493" Z="-2.7524"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="20440" Name="Poison Water">
+        <Objective Type="CollectItem" ItemId="4758" CollectCount="6">
+            <CollectFrom>
+                <Mob Name="Prairie Wolf" Id="2958"/>
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-2413.254" Y="-677.5309" Z="-4.478985"/>
+                <Hotspot X="-2449.91" Y="-658.3047" Z="-4.430669"/>
+                <Hotspot X="-2517.941" Y="-564.2294" Z="-7.720027"/>
+                <Hotspot X="-2600.191" Y="-540.9617" Z="-6.265002"/>
+                <Hotspot X="-2647.118" Y="-555.3084" Z="-3.50658"/>
+                <Hotspot X="-2646.238" Y="-635.8493" Z="-2.7524"/>
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="4759" CollectCount="4">
+            <CollectFrom>
+                <Mob Name="Adult Plainstrider" Id="2956"/>
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-2413.254" Y="-677.5309" Z="-4.478985"/>
+                <Hotspot X="-2449.91" Y="-658.3047" Z="-4.430669"/>
+                <Hotspot X="-2517.941" Y="-564.2294" Z="-7.720027"/>
+                <Hotspot X="-2600.191" Y="-540.9617" Z="-6.265002"/>
+                <Hotspot X="-2647.118" Y="-555.3084" Z="-3.50658"/>
+                <Hotspot X="-2646.238" Y="-635.8493" Z="-2.7524"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="14438" Name="Sharing the Land">
+        <Objective Type="KillMob" MobId="42354" KillCount="15">
+            <Hotspots>
+                <Hotspot X="-2724.365" Y="-702.8871" Z="-2.425765"/>
+                <Hotspot X="-2721.662" Y="-812.384" Z="-0.8759199"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="14459" Name="The Battleboars">
+        <Objective Type="KillMob" MobId="36696" KillCount="10">
+            <Hotspots>
+                <Hotspot X="-3388.652" Y="-246.1638" Z="61.07526"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="14456" Name="Rite of Courage">
+        <Objective Type="CollectItem" ItemId="49535" CollectCount="7">
+            <CollectFrom>
+                <Mob Name="Bristleback Gun Thief" Id="36708"/>
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-3280.122" Y="-441.867" Z="45.49006"/>
+                <Hotspot X="-3336.377" Y="-455.0141" Z="50.75204"/>
+                <Hotspot X="-3376.593" Y="-427.42" Z="66.57806"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="14455" Name="Stop the Thorncallers">
+        <Objective Type="KillMob" MobId="36697" KillCount="7">
+            <Hotspots>
+                <Hotspot X="-3280.122" Y="-441.867" Z="45.49006"/>
+                <Hotspot X="-3336.377" Y="-455.0141" Z="50.75204"/>
+                <Hotspot X="-3376.593" Y="-427.42" Z="66.57806"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="14452" Name="Rite of Strength">
+        <Objective Type="KillMob" MobId="36943" KillCount="6">
+            <Hotspots>
+                <Hotspot X="-2964.717" Y="-506.9811" Z="50.15508"/>
+                <Hotspot X="-2996.972" Y="-549.4913" Z="46.1837"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="24852" Name="Our Tribe, Imprisoned">
+        <Objective Type="UseObject" ObjectId="202112" UseCount="4">
+            <Hotspots>
+                <Hotspot X="-3084.156" Y="-629.6473" Z="40.72005"/>
+                <Hotspot X="-3161.441" Y="-565.354" Z="38.51864"/>
+                <Hotspot X="-3181.976" Y="-514.2894" Z="40.95074"/>
+                <Hotspot X="-3000.53" Y="-631.3348" Z="41.19854"/>
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="11129" Name="Kyle's Gone Missing">
+        <Objective Type="CollectItem" ItemId="33009" CollectCount="1">
+            <Hotspots>
+                <Hotspot X="-2401.864" Y="-683.5173" Z="-5.595833" />
+                <Hotspot X="-2464.954" Y="-756.9886" Z="-3.039775" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <!-- END: Quest Override -->
+
+
+    <QuestOrder IgnoreCheckpoints="true" >
+        <!-- BEGIN: Checkpoint Block
+             This code needs to be replicated after every checkpoint.
+             If you modify something in this block, don't forget to update the copy of this
+             block after each checkpoint, and the at the start of the <QuestOrder>, also.
+        -->
+        <CustomBehavior File="Misc\RunLua" Lua="SetCVar('AutoLootDefault', 1)" />
+        <CustomBehavior File="UserSettings" AutoEquip="true" />
+
+        <CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+        <CustomBehavior File="EnablePlugin" Names="Questhelper - ItemForAura" />
+        <CustomBehavior File="EnablePlugin" Names="Refreshment Detection" />
+
+        <CustomBehavior File="Misc\ProfileCompatibilityInfo" AllowBrokenAddOns="true" AllowBrokenPlugIns="true" />
+
+        <LootMobs Value="true" />
+        <TargetingDistance Value="null" />    <!-- Use LevelBot default -->
+        <UseMount Value="true" />
+        <!-- END: Checkpoint Block -->
+
+
+        <PickUp QuestName="The First Step" QuestId="14449" GiverName="Chief Hawkwind" GiverId="2981"/>
+        <TurnIn QuestName="The First Step" QuestId="14449" TurnInName="Grull Hawkwind"
+                TurnInId="2980" X="-3014.514" Y="-458.646" Z="45.41115"/>
+        <PickUp QuestName="Rite of Strength" QuestId="14452" GiverName="Grull Hawkwind"
+                GiverId="2980"/>
+        <!-- KUC doesn't work properly w/ melee here -->
+        <!-- <CustomBehavior File="KillUntilComplete" QuestId="14452" MobId="2952" -->
+        <!--                 X="-2965.718" Y="-584.1002" Z="47.27744" /> -->
+        <Objective QuestName="Rite of Strength" QuestId="14452" Type="KillMob" MobId="2952"
+                   KillCount="6"/>
+        <TurnIn QuestName="Rite of Strength" QuestId="14452" TurnInName="Grull Hawkwind"
+                TurnInId="2980"/>
+        <PickUp QuestName="Our Tribe, Imprisoned" QuestId="24852" GiverName="Grull Hawkwind"
+                GiverId="2980"/>
+        <Objective QuestName="Our Tribe, Imprisoned" QuestId="24852" Type="UseObject"
+                   ObjectId="202112" UseCount="4"/>
+        <TurnIn QuestName="Our Tribe, Imprisoned" QuestId="24852" TurnInName="Grull Hawkwind"
+                TurnInId="2980"/>
+        <PickUp QuestName="Go to Adana" QuestId="14458" GiverName="Grull Hawkwind"
+                GiverId="2980"/>
+        <TurnIn QuestName="Go to Adana" QuestId="14458" TurnInName="Adana Thunderhorn"
+                TurnInId="36694"/>
+        <PickUp QuestName="Rite of Courage" QuestId="14456" GiverName="Adana Thunderhorn"
+                GiverId="36694"/>
+        <PickUp QuestName="Stop the Thorncallers" QuestId="14455" GiverName="Adana Thunderhorn"
+                GiverId="36694"/>
+        <Objective QuestName="Rite of Courage" QuestId="14456" Type="CollectItem" ItemId="49535"
+                   CollectCount="7"/>
+        <Objective QuestName="Stop the Thorncallers" QuestId="14455" Type="KillMob" MobId="36697"
+                   KillCount="7"/>
+        <TurnIn QuestName="Rite of Courage" QuestId="14456" TurnInName="Adana Thunderhorn"
+                TurnInId="36694"/>
+        <TurnIn QuestName="Stop the Thorncallers" QuestId="14455" TurnInName="Adana Thunderhorn"
+                TurnInId="36694"/>
+        <PickUp QuestName="The Battleboars" QuestId="14459" GiverName="Adana Thunderhorn"
+                GiverId="36694"/>
+        <PickUp QuestName="Feed of Evil" QuestId="14461" GiverName="Adana Thunderhorn"
+                GiverId="36694"/>
+
+        <!-- Class Specific Pickups -->
+        <If Condition="Me.Class == WoWClass.Monk">
+            <PickUp QuestName="Calligraphed Note" QuestId="31165" GiverName="Rohaku Stonehoof"
+                    GiverId="44927" />
+        </If>
+        <If Condition="Me.Class == WoWClass.Hunter">
+            <PickUp QuestName="Etched Note" QuestId="3092" GiverName="Rohaku Stonehoof"
+                    GiverId="44927" />
+        </If>
+        <If Condition="Me.Class == WoWClass.Paladin">
+            <PickUp QuestName="Consecrated Note" QuestId="27015" GiverName="Rohaku Stonehoof"
+                    GiverId="44927" />
+        </If>
+        <If Condition="Me.Class == WoWClass.Priest">
+            <PickUp QuestName="Hallowed Note" QuestId="27014" GiverName="Rohaku Stonehoof"
+                    GiverId="44927" />
+        </If>
+        <If Condition="Me.Class == WoWClass.Warrior">
+            <PickUp QuestName="Simple Note" QuestId="3091" GiverName="Rohaku Stonehoof"
+                    GiverId="44927" />
+        </If>
+        <If Condition="Me.Class == WoWClass.Druid">
+            <PickUp QuestName="Verdant Note" QuestId="3094" GiverName="Rohaku Stonehoof"
+                    GiverId="44927" />
+        </If>
+        <If Condition="Me.Class == WoWClass.Shaman">
+            <PickUp QuestName="Rune-Inscribed Note" QuestId="3093" GiverName="Rohaku Stonehoof"
+                    GiverId="44927" />
+        </If>
+
+        <While Condition="HasQuest(14461) &amp;&amp; !IsQuestCompleted(14461)" >
+            <UseItem ItemId="49539" QuestId="14461" X="-3403.738" Y="-263.37" Z="61.57568"/>
+            <UseItem ItemId="49539" QuestId="14461" X="-3390.317" Y="-214.45" Z="61.61227"/>
+            <UseItem ItemId="49539" QuestId="14461" X="-3361.514" Y="-232.2879" Z="61.43986"/>
+            <CustomBehavior File="WaitTimer" WaitTime="3000"
+                            GoalText="Waiting for quest to complete {TimeRemaining}" />
+        </While>
+        <Objective QuestName="The Battleboars" QuestId="14459" Type="KillMob" MobId="36696"
+                   KillCount="10"/>
+        <TurnIn QuestName="Feed of Evil" QuestId="14461" TurnInName="Adana Thunderhorn"
+                TurnInId="36694"/>
+        <TurnIn QuestName="The Battleboars" QuestId="14459" TurnInName="Adana Thunderhorn"
+                TurnInId="36694"/>
+        <PickUp QuestName="Rite of Honor" QuestId="14460" GiverName="Adana Thunderhorn"
+                GiverId="36694" />
+        <Objective QuestName="Rite of Honor" QuestId="14460" Type="CollectItem" ItemId="50473"
+                   CollectCount="1" />
+        <TurnIn QuestName="Rite of Honor" QuestId="14460" TurnInName="Chief Hawkwind"
+                TurnInId="2981" />
+
+        <PickUp QuestName="Last Rites, First Rites" QuestId="24861" GiverName="Chief Hawkwind"
+                GiverId="2981" />
+        <While Condition="HasQuest(24861) &amp;&amp; !IsQuestCompleted(24861)" >
+            <MoveTo X="-2907.939" Y="-254.3848" Z="59.73428" />
+            <CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Using item {TimeRemaining}" />
+            <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(50465)" />
+            <CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Using item {TimeRemaining}" />
+        </While>
+        <TurnIn QuestName="Last Rites, First Rites" QuestId="24861" TurnInName="Chief Hawkwind"
+                TurnInId="2981" />
+        <PickUp QuestName="Rites of the Earthmother" QuestId="23733" GiverName="Chief Hawkwind"
+                GiverId="2981" />
+
+        <!-- Class Specific Quests -->
+        <If Condition="Me.Class == WoWClass.Monk">
+            <TurnIn QuestName="Calligraphed Note" QuestId="31165" TurnInName="Shoyu"
+                    TurnInId="63327" X="-2910.488" Y="-260.8889" Z="59.53426" />
+            <PickUp QuestName="Tiger Palm" QuestId="31166" GiverName="Shoyu" GiverId="63327"
+                    X="-2910.488" Y="-260.8889" Z="59.53426" />
+            <While Condition="HasQuest(31166) &amp;&amp; !IsQuestCompleted(31166)" >
+                <CustomBehavior File="InteractWith" InteractByCastingSpellId="100780" MobId="44848"
+                                X="-2918.716" Y="-276.8649" Z="59.83102" />
+                <CustomBehavior File="InteractWith" InteractByCastingSpellId="100787" MobId="44848"
+                                X="-2918.716" Y="-276.8649" Z="59.83102" />
+            </While>
+            <TurnIn QuestName="Tiger Palm" QuestId="31166" TurnInName="Shoyu" TurnInId="63327"
+                    X="-2910.488" Y="-260.8889" Z="59.53426" />
+        </If>
+
+        <If Condition="Me.Class == WoWClass.Hunter">
+            <TurnIn QuestName="Etched Note" QuestId="3092" TurnInName="Lanka Farshot"
+                    TurnInId="3061" />
+            <PickUp QuestName="The Hunter's Path" QuestId="27021" GiverName="Lanka Farshot"
+                    GiverId="3061" />
+            <If Condition="!HasSpell(56641)">
+                <CustomBehavior File="WaitTimer" WaitTime="1000"/>
+            </If>
+            <CustomBehavior File="InteractWith" QuestId="27021" InteractByCastingSpellId="56641"
+                            MobId="44848" NumOfTimes="20" MinRange="7"
+                            X="-2869.347" Y="-249.1271" Z="59.95384" />
+            <TurnIn QuestName="The Hunter's Path" QuestId="27021" TurnInName="Lanka Farshot"
+                    TurnInId="3061" />
+        </If>
+
+        <If Condition="Me.Class == WoWClass.Paladin">
+            <TurnIn QuestName="Consecrated Note" QuestId="27015" TurnInName="Sunwalker Helaku"
+                    TurnInId="37737" />
+            <PickUp QuestName="The Way of the Sunwalkers" QuestId="27023" GiverName="Sunwalker Helaku"
+                    GiverId="37737" />
+            <While Condition="HasQuest(27023) &amp;&amp; !IsQuestCompleted(27023)">
+                <CustomBehavior File="InteractWith" InteractByCastingSpellId="105361" MobId="44848"
+                                X="-2869.347" Y="-249.1271" Z="59.95384" />
+                <!-- seal of command -->
+                <CustomBehavior File="InteractWith" QuestId="27023" MobId="44848"
+                                X="-2869.347" Y="-249.1271" Z="59.95384" />
+            </While>
+            <TurnIn QuestName="The Way of the Sunwalkers" QuestId="27023" TurnInName="Sunwalker Helaku"
+                    TurnInId="37737" />
+        </If>
+
+        <If Condition="Me.Class == WoWClass.Priest">
+            <TurnIn QuestName="Hallowed Note" QuestId="27014" TurnInName="Seer Ravenfeather"
+                    TurnInId="37724" />
+            <PickUp QuestName="Healing in a Flash" QuestId="27066" GiverName="Seer Ravenfeather"
+                    GiverId="37724" />
+            <CustomBehavior File="InteractWith" QuestId="27066" InteractByCastingSpellId="589"
+                            MobId="44848" NumOfTimes="20" MinRange="8"
+                            X="-2880.177" Y="-225.9676" Z="61.34525" />
+            <TurnIn QuestName="Healing in a Flash" QuestId="27066" TurnInName="Seer Ravenfeather"
+                    TurnInId="37724" />
+        </If>
+
+        <If Condition="Me.Class == WoWClass.Warrior">
+            <TurnIn QuestName="Simple Note" QuestId="3091" TurnInName="Harutt Thunderhorn"
+                    TurnInId="3059" />
+            <PickUp QuestName="The First Lesson" QuestId="27020" GiverName="Harutt Thunderhorn"
+                    GiverId="3059" />
+            <If Condition="!HasSpell(100)">
+
+            </If>
+            <While Condition="HasQuest(27020) &amp;&amp; !IsQuestCompleted(27020)">
+                <MoveTo X="-2871.837" Y="-248.5042" Z="60.14921" />
+                <CustomBehavior File="NPCAssistance" MobId="44848" />
+                <CustomBehavior File="InteractWith" QuestId="27020" InteractByCastingSpellId="100"
+                                MobId="44848" NumOfTimes="20" MinRange="8"
+                                X="-2869.347" Y="-249.1271" Z="59.95384" />
+            </While>
+            <TurnIn QuestName="The First Lesson" QuestId="27020" TurnInName="Harutt Thunderhorn"
+                    TurnInId="3059" />
+        </If>
+
+        <If Condition="Me.Class == WoWClass.Druid">
+            <TurnIn QuestName="Verdant Note" QuestId="3094" TurnInName="Gart Mistrunner"
+                    TurnInId="3060" />
+            <PickUp QuestName="Rejuvenating Touch" QuestId="27067" GiverName="Gart Mistrunner"
+                    GiverId="3060" />
+            <If Condition="!HasSpell(2061)">
+
+            </If>
+            <CustomBehavior File="InteractWith" QuestId="27067" InteractByCastingSpellId="8921"
+                            MobId="44848" NumOfTimes="20" MinRange="8"
+                            X="-2880.177" Y="-225.9676" Z="61.34525"/>
+            <TurnIn QuestName="Rejuvenating Touch" QuestId="27067" TurnInName="Gart Mistrunner"
+                    TurnInId="3060" />
+        </If>
+
+        <If Condition="Me.Class == WoWClass.Shaman">
+            <TurnIn QuestName="Rune-Inscribed Note" QuestId="3093" TurnInName="Meela Dawnstrider"
+                    TurnInId="3062" />
+            <PickUp QuestName="Primal Strike" QuestId="27027" GiverName="Meela Dawnstrider"
+                    GiverId="3062" />
+
+            <If Condition="!HasSpell(73899)">
+
+            </If>
+            <MoveTo QuestId="27027" X="-2863.797" Y="-246.0717" Z="60.25845" />
+            <While Condition="HasQuest(27027) &amp;&amp; !IsQuestCompleted(27027)">
+                <CustomBehavior File="InteractWith" QuestId="27027" InteractByCastingSpellId="73899"
+                                MobId="44848" NumOfTimes="20"
+                                X="-2880.177" Y="-225.9676" Z="61.34525" />
+            </While>
+            <TurnIn QuestName="Primal Strike" QuestId="27027" TurnInName="Meela Dawnstrider"
+                    TurnInId="3062" />
+        </If>
+        <!-- End Class Specific Quests -->
+
+        <TurnIn QuestName="Rites of the Earthmother" QuestId="23733" TurnInName="Dyami Windsoar"
+                TurnInId="36803" />
+        <PickUp QuestName="Rite of the Winds" QuestId="24215" GiverName="Dyami Windsoar" GiverId="36803" />
+        <If Condition="HasQuest(24215)" >
+            <MoveTo X="-2933.432" Y="-38.93042" Z="190.0488" />
+            <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(49652)" />
+            <CustomBehavior File="WaitTimer" WaitTime="45000" GoalText="Waiting for  {TimeRemaining}" />
+        </If>
+        <TurnIn QuestName="Rite of the Winds" QuestId="24215" TurnInName="Ahmo Thunderhorn"
+                TurnInId="36644" />
+
+        <If Condition="Me.ZoneId == 215" >
+            <!-- Mulgore = 215 -->
+            <!-- old code for zepp, using fp's instead -->
+            <!-- <CustomBehavior File="Message" Text="Running to Thunder Bluff Zeppelin" -->
+            <!--                 LogColor="CornflowerBlue" /> -->
+            <!-- <MoveTo X="-1028.714" Y="352.6647" Z="133.1189" /> -->
+            <MoveTo X="-2299.118" Y="-381.5382" Z="-9.052246" />
+            <CustomBehavior File="InteractWith" MobId="40809" X="-2299.118" Y="-381.5382" Z="-9.052246" />
+            <!-- Bloodhoof Village FP Master -->
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting to learn fp {TimeRemaining}" />
+            <MoveTo X="1803.455" Y="-4366.009" Z="102.6296" />
+            <!-- Org FP -->
+        </If>
+
+        <If Condition="Me.ZoneId == 1638" >
+            <!-- Thunder Bluff -->
+            <CustomBehavior File="Message"
+                            Text="Waiting for Thunder Bluff Zeppelin (or riding on Zeppelin) to Orgrimmar - don't interact!"
+                            LogColor="Orange" />
+
+            <!-- From Thunder Bluff Dock to Orgrimmar Dock -->
+            <CustomBehavior File="UseTransport" TransportId="190549"
+                            WaitAtX="-1028.744" WaitAtY="355.9271" WaitAtZ="133.1188"
+                            GetOffX="1732.932" GetOffY="-4254.199" GetOffZ="133.1073"
+                            TransportStartX="-1026.856" TransportStartY="375.7847" TransportStartZ="150.4127"
+                            TransportEndX="1724.363" TransportEndY="-4238.468" TransportEndZ="151.253"
+                            StandOnX="-1028.488" StandOnY="363.1843" StandOnZ="132.5751"    />
+        </If>
+
+
+        <CustomBehavior File="LoadProfile" ProfileName="[H - Quest] Durotar 5-12 [Kick]" RememberProfile="true" />
+    </QuestOrder>
+</HBProfile>

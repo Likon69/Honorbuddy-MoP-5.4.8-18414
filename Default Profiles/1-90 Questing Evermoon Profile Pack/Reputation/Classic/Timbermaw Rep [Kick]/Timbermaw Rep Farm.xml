@@ -1,0 +1,104 @@
+<HBProfile>
+	<Name>Hawker's 'Timbermaw Hold' Profile</Name>
+	<MinLevel>1</MinLevel>
+	<MaxLevel>101</MaxLevel>
+
+
+
+	<QuestOrder>					
+
+
+		<CustomBehavior File="Message" Text="Compiling Hawker's 'Timbermaw Rep' Profile" LogColor="CornflowerBlue" />
+
+		<CustomBehavior File="FlyTo" DestName="Emerald Sanctuary" X="3981.64" Y="-1308.838" Z="244.6019" />
+
+		<MoveTo DestName="Emerald Sanctuary" X="3981.64" Y="-1308.838" Z="244.6019" />
+
+		<PickUp QuestName="A Talking Totem" QuestId="28100" GiverName="Grazle" GiverId="11554" X="3986.96" Y="-1318.72" Z="245.7646" />
+		<TurnIn QuestName="A Talking Totem" QuestId="28100" TurnInName="Totem of Ruumbo" TurnInId="206585" />
+		<PickUp QuestName="Ruumbo Demands Honey" GiverName="Totem of Ruumbo" QuestId="27989" GiverId="206585" GiverType="Object" X="3854.473" Y="-1322.416" Z="211.9353" />
+		<PickUp QuestName="Ruumbo Demands Justice" GiverName="Totem of Ruumbo" QuestId="27994" GiverId="206585" GiverType="Object" X="3854.473" Y="-1322.416" Z="211.9353" />
+
+		<While Condition="(HasQuest(27989)) &amp;&amp; (!IsQuestCompleted(27989))">		
+			<CustomBehavior File="InteractWith" QuestId="27989" MobId="47308" InteractByUsingItemId="62819" NumOfTimes="50" Range="5" CollectionDistance="500" X="3800.639" Y="-1279.833" Z="207.1756" />
+		</While>
+
+		<Objective QuestName="Ruumbo Demands Justice" QuestId="27994" Type="KillMob" MobId="47329" KillCount="15" />
+		<TurnIn QuestName="Ruumbo Demands Justice" QuestId="27994" TurnInName="Totem of Ruumbo" TurnInId="206585" />
+		<TurnIn QuestName="Ruumbo Demands Honey" QuestId="27989" TurnInName="Totem of Ruumbo" TurnInId="206585" />
+		<PickUp QuestName="Dance for Ruumbo!" GiverName="Totem of Ruumbo" QuestId="27995" GiverId="206585" GiverType="Object" X="3854.473" Y="-1322.416" Z="211.9353" />
+
+		<If Condition="HasQuest(27995) &amp;&amp; !IsQuestCompleted(27995)">
+			<CustomBehavior File="WaitTimer" WaitTime="15000" GoalText="Waiting for dance {TimeRemaining}" />
+		</If>
+
+		<TurnIn QuestName="Dance for Ruumbo!" QuestId="27995" TurnInName="Grazle" TurnInId="11554" X="3986.96" Y="-1318.72" Z="245.7646" />
+
+		<While Condition="Me.GetReputationLevelWith(576) &lt; Styx.WoWUnitReaction.Exalted" >
+
+			<If Condition="(GetItemCount(21377) &lt; 20)" >
+				<CustomBehavior File="FlyTo" X="3684.723" Y="-1025.052" Z="223.5995" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="UserSettings" PullDistance="35" />
+				<SetGrindArea>
+					<Grindarea>
+						<TargetMinLevel>40</TargetMinLevel> 
+						<TargetMaxLevel>62</TargetMaxLevel>
+						<Factions>82</Factions>
+						<!-- [Furbolg] -->
+						<Hotspots>
+							<Hotspot X="3715.226" Y="-1030.265" Z="225.4151" />
+							<Hotspot X="3539.037" Y="-1158.737" Z="225.3474" />
+							<Hotspot X="3729.163" Y="-1117.967" Z="210.9696" />
+							<Hotspot X="3684.723" Y="-1025.052" Z="223.5995" />
+						</Hotspots>
+					</Grindarea>
+				</SetGrindArea>
+				<GrindTo Condition="(GetItemCount(21377) &gt;= 20)" GoalText="Getting 20 Feathers's" />
+			</If>
+
+			<While Condition="(GetItemCount(21377) &gt;= 5) &amp;&amp; (Me.GetReputationLevelWith(576) &lt; Styx.WoWUnitReaction.Exalted)" >
+				<!-- Turnin in stacks of 5 to Grazle -->
+				<CustomBehavior File="InteractWith" MobId="11554" Range="8" X="3986.96" Y="-1318.72" Z="245.7646" />
+				<CustomBehavior File="RunMacro" Macro="/script SelectGossipAvailableQuest(1)" WaitTime="1337" />
+				<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteButton" WaitTime="1337" />	
+				<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" WaitTime="1337" />	
+			</While>
+		</While>
+
+		<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetReputationLevelWith(576) &gt; Styx.WoWUnitReaction.Revered">
+			<CustomBehavior File="Message" Text="Getting the epic Timbermaw Hold Trinket" LogColor="CornflowerBlue" />
+			<MoveTo GoalText="Getting the epic Timbermaw Hold Trinket" X="7027.099" Y="-2107.883" Z="587.3772" />
+			<PickUp QuestName="The Root of All Evil" QuestId="8481" GiverName="Gorn One Eye" GiverId="11555" />
+			<UseItem ItemId="21144" QuestName="The Root of All Evil" QuestId="8481" X="6718.59" Y="-5236.029" Z="778.032" />
+			<CustomBehavior File="WaitTimer" WaitTime="30000" QuestId="8481" GoalText="Waiting for Xandivious to attack {TimeRemaining}" />
+			<CustomBehavior File="InteractWith" MobId="180671" Range="4" QuestId="8481" WaitTime="3000" />
+			<TurnIn QuestName="The Root of All Evil" QuestId="8481" TurnInName="Gorn One Eye" TurnInId="11555" />
+		</If>
+
+	</QuestOrder>
+
+	<Vendors>
+		<!--Felwood Vendors-->
+		<Vendor Name="Ciana" Entry="48577" Type="Repair" X="6086.02" Y="-817.925" Z="414.802" />
+		<Vendor Name="Kamar" Entry="48608" Type="Repair" X="4003.65" Y="-1319.84" Z="246.2256" />
+		<Vendor Name="Muurald" Entry="48607" Type="Food" X="4004.54" Y="-1324.23" Z="246.2261" />
+		<Vendor Name="Innkeeper Wylaria" Entry="48215" Type="Food" X="6057.81" Y="-916.859" Z="414.771" />
+		<Vendor Name="Muzz Flimspan" Entry="48236" Type="Food" X="6898.012" Y="-1579.819" Z="503.161" />
+		<Vendor Name="Kester Killbomb" Entry="48228" Type="Repair" X="6860.03" Y="-1573.91" Z="497.027" />
+
+		<!--Winterspring Vendors-->
+		<Vendor Name="Lyranne Feathersong" Entry="2303" Type="Food" X="7147.007" Y="-4005.613" Z="745.6299" />
+		<Vendor Name="Trapper Kiefer" Entry="50094" Type="Repair" X="7636.605" Y="-4425.288" Z="623.8749" />
+		<Vendor Name="Barbie Cutesazz" Entry="50092" Type="Food" X="7642.319" Y="-4437.009" Z="623.8745" />
+		<Vendor Name="Daleohm" Entry="50129" Type="Repair" X="6176.922" Y="-4564.302" Z="713.345" />
+		<Vendor Name="Maseel" Entry="50126" Type="Food" X="6179.932" Y="-4564.688" Z="713.345" />
+	</Vendors>
+
+	<ProtectedItems>
+		<Item Name="Deadwood Headdress Feather" Entry="21377" />
+	</ProtectedItems>
+
+
+
+</HBProfile>

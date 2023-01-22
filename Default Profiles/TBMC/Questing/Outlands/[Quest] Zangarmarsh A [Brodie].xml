@@ -1,0 +1,569 @@
+<HBProfile>
+
+	<Name>Zangarmarsh (Alliance) ($Rev$)</Name>
+	<MinLevel>60</MinLevel>
+	<MaxLevel>70</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+		<Mob Name="Elder Kuruti" Entry="18197" Flags="Pull" />
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Cenarion Refuge -->
+		<Vendor Nav="Fly" Name="Fedryen Swiftspear" Entry="17904" Type="Repair" X="-198.9696" Y="5490.686" Z="21.84616" />
+		<!-- Telredor -->
+		<Vendor Nav="Fly" Name="Loolruna" Entry="19694" Type="Repair" X="252.2793" Y="6030.792" Z="131.596" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="9839" Name="Overlord Gorefist">
+	<Objective Type="KillMob" MobId="18160" KillCount="1">
+		<Hotspots>
+			<Hotspot X="-7.958919" Y="7837.301" Z="22.0829" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="18120" KillCount="10">
+		<Hotspots>
+			<Hotspot X="1703.399" Y="8480.48" Z="-5.912359" />
+			<Hotspot X="1796.446" Y="8467.722" Z="-13.78699" />
+			<Hotspot X="1794.988" Y="8553.229" Z="-6.675652" />
+			<Hotspot X="1774.545" Y="8624.979" Z="6.538205" />
+			<Hotspot X="1663.142" Y="8599.077" Z="10.48131" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="9781" Name="Too Many Mouths to Feed" >
+	<Objective Type="KillMob" MobId="18213" KillCount="10" >
+		<Hotspots>
+			<Hotspot X="-847.2652" Y="5668.205" Z="18.5837" />
+			<Hotspot X="-780.633" Y="5599.299" Z="19.91208" />
+			<Hotspot X="-674.5056" Y="5517.709" Z="19.5562" />
+			<Hotspot X="-573.2856" Y="5538.97" Z="21.35863" />
+			<Hotspot X="-486.6308" Y="5542.439" Z="18.73658" />
+			<Hotspot X="-393.8325" Y="5553.278" Z="19.25982" />
+			<Hotspot X="-294.6031" Y="5550.389" Z="20.88473" />
+			<Hotspot X="-197.3691" Y="5620.534" Z="18.85256" />
+			<Hotspot X="-99.97794" Y="5718.043" Z="19.8923" />
+			<Hotspot X="-69.93914" Y="5839.869" Z="17.79266" />
+			<Hotspot X="-162.5824" Y="5935.458" Z="19.9026" />
+			<Hotspot X="-292.6625" Y="5891.976" Z="19.6798" />
+			<Hotspot X="-393.7679" Y="5861.362" Z="20.63574" />
+			<Hotspot X="-491.6198" Y="5849.243" Z="19.63552" />
+			<Hotspot X="-703.5139" Y="5909.242" Z="18.9383" />
+			<Hotspot X="-889.6797" Y="5834.945" Z="18.22721" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="9790" Name="Diaphanous Wings" >
+	<Objective Type="CollectItem" ItemId="24372" CollectCount="8" >
+		<CollectFrom>
+			<Mob Name="Umbraglow Stinger" Id="18132" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-847.2652" Y="5668.205" Z="18.5837" />
+			<Hotspot X="-780.633" Y="5599.299" Z="19.91208" />
+			<Hotspot X="-674.5056" Y="5517.709" Z="19.5562" />
+			<Hotspot X="-573.2856" Y="5538.97" Z="21.35863" />
+			<Hotspot X="-486.6308" Y="5542.439" Z="18.73658" />
+			<Hotspot X="-393.8325" Y="5553.278" Z="19.25982" />
+			<Hotspot X="-294.6031" Y="5550.389" Z="20.88473" />
+			<Hotspot X="-197.3691" Y="5620.534" Z="18.85256" />
+			<Hotspot X="-99.97794" Y="5718.043" Z="19.8923" />
+			<Hotspot X="-69.93914" Y="5839.869" Z="17.79266" />
+			<Hotspot X="-162.5824" Y="5935.458" Z="19.9026" />
+			<Hotspot X="-292.6625" Y="5891.976" Z="19.6798" />
+			<Hotspot X="-393.7679" Y="5861.362" Z="20.63574" />
+			<Hotspot X="-491.6198" Y="5849.243" Z="19.63552" />
+			<Hotspot X="-703.5139" Y="5909.242" Z="18.9383" />
+			<Hotspot X="-889.6797" Y="5834.945" Z="18.22721" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="10096" Name="Saving the Sporeloks">
+	<Objective Type="KillMob" MobId="18137" KillCount="10">
+		<Hotspots>
+			<Hotspot X="-1330.778" Y="5890.55" Z="11.56499" />
+			<Hotspot X="-1271.592" Y="5819.435" Z="47.34739" />
+			<Hotspot X="-1320.278" Y="5856.15" Z="7.495704" />
+			<Hotspot X="-1214.257" Y="5875.134" Z="33.97832" />
+			<Hotspot X="-1193.95" Y="5868.327" Z="33.96261" />
+			<Hotspot X="-1216.028" Y="5773.341" Z="52.16882" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="18136" KillCount="10">
+		<Hotspots>
+			<Hotspot X="-1330.778" Y="5890.55" Z="11.56499" />
+			<Hotspot X="-1271.592" Y="5819.435" Z="47.34739" />
+			<Hotspot X="-1320.278" Y="5856.15" Z="7.495704" />
+			<Hotspot X="-1214.257" Y="5875.134" Z="33.97832" />
+			<Hotspot X="-1193.95" Y="5868.327" Z="33.96261" />
+			<Hotspot X="-1216.028" Y="5773.341" Z="52.16882" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="9833" Name="Lines of Communication" >
+	<Objective Type="KillMob" MobId="18131" KillCount="12" >
+		<Hotspots>
+			<Hotspot X="-7.958919" Y="7837.301" Z="22.0829" />
+			<Hotspot X="-40.32912" Y="7736.111" Z="21.25213" />
+			<Hotspot X="-62.76144" Y="7643.374" Z="19.6108" />
+			<Hotspot X="-124.8556" Y="7578.02" Z="22.89898" />
+			<Hotspot X="5.783278" Y="8158.465" Z="22.55028" />
+			<Hotspot X="33.40951" Y="8259.607" Z="20.30386" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="9743" Name="Natural Enemies" >
+	<Objective Type="CollectItem" ItemId="24291" CollectCount="6" >
+		<CollectFrom>
+			<Mob Name="Starving Fungal Giant" Id="18125" />
+			<Mob Name="Bog Lord" Id="18127" />
+			<Mob Name="Withered Bog Lord" Id="19402" />
+			<Mob Name="Withered Giant" Id="18124" />
+			<Mob Name="Starving Bog Lord" Id="19519" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-69.66528" Y="8805.96" Z="18.21197" />
+			<Hotspot X="-148.7004" Y="8789.08" Z="21.32164" />
+			<Hotspot X="-175.548" Y="8687.591" Z="18.82824" />
+			<Hotspot X="-62.46751" Y="8635.938" Z="18.63014" />
+			<Hotspot X="-50.65809" Y="8538.463" Z="19.15388" />
+			<Hotspot X="-172.3705" Y="8307.228" Z="18.94348" />
+			<Hotspot X="-207.3073" Y="8162.838" Z="19.07409" />
+			<Hotspot X="-214.3228" Y="8061.106" Z="18.91084" />
+			<Hotspot X="-203.6189" Y="7976.853" Z="18.65072" />
+			<Hotspot X="-194.1653" Y="7895.458" Z="20.36303" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="9747" Name="The Umbrafen Tribe">
+	<Objective Type="KillMob" MobId="18080" KillCount="1">
+		<Hotspots>
+			<Hotspot X="-1112.685" Y="5187.465" Z="57.19861" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="18077" KillCount="6">
+		<Hotspots>
+			<Hotspot X="-1039.875" Y="5248.507" Z="22.33298" />
+			<Hotspot X="-1081.599" Y="5208.45" Z="26.99595" />
+			<Hotspot X="-810.9017" Y="5182.889" Z="17.71914" />
+			<Hotspot X="-760.6997" Y="5285.579" Z="17.52497" />
+			<Hotspot X="-919.4177" Y="5310.329" Z="17.54179" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="18079" KillCount="8">
+		<Hotspots>
+			<Hotspot X="-1039.875" Y="5248.507" Z="22.33298" />
+			<Hotspot X="-1081.599" Y="5208.45" Z="26.99595" />
+			<Hotspot X="-810.9017" Y="5182.889" Z="17.71914" />
+			<Hotspot X="-760.6997" Y="5285.579" Z="17.52497" />
+			<Hotspot X="-919.4177" Y="5310.329" Z="17.54179" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="20115" KillCount="6">
+		<Hotspots>
+			<Hotspot X="-1039.875" Y="5248.507" Z="22.33298" />
+			<Hotspot X="-1081.599" Y="5208.45" Z="26.99595" />
+			<Hotspot X="-810.9017" Y="5182.889" Z="17.71914" />
+			<Hotspot X="-760.6997" Y="5285.579" Z="17.52497" />
+			<Hotspot X="-919.4177" Y="5310.329" Z="17.54179" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="!HasQuest(9912) &amp;&amp; !IsQuestCompleted(9912)" >
+		<PickUp Nav="Fly" QuestName="The Cenarion Expedition" QuestId="9912" GiverName="Amythiel Mistwalker" GiverId="16885" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="The Cenarion Expedition" QuestId="9912" TurnInName="Ysiel Windsinger" TurnInId="17841" />
+
+	<If Condition="!HasQuest(9716) &amp;&amp; !IsQuestCompleted(9716)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Zangarmarsh Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Cenarion Refuge and Telredor Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="Disturbance at Umbrafen Lake" QuestId="9716" GiverName="Ysiel Windsinger" GiverId="17841" />
+	<PickUp Nav="Fly" QuestName="Warden Hamoot" QuestId="9778" GiverName="Ysiel Windsinger" GiverId="17841" />
+	<PickUp Nav="Fly" QuestName="The Dying Balance" QuestId="9895" GiverName="Lethyn Moonfire" GiverId="17834" />
+	<PickUp Nav="Fly" QuestName="Leader of the Darkcrest" QuestId="9730" GiverName="Wanted Poster" GiverId="182115" X="-236.3331" Y="5497.678" Z="25.53821" />
+	<PickUp Nav="Fly" QuestName="Leader of the Bloodscale" QuestId="9817" GiverName="Wanted Poster" GiverId="182115" X="-236.3331" Y="5497.678" Z="25.53821" />
+	<TurnIn Nav="Fly" QuestName="Warden Hamoot" QuestId="9778" TurnInName="Warden Hamoot" TurnInId="17858" />
+	<PickUp Nav="Fly" QuestName="A Warm Welcome" QuestId="9728" GiverName="Warden Hamoot" GiverId="17858" />
+	<PickUp Nav="Fly" QuestName="Plants of Zangarmarsh" QuestId="9802" GiverName="Lauranna Tharwell" GiverId="17909" />
+	<PickUp Nav="Fly" QuestName="The Umbrafen Tribe" QuestId="9747" GiverName="Ikeyen" GiverId="17956" />
+	
+	<CustomBehavior File="FlyTo" QuestId="9895" X="-460.9331" Y="5382.343" Z="22.73071" />
+	<Objective Nav="Fly" QuestName="The Dying Balance" QuestId="9895" Type="KillMob" MobId="18281" KillCount="1" X="-460.9331" Y="5382.343" Z="22.73071" />
+	
+	<CustomBehavior File="FlyTo" QuestId="9747" X="-1081.599" Y="5208.45" Z="26.99595" />
+	<Objective Nav="Fly" QuestName="The Umbrafen Tribe" QuestId="9747" Type="KillMob" MobId="18080" KillCount="1" />
+	<Objective Nav="Fly" QuestName="The Umbrafen Tribe" QuestId="9747" Type="KillMob" MobId="18077" KillCount="6" />
+	<Objective Nav="Fly" QuestName="The Umbrafen Tribe" QuestId="9747" Type="KillMob" MobId="18079" KillCount="8" />
+	<Objective Nav="Fly" QuestName="The Umbrafen Tribe" QuestId="9747" Type="KillMob" MobId="20115" KillCount="6" />
+	
+	<PickUp Nav="Fly" QuestName="Escape from Umbrafen" QuestId="9752" GiverName="Kayra Longmane" GiverId="17969" />
+	<While Condition="HasQuest(9752) &amp;&amp; !IsQuestCompleted(9752)" >
+		<CustomBehavior File="EscortGroup" QuestId="9752" EscortNpcId="17969" EscortCompleteWhen="QuestCompleteOrFails" />
+		<If Condition="!IsQuestCompleted(9752)" >
+			<CustomBehavior File="AbandonQuest" QuestId="9752" />
+			<PickUp QuestName="Escape from Umbrafen" QuestId="9752" GiverName="Kayra Longmane" GiverId="17969" />
+		</If>
+	</While>
+	
+	<CustomBehavior File="FlyTo" QuestId="9716" X="-752.7516" Y="5895.765" Z="59.27823" />
+	
+	<CustomBehavior File="FlyTo" QuestId="9730" X="-366.5556" Y="6202.509" Z="26.29136" />
+	<Objective Nav="Fly" QuestName="Leader of the Darkcrest" QuestId="9730" Type="KillMob" MobId="18046" KillCount="1" />
+	<CustomBehavior File="FlyTo" QuestId="9817" X="548.1736" Y="6237.59" Z="22.56185" />
+	<Objective Nav="Fly" QuestName="Leader of the Bloodscale" QuestId="9817" Type="KillMob" MobId="18044" KillCount="1" />
+
+	<TurnIn Nav="Fly" QuestName="Escape from Umbrafen" QuestId="9752" TurnInName="Ysiel Windsinger" TurnInId="17841" />
+	<TurnIn Nav="Fly" QuestName="Disturbance at Umbrafen Lake" QuestId="9716" TurnInName="Ysiel Windsinger" TurnInId="17841" />
+	<PickUp Nav="Fly" QuestName="As the Crow Flies" QuestId="9718" GiverName="Ysiel Windsinger" GiverId="17841" />
+	<While Condition="HasQuest(9718) &amp;&amp; !IsQuestCompleted(9718)" >
+		<CustomBehavior File="InteractWith" QuestId="9718" MobId="17841" InteractByUsingItemId="25465" 
+			NonCompeteDistance="0" PreInteractMountStrategy="DismountOrCancelShapeshift" WaitTime="5000"
+			TerminateWhen="Me.IsOnTransport" X="-143.4519" Y="5533.816" Z="31.06583" />
+	</While>
+	<TurnIn Nav="Fly" QuestName="As the Crow Flies" QuestId="9718" TurnInName="Ysiel Windsinger" TurnInId="17841" />
+	<PickUp Nav="Fly" QuestName="Balance Must Be Preserved" QuestId="9720" GiverName="Ysiel Windsinger" GiverId="17841" />
+	<TurnIn Nav="Fly" QuestName="The Dying Balance" QuestId="9895" TurnInName="Lethyn Moonfire" TurnInId="17834" />
+	<TurnIn Nav="Fly" QuestName="Leader of the Darkcrest" QuestId="9730" TurnInName="Warden Hamoot" TurnInId="17858" />
+	<TurnIn Nav="Fly" QuestName="Leader of the Bloodscale" QuestId="9817" TurnInName="Warden Hamoot" TurnInId="17858" />
+	<If Condition="HasQuest(9728) &amp;&amp; IsQuestCompleted(9728) &amp;&amp; Unit(17858) != null" >
+		<TurnIn Nav="Fly" QuestName="A Warm Welcome" QuestId="9728" TurnInName="Warden Hamoot" TurnInId="17858" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="The Umbrafen Tribe" QuestId="9747" TurnInName="Ikeyen" TurnInId="17956" />
+	<PickUp Nav="Fly" QuestName="A Damp, Dark Place" QuestId="9788" GiverName="Ikeyen" GiverId="17956" />
+	<If Condition="HasQuest(9802) &amp;&amp; IsQuestCompleted(9802) &amp;&amp; Unit(17909) != null" >
+		<TurnIn Nav="Fly" QuestName="Plants of Zangarmarsh" QuestId="9802" TurnInName="Lauranna Tharwell" TurnInId="17909" />
+	</If>
+	<PickUp Nav="Fly" QuestName="Saving the Sporeloks" QuestId="10096" GiverName="Lauranna Tharwell" GiverId="17909" />
+	<PickUp Nav="Fly" QuestName="Blessings of the Ancients" QuestId="9785" GiverName="Windcaller Blackhoof" GiverId="18070" />
+	<PickUp Nav="Fly" QuestName="Safeguarding the Watchers" QuestId="9894" GiverName="Windcaller Blackhoof" GiverId="18070" />
+	
+	<CustomBehavior File="InteractWith" QuestId="9785" QuestObjectiveIndex="1" MobId="17900" InteractByGossipOptions="1"
+		NonCompeteDistance="0" NumOfTimes="100" WaitTime="5000" X="-205.5799" Y="5397.786" Z="22.72371" />
+	<CustomBehavior File="InteractWith" QuestId="9785" QuestObjectiveIndex="2" MobId="17901" InteractByGossipOptions="1"
+		NonCompeteDistance="0" NumOfTimes="100" WaitTime="5000" >
+		<HuntingGrounds>
+			<Hotspot X="-225.4199" Y="5419.781" Z="22.0392" />
+			<Hotspot X="-225.4403" Y="5482.774" Z="22.20324" />
+			<Hotspot X="-294.2051" Y="5516.844" Z="21.66758" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn Nav="Fly" QuestName="Blessings of the Ancients" QuestId="9785" TurnInName="Windcaller Blackhoof" TurnInId="18070" />
+	
+	<If Condition="(HasQuest(10096) &amp;&amp; !IsQuestCompleted(10096)) || (HasQuest(9788) &amp;&amp; !IsQuestCompleted(9788)) || (HasQuest(9894) &amp;&amp; !IsQuestCompleted(9894))" >
+		<CustomBehavior File="FlyTo" TerminateWhen="Unit(18912) != null || Unit(18137) != null || Unit(18136) != null" X="-1111.97" Y="5704.75" Z="56.96041" />
+	</If>
+	<Objective QuestName="A Damp, Dark Place" QuestId="9788" Type="CollectItem" ItemId="24411" CollectCount="1" X="-1346.403" Y="5929.663" Z="11.93181" />
+	<Objective QuestName="Safeguarding the Watchers" QuestId="9894" Type="KillMob" MobId="18282" KillCount="1" X="-1218.523" Y="5831.076" Z="3.317583" />
+	<Objective QuestName="Saving the Sporeloks" QuestId="10096" Type="KillMob" MobId="18137" KillCount="10" />
+	<Objective QuestName="Saving the Sporeloks" QuestId="10096" Type="KillMob" MobId="18136" KillCount="10" />
+	
+	<CustomBehavior File="InteractWith" QuestId="9720" QuestObjectiveIndex="1" MobId="17998" InteractByUsingItemId="24355"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		InteractBlacklistTimeInSeconds="10" WaitTime="1000" X="-755.9698" Y="5925.648" Z="18.92979" />
+
+	<TurnIn Nav="Fly" QuestName="A Damp, Dark Place" QuestId="9788" TurnInName="Ikeyen" TurnInId="17956" />
+	<TurnIn Nav="Fly" QuestName="Saving the Sporeloks" QuestId="10096" TurnInName="Lauranna Tharwell" TurnInId="17909" />
+	<If Condition="HasQuest(9802) &amp;&amp; IsQuestCompleted(9802) &amp;&amp; Unit(17909) != null" >
+		<TurnIn Nav="Fly" QuestName="Plants of Zangarmarsh" QuestId="9802" TurnInName="Lauranna Tharwell" TurnInId="17909" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="Safeguarding the Watchers" QuestId="9894" TurnInName="Windcaller Blackhoof" TurnInId="18070" />
+
+	<CustomBehavior File="InteractWith" QuestId="9720" QuestObjectiveIndex="4" MobId="17999" InteractByUsingItemId="24355"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		InteractBlacklistTimeInSeconds="10" WaitTime="1000" X="-213.2536" Y="6302.234" Z="21.62579" />
+		
+	<PickUp Nav="Fly" QuestName="The Dead Mire" QuestId="9782" GiverName="Vindicator Idaar" GiverId="18004" />
+	<PickUp Nav="Fly" QuestName="Unfinished Business" QuestId="9901" GiverName="Prospector Conall" GiverId="18295" />
+	<PickUp Nav="Fly" QuestName="The Boha'mu Ruins" QuestId="9786" GiverName="Anchorite Ahuurn" GiverId="18003" />
+	<PickUp Nav="Fly" QuestName="Fulgor Spores" QuestId="9777" GiverName="Ruam" GiverId="18007" />
+	<PickUp Nav="Fly" QuestName="Too Many Mouths to Feed" QuestId="9781" GiverName="Haalrun" GiverId="18005" />
+	<PickUp Nav="Fly" QuestName="Menacing Marshfangs" QuestId="9791" GiverName="Noraani" GiverId="18006" />
+	
+	<Objective Nav="Fly" QuestName="Fulgor Spores" QuestId="9777" Type="CollectItem" ItemId="24383" CollectCount="6" />
+	<Objective Nav="Fly" QuestName="Menacing Marshfangs" QuestId="9791" Type="KillMob" MobId="18130" KillCount="10" />
+	<Objective Nav="Fly" QuestName="Unfinished Business" QuestId="9901" Type="KillMob" MobId="18280" KillCount="1" />
+	<Objective Nav="Fly" QuestName="The Dead Mire" QuestId="9782" Type="CollectItem" ItemId="24400" CollectCount="1" />
+
+	<CustomBehavior File="InteractWith" QuestId="9720" QuestObjectiveIndex="3" MobId="18000" InteractByUsingItemId="24355"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		InteractBlacklistTimeInSeconds="10" WaitTime="1000" X="566.5465" Y="6359.522" Z="22.98551" />
+
+	<TurnIn Nav="Fly" QuestName="Menacing Marshfangs" QuestId="9791" TurnInName="Noraani" TurnInId="18006" />
+	<PickUp Nav="Fly" QuestName="Umbrafen Eel Filets" QuestId="9780" GiverName="Noraani" GiverId="18006" />
+	<TurnIn Nav="Fly" QuestName="Fulgor Spores" QuestId="9777" TurnInName="Ruam" TurnInId="18007" />
+	<TurnIn Nav="Fly" QuestName="Unfinished Business" QuestId="9901" TurnInName="Prospector Conall" TurnInId="18295" />
+	<PickUp Nav="Fly" QuestName="Blacksting's Bane" QuestId="9896" GiverName="Prospector Conall" GiverId="18295" />
+	<TurnIn Nav="Fly" QuestName="The Dead Mire" QuestId="9782" TurnInName="Vindicator Idaar" TurnInId="18004" />
+	<PickUp Nav="Fly" QuestName="An Unnatural Drought" QuestId="9783" GiverName="Vindicator Idaar" GiverId="18004" />
+
+	<Objective Nav="Fly" QuestName="An Unnatural Drought" QuestId="9783" Type="KillMob" MobId="18124" KillCount="12" />
+	<If Condition="!HasQuest(9827) &amp;&amp; !IsQuestCompleted(9827)" >
+		<CustomBehavior File="InteractWith" MobId="18124" MobState="Alive" NonCompeteDistance="0" 
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" 
+			NumOfTimes="1000" WaitTime="1000" TerminateWhen="HasItem(24483)" >
+			<HuntingGrounds>
+				<Hotspot X="536.4932" Y="5546.309" Z="17.9433" />
+				<Hotspot X="635.0448" Y="5517.081" Z="0.4280958" />
+				<Hotspot X="734.0848" Y="5487.469" Z="-5.751832" />
+				<Hotspot X="790.1001" Y="5410.766" Z="-5.278378" />
+				<Hotspot X="745.4788" Y="5331.636" Z="-4.18391" />
+				<Hotspot X="637.7974" Y="5234.539" Z="-4.313582" />
+				<Hotspot X="528.3921" Y="5261.078" Z="-4.965091" />
+				<Hotspot X="467.8411" Y="5338.364" Z="-3.480891" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<PickUp Nav="Fly" QuestName="Withered Basidium" QuestId="9827" GiverName="Withered Basidium" GiverId="24483" GiverType="Item" />
+	</If>
+	<Objective Nav="Fly" QuestName="Too Many Mouths to Feed" QuestId="9781" Type="KillMob" MobId="18213" KillCount="10" />
+	
+	<CustomBehavior File="FlyTo" QuestId="9780" TerminateWhen="Unit(18138, u =&gt; u.IsAlive) != null" X="-223.8582" Y="5774.127" Z="20.22265" />
+	<CustomBehavior File="InteractWith" QuestId="9780" MobId="18138" MobState="Alive" NonCompeteDistance="5"
+		PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000"
+		WaitTime="1000" MovementBy="ClickToMoveOnly" >
+		<HuntingGrounds>
+			<Hotspot X="-223.8582" Y="5774.127" Z="20.22265" />
+			<Hotspot X="-325.4141" Y="5747.769" Z="14.67905" />
+			<Hotspot X="-433.9845" Y="5707.646" Z="15.58283" />
+			<Hotspot X="-542.9709" Y="5711.797" Z="15.55478" />
+			<Hotspot X="-738.6977" Y="5724.528" Z="15.85644" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<CustomBehavior File="AscendInWater" />
+	
+	<TurnIn Nav="Fly" QuestName="Too Many Mouths to Feed" QuestId="9781" TurnInName="Haalrun" TurnInId="18005" />
+	<PickUp Nav="Fly" QuestName="Diaphanous Wings" QuestId="9790" GiverName="Haalrun" GiverId="18005" />
+	<TurnIn Nav="Fly" QuestName="Umbrafen Eel Filets" QuestId="9780" TurnInName="Noraani" TurnInId="18006" />
+	<TurnIn Nav="Fly" QuestName="Withered Basidium" QuestId="9827" TurnInName="Ruam" TurnInId="18007" />
+	<PickUp Nav="Fly" QuestName="Withered Flesh" QuestId="10355" GiverName="Ruam" GiverId="18007" />
+	<TurnIn Nav="Fly" QuestName="An Unnatural Drought" QuestId="9783" TurnInName="Vindicator Idaar" TurnInId="18004" />
+	
+	<Objective Nav="Fly" QuestName="Withered Flesh" QuestId="10355" Type="CollectItem" ItemId="29481" CollectCount="5" />
+	<Objective Nav="Fly" QuestName="Withered Flesh" QuestId="10355" Type="CollectItem" ItemId="29480" CollectCount="5" />
+	<Objective Nav="Fly" QuestName="Diaphanous Wings" QuestId="9790" Type="CollectItem" ItemId="24372" CollectCount="8" />
+	
+	<TurnIn Nav="Fly" QuestName="Diaphanous Wings" QuestId="9790" TurnInName="Haalrun" TurnInId="18005" />
+	<TurnIn Nav="Fly" QuestName="Withered Flesh" QuestId="10355" TurnInName="Ruam" TurnInId="18007" />
+	
+	<Objective Nav="Fly" QuestName="Blacksting's Bane" QuestId="9896" Type="CollectItem" ItemId="25448" CollectCount="1" X="-65" Y="6975" Z="19" />
+	
+	<CustomBehavior File="FlyTo" QuestId="9786" X="-381.4642" Y="7256.866" Z="54.77402" />
+	
+	<TurnIn Nav="Fly" QuestName="Blacksting's Bane" QuestId="9896" TurnInName="Prospector Conall" TurnInId="18295" />
+	<TurnIn Nav="Fly" QuestName="The Boha'mu Ruins" QuestId="9786" TurnInName="Anchorite Ahuurn" TurnInId="18003" />
+	
+	<PickUp Nav="Fly" QuestName="Idols of the Feralfen" QuestId="9787" GiverName="Anchorite Ahuurn" GiverId="18003" />
+	<Objective Nav="Fly" QuestName="Idols of the Feralfen" QuestId="9787" Type="CollectItem" ItemId="24422" CollectCount="6" />
+	<TurnIn Nav="Fly" QuestName="Idols of the Feralfen" QuestId="9787" TurnInName="Anchorite Ahuurn" TurnInId="18003" />
+	
+	<PickUp Nav="Fly" QuestName="Gathering the Reagents" QuestId="9801" GiverName="Anchorite Ahuurn" GiverId="18003" />
+	<Objective Nav="Fly" QuestName="Gathering the Reagents" QuestId="9801" Type="CollectItem" ItemId="24426" CollectCount="4" />
+	<Objective Nav="Fly" QuestName="Gathering the Reagents" QuestId="9801" Type="CollectItem" ItemId="24427" CollectCount="4" />
+	<TurnIn Nav="Fly" QuestName="Gathering the Reagents" QuestId="9801" TurnInName="Anchorite Ahuurn" TurnInId="18003" />
+
+	<PickUp Nav="Fly" QuestName="Messenger to the Feralfen" QuestId="9803" GiverName="Anchorite Ahuurn" GiverId="18003" />
+	<While Condition="HasQuest(9803) &amp;&amp; !IsQuestCompleted(9803)" >
+		<If Condition="Unit(18197) == null" >
+			<CustomBehavior File="FlyTo" X="-367.4648" Y="7256.392" Z="53.86295" />
+		</If>
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(24428)" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" QuestId="9803" MobId="18197" MobState="Alive" InteractByGossipOptions="1,1,1"
+			NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000"
+			WaitTime="1000" TerminateWhen="!Me.HasAura(32038)" X="-393.7951" Y="7257.781" Z="54.61576" />
+	</While>
+	<If Condition="new Func&lt;bool&gt;(() => { if (Me.HasAura(32038)) Me.GetAuraById(32038).TryCancelAura(); return true; })()" />  
+	<TurnIn Nav="Fly" QuestName="Messenger to the Feralfen" QuestId="9803" TurnInName="Anchorite Ahuurn" TurnInId="18003" />
+	
+	<PickUp Nav="Fly" QuestName="The Orebor Harborage" QuestId="9776" GiverName="Anchorite Ahuurn" GiverId="18003" />
+	
+	<CustomBehavior File="InteractWith" QuestId="9720" QuestObjectiveIndex="2" MobId="18002" InteractByUsingItemId="24355"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		InteractBlacklistTimeInSeconds="10" WaitTime="1000" X="494.5056" Y="8190.808" Z="20.88049" />
+
+	<If Condition="!HasQuest(9731) &amp;&amp; !IsQuestCompleted(9731)" >
+		<CustomBehavior File="InteractWith" MobId="18340" MobId2="20088" MobId3="20089" MobId4="18088" MobId5="18089" MobState="Alive"
+			NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="1000" WaitTime="1000" TerminateWhen="HasItem(24330) || HasQuest(9731)" >
+			<HuntingGrounds>
+				<Hotspot X="494.5056" Y="8190.808" Z="20.88049" />
+				<Hotspot X="566.5465" Y="6359.522" Z="22.98551" />
+				<Hotspot X="-213.2536" Y="6302.234" Z="21.62579" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<PickUp Nav="Fly" QuestName="Drain Schematics" QuestId="9731" GiverName="Drain Schematics" GiverType="Item" GiverId="24330" />
+	</If>
+
+	<Objective Nav="Fly" QuestName="A Warm Welcome" QuestId="9728" Type="CollectItem" ItemId="24280" CollectCount="30" />
+	
+	<While Condition="HasQuest(9731) &amp;&amp; !IsQuestCompleted(9731)" >
+		<CustomBehavior File="FlyTo" QuestId="9731" X="558.1463" Y="6943.737" Z="30" />
+		<CustomBehavior File="MyCTM" QuestId="9731" X="558.1463" Y="6943.737" Z="-30" />
+	</While>
+	<CustomBehavior File="AscendInWater" />
+	
+	<TurnIn Nav="Fly" QuestName="Balance Must Be Preserved" QuestId="9720" TurnInName="Ysiel Windsinger" TurnInId="17841" />
+	<TurnIn Nav="Fly" QuestName="Drain Schematics" QuestId="9731" TurnInName="Ysiel Windsinger" TurnInId="17841" />
+	<PickUp Nav="Fly" QuestName="Warning the Cenarion Circle" QuestId="9724" GiverName="Ysiel Windsinger" GiverId="17841" />
+	<PickUp Nav="Fly" QuestName="Watcher Leesa'oh" QuestId="9697" GiverName="Lethyn Moonfire" GiverId="17834" />
+	<TurnIn Nav="Fly" QuestName="A Warm Welcome" QuestId="9728" TurnInName="Warden Hamoot" TurnInId="17858" />
+	<TurnIn Nav="Fly" QuestName="Warning the Cenarion Circle" QuestId="9724" TurnInName="Amythiel Mistwalker" TurnInId="16885" />
+	<PickUp Nav="Fly" QuestName="Return to the Marsh" QuestId="9732" GiverName="Amythiel Mistwalker" GiverId="16885" />
+	<TurnIn Nav="Fly" QuestName="Return to the Marsh" QuestId="9732" TurnInName="Ysiel Windsinger" TurnInId="17841" />
+
+	<CustomBehavior File="Message" Text="Compiling Cenarion Watchpost Quests" LogColor="CornflowerBlue" />
+	
+	<If Condition="!HasQuest(9911) &amp;&amp; !IsQuestCompleted(9911)" >
+		<CustomBehavior File="InteractWith" MobId="18285" MobState="Alive" NonCompeteDistance="0"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="1000" WaitTime="1000" TerminateWhen="HasItem(25459) || HasQuest(9911)" X="-64.74881" Y="7840.708" Z="24.34151" />
+		<PickUp Nav="Fly" QuestName="The Count of the Marshes" QuestId="9911" GiverName="Count Ungula's Mandible" GiverType="Item" GiverId="25459" />
+	</If>
+	
+	<TurnIn Nav="Fly" QuestName="Watcher Leesa'oh" QuestId="9697" TurnInName="Watcher Leesaoh" TurnInId="17831" />
+	<TurnIn Nav="Fly" QuestName="The Count of the Marshes" QuestId="9911" TurnInName="Watcher Leesaoh" TurnInId="17831" />
+	<PickUp Nav="Fly" QuestName="Observing the Sporelings" QuestId="9701" GiverName="Watcher Leesaoh" GiverId="17831" />
+	<PickUp Nav="Fly" QuestName="The Sporelings' Plight" QuestId="9739" GiverName="Fahssn" GiverId="17923" />
+	<PickUp Nav="Fly" QuestName="Natural Enemies" QuestId="9743" GiverName="Fahssn" GiverId="17923" />
+	<CustomBehavior File="FlyTo" QuestId="9701" X="-93.15346" Y="8714.697" Z="18.44209" />
+	<Objective Nav="Fly" QuestName="The Sporelings' Plight" QuestId="9739" Type="CollectItem" ItemId="24290" CollectCount="10" />
+	<Objective Nav="Fly" QuestName="Natural Enemies" QuestId="9743" Type="CollectItem" ItemId="24291" CollectCount="6" />
+	<TurnIn Nav="Fly" QuestName="The Sporelings' Plight" QuestId="9739" TurnInName="Fahssn" TurnInId="17923" />
+	<TurnIn Nav="Fly" QuestName="Natural Enemies" QuestId="9743" TurnInName="Fahssn" TurnInId="17923" />
+	<TurnIn Nav="Fly" QuestName="Observing the Sporelings" QuestId="9701" TurnInName="Watcher Leesaoh" TurnInId="17831" />
+	
+	<PickUp Nav="Fly" QuestName="A Question of Gluttony" QuestId="9702" GiverName="Watcher Leesaoh" GiverId="17831" />
+	<Objective Nav="Fly" QuestName="A Question of Gluttony" QuestId="9702" Type="CollectItem" ItemId="24233" CollectCount="10" />
+	<TurnIn Nav="Fly" QuestName="A Question of Gluttony" QuestId="9702" TurnInName="Watcher Leesaoh" TurnInId="17831" />
+
+	<PickUp Nav="Fly" QuestName="Familiar Fungi" QuestId="9708" GiverName="Watcher Leesaoh" GiverId="17831" />
+	<Objective Nav="Fly" QuestName="Familiar Fungi" QuestId="9708" Type="CollectItem" ItemId="24238" CollectCount="15" />
+	<TurnIn Nav="Fly" QuestName="Familiar Fungi" QuestId="9708" TurnInName="Watcher Leesaoh" TurnInId="17831" />
+	
+	<PickUp Nav="Fly" QuestName="Stealing Back the Mushrooms" QuestId="9709" GiverName="Watcher Leesaoh" GiverId="17831" />
+	<Objective Nav="Fly" QuestName="Stealing Back the Mushrooms" QuestId="9709" Type="CollectItem" ItemId="24240" CollectCount="10" />
+	<TurnIn Nav="Fly" QuestName="Stealing Back the Mushrooms" QuestId="9709" TurnInName="Watcher Leesaoh" TurnInId="17831" />
+	
+	<CustomBehavior File="Message" Text="Compiling Orebor Harborage Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn Nav="Fly" QuestName="The Orebor Harborage" QuestId="9776" TurnInName="Ikuti" TurnInId="18008" />
+	<PickUp Nav="Fly" QuestName="Ango'rosh Encroachment" QuestId="9835" GiverName="Ikuti" GiverId="18008" />
+	<PickUp Nav="Fly" QuestName="Daggerfen Deviance" QuestId="10115" GiverName="Ikuti" GiverId="18008" />
+	<PickUp Nav="Fly" QuestName="Wanted: Chieftain Mummaki" QuestId="10116" GiverName="Wanted Poster" GiverId="183284" />
+	<PickUp Nav="Fly" QuestName="Secrets of the Daggerfen" QuestId="9848" GiverName="Timothy Daniels" GiverId="18019" />
+	
+	<Objective Nav="Fly" QuestName="Ango'rosh Encroachment" QuestId="9835" Type="KillMob" MobId="18117" KillCount="10" />
+	<Objective Nav="Fly" QuestName="Ango'rosh Encroachment" QuestId="9835" Type="KillMob" MobId="18118" KillCount="5" />
+	<Objective Nav="Fly" QuestName="Wanted: Chieftain Mummaki" QuestId="10116" Type="CollectItem" ItemId="27943" CollectCount="1" X="1038.903" Y="8279.625" Z="57.65321" />
+	<Objective Nav="Fly" QuestName="Secrets of the Daggerfen" QuestId="9848" Type="CollectItem" ItemId="24499" CollectCount="1" />
+	<Objective Nav="Fly" QuestName="Secrets of the Daggerfen" QuestId="9848" Type="CollectItem" ItemId="24500" CollectCount="1" />
+	<Objective Nav="Fly" QuestName="Daggerfen Deviance" QuestId="10115" Type="KillMob" MobId="18116" KillCount="3" />
+	<Objective Nav="Fly" QuestName="Daggerfen Deviance" QuestId="10115" Type="KillMob" MobId="18115" KillCount="15" />
+
+	<TurnIn Nav="Fly" QuestName="Secrets of the Daggerfen" QuestId="9848" TurnInName="Timothy Daniels" TurnInId="18019" />
+	<TurnIn Nav="Fly" QuestName="Ango'rosh Encroachment" QuestId="9835" TurnInName="Ikuti" TurnInId="18008" />
+	<TurnIn Nav="Fly" QuestName="Wanted: Chieftain Mummaki" QuestId="10116" TurnInName="Ikuti" TurnInId="18008" />
+	<TurnIn Nav="Fly" QuestName="Daggerfen Deviance" QuestId="10115" TurnInName="Ikuti" TurnInId="18008" />
+	<PickUp Nav="Fly" QuestName="Overlord Gorefist" QuestId="9839" GiverName="Ikuti" GiverId="18008" />
+	
+	<SetVendor>
+		<Vendors>
+			<!-- Cenarion Refuge -->
+			<Vendor Nav="Fly" Name="Fedryen Swiftspear" Entry="17904" Type="Repair" X="-198.9696" Y="5490.686" Z="21.84616" />
+			<!-- Telredor -->
+			<Vendor Nav="Fly" Name="Loolruna" Entry="19694" Type="Repair" X="252.2793" Y="6030.792" Z="131.596" />
+			<!-- Orebor -->
+			<Vendor Nav="Fly" Name="Maktu" Entry="18010" Type="Repair" X="1020.835" Y="7383.452" Z="36.24115" />
+		</Vendors>
+	</SetVendor>
+	
+	<PickUp Nav="Fly" QuestName="Natural Armor" QuestId="9834" GiverName="Maktu" GiverId="18010" />
+	<PickUp Nav="Fly" QuestName="Stinger Venom" QuestId="9830" GiverName="Puluu" GiverId="18009" />
+	<PickUp Nav="Fly" QuestName="Lines of Communication" QuestId="9833" GiverName="Puluu" GiverId="18009" />
+	<PickUp Nav="Fly" QuestName="The Terror of Marshlight Lake" QuestId="9902" GiverName="Puluu" GiverId="18009" />
+	
+	<CustomBehavior File="FlyTo" QuestId="9834" TerminateWhen="Unit(18214, u =&gt; u.IsAlive) != null" X="555.2956" Y="7043.923" Z="19.32601" />
+	<If Condition="HasItem(25539) &amp;&amp; !IsQuestCompleted(9834) &amp;&amp; !Me.HasAura(22807)" >
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(25539)" WaitTime="1000" />
+	</If>
+	<CustomBehavior File="InteractWith" QuestId="9834" MobId="18214" MobState="Alive" NonCompeteDistance="0"
+		PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" MovementBy="ClickToMoveOnly"
+		NumOfTimes="1000" WaitTime="1000" CollectionDistance="250" >
+		<HuntingGrounds>
+			<Hotspot X="578.3875" Y="7035.846" Z="-32.87782" />
+			<Hotspot X="485.4766" Y="6845.388" Z="-33.5874" />
+			<Hotspot X="532.6371" Y="6783.633" Z="-31.55088" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<CustomBehavior File="AscendInWater" />
+	
+	<CustomBehavior File="FlyTo" QuestId="9833" X="-7.958919" Y="7837.301" Z="22.0829" />
+	<Objective Nav="Fly" QuestName="Lines of Communication" QuestId="9833" Type="KillMob" MobId="18131" KillCount="12" />
+	<Objective Nav="Fly" QuestName="The Terror of Marshlight Lake" QuestId="9902" Type="KillMob" MobId="20477" KillCount="1" />
+	<Objective Nav="Fly" QuestName="Stinger Venom" QuestId="9830" Type="CollectItem" ItemId="24485" CollectCount="6" />
+	<CustomBehavior File="FlyTo" QuestId="9839" QuestObjectiveIndex="1" X="1674" Y="8550" Z="2.85" />
+	<Objective Nav="Fly" QuestName="Overlord Gorefist" QuestId="9839" Type="KillMob" MobId="18160" KillCount="1" />
+	<CustomBehavior File="FlyTo" QuestId="9839" QuestObjectiveIndex="2" X="1642.291" Y="8497.504" Z="-7.565715" />
+	<Objective Nav="Fly" QuestName="Overlord Gorefist" QuestId="9839" Type="KillMob" MobId="18120" KillCount="10" />
+
+	<TurnIn Nav="Fly" QuestName="The Terror of Marshlight Lake" QuestId="9902" TurnInName="Puluu" TurnInId="18009" />
+	<TurnIn Nav="Fly" QuestName="Lines of Communication" QuestId="9833" TurnInName="Puluu" TurnInId="18009" />
+	<TurnIn Nav="Fly" QuestName="Stinger Venom" QuestId="9830" TurnInName="Puluu" TurnInId="18009" />
+	<TurnIn Nav="Fly" QuestName="Natural Armor" QuestId="9834" TurnInName="Maktu" TurnInId="18010" />
+	<TurnIn Nav="Fly" QuestName="Overlord Gorefist" QuestId="9839" TurnInName="Ikuti" TurnInId="18008" />
+	
+	<PickUp Nav="Fly" QuestName="What's Wrong at Cenarion Thicket?" QuestId="9957" GiverName="Lethyn Moonfire" GiverId="17834" />
+	
+	<CustomBehavior File="Message" Text="Zangarmarsh Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="[Quest] Terokkar A [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

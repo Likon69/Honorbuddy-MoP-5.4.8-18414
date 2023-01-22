@@ -1,0 +1,170 @@
+<HBProfile>
+
+	<Name>Orgrimmar Cooking Dailies ($Rev$)</Name>
+	<MinLevel>10</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="26226" Name="Crawfish Creole">
+	<Objective Type="CollectItem" ItemId="57765" CollectCount="10">
+		<CollectFrom>
+			<Mob Name="Muddy Crawfish" Id="42548" />
+		</CollectFrom>
+		<Hotspots>
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="Message" Text="ERROR!! Somehow you ended up starting an Horde profile. Terminating." LogColor="Red" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Orgrimmar Cooking Daily Routine...Checking Location" LogColor="Green" />
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Orgrimmar -->
+		<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326)) &gt;= 100" >
+			<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+			<CustomBehavior File="ForcedDismount" />
+		</If>
+		<UseMount Value="False" />
+		<CustomBehavior File="InteractWith" MobId="215127" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1732.343" Y="881.7467" Z="487.0864" />
+		<UseMount Value="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+	</If>
+	
+	<!-- Needs conditional for Ghostlands -->
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557
+			&amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487" > <!-- Outlands, but not Azure/Bloodmyst/Exodar or Ghostlands/Eversong/Silvermoon -->
+		<CustomBehavior File="FlyTo" X="-163.8283" Y="973.4586" Z="54.29" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="195140" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-163.8283" Y="973.4586" Z="54.29" />
+	</If>
+	
+	<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+		<CustomBehavior File="FlyTo" X="2070.155" Y="289.2588" Z="97.0315" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="UseTransport" TransportId="164871"
+				WaitAtX="2070.155" WaitAtY="289.2588" WaitAtZ="97.0315" 
+				TransportStartX="2062.376" TransportStartY="292.998" TransportStartZ="114.973"
+				TransportEndX="1833.509" TransportEndY="-4391.543" TransportEndZ="152.7679"
+				StandOnX="2067.979" StandOnY="295.2747" StandOnZ="97.23677" 
+				GetOffX="1840.225" GetOffY="-4390.912" GetOffZ="135.2337" />	
+	</If>
+	
+	<If Condition="!HasQuest(26227) &amp;&amp; !HasQuest(26226) &amp;&amp; !HasQuest(26235) &amp;&amp; !HasQuest(26220) &amp;&amp; !HasQuest(26233) &amp;&amp; !HasQuest(26234)" >
+		<CustomBehavior File="Message" Text="Grabbing Daily from Marogg" LogColor="CornflowerBlue" />
+		<CustomBehavior File="FlyTo" X="1753.479" Y="-4488.386" Z="44.08755" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.GetSkill(Styx.SkillLine.Cooking).CurrentValue &lt; 1" >
+			<CustomBehavior File="ForceTrainRiding" MobId="42506" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</If>
+		<While Condition="HasQuestAvailable(42506)" >
+			<CustomBehavior File="InteractWith" MobId="42506" InteractByQuestFrameDisposition="Ignore" NonCompeteDistance="0" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+	
+	<If Condition="HasQuest(26227)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Careful, This Fruit Bites Back" LogColor="CornflowerBlue" />
+		<Objective Nav="Fly" QuestName="Careful, This Fruit Bites Back" QuestId="26227" Type="CollectItem" ItemId="57766" CollectCount="8" />
+		<CustomBehavior File="FlyTo" X="1753.479" Y="-4488.386" Z="44.08755" />
+		<TurnIn Nav="Fly" QuestName="Careful, This Fruit Bites Back" QuestId="26227" TurnInName="Marogg" TurnInId="42506" X="1753.479" Y="-4488.386" Z="44.08755" />
+	</If>
+	
+	<If Condition="HasQuest(26226)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Crawfish Creole" LogColor="CornflowerBlue" />
+		<CustomBehavior File="FlyTo" QuestId="26226" X="1605.662" Y="-4147.118" Z="48.07087" />
+		<CustomBehavior File="InteractWith" QuestId="26226" MobId="42548" InteractByLooting="True" NonCompeteDistance="5"
+			NumOfTimes="1000" WaitTime="1000" >
+			<HuntingGrounds>
+				<Hotspot X="1501.989" Y="-4167.105" Z="50.68484" />
+				<Hotspot X="1605.662" Y="-4147.118" Z="48.07087" />
+				<Hotspot X="1680.27" Y="-4100.922" Z="48.37614" />
+				<Hotspot X="1736.941" Y="-4026.889" Z="50.27954" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="FlyTo" X="1753.479" Y="-4488.386" Z="44.08755" />
+		<TurnIn Nav="Fly" QuestName="Crawfish Creole" QuestId="26226" TurnInName="Marogg" TurnInId="42506" X="1753.479" Y="-4488.386" Z="44.08755" />
+	</If>
+	
+	<If Condition="HasQuest(26235)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Even Thieves Get Hungry" LogColor="CornflowerBlue" />
+		<Objective Nav="Fly" QuestName="Even Thieves Get Hungry" QuestId="26235" Type="CollectItem" ItemId="57879" CollectCount="3" />
+		<CustomBehavior File="FlyTo" X="1753.479" Y="-4488.386" Z="44.08755" />
+		<TurnIn Nav="Fly" QuestName="Even Thieves Get Hungry" QuestId="26235" TurnInName="Marogg" TurnInId="42506" X="1753.479" Y="-4488.386" Z="44.08755" />
+	</If>
+	
+	<If Condition="HasQuest(26220)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Everything Is Better with Bacon" LogColor="CornflowerBlue" />
+		<Objective Nav="Fly" QuestName="Everything Is Better with Bacon" QuestId="26220" Type="CollectItem" ItemId="57758" CollectCount="6" />
+		<CustomBehavior File="FlyTo" X="1753.479" Y="-4488.386" Z="44.08755" />
+		<TurnIn Nav="Fly" QuestName="Everything Is Better with Bacon" QuestId="26220" TurnInName="Marogg" TurnInId="42506" X="1753.479" Y="-4488.386" Z="44.08755" />
+	</If>
+	
+	<If Condition="HasQuest(26233)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Stealing From Our Own" LogColor="CornflowerBlue" />
+		<Objective Nav="Fly" QuestName="Stealing From Our Own" QuestId="26233" Type="CollectItem" ItemId="57877" CollectCount="6" />
+		<CustomBehavior File="FlyTo" X="1753.479" Y="-4488.386" Z="44.08755" />
+		<TurnIn Nav="Fly" QuestName="Stealing From Our Own" QuestId="26233" TurnInName="Marogg" TurnInId="42506" X="1753.479" Y="-4488.386" Z="44.08755" />
+	</If>
+	
+	<If Condition="HasQuest(26234)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Stealing From Our Own" LogColor="CornflowerBlue" />
+		<Objective Nav="Fly" QuestName="Stealing From Our Own" QuestId="26234" Type="CollectItem" ItemId="57878" CollectCount="6" />
+		<CustomBehavior File="FlyTo" X="1753.479" Y="-4488.386" Z="44.08755" />
+		<TurnIn Nav="Fly" QuestName="Stealing From Our Own" QuestId="26234" TurnInName="Marogg" TurnInId="42506" X="1753.479" Y="-4488.386" Z="44.08755" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Double checking for training..." LogColor="Orange" />
+	<CustomBehavior File="ForceTrainRiding" MobId="42506" />
+	
+	<CustomBehavior File="Message" Text="Cooking Daily Complete, signing off!" LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+		
+</QuestOrder>
+</HBProfile>

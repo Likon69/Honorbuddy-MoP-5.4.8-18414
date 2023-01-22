@@ -1,0 +1,326 @@
+<HBProfile xsi:noNamespaceSchemaLocation="../../../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- Original contribution by Kickazz006 -->
+    <Name>[A - Quest] Dwarf 1-5 [Kick] ($Rev: 3162 $)</Name>
+
+    <MinLevel>1</MinLevel>
+    <MaxLevel>1001</MaxLevel>
+
+    <MinDurability>0.3</MinDurability>
+    <MinFreeBagSlots>3</MinFreeBagSlots>
+
+    <!-- NB: Honorbuddy sells before mailing -->
+    <SellGrey>true</SellGrey>
+    <SellWhite>true</SellWhite>
+    <SellGreen>true</SellGreen>
+    <SellBlue>false</SellBlue>
+    <SellPurple>false</SellPurple>
+
+    <MailGrey>false</MailGrey>
+    <MailWhite>true</MailWhite>
+    <MailGreen>true</MailGreen>
+    <MailBlue>true</MailBlue>
+    <MailPurple>true</MailPurple>
+
+    <TargetElites>false</TargetElites>
+
+
+    <AvoidMobs>
+    </AvoidMobs>
+
+
+    <Blackspots>
+    </Blackspots>
+
+
+    <Mailboxes>
+        <Mailbox Name="Coldridge" X="-6169.81" Y="376.9556" Z="398.8244" />
+        <Mailbox Name="Goldshire" X="-9456.721" Y="46.77825" Z="56.60653" />
+        <Mailbox Name="Kharanos" X="-5603.603" Y="-512.9031" Z="401.6768" />
+        <Mailbox Name="Thelsamar" X="-5364.78" Y="-2953.748" Z="323.8507" />
+    </Mailboxes>
+
+
+    <Vendors>
+        <!-- Stormwind Vendors -->
+        <Vendor Name="Gunther Weller" Id="1289" Type="Repair" X="-8790.421" Y="607.3484" Z="96.77347" />
+        <Vendor Name="Innkeeper Allison" Id="6740" Type="Food" X="-8867.786" Y="673.6729" Z="97.90376" />
+        <Vendor Name="Marda Weller" Id="1287" Type="Repair" X="-8787.688" Y="609.6306" Z="96.77336" />
+
+        <!-- Goldshire Vendors -->
+        <Vendor Name="Corina Steele" Id="54" Type="Repair" X="-9464.4" Y="94.0174" Z="58.34372" />
+        <Vendor Name="Innkeeper Farley" Id="295" Type="Food" X="-9462.663" Y="16.19151" Z="56.96306" />
+
+        <!-- Coldridge Valley -->
+        <Vendor Name="Adlin Pridedrift" Id="829" Type="Food" X="-6225.237" Y="320.3721" Z="383.1173" />
+        <Vendor Name="Durnan Furcutter" Id="836" Type="Repair" X="-6056.377" Y="385.2125" Z="392.7625" />
+        <Vendor Name="Felix Whindlebolt" Id="8416" Type="Food" X="-6370.058" Y="576.2" Z="385.7998" />
+        <Vendor Name="Rybrad Coldbank" Id="945" Type="Repair" X="-6101.101" Y="390.5695" Z="395.5436" />
+
+        <!-- Kharanos -->
+        <Vendor Name="Frast Dokner" Id="1698" Type="Repair" X="-5714.372" Y="-1589.517" Z="383.2044" />
+        <Vendor Name="Grawn Thromwyn" Id="1273" Type="Repair" X="-5590.67" Y="-428.416" Z="397.3266" />
+        <Vendor Name="Jade Ramalot" Id="46996" Type="Repair" X="-4594.17" Y="-1714.2" Z="503.476" />
+        <Vendor Name="Monann Coldforge" Id="43384" Type="Food" X="-5522.49" Y="-1930.35" Z="398.9589" />
+        <Vendor Name="Turuk Amberstill" Id="3177" Type="Repair" X="-5514.975" Y="-1295.747" Z="405.9352" />
+    </Vendors>
+
+
+    <!-- BEGIN: Quest Overrides -->
+
+    <Quest Id="24474" Name="First Things First: We're Gonna Need Some Beer">
+        <Objective Type="CollectItem" ItemId="49744" CollectCount="1">
+            <CollectFrom>
+                <Mob Name="Keg of Stormhammer Stout" Id="201610" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-6141.679" Y="432.0451" Z="399.599" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="49745" CollectCount="1">
+            <CollectFrom>
+                <Mob Name="Keg of Theramore Pale Ale" Id="201609" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-6149.365" Y="596.3177" Z="386.1913" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="49746" CollectCount="1">
+            <CollectFrom>
+                <Mob Name="Keg of Keg of Gnomerbrau" Id="201611" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-6141.967" Y="321.3142" Z="399.2259" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="24492" Name="Pack Your Bags">
+        <Objective Type="CollectItem" ItemId="49754" CollectCount="1">
+            <CollectFrom>
+                <Object Name="Beer Barrel" Id="201706" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-6067.922" Y="396.9197" Z="392.7593" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="49755" CollectCount="1">
+            <CollectFrom>
+                <Object Name="Wolf-Hide Cloaks" Id="201705" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-6049.084" Y="383.2925" Z="398.875" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="49756" CollectCount="1">
+            <CollectFrom>
+                <Object Name="Leftover Boar Meat" Id="201704" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-6096.852" Y="401.9866" Z="395.5392" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <!-- END: Quest Overrides -->
+
+
+    <QuestOrder IgnoreCheckpoints="false" >
+        <!-- BEGIN: Checkpoint Block
+             This code needs to be replicated after every checkpoint.
+             If you modify something in this block, don't forget to update the copy of this
+             block after each checkpoint, and the at the start of the <QuestOrder>, also.
+        -->
+        <CustomBehavior File="Misc\RunLua" Lua="SetCVar('AutoLootDefault', 1)" />
+        <CustomBehavior File="UserSettings" AutoEquip="true" />
+
+        <CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+        <CustomBehavior File="EnablePlugin" Names="Questhelper - ItemForAura" />
+        <CustomBehavior File="EnablePlugin" Names="Refreshment Detection" />
+
+        <CustomBehavior File="Misc\ProfileCompatibilityInfo" AllowBrokenAddOns="true" AllowBrokenPlugIns="true" />
+
+        <LootMobs Value="true" />
+        <TargetingDistance Value="null" />    <!-- Use LevelBot default -->
+        <UseMount Value="true" />
+        <!-- END: Checkpoint Block -->
+
+        <!-- Dun Morogh Quests -->
+        <CustomBehavior File="Message" Text="Compiling Coldridge Valley Quests" LogColor="CornflowerBlue" />
+
+        <PickUp QuestName="Hold the Line!" QuestId="24469" GiverName="Joren Ironstock" GiverId="37081" />
+        <Objective QuestName="Hold the Line!" QuestId="24469" Type="KillMob" MobId="37070" KillCount="6" />
+        <TurnIn QuestName="Hold the Line!" QuestId="24469" TurnInName="Joren Ironstock" TurnInId="37081" />
+        <PickUp QuestName="Give 'em What-For" QuestId="24470" GiverName="Joren Ironstock" GiverId="37081" />
+        <PickUp QuestName="Aid for the Wounded" QuestId="24471" GiverName="Sten Stoutarm" GiverId="658" />
+        <While Condition="HasQuest(24471) &amp;&amp; !IsQuestCompleted(24471)" >
+            <CustomBehavior File="InteractWith" QuestId="24471" MobId="37080" InteractByUsingItemId="49743"
+                            NumOfTimes="8" X="-6288.863" Y="386.9096" Z="381.4375" />
+        </While>
+        <Objective QuestName="Give 'em What-For" QuestId="24470" Type="KillMob" MobId="37073" KillCount="3" />
+        <TurnIn QuestName="Aid for the Wounded" QuestId="24471" TurnInName="Sten Stoutarm" TurnInId="658" />
+        <TurnIn QuestName="Give 'em What-For" QuestId="24470" TurnInName="Joren Ironstock" TurnInId="37081" />
+        <PickUp QuestName="Lockdown in Anvilmar" QuestId="24473" GiverName="Joren Ironstock" GiverId="37081" />
+        <TurnIn QuestName="Lockdown in Anvilmar" QuestId="24473" TurnInName="Jona Ironstock" TurnInId="37087" />
+        <PickUp QuestName="First Things First: We're Gonna Need Some Beer" QuestId="24474" GiverName="Jona Ironstock" GiverId="37087" />
+        <PickUp QuestName="Dwarven Artifacts" QuestId="24477" GiverName="Grundel Harkin" GiverId="1104" />
+        <Objective QuestName="First Things First: We're Gonna Need Some Beer" QuestId="24474"
+                   Type="CollectItem" ItemId="49746" CollectCount="1" />
+        <Objective QuestName="First Things First: We're Gonna Need Some Beer" QuestId="24474"
+                   Type="CollectItem" ItemId="49744" CollectCount="1" />
+        <Objective QuestName="First Things First: We're Gonna Need Some Beer" QuestId="24474"
+                   Type="CollectItem" ItemId="49745" CollectCount="1" />
+        <Objective QuestName="Dwarven Artifacts" QuestId="24477" Type="CollectItem" ItemId="49749" CollectCount="5" />
+        <TurnIn QuestName="Dwarven Artifacts" QuestId="24477" TurnInName="Grundel Harkin" TurnInId="1104" />
+        <PickUp QuestName="Make Hay While the Sun Shines" QuestId="24486" GiverName="Grundel Harkin" GiverId="1104" />
+        <TurnIn QuestName="First Things First: We're Gonna Need Some Beer" QuestId="24474"
+                TurnInName="Jona Ironstock" TurnInId="37087" />
+        <PickUp QuestName="All the Other Stuff" QuestId="24475" GiverName="Jona Ironstock" GiverId="37087" />
+        <Objective QuestName="Make Hay While the Sun Shines" QuestId="24486"
+                   Type="CollectItem" ItemId="49751" CollectCount="5" />
+        <Objective QuestName="All the Other Stuff" QuestId="24475" Type="CollectItem" ItemId="49747" CollectCount="3" />
+        <Objective QuestName="All the Other Stuff" QuestId="24475" Type="CollectItem" ItemId="49748" CollectCount="4" />
+        <TurnIn QuestName="Make Hay While the Sun Shines" QuestId="24486" TurnInName="Grundel Harkin" TurnInId="1104" />
+        <TurnIn QuestName="All the Other Stuff" QuestId="24475" TurnInName="Jona Ironstock" TurnInId="37087" />
+        <PickUp QuestName="Whitebeard Needs Ye" QuestId="24487" GiverName="Jona Ironstock" GiverId="37087" />
+        <If Condition="( Me.Class == WoWClass.Paladin ) &amp;&amp; ( Me.Race == WoWRace.Dwarf )">
+            <PickUp QuestName="Consecrated Rune" QuestId="3107" GiverName="Jona Ironstock" GiverId="37087" />
+            <TurnIn QuestName="Consecrated Rune" QuestId="3107" TurnInName="Bromos Grummner" TurnInId="926" />
+            <PickUp QuestName="The Power of the Light" QuestId="24528" GiverName="Bromos Grummner" GiverId="926" />
+            <While Condition="HasQuest(24528) &amp;&amp; !IsQuestCompleted(24528)" >
+                <!-- Place "Seal of Command" on self -->
+                <If Condition="!Me.HasAura(105361)">
+                    <CustomBehavior File="Misc\RunLua" Lua="CastSpellByID(105361)" />
+                </If>
+                <!-- Hit training dummy -->
+                <CustomBehavior File="InteractWith" MobId="44389" X="-6120.679" Y="382.0895" Z="395.5429" />
+            </While>
+            <TurnIn QuestName="The Power of the Light" QuestId="24528" TurnInName="Bromos Grummner" TurnInId="926" />
+        </If>
+        <If Condition="( Me.Class == WoWClass.Monk ) &amp;&amp; ( Me.Race == WoWRace.Dwarf )">
+            <PickUp QuestName="Elegant Rune" QuestId="31150" GiverName="Jona Ironstock" GiverId="37087" />
+            <TurnIn QuestName="Elegant Rune" QuestId="31150" TurnInName="Lo" TurnInId="63285"
+                    X="-6105.804" Y="369.4063" Z="395.5444" />
+        </If>
+        <If Condition="( Me.Class == WoWClass.Hunter ) &amp;&amp; ( Me.Race == WoWRace.Dwarf )">
+            <PickUp QuestName="Etched Rune" QuestId="3108" GiverName="Jona Ironstock" GiverId="37087" />
+            <TurnIn QuestName="Etched Rune" QuestId="3108" TurnInName="Thorgas Grimson" TurnInId="895" />
+        </If>
+        <If Condition="( Me.Class == WoWClass.Shaman ) &amp;&amp; ( Me.Race == WoWRace.Dwarf )">
+            <PickUp QuestName="Empowered Rune" QuestId="24494" GiverName="Jona Ironstock" GiverId="37087" />
+            <TurnIn QuestName="Empowered Rune" QuestId="24494" TurnInName="Teo Hammerstorm" TurnInId="37115" />
+        </If>
+        <If Condition="( Me.Class == WoWClass.Warlock ) &amp;&amp; ( Me.Race == WoWRace.Dwarf )">
+            <PickUp QuestName="Tainted Rune" QuestId="3115" GiverName="Jona Ironstock" GiverId="37087" />
+            <TurnIn QuestName="Tainted Rune" QuestId="3115" TurnInName="Saripal Smolderbrew" TurnInId="43455" />
+        </If>
+        <TurnIn QuestName="Whitebeard Needs Ye" QuestId="24487" TurnInName="Grelin Whitebeard" TurnInId="786" />
+        <PickUp QuestName="The Troll Menace" QuestId="182" GiverName="Grelin Whitebeard" GiverId="786" />
+        <PickUp QuestName="Trolling for Information" QuestId="24489" GiverName="Apprentice Soren" GiverId="1354" />
+        <PickUp QuestName="A Refugee's Quandary" QuestId="3361" GiverName="Felix Whindlebolt" GiverId="8416" />
+        <Objective QuestName="A Refugee's Quandary" QuestId="3361" Type="CollectItem" ItemId="10438" CollectCount="1" />
+        <If Condition="HasQuest(24489) &amp;&amp; !IsObjectiveComplete(3,24489)">
+            <MoveTo X="-6396.564" Y="778.0911" Z="386.2134" />
+            <!-- Mirim'koa -->
+            <CustomBehavior File="WaitTimer" WaitTime="12000" GoalText="Waiting for objective to complete {TimeRemaining}" />
+        </If>
+        <Objective QuestName="A Refugee's Quandary" QuestId="3361" Type="CollectItem" ItemId="16313" CollectCount="1" />
+        <If Condition="HasQuest(24489) &amp;&amp; !IsObjectiveComplete(2,24489)">
+            <MoveTo X="-6512.898" Y="687.8277" Z="387.2748" />
+            <!-- Rikkari -->
+            <CustomBehavior File="WaitTimer" WaitTime="12000" GoalText="Waiting for objective to complete {TimeRemaining}" />
+        </If>
+        <Objective QuestName="A Refugee's Quandary" QuestId="3361" Type="CollectItem" ItemId="16314" CollectCount="1" />
+        <If Condition="HasQuest(24489) &amp;&amp; !IsObjectiveComplete(1,24489)">
+            <MoveTo X="-6487.4" Y="505.2996" Z="386.0609" />
+            <!-- Shi'kala -->
+            <CustomBehavior File="WaitTimer" WaitTime="12000" GoalText="Waiting for objective to complete {TimeRemaining}" />
+        </If>
+        <Objective QuestName="The Troll Menace" QuestId="182" Type="KillMob" MobId="706" KillCount="10" />
+        <TurnIn QuestName="A Refugee's Quandary" QuestId="3361" TurnInName="Felix Whindlebolt" TurnInId="8416" />
+        <TurnIn QuestName="Trolling for Information" QuestId="24489" TurnInName="Apprentice Soren" TurnInId="1354" />
+        <TurnIn QuestName="The Troll Menace" QuestId="182" TurnInName="Grelin Whitebeard" TurnInId="786" />
+        <PickUp QuestName="Ice and Fire" QuestId="218" GiverName="Grelin Whitebeard" GiverId="786" />
+        <Objective QuestName="Ice and Fire" QuestId="218" Type="KillMob" MobId="37112" KillCount="1" />
+        <Objective QuestName="Ice and Fire" QuestId="218" Type="KillMob" MobId="808" KillCount="1" />
+        <Objective QuestName="Ice and Fire" QuestId="218" Type="KillMob" MobId="37514" KillCount="10" />
+        <TurnIn QuestName="Ice and Fire" QuestId="218" TurnInName="Grelin Whitebeard" TurnInId="786" />
+        <PickUp QuestName="A Trip to Ironforge" QuestId="24490" GiverName="Grelin Whitebeard" GiverId="786" />
+        <TurnIn QuestName="A Trip to Ironforge" QuestId="24490" TurnInName="Hands Springsprocket" TurnInId="6782" />
+        <PickUp QuestName="Follow that Gyro-Copter!" QuestId="24491" GiverName="Hands Springsprocket" GiverId="6782" />
+        <TurnIn QuestName="Follow that Gyro-Copter!" QuestId="24491" TurnInName="Milo Geartwinge" TurnInId="37113" />
+        <PickUp QuestName="Pack Your Bags" QuestId="24492" GiverName="Milo Geartwinge" GiverId="37113" />
+        <PickUp QuestName="Don't Forget About Us" QuestId="24493" GiverName="Jona Ironstock" GiverId="37087" />
+        <Objective QuestName="Pack Your Bags" QuestId="24492" Type="CollectItem" ItemId="49755" CollectCount="1" />
+        <Objective QuestName="Pack Your Bags" QuestId="24492" Type="CollectItem" ItemId="49754" CollectCount="1" />
+        <Objective QuestName="Pack Your Bags" QuestId="24492" Type="CollectItem" ItemId="49756" CollectCount="1" />
+        <TurnIn QuestName="Pack Your Bags" QuestId="24492" TurnInName="Milo Geartwinge" TurnInId="37113" />
+        <If Condition="HasQuest(24493)">
+            <CustomBehavior File="WaitTimer" WaitTime="90000" />
+        </If>
+        <TurnIn QuestName="Don't Forget About Us" QuestId="24493" TurnInName="Tharek Blackstone" TurnInId="1872" />
+
+        <!-- Unpack the Coldridge Mountaineer's Pouch -->
+        <If Condition="HasItem(57540)" >
+            <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(57540)" />
+        </If>
+
+        <!-- Going to SW -->
+        <CustomBehavior File="Message" Text="Compiling GoTo SW functions" LogColor="CornflowerBlue" />
+
+        <If Condition="Me.ZoneId == 1 || Me.ZoneId == 1537" >
+            <!-- Dun Morogh or IF -->
+            <CustomBehavior File="Message" Text="Running to IF Tram" LogColor="CornflowerBlue" />
+            <MoveTo X="-4820.689" Y="-1155.133" Z="502.21" />
+            <MoveTo X="-4820.689" Y="-1155.133" Z="502.21" />
+            <CustomBehavior File="InteractWith" MobId="1573" X="-4820.689" Y="-1155.133" Z="502.21" />
+            <!-- <MoveTo X="-4838.846" Y="-1315.321" Z="501.8681" /> // run to IF tram -->
+            <MoveTo X="-8835.292" Y="490.3976" Z="109.6171" />
+            <!-- IF FP -->
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting {TimeRemaining}" />
+        </If>
+
+        <If Condition="Me.ZoneId == 1537" >
+            <!-- IF -->
+            <CustomBehavior File="Message" Text="Running into IF Tram portal" LogColor="CornflowerBlue" />
+
+            <MoveTo X="-4838.846" Y="-1315.321" Z="501.8681" />
+            <CustomBehavior File="MyCTM" X="-4840.166" Y="-1323.635" Z="501.868" />
+            <CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+        </If>
+
+        <If Condition="Me.ZoneId == 2257" >
+            <!-- Deeprun Tram -->
+            <If Condition="Me.Y &lt; 30" >
+                <!-- IF side -->
+                <CustomBehavior File="Message" Text="Riding Tram to SW from IF" LogColor="CornflowerBlue" />
+
+                <MoveTo X="15.43877" Y="7.605853" Z="-4.295578" />
+
+                <!-- Get on at IF, off at SW -->
+                <!-- old one was 176081 -->
+                <CustomBehavior File="UseTransport" TransportId="216507"
+                                WaitAtX="15.43877" WaitAtY="7.605853" WaitAtZ="-4.295578"
+                                GetOffX="16.77427" GetOffY="2490.513"  GetOffZ="-4.291193"
+                                StandOnX="4.528066" StandOnY="8.435292" StandOnZ="-3.46"
+                                TransportStartX="4.528066" TransportStartY="8.435292" TransportStartZ="7.011068"
+                                TransportEndX="4.527849" TransportEndY="2490.735" TransportEndZ="7.197604" />
+            </If>
+
+            <If Condition="Me.Y &gt; 2400" >
+                <!-- SW side -->
+                <CustomBehavior File="Message" LogColor="CornflowerBlue"
+                                Text="Running into portal from Deeprun Tram (SW Side) to SW" />
+
+                <MoveTo X="65.96149" Y="2490.913" Z="-4.295956" />
+                <CustomBehavior File="MyCTM" X="73.21138" Y="2491.088" Z="-4.295956" />
+                <CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+            </If>
+
+        </If>
+
+        <CustomBehavior File="LoadProfile" ProfileName="[A - Quest] EK 5-12 [Kick]" RememberProfile="true" />
+        <CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+
+    </QuestOrder>
+
+</HBProfile>

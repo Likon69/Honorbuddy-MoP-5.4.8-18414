@@ -1,0 +1,606 @@
+<HBProfile>
+
+	<Name>Ashenvale Memory Block($Rev$)</Name>
+	<MinLevel>60</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>False</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+		<Blackspot X="3037.363" Y="-452.3768" Z="191.0965" Radius="16.31048" />
+		<Blackspot X="2152.005" Y="-1147.058" Z="97.11777" Radius="29.47511" />
+		<Blackspot X="2193.754" Y="-1224.349" Z="87.07724" Radius="31.69418" />
+	</Blackspots>
+
+	<Mailboxes>
+	</Mailboxes>
+	
+	<Blacklist>
+		<Mob Name="Oso Bramblescar" Entry="34499" Flags="Pull, Combat" />
+	</Blacklist>
+
+	<Vendors>
+		<!-- Orendil's Retreat -->
+		<Vendor Name="Visera Softloam" Entry="33209" Type="Food" X="3813.688" Y="152.7016" Z="7.381892" />
+		<!-- Blackfathom Camp -->
+		<Vendor Name="Varas" Entry="33265" Type="Repair" X="3876.818" Y="636.8923" Z="10.45639" />
+		<!-- Maestra's Post -->
+		<Vendor Name="Tomarrek" Entry="33381" Type="Repair" X="3265.316" Y="141.763" Z="14.3848" />
+		<!-- Astranaar -->
+		<Vendor Name="Maliynn" Entry="3961" Type="Food" X="2751.843" Y="-412.0334" Z="111.4596" />
+		<Vendor Name="Nantar" Entry="3959" Type="Food" X="2745.45" Y="-423.019" Z="111.4518" />
+		<Vendor Name="Fahran Silentblade" Entry="3969" Type="Food" X="2771.842" Y="-404.2991" Z="111.4604" />
+		<Vendor Name="Xai'ander" Entry="11137" Type="Repair" X="2672.308" Y="-363.6043" Z="110.7277" />
+		<!-- Forest Song -->
+		<Vendor Name="Phaedra" Entry="17412" Type="Repair" X="2967.96" Y="-3260.474" Z="160.2368" />
+		<!-- Bolyun's Camp -->
+		<Vendor Name="Harlown Darkweave" Entry="34601" Type="Food" X="2365.05" Y="649.0052" Z="152.8086" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Name="A Not-So-Charmed Life" Id="13874" >
+	<Objective Type="CollectItem" ItemId="16602" CollectCount="8" >
+		<CollectFrom>
+			<GameObject Name="Troll Chest" Id="178144" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="3389.657" Y="-612.0848" Z="182.4945" />
+			<Hotspot X="3422.897" Y="-667.686" Z="176.1048" />
+			<Hotspot X="3341.213" Y="-682.8183" Z="163.3917" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="LoadProfile" ProfileName="..\KalimdorMemBlock [Brodie]" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Beginning Memory Block: Ashenvale" LogColor="Green" />
+	<CustomBehavior File="UserSettings" LootMobs="True" UseFlightPaths="True" PullDistance="20" />
+	
+	<CustomBehavior File="Message" Text="Parsing for Breadcrumbs..." LogColor="CornflowerBlue" />
+	
+	<If Condition="Me.ZoneId == 3524 || Me.ZoneId == 3525" >
+		<CustomBehavior File="Message" Text="Running to Exodar's Portal to Darnassus" LogColor="Orange" />
+		<RunTo X="-4043.964" Y="-11570.73" Z="-138.4523" />
+		<CustomBehavior File="InteractWith" MobId="207996" Range="8" CollectionDistance="1000" X="-4043.964" Y="-11570.73" Z="-138.4523" />
+		<CustomBehavior File="WaitTimer" WaitTime="8000" />
+	</If>
+	
+	<If Condition="Me.ZoneId != 331" >
+		<If Condition="Me.ZoneId == 1657" >
+			<CustomBehavior File="TaxiRide" MobId="40552" DestName="Astranaar" X="9973.32" Y="2623.92" Z="1316.60" />
+			<If Condition="Me.ZoneId != 331" >
+				<CustomBehavior File="TaxiRide" MobId="40552" DestName="Grove of the Ancients" X="9973.32" Y="2623.92" Z="1316.60" />
+			<Else>
+				<CustomBehavior File="TaxiRide" MobId="40552" DestName="Darkshore" X="9973.32" Y="2623.92" Z="1316.60" />
+			</Else>
+			</If>
+		</If>
+	</If>
+	
+	<CustomBehavior File="Message" Text="Fast forwarding memory to Orendil's Retreat" LogColor="CornflowerBlue" />
+
+<!-- Don't Forget the Horde/ Bathran's Hair/Of Their Own Design -->
+	<PickUp Nav="Fly" QuestName="Don't Forget the Horde" QuestId="13594" GiverName="Sentinel Shyela" GiverId="33187" />
+	<PickUp Nav="Fly" QuestName="Bathran's Hair" QuestId="26473" GiverName="Evenar Stillwhisper" GiverId="33204" />
+	<PickUp Nav="Fly" QuestName="Of Their Own Design" QuestId="13595" GiverName="Bathran" GiverId="33182" />
+	<Objective Nav="Fly" QuestName="Bathran's Hair" QuestId="26473" Type="CollectItem" ItemId="5437" CollectCount="8" />
+	<Objective Nav="Fly" QuestName="Don't Forget the Horde" QuestId="13594" Type="KillMob" MobId="3734" KillCount="10" />
+	<!-- Of Their Own Design -->
+	<If Condition="HasQuest(13595) &amp;&amp; !IsQuestCompleted(13595)" >
+		<If Condition="!HasItem(44967)" >
+			<CustomBehavior File="InteractWith" MobId="194202" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" 
+				TerminateWhen="HasItem(44967)" NumOfTimes="100" X="3773.727" Y="-150.3069" Z="2.325177" />
+		</If>
+		<CustomBehavior File="InteractWith" QuestId="13595" MobId="33183" InteractByUsingItemId="44967" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" Range="20" X="3839.991" Y="-181.8028" Z="1.167102" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="Of Their Own Design" QuestId="13595" TurnInName="Bathran" TurnInId="33182" />
+	<TurnIn Nav="Fly" QuestName="Bathran's Hair" QuestId="26473" TurnInName="Evenar Stillwhisper" TurnInId="33204" />
+	<TurnIn Nav="Fly" QuestName="Don't Forget the Horde" QuestId="13594" TurnInName="Sentinel Shyela" TurnInId="33187" />
+	
+	<PickUp Nav="Fly" QuestName="West to the Strand" QuestId="13617" GiverName="Sentinel Shyela" GiverId="33187" />
+	<PickUp Nav="Fly" QuestName="Delivery for Orendil" QuestId="13623" GiverName="Evenar Stillwhisper" GiverId="33204" />
+	
+	<TurnIn Nav="Fly" QuestName="West to the Strand" QuestId="13617" TurnInName="Talen" TurnInId="3846" />
+	
+	<CustomBehavior File="Message" Text="Fast forwarding memory to Blackfathom Camp" LogColor="CornflowerBlue" />
+
+<!-- The Ancient Statuettes/ Naga of the Strand -->
+	<PickUp Nav="Fly" QuestName="The Ancient Statuettes" QuestId="26465" GiverName="Talen" GiverId="3846" />
+	<PickUp Nav="Fly" QuestName="Naga of the Strand" QuestId="13602" GiverName="Shindrell Swiftfire" GiverId="3845" />
+	<Objective Nav="Fly" QuestName="The Ancient Statuettes" QuestId="26465" Type="CollectItem" ItemId="5424" CollectCount="10" />
+	<Objective Nav="Fly" QuestName="Naga of the Strand" QuestId="13602" Type="KillMob" MobId="3711" KillCount="15" />
+	<TurnIn Nav="Fly" QuestName="The Ancient Statuettes" QuestId="26465" TurnInName="Talen" TurnInId="3846" />
+	<TurnIn Nav="Fly" QuestName="Naga of the Strand" QuestId="13602" TurnInName="Shindrell Swiftfire" TurnInId="3845" />
+	
+	<PickUp Nav="Fly" QuestName="Ruuzel" QuestId="26466" GiverName="Talen" GiverId="3846" />
+	<Objective Nav="Fly" QuestName="Ruuzel" QuestId="26466" Type="CollectItem" ItemId="5445" CollectCount="1" />
+	<If Condition="HasQuest(26466) &amp;&amp; IsQuestCompleted(26466)" >
+		<TurnIn Nav="Fly" QuestName="Ruuzel" QuestId="26466" TurnInName="Talen" TurnInId="3846" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" />
+	</If>
+	
+	<TurnIn Nav="Fly" QuestName="Delivery for Orendil" QuestId="13623" TurnInName="Orendil Broadleaf" TurnInId="3847" />
+	
+	<CustomBehavior File="Message" Text="Fast forwarding memory to Maestra's Post" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="Finding Teronis" QuestId="26463" GiverName="Orendil Broadleaf" GiverId="3847" />
+	<PickUp Nav="Fly" QuestName="Bathed in Light" QuestId="13642" GiverName="Orendil Broadleaf" GiverId="3847" />
+	<PickUp Nav="Fly" QuestName="A Squad of Your Own" QuestId="13624" GiverName="Sentinel Onaeya" GiverId="11806" />
+	<PickUp Nav="Fly" QuestName="The Reason Why" QuestId="13630" GiverName="Moon Priestess Maestra" GiverId="33276" />
+	<PickUp Nav="Fly" QuestName="Rear Guard Duty" QuestId="13632" GiverName="Liladris Moonriver" GiverId="11219" />
+	
+<!-- A Squad of Your Own -->
+
+	<While Condition="HasQuest(13624) &amp;&amp; !IsQuestCompleted(13624)" >
+		<CustomBehavior File="InteractWith" QuestId="13624" MobId="11806" InteractByGossipOptions="1" TerminateWhen="Me.HasAura(62805)" 
+			ProactiveCombatStrategy="NoClear" IgnoreCombat="True" NonCompeteDistance="0" X="3250.697" Y="156.1693" Z="9.080772" />
+		<CustomBehavior File="13624-ASquadOfYourOwn" />
+	</While>
+	<If Condition="HasQuest(13624) &amp;&amp; IsQuestCompleted(13624)" >
+		<DisableBehavior Name="Combat, Loot" />
+		<TurnIn Nav="Fly" QuestName="A Squad of Your Own" QuestId="13624" TurnInName="Sentinel Onaeya" TurnInId="11806" />
+		<EnableBehavior Name="Combat, Loot" />
+	</If>
+	
+<!-- Respect for the Fallen -->
+	<PickUp Nav="Fly" QuestName="Respect for the Fallen" QuestId="13626" GiverName="Sentinel Onaeya" GiverId="11806" />
+	<While Condition="HasQuest(13626) &amp;&amp; !IsQuestCompleted(13626)" >
+		<CustomBehavior File="UserSettings" UseMount="False" />
+		<If Condition="!HasItem(45044) &amp;&amp; (HasQuest(13626) &amp;&amp; !IsQuestCompleted(13626))" >
+			<CustomBehavior File="AbandonQuest" QuestId="13626" />
+			<PickUp Nav="Fly" QuestName="Respect for the Fallen" QuestId="13626" GiverName="Sentinel Onaeya" GiverId="11806" />
+		</If>
+		<While Condition="!Me.HasAura(62817)" >
+			<CustomBehavior File="EquipItem" ItemId="45044" Slot="BackSlot" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(45044)" WaitTime="1000" />
+		</While>
+		<CustomBehavior File="InteractWith" QuestId="13626" QuestObjectiveIndex="1" TerminateWhen="!Me.HasAura(62817)" MobId="33348" InteractByLooting="True"
+			NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" X="3195.845" Y="182.5131" Z="4.683157" />
+		<If Condition="!IsObjectiveComplete(2,13626)" >
+			<CustomBehavior File="NoCombatMoveTo" X="3095.601" Y="148.1018" Z="63.64445" />
+			<CustomBehavior File="InteractWith" QuestId="13626" QuestObjectiveIndex="2" TerminateWhen="!Me.HasAura(62817)" MobId="33347" InteractByLooting="True"
+				NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" X="3095.601" Y="148.1018" Z="63.64445" />
+		</If>
+		<While Condition="!Me.HasAura(62817)" >
+			<CustomBehavior File="EquipItem" ItemId="45044" Slot="BackSlot" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(45044)" WaitTime="1000" />
+		</While>
+	</While>
+	<If Condition="HasQuest(13626) &amp;&amp; IsQuestCompleted(13626)" >
+		<CustomBehavior File="UserSettings" UseMount="False" />
+		<DisableBehavior Name="Combat, Loot" />
+		<TurnIn Nav="Fly" QuestName="Respect for the Fallen" QuestId="13626" TurnInName="Sentinel Onaeya" TurnInId="11806" />
+		<EnableBehavior Name="Combat, Loot" />
+		<CustomBehavior File="UserSettings" UseMount="True" />
+	</If>
+	
+<!-- The Reason Why/Rear Guard Duty -->
+	<Objective Nav="Fly" QuestName="The Reason Why" QuestId="13630" Type="UseObject" ObjectId="194309" UseCount="1" />
+	<Objective Nav="Fly" QuestName="The Reason Why" QuestId="13630" Type="UseObject" ObjectId="194311" UseCount="1" />
+	<Objective Nav="Fly" QuestName="The Reason Why" QuestId="13630" Type="UseObject" ObjectId="194310" UseCount="1" />
+	<Objective Nav="Fly" QuestName="Rear Guard Duty" QuestId="13632" Type="KillMob" MobId="33389" KillCount="10" />
+	<TurnIn Nav="Fly" QuestName="The Reason Why" QuestId="13630" TurnInName="Moon Priestess Maestra" TurnInId="33276" />
+	<TurnIn Nav="Fly" QuestName="Rear Guard Duty" QuestId="13632" TurnInName="Liladris Moonriver" TurnInId="11219" />
+	
+<!-- Bathed in Light -->
+	<Objective Nav="Fly" QuestName="Bathed in Light" QuestId="13642" Type="CollectItem" ItemId="45066" CollectCount="1" />
+	
+<!-- Finding Teronis/The Lost Gem/ That Which Has Risen -->
+	<TurnIn Nav="Fly" QuestName="Finding Teronis" QuestId="26463" TurnInName="Teronis' Corpse" TurnInId="3891" />
+	<PickUp Nav="Fly" QuestName="The Lost Gem" QuestId="26464" GiverName="Teronis' Corpse" GiverId="3891" />
+	<PickUp Nav="Fly" QuestName="That Which Has Risen" QuestId="13644" GiverName="Keeper Heartwise" GiverId="33443" />
+	<Objective Nav="Fly" QuestName="The Lost Gem" QuestId="26464" Type="CollectItem" ItemId="5463" CollectCount="1" />
+	<Objective Nav="Fly" QuestName="That Which Has Risen" QuestId="13644" Type="KillMob" MobId="33444" KillCount="1" />
+	<TurnIn Nav="Fly" QuestName="That Which Has Risen" QuestId="13644" TurnInName="Keeper Heartwise" TurnInId="33443" />
+	<TurnIn Nav="Fly" QuestName="Bathed in Light" QuestId="13642" TurnInName="Orendil Broadleaf" TurnInId="3847" />
+	<TurnIn Nav="Fly" QuestName="The Lost Gem" QuestId="26464" TurnInName="Orendil Broadleaf" TurnInId="3847" />
+	
+	<PickUp Nav="Fly" QuestName="Orendil's Cure" QuestId="26474" GiverName="Orendil Broadleaf" GiverId="3847" />
+	<PickUp Nav="Fly" QuestName="To Raene Wolfrunner" QuestId="13645" GiverName="Orendil Broadleaf" GiverId="3847" />
+	<If Condition="!HasQuest(13646) &amp;&amp; !IsQuestCompleted(13646)" >
+		<PickUp Nav="Fly" QuestName="Astranaar Bound" QuestId="13646" GiverName="Sentinel Avana" GiverId="33445" />
+		<CustomBehavior File="InteractWith" MobId="33445" InteractByGossipOptions="1" WaitTime="1000" X="3290.01" Y="159.7447" Z="8.784678" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="Astranaar Bound" QuestId="13646" TurnInName="Sentinel Luara" TurnInId="33454" />
+	
+	<CustomBehavior File="Message" Text="Fast forwarding memory to Astranaar" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="Astranaar's Burning!" QuestId="13849" GiverName="Sentinel Thenysil" GiverId="4079" />
+	<TurnIn Nav="Fly" QuestName="To Raene Wolfrunner" QuestId="13645" TurnInName="Raene Wolfrunner" TurnInId="3691" />
+
+	<PickUp Nav="Fly" QuestName="Culling The Furbolg Threat" QuestId="13867" GiverName="Raene Wolfrunner" GiverId="3691" />
+	
+	<TurnIn Nav="Fly" QuestName="Orendil's Cure" QuestId="26474" TurnInName="Pelturas Whitemoon" TurnInId="3894" />
+	<PickUp Nav="Fly" QuestName="Elune's Tear" QuestId="26475" GiverName="Pelturas Whitemoon" GiverId="3894" />
+	
+<!-- Astranaar's Burning! -->
+	<CustomBehavior File="InteractWith" QuestId="13849" MobId="34123" InteractByUsingItemId="46094" IgnoreLoSToTarget="True" NumOfTimes="1000" NonCompeteDistance="0"
+		Range="35" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+		<HuntingGrounds>
+			<Hotspot X="2727.404" Y="-408.9903" Z="108.5487" />
+			<Hotspot X="2700.498" Y="-380.1779" Z="108.9933" />
+			<Hotspot X="2678.156" Y="-432.3596" Z="108.0015" />
+			<Hotspot X="2649.854" Y="-440.0851" Z="107.1515" />
+			<Hotspot X="2778.964" Y="-319.3155" Z="107.0972" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn Nav="Fly" QuestName="Astranaar's Burning!" QuestId="13849" TurnInName="Sentinel Thenysil" TurnInId="4079" />
+	
+	<PickUp Nav="Fly" QuestName="Return Fire" QuestId="13853" GiverName="Sentinel Thenysil" GiverId="4079" />
+	<While Condition="HasQuest(13853) &amp;&amp; !IsQuestCompleted(13853)" >
+		<MoveTo X="2770.687" Y="-365.978" Z="108.4678" />
+		<CustomBehavior File="13853-ReturnFire" />
+	</While>
+	<TurnIn Nav="Fly" QuestName="Return Fire" QuestId="13853" TurnInName="Sentinel Thenysil" TurnInId="4079" />
+	
+	<If Condition="!HasItem(46128) &amp;&amp; !HasQuest(13868) &amp;&amp; !IsQuestCompleted(13868)" >
+		<CustomBehavior File="CollectThings" MobId="3921" MobId2="3922" MobId3="3924" MobId4="3925" MobId5="3926"
+			CollectItemId="46128" CollectItemCount="1" HuntingGroundRadius="200" NonCompeteDistance="1" >
+			<Hotspot X="2980.452" Y="-107.665" Z="97.86831" />
+			<Hotspot X="3041.744" Y="-158.0509" Z="100.4718" />
+			<Hotspot X="3165.688" Y="-230.916" Z="115.7312" />
+			<Hotspot X="3242.521" Y="-254.5837" Z="121.7662" />
+		</CustomBehavior>
+	</If>
+	<If Condition="HasItem(46128) &amp;&amp; !HasQuest(13868) &amp;&amp; !IsQuestCompleted(13868)" >
+		<PickUp Nav="Fly" QuestName="Corrupting Influence?" QuestId="13868" GiverType="Item" GiverId="46128" />
+	</If>
+	
+	<Objective Nav="Fly" QuestName="Culling the Furbolg Threat" QuestId="13867" Type="KillMob" MobId="3925" KillCount="15" />
+	
+	<TurnIn Nav="Fly" QuestName="Corrupting Influence?" QuestId="13868" TurnInName="Raene Wolfrunner" TurnInId="3691" />
+	<TurnIn Nav="Fly" QuestName="Culling the Furbolg Threat" QuestId="13867" TurnInName="Raene Wolfrunner" TurnInId="3691" />
+	
+	<PickUp Nav="Fly" QuestName="Worgen Wisdom" QuestId="13872" GiverName="Raene Wolfrunner" GiverId="3691" />
+	<TurnIn Nav="Fly" QuestName="Worgen Wisdom" QuestId="13872" TurnInName="Hephaestus Pilgrim" TurnInId="34239" />
+	
+	<PickUp Nav="Fly" QuestName="A Not-So-Charmed Life" QuestId="13874" GiverName="Hephaestus Pilgrim" GiverId="34239" />
+	<PickUp Nav="Fly" QuestName="Too Far Gone" QuestId="13876" GiverName="Vear Darksnout" GiverId="34251" />
+	
+	<Objective Nav="Fly" QuestName="Too Far Gone" QuestId="13876" Type="CollectItem" ItemId="5544" CollectCount="1" X="3310.515" Y="-690.9848" Z="161.4245" />
+	<Objective Nav="Fly" QuestName="A Not-So-Charmed Life" QuestId="13874" Type="CollectItem" ItemId="16602" CollectCount="8" />
+	
+	<TurnIn Nav="Fly" QuestName="Too Far Gone" QuestId="13876" TurnInName="Vear Darksnout" TurnInId="34251" />
+	<TurnIn Nav="Fly" QuestName="A Not-So-Charmed Life" QuestId="13874" TurnInName="Hephaestus Pilgrim" TurnInId="34239" />
+	
+	<PickUp Nav="Fly" QuestName="Go With The Flow" QuestId="13877" GiverName="Hephaestus Pilgrim" GiverId="34239" />
+	
+	<Objective Nav="Fly" QuestName="Elune's Tear" QuestId="26475" Type="CollectItem" ItemId="5493" CollectCount="1" />
+	<TurnIn Nav="Fly" QuestName="Elune's Tear" QuestId="26475" TurnInName="Pelturas Whitemoon" TurnInId="3894" />
+	
+	<PickUp Nav="Fly" QuestName="Dryad Delivery" QuestId="26476" GiverName="Raene Wolfrunner" GiverId="3691" />
+	
+	<PickUp Nav="Fly" QuestName="A Trip to the Moonwell" QuestId="13919" GiverName="Pelturas Whitemoon" GiverId="3894" />
+	
+	<TurnIn Nav="Fly" QuestName="Go With The Flow" QuestId="13877" TurnInName="Sabina Pilgrim" TurnInId="34283" />
+	
+	<CustomBehavior File="Message" Text="Fast forwarding memory to Thunder Peak" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="Put Out The Fire" QuestId="13884" GiverName="Arctanus" GiverId="34292" />
+	<PickUp Nav="Fly" QuestName="Hot Lava" QuestId="13880" GiverName="Core" GiverId="34290" />
+	
+	<While Condition="HasQuest(13880) &amp;&amp; !IsQuestCompleted(13880)" >
+		<CustomBehavior File="InteractWith" QuestId="13880" MobId="195002" InteractByUsingItemId="46352" NumOfTimes="1000" Range="20" 
+			IgnoreLoSToTarget="True" TerminateWhen="!Me.HasAura(65178)" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+			<HuntingGrounds>
+				<Hotspot X="2712.972" Y="-1224.296" Z="165.0191" />
+				<Hotspot X="2673.821" Y="-1264.603" Z="157.5464" />
+				<Hotspot X="2618.436" Y="-1214.008" Z="140.0743" />
+				<Hotspot X="2641.091" Y="-1131.524" Z="141.9653" />
+				<Hotspot X="2707.252" Y="-1082.237" Z="158.7684" />
+				<Hotspot X="2790.857" Y="-1109.984" Z="182.0662" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" MobId="34292" InteractByGossipOptions="1" 
+			NonCompeteDistance="0" TerminateWhen="Me.HasAura(65178)" X="2498.446" Y="-1303.5" Z="135.0336" />
+	</While>
+
+	<CustomBehavior File="InteractWith" QuestId="13884" MobId="34292" InteractByGossipOptions="1" 
+		NonCompeteDistance="0" TerminateWhen="Me.HasAura(65178)" X="2498.446" Y="-1303.5" Z="135.0336" />
+	<Objective Nav="Fly" QuestName="Put Out The Fire" QuestId="13884" Type="KillMob" MobId="34314" KillCount="10" />
+	
+	<TurnIn Nav="Fly" QuestName="Put Out The Fire" QuestId="13884" TurnInName="Arctanus" TurnInId="34292" />
+	<TurnIn Nav="Fly" QuestName="Hot Lava" QuestId="13880" TurnInName="Core" TurnInId="34290" />
+	
+	<PickUp Nav="Fly" QuestName="Vortex" QuestId="13886" GiverName="The Vortex" GiverId="34289" />
+	<While Condition="HasQuest(13886) &amp;&amp; !IsQuestCompleted(13886)" >
+		<CustomBehavior File="InteractWith" QuestId="13886" MobId="34289" InteractByGossipOptions="1" 
+			TerminateWhen="Me.IsOnTransport" NonCompeteDistance="0" X="2498.446" Y="-1303.5" Z="135.0336" />
+		<CustomBehavior File="13886-Vortex" />
+		<If Condition="Me.IsOnTransport &amp;&amp; HasQuest(13886) &amp;&amp; IsQuestCompleted(13886)" >
+			<CustomBehavior File="Misc\RunLua" Lua="OverrideActionBarButton5:Click()" WaitTime="1000" />
+		</If>
+		<While Condition="Me.IsOnTransport &amp;&amp; HasQuest(13886) &amp;&amp; IsQuestCompleted(13886)" />
+	</While>
+	<TurnIn Nav="Fly" QuestName="Vortex" QuestId="13886" TurnInName="Sabina Pilgrim" TurnInId="34283" />
+	
+	<CustomBehavior File="InteractWith" QuestId="13919" MobId="177278" InteractByUsingItemId="46389" NonCompeteDistance="0" IgnoreLoSToTarget="True"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" WaitTime="3000" X="2905.184" Y="-1397.876" Z="207.4747" />
+	<If Condition="HasQuest(13919) &amp;&amp; IsQuestCompleted(13919)" >
+		<TurnIn Nav="Fly" QuestName="A Trip to the Moonwell" QuestId="13919" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+	</If>
+	
+	<If Condition="(!HasQuest(13921) &amp;&amp; !IsQuestCompleted(13921)) &amp;&amp;
+					(!HasQuest(14018) &amp;&amp; !IsQuestCompleted(14018))" >
+		<PickUp Nav="Fly" QuestName="He Who Would Be Forgiven" QuestId="14018" GiverName="Pelturas Whitemoon" GiverId="3894" />
+	</If>
+	
+	<If Condition="HasQuest(13921)" >
+		<TurnIn Nav="Fly" QuestName="He Who Would Be Forgiven" QuestId="13921" TurnInName="Avrus Illwhisper" TurnInId="34335" />
+	</If>
+	
+	<If Condition="HasQuest(14018)" >
+		<TurnIn Nav="Fly" QuestName="He Who Would Be Forgiven" QuestId="14018" TurnInName="Avrus Illwhisper" TurnInId="34335" />
+	</If>
+	
+	<PickUp Nav="Fly" QuestName="In the Hands of the Perverse" QuestId="13922" GiverName="Avrus Illwhisper" GiverId="34335" />
+	<PickUp Nav="Fly" QuestName="Recover the Fallen" QuestId="13928" GiverName="Sentinel Melyria Frostshadow" GiverId="3880" />
+	
+	<CustomBehavior File="InteractWith" QuestId="13928" MobId="34426" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0"
+		NumOfTimes="1000" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="2767.112" Y="-1857.77" Z="194.0027" />
+			<Hotspot X="2704.36" Y="-1811.94" Z="198.288" />
+			<Hotspot X="2642.468" Y="-1804.583" Z="187.7013" />
+			<Hotspot X="2599.496" Y="-1766.216" Z="177.1146" />
+			<Hotspot X="2524.839" Y="-1706.18" Z="145.9617" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective Nav="Fly" QuestName="In the Hands of the Perverse" QuestId="13922" Type="CollectItem" ItemId="5508" CollectCount="5" />
+	<TurnIn Nav="Fly" QuestName="Recover the Fallen" QuestId="13928" TurnInName="Halannia" TurnInId="34377" X="2710.695" Y="-1890.897" Z="207.8465" />
+	
+	<PickUp Nav="Fly" QuestName="Defend the Tree!" QuestId="13935" GiverName="Halannia" GiverId="34377" />
+	<While Condition="HasQuest(13935) &amp;&amp; !IsQuestCompleted(13935)" >
+		<CustomBehavior File="InteractWith" QuestId="13935" MobId="34377" InteractByGossipOptions="1" TerminateWhen="Me.HasAura(65396)" NonCompeteDistance="0" WaitTime="1000" X="2710.695" Y="-1890.897" Z="207.8465" />
+		<CustomBehavior File="13935-DefendTheTree" />
+	</While>
+	<TurnIn Nav="Fly" QuestName="Defend the Tree!" QuestId="13935" TurnInName="Sentinel Melyria Frostshadow" TurnInId="3880" />
+	
+	<PickUp Nav="Fly" QuestName="Report from the Northern Front" QuestId="26456" GiverName="Sentinel Melyria Frostshadow" GiverId="3880" />
+	<TurnIn Nav="Fly" QuestName="In the Hands of the Perverse" QuestId="13922" TurnInName="Avrus Illwhisper" TurnInId="34335" />
+	
+	<PickUp Nav="Fly" QuestName="All's Well" QuestId="13924" GiverName="Avrus the Redeemed" GiverId="34358" />
+	
+	<CustomBehavior File="Message" Text="Fast forwarding memory to Raynewood Retreat" LogColor="CornflowerBlue" />
+	
+	<TurnIn Nav="Fly" QuestName="Dryad Delivery" QuestId="26476" TurnInName="Shael'dryn" TurnInId="3916" />
+	
+	<PickUp Nav="Fly" QuestName="Search the Bole" QuestId="26477" GiverName="Shael'dryn" GiverId="3916" />
+	<Objective Nav="Fly" QuestName="Search the Bole" QuestId="26477" Type="CollectItem" ItemId="5475" CollectCount="1" />
+	<Objective Nav="Fly" QuestName="Search the Bole" QuestId="26477" Type="CollectItem" ItemId="5464" CollectCount="1" X="3104.148" Y="-1472.371" Z="196.1684" />
+	<TurnIn Nav="Fly" QuestName="Search the Bole" QuestId="26477" TurnInName="Shael'dryn" TurnInId="3916" />
+	
+	<PickUp Nav="Fly" QuestName="Playing Possum" QuestId="26478" GiverName="Shael'dryn" GiverId="3916" />
+	<While Condition="HasQuest(26478) &amp;&amp; !IsQuestCompleted(26478)" >
+		<While Condition="Me.HasAura(65535) &amp;&amp; Unit(34499, u =&gt; u.Distance &lt; 10) != null" />
+		<CustomBehavior File="InteractWith" QuestId="26478" MobId="195111" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100"
+			NonCompeteDistance="0" TerminateWhen="Me.Combat &amp;&amp; Unit(34499, u =&gt; u.Distance &lt; 10) != null" X="2350.687" Y="-1904.886" Z="68.99279" />
+		<If Condition="!Me.HasAura(65535) &amp;&amp; Unit(34499, u =&gt; u.Distance &lt; 10)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46720)" WaitTime="3000" />
+		</If>
+	</While>
+	<TurnIn Nav="Fly" QuestName="Playing Possum" QuestId="26478" TurnInName="Shael'dryn" TurnInId="3916" />
+	
+	<PickUp Nav="Fly" QuestName="Return to Raene" QuestId="26479" GiverName="Shael'dryn" GiverId="3916" />
+	<TurnIn Nav="Fly" QuestName="Return to Raene" QuestId="26479" TurnInName="Raene Wolfrunner" TurnInId="3691" />
+	
+	<PickUp Nav="Fly" QuestName="Dartol's Rod" QuestId="26480" GiverName="Raene Wolfrunner" GiverId="3691" />
+	<If Condition="HasQuest(26480)" >
+		<MoveTo X="1785.794" Y="-1270.917" Z="140.9868" />
+		<DisableBehavior Name="Combat" />
+		<If Condition="!Me.HasAura(65622)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46739)" WaitTime="2000" />
+		</If>
+	</If>
+	<TurnIn Nav="Fly" QuestName="Dartol's Rod" QuestId="26480" TurnInName="Krolg" TurnInId="3897" />
+	
+	<PickUp Nav="Fly" QuestName="King of the Foulweald" QuestId="13989" GiverName="Krolg" GiverId="3897" />
+	<EnableBehavior Name="Combat" />
+	<While Condition="HasQuest(13989) &amp;&amp; !IsQuestCompleted(13989)" >
+		<MoveTo X="2231.181" Y="-1550.226" Z="93.20132" />
+		<If Condition="Object(195143, o =&gt; o.Distance &lt; 30) == null" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46777)" WaitTime="2000" />
+		</If>
+		<CustomBehavior File="EscortGroup" QuestId="13989" EscortNpcId="195143" EscortCompleteWhen="QuestCompleteOrFails" />
+	</While>
+	<If Condition="HasQuest(13989) &amp;&amp; IsQuestCompleted(13989)" >
+		<MoveTo X="1785.794" Y="-1270.917" Z="140.9868" />
+		<DisableBehavior Name="Combat" />
+		<If Condition="!Me.HasAura(65622)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46739)" WaitTime="2000" />
+		</If>
+	</If>
+	<TurnIn Nav="Fly" QuestName="King of the Foulweald" QuestId="13989" TurnInName="Krolg" TurnInId="3897" />
+	<PickUp Nav="Fly" QuestName="A New Adornment" QuestId="26481" GiverName="Krolg" GiverId="3897" />
+	<EnableBehavior Name="Combat" />
+	<Objective Nav="Fly" QuestName="A New Adornment" QuestId="26481" Type="CollectItem" ItemId="5388" CollectCount="1" />
+	<If Condition="HasQuest(26481) &amp;&amp; IsQuestCompleted(26481)" >
+		<MoveTo X="1785.794" Y="-1270.917" Z="140.9868" />
+		<DisableBehavior Name="Combat" />
+		<If Condition="!Me.HasAura(65622)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46739)" WaitTime="2000" />
+		</If>
+	</If>
+	<TurnIn Nav="Fly" QuestName="A New Adornment" QuestId="26481" TurnInName="Krolg" TurnInId="3897" />
+	<PickUp Nav="Fly" QuestName="True Power of the Rod" QuestId="26482" GiverName="Krolg" GiverId="3897" />
+	<EnableBehavior Name="Combat" />
+	<While Condition="HasQuest(26482) &amp;&amp; !IsQuestCompleted(26482)" >
+		<MoveTo X="2340.646" Y="-1185.126" Z="87.53679" />
+		<If Condition="!Me.HasAura(65752)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(46781)" WaitTime="2000" />
+		</If>
+		<CustomBehavior File="InteractWith" QuestId="26482" MobId="34618" InteractByGossipOptions="1,1m" NumOfTimes="100"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" TerminateWhen="Me.Combat || !Me.HasAura(65752)" 
+			WaitTime="2000" X="2374.389" Y="-1183.474" Z="88.53029" />
+	</While>
+	
+	<TurnIn Nav="Fly" QuestName="True Power of the Rod" QuestId="26482" TurnInName="Raene Wolfrunner" TurnInId="3691" />
+	<TurnIn Nav="Fly" QuestName="All's Well" QuestId="13924" TurnInName="Pelturas Whitemoon" TurnInId="3894" />
+	
+	<PickUp Nav="Fly" QuestName="Check in on the Edunes" QuestId="13965" GiverName="Faldreas Goeth'Shael" GiverId="3996" />
+	<PickUp Nav="Fly" QuestName="To the Spire" QuestId="13964" GiverName="Sentinel Thenysil" GiverId="4079" />
+
+	<If Condition="!HasQuest(26453) &amp;&amp; !IsQuestCompleted(26453)" >
+		<PickUp Nav="Fly" QuestName="A Helping Hand" QuestId="26453" GiverName="Vindicator Palanaar" GiverId="17106" />
+		<CustomBehavior File="InteractWith" MobId="17106" InteractByGossipOptions="1" NonCompeteDistance="0" TerminateWhen="Me.IsOnTransport" WaitTime="2000" X="2753.019" Y="-317.8663" Z="109.137" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="A Helping Hand" QuestId="26453" TurnInName="Architect Nemos" TurnInId="17291" />
+	
+	<CustomBehavior File="Message" Text="Fast forwarding memory to Forest Song" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="A Shameful Waste" QuestId="26454" GiverName="Architect Nemos" GiverId="17291" />
+	<PickUp Nav="Fly" QuestName="Vile Satyr! Dryads in Danger!" QuestId="26467" GiverName="Illiyana" GiverId="3901" />
+	<PickUp Nav="Fly" QuestName="The Lost Chalice" QuestId="26455" GiverName="Kayneth Stillwind" GiverId="3848" />
+	
+	<Objective Nav="Fly" QuestName="The Lost Chalice" QuestId="26455" Type="CollectItem" ItemId="23760" CollectCount="1" />
+	<Objective Nav="Fly" QuestName="A Shameful Waste" QuestId="26454" Type="CollectItem" ItemId="24081" CollectCount="5" />
+	
+	<TurnIn Nav="Fly" QuestName="The Lost Chalice" QuestId="26455" TurnInName="Kayneth Stillwind" TurnInId="3848" />
+	<TurnIn Nav="Fly" QuestName="A Shameful Waste" QuestId="26454" TurnInName="Gnarl" TurnInId="17310" />
+	
+	<PickUp Nav="Fly" QuestName="Recover the Remains" QuestId="13869" GiverName="Gnarl" GiverId="17310" />
+	<PickUp Nav="Fly" QuestName="Reclaiming Felfire Hill" QuestId="26446" GiverName="Gnarl" GiverId="17310" />
+	<PickUp Nav="Fly" QuestName="Destroy the Legion" QuestId="26444" GiverName="Vindicator Vedaar" GiverId="17303" />
+	<PickUp Nav="Fly" QuestName="Agents of Destruction" QuestId="26457" GiverName="Sentinel Luciel Starwhisper" GiverId="17287" />
+	
+	<Objective Nav="Fly" QuestName="Recover the Remains" QuestId="13869" Type="CollectItem" ItemId="23776" CollectCount="10" />
+	<Objective Nav="Fly" QuestName="Agents of Destruction" QuestId="26457" Type="KillMob" MobId="17304" KillCount="1" X="2447.111" Y="-3545.093" Z="99.45921" />
+	<Objective Nav="Fly" QuestName="Agents of Destruction" QuestId="26457" Type="KillMob" MobId="11682" KillCount="12" />
+	<TurnIn Nav="Fly" QuestName="Agents of Destruction" QuestId="26457" TurnInName="Sentinel Luciel Starwhisper" TurnInId="17287" />
+	
+	<TurnIn Nav="Fly" QuestName="Recover the Remains" QuestId="13869" TurnInName="Gnarl" TurnInId="17310" />
+	
+	<Objective Nav="Fly" QuestName="Reclaiming Felfire Hill" QuestId="26446" Type="UseObject" ObjectId="181690" UseCount="8" />
+	<Objective Nav="Fly" QuestName="Destroy the Legion" QuestId="26444" Type="KillMob" MobId="11697" KillCount="15" />
+	<TurnIn Nav="Fly" QuestName="Destroy the Legion" QuestId="26444" TurnInName="Vindicator Vedaar" TurnInId="17303" />
+	<TurnIn Nav="Fly" QuestName="Reclaiming Felfire Hill" QuestId="26446" TurnInName="Gnarl" TurnInId="17310" />
+	
+	<PickUp Nav="Fly" QuestName="Closure is Only Natural" QuestId="13766" GiverName="Gnarl" GiverId="17310" />
+	
+	<If Condition="HasItem(23777) &amp;&amp; (!HasQuest(26443) &amp;&amp; !IsQuestCompleted(26443))" >
+		<PickUp Nav="Fly" QuestName="Diabolical Plans" QuestId="26443" GiverType="Item" GiverId="23777" />
+	</If>
+	
+	<If Condition="HasQuest(26443)" >
+		<TurnIn Nav="Fly" QuestName="Diabolical Plans" QuestId="26443" TurnInName="Vindicator Vedaar" TurnInId="17303" />
+	</If>
+	
+	<PickUp Nav="Fly" QuestName="Never Again!" QuestId="26445" GiverName="Vindicator Vedaar" GiverId="17303" />
+	
+	<Objective Nav="Fly" QuestName="Never Again!" QuestId="26445" Type="CollectItem" ItemId="45477" CollectCount="1" />
+	<CustomBehavior File="InteractWith" QuestId="13766" MobId="194493" InteractByUsingItemId="45545" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NonCompeteDistance="0" NumOfTimes="1000" Range="15" >
+		<HuntingGrounds>
+			<Hotspot X="1687.744" Y="-3382.15" Z="144.2203" />
+			<Hotspot X="1636.615" Y="-3313.905" Z="145.03" />
+			<Hotspot X="1657.383" Y="-3241" Z="142.0058" />
+			<Hotspot X="1694.786" Y="-3158.93" Z="96.23647" />
+			<Hotspot X="1772.433" Y="-3176.986" Z="90.61425" />
+			<Hotspot X="1679.92" Y="-3106.406" Z="89.54523" />
+			<Hotspot X="1621.181" Y="-3060.191" Z="89.61536" />
+			<Hotspot X="1685.057" Y="-2996.139" Z="145.2835" />
+			<Hotspot X="1587.832" Y="-2958.628" Z="182.2703" />
+			<Hotspot X="1554.062" Y="-2874.718" Z="183.1189" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective Nav="Fly" QuestName="Never Again!" QuestId="26445" Type="CollectItem" ItemId="45476" CollectCount="1" />
+	
+	<TurnIn Nav="Fly" QuestName="Never Again!" QuestId="26445" TurnInName="Vindicator Vedaar" TurnInId="17303" />
+	<TurnIn Nav="Fly" QuestName="Closure is Only Natural" QuestId="13766" TurnInName="Gnarl" TurnInId="17310" />
+	
+	<PickUp Nav="Fly" QuestName="The Shadewalker" QuestId="13792" GiverName="Gnarl" GiverId="17310" />
+	<TurnIn Nav="Fly" QuestName="The Shadewalker" QuestId="13792" TurnInName="Gaivan Shadewalker" TurnInId="33777" />
+	
+	<PickUp Nav="Fly" QuestName="Insane Druids" QuestId="26472" GiverName="Gaivan Shadewalker" GiverId="33777" />
+	<PickUp Nav="Fly" QuestName="The Forest Heart" QuestId="13796" GiverName="Gaivan Shadewalker" GiverId="33777" />
+	
+	<Objective Nav="Fly" QuestName="Insane Druids" QuestId="26472" Type="KillMob" MobId="3940" KillCount="1" />
+	<Objective Nav="Fly" QuestName="Insane Druids" QuestId="26472" Type="KillMob" MobId="3941" KillCount="1" X="1872.25" Y="-2804.238" Z="36.19745" />
+	<Objective Nav="Fly" QuestName="Insane Druids" QuestId="26472" Type="KillMob" MobId="3942" KillCount="1" X="1821.286" Y="-2621.509" Z="61.33445" />
+	<If Condition="HasQuest(13796) &amp;&amp; !IsQuestCompleted(13796)" >
+		<If Condition="GetItemCount(45571) &lt; 7 &amp;&amp; !HasItem(45572)" >
+			<Objective Nav="Fly" QuestName="The Forest Heart" QuestId="13796" Type="CollectItem" ItemId="45571" CollectCount="7" />
+		</If>
+		<If Condition="GetItemCount(45571) == 7 &amp;&amp; !HasItem(45572)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(45571)" WaitTime="2000" />
+		</If>
+		<CustomBehavior File="InteractWith" QuestId="13796" MobId="194549" NumOfTimes="100" NonCompeteDistance="0" 
+			ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="3000" X="1820.148" Y="-2653.255" Z="52.77634" />
+	</If>
+	
+	<TurnIn Nav="Fly" QuestName="Insane Druids" QuestId="26472" TurnInName="Gaivan Shadewalker" TurnInId="33777" />
+	<TurnIn Nav="Fly" QuestName="The Forest Heart" QuestId="13796" TurnInName="Gnarl" TurnInId="17310" />
+	
+	<TurnIn Nav="Fly" QuestName="Vile Satyr! Dryads in Danger!" QuestId="26467" TurnInName="Anilia" TurnInId="3920" />
+	
+	<PickUp Nav="Fly" QuestName="The Branch of Cenarius" QuestId="26468" GiverName="Anilia" GiverId="3920" />
+	<Objective Nav="Fly" QuestName="The Branch of Cenarius" QuestId="26468" Type="CollectItem" ItemId="5461" CollectCount="1" />
+	<TurnIn Nav="Fly" QuestName="The Branch of Cenarius" QuestId="26468" TurnInName="Illiyana" TurnInId="3901" />
+	
+	<PickUp Nav="Fly" QuestName="Satyr Slaying!" QuestId="26469" GiverName="Illiyana" GiverId="3901" />
+	<PickUp Nav="Fly" QuestName="Stopping the Rituals" QuestId="13683" GiverName="Anchorite Buurq" GiverId="33727" />
+	<Objective Nav="Fly" QuestName="Stopping the Rituals" QuestId="13683" Type="UseObject" ObjectId="194464" UseCount="8" />
+	<Objective Nav="Fly" QuestName="Satyr Slaying!" QuestId="26469" Type="CollectItem" ItemId="5481" CollectCount="16" />
+	<TurnIn Nav="Fly" QuestName="Stopping the Rituals" QuestId="13683" TurnInName="Anchorite Buurq" TurnInId="33727" />
+	<TurnIn Nav="Fly" QuestName="Satyr Slaying!" QuestId="26469" TurnInName="Illiyana" TurnInId="3901" />
+	
+	<TurnIn Nav="Fly" QuestName="Report from the Northern Front" QuestId="26456" TurnInName="Sentinel Farsong" TurnInId="14733" />
+	
+	<CustomBehavior File="Message" Text="Fast forwarding memory to Shrine of Aessina" LogColor="CornflowerBlue" />
+	
+	<TurnIn Nav="Fly" QuestName="Check in on the Edunes" QuestId="13965" TurnInName="Benjari Edune" TurnInId="24739" />
+	<PickUp Nav="Fly" QuestName="Three Friends of the Forest" QuestId="13976" GiverName="Benjari Edune" GiverId="24739" />
+	<TurnIn Nav="Fly" QuestName="Three Friends of the Forest" QuestId="13976" TurnInName="Bolyun" TurnInId="3698" />
+	
+	<PickUp Nav="Fly" QuestName="In a Bind" QuestId="13982" GiverName="Bolyun" GiverId="3698" />
+	<Objective Nav="Fly" QuestName="In a Bind" QuestId="13982" Type="CollectItem" ItemId="46774" CollectCount="1" />
+	<TurnIn Nav="Fly" QuestName="In a Bind" QuestId="13982" TurnInName="Bolyun" TurnInId="3698" />
+	
+	<PickUp Nav="Fly" QuestName="Clear the Shrine" QuestId="13985" GiverName="Bolyun" GiverId="34599" />
+	<Objective Nav="Fly" QuestName="Clear the Shrine" QuestId="13985" Type="KillMob" MobId="3774" KillCount="12" />
+	<TurnIn Nav="Fly" QuestName="Clear the Shrine" QuestId="13985" TurnInName="Big Baobob" TurnInId="34604" />
+	
+	<PickUp Nav="Fly" QuestName="The Last Stand" QuestId="13987" GiverName="Big Baobob" GiverId="34604" />
+	<Objective Nav="Fly" QuestName="The Last Stand" QuestId="13987" Type="KillMob" MobId="34609" KillCount="30" />
+	<TurnIn Nav="Fly" QuestName="The Last Stand" QuestId="13987" TurnInName="Big Baobob" TurnInId="34604" />
+	
+	<TurnIn Nav="Fly" QuestName="To the Spire" QuestId="13964" TurnInName="Sentinel Velene Starstrike" TurnInId="3885" />
+	<PickUp Nav="Fly" QuestName="Retaking Mystral Lake" QuestId="26470" GiverName="Sentinel Velene Starstrike" GiverId="3885" />
+	<Objective Nav="Fly" QuestName="Retaking Mystral Lake" QuestId="26470" Type="KillMob" MobId="12759" KillCount="1" />
+	<Objective Nav="Fly" QuestName="Retaking Mystral Lake" QuestId="26470" Type="KillMob" MobId="3917" KillCount="12" />
+	<TurnIn Nav="Fly" QuestName="Retaking Mystral Lake" QuestId="26470" TurnInName="Sentinel Velene Starstrike" TurnInId="3885" />
+	
+	<CustomBehavior File="Message" Text="Ashenvale Memory Synchronized" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\KalimdorMemBlock [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

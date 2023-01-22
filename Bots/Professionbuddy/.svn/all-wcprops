@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/705/trunk/Professionbuddy
+END
+SVN.template
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/686/trunk/Professionbuddy/SVN.template
+END
+MainForm.resources
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/686/trunk/Professionbuddy/MainForm.resources
+END
+CommonTypes.cs
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/686/trunk/Professionbuddy/CommonTypes.cs
+END
+MultilineTextEditor.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/686/trunk/Professionbuddy/MultilineTextEditor.cs
+END
+PBBranch.cs
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/705/trunk/Professionbuddy/PBBranch.cs
+END
+ProfessionBuddy.cs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/705/trunk/Professionbuddy/ProfessionBuddy.cs
+END
+IDeepCopy.cs
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/686/trunk/Professionbuddy/IDeepCopy.cs
+END
+PbProfile.cs
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/704/trunk/Professionbuddy/PbProfile.cs
+END
+Guide.rtf
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/669/trunk/Professionbuddy/Guide.rtf
+END
+PBComposite.cs
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/686/trunk/Professionbuddy/PBComposite.cs
+END
+MainForm.resx
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/686/trunk/Professionbuddy/MainForm.resx
+END
+TradeSkillListView.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/686/trunk/Professionbuddy/TradeSkillListView.cs
+END
+DataStore.cs
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/686/trunk/Professionbuddy/DataStore.cs
+END
+PBRootComposite.cs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/704/trunk/Professionbuddy/PBRootComposite.cs
+END
+Tradeskill.cs
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/704/trunk/Professionbuddy/Tradeskill.cs
+END
+PropertyBag.cs
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/686/trunk/Professionbuddy/PropertyBag.cs
+END
+Settings.cs
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/704/trunk/Professionbuddy/Settings.cs
+END
+SvnBase.cs
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/686/trunk/Professionbuddy/SvnBase.cs
+END
+GlobalPBSettings.cs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/689/trunk/Professionbuddy/GlobalPBSettings.cs
+END
+Utility.cs
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/705/trunk/Professionbuddy/Utility.cs
+END
+PBLog.cs
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/695/trunk/Professionbuddy/PBLog.cs
+END
+Updater.cs
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/688/trunk/Professionbuddy/Updater.cs
+END
+ProfessionBuddy.sln
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/704/trunk/Professionbuddy/ProfessionBuddy.sln
+END
+SVN.cs
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/705/trunk/Professionbuddy/SVN.cs
+END
+MainForm.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/686/trunk/Professionbuddy/MainForm.Designer.cs
+END
+MainForm.cs
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/704/trunk/Professionbuddy/MainForm.cs
+END
+Tradeskill Tools.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/667/trunk/Professionbuddy/Tradeskill%20Tools.xml
+END
+ProfessionBuddy.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/704/trunk/Professionbuddy/ProfessionBuddy.csproj
+END

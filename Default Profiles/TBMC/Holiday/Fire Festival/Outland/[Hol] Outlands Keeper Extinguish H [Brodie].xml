@@ -1,0 +1,180 @@
+<HBProfile>
+
+	<Name>Flame Keeper and Extinguishing - Outlands (Horde) ($Rev$)</Name>
+	<MinLevel>60</MinLevel>
+	<MaxLevel>100</MaxLevel>
+	
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<QuestOrder>
+
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Shattrath -->
+		<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326)) &gt;= 100" >
+			<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+			<CustomBehavior File="ForcedDismount" />
+		</If>
+		<UseMount Value="False" />
+		<CustomBehavior File="InteractWith" MobId="215113" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" WaitTime="10000" X="1732.343" Y="881.7467" Z="487.0864" />
+		<UseMount Value="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" WaitTime="10000" X="5881.809" Y="574.0649" Z="650" />
+	</If>
+	
+	<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+		<CustomBehavior File="FlyTo" X="1773.506" Y="-4327.022" Z="-8.118139" />
+		<CustomBehavior File="InteractWith" MobId="195142" NonCompeteDistance="0" WaitTime="10000" X="1773.506" Y="-4327.022" Z="-8.118139" />
+	</If>
+
+	<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+		<CustomBehavior File="FlyTo" X="-11899.66" Y="-3208.164" Z="-14.73684" />
+		<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" />
+	</If>
+
+	<!-- Honor Hold - Hellfire Peninsula (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11747)" >
+		<CustomBehavior File="InteractWith" MobId="187930" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11747)" WaitTime="1000"
+			X="-531.6212" Y="2325.29" Z="40.11131" />
+		<If Condition="!IsQuestCompleted(11747)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Thrallmar - Hellfire Peninsula (Keeper) -->
+	<While Condition="!IsQuestCompleted(11851)" >
+		<CustomBehavior File="InteractWith" MobId="25934" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11851)" WaitTime="1000"
+			X="33.95839" Y="2581.025" Z="68.02706" />
+		<If Condition="!IsQuestCompleted(11851)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Wildhammer Stronghold - SMV (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11752)" >
+		<CustomBehavior File="InteractWith" MobId="187935" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11752)" WaitTime="1000"
+			X="-3950.95" Y="2040.455" Z="95.06493" />
+		<If Condition="!IsQuestCompleted(11752)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Shadowmoon Village - SMV (Keeper) -->
+	<While Condition="!IsQuestCompleted(11855)" >
+		<CustomBehavior File="InteractWith" MobId="25938" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11855)" WaitTime="1000"
+			X="-3056.857" Y="2377.223" Z="63.26477" />
+		<If Condition="!IsQuestCompleted(11855)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Allerian Stronghold - Terrokar Forest (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11754)" >
+		<CustomBehavior File="InteractWith" MobId="187937" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11754)" WaitTime="1000"
+			X="-2994.141" Y="4166.478" Z="5.827936" />
+		<If Condition="!IsQuestCompleted(11754)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Stonebreaker Hold - Terrokar Forest (Keeper) -->
+	<While Condition="!IsQuestCompleted(11858)" >
+		<CustomBehavior File="InteractWith" MobId="25942" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11858)" WaitTime="1000"
+			X="-2559.602" Y="4285.864" Z="20.24311" />
+		<If Condition="!IsQuestCompleted(11858)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Telaar - Nagrand (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11750)" >
+		<CustomBehavior File="InteractWith" MobId="187933" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11750)" WaitTime="1000"
+			X="-2513.17" Y="7550.653" Z="-1.377608" />
+		<If Condition="!IsQuestCompleted(11750)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Garadar - Nagrand (Keeper) -->
+	<While Condition="!IsQuestCompleted(11854)" >
+		<CustomBehavior File="InteractWith" MobId="25937" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11854)" WaitTime="1000"
+			X="-1220.073" Y="7476.025" Z="22.08828" />
+		<If Condition="!IsQuestCompleted(11854)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Zabra'jin - Zangarmarsh (Keeper) -->
+	<While Condition="!IsQuestCompleted(11863)" >
+		<CustomBehavior File="InteractWith" MobId="25947" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11863)" WaitTime="1000"
+			X="193.9369" Y="7685.295" Z="22.45855" />
+		<If Condition="!IsQuestCompleted(11863)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Telredor - Zangarmarsh (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11758)" >
+		<CustomBehavior File="InteractWith" MobId="187941" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11758)" WaitTime="1000"
+			X="193.4308" Y="6020.112" Z="22.08528" />
+		<If Condition="!IsQuestCompleted(11758)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Sylvanaar - Blade's Edge Mountains (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11736)" >
+		<CustomBehavior File="InteractWith" MobId="187919" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11736)" WaitTime="1000"
+			X="2025.354" Y="6587.622" Z="134.9606" />
+		<If Condition="!IsQuestCompleted(11736)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Thunderlord Stronghold - Blade's Edge Mountains (Keeper) -->
+	<While Condition="!IsQuestCompleted(11843)" >
+		<CustomBehavior File="InteractWith" MobId="25926" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11843)" WaitTime="1000"
+			X="2273.543" Y="6137.475" Z="136.6412" />
+		<If Condition="!IsQuestCompleted(11843)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Area 52 - Netherstorm (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11759)" >
+		<CustomBehavior File="InteractWith" MobId="187942" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11759)" WaitTime="1000"
+			X="3130.437" Y="3745.1" Z="141.4746" />
+		<If Condition="!IsQuestCompleted(11759)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Area 52 - Netherstorm (Keeper) -->
+	<While Condition="!IsQuestCompleted(11835)" >
+		<CustomBehavior File="InteractWith" MobId="25918" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11835)" WaitTime="1000"
+			X="2918.107" Y="3676.373" Z="144.1794" />
+		<If Condition="!IsQuestCompleted(11835)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+</QuestOrder>
+</HBProfile>

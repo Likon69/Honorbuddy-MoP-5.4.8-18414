@@ -1,0 +1,489 @@
+<HBProfile>
+
+	<Name>Aldor Rep Grind ($Rev$)</Name>
+	<MinLevel>70</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.1</MinDurability>
+	<MinFreeBagSlots>1</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+		<Mob Name="Ambassador Hellmaw" Entry="18731" Flags="Pull" />
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<Vendor Nav="Fly" Name="Siflaed Coldhammer" Entry="20890" Type="Repair" X="-2846.73" Y="5048.99" Z="-18.45699" />
+		<Vendor Nav="Fly" Name="Technician Halmaha" Entry="27711" Type="Repair" X="-1888.544" Y="5770.347" Z="129.5587" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<CustomBehavior File="Message" Text="Beginning Aldor Reputation Grind" LogColor="Green" />
+
+	<CustomBehavior File="UserSettings" KillBetweenHotspots="False" />
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Shattrath -->
+		<If Condition="Me.IsAlliance" >
+			<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<UseMount Value="False" />
+			<CustomBehavior File="InteractWith" MobId="215120" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<UseMount Value="False" />
+			<CustomBehavior File="InteractWith" MobId="215113" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1732.343" Y="881.7467" Z="487.0864" />
+		</If>
+		<UseMount Value="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+		</If>
+	</If>
+	
+	<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="-3997.277" Y="-4723.235" Z="4.2373507" />
+			<CustomBehavior File="UseTransport" TransportId="176231"
+				WaitAtX="-3997.277" WaitAtY="-4723.235" WaitAtZ="4.2373507" 
+				TransportStartX="-4016.39" TransportStartY="-4740.588" TransportStartZ="0.03803937"
+				TransportEndX="-3872.35" TransportEndY="-639.944" TransportEndZ="-0.02619897"
+				StandOnX="-4009.505" StandOnY="-4738.07" StandOnZ="6.021125"
+				GetOffX="-3861.013" GetOffY="-656.758" GetOffZ="5.279493" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="1773.506" Y="-4327.022" Z="-8.118139" />
+			<CustomBehavior File="InteractWith" MobId="195142" NonCompeteDistance="0" WaitTime="5000" X="1773.506" Y="-4327.022" Z="-8.118139" />
+		</If>
+	</If>
+
+	<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.IsAlliance" >
+			<If Condition="Me.ZoneId == 1519" >
+				<CustomBehavior File="InteractWith" MobId="195141" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+					X="-9005.213" Y="868.702" Z="129.6925" />
+			</If>
+			<CustomBehavior File="FlyTo" X="-11899.66" Y="-3208.164" Z="-14.73684" />
+			<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+			<CustomBehavior File="WaitTimer" WaitTime="10000" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="-11899.66" Y="-3208.164" Z="-14.73684" />
+			<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+			<CustomBehavior File="WaitTimer" WaitTime="10000" />
+		</If>
+	</If>
+
+	<While Condition="Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Exalted" >
+	
+		<!-- Grind back up to Neutral -->
+		<While Condition="Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Neutral" >
+			<!-- While less than neutral we need Dreadfang Venom Sacs - item(25802)
+			Grinded from spiders around Auchindoun. Turned in at Lower City. -->
+			<CustomBehavior File="InteractWith" MobId="18467" MobId2="18466" MobState="Alive" NonCompeteDistance="5"
+				PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="250"
+				NumOfTimes="1000" WaitTime="1000" TerminateWhen="(GetItemCount(25802) / 8) * 350 &gt;= (((-1 * Me.GetReputationWith(932)) + 349)) ||
+				Me.GetReputationLevelWith(932) &gt;= WoWUnitReaction.Neutral" >
+				<HuntingGrounds>
+					<Hotspot X="-3065.276" Y="4215.784" Z="-5.108429" />
+					<Hotspot X="-3183.962" Y="4165.525" Z="-3.6071" />
+					<Hotspot X="-3278.602" Y="4147.193" Z="-3.980804" />
+					<Hotspot X="-3405.185" Y="4171.943" Z="-2.64671" />
+					<Hotspot X="-3545.868" Y="4173.915" Z="-2.425745" />
+					<Hotspot X="-3669.467" Y="4226.198" Z="1.318217" />
+					<Hotspot X="-3772.043" Y="4265.229" Z="4.286233" />
+					<Hotspot X="-3853.608" Y="4332.964" Z="6.279484" />
+					<Hotspot X="-3930.674" Y="4403.132" Z="-13.4603" />
+					<Hotspot X="-3956.303" Y="4279.245" Z="-21.48034" />
+				</HuntingGrounds>
+			</CustomBehavior>
+			
+			<While Condition="GetItemCount(25802) &gt;= 8" >
+				<!-- Head back to Lower City, turn in spam -->
+				<If Condition="!HasQuest(10017) &amp;&amp; !IsQuestCompleted(10017)" >
+					<PickUp Nav="Fly" QuestName="Strained Supplies" QuestId="10017" GiverName="Sha'nir" GiverId="18597" />
+				</If>
+				<If Condition="HasQuest(10017) &amp;&amp; IsQuestCompleted(10017)" >
+					<TurnIn Nav="Fly" QuestName="Strained Supplies" QuestId="10017" TurnInName="Sha'nir" TurnInId="18597" />
+				</If>
+				<If Condition="!HasQuest(10020) &amp;&amp; !IsQuestCompleted(10020)" >
+					<PickUp Nav="Fly" QuestName="A Cure for Zahlia" QuestId="10020" GiverName="Sha'nir" GiverId="18597" />
+				</If>
+				<CustomBehavior File="InteractWith" MobId="18597" MobState="Alive" NonCompeteDistance="0"
+					TerminateWhen="GetItemCount(25802) &lt; 8 || Me.GetReputationLevelWith(932) &gt;= WoWUnitReaction.Neutral"
+					WaitTime="500" X="-1607.765" Y="5294.732" Z="-38.57745" />
+				<If Condition="GetItemCount(25802) &gt;= 8 &amp;&amp; Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Neutral" >
+					<CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton1:Click()" WaitTime="500" />
+					<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="500" />
+					<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="500" />
+				</If>
+			</While>
+			<If Condition="Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Neutral" >
+				<CustomBehavior File="Message" Text="OOPS! Miscalculation, heading back out to grind for the last bits" LogColor="Orange" />
+			</If>
+		</While>
+		
+		<!-- Turn in marks, then move to and into instance -->
+		<If Condition="Me.ZoneId != 3789" > <!-- Shadow Labs -->
+			<If Condition="Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3 || HasItem(29425) || HasItem(29740) || HasItem(30809)" >
+				<If Condition="Me.Location.Distance(new WoWPoint(-3602.599, 4943.129, -101.0491)) &lt; 45" >
+					<CustomBehavior File="InteractWith" MobId="183294" PreInteractMountStrategy="Dismount" NonCompeteDistance="0" WaitTime="1000" 
+						TerminateWhen="Object(183294) == null" />
+				</If>
+				<If Condition="Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3" >
+					<CustomBehavior File="ForceSetVendor" DoRepair="True" DoSell="True" />
+				</If>
+			</If>
+			<!-- Mark of Kil'jaeden -->
+			<If Condition="!HasQuest(10325) &amp;&amp; !IsQuestCompleted(10325)" >
+				<PickUp Nav="Fly" QuestName="Marks of Kil'jaeden" QuestId="10325" GiverName="Adyen the Lightwarden" GiverId="18537" />
+			</If>
+			<If Condition="HasQuest(10325) &amp;&amp; IsQuestCompleted(10325)" >
+				<TurnIn Nav="Fly" QuestName="Marks of Kil'jaeden" QuestId="10325" TurnInName="Adyen the Lightwarden" TurnInId="18537" />
+			</If>
+			<If Condition="!HasQuest(10325) &amp;&amp; IsQuestCompleted(10325) &amp;&amp; HasItem(29425) &amp;&amp; Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Honored" >
+				<CustomBehavior File="FlyTo" X="-1774.615" Y="5730.921" Z="127.2944" />
+				<While Condition="GetItemCount(29425) &gt;= 10 &amp;&amp; Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Honored" >
+					<!-- TurnIn for 10 -->
+					<CustomBehavior File="InteractWith" MobId="18537" MobState="Alive" NonCompeteDistance="0"
+						TerminateWhen="GetItemCount(29425) &lt; 10 || Me.GetReputationLevelWith(932) &gt;= WoWUnitReaction.Honored"
+						WaitTime="500" X="-1774.615" Y="5730.921" Z="127.2944" />
+					<If Condition="GetItemCount(29425) &gt;= 10 &amp;&amp; Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Honored" >
+						<CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton2:Click()" WaitTime="500" />
+						<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="500" />
+						<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="500" />
+					</If>
+				</While>
+				<While Condition="HasItem(29425) &amp;&amp; Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Honored" >
+					<!-- TurnIn for 1 -->
+					<CustomBehavior File="InteractWith" MobId="18537" MobState="Alive" NonCompeteDistance="0"
+						TerminateWhen="!HasItem(29425) || Me.GetReputationLevelWith(932) &gt;= WoWUnitReaction.Honored"
+						WaitTime="500" X="-1774.615" Y="5730.921" Z="127.2944" />
+					<If Condition="HasItem(29425) &amp;&amp; Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Honored" >
+						<CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton1:Click()" WaitTime="500" />
+						<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="500" />
+						<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="500" />
+					</If>
+				</While>
+			</If>
+			<!-- Fel Armaments -->
+			<If Condition="!HasQuest(10420) &amp;&amp; !IsQuestCompleted(10420)" >
+				<PickUp Nav="Fly" QuestName="A Cleansing Light" QuestId="10420" GiverName="Ishanah" GiverId="18538" />
+			</If>
+			<If Condition="HasQuest(10420) &amp;&amp; IsQuestCompleted(10420)" >
+				<TurnIn Nav="Fly" QuestName="A Cleansing Light" QuestId="10420" TurnInName="Ishanah" TurnInId="18538" />
+			</If>
+			<If Condition="!HasQuest(10420) &amp;&amp; IsQuestCompleted(10420) &amp;&amp; HasItem(29740) &amp;&amp; Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Exalted" >
+				<CustomBehavior File="FlyTo" X="-1732.331" Y="5818.673" Z="148.6583" />
+				<While Condition="HasItem(29740) &amp;&amp; Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Exalted" >
+					<!-- TurnIn for 1 -->
+					<CustomBehavior File="InteractWith" MobId="18538" MobState="Alive" NonCompeteDistance="0"
+						TerminateWhen="!HasItem(29740) || Me.GetReputationLevelWith(932) &gt;= WoWUnitReaction.Exalted"
+						WaitTime="1000" X="-1732.331" Y="5818.673" Z="148.6583" />
+					<If Condition="HasItem(29740) &amp;&amp; Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Exalted" >
+						<If Condition="!HasQuest(10021) &amp;&amp; !IsQuestCompleted(10021)" >
+							<CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton2:Click()" WaitTime="500" />
+						<Else>
+							<CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton1:Click()" WaitTime="500" />
+						</Else>
+						</If>
+						<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="500" />
+						<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="500" />
+					</If>
+				</While>
+			</If>
+			<!-- Mark of Sargeras -->
+			<If Condition="!HasQuest(10653) &amp;&amp; !IsQuestCompleted(10653)" >
+				<PickUp Nav="Fly" QuestName="Marks of Sargeras" QuestId="10653" GiverName="Adyen the Lightwarden" GiverId="18537" />
+			</If>
+			<If Condition="HasQuest(10653) &amp;&amp; IsQuestCompleted(10653)" >
+				<TurnIn Nav="Fly" QuestName="Marks of Sargeras" QuestId="10653" TurnInName="Adyen the Lightwarden" TurnInId="18537" />
+			</If>
+			<If Condition="!HasQuest(10653) &amp;&amp; IsQuestCompleted(10653) &amp;&amp; HasItem(30809) &amp;&amp; Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Exalted" >
+				<CustomBehavior File="FlyTo" X="-1774.615" Y="5730.921" Z="127.2944" />
+				<While Condition="GetItemCount(30809) &gt;= 10 &amp;&amp; Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Exalted" >
+					<!-- TurnIn for 10 -->
+					<CustomBehavior File="InteractWith" MobId="18537" MobState="Alive" NonCompeteDistance="0"
+						TerminateWhen="GetItemCount(30809) &lt; 10 || Me.GetReputationLevelWith(932) &gt;= WoWUnitReaction.Exalted"
+						WaitTime="500" X="-1774.615" Y="5730.921" Z="127.2944" />
+					<If Condition="GetItemCount(30809) &gt;= 10 &amp;&amp; Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Exalted" >
+						<If Condition="Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Honored &amp;&amp; (!HasQuest(10325) &amp;&amp; IsQuestCompleted(10325))" >
+							<CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton4:Click()" WaitTime="500" />
+						<Else>
+							<CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton2:Click()" WaitTime="500" />
+						</Else>
+						</If>
+						<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="500" />
+						<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="500" />
+					</If>
+				</While>
+				<While Condition="HasItem(30809) &amp;&amp; Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Exalted" >
+					<!-- TurnIn for 1 -->
+					<CustomBehavior File="InteractWith" MobId="18537" MobState="Alive" NonCompeteDistance="0"
+						TerminateWhen="!HasItem(30809) || Me.GetReputationLevelWith(932) &gt;= WoWUnitReaction.Exalted"
+						WaitTime="500" X="-1774.615" Y="5730.921" Z="127.2944" />
+					<If Condition="HasItem(30809) &amp;&amp; Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Exalted" >
+						<If Condition="Me.GetReputationLevelWith(932) &lt; WoWUnitReaction.Honored &amp;&amp; (!HasQuest(10325) &amp;&amp; IsQuestCompleted(10325))" >
+							<CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton3:Click()" WaitTime="500" />
+						<Else>
+							<CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton1:Click()" WaitTime="500" />
+						</Else>
+						</If>
+						<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="500" />
+						<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="500" />
+					</If>
+				</While>
+			</If>
+			<If Condition="Me.GetReputationLevelWith(932) &gt;= WoWUnitReaction.Exalted" >
+				<CustomBehavior File="UserDialog" Title="All Done!" Text="Finished grinding to exalted." SoundCue="Asterisk" />
+				<CustomBehavior File="Halt" />
+			</If>
+			<If Condition="Me.Location.Distance(new WoWPoint(-3602.599, 4943.129, -101.0491)) &gt; 45" >
+				<CustomBehavior File="FlyTo" TerminateWhen="Object(183294, o =&gt; o.Distance &lt; 20) != null" X="-3469.972" Y="4942.054" Z="-101.3957" />
+				<CustomBehavior File="InteractWith" MobId="183294" PreInteractMountStrategy="Dismount" NonCompeteDistance="0" WaitTime="1000" 
+					TerminateWhen="Object(183294) == null" MovementBy="NavigatorPreferred" />
+				<MoveTo X="-3639.11" Y="4942.858" Z="-101.0485" />
+			</If>
+			<CustomBehavior File="RunMacro" Macro="/script SetDungeonDifficulty(1)" /> <!-- Set Difficulty to Normal -->
+			<CustomBehavior File="RunMacro" Macro="/script ResetInstances()" /> <!-- resets instances -->
+			<CustomBehavior File="Misc\InInstance" X="-3652.887" Y="4942.968" Z="-101.0477" />
+			<CustomBehavior File="WaitTimer" WaitTime="10000" />
+		</If>
+		
+		<If Condition="Me.GetReputationLevelWith(932) &gt;= WoWUnitReaction.Exalted" >
+			<If Condition="Me.ZoneId == 3789" >
+				<MoveTo X="-3.010942" Y="-0.06754982" Z="-1.12795" />
+				<CustomBehavior File="Misc\InInstance" X="10.509288" Y="-0.1719886" Z="-1.127934" />
+				<CustomBehavior File="WaitTimer" WaitTime="10000" />
+			</If>
+			<CustomBehavior File="UserDialog" Title="All Done!" Text="Finished grinding to exalted." SoundCue="Asterisk" />
+			<CustomBehavior File="Halt" />
+		</If>
+		
+		<!-- Check for Quests from Shattered Halls -->
+		<If Condition="(HasQuest(29645) || !IsQuestCompleted(29645)) || (HasQuest(29640) || !IsQuestCompleted(29640)) ||
+						(HasQuest(29643) || !IsQuestCompleted(29643)) || (HasQuest(29644) &amp;&amp; IsQuestCompleted(29644)) ||
+						(HasQuest(29641) &amp;&amp; IsQuestCompleted(29641))" >
+			<CustomBehavior File="Message" Text="Compiling Quest Data from Dungeons" LogColor="CornflowerBlue" />
+			
+			<!-- Pick Ups -->
+			<If Condition="!HasQuest(29640) &amp;&amp; !IsQuestCompleted(29640)" >
+				<PickUp QuestName="Find Spy To'gun" QuestId="29640" GiverName="Spy Grik'tha" GiverId="54891" />
+			</If>
+			<If Condition="!HasQuest(29645) &amp;&amp; !IsQuestCompleted(29645)" >
+				<PickUp QuestName="Ambassador Hellmaw" QuestId="29645" GiverName="Field Commander Mahfuun" GiverId="54890" />
+			</If>
+			<If Condition="!HasQuest(29643) &amp;&amp; !IsQuestCompleted(29643)" >
+				<PickUp QuestName="The Codex of Blood" QuestId="29643" GiverName="Field Commander Mahfuun" GiverId="54890" />
+			</If>
+
+			<!-- Turn Ins -->
+			<If Condition="HasQuest(29645) &amp;&amp; IsQuestCompleted(29645)" >
+				<TurnIn QuestName="Ambassador Hellmaw" QuestId="29645" TurnInName="Field Commander Mahfuun" TurnInId="54890" />
+			</If>
+			<If Condition="HasQuest(29644) &amp;&amp; IsQuestCompleted(29644)" >
+				<TurnIn QuestName="Into the Heart of the Labyrinth" QuestId="29644" TurnInName="Field Commander Mahfuun" TurnInId="54890" />
+			</If>
+			<If Condition="HasQuest(29641) &amp;&amp; IsQuestCompleted(29641)" >
+				<TurnIn QuestName="The Soul Devices" QuestId="29641" TurnInName="Spy Griktha" TurnInId="54891" />
+			</If>
+		</If>
+		
+		<CustomBehavior File="UserSettings" KillBetweenHotspots="True" />
+	
+		<If Condition="!(Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3) &amp;&amp; Unit(18731, u =&gt; u.HasAura(36220)) != null
+						&amp;&amp; !(((GetItemCount(30809) * 25) + (GetItemCount(29740) * 250)) &gt;= (42000 - Me.GetReputationWith(932)))" >
+			<SetGrindArea>
+				<GrindArea>
+	   
+				<TargetMinLevel>60</TargetMinLevel>
+				<TargetMaxLevel>80</TargetMaxLevel>
+	   
+				<Factions>16</Factions>
+
+				<Hotspots>
+					<Hotspot X="-155.246" Y="-67.34805" Z="8.073029" />
+					<Hotspot X="-163.5346" Y="-21.21345" Z="8.073101" />
+				</Hotspots>
+
+				</GrindArea>
+			</SetGrindArea>
+			<GrindTo Condition="Me.ZoneId != 3789 || Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3 ||
+								Unit(18731, u =&gt; u.IsAlive &amp;&amp; !u.HasAura(36220)) != null ||
+								Unit(18731, u =&gt; u.IsDead) != null || ((GetItemCount(30809) * 25) + (GetItemCount(29740) * 250)) &gt;= (42000 - Me.GetReputationWith(932))"
+				GoalText="Clearing The First Boss" />
+		</If>
+		
+		<CustomBehavior File="InteractWith" MobId="18731" MobState="Alive" NonCompeteDistance="0"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="1000"
+			InteractBlacklistTimeInSeconds="3" TerminateWhen="Unit(18731, u =&gt; u.IsAlive) == null || ((GetItemCount(30809) * 25) + (GetItemCount(29740) * 250)) &gt;= (42000 - Me.GetReputationWith(932))
+			|| Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3" X="-159.7599" Y="2.473454" Z="8.071779" />
+		
+		<If Condition="!(Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3) &amp;&amp; HasQuest(29640) &amp;&amp; !(((GetItemCount(30809) * 25) + (GetItemCount(29740) * 250)) &gt;= (42000 - Me.GetReputationWith(932)))" >
+			<TurnIn QuestName="Find Spy To'gun" QuestId="29640" TurnInName="Spy Togun" TurnInId="18891" />
+		</If>
+		
+		<If Condition="!(Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3) &amp;&amp; !HasQuest(29641) &amp;&amp; !IsQuestCompleted(29641) &amp;&amp; !(((GetItemCount(30809) * 25) + (GetItemCount(29740) * 250)) &gt;= (42000 - Me.GetReputationWith(932)))" >
+			<PickUp QuestName="The Soul Devices" QuestId="29641" GiverName="Spy Togun" GiverId="18891" />
+		</If>
+		
+		<If Condition="!(Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3) &amp;&amp; Unit(18667, u =&gt; u.IsAlive) != null &amp;&amp; !(((GetItemCount(30809) * 25) + (GetItemCount(29740) * 250)) &gt;= (42000 - Me.GetReputationWith(932)))" >
+			<SetGrindArea>
+				<GrindArea>
+	   
+				<TargetMinLevel>60</TargetMinLevel>
+				<TargetMaxLevel>80</TargetMaxLevel>
+	   
+				<Factions>16</Factions>
+
+				<Hotspots>
+					<Hotspot X="-264.8494" Y="-31.78515" Z="8.087882" />
+					<Hotspot X="-328.9866" Y="-38.04253" Z="12.68884" />
+				</Hotspots>
+
+				</GrindArea>
+			</SetGrindArea>
+			<GrindTo Condition="Me.GetReputationLevelWith(932) &gt;= WoWUnitReaction.Exalted || Me.ZoneId != 3789 ||
+								Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3 || Unit(18667, u =&gt; u.IsAlive) == null
+								|| ((GetItemCount(30809) * 25) + (GetItemCount(29740) * 250)) &gt;= (42000 - Me.GetReputationWith(932))"
+				GoalText="Clearing The Second Boss" />
+		</If>
+		
+		<If Condition="HasQuest(29641) &amp;&amp; !IsQuestCompleted(29641) &amp;&amp; !(((GetItemCount(30809) * 25) + (GetItemCount(29740) * 250)) &gt;= (42000 - Me.GetReputationWith(932)))" >
+			<CustomBehavior File="InteractWith" QuestId="29641" MobId="182940" NonCompeteDistance="0"
+				ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="2000"
+				CollectionDistance="80" TerminateWhen="Object(182940, o =&gt; o.Location.Distance(new WoWPoint(-268.0792,-38.9134,8.072788)) &lt; 85) == null ||
+				Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3"
+				X="-268.0792" Y="-38.9134" Z="8.072788" />
+			<CustomBehavior File="InteractWith" QuestId="29641" MobId="182940" NonCompeteDistance="0"
+				ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="2000"
+				CollectionDistance="50" TerminateWhen="Object(182940, o =&gt; o.Location.Distance(new WoWPoint(-435.6837,-170.1015,12.9489)) &lt; 50) == null ||
+				Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3"
+				X="-435.6837" Y="-170.1015" Z="12.9489" />
+		</If>
+		
+		<If Condition="!(Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3) &amp;&amp; Unit(18732, u =&gt; u.IsAlive) != null &amp;&amp; !(((GetItemCount(30809) * 25) + (GetItemCount(29740) * 250)) &gt;= (42000 - Me.GetReputationWith(932)))" >
+			<SetGrindArea>
+				<GrindArea>
+	   
+				<TargetMinLevel>60</TargetMinLevel>
+				<TargetMaxLevel>80</TargetMaxLevel>
+	   
+				<Factions>16</Factions>
+
+				<Hotspots>
+					<Hotspot X="-253.5477" Y="-263.6456" Z="17.08635" />
+				</Hotspots>
+
+				</GrindArea>
+			</SetGrindArea>
+			<GrindTo Condition="Me.GetReputationLevelWith(932) &gt;= WoWUnitReaction.Exalted || Me.ZoneId != 3789 ||
+								Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3 || Unit(18732, u =&gt; u.IsAlive) == null
+								|| ((GetItemCount(30809) * 25) + (GetItemCount(29740) * 250)) &gt;= (42000 - Me.GetReputationWith(932))"
+				GoalText="Clearing The Third Boss" />
+		</If>
+		
+		<If Condition="!(Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3) &amp;&amp; HasQuest(29643) &amp;&amp; !(((GetItemCount(30809) * 25) + (GetItemCount(29740) * 250)) &gt;= (42000 - Me.GetReputationWith(932)))" >
+			<TurnIn QuestName="The Codex of Blood" QuestId="29643" TurnInName="The Codex of Blood" TurnInId="182947" />
+		</If>
+		
+		<If Condition="!(Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3) &amp;&amp; !HasQuest(29644) &amp;&amp; !(((GetItemCount(30809) * 25) + (GetItemCount(29740) * 250)) &gt;= (42000 - Me.GetReputationWith(932)))" >
+			<PickUp QuestName="Into the Heart of the Labyrinth" QuestId="29644" GiverName="The Codex of Blood" GiverId="182947" />
+		</If>
+		
+		<If Condition="HasQuest(29641) &amp;&amp; !IsQuestCompleted(29641) &amp;&amp; !(((GetItemCount(30809) * 25) + (GetItemCount(29740) * 250)) &gt;= (42000 - Me.GetReputationWith(932)))" >
+			<CustomBehavior File="InteractWith" QuestId="29641" MobId="182940" NonCompeteDistance="0"
+				ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="2000"
+				CollectionDistance="20" TerminateWhen="Object(182940, o =&gt; o.Location.Distance(new WoWPoint(-269.9111,-263.6207,12.67977)) &lt; 20) == null ||
+				Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3"
+				X="-269.9111" Y="-263.6207" Z="12.67977" />
+		</If>
+		
+		<SetGrindArea>
+			<GrindArea>
+   
+            <TargetMinLevel>60</TargetMinLevel>
+            <TargetMaxLevel>80</TargetMaxLevel>
+   
+            <Factions>16</Factions>
+
+            <Hotspots>
+				<Hotspot X="-156.7389" Y="-343.8773" Z="17.08353" />
+				<Hotspot X="-155.094" Y="-408.6839" Z="17.07929" />
+				<Hotspot X="-157.8953" Y="-497.3225" Z="15.78175" />
+            </Hotspots>
+
+			</GrindArea>
+		</SetGrindArea>
+		<GrindTo Condition="Me.GetReputationLevelWith(932) &gt;= WoWUnitReaction.Exalted || Me.ZoneId != 3789 ||
+							Me.FreeBagSlots &lt; 3 || Me.LowestDurabilityPercent &lt; 0.3 || Unit(18708, u =&gt; u.IsDead) != null ||
+							Me.Location.Distance(new WoWPoint(-157.8953,-497.3225,15.78175)) &lt; 10
+							|| ((GetItemCount(30809) * 25) + (GetItemCount(29740) * 250)) &gt;= (42000 - Me.GetReputationWith(932))" GoalText="Killing Murmur and finishing up!" />
+
+		<If Condition="Unit(18708, u =&gt; u.IsDead &amp;&amp; u.Distance &lt; 50) != null" >
+			<CustomBehavior File="Message" Text="Compiling Completed Quest Data from Dungeons" LogColor="CornflowerBlue" />
+		</If>
+		
+		<If Condition="HasQuest(29645) &amp;&amp; IsQuestCompleted(29645)" >
+			<TurnIn QuestName="Ambassador Hellmaw" QuestId="29645" TurnInName="Field Commander Mahfuun" TurnInId="54890" />
+		</If>
+		<If Condition="HasQuest(29644) &amp;&amp; IsQuestCompleted(29644)" >
+			<TurnIn QuestName="Into the Heart of the Labyrinth" QuestId="29644" TurnInName="Field Commander Mahfuun" TurnInId="54890" />
+		</If>
+		<If Condition="HasQuest(29641) &amp;&amp; IsQuestCompleted(29641)" >
+			<TurnIn QuestName="The Soul Devices" QuestId="29641" TurnInName="Spy Griktha" TurnInId="54891" />
+		</If>
+		
+		<!-- Run out of instance -->
+		<MoveTo X="-3.010942" Y="-0.06754982" Z="-1.12795" />
+		<CustomBehavior File="Misc\InInstance" X="10.509288" Y="-0.1719886" Z="-1.127934" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" />
+	</While>
+	
+	<!-- Grind checks: Final Boss 18708, Last XYZ, Max Rep (932) -->
+
+	<CustomBehavior File="Message" Text="Congratulations on reaching exalted with The Aldor" LogColor="Orange" />
+		
+</QuestOrder>
+</HBProfile>

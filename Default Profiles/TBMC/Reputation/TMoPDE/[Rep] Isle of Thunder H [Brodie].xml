@@ -1,0 +1,269 @@
+<HBProfile>
+	<Name>Isle of Thunder (Horde) ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Teng of the Flying Daggers" Entry="70535" Type="Repair" X="6865.31" Y="5515.42" Z="1.28" />
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<CustomBehavior File="RunMacro" Macro="/script SetCVar('AutoLootDefault', 1)" NumOfTimes="1" WaitTime="1000" />
+	<CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+
+	<If Condition="Me.IsAlliance" >
+		<CustomBehavior File="LoadProfile" ProfileName="[Rep] Isle of Thunder A [Brodie]" />
+	</If>
+	
+	<If Condition=" Me.MapId == 1" >
+		<CustomBehavior File="FlyTo" DestName="Org Portal" X="2013.813" Y="-4699.559" Z="28.61817" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="215424" Range="4.75" X="2014.819" Y="-4700.274" Z="28.62439" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+	</If>
+
+<!-- Starting Quests -->
+
+	<CustomBehavior File="Message" Text="Compiling Isle of Thunder Quests..." LogColor="Green" />
+
+<!-- Checking if you have the PreReq Quest -->
+
+	<If Condition="!IsAchievementCompleted(8099, 1)">
+		<If Condition="!HasQuest(32678) &amp;&amp; !IsQuestCompleted(32678)" >
+			<PickUp Nav="Fly" QuestName="Thunder Calls" QuestId="32678" GiverName="Sunwalker Dezco" GiverId="64566" />
+		</If>
+		<If Condition="HasQuest(32678)" >
+			<CustomBehavior File="FlyTo" X="1748.19" Y="4161.71" Z="159.51" />
+			<CustomBehavior File="ForcedDismount" />
+			<TurnIn QuestName="Thunder Calls" QuestId="32678" TurnInName="Scout Captain Elsia" TurnInId="70358" />
+			<PickUp QuestName="The Storm Gathers" QuestId="32680" GiverName="Scout Captain Elsia" GiverId="70358" />
+		</If>
+		
+		<If Condition="!HasQuest(32680) &amp;&amp; !IsQuestCompleted(32680)" >
+			<CustomBehavior File="FlyTo" X="1748.19" Y="4161.71" Z="159.51" />
+			<CustomBehavior File="ForcedDismount" />
+			<PickUp QuestName="The Storm Gathers" QuestId="32680" GiverName="Scout Captain Elsia" GiverId="70358" />
+		</If>
+		<If Condition="HasQuest(32680)" >
+			<CustomBehavior File="FlyTo" X="1748.19" Y="4161.71" Z="159.51" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="70358" InteractByGossipOptions="1" WaitForNpcs="True" />
+			<CustomBehavior File="WaitTimer" WaitTime="85000" />
+			<TurnIn QuestName="The Storm Gathers" QuestId="32680" TurnInName="Lor'themar" TurnInId="67990" />
+			<CustomBehavior File="WaitTimer" WaitTime="97000" />
+		</If>
+	</If>
+
+<CustomBehavior File="Message" Text="Beginning Isle of Thunder Quests." LogColor="Green" />
+
+	<If Condition="Me.ZoneId != 6507" >
+		<CustomBehavior File="Message" Text="Moving to Shado Pan Garrison." LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="1748.19" Y="4161.71" Z="159.51" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<If Condition="!IsQuestCompleted(32212)" >
+			<CustomBehavior File="InteractWith" MobId="218946" NonCompeteDistance="0" WaitTime="5000" />
+		<ElseIf Condition="IsQuestCompleted(32212)" >
+			<CustomBehavior File="InteractWith" MobId="218462" NonCompeteDistance="0" WaitTime="5000" />
+		</ElseIf>
+		</If>
+	</If>
+	
+	<If Condition="(!HasQuest(32212) &amp;&amp; IsQuestCompleted(32212)) &amp;&amp;
+					(!HasQuest(32225) &amp;&amp; !HasQuest(32201) &amp;&amp; !HasQuest(32220) &amp;&amp; !HasQuest(32224) &amp;&amp;
+					!HasQuest(32495) &amp;&amp; !HasQuest(32219) &amp;&amp; !HasQuest(32218) &amp;&amp; !HasQuest(32226) &amp;&amp;
+					!HasQuest(32729) &amp;&amp; !HasQuest(32227) &amp;&amp; !HasQuest(32252) &amp;&amp; !HasQuest(32275) &amp;&amp;
+					!HasQuest(32200) &amp;&amp; !HasQuest(32217) &amp;&amp; !HasQuest(32215) &amp;&amp; !HasQuest(32216) &amp;&amp;
+					!HasQuest(32730) &amp;&amp; !HasQuest(32255) &amp;&amp; !HasQuest(32254) &amp;&amp; !HasQuest(32605) &amp;&amp;
+					!HasQuest(32204) &amp;&amp; !HasQuest(32299) &amp;&amp; !HasQuest(32491) &amp;&amp; !HasQuest(32274) &amp;&amp;
+					!HasQuest(32489) &amp;&amp; !HasQuest(32517) &amp;&amp; !HasQuest(32521) &amp;&amp; !HasQuest(32563) &amp;&amp;
+					!HasQuest(32565) &amp;&amp; !HasQuest(32294) &amp;&amp; !HasQuest(32523) &amp;&amp; !HasQuest(32207) &amp;&amp;
+					!HasQuest(32298) &amp;&amp; !HasQuest(32297) &amp;&amp; !HasQuest(32282) &amp;&amp; !HasQuest(32283) &amp;&amp;
+					!HasQuest(32209) &amp;&amp; !HasQuest(32208) &amp;&amp; !HasQuest(32292) &amp;&amp; !HasQuest(32722) &amp;&amp;
+					!HasQuest(32524) &amp;&amp; !HasQuest(32230))" >
+		<CustomBehavior File="InteractWith" MobId="70567" IgnoreLoSToTarget="True" NonCompeteDistance="0" Range="6" MinRange="3"
+			WaitTime="1000" X="7178.75" Y="6284.85" Z="12.47" />
+		<CustomBehavior File="RunMacro" Macro="/run QuestChoiceFrameOption1.OptionButton:Click()" WaitTime="1000" />
+	</If>
+	
+<!-- Girana the Blooded -->
+	<While Condition="HasQuestAvailable(67673)" >
+		<CustomBehavior File="InteractWith" MobId="67673" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Magister Hathorel -->
+	<While Condition="HasQuestAvailable(67663)" >
+		<CustomBehavior File="InteractWith" MobId="67663" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Lor'themar Theron -->
+	<While Condition="HasQuestAvailable(67990)" >
+		<CustomBehavior File="InteractWith" MobId="67990" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- High Arcanist Savor -->
+	<While Condition="HasQuestAvailable(67662)" >
+		<CustomBehavior File="InteractWith" MobId="67662" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+	<If Condition="Me.Location.Distance(new WoWPoint(6707.91, 6471.27, 4.61)) &lt; 100" >
+		<CustomBehavior File="InteractWith" MobId="218839" WaitForNpcs="True" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+	</If>
+
+	<If Condition="IsQuestCompleted(32212)" >
+		<If Condition="HasQuest(32728) || HasQuest(32225) || HasQuest(32201) || HasQuest(32220) || HasQuest(32224) ||
+					HasQuest(32495) || HasQuest(32219) || HasQuest(32218) || HasQuest(32226) || HasQuest(32517)" >
+			<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Bones H [Brodie]" />
+		</If>
+		<If Condition="HasQuest(32729) || HasQuest(32227) || HasQuest(32252) || HasQuest(32275) ||
+					HasQuest(32200) || HasQuest(32217) || HasQuest(32215) || HasQuest(32216)" >
+			<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Zatual H [Brodie]" />
+		</If>
+		<If Condition="HasQuest(32730) || HasQuest(32255) || HasQuest(32254) || HasQuest(32605) ||
+					HasQuest(32204) || HasQuest(32299) || HasQuest(32491) || HasQuest(32274) ||
+					HasQuest(32489)" >
+			<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Ihgaluk H [Brodie]" />
+		</If>
+		<If Condition="HasQuest(32228) || HasQuest(32506) || HasQuest(32285) || HasQuest(32287) || HasQuest(32230)" >
+			<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Diremoor H [Brodie]" />
+		</If>
+		<If Condition="HasQuest(32283) || HasQuest(32298) || HasQuest(32523) || HasQuest(32207) ||
+					HasQuest(32297) || HasQuest(32282)" >
+			<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Beast Pens H [Brodie]" />
+		</If>
+		<If Condition="HasQuest(32524) || HasQuest(32206) || HasQuest(32232) || HasQuest(32494) ||
+					HasQuest(32234) || HasQuest(32233) || HasQuest(32493)" >
+			<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] C Terrace H [Brodie]" />
+		</If>
+		<If Condition="HasQuest(32209) || HasQuest(32208) || HasQuest(32292) || HasQuest(32722)" >
+			<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Thunder Forge H [Brodie]" />
+		</If>
+	<ElseIf Condition="!IsQuestCompleted(32212)" >
+		<If Condition="HasQuest(32728) || HasQuest(32225) || HasQuest(32201) || HasQuest(32220) || HasQuest(32224) ||
+					HasQuest(32495) || HasQuest(32219) || HasQuest(32218) || HasQuest(32226)" >
+			<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Bones H [Brodie]" />
+		</If>
+		<If Condition="HasQuest(32729) || HasQuest(32227) || HasQuest(32252) || HasQuest(32275) ||
+					HasQuest(32200) || HasQuest(32217) || HasQuest(32215) || HasQuest(32216)" >
+			<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Zatual H [Brodie]" />
+		</If>
+		<If Condition="HasQuest(32730) || HasQuest(32255) || HasQuest(32254) || HasQuest(32605) ||
+					HasQuest(32204) || HasQuest(32299) || HasQuest(32491) || HasQuest(32274) ||
+					HasQuest(32489)" >
+			<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Ihgaluk H [Brodie]" />
+		</If>
+	</ElseIf>
+	</If>
+	
+<!-- Allies in the Shadows -->
+	<If Condition="HasQuest(32709)" >
+		<CustomBehavior File="Message" Text="Starting Allies in the Shadows" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<RunTo X="6874.38" Y="5523.52" Z="1.18" />
+		<TurnIn QuestName="Allies in the Shadows" QuestId="32709" TurnInName="Taran Zhu" TurnInId="70160" />
+		<EnableBehavior Name="Pull" />
+	</If>
+	
+<!-- Do we have an ender? -->
+	<If Condition="HasQuest(32561) || HasQuest(32520) || HasQuest(32293) || HasQuest(32562) ||
+					HasQuest(32522) || HasQuest(32521) || HasQuest(32563) || HasQuest(32565) ||
+					HasQuest(32564) || HasQuest(32294)" >
+		<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Thunder Boss [Brodie]" />
+	</If>
+
+<!-- All Done, hearth to the boat and leave the island -->
+	<If Condition="!IsQuestCompleted(32212)" >
+		<If Condition="HasItem(95568) &amp;&amp; !(Me.Location.Distance(new WoWPoint(5675.27, 6216.83, 13.02)) &lt; 100)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(95568)" />
+			<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<RunTo X="6690.58" Y="6481.38" Z="4.63" />
+			<CustomBehavior File="InteractWith" MobId="218638" WaitForNpcs="True" NonCompeteDistance="0" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<Else>
+			<RunTo X="6693.16" Y="6290.14" Z="1.06" />
+			<CustomBehavior File="InteractWith" MobId="218840" WaitForNpcs="True" NonCompeteDistance="0" />
+			<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<RunTo X="6690.58" Y="6481.38" Z="4.63" />
+			<CustomBehavior File="InteractWith" MobId="218638" WaitForNpcs="True" NonCompeteDistance="0" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</Else>
+		</If>
+	<ElseIf Condition="IsQuestCompleted(32212)" >
+		<If Condition="HasItem(95568) &amp;&amp; !(Me.Location.Distance(new WoWPoint(7198.78, 6285.94, 12.47)) &lt; 100)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(95568)" />
+			<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<CustomBehavior File="InteractWith" MobId="218638" WaitForNpcs="True" NonCompeteDistance="0" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<Else>
+			<RunTo X="7249.33" Y="6276.71" Z="19.35" />
+			<CustomBehavior File="InteractWith" MobId="218638" WaitForNpcs="True" NonCompeteDistance="0" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</Else>
+		</If>
+	</ElseIf>
+	</If>
+	
+	<If Condition="HasItem(94566)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(94566)" />
+	</If>
+	
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+
+	<CustomBehavior File="ForcedDismount" />
+	<If Condition="HasItem(60498)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60498)" WaitTime="1500" />
+	<ElseIf Condition="HasItem(93672)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93672)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(54452)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(54452)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(64488)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(6948)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1500" />
+	</ElseIf>
+	</If>
+
+</QuestOrder>
+</HBProfile>

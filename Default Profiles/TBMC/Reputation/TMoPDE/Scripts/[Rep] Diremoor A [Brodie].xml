@@ -1,0 +1,160 @@
+<HBProfile>
+	<Name>Diremoor (Alliance) ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Teng of the Flying Daggers" Entry="70535" Type="Repair" X="6865.31" Y="5515.42" Z="1.28" />
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+<!-- Starting Quests -->
+
+<CustomBehavior File="Message" Text="Compiling Diremoor Quests..." LogColor="CornflowerBlue"  />
+
+	<If Condition="(!HasQuest(32571) &amp;&amp; IsQuestCompleted(32571) ||
+					!HasQuest(32572) &amp;&amp; IsQuestCompleted(32572) ||
+					!HasQuest(32574) &amp;&amp; IsQuestCompleted(32574) ||
+					!HasQuest(32573) &amp;&amp; IsQuestCompleted(32573) ||
+					!HasQuest(32575) &amp;&amp; IsQuestCompleted(32575))" >
+		<CustomBehavior File="Message" Text="Previously Completed Quests Detected" LogColor="CornflowerBlue" />
+		<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: Previously completed quests detected! \n\n Either you have done some of you quests already, and have restarted the bot...\n OR your cache folder is NOT clean, and must be deleted, and bot restarted." />
+	</If>
+	
+<!-- The Shuddering Moor -->
+	<If Condition="HasQuest(32574) &amp;&amp; !IsQuestCompleted(32574)" >
+		<CustomBehavior File="Message" Text="Starting The Shuddering Moor" LogColor="Green" />
+		<Objective QuestName="The Shuddering Moor" QuestId="32574" Type="KillMob" MobId="69406" KillCount="1" />
+	</If>
+	
+<!-- The Zandalari Colossus -->
+	<If Condition="HasQuest(32575) &amp;&amp; !IsQuestCompleted(32575)" >
+		<CustomBehavior File="Message" Text="Starting The Zandalari Colossus" LogColor="Green" />
+		<Objective QuestName="The Zandalari Colossus" QuestId="32575" Type="KillMob" MobId="69405" KillCount="1" />
+	</If>
+	
+<!-- Enemies Beneath the Tower -->
+	<If Condition="HasQuest(32573) &amp;&amp; !IsQuestCompleted(32573)" >
+		<CustomBehavior File="Message" Text="Starting Enemies Beneath the Tower" LogColor="Green" />
+		<Objective QuestName="Enemies Beneath the Tower" QuestId="32573" Type="KillMob" MobId="70069" MobId2="69431" KillCount="7" />
+	</If>
+	
+<!-- A Wing to Fly On -->
+	<If Condition="HasQuest(32571) &amp;&amp; !IsQuestCompleted(32571)" >
+		<CustomBehavior File="Message" Text="Starting A Wing to Fly On" LogColor="Green" />
+		<MoveTo X="6911.082" Y="5755.634" Z="5.792727" />
+		<While Condition="!IsQuestCompleted(32571)" >
+			<CustomBehavior File="InteractWith" MobId="69428" Range="5" CollectionDistance="10" WaitForNpcs="False" />
+		</While>
+	</If>
+	
+<!-- The Sleepless Legion -->
+	<If Condition="HasQuest(32572) &amp;&amp; !IsQuestCompleted(32572)" >
+		<CustomBehavior File="Message" Text="Starting The Sleepless Legion" LogColor="Green" />
+		<Objective QuestName="The Sleepless Legion" QuestId="32572" Type="KillMob" MobId="67473" KillCount="6" />
+	</If>
+	
+<!-- Diremoor Turn-ins -->
+	<If Condition="HasQuest(32571) &amp;&amp; IsQuestCompleted(32571) ||
+					HasQuest(32572) &amp;&amp; IsQuestCompleted(32572) ||
+					HasQuest(32574) &amp;&amp; IsQuestCompleted(32574) ||
+					HasQuest(32573) &amp;&amp; IsQuestCompleted(32573) ||
+					HasQuest(32575) &amp;&amp; IsQuestCompleted(32575)" >
+		<CustomBehavior File="Message" Text="Heading back to camp to Turn-In" LogColor="Green" />
+		<DisableBehavior Name="Pull, Combat" />
+		<MoveTo X="6132.62" Y="5060.85" Z="37.39" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+	</If>
+	
+	<If Condition="HasQuest(32572) &amp;&amp; IsQuestCompleted(32572)" >
+		<TurnIn QuestName="The Sleepless Legion" QuestId="32572" TurnInName="Captain Elleane Wavecrest" TurnInId="67995" />
+	</If>
+	
+	<If Condition="HasQuest(32573) &amp;&amp; IsQuestCompleted(32573)" >
+		<TurnIn QuestName="Enemies Beneath the Tower" QuestId="32573" TurnInName="Captain Elleane Wavecrest" TurnInId="67995" />
+	</If>
+	
+	<If Condition="HasQuest(32571) &amp;&amp; IsQuestCompleted(32571)" >
+		<TurnIn QuestName="A Wing to Fly On" QuestId="32571" TurnInName="Warmage Yurias" TurnInId="67994" />
+	</If>
+	
+	<If Condition="HasQuest(32574) &amp;&amp; IsQuestCompleted(32574)" >
+		<TurnIn QuestName="The Shuddering Moor" QuestId="32574" TurnInName="Vereesa Windrunner" TurnInId="67993" />
+	</If>
+	
+	<If Condition="HasQuest(32575) &amp;&amp; IsQuestCompleted(32575)" >
+		<TurnIn QuestName="The Zandalari Colossus" QuestId="32575" TurnInName="Vereesa Windrunner" TurnInId="67993" />
+	</If>
+	
+<!-- Double Check for Ender Quest -->
+
+<!-- Lady Jaina Proudmoore -->
+	<While Condition="HasQuestAvailable(67992)" >
+		<CustomBehavior File="InteractWith" MobId="67992" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Vereesa Windrunner -->
+	<While Condition="HasQuestAvailable(67993)" >
+		<CustomBehavior File="InteractWith" MobId="67993" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Warmage Yurias -->
+	<While Condition="HasQuestAvailable(67994)" >
+		<CustomBehavior File="InteractWith" MobId="67994" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Captain Elleane Wavecrest -->
+	<While Condition="HasQuestAvailable(67995)" >
+		<CustomBehavior File="InteractWith" MobId="67995" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<If Condition="HasItem(94566)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(94566)" WaitTime="1000" />
+	</If>
+	
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+
+<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Isle of Thunder A [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

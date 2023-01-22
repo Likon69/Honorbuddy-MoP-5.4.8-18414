@@ -1,0 +1,1533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <!--
+    =====
+    Original contribution by chinajade
+      $Rev: 3159 $
+      $Date: 2014-03-19 01:34:46 -0500 (Wed, 19 Mar 2014) $
+    
+    WARNING: DO NOT EDIT .xsd files.
+      They are not authoritative and will be overwritten!
+      Instead, regenerate the .xsd files from the .rnc 'sources'.
+      Its a one-line command to do this. Please see README.txt
+      for more information.
+    =====
+  -->
+  <!--
+    MAINTAINER'S NOTE:
+    Using RelaxNG to validate Condition/TerminateWhen/etc is pushing
+    the very limits of the schema definition capabilities.
+    However, we provide enough here to eliminate many of the common mistakes
+    This is not true EBNF.  Thus, it has limitations:
+    * It can't take into account all parenthesis possibilities
+    * Parentheses must be separated from encompasing terms by a space
+    * The type checking is not as strict as we like.
+      For instance "Me.Class != HasAura(123)" will not be detected
+      as the failure it should be.
+    
+    On the up side, it does check for a *lot* of common profile mistakes
+    * Term misspellings
+      E.g., IsQuestComplete instead of IsQuestCompleted
+    * Appropriate number of arguments for helper methods
+      It also checks for appropriate argument types in most situations.
+    * Proper capitalization and spelling of Terms (methods, arguments, etc)
+    * etc
+  -->
+  <!-- ========== -->
+  <xs:simpleType name="BinaryEquality">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="(==)|(!=)"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BinaryConjunction">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="(\|\|)|(&amp;&amp;)"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BinaryCompare">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="(&lt;)|(&lt;=)|(&gt;)|(&gt;=)"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BinaryOp">
+    <xs:union memberTypes="BinaryEquality BinaryConjunction BinaryCompare"/>
+  </xs:simpleType>
+  <xs:simpleType name="LParen">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="\("/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RParen">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="\)"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- ========== -->
+  <!-- true / false -->
+  <xs:simpleType name="Term">
+    <xs:union memberTypes="HBType-MapId xs:decimal">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="false"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="true"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?CanFly\(\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?Chance\((100\|[1-9][0-9]\|[1-9]\|0)\.?[0-9]*\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.AutoEquip"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.AutoEquipArmor"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.AutoEquipBags"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.AutoEquipBoEEpics"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.AutoEquipWeapons"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.FindMountAutomatically"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.HarvestHerbs"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.HarvestMinerals"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.LootChests"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.LootMobs"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.NinjaSkin"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.RessAtSpiritHealers"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.RollDisenchantWhenGreed"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.RollOnItems"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.SkinMobs"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.UseFlightPaths"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.UseMount"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="CharacterSettings\.Instance\.UseRandomMount"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Me\.Class"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWClass\.DeathKnight"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWClass\.Druid"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWClass\.Hunter"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWClass\.Mage"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWClass\.Monk"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWClass\.Paladin"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWClass\.Priest"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWClass\.Rogue"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWClass\.Shaman"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWClass\.Warlock"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWClass\.Warrior"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Me\.(Copper|Gold|Silver)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="GetCurrencyAmount\([0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="DistanceToUnit\([0-9]+\.?[0-9]*\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?Me\.(IsAlliance|IsHorde)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="GetFactionReputation\([0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Me\.Gender"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWGender\.Female"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWGender\.Male"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWGender\.Unknown"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="GetItemCount\([0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?Me\.HasAura\([0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?Me\.HasAura\("[^"]+"\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?HasFaction\([0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?HasItem\([0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?HasMinion\([0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?HasQuest\([0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?HasQuestAvailable\([0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?HasSpell\([0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?HasSpell\("[^"]+"\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Me\.HearthstoneAreaId"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Me\.MapId"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Me\.ZoneId"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?IsAchievementComplete\([0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?IsAchievementComplete\([0-9]+,[0-9]\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?IsQuestCompleted\([0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="!?IsObjectiveComplete\([1-9],[0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Me\.Level"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Me\.[XYZ]"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?Me\.IsIndoors"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?OnTransport"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?Me\.IsOnTransport"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?Me\.IsOutdoors"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="!?Me\.Mounted"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Me\.Minions\.Count"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Navigator\.CanNavigateFully\(Me\.Location,\s*new WoWPoint\((\s*[+\-]?[0-9]+\.?[0-9]*),(\s*[+\-]?[0-9]+\.?[0-9]*),(\s*[+\-]?[0-9]+\.?[0-9]*)\)\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Me\.Race"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Draenei"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Dwarf"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Gnome"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Human"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.NightElf"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Pandaren"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Worgen"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.BloodElf"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Goblin"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Orc"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Tauren"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Troll"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Undead"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Broken"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.FelOrc"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.ForestTroll"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.IceTroll"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Naga"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.NorthrendSkeleton"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Skeleton"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Taunka"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Tuskarr"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWRace\.Vrykul"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Me\.GetReputationLevelWith\([0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWUnitReaction\.Exalted"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWUnitReaction\.Friendly"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWUnitReaction\.Hated"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWUnitReaction\.Honored"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWUnitReaction\.Hostile"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWUnitReaction\.Neutral"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWUnitReaction\.Revered"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="WoWUnitReaction\.Unfriendly"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Object\([0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Object\([0-9]+,.*\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Unit\([0-9]+\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Unit\([0-9]+,.*\)"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="Me\.GetSkill\(Styx\.SkillLine\.Riding\)(\.CurrentValue)?"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="HerbalismSkill"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="MiningSkill"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="SkinningSkill"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:pattern value="null"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <!-- CanFly -->
+  <!-- Chance -->
+  <!-- CharacterSettings -->
+  <!-- Class -->
+  <!-- Coin -->
+  <!-- Distance -->
+  <!-- Faction -->
+  <!-- Gender -->
+  <!-- Items -->
+  <!-- Has* -->
+  <!-- Hearthstone -->
+  <!-- Is* -->
+  <!-- Level -->
+  <!-- Location -->
+  <!-- Me -->
+  <!-- Minions -->
+  <!--
+    Navigation
+    CanNavigateFully will work as a stand-alone Term, but will be flagged
+    in as an error when used in a Binary expression or greater.  This is because
+    the mandatory space between "new WoWPoint" will throw off the schema lexer
+    when trying to process a 'list'.
+  -->
+  <!-- Race -->
+  <!-- Reputation -->
+  <!-- Selection -->
+  <!-- Skill -->
+  <!-- Constant Numerics -->
+  <!--
+    ********** Expressions **********
+    We could reduce all these expressions down to BinaryOp, and
+    leave BinaryConjunction out.  However, that would fail to catch
+    many common profile writer mistakes.  So, we go the extra mile here.
+    
+    Each Expression type starts with the general all-conjunction expression.
+    Then, the first block contains permutations of one BinaryOp expression.
+    The next block permutations of two BinaryOp expressions.  Etc.
+    
+    We stop the general Expression expansion at 6 Terms.  Anything larger than that
+    will be handled as special cases.  It would be soooo nice if this were
+    true EBNF, so we could really do the job well.  However, we're
+    incredibly happy that RelaxNG has even this much built-in power already.
+  -->
+  <xs:simpleType name="Expression">
+    <xs:union memberTypes="Expression1Term Expression2Terms Expression3Terms Expression4Terms Expression5Terms Expression6Terms ExpressionSpecialCaseTerms"/>
+  </xs:simpleType>
+  <xs:simpleType name="Expression1Term">
+    <xs:union memberTypes="Term">
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="3"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="Expression2Terms">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="3"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="5"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="Expression3Terms">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="5"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="5"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="7"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="5"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="7"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="Expression4Terms">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term RParen BinaryConjunction LParen Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="7"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryOp Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="7"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="7"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="7"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="Expression5Terms">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryOp Term BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction Term BinaryOp Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction Term BinaryOp Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryOp Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryOp Term BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="9"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryOp Term BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="Expression6Terms">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryOp Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction Term BinaryOp Term BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term BinaryOp Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction Term BinaryOp Term BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryOp Term BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryConjunction Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="15"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryConjunction Term BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction Term BinaryConjunction Term BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryConjunction Term BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="15"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction Term BinaryOp Term BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction Term BinaryOp Term BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryConjunction Term BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="15"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction Term BinaryOp Term BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="11"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryOp Term BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction Term BinaryOp Term BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="13"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="15"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp RParen Term BinaryConjunction Term BinaryOp Term BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="15"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="15"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="17"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <xs:simpleType name="ExpressionSpecialCaseTerms">
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="Term BinaryOp Term BinaryConjunction Term BinaryOp Term BinaryConjunction Term BinaryOp Term BinaryConjunction Term BinaryOp Term"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="15"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction>
+          <xs:simpleType>
+            <xs:list>
+              <xs:simpleType>
+                <xs:union memberTypes="LParen Term BinaryOp Term RParen BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction LParen Term BinaryOp Term RParen BinaryConjunction LParen Term BinaryOp Term RParen"/>
+              </xs:simpleType>
+            </xs:list>
+          </xs:simpleType>
+          <xs:length value="23"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+  <!-- ********** HB ********** -->
+  <xs:simpleType name="HBType-Condition">
+    <xs:restriction base="Expression"/>
+  </xs:simpleType>
+</xs:schema>

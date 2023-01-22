@@ -1,0 +1,246 @@
+<HBProfile>
+
+	<Name>The Hinterlands (Horde) ($Rev$)</Name>
+	<MinLevel>25</MinLevel>
+	<MaxLevel>40</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Revantusk Village -->
+		<Vendor Name="Smith Slagtree" Entry="14737" Type="Repair" X="-595.7503" Y="-4559.671" Z="9.106383" />
+		<!-- Jintha'Alor -->
+		<Vendor Name="Eliza Darkgrin" Entry="42622" Type="Food" X="-242.8854" Y="-4179.249" Z="121.8997" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="HasQuest(26430)" > <!-- Counts towards LM -->
+		<CustomBehavior File="Message" Text="Compiling Hinterlands Kicker Quest" LogColor="CornflowerBlue" />
+		<If Condition="Me.ZoneId == 45" >
+			<CustomBehavior File="InteractWith" MobId="2851" InteractByGossipOptions="2" NonCompeteDistance="0"
+				WaitTime="2000" TerminateWhen="Me.ZoneId != 45" X="-917.1049" Y="-3500.639" Z="70.45274" />
+		</If>
+		<DisableBehavior Name="Pull, Combat" />
+		<TurnIn QuestName="Revantusk Village" QuestId="26430" TurnInName="Elder Torntusk" TurnInId="42613" />
+		<EnableBehavior Name="Pull, Combat" />
+	</If>
+	
+	<If Condition="!HasQuest(26238) &amp;&amp; !IsQuestCompleted(26238)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Hinterlands Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Revantusk Village Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="The Savage Dwarves" QuestId="26238" GiverName="Elder Torntusk" GiverId="42613" />
+	<PickUp QuestName="Thornar Thunderclash" QuestId="26263" GiverName="Elder Torntusk" GiverId="42613" />
+	<PickUp QuestName="Lard Lost His Lunch" QuestId="26212" GiverName="Lard" GiverId="14731" />
+	<PickUp QuestName="Stalking the Stalkers" QuestId="26223" GiverName="Huntsman Markhor" GiverId="14741" />
+	<PickUp QuestName="Pupellyverbos Port" QuestId="26225" GiverName="Grognard" GiverId="42464" />
+	<PickUp QuestName="Stomp To My Beat" QuestId="26240" GiverName="Mystic Yayo'jin" GiverId="14739" />
+	<PickUp QuestName="Gammerita, Mon!" QuestId="26210" GiverName="Katoom the Angler" GiverId="14740" />
+	<PickUp QuestName="Snapjaws, Mon!" QuestId="26211" GiverName="Katoom the Angler" GiverId="14740" />
+	
+	<Objective QuestName="Pupellyverbos Port" QuestId="26225" Type="CollectItem" ItemId="3900" CollectCount="12" />
+	<While Condition="HasQuest(26212) &amp;&amp; !IsQuestCompleted(26212)" >
+		<CustomBehavior File="InteractWith" QuestId="26212" MobId="179910" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" 
+			WaitTime="5000" TerminateWhen="HasItem(19034)" X="412.4145" Y="-4823.077" Z="11.4071" />
+	</While>
+	<Objective QuestName="Snapjaws, Mon!" QuestId="26211" Type="KillMob" MobId="2505" KillCount="10" />
+	<Objective QuestName="Gammerita, Mon!" QuestId="26210" Type="CollectItem" ItemId="19023" CollectCount="1" />
+	
+	<TurnIn QuestName="Pupellyverbos Port" QuestId="26225" TurnInName="Grognard" TurnInId="42464" />
+	<TurnIn QuestName="Lard Lost His Lunch" QuestId="26212" TurnInName="Lard" TurnInId="14731" />
+	<TurnIn QuestName="Gammerita, Mon!" QuestId="26210" TurnInName="Katoom the Angler" TurnInId="14740" />
+	<TurnIn QuestName="Snapjaws, Mon!" QuestId="26211" TurnInName="Katoom the Angler" TurnInId="14740" />
+	
+	<Objective QuestName="Stalking the Stalkers" QuestId="26223" Type="KillMob" MobId="2926" KillCount="8" />
+	<DisableBehavior Name="Pull" />
+	<CustomBehavior File="InteractWith" QuestId="26240" MobId="42536" InteractByUsingItemId="57920" Range="15"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" WaitTime="1000" NumOfTimes="1000" >
+		<HuntingGrounds>
+			<Hotspot X="141.9239" Y="-4322.807" Z="121.3993" />
+			<Hotspot X="191.3415" Y="-4368.313" Z="118.1243" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<EnableBehavior Name="Pull" />
+	<Objective QuestName="The Savage Dwarves" QuestId="26238" Type="KillMob" MobId="42518" KillCount="10" />
+	<Objective QuestName="Thornar Thunderclash" QuestId="26263" Type="KillMob" MobId="42610" KillCount="1" />
+	
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Stomp To My Beat" QuestId="26240" TurnInName="Mystic Yayo'jin" TurnInId="14739" />
+	<TurnIn QuestName="Stalking the Stalkers" QuestId="26223" TurnInName="Huntsman Markhor" TurnInId="14741" />
+	<PickUp QuestName="Hunt the Savages" QuestId="26224" GiverName="Huntsman Markhor" GiverId="14741" />
+	<TurnIn QuestName="The Savage Dwarves" QuestId="26238" TurnInName="Elder Torntusk" TurnInId="42613" />
+	<TurnIn QuestName="Thornar Thunderclash" QuestId="26263" TurnInName="Elder Torntusk" TurnInId="42613" />
+	<PickUp QuestName="Skulk Rock Clean-Up" QuestId="26267" GiverName="Elder Torntusk" GiverId="42613" />
+	<PickUp QuestName="Skulk Rock Supplies" QuestId="26268" GiverName="Elder Torntusk" GiverId="42613" />
+	<PickUp QuestName="Prime Slime" QuestId="26283" GiverName="Malcom Fendelson" GiverId="42612" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<Objective QuestName="Hunt the Savages" QuestId="26224" Type="KillMob" MobId="2929" KillCount="10" />
+	<Objective QuestName="Skulk Rock Supplies" QuestId="26268" Type="CollectItem" ItemId="57989" CollectCount="5" />
+	<Objective QuestName="Prime Slime" QuestId="26283" Type="CollectItem" ItemId="58082" CollectCount="1" />
+	<Objective QuestName="Skulk Rock Clean-Up" QuestId="26267" Type="KillMob" MobId="2656" KillCount="10" />
+	
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Prime Slime" QuestId="26283" TurnInName="Malcom Fendelson" TurnInId="42612" />
+	<TurnIn QuestName="Hunt the Savages" QuestId="26224" TurnInName="Huntsman Markhor" TurnInId="14741" />
+	<TurnIn QuestName="Skulk Rock Clean-Up" QuestId="26267" TurnInName="Elder Torntusk" TurnInId="42613" />
+	<TurnIn QuestName="Skulk Rock Supplies" QuestId="26268" TurnInName="Elder Torntusk" TurnInId="42613" />
+	<PickUp QuestName="The Fall of Jintha'Alor" QuestId="26432" GiverName="Elder Torntusk" GiverId="42613" />
+	<TurnIn QuestName="The Fall of Jintha'Alor" QuestId="26432" TurnInName="Primal Torntusk" TurnInId="42642" />
+	
+	<CustomBehavior File="Message" Text="Compiling Jintha'Alor Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Start Taking Back" QuestId="26306" GiverName="Primal Torntusk" GiverId="42642" />
+	<PickUp QuestName="Heads Up" QuestId="26366" GiverName="Primal Torntusk" GiverId="42642" />
+	<PickUp QuestName="Faces of Evil" QuestId="26357" GiverName="Kotonga" GiverId="42624" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<Objective QuestName="Heads Up" QuestId="26366" Type="CollectItem" ItemId="58236" CollectCount="1" />
+	<CustomBehavior File="InteractWith" QuestId="26357" MobId="42704" InteractByUsingItemId="58209" NumOfTimes="1000"
+		Range="10" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-287.7979" Y="-4185.172" Z="136.873" />
+			<Hotspot X="-325.4442" Y="-4055.691" Z="174.6242" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="Start Taking Back" QuestId="26306" Type="KillMob" MobId="2641" KillCount="5" />
+	<Objective QuestName="Start Taking Back" QuestId="26306" Type="KillMob" MobId="2640" KillCount="5" />
+	
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Faces of Evil" QuestId="26357" TurnInName="Kotonga" TurnInId="42624" />
+	<TurnIn QuestName="Start Taking Back" QuestId="26306" TurnInName="Primal Torntusk" TurnInId="42642" />
+	<TurnIn QuestName="Heads Up" QuestId="26366" TurnInName="Primal Torntusk" TurnInId="42642" />
+	<PickUp QuestName="Death to the Vilebranch" QuestId="26307" GiverName="Primal Torntusk" GiverId="42642" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<Objective QuestName="Death to the Vilebranch" QuestId="26307" Type="KillMob" MobId="2643" KillCount="5" />
+	<Objective QuestName="Death to the Vilebranch" QuestId="26307" Type="KillMob" MobId="2642" KillCount="1" />
+	
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Death to the Vilebranch" QuestId="26307" TurnInName="Primal Torntusk" TurnInId="42642" />
+	<PickUp QuestName="It's Ours Now" QuestId="26308" GiverName="Primal Torntusk" GiverId="42642" />
+	<PickUp QuestName="Ongo'longo's Revenge" QuestId="26367" GiverName="Primal Torntusk" GiverId="42642" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<Objective QuestName="Ongo'longo's Revenge" QuestId="26367" Type="KillMob" MobId="42815" KillCount="1" />
+	<Objective QuestName="It's Ours Now" QuestId="26308" Type="KillMob" MobId="2647" KillCount="5" />
+	<Objective QuestName="It's Ours Now" QuestId="26308" Type="KillMob" MobId="2646" KillCount="5" />
+	
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Ongo'longo's Revenge" QuestId="26367" TurnInName="Primal Torntusk" TurnInId="42642" />
+	<TurnIn QuestName="It's Ours Now" QuestId="26308" TurnInName="Primal Torntusk" TurnInId="42642" />
+	<PickUp QuestName="Summit of Fate" QuestId="26363" GiverName="Primal Torntusk" GiverId="42642" />
+	<EnableBehavior Name="Combat" />
+	
+	<CustomBehavior File="InteractWith" QuestId="26363" MobId="42857" InteractByLooting="True" NonCompeteDistance="0" 
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="1000" X="-536.3221" Y="-3868.559" Z="230.5652" />
+	
+	<DisableBehavior Name="Combat" />
+	<TurnIn QuestName="Summit of Fate" QuestId="26363" TurnInName="Primal Torntusk" TurnInId="42642" />
+	<PickUp QuestName="Hunt the Keeper" QuestId="26369" GiverName="Primal Torntusk" GiverId="42642" />
+	<EnableBehavior Name="Combat" />
+	
+	<Objective QuestName="Hunt the Keeper" QuestId="26369" Type="CollectItem" ItemId="58241" CollectCount="1" />
+	
+	<DisableBehavior Name="Combat" />
+	<TurnIn QuestName="Hunt the Keeper" QuestId="26369" TurnInName="Primal Torntusk" TurnInId="42642" />
+	<PickUp QuestName="Darkcleric Marnal" QuestId="26384" GiverName="Eliza Darkgrin" GiverId="42622" />
+	<TurnIn QuestName="Darkcleric Marnal" QuestId="26384" TurnInName="Darkcleric Marnal" TurnInId="42898" />
+	
+	<CustomBehavior File="Message" Text="Compiling Hiri'watha Research Station Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="The Eye of Shadra" QuestId="26381" GiverName="Darkcleric Marnal" GiverId="42898" />
+	<PickUp QuestName="Can't Make An Omelette Without..." QuestId="26382" GiverName="Apothecary Surlis" GiverId="42896" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<Objective QuestName="The Eye of Shadra" QuestId="26381" Type="CollectItem" ItemId="58282" CollectCount="1" X="452.991" Y="-3334.513" Z="119.7542" />
+	<Objective QuestName="Can't Make An Omelette Without..." QuestId="26382" Type="CollectItem" ItemId="58252" CollectCount="5" />
+	
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="The Eye of Shadra" QuestId="26381" TurnInName="Darkcleric Marnal" TurnInId="42898" />
+	<PickUp QuestName="The Fang of Shadra" QuestId="26406" GiverName="Darkcleric Marnal" GiverId="42898" />
+	<TurnIn QuestName="Can't Make An Omelette Without..." QuestId="26382" TurnInName="Apothecary Surlis" TurnInId="42896" />
+	<PickUp QuestName="Starvation Diet" QuestId="26387" GiverName="Apothecary Surlis" GiverId="42896" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<Objective QuestName="The Fang of Shadra" QuestId="26406" Type="CollectItem" ItemId="58281" CollectCount="1" />
+	<Objective QuestName="Starvation Diet" QuestId="26387" Type="KillMob" MobId="42907" KillCount="6" />
+	
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Starvation Diet" QuestId="26387" TurnInName="Apothecary Surlis" TurnInId="42896" />
+	<TurnIn QuestName="The Fang of Shadra" QuestId="26406" TurnInName="Darkcleric Marnal" TurnInId="42898" />
+	<PickUp QuestName="The Shell of Shadra" QuestId="26418" GiverName="Darkcleric Marnal" GiverId="42898" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<Objective QuestName="The Shell of Shadra" QuestId="26418" Type="CollectItem" ItemId="58779" CollectCount="1" />
+	
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="The Shell of Shadra" QuestId="26418" TurnInName="Darkcleric Marnal" TurnInId="42898" />
+	<PickUp QuestName="Summoning Shadra" QuestId="26558" GiverName="Darkcleric Marnal" GiverId="42898" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<CustomBehavior File="InteractWith" QuestId="26558" QuestObjectiveIndex="1" MobId="43067" InteractByUsingItemId="58784" Range="12" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" IgnoreLoSToTarget="True" NumOfTimes="1000" X="-280.0046" Y="-2823.956" Z="109.283" />
+	<CustomBehavior File="InteractWith" QuestId="26558" QuestObjectiveIndex="3" MobId="43068" InteractByUsingItemId="58784" Range="12" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" IgnoreLoSToTarget="True" NumOfTimes="1000" X="-470.0247" Y="-2834.183" Z="110.2693" />
+	<CustomBehavior File="InteractWith" QuestId="26558" QuestObjectiveIndex="2" MobId="43069" InteractByUsingItemId="58784" Range="12" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" IgnoreLoSToTarget="True" NumOfTimes="1000" X="-368.0384" Y="-2983.741" Z="105.3923" />
+	<TurnIn QuestName="Summoning Shadra" QuestId="26558" TurnInName="Deathstalker Lookout" TurnInId="43299" />
+	
+	<PickUp QuestName="Shadra the Venom Queen" QuestId="26419" GiverName="Deathstalker Lookout" GiverId="43299" />
+	<Objective QuestName="Shadra the Venom Queen" QuestId="26419" Type="KillMob" MobId="43007" KillCount="1" />
+	
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Shadra the Venom Queen" QuestId="26419" TurnInName="Darkcleric Marnal" TurnInId="42898" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<If Condition="!HasQuest(28508) &amp;&amp; !IsQuestCompleted(28508)" >
+		<PickUp QuestName="The Battle for Andorhal" QuestId="28508" GiverName="Darkcleric Marnal" GiverId="42898" />
+		<CustomBehavior File="InteractWith" MobId="43573" InteractByGossipOptions="2" NonCompeteDistance="0" 
+			PreInteractMountStrategy="DismountOrCancelShapeshift" WaitTime="3000" X="-25.7773" Y="-2821.642" Z="125.1231" />
+	</If>
+	<TurnIn QuestName="The Battle for Andorhal" QuestId="28508" TurnInName="Koltira Deathweaver" TurnInId="44452" />
+
+	<CustomBehavior File="Message" Text="Hinterlands Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="[Quest] Western Plaguelands [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

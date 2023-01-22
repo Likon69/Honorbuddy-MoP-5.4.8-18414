@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<PvpProfile>
+  <Name>Deepwind Gorge</Name>
+  
+  <StartLocation X="-111.2475" Y="805.1364" Z="133.0873" Side="Horde" />
+  <StartLocation X="-218.4026" Y="197.176" Z="133.0827" Side="Alliance" />
+
+  <Blackspots>
+  </Blackspots>
+
+  <Boxes Side="Horde">
+    <Box Name="PandarenMine">
+      <TopLeft X="58.46769" Y="367.1084" Z="121.5491" />
+      <BottomRight X="62.55763" Y="474.9297" Z="113.5759" />
+      <Center X="65.25358" Y="427.9234" Z="111.6398" />
+    </Box>
+ 
+    <Box Name="GoblinMine">
+      <TopLeft X="-393.6697" Y="508.0878" Z="117.4466" />
+      <BottomRight X="-411.6295" Y="607.2574" Z="113.9489" />
+      <Center X="-398.8134" Y="573.5504" Z="111.6264" />
+    </Box>
+    
+    <Box Name="CenterMine">
+      <TopLeft X="-165.3506" Y="433.4897" Z="94.7393" />
+      <BottomRight X="-171.779" Y="548.8816" Z="93.97175" />
+      <Center X="-167.7209" Y="498.1978" Z="93.34313" />
+    </Box>
+  </Boxes>
+
+  <Boxes Side="Alliance">
+    <Box Name="PandarenMine">
+      <TopLeft X="58.46769" Y="367.1084" Z="121.5491" />
+      <BottomRight X="62.55763" Y="474.9297" Z="113.5759" />
+      <Center X="65.25358" Y="427.9234" Z="111.6398" />
+    </Box>
+
+    <Box Name="GoblinMine">
+      <TopLeft X="-393.6697" Y="508.0878" Z="117.4466" />
+      <BottomRight X="-411.6295" Y="607.2574" Z="113.9489" />
+      <Center X="-398.8134" Y="573.5504" Z="111.6264" />
+    </Box>
+
+    <Box Name="CenterMine">
+      <TopLeft X="-165.3506" Y="433.4897" Z="94.7393" />
+      <BottomRight X="-171.779" Y="548.8816" Z="93.97175" />
+      <Center X="-167.7209" Y="498.1978" Z="93.34313" />
+    </Box>
+  </Boxes>
+</PvpProfile>

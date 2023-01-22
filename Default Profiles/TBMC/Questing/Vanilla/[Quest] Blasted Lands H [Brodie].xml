@@ -1,0 +1,452 @@
+<HBProfile>
+
+	<Name>Blasted Lands (Horde) ($Rev$)</Name>
+	<MinLevel>50</MinLevel>
+	<MaxLevel>62</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Dreadmaul Hold -->
+		<Vendor Name="Overseer Struk" Entry="44311" Type="Repair" X="-11000.45" Y="-2727.72" Z="6.417059" />
+		<!-- Sunveil Excursion -->
+		<Vendor Name="Salaran" Entry="44339" Type="Repair" X="-12345.8" Y="-3037.89" Z="88.21604" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="HasQuest(28553)" >
+		<CustomBehavior File="Message" Text="Compiling Kicker Quest..." LogColor="CornflowerBlue" />
+		<TurnIn QuestName="Okrilla and the Blasted Lands" QuestId="28553" TurnInName="Okrilla" TurnInId="41124" />
+	</If>
+	
+	<If Condition="!HasQuest(25674) &amp;&amp; !IsQuestCompleted(25674)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Blasted Lands Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Dreadmaul Hold Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Futile Pride" QuestId="25674" GiverName="Okrilla" GiverId="41124" />
+	<Objective QuestName="Futile Pride" QuestId="25674" Type="KillMob" MobId="41136" KillCount="1" />
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Futile Pride" QuestId="25674" TurnInName="Okrilla" TurnInId="41124" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<PickUp QuestName="Heartstrike" QuestId="25676" GiverName="Okrilla" GiverId="41124" />
+	<PickUp QuestName="Ogre Combat" QuestId="25675" GiverName="Master Aitokk" GiverId="41125" />
+	<TurnIn QuestName="Heartstrike" QuestId="25676" TurnInName="Rofilian Dane" TurnInId="41133" />
+	
+	<CustomBehavior File="Message" Text="Compiling Nethergarde Mine Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="It's All Mine" QuestId="25677" GiverName="Rofilian Dane" GiverId="41133" />
+	<PickUp QuestName="Pick Your Fate" QuestId="25678" GiverName="Rofilian Dane" GiverId="41133" />
+	
+	<Objective QuestName="It's All Mine" QuestId="25677" Type="UseObject" ObjectId="203183" UseCount="6" />
+	<Objective QuestName="Pick Your Fate" QuestId="25678" Type="KillMob" MobId="5996" KillCount="8" />
+	<Objective QuestName="Pick Your Fate" QuestId="25678" Type="KillMob" MobId="5997" KillCount="3" />
+	<Objective QuestName="Pick Your Fate" QuestId="25678" Type="KillMob" MobId="5998" KillCount="3" />
+	
+	<TurnIn QuestName="It's All Mine" QuestId="25677" TurnInName="Rofilian Dane" TurnInId="41133" />
+	<TurnIn QuestName="Pick Your Fate" QuestId="25678" TurnInName="Rofilian Dane" TurnInId="41133" />
+	
+	<PickUp QuestName="Into the Mountain" QuestId="25679" GiverName="Rofilian Dane" GiverId="41133" />
+	<TurnIn QuestName="Into the Mountain" QuestId="25679" TurnInName="Tak\'arili" TurnInId="41134" />
+	
+	<PickUp QuestName="That's Not Us" QuestId="25680" GiverName="Tak'arili" GiverId="41134" />
+	<Objective QuestName="That's Not Us" QuestId="25680" Type="KillMob" MobId="41163" KillCount="1" />
+	<TurnIn QuestName="That's Not Us" QuestId="25680" TurnInName="Tak'arili" TurnInId="41134" />
+	
+	<PickUp QuestName="Some People Just Need Killing" QuestId="25681" GiverName="Tak'arili" GiverId="41134" />
+	<DisableBehavior Name="Pull, Combat" />
+	<If Condition="HasQuest(25681) &amp;&amp; !IsQuestCompleted(25681) &amp;&amp; Me.Location.Distance(new WoWPoint(-10643.63, -3107.881, 24.30163)) &gt; 30" >
+		<CustomBehavior File="InteractWith" MobId="203192" NonCompeteDistance="5" WaitTime="1000" NumOfTimes="100"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" TerminateWhen="Me.HasAura(77044)" >
+			<HuntingGrounds>
+				<Hotspot X="-10609.23" Y="-3469.643" Z="4.887494" />
+				<Hotspot X="-10559.83" Y="-3447.273" Z="-2.674452" />
+				<Hotspot X="-10548.71" Y="-3318.389" Z="2.149802" />
+				<Hotspot X="-10571.91" Y="-3206.631" Z="6.81867" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<MoveTo X="-10643.63" Y="-3107.881" Z="24.30163" />
+	</If>
+	<If Condition="Me.HasAura(77044)" >
+		<CustomBehavior File="Misc\RunLua" Lua="VehicleExit()" WaitTime="1000" />
+	</If>
+	<EnableBehavior Name="Pull, Combat" />
+	<Objective QuestName="Some People Just Need Killing" QuestId="25681" Type="KillMob" MobId="41173" KillCount="1" />
+	<DisableBehavior Name="Pull, Combat" />
+	<If Condition="HasQuest(25681) &amp;&amp; IsQuestCompleted(25681) &amp;&amp; Me.Location.Distance(new WoWPoint(-10643.63, -3107.881, 24.30163)) &lt; 40" >
+		<CustomBehavior File="InteractWith" MobId="203192" NonCompeteDistance="5" WaitTime="1000" NumOfTimes="100"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" TerminateWhen="Me.HasAura(77044)" X="-10643.63" Y="-3107.881" Z="24.30163" />
+		<MoveTo X="-10609.23" Y="-3469.643" Z="4.887494" />
+	</If>
+	<If Condition="Me.HasAura(77044)" >
+		<CustomBehavior File="Misc\RunLua" Lua="VehicleExit()" WaitTime="1000" />
+	</If>
+	<TurnIn QuestName="Some People Just Need Killing" QuestId="25681" TurnInName="Tak'arili" TurnInId="41134" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<PickUp QuestName="Mission Complete" QuestId="25682" GiverName="Tak'arili" GiverId="41134" />
+	
+	<Objective QuestName="Ogre Combat" QuestId="25675" Type="KillMob" MobId="5977" KillCount="6" />
+	<Objective QuestName="Ogre Combat" QuestId="25675" Type="KillMob" MobId="5978" KillCount="5" />
+
+	<TurnIn QuestName="Ogre Combat" QuestId="25675" TurnInName="Master Aitokk" TurnInId="41125" />
+	<TurnIn QuestName="Mission Complete" QuestId="25682" TurnInName="Okrilla" TurnInId="41124" />
+	
+	<PickUp QuestName="The Dreadmaul Furnace" QuestId="25683" GiverName="Okrilla" GiverId="41124" />
+	<TurnIn QuestName="The Dreadmaul Furnace" QuestId="25683" TurnInName="Bloodmage Lynnore" TurnInId="7506" />
+	
+	<CustomBehavior File="Message" Text="Compiling Dreadmaul Furnace Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Attune the Bloodstone" QuestId="25684" GiverName="Bloodmage Lynnore" GiverId="7506" />
+	<Objective QuestName="Attune the Bloodstone" QuestId="25684" Type="UseObject" ObjectId="203181" UseCount="1" />
+	<Objective QuestName="Attune the Bloodstone" QuestId="25684" Type="UseObject" ObjectId="203180" UseCount="1" />
+	<TurnIn QuestName="Attune the Bloodstone" QuestId="25684" TurnInName="Bloodmage Lynnore" TurnInId="7506" />
+	
+	<PickUp QuestName="The First Step" QuestId="25685" GiverName="Bloodmage Lynnore" GiverId="7506" />
+	<PickUp QuestName="A Bloodmage's Gotta Eat Too" QuestId="25690" GiverName="Bloodmage Drazial" GiverId="7505" />
+	<While Condition="(HasQuest(25685) || HasQuest(25690)) &amp;&amp; (!IsQuestCompleted(25685) || !IsQuestCompleted(25690)) &amp;&amp;
+					Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &lt; 40" >
+		<CustomBehavior File="InteractWith" MobId="203181" NonCompeteDistance="0" WaitTime="2000" 
+			TerminateWhen="Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &gt; 40"
+			X="-11459.78" Y="-2633.324" Z="3.470648" />
+	</While>
+	<Objective QuestName="The First Step" QuestId="25685" Type="CollectItem" ItemId="55826" CollectCount="9" />
+	<Objective QuestName="The First Step" QuestId="25685" Type="CollectItem" ItemId="55827" CollectCount="9" />
+	<Objective QuestName="A Bloodmage's Gotta Eat Too" QuestId="25690" Type="CollectItem" ItemId="55828" CollectCount="5" />
+	<While Condition="(HasQuest(25685) || HasQuest(25690)) &amp;&amp; (IsQuestCompleted(25685) || IsQuestCompleted(25690)) &amp;&amp;
+					Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &gt; 40" >
+		<CustomBehavior File="InteractWith" MobId="203180" NonCompeteDistance="0" WaitTime="2000" 
+			TerminateWhen="Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &lt; 40"
+			X="-11361.5" Y="-2717" Z="13.23" />
+	</While>
+	<TurnIn QuestName="The First Step" QuestId="25685" TurnInName="Bloodmage Lynnore" TurnInId="7506" X="-11458.88" Y="-2632.207" Z="3.543821" />
+	<TurnIn QuestName="A Bloodmage's Gotta Eat Too" QuestId="25690" TurnInName="Bloodmage Drazial" TurnInId="7505" X="-11458.88" Y="-2632.207" Z="3.543821" />
+	
+	<PickUp QuestName="Blood Ritual" QuestId="25686" GiverName="Bloodmage Lynnore" GiverId="7506" />
+	<CustomBehavior File="InteractWith" QuestId="25686" MobId="7506" InteractByGossipOptions="1"
+		NonCompeteDistance="0" WaitTime="3000" X="-11465.76" Y="-2630.927" Z="3.586637" />
+	<TurnIn QuestName="Blood Ritual" QuestId="25686" TurnInName="Bloodmage Lynnore" TurnInId="7506" X="-11458.88" Y="-2632.207" Z="3.543821" />
+	
+	<PickUp QuestName="Not Just Any Body" QuestId="25687" GiverName="Bloodmage Lynnore" GiverId="7506" />
+	<Objective QuestName="Not Just Any Body" QuestId="25687" Type="CollectItem" ItemId="55829" CollectCount="1" />
+	<Objective QuestName="Not Just Any Body" QuestId="25687" Type="CollectItem" ItemId="55836" CollectCount="1" />
+	<Objective QuestName="Not Just Any Body" QuestId="25687" Type="CollectItem" ItemId="55837" CollectCount="1" />
+	<TurnIn QuestName="Not Just Any Body" QuestId="25687" TurnInName="Bloodmage Lynnore" TurnInId="7506" X="-11458.88" Y="-2632.207" Z="3.543821" />
+	
+	<PickUp QuestName="The Altar of Storms" QuestId="25688" GiverName="Bloodmage Lynnore" GiverId="7506" />
+	<While Condition="HasQuest(25688) &amp;&amp; !IsQuestCompleted(25688) &amp;&amp;
+					Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &lt; 40" >
+		<CustomBehavior File="InteractWith" MobId="203181" NonCompeteDistance="0" WaitTime="2000" 
+			TerminateWhen="Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &gt; 40"
+			X="-11459.78" Y="-2633.324" Z="3.470648" />
+	</While>
+	<While Condition="HasQuest(25688) &amp;&amp; !IsQuestCompleted(25688)" >
+		<MoveTo X="-11299.14" Y="-2550.233" Z="97.047" />
+		<If Condition="Unit(41193) == null" >
+			<CustomBehavior File="InteractWith" MobId="203196" WaitTime="3000" NonCompeteDistance="0"
+				TerminateWhen="Unit(41193) != null" X="-11299.14" Y="-2550.233" Z="97.047" />
+		</If>
+		<CustomBehavior File="InteractWith" QuestId="25688" MobId="41191" MobState="Alive" NonCompeteDistance="0" 
+			ProactiveCombatStrategy="ClearMobsTargetingUs" TerminateWhen="Unit(41193) == null" NumOfTimes="1000" WaitTime="1000" >
+			<Hotspot X="-11262.61" Y="-2547.343" Z="97.05952" />
+			<Hotspot X="-11299.14" Y="-2550.233" Z="97.047" />
+		</CustomBehavior>
+	</While>
+	<While Condition="HasQuest(25688) &amp;&amp; IsQuestCompleted(25688) &amp;&amp;
+					Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &gt; 40" >
+		<CustomBehavior File="InteractWith" MobId="203180" NonCompeteDistance="0" WaitTime="2000" 
+			TerminateWhen="Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &lt; 40"
+			X="-11361.5" Y="-2717" Z="13.23" />
+	</While>
+	<TurnIn QuestName="The Altar of Storms" QuestId="25688" TurnInName="Loramus Thalipedes" TurnInId="7783" X="-11458.88" Y="-2632.207" Z="3.543821" />
+	
+	<PickUp QuestName="Time is Short" QuestId="25689" GiverName="Loramus Thalipedes" GiverId="7783" />
+	<While Condition="HasQuest(25689) &amp;&amp; Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &lt; 40" >
+		<CustomBehavior File="InteractWith" MobId="203181" NonCompeteDistance="0" WaitTime="2000" 
+			TerminateWhen="Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &gt; 40"
+			X="-11459.78" Y="-2633.324" Z="3.470648" />
+	</While>
+	<TurnIn QuestName="Time is Short" QuestId="25689" TurnInName="Watcher Wazzik" TurnInId="41159" />
+	
+	<CustomBehavior File="Message" Text="Compiling The Dark Portal Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="The Charred Granite of the Dark Portal" QuestId="25691" GiverName="Watcher Wazzik" GiverId="41159" />
+	<PickUp QuestName="The Vile Blood of Demons" QuestId="25692" GiverName="Watcher Wazzik" GiverId="41159" />
+	<PickUp QuestName="Protecting Our Rear" QuestId="25694" GiverName="Warlord Dar'toon" GiverId="19254" />
+	
+	<Objective QuestName="The Charred Granite of the Dark Portal" QuestId="25691" Type="CollectItem" ItemId="55989" CollectCount="24" />
+	<Objective QuestName="The Vile Blood of Demons" QuestId="25692" Type="CollectItem" ItemId="55991" CollectCount="7" />
+	<Objective QuestName="Protecting Our Rear" QuestId="25694" Type="KillMob" MobId="41164" KillCount="1" />
+	<Objective QuestName="Protecting Our Rear" QuestId="25694" Type="KillMob" MobId="41165" KillCount="1" />
+	<Objective QuestName="Protecting Our Rear" QuestId="25694" Type="KillMob" MobId="41166" KillCount="1" />
+	
+	<TurnIn QuestName="The Vile Blood of Demons" QuestId="25692" TurnInName="Watcher Wazzik" TurnInId="41159" />
+	<TurnIn QuestName="The Charred Granite of the Dark Portal" QuestId="25691" TurnInName="Watcher Wazzik" TurnInId="41159" />
+	<PickUp QuestName="Enhancing the Stone" QuestId="25693" GiverName="Watcher Wazzik" GiverId="41159" />
+	<TurnIn QuestName="Protecting Our Rear" QuestId="25694" TurnInName="Warlord Dar'toon" TurnInId="19254" />
+	
+	<While Condition="HasQuest(25693) &amp;&amp; Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &gt; 40" >
+		<CustomBehavior File="InteractWith" MobId="203180" NonCompeteDistance="0" WaitTime="2000" 
+			TerminateWhen="Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &lt; 40"
+			X="-11361.5" Y="-2717" Z="13.23" />
+	</While>
+	<TurnIn QuestName="Enhancing the Stone" QuestId="25693" TurnInName="Loramus Thalipedes" TurnInId="7783" />
+	
+	<PickUp QuestName="The Amulet of Allistarj" QuestId="25697" GiverName="Loramus Thalipedes" GiverId="7783" />
+	<PickUp QuestName="The Amulet of Sevine" QuestId="25698" GiverName="Loramus Thalipedes" GiverId="7783" />
+	<PickUp QuestName="The Amulet of Grol" QuestId="25699" GiverName="Loramus Thalipedes" GiverId="7783" />
+	<While Condition="(HasQuest(25697) || HasQuest(25698) || HasQuest(25699)) &amp;&amp; 
+					(!IsQuestCompleted(25697) || !IsQuestCompleted(25698) || !IsQuestCompleted(25699)) &amp;&amp;
+					Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &lt; 40" >
+		<CustomBehavior File="InteractWith" MobId="203181" NonCompeteDistance="0" WaitTime="2000" 
+			TerminateWhen="Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &gt; 40"
+			X="-11459.78" Y="-2633.324" Z="3.470648" />
+	</While>
+	<Objective QuestName="The Amulet of Allistarj" QuestId="25697" Type="CollectItem" ItemId="10755" CollectCount="1" />
+	<CustomBehavior File="InteractWith" QuestId="25699" MobId="203230" NumOfTimes="1000" WaitTime="2000"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" X="-11448.04" Y="-3796.031" Z="-1.410367" />
+	<CustomBehavior File="InteractWith" QuestId="25698" MobId="41265" InteractByGossipOptions="1" NumOfTimes="1000" WaitTime="2000"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" X="-11740.06" Y="-3871.451" Z="57.23322" />
+		
+	<PickUp QuestName="Home... Gone... Naga..." QuestId="25702" GiverName="Salt-Flop" GiverId="41265" />
+	<TurnIn QuestName="Home... Gone... Naga..." QuestId="25702" TurnInName="Neptool" TurnInId="41354" />
+	
+	<PickUp QuestName="Atrocities" QuestId="25703" GiverName="Neptool" GiverId="41354" />
+	<Objective QuestName="Atrocities" QuestId="25703" Type="KillMob" MobId="41386" KillCount="10" />
+	<Objective QuestName="Atrocities" QuestId="25703" Type="KillMob" MobId="41387" KillCount="10" />
+	<TurnIn QuestName="Atrocities" QuestId="25703" TurnInName="Neptool" TurnInId="41354" />
+	
+	<PickUp QuestName="False Idols" QuestId="25705" GiverName="Neptool" GiverId="41354" />
+	<PickUp QuestName="Neptool's Revenge" QuestId="25706" GiverName="Neptool" GiverId="41354" />
+	
+	<Objective QuestName="False Idols" QuestId="25705" Type="UseObject" ObjectId="203289" UseCount="8" />
+	<Objective QuestName="Neptool's Revenge" QuestId="25706" Type="KillMob" MobId="41422" KillCount="8" />
+	<Objective QuestName="Neptool's Revenge" QuestId="25706" Type="KillMob" MobId="41423" KillCount="8" />
+	<Objective QuestName="Neptool's Revenge" QuestId="25706" Type="KillMob" MobId="41404" KillCount="4" />
+	<Objective QuestName="Neptool's Revenge" QuestId="25706" Type="KillMob" MobId="41405" KillCount="4" />
+
+	<TurnIn QuestName="False Idols" QuestId="25705" TurnInName="Neptool" TurnInId="41354" />
+	<TurnIn QuestName="Neptool's Revenge" QuestId="25706" TurnInName="Neptool" TurnInId="41354" />
+
+	<While Condition="(HasQuest(25697) || HasQuest(25698) || HasQuest(25699)) &amp;&amp;
+					(IsQuestCompleted(25697) || IsQuestCompleted(25698) || IsQuestCompleted(25699)) &amp;&amp;
+					Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &gt; 40" >
+		<CustomBehavior File="InteractWith" MobId="203180" NonCompeteDistance="0" WaitTime="2000" 
+			TerminateWhen="Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &lt; 40"
+			X="-11361.5" Y="-2717" Z="13.23" />
+	</While>
+	<TurnIn QuestName="The Amulet of Allistarj" QuestId="25697" TurnInName="Bloodmage Lynnore" TurnInId="7506" />
+	<TurnIn QuestName="The Amulet of Sevine" QuestId="25698" TurnInName="Bloodmage Lynnore" TurnInId="7506" />
+	<TurnIn QuestName="The Amulet of Grol" QuestId="25699" TurnInName="Bloodmage Lynnore" TurnInId="7506" />
+	
+	<PickUp QuestName="Loramus Thalipedes Awaits" QuestId="25700" GiverName="Bloodmage Lynnore" GiverId="7506" />
+	<CustomBehavior File="InteractWith" QuestId="25700" MobId="7506" InteractByGossipOptions="1" NumOfTimes="100"
+		NonCompeteDistance="0" WaitTime="3000" X="-11465.76" Y="-2630.927" Z="3.586637" />
+	<TurnIn QuestName="Loramus Thalipedes Awaits" QuestId="25700" TurnInName="Loramus Thalipedes" TurnInId="7783" />
+	
+	<PickUp QuestName="You Are Rakh'likh, Demon" QuestId="25701" GiverName="Loramus Thalipedes" GiverId="7783" />
+	<While Condition="HasQuest(25701) &amp;&amp; !IsQuestCompleted(25701) &amp;&amp;
+					Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &lt; 40" >
+		<CustomBehavior File="InteractWith" MobId="203181" NonCompeteDistance="0" WaitTime="2000" 
+			TerminateWhen="Me.Location.Distance(new WoWPoint(-11459.78, -2633.324, 3.470648)) &gt; 40"
+			X="-11459.78" Y="-2633.324" Z="3.470648" />
+	</While>
+	<If Condition="HasQuest(25701) &amp;&amp; !IsQuestCompleted(25701)" >
+		<CustomBehavior File="InteractWith" MobId="8816" InteractByGossipOptions="1"
+			NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" NumOfTimes="100"
+			TerminateWhen="Me.Z &gt;= 120" X="-11114" Y="-2896.859" Z="10.75645" />
+		<CustomBehavior File="CombatUseItemOnV2" QuestId="25701" MobId="41279" ItemId="56012" UseWhenMobHasHealthPercent="20"
+			UseItemStrategy="UseItemContinuouslyOnTarget" X="-11236.08" Y="-2835.438" Z="157.9235" />
+	</If>
+	<If Condition="HasQuest(25701) &amp;&amp; IsQuestCompleted(25701)" >
+		<If Condition="Me.Z &gt; 150" >
+			<MoveTo X="-11225.02" Y="-2832.417" Z="158.4929" />
+			<CustomBehavior File="MyCTM" X="-11184.44" Y="-2834.53" Z="116.9781" />
+		</If>
+		<If Condition="Me.Z &gt; 100" >
+			<CustomBehavior File="MyCTM" X="-11184.44" Y="-2834.53" Z="116.9781" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		</If>
+	</If>
+	<TurnIn QuestName="You Are Rakh'likh, Demon" QuestId="25701" TurnInName="Watcher Wazzik" TurnInId="41159" />
+	
+	<PickUp QuestName="Watching Our Back" QuestId="25695" GiverName="Warlord Dar'toon" GiverId="19254" />
+	<While Condition="HasQuest(25695) &amp;&amp; !IsQuestCompleted(25695)" >
+		<MoveTo X="-11810.87" Y="-3232.813" Z="-30.11449" />
+		<CustomBehavior File="WaitForPatrol" QuestId="25695" AvoidMobId="41269" AvoidDistance="3"
+			X="-11810.87" Y="-3232.813" Z="-30.11449" />
+		<CustomBehavior File="InteractWith" QuestId="25695" MobId="203226" IgnoreLoSToTarget="True"
+			NonCompeteDistance="0" ProactiveCombatStrategy="NoClear" WaitTime="1000" NumOfTimes="100"
+			TerminateWhen="HasAura(77360)" CollectionDistance="10" X="-11810.87" Y="-3232.813" Z="-30.11449" />
+	</While>
+	<TurnIn QuestName="Watching Our Back" QuestId="25695" TurnInName="Warlord Dar'toon" TurnInId="19254" />
+	
+	<PickUp QuestName="The Sunveil Excursion" QuestId="25696" GiverName="Warlord Dar'toon" GiverId="19254" />
+	<TurnIn QuestName="The Sunveil Excursion" QuestId="25696" TurnInName="Rohan Sunveil" TurnInId="42344" />
+	
+	<CustomBehavior File="Message" Text="Compiling Sunveil Excursion Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="The Demons and the Druid" QuestId="25717" GiverName="Rohan Sunveil" GiverId="42344" />
+	<Objective QuestName="The Demons and the Druid" QuestId="25717" Type="KillMob" MobId="41470" KillCount="5" />
+	<Objective QuestName="The Demons and the Druid" QuestId="25717" Type="KillMob" MobId="41471" KillCount="5" />
+	<Objective QuestName="The Demons and the Druid" QuestId="25717" Type="KillMob" MobId="45119" KillCount="5" />
+	<Objective QuestName="The Demons and the Druid" QuestId="25717" Type="KillMob" MobId="45125" KillCount="3" X="-12490.87" Y="-2431.254" Z="1.905187" />
+	<TurnIn QuestName="The Demons and the Druid" QuestId="25717" TurnInName="Rohan Sunveil" TurnInId="42344" />
+	
+	<PickUp QuestName="How Best to Proceed" QuestId="25718" GiverName="Rohan Sunveil" GiverId="42344" />
+	<TurnIn QuestName="How Best to Proceed" QuestId="25718" TurnInName="Elijah Dawnflight" TurnInId="42348" />
+	
+	<PickUp QuestName="Demoniac Vessel" QuestId="25719" GiverName="Elijah Dawnflight" GiverId="42348" />
+	<If Condition="HasQuest(25719) &amp;&amp; !IsQuestCompleted(25719)" >
+		<While Condition="!HasItem(57184)" >
+			<If Condition="!HasItem(57180)" >
+				<CustomBehavior File="CollectThings" MobId="42336" MobState="Alive" CollectItemId="57177" CollectItemCount="4"
+					NonCompeteDistance="5" HuntingGroundRadius="120" >
+					<Hotspot X="-12066.06" Y="-2634.304" Z="-25.5383" />
+					<Hotspot X="-12013.85" Y="-2559.538" Z="-25.09312" />
+					<Hotspot X="-11949.69" Y="-2548.996" Z="-26.00732" />
+					<Hotspot X="-11872" Y="-2558.586" Z="-18.35693" />
+				</CustomBehavior>
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(57177)" WaitTime="2000" />
+			</If>
+			<While Condition="GetItemCount(57181) &lt; 20 &amp;&amp; !HasItem(57183) &amp;&amp; !HasItem(57184)" >
+				<CustomBehavior File="CollectThings" MobId="42337" MobState="Alive" CollectItemId="57178" CollectItemCount="1"
+					NonCompeteDistance="5" HuntingGroundRadius="120" >
+					<Hotspot X="-12066.06" Y="-2634.304" Z="-25.5383" />
+					<Hotspot X="-12013.85" Y="-2559.538" Z="-25.09312" />
+					<Hotspot X="-11949.69" Y="-2548.996" Z="-26.00732" />
+					<Hotspot X="-11872" Y="-2558.586" Z="-18.35693" />
+				</CustomBehavior>
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(57178)" WaitTime="2000" />
+			</While>
+			<While Condition="GetItemCount(57182) &lt; 2 &amp;&amp; !HasItem(57183) &amp;&amp; !HasItem(57184)" >
+				<CustomBehavior File="CollectThings" MobId="42338" MobState="Alive" CollectItemId="57179" CollectItemCount="1"
+					NonCompeteDistance="5" HuntingGroundRadius="120" >
+					<Hotspot X="-12066.06" Y="-2634.304" Z="-25.5383" />
+					<Hotspot X="-12013.85" Y="-2559.538" Z="-25.09312" />
+					<Hotspot X="-11949.69" Y="-2548.996" Z="-26.00732" />
+					<Hotspot X="-11872" Y="-2558.586" Z="-18.35693" />
+				</CustomBehavior>
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(57179)" WaitTime="2000" />
+			</While>
+			<If Condition="GetItemCount(57181) == 20 &amp;&amp; GetItemCount(57182) == 2 &amp;&amp; !HasItem(57183)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(57181)" WaitTime="2000" />
+			</If>
+			<If Condition="HasItem(57183) &amp;&amp; HasItem(57180) &amp;&amp; !HasItem(57184)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(57180)" WaitTime="2000" />
+			</If>
+		</While>
+	</If>
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Demoniac Vessel" QuestId="25719" TurnInName="Rohan Sunveil" TurnInId="42344" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<PickUp QuestName="The Downfall of Marl Wormthorn" QuestId="25720" GiverName="Rohan Sunveil" GiverId="42344" />
+	<CustomBehavior File="InteractWith" QuestId="25720" MobId="42334" InteractByUsingItemId="57185"
+		NonCompeteDistance="5" ProactiveCombatStrategy="ClearMobsTargetingUs" X="-12238.83" Y="-2464.19" Z="38.91" />
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="The Downfall of Marl Wormthorn" QuestId="25720" TurnInName="Rohan Sunveil" TurnInId="42344" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<While Condition="HasItem(10593)" >
+		<If Condition="!HasQuest(25771)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(10593)" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameAcceptButton" WaitTime="1000" />
+		</If>
+		<If Condition="HasQuest(25771)" >
+			<CustomBehavior File="InteractWith" MobId="7363" WaitTime="1000" X="-11358.81" Y="-2979.571" Z="-0.3960537" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteButton" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" WaitTime="1000" />
+		</If>
+		<While Condition="HasItem(12122)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(12122)" WaitTime="1000" />
+		</While>
+	</While>
+	
+	<While Condition="HasItem(8244)" >
+		<If Condition="!HasQuest(25772)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(8244)" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameAcceptButton" WaitTime="1000" />
+		</If>
+		<If Condition="HasQuest(25772)" >
+			<CustomBehavior File="InteractWith" MobId="7363" WaitTime="1000" X="-11358.81" Y="-2979.571" Z="-0.3960537" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteButton" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" WaitTime="1000" />
+		</If>
+		<While Condition="HasItem(10752)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(10752)" WaitTime="1000" />
+		</While>
+	</While>
+	
+	<SetGrindArea>
+		<GrindArea>
+			<Factions>14 90</Factions>
+			<Hotspots>
+				<Hotspot X="-12143.25" Y="-2714.014" Z="0.6769818" />
+				<Hotspot X="-12237.68" Y="-2639.289" Z="0.390185" />
+				<Hotspot X="-12336.44" Y="-2649.524" Z="3.322459" />
+				<Hotspot X="-12424.86" Y="-2685.606" Z="1.869749" />
+				<Hotspot X="-12066.06" Y="-2634.304" Z="-25.5383" />
+				<Hotspot X="-12013.85" Y="-2559.538" Z="-25.09312" />
+				<Hotspot X="-11949.69" Y="-2548.996" Z="-26.00732" />
+				<Hotspot X="-11872" Y="-2558.586" Z="-18.35693" />
+			</Hotspots>
+		</GrindArea> 
+	</SetGrindArea>
+	<GrindTo Condition="Me.LevelFraction &gt;= 58" />
+	
+	<DisableBehavior Name="Pull, Combat" />
+	<PickUp QuestName="Through the Dark Portal" QuestId="9407" GiverName="Warlord Dar'toon" GiverId="19254" />
+	<If Condition="HasQuest(9407)" >
+		<If Condition="Me.MapId == 0" >
+			<MoveTo X="-11899.66" Y="-3208.164" Z="-14.73684" />
+			<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+			<CustomBehavior File="WaitTimer" WaitTime="10000" />
+		</If>
+	</If>
+	<TurnIn QuestName="Through the Dark Portal" QuestId="9407" TurnInName="Lieutenant General Orion" TurnInId="19253" />
+	<EnableBehavior Name="Pull, Combat" />
+
+	<CustomBehavior File="Message" Text="Blasted Lands Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

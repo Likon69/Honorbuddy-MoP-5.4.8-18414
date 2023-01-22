@@ -1,0 +1,1387 @@
+<HBProfile xsi:noNamespaceSchemaLocation="../../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>Hawker's Horde Feralas-Tanaris 40-45 Profile</Name>
+    <MinLevel>38</MinLevel>
+    <MaxLevel>1001</MaxLevel>
+
+    <MinDurability>0.3</MinDurability>
+    <MinFreeBagSlots>3</MinFreeBagSlots>
+
+    <!-- NB: Honorbuddy sells before mailing -->
+    <SellGrey>true</SellGrey>
+    <SellWhite>true</SellWhite>
+    <SellGreen>true</SellGreen>
+    <SellBlue>false</SellBlue>
+    <SellPurple>false</SellPurple>
+
+    <MailGrey>false</MailGrey>
+    <MailWhite>true</MailWhite>
+    <MailGreen>true</MailGreen>
+    <MailBlue>true</MailBlue>
+    <MailPurple>true</MailPurple>
+
+
+    <Blackspots>
+        <Blackspot Name="Thargad's Camp" X="-1682.05" Y="2586.394" Z="139.8284" Radius="40" Height="20" />
+        <Blackspot Name="Camp Ataya: spikes" X="-3117.816" Y="2572.082" Z="51.66684" Radius="0.75" />
+        <Blackspot Name="Camp Ataya: spikes" X="-3107.684" Y="2586.872" Z="51.82745" Radius="0.75" />
+        <Blackspot Name="Camp Ataya: spikes" X="-3048.084" Y="2563.034" Z="50.64115" Radius="0.75" />
+        <Blackspot Name="Camp Ataya: spikes" X="-3057.112" Y="2542.368" Z="50.33875" Radius="0.75" />
+        <Blackspot Name="Camp Ataya: spikes" X="-3086.778" Y="2578.891" Z="50.17932" Radius="0.75" />
+        <Blackspot Name="Tower of Estulan" X="-4895.058" Y="1483.389" Z="87.17114" Radius="50" />
+        <Blackspot Name="Feathermoon Stronghold" X="-4430.3" Y="2186.616" Z="14.63854" Radius="20" />
+        <Blackspot Name="Feathermoon Stronghold" X="-4571.351" Y="2237.824" Z="-0.6637347" Radius="100" />
+        <Blackspot Name="Stonemaul Hold: annoying tent near Gombona" X="-4585.478" Y="1811.795" Z="89.26601" Radius="4" />
+        <Blackspot Name="Shadebough" X="-5020.009" Y="116.7143" Z="84.99156" Radius="25" />
+        <Blackspot Name="Grimtotem captured sprite darters mess up &quot;A New Cloak's Sheen&quot;" X="-4538.037" Y="815.8383" Z="60.25294" Radius="10" />
+        <Blackspot Name="Gorudunni Outpost: skins drying on panel at entrance" X="-4009.364" Y="231.2135" Z="62.08738" Radius="1" />
+        <Blackspot Name="Tanaris: bones" X="-7392.566" Y="-3901.273" Z="0.7478709" Radius="5" />
+        <Blackspot Name="Tanaris: boat by Gadgetzan" X="-7349.556" Y="-3752.817" Z="10.03149" Radius="2.74395" />
+        <Blackspot Name="Zulfarrak entrance" X="-6824.681" Y="-2905.454" Z="8.877857" Radius="15" />
+        <Blackspot Name="Zulfarrak entrance" X="-6848.615" Y="-2912.729" Z="10.31885" Radius="20" />
+        <Blackspot Name="Lost Rigger Cove: risky hut" X="-8026.649" Y="-5198.58" Z="0.5750445" Radius="10" />
+        <Blackspot Name="Lost Rigger Cove: ship" X="-8042.135" Y="-5366.32" Z="0.7807461" Radius="15" />
+        <Blackspot Name="Lost Rigger Cove: ship " X="-8060.385" Y="-5338.785" Z="0.6370806" Radius="5" />
+        <Blackspot Name="Southbreak Shore: trees" X="-8268.07" Y="-5114.643" Z="5.462183" Radius="6.907805" />
+    </Blackspots>
+
+    <QuestOrder>
+        <CustomBehavior File="Misc\ProfileCompatibilityInfo"
+            AllowBrokenAddOns="true" AllowBrokenPlugIns="true" />
+
+        <CustomBehavior File="UserSettings" UseMount="true" LootMobs="true" UseFlightPaths="true" PullDistance="25" GroundMountFarmingMode="false" KillBetweenHotspots="true" />
+
+        <ClearVendor />
+        <SetVendor>
+            <Vendors>
+                <!-- Desolace -->
+                <Vendor Name="Hae'Wilani" Id="12045" Type="Repair" X="-1677.031" Y="3073.266" Z="34.53783" />
+                <Vendor Name="Tukk" Id="12027" Type="Food" X="-1701.76" Y="3112.569" Z="32.64054" />
+                <!-- Stonemaul Hold -->
+                <Vendor Name="Kerthunk" Id="44377" Type="Repair" X="-4600.19" Y="1853.25" Z="88.60656" />
+                <Vendor Name="Lucretia" Id="44379" Type="Food" X="-4580.5" Y="1862.21" Z="88.73944" />
+                <!-- Camp Mojache -->
+                <Vendor Name="Cawind trueaim" Id="9548" Type="Repair" X="-4484.554" Y="233.5269" Z="48.3943" />
+                <Vendor Name="Innkeeper Greul" Id="7737" Type="Food" X="-4460.097" Y="242.7223" Z="39.1076" />
+                <Vendor Name="Worb Strongstitch" Id="8159" Type="Repair" X="-4339.655" Y="249.374" Z="26.31752" />
+                <!-- Camp Ataya -->
+                <Vendor Name="Cohanae" Id="44386" Type="Repair" X="-3071.69" Y="2547.66" Z="50.1791" />
+                <Vendor Name="Adene Treetotem" Id="40467" Type="Food" X="-3097.09" Y="2563.181" Z="50.17947" />
+                <!-- Tanaris -->
+                <Vendor Name="Krinkle Goodsteel" Id="5411" Type="Repair" X="-7232.01" Y="-3751.71" Z="9.093862" />
+                <Vendor Name="Dirge Quikcleave" Id="40589" Type="Food" X="-7167.672" Y="-3853.661" Z="8.41981" />
+                <Vendor Name="Chase Everseek" Id="43980" Type="Repair" X="-9478.8" Y="-2473.88" Z="17.00157" />
+                <Vendor Name="Cordelia Everseek" Id="43972" Type="Food" X="-9476.79" Y="-2475.67" Z="17.00157" />
+
+            </Vendors>
+        </SetVendor>
+
+        <ClearMailbox />
+        <SetMailbox>
+            <Mailboxes>
+                <!--Shadowprey Village-->
+                <Mailbox X="-1610.831" Y="3117.088" Z="44.47738" />
+                <!-- Camp Mojache-->
+                <Mailbox X="-4405.488" Y="239.2851" Z="27.05856" />
+                <!-- Gadgetzan -->
+                <Mailbox X="-7084.046" Y="-3851.074" Z="9.695802" />
+            </Mailboxes>
+        </SetMailbox>
+
+        <!-- We need to get to Feralas without drowning so go through Desolace unless you have already done "Signs of Change" 25210 in which case you have the flight path. -->
+        <If Condition="!HasQuest(25210) &amp;&amp; !IsQuestCompleted(25210)" >
+            <MoveTo DestName="Shadowprey Village" X="-1768.705" Y="3264.669" Z="5.132476" />
+            <CustomBehavior File="InteractWith" Range="5" MobId="6726" X="-1770.37" Y="3262.193" Z="5.108521" />
+            <MoveTo DestName="Camp Ataya" X="-3081.7" Y="2560.1" Z="50.17882" />
+            <CustomBehavior File="InteractWith" Range="5" MobId="40473" X="-3082.712" Y="2555.328" Z="50.17958" />
+        </If>
+
+        <PickUp QuestName="Signs of Change" QuestId="25210" GiverName="Konu Runetotem" GiverId="39377" X="-3081.195" Y="2567.978" Z="50.17909" />
+        <Objective QuestName="Signs of Change" QuestId="25210" Type="CollectItem" ItemId="53642" CollectCount="8" />
+        <TurnIn QuestName="Signs of Change" QuestId="25210" TurnInName="Konu Runetotem" TurnInId="39377" />
+
+        <PickUp QuestName="More Than Illness" QuestId="25230" GiverName="Konu Runetotem" GiverId="39377" />
+        <Objective QuestName="More Than Illness" QuestId="25230" Type="KillMob" MobId="39384" KillCount="10" />
+        <TurnIn QuestName="More Than Illness" QuestId="25230" TurnInName="Konu Runetotem" TurnInId="39377" />
+
+        <PickUp QuestName="Vengeance on the Northspring" QuestId="25339" GiverName="Talo Thornhoof" GiverId="7776" />
+        <PickUp QuestName="Dark Heart" QuestId="25340" GiverName="Talo Thornhoof" GiverId="7776" />
+        <Objective QuestName="Vengeance on the Northspring" QuestId="25339" Type="KillMob" MobId="5362" KillCount="6" />
+        <Objective QuestName="Vengeance on the Northspring" QuestId="25339" Type="KillMob" MobId="5366" KillCount="6" />
+        <TurnIn QuestName="Vengeance on the Northspring" QuestId="25339" TurnInName="Talo Thornhoof" TurnInId="7776" />
+
+        <!-- "Dark Heart" 25340 -->
+        <If Condition="HasQuest(25340) &amp;&amp; !IsQuestCompleted(25340)" >
+            <SetGrindArea>
+                <GrindArea>
+                    <TargetMinLevel>31</TargetMinLevel>
+                    <TargetMaxLevel>36</TargetMaxLevel>
+                    <Factions>514</Factions>
+                    <Hotspots>
+                        <Hotspot X="-3035.214" Y="2627.979" Z="52.4072" />
+                        <Hotspot X="-3170.632" Y="2791.889" Z="82.4712" />
+                        <Hotspot X="-3026.9" Y="2837.788" Z="67.51619" />
+                        <Hotspot X="-2959.812" Y="2766.162" Z="53.52504" />
+                        <Hotspot X="-2943.551" Y="2661.546" Z="59.67061" />
+                        <Hotspot X="-2933.552" Y="2536.76" Z="42.01119" />
+                        <Hotspot X="-2873.988" Y="2510.999" Z="31.33413" />
+                    </Hotspots>
+                </GrindArea>
+            </SetGrindArea>
+            <GrindTo Condition="HasItem(9530)" GoalText="Getting DropQuest Item - Horn of Hatetalon" />
+        </If>
+
+        <While Condition="!IsQuestCompleted(25340)">
+            <UseItem ItemId="9530" QuestName="Dark Heart" QuestId="25340" X="-2763.191" Y="2621.972" Z="69.92072" />
+            <CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for item cd {TimeRemaining}" />
+            <CustomBehavior File="InteractWith" QuestId="25340"  MobId="8075" PreInteractMountStrategy="Dismount" X="-2764.096" Y="2622.448" Z="70.17667" />
+        </While>
+        <TurnIn QuestName="Dark Heart" QuestId="25340" TurnInName="Talo Thornhoof" TurnInId="7776" />
+
+        <PickUp QuestName="The Land, Corrupted" QuestId="25241" GiverName="Konu Runetotem" GiverId="39377" />
+        <PickUp QuestName="Tears of Stone" QuestId="25237" GiverName="Konu Runetotem" GiverId="39377" />
+
+        <Objective QuestName="The Land, Corrupted" QuestId="25241" Type="KillMob" MobId="40972" KillCount="7" />
+        <Objective QuestName="Tears of Stone" QuestId="25237" Type="CollectItem" ItemId="52573" CollectCount="7" />
+
+        <TurnIn QuestName="The Land, Corrupted" QuestId="25241" TurnInName="Konu Runetotem" TurnInId="39377" />
+        <TurnIn QuestName="Tears of Stone" QuestId="25237" TurnInName="Konu Runetotem" TurnInId="39377" />
+
+        <PickUp QuestName="Sealing the Dream" QuestId="25250" GiverName="Konu Runetotem" GiverId="39377" />
+        <MoveTo QuestId="25250" DestName="The Portal" X="-2868.237" Y="1878.922" Z="53.04468" />
+
+        <!-- "Sealing the Dream" 25250 -->
+        <While Condition="!IsQuestCompleted(25250)">
+            <UseItem ItemId="52576" QuestName="Sealing the Dream" QuestId="25250" X="-2868.237" Y="1878.922" Z="53.04468" />
+            <CustomBehavior File="WaitTimer" WaitTime="6000" GoalText="Waiting for item cd {TimeRemaining}" />
+            <Objective QuestName="Sealing the Dream" QuestId="25250" Type="KillMob" MobId="39834" KillCount="1" />
+        </While>
+
+        <TurnIn QuestName="Sealing the Dream" QuestId="25250" TurnInName="Konu Runetotem" TurnInId="39377" />
+
+        <PickUp QuestName="To Stonemaul Hold" QuestId="25386" GiverName="Konu Runetotem" GiverId="39377" />
+        <TurnIn QuestName="To Stonemaul Hold" QuestId="25386" TurnInName="Orhan Ogreblade" TurnInId="39656" X="-4590.582" Y="1833.505" Z="88.52103" />
+
+        <PickUp QuestName="The Gordunni Threat" QuestId="25209" GiverName="Orhan Ogreblade" GiverId="39656" X="-4590.582" Y="1833.505" Z="88.52103" />
+        <PickUp QuestName="The Gordunni Orb" QuestId="25341" GiverName="Orhan Ogreblade" GiverId="39656" />
+        <PickUp QuestName="Testing the Vessel" QuestId="25336" GiverName="Gombana" GiverId="39894" X="-4591.549" Y="1810.236" Z="88.6079" />
+
+        <!--Get flight path from Mergek -->
+        <CustomBehavior File="InteractWith" QuestId="25336" Range="5" MobId="41605" X="-4610.76" Y="1897.045" Z="107.8491" />
+
+        <!-- "Testing the Vessel" 25336 -->
+        <CustomBehavior File="InteractWith" QuestId="25336" InteractByUsingItemId="9618" MobState="Dead" MobId="5286" MobId2="5268" Range="5" NumOfTimes="100" WaitTime="10000"
+            PreInteractMountStrategy="Dismount" CollectionDistance="25" >
+            <HuntingGrounds>
+                <Hotspot X="-4895.341" Y="1345.722" Z="64.16196" />
+                <Hotspot X="-4999.827" Y="1393.402" Z="49.27187" />
+                <Hotspot X="-5141.229" Y="1462.885" Z="47.1903" />
+                <Hotspot X="-5070.069" Y="1599.408" Z="62.69805" />
+                <Hotspot X="-5260.754" Y="1533.093" Z="48.47389" />
+                <Hotspot X="-5250.665" Y="1372.952" Z="45.40786" />
+                <Hotspot X="-5204.567" Y="1442.046" Z="41.97705" />
+            </HuntingGrounds>
+        </CustomBehavior>
+
+        <Objective QuestName="Testing the Vessel" QuestId="25336" Type="CollectItem" ItemId="9594" CollectCount="10" />
+        <Objective QuestName="Testing the Vessel" QuestId="25336" Type="CollectItem" ItemId="9618" CollectCount="1" />
+
+        <Objective QuestName="The Gordunni Threat" QuestId="25209" Type="KillMob" MobId="5234" KillCount="16" />
+        <Objective QuestName="The Gordunni Orb" QuestId="25341" Type="CollectItem" ItemId="52832" CollectCount="1" />
+
+        <!-- We should get what we need for "Find OOX-22/FE!" QuestId 25475 first as quest item looting is sometimes bugged.  -->
+        <If Condition="!HasQuest(25475) &amp;&amp; !IsQuestCompleted(25475)" >
+            <SetGrindArea>
+                <GrindArea>
+                    <TargetMinLevel>33</TargetMinLevel>
+                    <TargetMaxLevel>39</TargetMaxLevel>
+                    <Factions>16</Factions>
+                    <Hotspots>
+                        <Hotspot X="-4935.266" Y="1579.438" Z="67.40195" />
+                        <Hotspot X="-5033.688" Y="1790.529" Z="71.75254" />
+                    </Hotspots>
+                </GrindArea>
+            </SetGrindArea>
+            <GrindTo Condition="HasItem(8705)" GoalText="Getting DropQuest Item - Find OOX-22/FE!" />
+        </If>
+
+        <TurnIn QuestName="The Gordunni Threat" QuestId="25209" TurnInName="Orhan Ogreblade" TurnInId="39656" />
+        <TurnIn QuestName="The Gordunni Orb" QuestId="25341" TurnInName="Orhan Ogreblade" TurnInId="39656" />
+        <TurnIn QuestName="Testing the Vessel" QuestId="25336" TurnInName="Gombana" TurnInId="39894" />
+
+        <PickUp QuestName="The Mark of Quality" QuestId="25452" GiverName="Jangdor Swiftstrider" GiverId="7854" X="-4549.432" Y="1769.335" Z="93.16886" />
+
+        <!--
+        <PickUp QuestName="Still With The Zapped Giants" QuestId="25465" GiverName="Zorbin Fandazzle" GiverId="14637" X="-4442.587" Y="2057.991" Z="46.53273" />
+-->
+        <PickUp QuestName="Even More Fuel for the Zapping" QuestId="25466" GiverName="Zorbin Fandazzle" GiverId="14637" />
+
+        <MoveTo QuestId="25466" DestName="Avoiding Feathermoon Hold" X="-4774.255" Y="1782.813" Z="41.63361" />
+        <MoveTo QuestId="25466" DestName="Avoiding Feathermoon Hold" X="-5618.036" Y="2321.29" Z="0.1283673" />
+
+        <Objective QuestName="Even More Fuel for the Zapping" QuestId="25466" Type="CollectItem" ItemId="18958" CollectCount="10" />
+
+        <!-- "Still With The Zapped Giants" 25465
+          <CustomBehavior File="CombatUseItemOnV2" QuestId="25465" ItemId="18904"
+           MobId="5359" NumOfTimesToUseItem="2" CollectionDistance="15"
+           UseItemStrategy="UseItemOncePerTarget" ItemAppliesAuraId="AssumeItemUseAlwaysSucceeds"
+           UseWhenMobHasHealthPercent="100" MaxRangeToUseItem="5" >
+            <HuntingGrounds WaypointVisitStrategy="InOrder">
+                <Hotspot X="-5618.036" Y="2321.29" Z="0.1283673" />
+                <Hotspot X="-5612.896" Y="2323.631" Z="-0.9579833" />
+                <Hotspot X="-5516.371" Y="2327.715" Z="-0.9267223" />
+                <Hotspot X="-5446.614" Y="2333.097" Z="-0.1389543" />
+                <Hotspot X="-5401.789" Y="2306.844" Z="-0.6720999" />
+                <Hotspot X="-5279.789" Y="2233.66" Z="-0.2304014" />
+                <Hotspot X="-5102.372" Y="2229.414" Z="0.8894526" />
+                <Hotspot X="-4995.395" Y="2220.504" Z="-0.3777521" />
+            </HuntingGrounds>
+        </CustomBehavior>
+
+        <Objective QuestName="Still With The Zapped Giants" QuestId="25465" Type="CollectItem" ItemId="18956" CollectCount="6" /> -->
+
+        <MoveTo QuestId="25466" DestName="Avoiding Feathermoon Hold" X="-4774.255" Y="1782.813" Z="41.63361" />
+
+        <!--
+        <TurnIn QuestName="Still With The Zapped Giants" QuestId="25465" TurnInName="Zorbin Fandazzle" TurnInId="14637" />
+        -->
+        <TurnIn QuestName="Even More Fuel for the Zapping" QuestId="25466" TurnInName="Zorbin Fandazzle" TurnInId="14637" />
+
+        <Objective QuestName="The Mark of Quality" QuestId="25452" Type="CollectItem" ItemId="8973" CollectCount="10" />
+        <TurnIn QuestName="The Mark of Quality" QuestId="25452" TurnInName="Jangdor Swiftstrider" TurnInId="7854" />
+        <PickUp QuestName="Improved Quality" QuestId="25453" GiverName="Jangdor Swiftstrider" GiverId="7854" />
+        <PickUp QuestName="Hippogryph Muisek" QuestId="25337" GiverName="Gombana" GiverId="39894" />
+
+        <PickUp QuestName="Talk to Swar'jan" QuestId="25342" GiverName="Orhan Ogreblade" GiverId="39656" />
+        <TurnIn QuestName="Talk to Swar'jan" QuestId="25342" TurnInName="Swar'jan" TurnInId="39840" />
+
+        <PickUp QuestName="Ogre Abduction" QuestId="25344" GiverName="Swar'jan" GiverId="39840" />
+        <PickUp QuestName="Rulers of Dire Maul" QuestId="25252" GiverName="Orhan Ogreblade" GiverId="39656" />
+
+        <If Condition="HasItem(8705)" >
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for looting to complete {TimeRemaining}" />
+            <PickUp QuestName="Find OOX-22/FE!" QuestId="25475" GiverName="Find OOX-22/FE!" GiverId="8705" GiverType="Item" />
+        </If>
+
+        <If Condition="HasQuest(25475)" >
+            <CustomBehavior File="Message" Text="Moving to turn in 'Find OOX-22/FE!'" LogColor="Green" />
+            <MoveTo X="-4946.963" Y="1732.738" Z="62.20434" />
+            <TurnIn QuestName="Find OOX-22/FE!" QuestId="25475" TurnInName="Homing Robot OOX-22/FE" TurnInId="7807" />
+        </If>
+
+        <Objective QuestName="Improved Quality" QuestId="25453" Type="CollectItem" ItemId="18947" CollectCount="10" />
+
+        <!-- We should already have what we need for "Perfect Yeti Hide" QuestId 25454 -->
+        <If Condition="!HasQuest(25454) &amp;&amp; !IsQuestCompleted(25454)" >
+            <SetGrindArea>
+                <GrindArea>
+                    <TargetMinLevel>33</TargetMinLevel>
+                    <TargetMaxLevel>39</TargetMaxLevel>
+                    <Factions>16</Factions>
+                    <Hotspots>
+                        <Hotspot X="-4935.266" Y="1579.438" Z="67.40195" />
+                        <Hotspot X="-5033.688" Y="1790.529" Z="71.75254" />
+                    </Hotspots>
+                </GrindArea>
+            </SetGrindArea>
+            <GrindTo Condition="HasItem(55167)" GoalText="Getting DropQuest Item - Perfect Yeti Hide" />
+            <PickUp QuestName="Perfect Yeti Hide" QuestId="25454" GiverName="Perfect Yeti Hide" GiverId="55167" GiverType="Item" />
+        </If>
+
+        <!-- "Hippogryph Muisek" 25337 -->
+        <CustomBehavior File="InteractWith" QuestId="25337" InteractByUsingItemId="9619" MobState="Dead" MobId="5300" MobId2="5304" Range="5" NumOfTimes="100" WaitTime="10000"
+            PreInteractMountStrategy="Dismount" CollectionDistance="300" >
+            <HuntingGrounds>
+                <Hotspot X="-5130.727" Y="1624.558" Z="71.90826" />
+                <Hotspot X="-5298.184" Y="1570.471" Z="54.01814" />
+                <Hotspot X="-5445.508" Y="1735.362" Z="64.82605" />
+                <Hotspot X="-5659.561" Y="1630.829" Z="79.00816" />
+                <Hotspot X="-5771.823" Y="1628.272" Z="83.02679" />
+                <Hotspot X="-5816.957" Y="1418.222" Z="60.8561" />
+            </HuntingGrounds>
+        </CustomBehavior>
+
+        <Objective QuestName="Hippogryph Muisek" QuestId="25337" Type="CollectItem" ItemId="9595" CollectCount="10" />
+        <Objective QuestName="Hippogryph Muisek" QuestId="25337" Type="CollectItem" ItemId="9619" CollectCount="1" />
+
+        <!-- "Ogre Abduction" 25344 -->
+        <CustomBehavior File="CombatUseItemOnV2" QuestId="25344" ItemId="52833" MobId="11443"
+            UseWhenMobHasHealthPercent="20" MaxRangeToUseItem="15" UseItemStrategy="UseItemContinuouslyOnTargetDontDefend" RecallPetAtMobPercentHealth="50" >
+            <HuntingGrounds WaypointVisitStrategy="Random" >
+                <Hotspot Name="Dire Maul Hallway" X="-4233.92" Y="1310.48" Z="161.2139" />
+                <Hotspot Name="Dire Maul Terrace" X="-4198.15" Y="1349.246" Z="161.2131" />
+            </HuntingGrounds>
+        </CustomBehavior>
+
+
+        <Objective QuestName="Rulers of Dire Maul" QuestId="25252" Type="KillMob" MobId="11440" KillCount="6" />
+        <Objective QuestName="Rulers of Dire Maul" QuestId="25252" Type="KillMob" MobId="11443" KillCount="6" />
+
+        <TurnIn QuestName="Hippogryph Muisek" QuestId="25337" TurnInName="Gombana" TurnInId="39894" />
+
+        <PickUp QuestName="The Flow of Muisek" QuestId="25641" GiverName="Gombana" GiverId="39894" />
+
+        <TurnIn QuestName="Ogre Abduction" QuestId="25344" TurnInName="Swar'jan" TurnInId="39840" />
+        <TurnIn QuestName="Improved Quality" QuestId="25453" TurnInName="Jangdor Swiftstrider" TurnInId="7854" />
+        <TurnIn QuestName="Perfect Yeti Hide" QuestId="25454" TurnInName="Jangdor Swiftstrider" TurnInId="7854" />
+
+        <TurnIn QuestName="Rulers of Dire Maul" QuestId="25252" TurnInName="Orhan Ogreblade" TurnInId="39656" />
+        <PickUp QuestName="Might of the Stonemaul" QuestId="25329" GiverName="Orhan Ogreblade" GiverId="39656" />
+
+        <While Condition="HasQuest(25329) &amp;&amp; !IsQuestCompleted(25329)" >
+            <MoveTo QuestId="25329" DestName="The Pit in Dire Maul" X="-3711.001" Y="1079.239" Z="131.9679" />
+            <CustomBehavior File="WaitTimer" WaitTime="120000" GoalText="Waiting for Cho'gall {TimeRemaining}" />
+            <CustomBehavior File="InteractWith" QuestId="25329"  MobId="43932" PreInteractMountStrategy="Dismount" X="-3686.354" Y="1090.208" Z="131.9692" />
+        </While>
+        <TurnIn QuestName="Might of the Stonemaul" QuestId="25329" TurnInName="Orhan Ogreblade" TurnInId="39656" />
+        <PickUp QuestName="To Camp Mojache" QuestId="25387" GiverName="Orhan Ogreblade" GiverId="39656" />
+
+        <TurnIn QuestName="To Camp Mojache" QuestId="25387" TurnInName="Chief Spirithorn" TurnInId="39847" X="-4352.147" Y="258.4774" Z="26.31754" />
+        <PickUp QuestName="Twisted Sisters" QuestId="25349" GiverName="Chief Spirithorn" GiverId="39847" />
+        <PickUp QuestName="The Hilltop Threat" QuestId="25373" GiverName="Chief Spirithorn" GiverId="39847" />
+
+        <TurnIn QuestName="The Flow of Muisek" QuestId="25641" TurnInName="Witch Doctor Uzer'i" TurnInId="8115" />
+        <PickUp QuestName="Treant Muisek" QuestId="25338" GiverName="Witch Doctor Uzer'i" GiverId="8115" />
+
+        <!-- Get flight path -->
+        <CustomBehavior File="InteractWith" QuestId="25338" MobId="39898" X="-4421.943" Y="198.1458" Z="25.06311" />
+
+        <!-- "Treant Muisek" 25338 -->
+        <CustomBehavior File="InteractWith" QuestId="25338" InteractByUsingItemId="9606" MobState="Dead" MobId="7584" Range="5" NumOfTimes="100"
+            PreInteractMountStrategy="Dismount" CollectionDistance="300" >
+            <HuntingGrounds>
+                <Hotspot X="-4516.96" Y="440.7346" Z="47.4191" />
+                <Hotspot X="-4525.137" Y="587.6958" Z="63.83595" />
+                <Hotspot X="-4276.149" Y="588.8654" Z="60.30492" />
+                <Hotspot X="-4189.223" Y="460.3644" Z="60.24191" />
+                <Hotspot X="-4140.695" Y="458.1559" Z="70.20233" />
+                <Hotspot X="-4376.467" Y="441.6515" Z="48.37871" />
+                <Hotspot X="-4436.229" Y="407.1884" Z="54.58487" />
+            </HuntingGrounds>
+        </CustomBehavior>
+
+
+        <TurnIn QuestName="Treant Muisek" QuestId="25338" TurnInName="Witch Doctor Uzer'i" TurnInId="8115" />
+        <PickUp QuestName="Faerie Dragon Muisek" QuestId="25345" GiverName="Witch Doctor Uzer'i" GiverId="8115" />
+
+        <!-- "Faerie Dragon Muisek" 25345 -->
+        <CustomBehavior File="InteractWith" QuestId="25345" InteractByUsingItemId="9620" MobState="Dead" MobId="5278" Range="5" NumOfTimes="100"
+            PreInteractMountStrategy="Dismount" CollectionDistance="350" >
+            <HuntingGrounds>
+                <Hotspot X="-4504.374" Y="438.5101" Z="47.05794" />
+                <Hotspot X="-4206.146" Y="253.1625" Z="54.42464" />
+            </HuntingGrounds>
+        </CustomBehavior>
+
+
+        <TurnIn QuestName="Faerie Dragon Muisek" QuestId="25345" TurnInName="Witch Doctor Uzer'i" TurnInId="8115" />
+        <PickUp QuestName="Mountain Giant Muisek" QuestId="25346" GiverName="Witch Doctor Uzer'i" GiverId="8115" />
+
+        <!-- "Mountain Giant Muisek" 25346 -->
+        <CustomBehavior File="InteractWith" QuestId="25346" InteractByUsingItemId="9621" MobState="Dead" MobId="40026" Range="5" NumOfTimes="100" WaitTime="10000"
+            PreInteractMountStrategy="Dismount" CollectionDistance="300" >
+            <HuntingGrounds>
+                <Hotspot X="-5081.884" Y="430.8586" Z="12.87902" />
+                <Hotspot X="-5312.974" Y="459.9293" Z="53.61739" />
+                <Hotspot X="-5159.146" Y="631.948" Z="45.60645" />
+                <Hotspot X="-5037.625" Y="598.8022" Z="34.72403" />
+            </HuntingGrounds>
+        </CustomBehavior>
+
+        <Objective QuestName="Mountain Giant Muisek" QuestId="25346" Type="CollectItem" ItemId="9597" CollectCount="7" />
+        <Objective QuestName="Mountain Giant Muisek" QuestId="25346" Type="CollectItem" ItemId="9621" CollectCount="1" />
+
+        <TurnIn QuestName="Mountain Giant Muisek" QuestId="25346" TurnInName="Witch Doctor Uzer'i" TurnInId="8115" />
+        <PickUp QuestName="Weapons of Spirit" QuestId="25391" GiverName="Witch Doctor Uzer'i" GiverId="8115" />
+
+        <!-- "Weapons of Spirit" -->
+        <If Condition="HasQuest(25391) &amp;&amp; !IsQuestCompleted(25391)" >
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for my Blue weapon!! {TimeRemaining}" />
+        </If>
+
+        <TurnIn QuestName="Weapons of Spirit" QuestId="25391" TurnInName="Witch Doctor Uzer'i" TurnInId="8115" />
+
+        <!-- "The Darkmist Ruins" -->
+        <PickUp QuestName="The Darkmist Ruins" QuestId="25643" GiverName="Sage Palerunner" GiverId="5390" X="-4345.628" Y="223.0985" Z="25.41348" />
+        <MoveTo  QuestId="25643" X="-4359.624" Y="225.9043" Z="25.41344" />
+        <TurnIn QuestName="The Darkmist Ruins" QuestId="25643" TurnInType="Object" TurnInName="Empty Pedestal" TurnInId="203134" X="-5278.636" Y="861.8414" Z="159.3787" />
+
+        <PickUp QuestName="The Darkmist Legacy" QuestId="25422" GiverName="Sensiria" GiverId="40131" X="-5278.078" Y="858.6614" Z="159.3792" />
+        <PickUp QuestName="Ancient Suffering" QuestId="25423" GiverName="Sensiria" GiverId="40131" />
+
+        <Objective QuestName="The Darkmist Legacy" QuestId="25422" Type="CollectItem" ItemId="53135" CollectCount="6" />
+        <Objective QuestName="Ancient Suffering" QuestId="25423" Type="CollectItem" ItemId="53136" CollectCount="6" />
+
+        <TurnIn QuestName="The Darkmist Legacy" QuestId="25422" TurnInName="Sensiria" TurnInId="40131" />
+        <TurnIn QuestName="Ancient Suffering" QuestId="25423" TurnInName="Sensiria" TurnInId="40131" />
+
+        <PickUp QuestName="Verinias the Twisted" QuestId="25368" GiverName="Sensiria" GiverId="40131" />
+
+        <!-- "Verinias the Twisted" 25368 -->
+        <While Condition="!IsQuestCompleted(25368)">
+            <UseItem ItemId="54456" QuestName="Verinias the Twisted" QuestId="25368" X="-4950.672" Y="965.2324" Z="156.0731" />
+            <Objective QuestName="Verinias the Twisted" QuestId="25368" Type="KillMob" MobId="40136" KillCount="1" />
+            <CustomBehavior File="WaitTimer" WaitTime="45000" GoalText="Waiting for Sensiria to comfort Verinias {TimeRemaining}" />
+        </While>
+
+        <TurnIn QuestName="Verinias the Twisted" QuestId="25368" TurnInName="Sensiria" TurnInId="40131" />
+
+        <PickUp QuestName="Return to Sage Palerunner" QuestId="25645" GiverType="Object" GiverName="Empty Pedestal" GiverId="203134" X="-5278.909" Y="862.0946" Z="159.3785" />
+        <If Condition="HasQuest(25645)" >
+            <CustomBehavior File="InteractWith" MobId="39898" X="-4421.943" Y="198.1458" Z="25.06311" />
+        </If>
+        <TurnIn QuestName="Return to Sage Palerunner" QuestId="25645" TurnInName="Sage Palerunner" TurnInId="5390" />
+
+        <Objective QuestName="Twisted Sisters" QuestId="25349" Type="KillMob" MobId="40168" KillCount="7" />
+        <Objective QuestName="The Hilltop Threat" QuestId="25373" Type="KillMob" MobId="39952" KillCount="5" />
+
+        <TurnIn QuestName="Twisted Sisters" QuestId="25349" TurnInName="Chief Spirithorn" TurnInId="39847" />
+        <TurnIn QuestName="The Hilltop Threat" QuestId="25373" TurnInName="Chief Spirithorn" TurnInId="39847" />
+
+        <PickUp QuestName="Sasquatch Sighting" QuestId="25374" GiverName="Chief Spirithorn" GiverId="39847" />
+        <PickUp QuestName="Taming The Tamers" QuestId="25375" GiverName="Chief Spirithorn" GiverId="39847" />
+
+        <Objective QuestName="Taming The Tamers" QuestId="25375" Type="KillMob" MobId="39957" KillCount="6" />
+        <Objective QuestName="Sasquatch Sighting" QuestId="25374" Type="KillMob" MobId="39958" KillCount="1" />
+
+        <TurnIn QuestName="Taming The Tamers" QuestId="25375" TurnInName="Chief Spirithorn" TurnInId="39847" />
+        <TurnIn QuestName="Sasquatch Sighting" QuestId="25374" TurnInName="Chief Spirithorn" TurnInId="39847" />
+
+        <PickUp QuestName="A New Cloak's Sheen" QuestId="25361" GiverName="Krueg Skullsplitter" GiverId="4544" />
+        <Objective QuestName="A New Cloak's Sheen" QuestId="25361" Type="CollectItem" ItemId="9369" CollectCount="10" />
+        <TurnIn QuestName="A New Cloak's Sheen" QuestId="25361" TurnInName="Krueg Skullsplitter" TurnInId="4544" />
+
+        <PickUp QuestName="A Grim Discovery" QuestId="25362" GiverName="Krueg Skullsplitter" GiverId="4544" />
+        <Objective QuestName="A Grim Discovery" QuestId="25362" Type="CollectItem" ItemId="9460" CollectCount="20" />
+        <TurnIn QuestName="A Grim Discovery" QuestId="25362" TurnInName="Krueg Skullsplitter" TurnInId="4544" />
+
+        <PickUp QuestName="War on the Woodpaw" QuestId="25363" GiverName="Hadoken Swiftstrider" GiverId="7875" />
+        <Objective QuestName="War on the Woodpaw" QuestId="25363" Type="CollectItem" ItemId="9237" CollectCount="10" />
+        <TurnIn QuestName="War on the Woodpaw" QuestId="25363" TurnInName="Hadoken Swiftstrider" TurnInId="7875" />
+
+        <PickUp QuestName="Alpha Strike" QuestId="25364" GiverName="Hadoken Swiftstrider" GiverId="7875" />
+        <PickUp QuestName="Woodpaw Investigation" QuestId="25365" GiverName="Hadoken Swiftstrider" GiverId="7875" />
+
+        <Objective QuestName="Alpha Strike" QuestId="25364" Type="KillMob" MobId="5258" KillCount="5" />
+        <TurnIn QuestName="Woodpaw Investigation" QuestId="25365" TurnInType="Object" TurnInName="Woodpaw Battle Map" TurnInId="142195" X="-4959.845" Y="461.5055" Z="17.7805" />
+        <PickUp QuestName="The Battle Plans" QuestId="25366" GiverType="Object" GiverId="142195" X="-4959.845" Y="461.5055" Z="17.7805" />
+
+        <TurnIn QuestName="The Battle Plans" QuestId="25366" TurnInName="Hadoken Swiftstrider" TurnInId="7875" />
+        <TurnIn QuestName="Alpha Strike" QuestId="25364" TurnInName="Hadoken Swiftstrider" TurnInId="7875" />
+
+        <PickUp QuestName="Stinglasher" QuestId="25369" GiverName="Hadoken Swiftstrider" GiverId="7875" />
+        <PickUp QuestName="Zukk'ash Infestation" QuestId="25367" GiverName="Hadoken Swiftstrider" GiverId="7875" />
+
+        <Objective QuestName="Zukk'ash Infestation" QuestId="25367" Type="CollectItem" ItemId="18961" CollectCount="20" />
+        <Objective QuestName="Stinglasher" QuestId="25369" Type="CollectItem" ItemId="18962" CollectCount="1" />
+
+        <TurnIn QuestName="Stinglasher" QuestId="25369" TurnInName="Hadoken Swiftstrider" TurnInId="7875" />
+        <TurnIn QuestName="Zukk'ash Infestation" QuestId="25367" TurnInName="Hadoken Swiftstrider" TurnInId="7875" />
+
+        <PickUp QuestName="Ysondre's Call" QuestId="25378" GiverName="Chief Spirithorn" GiverId="39847" />
+        <TurnIn QuestName="Ysondre's Call" QuestId="25378" TurnInName="Ysondre" TurnInId="39407" X="-4334.737" Y="-220.2993" Z="125.1731" />
+
+
+        <PickUp QuestName="Taerar's Fall" QuestId="25379" GiverName="Ysondre" GiverId="39407" />
+
+        <While Condition="HasQuest(25379) &amp;&amp; !IsQuestCompleted(25379)" >
+            <MoveTo QuestId="25379" DestName="Taerar" X="-4337.523" Y="-211.8387" Z="125.1737" />
+            <CustomBehavior File="WaitTimer" WaitTime="30000" GoalText="Waiting for Taerar {TimeRemaining}" />
+        </While>
+
+        <TurnIn QuestName="Taerar's Fall" QuestId="25379" TurnInName="Ysondre" TurnInId="39407" />
+
+        <PickUp QuestName="Ysondre's Farewell" QuestId="25383" GiverName="Ysondre" GiverId="39407" />
+        <TurnIn QuestName="Ysondre's Farewell" QuestId="25383" TurnInName="Chief Spirithorn" TurnInId="39847" />
+
+        <!-- Don't waste time on Pozzik quests if we are not already in Feralas -->
+        <If Condition="Me.ZoneId == 357" >
+            <PickUp QuestName="To the Summit" QuestId="25356" GiverName="Jawn Highmesa" GiverId="39893" />
+            <CustomBehavior File="InteractWith" QuestId="25356" MobId="39898" InteractByGossipOptions="2" Range="5" WaitTime="10000" X="-4421.943" Y="198.1458" Z="25.06311" />
+            <Objective QuestName="To the Summit" QuestId="25356" Type="KillMob" MobId="39897" KillCount="1" />
+            <TurnIn QuestName="To the Summit" QuestId="25356" TurnInName="Kanati Greycloud" TurnInId="39895" />
+
+            <PickUp QuestName="The Grimtotem are Coming" QuestId="25487" GiverName="Kanati Greycloud" GiverId="39895" />
+            <MoveTo QuestId="25487"  DestName="Motega Firemane" X="-4210.971" Y="-902.6898" Z="0.8510388" />
+            <Objective QuestName="The Grimtotem are Coming" QuestId="25487" Type="KillMob" MobId="39947" KillCount="7" />
+            <TurnIn QuestName="The Grimtotem are Coming" QuestId="25487" TurnInName="Motega Firemane" TurnInId="39963" />
+
+            <PickUp QuestName="Two If By Boat" QuestId="25489" GiverName="Motega Firemane" GiverId="39963" />
+            <If Condition="HasQuest(25489)" >
+                <CustomBehavior File="WaitTimer" WaitTime="130000" GoalText="Waiting for boat trip to end: {TimeRemaining}" />
+                <CustomBehavior File="MyCTM" X="-6193.828" Y="-3903.306" Z="4.235507" />
+            </If>
+
+            <TurnIn QuestName="Two If By Boat" QuestId="25489" TurnInName="Pozzik" TurnInId="40028" X="-6157.863" Y="-3774.054" Z="33.50721" />
+
+            <PickUp QuestName="Do Me a Favor?" QuestId="25505" GiverName="Pozzik" GiverId="40028" />
+
+            <If Condition="HasQuest(25505)">
+                <CustomBehavior File="Message" Text="Talk to flightmaster Zazzix Boomride." LogColor="White" />
+                <CustomBehavior File="InteractWith" MobId="40769" X="-6075.514" Y="-3917.755" Z="21.54579" />
+            </If>
+
+            <TurnIn QuestName="Do Me a Favor?" QuestId="25505" TurnInName="Razzeric" TurnInId="40487" X="-6151.872" Y="-3829.818" Z="26.17779" />
+
+            <If Condition="!IsQuestCompleted(24906)" >
+                <PickUp QuestName="Tanaris is Calling" QuestId="27447" GiverName="Pozzik" GiverId="40028" />
+            </If>
+
+        </If>
+
+        <If Condition="!IsQuestCompleted(24906)" >
+            <CustomBehavior File="Message" Text="Moving to Tanaris - its a long swim." LogColor="Yellow" />
+        </If>
+
+        <If Condition="HasQuest(27447)">
+            <TurnIn QuestName="Tanaris is Calling" QuestId="27447" TurnInName="Megs Dreadshredder" TurnInId="38534" X="-7211.632" Y="-3757.743" Z="9.190064" />
+        </If>
+
+        <PickUp QuestName="Seaside Salvage" QuestId="24906" GiverName="Megs Dreadshredder" GiverId="38534" X="-7211.632" Y="-3757.743" Z="9.190064" />
+        <CustomBehavior File="Message" Text="Compiling Gadgetzan Quests" LogColor="Green" />
+        <PickUp QuestName="Puddle Stomping" QuestId="24907" GiverName="Megs Dreadshredder" GiverId="38534" />
+        <PickUp QuestName="Butcherbot" QuestId="25112" GiverName="Driz Plunkbow" GiverId="39178" />
+
+        <!-- Get flight path from Bulkrek Ragefist -->
+        <CustomBehavior File="InteractWith" QuestId="25112" Range="5" MobId="7824" X="-7098.417" Y="-3816.016" Z="9.489635" />
+
+        <Objective QuestName="Puddle Stomping" QuestId="24907" Type="KillMob" MobId="39022" KillCount="8" />
+        <Objective QuestName="Seaside Salvage" QuestId="24906" Type="CollectItem" ItemId="50829" CollectCount="7" />
+
+        <MoveTo QuestId="25112" X="-7922.329" Y="-3748.97" Z="50.77891" />
+
+        <!-- "Butcherbot" 25112 -->
+        <CustomBehavior File="InteractWith" QuestId="25112" InteractByUsingItemId="52715" MobState="Dead" MobId="5419" Range="5" WaitTime="15000" NumOfTimes="150"
+            PreInteractMountStrategy="Dismount" CollectionDistance="300" >
+            <HuntingGrounds>
+                <Hotspot X="-7415.372" Y="-3751.087" Z="11.19266" />
+                <Hotspot X="-7763.371" Y="-3802.709" Z="29.44543" />
+                <Hotspot X="-7859.293" Y="-3681.476" Z="44.93718" />
+                <Hotspot X="-7922.329" Y="-3748.97" Z="50.77891" />
+            </HuntingGrounds>
+        </CustomBehavior>
+
+        <Objective QuestName="Butcherbot" QuestId="25112" Type="KillMob" MobId="39702" KillCount="10" />
+        <TurnIn QuestName="Butcherbot" QuestId="25112" TurnInName="Driz Plunkbow" TurnInId="39178" />
+        <PickUp QuestName="Scavengers Scavenged" QuestId="25111" GiverName="Driz Plunkbow" GiverId="39178" />
+
+        <TurnIn QuestName="Seaside Salvage" QuestId="24906" TurnInName="Megs Dreadshredder" TurnInId="38534" />
+        <TurnIn QuestName="Puddle Stomping" QuestId="24907" TurnInName="Megs Dreadshredder" TurnInId="38534" />
+        <PickUp QuestName="Rocket Rescue" QuestId="24910" GiverName="Megs Dreadshredder" GiverId="38534" />
+
+        <CustomBehavior File="SpecificQuests\24910-Tanaris-RocketRescue" />
+
+        <Objective QuestName="Rocket Rescue" QuestId="24910" Type="KillMob" MobId="38576" KillCount="5" />
+        <Objective QuestName="Rocket Rescue" QuestId="24910" Type="KillMob" MobId="40583" KillCount="40" />
+        <TurnIn QuestName="Rocket Rescue" QuestId="24910" TurnInName="Megs Dreadshredder" TurnInId="38534" />
+
+        <PickUp QuestName="Momentum" QuestId="24947" GiverName="Megs Dreadshredder" GiverId="38534" />
+
+        <!-- "Scavengers Scavenged" 25111 -->
+        <CustomBehavior File="InteractWith" QuestId="25111" InteractByUsingItemId="52715" MobState="Dead" MobId="5429" Range="5" WaitTime="15000" NumOfTimes="150"
+            PreInteractMountStrategy="Dismount" CollectionDistance="300" >
+            <HuntingGrounds>
+                <Hotspot X="-7289.964" Y="-3656.083" Z="14.47101" />
+                <Hotspot X="-7553.738" Y="-3653.947" Z="12.39687" />
+                <Hotspot X="-7834.597" Y="-3641.934" Z="50.70862" />
+                <Hotspot X="-7982.926" Y="-3602.514" Z="54.74311" />
+                <Hotspot X="-8096.233" Y="-3495.708" Z="45.86305" />
+                <Hotspot X="-7996.867" Y="-3468.532" Z="53.91822" />
+                <Hotspot X="-7784.004" Y="-3217.757" Z="71.61382" />
+                <Hotspot X="-7644.676" Y="-3306.867" Z="62.64015" />
+            </HuntingGrounds>
+        </CustomBehavior>
+
+        <TurnIn QuestName="Scavengers Scavenged" QuestId="25111" TurnInName="Driz Plunkbow" TurnInId="39178" />
+
+        <PickUp QuestName="Blisterpaw Butchery" QuestId="25115" GiverName="Driz Plunkbow" GiverId="39178" />
+
+        <!-- "Blisterpaw Butchery" 25115 -->
+        <CustomBehavior File="InteractWith" QuestId="25115" InteractByUsingItemId="52715" MobState="Dead" MobId="5426" Range="5" NumOfTimes="150"
+            PreInteractMountStrategy="Dismount" CollectionDistance="300" >
+            <HuntingGrounds>
+                <Hotspot X="-7098.866" Y="-3677.45" Z="10.83027" />
+                <Hotspot X="-6993.541" Y="-3391.235" Z="9.642881" />
+                <Hotspot X="-7100.68" Y="-3187.205" Z="8.879009" />
+                <Hotspot X="-7174.427" Y="-3330.734" Z="13.65397" />
+                <Hotspot X="-7208.878" Y="-3534.263" Z="10.59076" />
+                <Hotspot X="-7236.906" Y="-3615.529" Z="11.03862" />
+            </HuntingGrounds>
+        </CustomBehavior>
+        <Objective QuestName="Blisterpaw Butchery" QuestId="25115" Type="KillMob" MobId="40509" KillCount="10" />
+
+        <TurnIn QuestName="Blisterpaw Butchery" QuestId="25115" TurnInName="Driz Plunkbow" TurnInId="39178" />
+        <PickUp QuestName="Sandsorrow Watch" QuestId="25091" GiverName="Driz Plunkbow" GiverId="39178" />
+        <TurnIn QuestName="Sandsorrow Watch" QuestId="25091" TurnInName="Trenton Lighthammer" TurnInId="7804" X="-6926.155" Y="-3124.703" Z="8.835109" />
+
+        <PickUp QuestName="I'm With Scorpid" QuestId="25521" GiverName="Gus Rustflutter" GiverId="40580" />
+        <PickUp QuestName="Blood to Thrive" QuestId="25021" GiverName="Mazoga" GiverId="38927" />
+        <MoveTo QuestId="25021" X="-7263.331" Y="-2906.432" Z="9.663424" />
+        <Objective QuestName="Blood to Thrive" QuestId="25021" Type="CollectItem" ItemId="52064" CollectCount="6" />
+        <Objective QuestName="I'm With Scorpid" QuestId="25521" Type="CollectItem" ItemId="54856" CollectCount="6" />
+        <TurnIn QuestName="I'm With Scorpid" QuestId="25521" TurnInName="Gus Rustflutter" TurnInId="40580" />
+        <PickUp QuestName="Gargantapid" QuestId="25522" GiverName="Gus Rustflutter" GiverId="40580" />
+
+        <TurnIn QuestName="Blood to Thrive" QuestId="25021" TurnInName="Mazoga" TurnInId="38927" />
+        <PickUp QuestName="Sang'thraze the Deflector" QuestId="25025" GiverName="Mazoga" GiverId="38927" />
+
+        <Objective QuestName="Gargantapid" QuestId="25522" Type="CollectItem" ItemId="54855" CollectCount="1" />
+        <Objective QuestName="Sang'thraze the Deflector" QuestId="25025" Type="CollectItem" ItemId="52069" CollectCount="1" />
+
+        <TurnIn QuestName="Gargantapid" QuestId="25522" TurnInName="Gus Rustflutter" TurnInId="40580" />
+        <TurnIn QuestName="Sang'thraze the Deflector" QuestId="25025" TurnInName="Mazoga" TurnInId="38927" />
+
+        <PickUp QuestName="Darkest Mojo" QuestId="25026" GiverName="Mazoga" GiverId="38927" />
+        <Objective QuestName="Darkest Mojo" QuestId="25026" Type="CollectItem" ItemId="52072" CollectCount="6" />
+        <TurnIn QuestName="Darkest Mojo" QuestId="25026" TurnInName="Mazoga" TurnInId="38927" />
+
+        <PickUp QuestName="Secrets in the Oasis" QuestId="25032" GiverName="Mazoga" GiverId="38927" />
+        <MoveTo QuestId="25032" DestName="A Puddle in the Desert" X="-7450.754" Y="-2881.353" Z="6.68323" />
+        <CustomBehavior File="InteractWith" QuestId="25032" MobId="202441" InteractByGossipOptions="1" WaitTime="10000" NumOfTimes="1"
+            PreInteractMountStrategy="Dismount" X="-7450.754" Y="-2881.353" Z="6.68323" />
+        <Objective QuestName="Secrets in the Oasis" QuestId="25032" Type="KillMob" MobId="39159" KillCount="1" />
+        <TurnIn QuestName="Secrets in the Oasis" QuestId="25032" TurnInName="Trenton Lighthammer" TurnInId="7804" />
+
+        <!-- Delete the Wet Sand -->
+        <If Condition="HasItem(52074)" >
+            <CustomBehavior File="DeleteItems" Ids="52074" />
+        </If>
+
+
+        <TurnIn QuestName="Momentum" QuestId="24947" TurnInName="Megs Dreadshredder" TurnInId="38703"  X="-7954.868" Y="-5245.221" Z="1.250963" />
+
+        <PickUp QuestName="Dead Man's Chest" QuestId="24927" GiverName="Megs Dreadshredder" GiverId="38703" />
+        <Objective QuestName="Dead Man's Chest" QuestId="24927" Type="KillMob" MobId="39026" KillCount="15" />
+        <TurnIn QuestName="Dead Man's Chest" QuestId="24927" TurnInName="Megs Dreadshredder" TurnInId="38703" />
+
+        <PickUp QuestName="Going Off-Task" QuestId="25534" GiverName="Megs Dreadshredder" GiverId="38703" />
+        <MoveTo QuestId="25534" DestName="Taskmaster Location" X="-7947.021" Y="-5443.248" Z="7.518826" />
+        <Objective QuestName="Going Off-Task" QuestId="25534" Type="KillMob" MobId="40593" KillCount="1" />
+        <TurnIn QuestName="Going Off-Task" QuestId="25534" TurnInName="Megs Dreadshredder" TurnInId="38703" />
+
+
+        <PickUp QuestName="To The Ground!" QuestId="24928" GiverName="Megs Dreadshredder" GiverId="38703" />
+        <!-- "To The Ground!" 25340 -->
+        <While Condition="!IsQuestCompleted(24928)">
+            <UseItem ItemId="51547" QuestName="To The Ground!" QuestId="24928" X="-7972.76" Y="-5300.205" Z="0.7699301" />
+            <CustomBehavior File="WaitTimer" WaitTime="6000" GoalText="Waiting for item cd {TimeRemaining}" />
+            <UseItem ItemId="51547" QuestName="To The Ground!" QuestId="24928" X="-8021.726" Y="-5228.56" Z="0.6367788" />
+            <CustomBehavior File="WaitTimer" WaitTime="6000" GoalText="Waiting for item cd {TimeRemaining}" />
+            <UseItem ItemId="51547" QuestName="To The Ground!" QuestId="24928" X="-8058.151" Y="-5234.8" Z="1.080389" />
+            <CustomBehavior File="WaitTimer" WaitTime="6000" GoalText="Waiting for item cd {TimeRemaining}" />
+        </While>
+
+        <TurnIn QuestName="To The Ground!" QuestId="24928" TurnInName="Megs Dreadshredder" TurnInId="38703" />
+
+        <PickUp QuestName="Booty Duty" QuestId="24949" GiverName="Megs Dreadshredder" GiverId="38703" />
+
+        <CustomBehavior File="InteractWith" QuestId="24949" MobId="202263"  MobId2="203019" MobId3="203022" Range="5" CollectionDistance="10" WaitTime="2000" WaitForNpcs="false" NumOfTimes="150">
+            <HuntingGrounds WaypointVisitStrategy="InOrder">
+            <Hotspot X="-8000.11" Y="-5207.908" Z="1.20099" />
+            <Hotspot X="-8011.953" Y="-5194.469" Z="0.6287619" />
+            <Hotspot X="-8036.465" Y="-5213.796" Z="2.338718" />
+            <Hotspot X="-8017.66" Y="-5221.157" Z="2.331754" />
+            <Hotspot X="-8066.018" Y="-5223.405" Z="0.8495138" />
+            <Hotspot X="-8063.953" Y="-5240.881" Z="2.807439" />
+            <Hotspot X="-8095.967" Y="-5236.385" Z="3.35729" />
+            <Hotspot X="-8102.61" Y="-5262.077" Z="0.8081728" />
+            <Hotspot X="-8111.987" Y="-5276.466" Z="1.332211" />
+            <Hotspot X="-8076.375" Y="-5334.095" Z="0.5788055" />
+            <Hotspot X="-8060.881" Y="-5339.149" Z="0.6324225" />
+            <Hotspot X="-8042.168" Y="-5307.029" Z="0.5760171" />
+            <Hotspot X="-8030.376" Y="-5332.588" Z="0.8149163" />
+            <Hotspot X="-8039.22" Y="-5375.08" Z="0.5690851" />
+            <Hotspot X="-8020.749" Y="-5389.434" Z="0.5683815" />
+            <Hotspot X="-7994.734" Y="-5313.656" Z="0.5789288" />
+            <Hotspot X="-7987.903" Y="-5301.903" Z="0.5807994" />
+            <Hotspot X="-7976.67" Y="-5329.124" Z="1.585293" />
+            <Hotspot X="-7975.163" Y="-5340.362" Z="1.711159" />
+            <Hotspot X="-7969.358" Y="-5317.792" Z="2.069507" />
+        </HuntingGrounds>
+    </CustomBehavior>
+
+
+
+    <TurnIn QuestName="Booty Duty" QuestId="24949" TurnInName="Megs Dreadshredder" TurnInId="38703" />
+
+    <PickUp QuestName="Filling Our Pockets" QuestId="25541" GiverName="Megs Dreadshredder" GiverId="38703" />
+    <Objective QuestName="Filling Our Pockets" QuestId="25541" Type="CollectItem" ItemId="51549" CollectCount="10" />
+    <TurnIn QuestName="Filling Our Pockets" QuestId="25541" TurnInName="Megs Dreadshredder" TurnInId="38703" />
+
+    <PickUp QuestName="Captain Dreadbeard" QuestId="24950" GiverName="Megs Dreadshredder" GiverId="38703" />
+    <Objective QuestName="Captain Dreadbeard" QuestId="24950" Type="KillMob" MobId="38749" KillCount="1" />
+    <TurnIn QuestName="Captain Dreadbeard" QuestId="24950" TurnInName="Megs Dreadshredder" TurnInId="38703" />
+
+    <PickUp QuestName="Bootlegger Outpost" QuestId="25103" GiverName="Megs Dreadshredder" GiverId="38703" />
+    <!-- Make sure to get Flight paths off Slick Dropdip -->
+    <CustomBehavior File="InteractWith" QuestId="25103" MobId="41214" Range="5" X="-8684.64" Y="-4093.03" Z="40.45159" />
+    <TurnIn QuestName="Bootlegger Outpost" QuestId="25103" TurnInName="Zeke Bootscuff" TurnInId="38706" X="-8696.94" Y="-4076.49" Z="40.41457" />
+
+    <PickUp QuestName="Cutting Losses" QuestId="24932" GiverName="Zeke Bootscuff" GiverId="38706" />
+    <Objective QuestName="Cutting Losses" QuestId="24932" Type="KillMob" MobId="39170" KillCount="15" />
+    <TurnIn QuestName="Cutting Losses" QuestId="24932" TurnInName="Zeke Bootscuff" TurnInId="38706" />
+
+    <PickUp QuestName="A Few Good Goblins" QuestId="25072" GiverName="Zeke Bootscuff" GiverId="38706" />
+    <Objective QuestName="A Few Good Goblins" QuestId="25072" Type="KillMob" MobId="39081" KillCount="8" />
+    <TurnIn QuestName="A Few Good Goblins" QuestId="25072" TurnInName="Zeke Bootscuff" TurnInId="38706" />
+
+    <PickUp QuestName="Chicken of the Desert" QuestId="24933" GiverName="Zeke Bootscuff" GiverId="38706" />
+    <PickUp QuestName="Gazer Tag" QuestId="24931" GiverName="Narain Soothfancy" GiverId="11811" />
+
+    <Objective QuestName="Chicken of the Desert" QuestId="24933" Type="CollectItem" ItemId="51778" CollectCount="6" />
+    <Objective QuestName="Gazer Tag" QuestId="24931" Type="CollectItem" ItemId="51793" CollectCount="5" />
+
+    <TurnIn QuestName="Gazer Tag" QuestId="24931" TurnInName="Narain Soothfancy" TurnInId="11811" />
+    <TurnIn QuestName="Chicken of the Desert" QuestId="24933" TurnInName="Zeke Bootscuff" TurnInId="38706" />
+
+    <PickUp QuestName="A Great Idea" QuestId="24951" GiverName="Zeke Bootscuff" GiverId="38706" />
+    <While Condition="HasQuest(24951) &amp;&amp; !IsQuestCompleted(24951)" >
+        <CustomBehavior File="InteractWith" QuestId="24951" InteractByUsingItemId="52031"  MobId="5451" MobState="Alive" Range="10" NumOfTimes="1"
+                PreInteractMountStrategy="Dismount" CollectionDistance="300" >
+            <HuntingGrounds>
+                <Hotspot X="-8763.223" Y="-4093.716" Z="11.04831" />
+                <Hotspot X="-8682.43" Y="-4144.269" Z="14.04611" />
+                <Hotspot X="-9015.419" Y="-4112.988" Z="15.81975" />
+                <Hotspot X="-9096.504" Y="-4162.766" Z="9.944347" />
+            </HuntingGrounds>
+        </CustomBehavior>
+        <CustomBehavior File="UserSettings" UseMount="false" />
+        <MoveTo QuestId="24951" X="-8682.899" Y="-4069.877" Z="40.59719" />
+        <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for teleport: {TimeRemaining}" />
+        <CustomBehavior File="UserSettings" UseMount="true" />
+    </While>
+
+    <TurnIn QuestName="A Great Idea" QuestId="24951" TurnInName="Zeke Bootscuff" TurnInId="38706" />
+    <CustomBehavior File="UserSettings" UseMount="true" />
+
+    <PickUp QuestName="Just Trying to Kill Some Bugs" QuestId="24953" GiverName="Zeke Bootscuff" GiverId="38706" />
+    <If Condition="HasQuest(24953)" >
+        <CustomBehavior File="InteractWith" MobId="11811" InteractByGossipOptions="1" PreInteractMountStrategy="Dismount" />
+        <MoveTo QuestId="24953" X="-9238.044" Y="-4005.315" Z="-34.10043" />
+        <CustomBehavior File="UsePetAbility" AttackButton="2" />
+    </If>
+    <TurnIn QuestName="Just Trying to Kill Some Bugs" QuestId="24953" TurnInName="Zeke Bootscuff" TurnInId="38706" />
+
+
+    <!-- We should already have OOX-17/TN Distress Beacon -->
+    <If Condition="HasItem(8623)" >
+        <PickUp QuestName="Find OOX-17/TN!" QuestId="351" GiverName="Find OOX-17/TN!" GiverId="8623" GiverType="Item" />
+    </If>
+    <If Condition="HasQuest(351)" >
+        <CustomBehavior File="Message" Text="Moving to turn in 'Find OOX-22/FE!'" LogColor="Green" />
+        <MoveTo X="-8851.954" Y="-4374.998" Z="44.57589" />
+        <TurnIn QuestName="Find OOX-17/TN!" QuestId="351" TurnInName="Homing Robot OOX-17/TN" TurnInId="7784" X="-8851.954" Y="-4374.998" Z="44.57589" />
+    </If>
+
+    <SetGrindArea>
+        <GrindArea>
+            <Name>Grind to Level 45</Name>
+            <Factions>14 38 49 91 73 413</Factions>
+            <TargetMinLevel>41</TargetMinLevel>
+            <TargetMaxLevel>48</TargetMaxLevel>
+            <Hotspots>
+                <Hotspot X="-7933.904" Y="-3656.729" Z="56.17112" />
+                <Hotspot X="-8531.657" Y="-3553.157" Z="12.2462" />
+                <Hotspot X="-8710.613" Y="-3557.37" Z="9.518643" />
+                <Hotspot X="-8696.863" Y="-3852.63" Z="40.88835" />
+            </Hotspots>
+        </GrindArea>
+    </SetGrindArea>
+
+    <GrindTo Level="45"/>
+
+    <PickUp QuestName="Returning a Favor" QuestId="24905" GiverName="Zeke Bootscuff" GiverId="38706" />
+    <TurnIn QuestName="Returning a Favor" QuestId="24905" TurnInName="Megs Dreadshredder" TurnInId="38849" />
+
+
+    <CustomBehavior File="Halt" />
+    <CustomBehavior File="Message" Text="All done in Tanaris...return to Kickass's 12-58 Profile" LogColor="Red" />
+
+    <CustomBehavior File="LoadProfile" ProfileName="[H - Quest] 12-58 K-EK [Kick]" RememberProfile="true" />
+</QuestOrder>
+
+
+<!-- Quest Overrides -->
+<Quest Name="Gazer Tag" Id="24931" >
+    <Objective Type="CollectItem" ItemId="51793" ItemName="Gazer Tag" CollectCount="6">
+        <CollectFrom>
+            <Mob Name="Glasshide Gazer"  Id="5420" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-7933.904" Y="-3656.729" Z="56.17112" />
+            <Hotspot X="-8531.657" Y="-3553.157" Z="12.2462" />
+            <Hotspot X="-8710.613" Y="-3557.37" Z="9.518643" />
+            <Hotspot X="-8696.863" Y="-3852.63" Z="40.88835" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Chicken of the Desert" Id="24933" >
+    <Objective Type="CollectItem" ItemId="51778" ItemName="Hyena Chunk" CollectCount="6">
+        <CollectFrom>
+            <Mob Name="Hyena"  Id="5427" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-7933.904" Y="-3656.729" Z="56.17112" />
+            <Hotspot X="-8531.657" Y="-3553.157" Z="12.2462" />
+            <Hotspot X="-8710.613" Y="-3557.37" Z="9.518643" />
+            <Hotspot X="-8696.863" Y="-3852.63" Z="40.88835" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="A Few Good Goblins" Id="25072"  >
+    <Objective Type="KillMob" MobId="39081" MobName="Hazzali Cocoon" KillCount="8">
+        <Hotspots>
+            <Hotspot X="-8682.43" Y="-4144.269" Z="14.04611" />
+            <Hotspot X="-9015.419" Y="-4112.988" Z="15.81975" />
+            <Hotspot X="-9096.504" Y="-4162.766" Z="9.944347" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Cutting Losses" Id="24932"  >
+    <Objective Type="KillMob" MobId="5454" MobName="Hazzali Sandreaver" KillCount="15">
+        <Hotspots>
+            <Hotspot X="-8682.43" Y="-4144.269" Z="14.04611" />
+            <Hotspot X="-9015.419" Y="-4112.988" Z="15.81975" />
+            <Hotspot X="-9096.504" Y="-4162.766" Z="9.944347" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Captain Dreadbeard" Id="24950" >
+    <Objective Type="KillMob" MobId="38749" MobName="Captain Dreadbeard" KillCount="1">
+        <Hotspots>
+            <Hotspot X="-8448.759" Y="-5182.769" Z="13.86177" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Filling Our Pockets" Id="25541" >
+    <Objective Type="CollectItem" ItemId="54829" ItemName="Gold Fillings" CollectCount="20">
+        <CollectFrom>
+            <Mob Name="Southsea Musketeer"  Id="40632" />
+            <Mob Name="Southsea Strongarm"  Id="40635" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-8199.118" Y="-5228.739" Z="1.234796" />
+            <Hotspot X="-8466.361" Y="-4901.908" Z="2.073828" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Booty Duty" Id="24949" >
+    <Objective Type="CollectItem" ItemId="51549" ItemName="Pirate Booty" CollectCount="1">
+        <CollectFrom>
+            <Object Name="Pirate Booty" Id="202263"/>
+            <Object Name="Pirate Booty" Id="203019"/>
+            <Object Name="Pirate Booty" Id="203021"/>
+            <Object Name="Pirate Booty" Id="203022"/>
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-7979.994" Y="-5424.666" Z="0.700167" />
+            <Hotspot X="-8073.93" Y="-5237.471" Z="2.846117" />
+            <Hotspot X="-8125.215" Y="-5307.566" Z="0.5548015" />
+            <Hotspot X="-7978.223" Y="-5318.413" Z="1.996391" />
+            <Hotspot X="-7959.01" Y="-5446.08" Z="7.519124" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Going Off-Task" Id="25534" >
+    <Objective Type="KillMob" MobId="40593" MobName="Southsea Taskmaster" KillCount="1">
+        <Hotspots>
+            <Hotspot X="-7959.01" Y="-5446.08" Z="7.519124" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+
+<Quest Name="Dead Man's Chest" Id="24927" >
+    <Objective Type="KillMob" MobId="7858" MobName="Southsea Swashbuckler" KillCount="1">
+        <Hotspots>
+            <Hotspot X="-7979.994" Y="-5424.666" Z="0.700167" />
+            <Hotspot X="-8073.93" Y="-5237.471" Z="2.846117" />
+            <Hotspot X="-8125.215" Y="-5307.566" Z="0.5548015" />
+            <Hotspot X="-7978.223" Y="-5318.413" Z="1.996391" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+
+<Quest Name="Darkest Mojo" Id="25026" >
+    <Objective Type="CollectItem" ItemId="52072" ItemName="Darkest Mojo" CollectCount="6">
+        <CollectFrom>
+            <Object Name="Shallow Grave"  Id="205057" />
+            <Mob Name="Sandfury Zombie"  Id="38909" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-6905.545" Y="-3098.075" Z="8.81893" />
+            <Hotspot X="-6876.3" Y="-2767.386" Z="12.53743" />
+            <Hotspot X="-6941.495" Y="-2638.66" Z="9.585697" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Sang'thraze the Deflector" Id="25025" >
+    <Objective Type="CollectItem" ItemId="52069" ItemName="Sealed Sang'thraze" CollectCount="1">
+        <CollectFrom>
+            <Mob Name="Zakkaru"  Id="40648" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-7926.718" Y="-3299.663" Z="65.67695" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Gargantapid" Id="25522" >
+    <Objective Type="CollectItem" ItemId="54855" ItemName="Gargantapid's Poison Gland" CollectCount="1">
+        <CollectFrom>
+            <Mob Name="Gargantapid"  Id="40581" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-6907.85" Y="-3388.99" Z="12.89945" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="I'm With Scorpid" Id="25521" >
+    <Objective Type="CollectItem" ItemId="54856" ItemName="Duneclaw Stinger" CollectCount="6">
+        <CollectFrom>
+            <Mob Name="Duneclaw Matriarch"  Id="40656" />
+            <Mob Name="Duneclaw Lasher"  Id="40717" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-7027.977" Y="-2889.405" Z="8.942765" />
+            <Hotspot X="-7218.894" Y="-3317.354" Z="9.828358" />
+            <Hotspot X="-6998.353" Y="-3416.412" Z="10.83221" />
+            <Hotspot X="-6857.757" Y="-3008.29" Z="9.372679" />
+            <Hotspot X="-7095.675" Y="-2656.605" Z="10.40543" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Blood to Thrive" Id="25021" >
+    <Objective Type="CollectItem" ItemId="52064" ItemName="Fistful of Blood" CollectCount="6">
+        <CollectFrom>
+            <Mob Name="Sandfury Hideskinner"  Id="5645" />
+            <Mob Name="Sandfury Axe Thrower"  Id="5646" />
+            <Mob Name="Sandfury Firecaller"  Id="5647" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-7263.331" Y="-2906.432" Z="9.663424" />
+            <Hotspot X="-6899.653" Y="-2686.587" Z="14.04604" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Puddle Stomping" Id="24907" >
+    <Objective Type="KillMob" MobId="39022" MobName="Strider" KillCount="8">
+        <Hotspots>
+            <Hotspot X="-7411.797" Y="-3927.519" Z="0.8123438" />
+            <Hotspot X="-7535.719" Y="-3944.561" Z="-1.717323" />
+            <Hotspot X="-7546.633" Y="-3979.093" Z="-1.717323" />
+            <Hotspot X="-7540.078" Y="-4091.43" Z="0.2526106" />
+            <Hotspot X="-7723.938" Y="-3971.649" Z="0.3138381" />
+            <Hotspot X="-7732.156" Y="-3965.017" Z="1.032588" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Seaside Salvage" Id="24906" >
+    <Objective Type="CollectItem" ItemId="50829" ItemName="Steamwheedle Supplies" CollectCount="7">
+        <CollectFrom>
+            <Object Name="Steamwheedle Crate" Id="202198"/>
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-7411.797" Y="-3927.519" Z="0.8123438" />
+            <Hotspot X="-7535.719" Y="-3944.561" Z="-1.717323" />
+            <Hotspot X="-7546.633" Y="-3979.093" Z="-1.717323" />
+            <Hotspot X="-7540.078" Y="-4091.43" Z="0.2526106" />
+            <Hotspot X="-7723.938" Y="-3971.649" Z="0.3138381" />
+            <Hotspot X="-7732.156" Y="-3965.017" Z="1.032588" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Taerar's Fall" Id="25379"  >
+    <Objective Type="KillMob" MobId="39853" MobName="Taerar" KillCount="1">
+        <Hotspots>
+            <Hotspot X="-4334.737" Y="-220.2993" Z="125.1731" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="The Grimtotem are Coming" Id="25487" >
+    <Objective Type="KillMob" MobId="39947" MobName="Grimtotem Pillager" KillCount="7">
+        <Hotspots>
+            <Hotspot X="-4302.52" Y="-923.2648" Z="80.99973" />
+            <Hotspot X="-4217.613" Y="-901.559" Z="0.7921153" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Stinglasher" Id="25369" >
+    <Objective Type="CollectItem" ItemId="18962" ItemName="Stinglasher's Glands" CollectCount="1">
+        <CollectFrom>
+            <Mob Name="Stinglasher"  Id="14661" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-5283.909" Y="297.0396" Z="62.69913" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Zukk'ash Infestation" Id="25367" >
+    <Objective Type="CollectItem" ItemId="18961" ItemName="Zukk'cash Carapace" CollectCount="20">
+        <CollectFrom>
+            <Mob Name="Zukk'ash Wasp" Id="5245" />
+            <Mob Name="Zukk'ash Worker" Id="5246" />
+            <Mob Name="Zukk'ash Tunneler" Id="5247" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-5160.664" Y="214.2699" Z="54.30821" />
+            <Hotspot X="-5245.494" Y="281.4005" Z="9.645245" />
+            <Hotspot X="-5305.879" Y="105.3219" Z="63.24427" />
+            <Hotspot X="-5039.244" Y="184.1364" Z="52.07833" />
+            <Hotspot X="-5231.379" Y="400.326" Z="57.93689" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Alpha Strike" Id="25364" >
+    <Objective Type="KillMob" MobId="5258" MobName="Woodpaw Alpha" KillCount="5">
+        <Hotspots>
+            <Hotspot X="-4761.432" Y="480.3905" Z="24.23677" />
+            <Hotspot X="-4787.737" Y="809.2564" Z="129.8035" />
+            <Hotspot X="-4793.13" Y="838.3602" Z="144.0373" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="War on the Woodpaw" Id="25363"  >
+    <Objective Type="CollectItem" ItemId="9237" ItemName="Woodpaw Gnoll Mane" CollectCount="10">
+        <CollectFrom>
+            <Mob Name="Woodpaw Alpha"  Id="5258" />
+            <Mob Name="Woodpaw Reaver"  Id="5255" />
+            <Mob Name="Woodpaw Brute"  Id="5253" />
+            <Mob Name="Woodpaw Trapper"  Id="5251" />
+            <Mob Name="Woodpaw Mongrel"  Id="5249" />
+            <Mob Name="Woodpaw Mystic"  Id="5254" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-4761.432" Y="480.3905" Z="24.23677" />
+            <Hotspot X="-4787.737" Y="809.2564" Z="129.8035" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="A Grim Discovery" Id="25362" >
+    <Objective Type="CollectItem" ItemId="9460" ItemName="Grimtotem Horn" CollectCount="20">
+        <CollectFrom>
+            <Mob Name="Grimtotem Raider"  Id="7725" />
+            <Mob Name="Grimtotem Naturalist"  Id="7726" />
+            <Mob Name="Grimtotem Shaman"  Id="7727" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-4461.782" Y="590.1234" Z="58.84082" />
+            <Hotspot X="-4505.671" Y="791.4272" Z="61.8952" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="A New Cloak's Sheen" Id="25361" >
+    <Objective Type="CollectItem" ItemId="9369" ItemName="Wing" CollectCount="10">
+        <CollectFrom>
+            <Mob Name="Sprite Darter"  Id="5278" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-4516.96" Y="440.7346" Z="47.4191" />
+            <Hotspot X="-4525.137" Y="587.6958" Z="63.83595" />
+            <Hotspot X="-4276.149" Y="588.8654" Z="60.30492" />
+            <Hotspot X="-4189.223" Y="460.3644" Z="60.24191" />
+            <Hotspot X="-4140.695" Y="458.1559" Z="70.20233" />
+            <Hotspot X="-4376.467" Y="441.6515" Z="48.37871" />
+            <Hotspot X="-4436.229" Y="407.1884" Z="54.58487" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Sasquatch Sighting" Id="25374" >
+    <Objective Type="KillMob" MobId="39958" MobName="Bigfist" KillCount="1">
+        <Hotspots>
+            <Hotspot X="-3683.191" Y="244.8786" Z="134.9096" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Taming The Tamers" Id="25375" >
+    <Objective Type="KillMob" MobId="39957" MobName="Gordunni Tamer" KillCount="6">
+        <Hotspots>
+            <Hotspot X="-3972.377" Y="216.4575" Z="87.96841" />
+            <Hotspot X="-3624.991" Y="248.6998" Z="140.8022" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="The Hilltop Threat" Id="25373" >
+    <Objective Type="KillMob" MobId="39952" MobName="Gordunni Hillguard" KillCount="5">
+        <Hotspots>
+            <Hotspot X="-3972.377" Y="216.4575" Z="87.96841" />
+            <Hotspot X="-3624.991" Y="248.6998" Z="140.8022" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Twisted Sisters" Id="25349" >
+    <Objective Type="KillMob" MobId="40168" MobName="Corrupted Dryad" KillCount="7">
+        <Hotspots>
+            <Hotspot X="-4367.253" Y="-14.72547" Z="59.38401" />
+            <Hotspot X="-4486.424" Y="-85.61562" Z="63.32146" />
+            <Hotspot X="-4490.322" Y="-381.0619" Z="48.95049" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Ancient Suffering" Id="25423" >
+    <Objective Type="CollectItem" ItemId="53136" ItemName="Soul Essence" CollectCount="6">
+        <CollectFrom>
+            <Mob Name="Highborne Poltergeist"  Id="40059" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-5185.805" Y="825.0476" Z="157.2292" />
+            <Hotspot X="-4895.751" Y="907.3149" Z="158.5641" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="The Darkmist Legacy" Id="25422" >
+    <Objective Type="CollectItem" ItemId="53135" ItemName="Glowing Soil" CollectCount="6">
+        <CollectFrom>
+            <Object Name="Loose Soil" Id="331" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-5185.805" Y="825.0476" Z="157.2292" />
+            <Hotspot X="-4895.751" Y="907.3149" Z="158.5641" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Might of the Stonemaul" Id="25329" >
+    <Objective Type="KillMob" MobId="45115" MobName="Chogall's Minion" KillCount="1">
+        <Hotspots>
+            <Hotspot X="-3762.416" Y="1089.468" Z="131.9681" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Rulers of Dire Maul" Id="25252" >
+    <Objective Type="KillMob" MobId="11443" MobName="Gordok Ogre-Mage" KillCount="6">
+        <Hotspots>
+            <Hotspot X="-4006.225" Y="1138.606" Z="161.0903" />
+            <Hotspot X="-4435.056" Y="1717.068" Z="150.6199" />
+        </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="11440" MobName="Gordok Enforcer" KillCount="6">
+        <Hotspots>
+            <Hotspot X="-4006.225" Y="1138.606" Z="161.0903" />
+            <Hotspot X="-4435.056" Y="1717.068" Z="150.6199" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Improved Quality" Id="25453" >
+    <Objective Type="CollectItem" ItemId="18947" ItemName="Feral Scar Yeti Hide" CollectCount="10">
+        <CollectFrom>
+            <Mob Name="Feral Scar Yeti"  Id="39896" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-4935.266" Y="1579.438" Z="67.40195" />
+            <Hotspot X="-5033.688" Y="1790.529" Z="71.75254" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Even More Fuel for the Zapping" Id="25466" >
+    <Objective Type="CollectItem" ItemId="18956" ItemName="Water Elemental Core" CollectCount="6">
+        <CollectFrom>
+            <Mob Name="Sea Elemental"  Id="5461" />
+            <Mob Name="Sea Spray"  Id="5462" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-5618.036" Y="2321.29" Z="0.1283673" />
+            <Hotspot X="-5612.896" Y="2323.631" Z="-0.9579833" />
+            <Hotspot X="-5516.371" Y="2327.715" Z="-0.9267223" />
+            <Hotspot X="-5446.614" Y="2333.097" Z="-0.1389543" />
+            <Hotspot X="-5401.789" Y="2306.844" Z="-0.6720999" />
+            <Hotspot X="-5279.789" Y="2233.66" Z="-0.2304014" />
+            <Hotspot X="-5102.372" Y="2229.414" Z="0.8894526" />
+            <Hotspot X="-4995.395" Y="2220.504" Z="-0.3777521" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="The Mark of Quality" Id="25452" >
+    <Objective Type="CollectItem" ItemId="8973" ItemName="Thick Yeti Hide" CollectCount="10">
+        <CollectFrom>
+            <Mob Name="Rage Scar Yeti"  Id="40224" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-3892.323" Y="1926.911" Z="79.09927" />
+            <Hotspot X="-3737.137" Y="1917.284" Z="80.86367" />
+            <Hotspot X="-3892.207" Y="1643.182" Z="118.205" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="The Gordunni Orb" Id="25341" >
+    <Objective Type="CollectItem" ItemId="52832" ItemName="Gordunni Orb" CollectCount="1">
+        <CollectFrom>
+            <Mob Name="Gordunni Warlock"  Id="5240" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-5224.766" Y="1283.634" Z="54.42094" />
+            <Hotspot X="-5515.416" Y="1407.041" Z="25.85319" />
+            <Hotspot X="-5542.215" Y="1215.19" Z="23.23533" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="The Gordunni Threat" Id="25209" >
+    <Objective Type="KillMob" MobId="5234" MobName="Gordunni Mauler" KillCount="16">
+        <Hotspots>
+            <Hotspot X="-5224.766" Y="1283.634" Z="54.42094" />
+            <Hotspot X="-5515.416" Y="1407.041" Z="25.85319" />
+            <Hotspot X="-5542.215" Y="1215.19" Z="23.23533" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Tears of Stone" Id="25237" >
+    <Objective Type="CollectItem" ItemId="52573" ItemName="Stonetear" CollectCount="7">
+        <CollectFrom>
+            <Object Name="Stonetear"  Id="202606" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-3518.312" Y="2750.161" Z="97.79217" />
+            <Hotspot X="-3519.013" Y="2671.877" Z="90.93052" />
+            <Hotspot X="-3489.225" Y="2654.975" Z="85.53175" />
+            <Hotspot X="-3528.218" Y="2640.728" Z="86.97533" />
+            <Hotspot X="-3538.8" Y="2612.427" Z="85.64057" />
+            <Hotspot X="-3570.694" Y="2569.76" Z="80.13277" />
+            <Hotspot X="-3503.191" Y="2542.336" Z="77.55325" />
+            <Hotspot X="-3430.15" Y="2579.809" Z="74.20776" />
+            <Hotspot X="-3401.96" Y="2624.884" Z="66.23097" />
+            <Hotspot X="-3374.262" Y="2614.471" Z="57.7721" />
+            <Hotspot X="-3315.202" Y="2838.314" Z="79.0825" />
+            <Hotspot X="-3196.208" Y="2753.916" Z="71.06732" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="The Land, Corrupted" Id="25241" >
+    <Objective Type="KillMob" MobId="40972" MobName="Corrupted Cliff Giant" KillCount="6">
+        <Hotspots>
+            <Hotspot X="-3518.312" Y="2750.161" Z="97.79217" />
+            <Hotspot X="-3519.013" Y="2671.877" Z="90.93052" />
+            <Hotspot X="-3489.225" Y="2654.975" Z="85.53175" />
+            <Hotspot X="-3528.218" Y="2640.728" Z="86.97533" />
+            <Hotspot X="-3538.8" Y="2612.427" Z="85.64057" />
+            <Hotspot X="-3570.694" Y="2569.76" Z="80.13277" />
+            <Hotspot X="-3503.191" Y="2542.336" Z="77.55325" />
+            <Hotspot X="-3430.15" Y="2579.809" Z="74.20776" />
+            <Hotspot X="-3401.96" Y="2624.884" Z="66.23097" />
+            <Hotspot X="-3374.262" Y="2614.471" Z="57.7721" />
+            <Hotspot X="-3315.202" Y="2838.314" Z="79.0825" />
+            <Hotspot X="-3196.208" Y="2753.916" Z="71.06732" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Vengeance on the Northspring" Id="25339" >
+    <Objective Type="KillMob" MobId="5362" MobName="Harpy" KillCount="6">
+        <Hotspots>
+            <Hotspot X="-3035.214" Y="2627.979" Z="52.4072" />
+            <Hotspot X="-3170.632" Y="2791.889" Z="82.4712" />
+            <Hotspot X="-3026.9" Y="2837.788" Z="67.51619" />
+            <Hotspot X="-2959.812" Y="2766.162" Z="53.52504" />
+            <Hotspot X="-2943.551" Y="2661.546" Z="59.67061" />
+            <Hotspot X="-2933.552" Y="2536.76" Z="42.01119" />
+            <Hotspot X="-2873.988" Y="2510.999" Z="31.33413" />
+        </Hotspots>
+    </Objective>
+    <Objective Type="KillMob" MobId="5366" MobName="Windcaller" KillCount="6">
+        <Hotspots>
+            <Hotspot X="-3035.214" Y="2627.979" Z="52.4072" />
+            <Hotspot X="-3170.632" Y="2791.889" Z="82.4712" />
+            <Hotspot X="-3026.9" Y="2837.788" Z="67.51619" />
+            <Hotspot X="-2959.812" Y="2766.162" Z="53.52504" />
+            <Hotspot X="-2943.551" Y="2661.546" Z="59.67061" />
+            <Hotspot X="-2933.552" Y="2536.76" Z="42.01119" />
+            <Hotspot X="-2873.988" Y="2510.999" Z="31.33413" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="More Than Illness" Id="25230" >
+    <Objective Type="KillMob" MobId="39384" MobName="Noxious Whelp" KillCount="10">
+        <Hotspots>
+            <Hotspot X="-2898.656" Y="2209.771" Z="34.42292" />
+            <Hotspot X="-2773.931" Y="2131.187" Z="38.37996" />
+            <Hotspot X="-2668.952" Y="2093.88" Z="33.36956" />
+            <Hotspot X="-2784.034" Y="2033.524" Z="28.5147" />
+            <Hotspot X="-2910.873" Y="2105.24" Z="32.0384" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="Signs of Change" Id="25210" >
+    <Objective Type="CollectItem" ItemId="53642" ItemName="Infected Stag Antler" CollectCount="8">
+        <CollectFrom>
+            <Mob Name="Sharphorn Stag"  Id="40193" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="-3182.625" Y="2603.288" Z="32.95281" />
+            <Hotspot X="-3431.262" Y="2526.733" Z="38.55942" />
+            <Hotspot X="-3561.065" Y="2160.875" Z="41.62182" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="DummyKillMob" Id="123456" >
+    <Objective Type="KillMob" MobId="1" MobName="Mob" KillCount="1">
+        <Hotspots>
+            <Hotspot X="1" Y="1" Z="1" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="DummyCollectfromMob" Id="123456" >
+    <Objective Type="CollectItem" ItemId="1" ItemName="Item" CollectCount="1">
+        <CollectFrom>
+            <Mob Name="Mob"  Id="1" />
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="1" Y="1" Z="1" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+<Quest Name="DummyCollectfromGameObject" Id="123456" >
+    <Objective Type="CollectItem" ItemId="1" ItemName="Item" CollectCount="1">
+        <CollectFrom>
+            <Object Name="GameObject" Id="1"/>
+        </CollectFrom>
+        <Hotspots>
+            <Hotspot X="1" Y="1" Z="1" />
+        </Hotspots>
+    </Objective>
+</Quest>
+
+
+<Blacklist>
+    <Mob Name="Covert Ops Hardsuit" Id="38646" Flags="Combat, Pull, Interact" />
+    <Mob Name="Covert Ops Pounder" Id="38649" Flags="Combat, Pull, Interact" />
+</Blacklist>
+</HBProfile>
+

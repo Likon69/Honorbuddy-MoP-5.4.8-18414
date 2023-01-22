@@ -1,0 +1,186 @@
+<HBProfile>
+
+	<Name>Darnassus Cooking Dailies ($Rev$)</Name>
+	<MinLevel>10</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="Message" Text="ERROR!! Somehow you ended up starting an Alliance profile. Terminating." LogColor="Red" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Darnassus Cooking Daily Routine...Checking Location" LogColor="Green" />
+
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Darnassus -->
+		<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684)) &gt;= 100" >
+			<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+			<CustomBehavior File="ForcedDismount" />
+		</If>
+		<UseMount Value="False" />
+		<CustomBehavior File="InteractWith" MobId="215116" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+		<UseMount Value="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+	</If>
+	
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557
+			&amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487" > <!-- Outlands, but not Azure/Bloodmyst/Exodar or Ghostlands/Eversong/Silvermoon -->
+		<CustomBehavior File="FlyTo" X="-338.0062" Y="969.5461" Z="54.29" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="195139" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-338.0062" Y="969.5461" Z="54.29" />
+	</If>
+	
+	<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+		<If Condition="IsQuestCompleted(25316)" > <!-- If Has Hyjal Portal Available -->
+			<CustomBehavior File="FlyTo" X="-8211.945" Y="413.7261" Z="117.7627" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="207692" NonCompeteDistance="0" TerminateWhen="Me.MapId != 0" X="-8211.945" Y="413.7261" Z="117.7627" />
+		<Else> <!-- Boat to Darnassus -->
+			<CustomBehavior File="FlyTo" X="-8641.401" Y="1324.443" Z="5.505301" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="UseTransport" TransportId="176310"
+				WaitAtX="-8641.401" WaitAtY="1324.443" WaitAtZ="5.505301" 
+				TransportStartX="-8650.719" TransportStartY="1346.051" TransportStartZ="0.04218207"
+				TransportEndX="8162.587" TransportEndY="1005.365" TransportEndZ="-0.04571009"
+				StandOnX="-8643.596" StandOnY="1342.503" StandOnZ="6.104574"
+				GetOffX="8179.11" GetOffY="1002.75" GetOffZ="6.817571" />
+		</Else>
+		</If>
+	</If>
+	
+	<If Condition="Me.MapId == 1 &amp;&amp; Me.ZoneId != 1657" >
+		<CustomBehavior File="FlyTo" X="8378.422" Y="998.663" Z="28.47813" />
+		<While Condition="Me.ZoneId != 1657" >
+			<CustomBehavior File="MyCTM" X="8390.02" Y="1001.96" Z="30.05" />
+			<CustomBehavior File="WaitTimer" TerminateWhen="Me.ZoneId == 1657" WaitTime="5000" />
+		</While>
+	</If>
+	
+	<If Condition="!HasQuest(29316) &amp;&amp; !HasQuest(29314) &amp;&amp; !HasQuest(29318) &amp;&amp; !HasQuest(29357) &amp;&amp; !HasQuest(29313)" >
+		<CustomBehavior File="Message" Text="Grabbing Daily from Alegorn" LogColor="CornflowerBlue" />
+		<CustomBehavior File="FlyTo" X="9838.012" Y="2437.421" Z="1315.718" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.GetSkill(Styx.SkillLine.Fishing).CurrentValue &lt; 1" >
+			<CustomBehavior File="ForceTrainRiding" MobId="4210" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</If>
+		<While Condition="HasQuestAvailable(4210)" >
+			<CustomBehavior File="InteractWith" MobId="4210" InteractByQuestFrameDisposition="Ignore" NonCompeteDistance="0" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+	
+	<If Condition="HasQuest(29316)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Back to Basics" LogColor="CornflowerBlue" />
+		<Objective Nav="Fly" QuestName="Back to Basics" QuestId="29316" Type="UseObject" ObjectId="208829" UseCount="6" />
+		<TurnIn Nav="Fly" QuestName="Back to Basics" QuestId="29316" TurnInName="Alegorn" TurnInId="4210" />
+	</If>
+	
+	<If Condition="HasQuest(29314)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Remembering the Ancestors" LogColor="CornflowerBlue" />
+		<CustomBehavior File="InteractWith" QuestId="29314" MobId="208818" MobId2="208819" NonCompeteDistance="0"
+			NumOfTimes="1000" WaitTime="1000" X="9659.455" Y="2520.573" Z="1331.707" />
+		<TurnIn Nav="Fly" QuestName="Remembering the Ancestors" QuestId="29314" TurnInName="Shrine of the Ancestors" TurnInId="208825" 
+			TurnInType="Object" X="10046.08" Y="2121.812" Z="1329.658" />
+	</If>
+	
+	<If Condition="HasQuest(29318)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Ribs for the Sentinels" LogColor="CornflowerBlue" />
+		<While Condition="!IsQuestCompleted(29318)" >
+			<If Condition="HasItem(69904)" >
+				<CustomBehavior File="InteractWith" QuestId="29318" MobId="91673" InteractByUsingItemId="69904" Range="3" NonCompeteDistance="0"
+					NumOfTimes="1000" WaitTime="3000" TerminateWhen="HasItem(69906)" X="10089.19" Y="2421.895" Z="1321.678" />
+			</If>
+			<CustomBehavior File="InteractWith" QuestId="29318" MobId="4262" InteractByUsingItemId="69906" NonCompeteDistance="0"
+				AuraIdMissingFromMob="99305" NumOfTimes="1000" WaitTime="3000" >
+				<HuntingGrounds>
+					<Hotspot X="10089.19" Y="2421.895" Z="1321.678" />
+					<Hotspot X="10108.43" Y="2381.886" Z="1316.906" />
+					<Hotspot X="10170.63" Y="2369.941" Z="1325.11" />
+					<Hotspot X="10220.54" Y="2405.267" Z="1329.399" />
+					<Hotspot X="10178.09" Y="2299.561" Z="1327.81" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</While>
+		<TurnIn Nav="Fly" QuestName="Ribs for the Sentinels" QuestId="29318" TurnInName="Alegorn" TurnInId="4210" />
+	</If>
+	
+	<If Condition="HasQuest(29357)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Spice Bread Aplenty" LogColor="CornflowerBlue" />
+		<If Condition="!IsQuestCompleted(29357)" >
+			<If Condition="GetItemCount(30817) &lt; 10" >
+				<CustomBehavior File="InteractWith" MobId="4223" InteractByBuyingItemId="30817" BuyItemCount="10" NonCompeteDistance="0" WaitTime="5000"
+					X="10088.33" Y="2423.214" Z="1321.679" />
+			</If>
+			<If Condition="GetItemCount(2678) &lt; 10" >
+				<CustomBehavior File="InteractWith" MobId="4223" InteractByBuyingItemId="2678" BuyItemCount="10" NonCompeteDistance="0" WaitTime="5000"
+					X="10088.33" Y="2423.214" Z="1321.679" />
+			</If>
+			<If Condition="GetItemCount(30817) &gt;= 10 &amp;&amp; GetItemCount(2678) &gt;= 10" >
+				<MoveTo X="10089.34" Y="2423.791" Z="1321.679" />
+				<While Condition="GetItemCount(30816) &lt; 10" >
+					<CustomBehavior File="PerformTradeskillOn" TradeSkillId="185" TradeSkillItemId="30816" NumOfTimes="1" />
+				</While>
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+				<CustomBehavior File="Misc\RunLua" Lua="CloseTradeSkill()" />
+			</If>
+		</If>
+		<TurnIn Nav="Fly" QuestName="Spice Bread Aplenty" QuestId="29357" TurnInName="Alegorn" TurnInId="4210" />
+	</If>
+	
+	<If Condition="HasQuest(29313)" >
+		<CustomBehavior File="Message" Text="Starting Quest: The Secret to Perfect Kimchi" LogColor="CornflowerBlue" />
+		<Objective Nav="Fly" QuestName="The Secret to Perfect Kimchi" QuestId="29313" Type="UseObject" ObjectId="208814" UseCount="8" />
+		<TurnIn Nav="Fly" QuestName="The Secret to Perfect Kimchi" QuestId="29313" TurnInName="Alegorn" TurnInId="4210" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Double checking for training..." LogColor="Orange" />
+	<CustomBehavior File="ForceTrainRiding" MobId="4210" />
+	
+	<CustomBehavior File="Message" Text="Darnassus Cooking Daily Complete" LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+		
+</QuestOrder>
+</HBProfile>

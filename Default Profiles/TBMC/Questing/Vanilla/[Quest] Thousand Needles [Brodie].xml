@@ -1,0 +1,114 @@
+<HBProfile>
+
+	<Name>Thousand Needles ($Rev$)</Name>
+	<MinLevel>35</MinLevel>
+	<MaxLevel>50</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+	
+	<If Condition="HasQuest(25479) &amp;&amp; !IsQuestCompleted(25479)" >
+		<CustomBehavior File="Message" Text="Compiling Kicker Quest" LogColor="CornflowerBlue" />
+		<CustomBehavior File="InteractWith" QuestId="25479" MobId="40358" InteractByGossipOptions="2" NonCompeteDistance="0"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" />
+	</If>
+	
+	<If Condition="HasQuest(25479) &amp;&amp; IsQuestCompleted(25479)" >
+		<TurnIn QuestName="To New Thalanaar" QuestId="25479" TurnInName="Caryssia Moonhunter" TurnInId="39946" />
+	</If>
+	
+	<If Condition="Me.IsAlliance &amp;&amp; !HasQuest(25486) &amp;&amp; !IsQuestCompleted(25486)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+	<If Condition="Me.IsHorde &amp;&amp; !HasQuest(25487) &amp;&amp; !IsQuestCompleted(25487)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Thousand Needles Quests" LogColor="Green" />
+	
+	<If Condition="Me.IsAlliance" >
+		<CustomBehavior File="Message" Text="Compiling New Thalanaar Quests" LogColor="CornflowerBlue" />
+	
+		<PickUp QuestName="The Grimtotem are Coming" QuestId="25486" GiverName="Caryssia Moonhunter" GiverId="39946" />
+		<Objective QuestName="The Grimtotem are Coming" QuestId="25486" Type="KillMob" MobId="39949" KillCount="7" />
+		
+		<DisableBehavior Name="Pull, Combat" />
+		
+		<TurnIn QuestName="The Grimtotem are Coming" QuestId="25486" TurnInName="Rendow" TurnInId="39992" />
+		
+		<PickUp QuestName="Two If By Boat" QuestId="25488" GiverName="Rendow" GiverId="39992" />
+		<While Condition="HasQuest(25488) &amp;&amp; Me.IsOnTransport" />
+		<TurnIn QuestName="Two If By Boat" QuestId="25488" TurnInName="Fizzle Brassbolts" TurnInId="40027" />
+		
+		<EnableBehavior Name="Pull, Combat" />
+	<Else>
+		<CustomBehavior File="Message" Text="Compiling Westreach Summit Quests" LogColor="CornflowerBlue" />
+	
+		<PickUp QuestName="The Grimtotem are Coming" QuestId="25487" GiverName="Kanati Greycloud" GiverId="39895" />
+		<Objective QuestName="The Grimtotem are Coming" QuestId="25487" Type="KillMob" MobId="39947" KillCount="7" />
+		
+		<DisableBehavior Name="Pull, Combat" />
+		
+		<TurnIn QuestName="The Grimtotem are Coming" QuestId="25487" TurnInName="Motega Firemane" TurnInId="39963" />
+		
+		<PickUp QuestName="Two If By Boat" QuestId="25489" GiverName="Motega Firemane" GiverId="39963" />
+		<While Condition="HasQuest(25489) &amp;&amp; Me.IsOnTransport" />
+		<TurnIn QuestName="Two If By Boat" QuestId="25489" TurnInName="Pozzik" TurnInId="40028" />
+		
+		<EnableBehavior Name="Pull, Combat" />
+	</Else>
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Fizzle and Pozzik's Speedbarge Quests" LogColor="CornflowerBlue" />
+	
+	<If Condition="Me.IsAlliance" >
+		<PickUp QuestName="Do Me a Favor?" QuestId="25504" GiverName="Fizzle Brassbolts" GiverId="40027" />
+		<TurnIn QuestName="Do Me a Favor?" QuestId="25504" TurnInName="Jinky Twizzlefixxit" TurnInId="40475" />
+	<Else>
+		<PickUp QuestName="Do Me a Favor?" QuestId="25505" GiverName="Pozzik" GiverId="40028" />
+		<TurnIn QuestName="Do Me a Favor?" QuestId="25505" TurnInName="Razzeric" TurnInId="40487" />
+	</Else>
+	</If>
+
+	<CustomBehavior File="Message" Text="Limit to supported quests reached. Shutting down to avoid looping." LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+
+	<CustomBehavior File="Message" Text="Thousand Needles Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

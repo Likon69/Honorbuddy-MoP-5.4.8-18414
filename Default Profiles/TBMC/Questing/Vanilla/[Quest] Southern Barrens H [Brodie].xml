@@ -1,0 +1,487 @@
+<HBProfile>
+
+	<Name>Southern Barrens ($Rev$)</Name>
+	<MinLevel>25</MinLevel>
+	<MaxLevel>40</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+		<Blackspot X="-1910.794" Y="-2432.745" Z="97.83916" Radius="9.685514" />
+		<Blackspot X="-473.9543" Y="-1520.791" Z="90.72687" Radius="20" />
+	</Blackspots>
+	
+	<Blacklist>
+		<Mob Name="Honor's Stand Guard" Entry="37180" Flags="Pull" />
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Hunter's Hill -->
+		<Vendor Name="Ramja Skyspinner" Entry="44285" Type="Repair" X="-812.585" Y="-1573.87" Z="140.3627" />
+		<!-- Camp Una'fe -->
+		<Vendor Name="Gahroot" Entry="3705" Type="Food" X="-1437.684" Y="-1912.641" Z="94.50937" />
+		<Vendor Name="Turrana" Entry="44296" Type="Food" X="-1428.21" Y="-1928.81" Z="93.43517" />
+		<Vendor Name="Murhane" Entry="44286" Type="Repair" X="-1475.59" Y="-1912.52" Z="95.14603" />
+		<!-- Vendetta Point -->
+		<Vendor Name="Sanuye Runetotem" Entry="10380" Type="Repair" X="-2117.366" Y="-1720.104" Z="98.25068" />
+		<!-- Desolation Hold -->
+		<Vendor Name="Terndak" Entry="44287" Type="Repair" X="-3267.02" Y="-1714.96" Z="92.30554" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="24504" Name="Clear the High Road">
+	<Objective Type="KillMob" MobId="37159" KillCount="3">
+		<Hotspots>
+			<Hotspot X="-424.7661" Y="-1161.351" Z="175.7159" />
+			<Hotspot X="-468.7241" Y="-1228.303" Z="155.1295" />
+			<Hotspot X="-529.4156" Y="-1291.653" Z="156.9764" />
+			<Hotspot X="-568.8347" Y="-1314.916" Z="163.2298" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="24514" Name="Raptor Scraps">
+	<Objective Type="CollectItem" ItemId="49772" CollectCount="8">
+		<CollectFrom>
+			<Mob Name="Terrortooth Runner" Id="37083" />
+			<Mob Name="Terrortooth Scytheclaw" Id="37084" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-894.33" Y="-1702.486" Z="81.09151" />
+			<Hotspot X="-985.7083" Y="-1747.45" Z="88.63525" />
+			<Hotspot X="-1121.751" Y="-1805.725" Z="77.97281" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="24517" Name="Put the Fear in Them">
+	<Objective Type="KillMob" MobId="37216" KillCount="1">
+		<Hotspots>
+			<Hotspot X="-609.0206" Y="-1647.129" Z="74.63538" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="37161" KillCount="8">
+		<Hotspots>
+			<Hotspot X="-531.7432" Y="-1570.298" Z="87.38087" />
+			<Hotspot X="-609.0206" Y="-1647.129" Z="74.63538" />
+			<Hotspot X="-894.2572" Y="-1680.115" Z="83.34676" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="24529" Name="Bad to Worse">
+	<Objective Type="KillMob" MobId="37521" KillCount="8">
+		<Hotspots>
+			<Hotspot X="-1661.884" Y="-1765.947" Z="91.66725" />
+			<Hotspot X="-1564.657" Y="-1698.113" Z="91.66674" />
+			<Hotspot X="-1469.877" Y="-1551.883" Z="91.66785" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="24525" Name="Keeping the Dogs at Bay">
+	<Objective Type="KillMob" MobId="37086" KillCount="6">
+		<Hotspots>
+			<Hotspot X="-1752.599" Y="-1737.851" Z="91.6861" />
+			<Hotspot X="-1794.496" Y="-1847.191" Z="92.86379" />
+			<Hotspot X="-1865.881" Y="-2035.194" Z="91.70024" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="24551" Name="Meet the New Boss">
+	<Objective Type="CollectItem" ItemId="49850" CollectCount="10">
+		<CollectFrom>
+			<Mob Name="Northwatch Recon" Id="37585" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-2193.225" Y="-1949.559" Z="93.18374" />
+			<Hotspot X="-2090.413" Y="-1983.222" Z="92.75224" />
+			<Hotspot X="-1982.922" Y="-2079.286" Z="92.12466" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="HasQuest(26069)" >
+		<TurnIn QuestName="Nura Pathfinder" QuestId="26069" TurnInName="Nura Pathfinder" TurnInId="37135" />
+	</If>
+	
+	<If Condition="!HasQuest(24504) &amp;&amp; !IsQuestCompleted(24504)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Southern Barrens Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling The High Road Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Clear the High Road" QuestId="24504" GiverName="Nura Pathfinder" GiverId="37135" />
+	<Objective QuestName="Clear the High Road" QuestId="24504" Type="KillMob" MobId="37159" KillCount="3" />
+	<TurnIn QuestName="Clear the High Road" QuestId="24504" TurnInName="Tunawa Stillwind" TurnInId="37137" />
+	
+	<PickUp QuestName="Holdout at Hunter's Hill" QuestId="24505" GiverName="Tunawa Stillwind" GiverId="37137" />
+	
+	<If Condition="!HasQuest(24512) &amp;&amp; !IsQuestCompleted(24512) ||
+					!HasQuest(25284) &amp;&amp; !IsQuestCompleted(25284)" >
+		<PickUp QuestName="Warriors' Redemption" QuestId="24512" GiverName="Holgom" GiverId="37153" />
+		<PickUp QuestName="Feeding the Fear" QuestId="25284" GiverName="Holgom" GiverId="37153" />
+		<CustomBehavior File="InteractWith" MobId="201707" NonCompeteDistance="0" WaitTime="3000" X="-617.5798" Y="-1415.258" Z="157.3743" />
+	</If>
+	<If Condition="HasQuest(24512) &amp;&amp; !IsQuestCompleted(24512)" >
+		<CustomBehavior File="InteractWith" QuestId="24512" MobId="201701" TerminateWhen="GetItemCount(49769) &gt;= 5"
+			NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="1000" X="-492.0607" Y="-1401.489" Z="96.82751" />
+		<CustomBehavior File="InteractWith" QuestId="24512" MobId="37167" InteractByGossipOptions="1" NonCompeteDistance="0" 
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="1000" X="-492.0607" Y="-1401.489" Z="96.82751" />
+	</If>
+	
+	<PickUp QuestName="Eye for an Eye" QuestId="24513" GiverName="Oltarg" GiverId="37136" />
+	<Objective QuestName="Eye for an Eye" QuestId="24513" Type="CollectItem" ItemId="49771" CollectCount="2" />
+	<TurnIn QuestName="Eye for an Eye" QuestId="24513" TurnInName="Oltarg" TurnInId="37136" />
+	
+	<Objective QuestName="Feeding the Fear" QuestId="25284" Type="KillMob" MobId="37160" KillCount="5" />
+	
+	<If Condition="(HasQuest(24512) &amp;&amp; IsQuestCompleted(24512) ||
+					HasQuest(25284) &amp;&amp; IsQuestCompleted(25284)) &amp;&amp; Me.Z &lt; 150" >
+		<CustomBehavior File="InteractWith" MobId="201708" NonCompeteDistance="0" WaitTime="3000" X="-557.557" Y="-1407.368" Z="92.57244" />
+	</If>
+	<TurnIn QuestName="Feeding the Fear" QuestId="25284" TurnInName="Holgom" TurnInId="37153" />
+	<TurnIn QuestName="Warriors' Redemption" QuestId="24512" TurnInName="Holgom" TurnInId="37153" />
+	
+	<TurnIn QuestName="Holdout at Hunter's Hill" QuestId="24505" TurnInName="Onatay" TurnInId="37138" />
+	
+	<CustomBehavior File="Message" Text="Compiling Hunter's Road Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Raptor Scraps" QuestId="24514" GiverName="Onatay" GiverId="37138" />
+	<PickUp QuestName="Put the Fear in Them" QuestId="24517" GiverName="Kilrok Gorehammer" GiverId="37154" />
+	<Objective QuestName="Raptor Scraps" QuestId="24514" Type="CollectItem" ItemId="49772" CollectCount="8" />
+	<Objective QuestName="Put the Fear in Them" QuestId="24517" Type="KillMob" MobId="37216" KillCount="1" />
+	<Objective QuestName="Put the Fear in Them" QuestId="24517" Type="KillMob" MobId="37161" KillCount="8" />
+	<If Condition="!HasItem(49776) &amp;&amp; (!HasQuest(24518) &amp;&amp; !IsQuestCompleted(24518))" >
+		<CustomBehavior File="CollectThings" MobId="37216" CollectItemId="49776" CollectItemCount="1" NonCompeteDistance="1" 
+			X="-609.0206" Y="-1647.129" Z="74.63538" />
+	</If>
+	<If Condition="HasItem(49776) &amp;&amp; (!HasQuest(24518) &amp;&amp; !IsQuestCompleted(24518))" >
+		<PickUp QuestName="The Low Road" QuestId="24518" GiverType="Item" GiverId="49776" />
+	</If>
+	<TurnIn QuestName="The Low Road" QuestId="24518" TurnInName="Kilrok Gorehammer" TurnInId="37154" />
+	<TurnIn QuestName="Put the Fear in Them" QuestId="24517" TurnInName="Kilrok Gorehammer" TurnInId="37154" />
+	<TurnIn QuestName="Raptor Scraps" QuestId="24514" TurnInName="Onatay" TurnInId="37138" />
+	
+	<PickUp QuestName="Stalling the Survey" QuestId="24519" GiverName="Kilrok Gorehammer" GiverId="37154" />
+	<CustomBehavior File="CollectThings" QuestId="24519" CollectUntil="QuestComplete" MobId="37165" MobId2="37166" MobState="Alive" >
+		<Hotspot X="-1102.521" Y="-1819.106" Z="78.25317" />
+		<Hotspot X="-1235.027" Y="-1878.303" Z="77.65213" />
+		<Hotspot X="-1310.585" Y="-1937.133" Z="78.39387" />
+		<Hotspot X="-1385.375" Y="-2006.612" Z="79.71353" />
+		<Hotspot X="-1432.256" Y="-2049.604" Z="82.55351" />
+		<Hotspot X="-977.3521" Y="-1782.56" Z="82.57539" />
+		<Hotspot X="-862.0203" Y="-1740.58" Z="80.68845" />
+		<Hotspot X="-755.3923" Y="-1710.093" Z="69.00568" />
+		<Hotspot X="-655.5635" Y="-1667.007" Z="75.08408" />
+		<Hotspot X="-558.0597" Y="-1573.764" Z="88.06824" />
+		<Hotspot X="-540.6315" Y="-1560.634" Z="88.91912" />
+	</CustomBehavior>
+	<TurnIn QuestName="Stalling the Survey" QuestId="24519" TurnInName="Kilrok Gorehammer" TurnInId="37154" />
+	
+	<PickUp QuestName="Signals in the Sky" QuestId="24515" GiverName="Onatay" GiverId="37138" />
+	<TurnIn QuestName="Signals in the Sky" QuestId="24515" TurnInName="Makaba Flathoof" TurnInId="11857" />
+	
+	<CustomBehavior File="Message" Text="Compiling Camp Una'fe Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Keeping the Dogs at Bay" QuestId="24525" GiverName="Makaba Flathoof" GiverId="11857" />
+	<PickUp QuestName="Bad to Worse" QuestId="24529" GiverName="Makaba Flathoof" GiverId="11857" />
+	<PickUp QuestName="When Plants Attack" QuestId="24539" GiverName="Lane Tallgrass" GiverId="37515" />
+	
+	<CustomBehavior File="InteractWith" QuestId="24529" QuestObjectiveIndex="1" MobId="201724" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-1661.884" Y="-1765.947" Z="91.66725" />
+			<Hotspot X="-1564.657" Y="-1698.113" Z="91.66674" />
+			<Hotspot X="-1469.877" Y="-1551.883" Z="91.66785" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="Bad to Worse" QuestId="24529" Type="KillMob" MobId="37521" KillCount="8" />
+	<Objective QuestName="Keeping the Dogs at Bay" QuestId="24525" Type="KillMob" MobId="37086" KillCount="6" />
+	<Objective QuestName="When Plants Attack" QuestId="24539" Type="KillMob" MobId="37548" KillCount="5" />
+	
+	<TurnIn QuestName="When Plants Attack" QuestId="24539" TurnInName="Lane Tallgrass" TurnInId="37515" />
+	<PickUp QuestName="A Curious Bloom" QuestId="24542" GiverName="Lane Tallgrass" GiverId="37515" />
+	<TurnIn QuestName="Bad to Worse" QuestId="24529" TurnInName="Makaba Flathoof" TurnInId="11857" />
+	<TurnIn QuestName="Keeping the Dogs at Bay" QuestId="24525" TurnInName="Makaba Flathoof" TurnInId="11857" />
+	<PickUp QuestName="Speaking Their Language" QuestId="24534" GiverName="Makaba Flathoof" GiverId="11857" />
+	
+	<Objective QuestName="A Curious Bloom" QuestId="24542" Type="CollectItem" ItemId="49815" CollectCount="10" />
+	<UseItem QuestId="24534" ItemId="49782" X="-1861.349" Y="-1834.018" Z="90.73921" />
+	<Objective QuestName="Speaking Their Language" QuestId="24534" Type="KillMob" MobId="37513" KillCount="1" X="-1861.349" Y="-1834.018" Z="90.73921" />
+	
+	<TurnIn QuestName="Speaking Their Language" QuestId="24534" TurnInName="Makaba Flathoof" TurnInId="11857" />
+	<PickUp QuestName="A Family Divided" QuestId="24543" GiverName="Tawane" GiverId="37516" />
+	
+	<TurnIn QuestName="A Curious Bloom" QuestId="24542" TurnInName="Naralex" TurnInId="37570" />
+	
+	<CustomBehavior File="Message" Text="Compiling Overgrown Camp Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Biological Intervention" QuestId="24565" GiverName="Naralex" GiverId="37570" />
+	<PickUp QuestName="Adder Subtraction" QuestId="24570" GiverName="Muyoh" GiverId="38314" />
+	<PickUp QuestName="Lashvine Seeds" QuestId="24571" GiverName="Muyoh" GiverId="38314" />
+	<CustomBehavior File="InteractWith" QuestId="24570" MobId="37738" InteractByLooting="True" NumOfTimes="1000"
+		NonCompeteDistance="0" MobState="Alive" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+		<HuntingGrounds>
+			<Hotspot X="-1841.323" Y="-2389.094" Z="96.0425" />
+			<Hotspot X="-1786.146" Y="-2314.331" Z="92.1768" />
+			<Hotspot X="-1692.47" Y="-2379.716" Z="91.89741" />
+			<Hotspot X="-1642.257" Y="-2347.584" Z="93.04733" />
+			<Hotspot X="-1592.663" Y="-2315.838" Z="96.44556" />
+			<Hotspot X="-1569.054" Y="-2262.882" Z="96.23046" />
+			<Hotspot X="-1561.07" Y="-2203.708" Z="95.11488" />
+			<Hotspot X="-1557.138" Y="-2157.042" Z="92.37981" />
+			<Hotspot X="-1594.164" Y="-2087.492" Z="94.60062" />
+			<Hotspot X="-1565.776" Y="-2015.225" Z="91.85861" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="Lashvine Seeds" QuestId="24571" Type="CollectItem" ItemId="49876" CollectCount="4" />
+	<Objective QuestName="Biological Intervention" QuestId="24565" Type="KillMob" MobId="37090" KillCount="5" />
+	<Objective QuestName="Biological Intervention" QuestId="24565" Type="KillMob" MobId="37091" KillCount="5" />
+	<TurnIn QuestName="Biological Intervention" QuestId="24565" TurnInName="Naralex" TurnInId="37570" />
+	<PickUp QuestName="To Harvest Chaos" QuestId="24574" GiverName="Naralex" GiverId="37570" />
+	<TurnIn QuestName="Adder Subtraction" QuestId="24570" TurnInName="Muyoh" TurnInId="38314" />
+	<TurnIn QuestName="Lashvine Seeds" QuestId="24571" TurnInName="Muyoh" TurnInId="38314" />
+	<PickUp QuestName="Sowing a Solution" QuestId="24566" GiverName="Muyoh" GiverId="38314" />
+	
+	<CustomBehavior File="InteractWith" QuestId="24566" MobId="37091" MobId2="37090" InteractByUsingItemId="49882"
+		Range="25" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" MobState="Alive" >
+		<HuntingGrounds>
+			<Hotspot X="-1841.323" Y="-2389.094" Z="96.0425" />
+			<Hotspot X="-1786.146" Y="-2314.331" Z="92.1768" />
+			<Hotspot X="-1692.47" Y="-2379.716" Z="91.89741" />
+			<Hotspot X="-1642.257" Y="-2347.584" Z="93.04733" />
+			<Hotspot X="-1592.663" Y="-2315.838" Z="96.44556" />
+			<Hotspot X="-1569.054" Y="-2262.882" Z="96.23046" />
+			<Hotspot X="-1561.07" Y="-2203.708" Z="95.11488" />
+			<Hotspot X="-1557.138" Y="-2157.042" Z="92.37981" />
+			<Hotspot X="-1594.164" Y="-2087.492" Z="94.60062" />
+			<Hotspot X="-1565.776" Y="-2015.225" Z="91.85861" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="To Harvest Chaos" QuestId="24574" Type="CollectItem" ItemId="49883" CollectCount="1" />
+	<Objective QuestName="To Harvest Chaos" QuestId="24574" Type="KillMob" MobId="37092" KillCount="5" />
+	<TurnIn QuestName="Sowing a Solution" QuestId="24566" TurnInName="Muyoh" TurnInId="38314" />
+	<TurnIn QuestName="To Harvest Chaos" QuestId="24574" TurnInName="Naralex" TurnInId="37570" />
+	
+	<PickUp QuestName="The Nightmare Scar" QuestId="24601" GiverName="Naralex" GiverId="37570" />
+	<If Condition="HasQuest(24601) &amp;&amp; !IsQuestCompleted(24601)" >
+		<MoveTo X="-1708.435" Y="-2217.44" Z="98.85008" />
+		<CustomBehavior File="EscortGroup" QuestId="24601" EscortNpcId="37570" StartNpcId="37570" StartEscortGossipOptions="1" 
+			CombatMaxEngagementRangeDistance="20" EscortMaxFightDistance="20" EscortMaxFollowDistance="10" >
+			<SearchPath>
+				<Hotspot X="-1708.435" Y="-2217.44" Z="98.85008" />
+			</SearchPath>
+		</CustomBehavior>
+	</If>
+	<TurnIn QuestName="The Nightmare Scar" QuestId="24601" TurnInName="Naralex" TurnInId="37570" />
+	
+	<PickUp QuestName="Winnoa Pineforest" QuestId="24807" GiverName="Naralex" GiverId="37570" />
+	
+	<CustomBehavior File="Message" Text="Compiling Vendetta Point Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn QuestName="Winnoa Pineforest" QuestId="24807" TurnInName="Winnoa Pineforest" TurnInId="37717" />
+	<TurnIn QuestName="A Family Divided" QuestId="24543" TurnInName="Kirge Sternhorn" TurnInId="3418" />
+	
+	<PickUp QuestName="A Line in the Dirt" QuestId="24546" GiverName="Kirge Sternhorn" GiverId="3418" />
+	<PickUp QuestName="Meet the New Boss" QuestId="24551" GiverName="Tatternack Steelforge" GiverId="3433" />
+	<PickUp QuestName="Lion's Pride" QuestId="24552" GiverName="Jorn Skyseer" GiverId="3387" />
+	
+	<If Condition="HasQuest(24546) &amp;&amp; !IsQuestCompleted(24546)" >
+		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" Text="Quest: A Line in the Dirt has mobs attacking a flag. Although the QB will prioritize flag attackers, if its stuck in combat, it won't always swap. May need to be done manually." />
+	</If>
+	<While Condition="HasQuest(24546) &amp;&amp; !IsQuestCompleted(24546)" >
+		<MoveTo X="-2131.687" Y="-2075.478" Z="99.37778" />
+		<CustomBehavior File="InteractWith" QuestId="24546" MobId="201781" TerminateWhen="Object(201781) == null"
+			NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" WaitTime="3000" />
+		<CustomBehavior File="24546-ALineInTheDirt" />
+	</While>
+	<Objective QuestName="Meet the New Boss" QuestId="24551" Type="CollectItem" ItemId="49850" CollectCount="10" />
+	<Objective QuestName="Lion's Pride" QuestId="24552" Type="KillMob" MobId="37207" KillCount="5" />
+	
+	<TurnIn QuestName="A Line in the Dirt" QuestId="24546" TurnInName="Kirge Sternhorn" TurnInId="3418" />
+	<TurnIn QuestName="Meet the New Boss" QuestId="24551" TurnInName="Warlord Bloodhilt" TurnInId="37679" />
+	<PickUp QuestName="Siegebreaker" QuestId="24569" GiverName="Warlord Bloodhilt" GiverId="37679" />
+	<TurnIn QuestName="Lion's Pride" QuestId="24552" TurnInName="Jorn Skyseer" TurnInId="3387" />
+	
+	<Objective QuestName="Siegebreaker" QuestId="24569" Type="UseObject" ObjectId="201792" UseCount="4" />
+	<TurnIn QuestName="Siegebreaker" QuestId="24569" TurnInName="Warlord Bloodhilt" TurnInId="37679" />
+	
+	<PickUp QuestName="Taking Back Taurajo" QuestId="24572" GiverName="Warlord Bloodhilt" GiverId="37679" />
+	<PickUp QuestName="Honoring the Dead" QuestId="24573" GiverName="Winnoa Pineforest" GiverId="37717" />
+	<CustomBehavior File="InteractWith" QuestId="24573" QuestObjectiveIndex="4" MobId="10378" InteractByUsingItemId="49880" Range="10"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="100" X="-2376.997" Y="-1881.077" Z="95.85032" />
+	<CustomBehavior File="InteractWith" QuestId="24573" QuestObjectiveIndex="3" MobId="5944" InteractByUsingItemId="49880" Range="10"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="100" X="-2395.34" Y="-1927.347" Z="96.71826" />
+	<CustomBehavior File="InteractWith" QuestId="24573" QuestObjectiveIndex="2" MobId="6387" InteractByUsingItemId="49880" Range="10"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="100" X="-2376.333" Y="-1944.194" Z="95.87372" />
+	<CustomBehavior File="InteractWith" QuestId="24573" QuestObjectiveIndex="1" MobId="3703" InteractByUsingItemId="49880" Range="10"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="100" X="-2316.156" Y="-1930.947" Z="96.01368" />
+	<Objective QuestName="Taking Back Taurajo" QuestId="24572" Type="KillMob" MobId="37743" KillCount="8" />
+	<TurnIn QuestName="Honoring the Dead" QuestId="24573" TurnInName="Winnoa Pineforest" TurnInId="37717" />
+	<TurnIn QuestName="Taking Back Taurajo" QuestId="24572" TurnInName="Warlord Bloodhilt" TurnInId="37679" />
+	
+	<PickUp QuestName="Desolation Hold Inspection" QuestId="24577" GiverName="Warlord Bloodhilt" GiverId="37679" />
+	<CustomBehavior File="InteractWith" QuestId="24577" MobId="37679" InteractByGossipOptions="1" NonCompeteDistance="0"
+		WaitTime="1000" TerminateWhen="Me.IsOnTransport" X="-2108.123" Y="-1722.067" Z="98.15867" />
+	<While Condition="Me.IsOnTransport" />
+	<CustomBehavior File="InteractWith" QuestId="24577" MobId="37811" InteractByGossipOptions="1,1,1" NonCompeteDistance="0"
+		WaitTime="1000" TerminateWhen="Me.IsOnTransport" X="-3246.519" Y="-1734.607" Z="92.11491" />
+	<TurnIn QuestName="Desolation Hold Inspection" QuestId="24577" TurnInName="Warlord Gar'dul" TurnInId="37811" />
+	
+	<CustomBehavior File="Message" Text="Compiling Desolation Hold Quests" LogColor="CornflowerBlue" />
+
+	<PickUp QuestName="Changing of the Gar'dul" QuestId="24591" GiverName="Warlord Gar'dul" GiverId="37811" />
+	<PickUp QuestName="Silithissues" QuestId="24654" GiverName="Crawgol" GiverId="37910" />
+	<PickUp QuestName="Flightmare" QuestId="24631" GiverName="Tomusa" GiverId="37909" />
+	<If Condition="HasQuest(24591) &amp;&amp; !IsQuestCompleted(24591)" >
+		<MoveTo X="-3220.983" Y="-1666.157" Z="130.9628" />
+		<While Condition="!IsQuestCompleted(24591)" />
+	</If>
+	<TurnIn QuestName="Changing of the Gar'dul" QuestId="24591" />
+	
+	<PickUp QuestName="Claim the Battle Scar" QuestId="24618" GiverName="Warlord Bloodhilt" GiverId="37837" />
+	<PickUp QuestName="Intelligence Warfare" QuestId="24634" GiverName="Warlord Bloodhilt" GiverId="37837" />
+	<PickUp QuestName="Parts-is-Parts" QuestId="24619" GiverName="Calder Gray" GiverId="37908" />
+	
+	<While Condition="HasQuest(24654) &amp;&amp; !IsQuestCompleted(24654)" >
+		<UseItem QuestId="24654" ItemId="50128" X="-3146.469" Y="-1782.607" Z="96.09048" />
+		<UseItem QuestId="24654" ItemId="50128" X="-3105.606" Y="-1722.775" Z="95.23397" />
+	</While>
+	
+	<CustomBehavior File="InteractWith" QuestId="24631" MobId="37978" InteractByUsingItemId="50031" Range="70" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="1000" X="-3245.815" Y="-2004.59" Z="87.92936" />
+	<While Condition="HasQuest(24619) &amp;&amp; !IsQuestCompleted(24619)" >
+		<CustomBehavior File="InteractWith" QuestId="24619" MobId="37923" MobState="Dead" InteractByUsingItemId="49948" NonCompeteDistance="0"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="1000" 
+			TerminateWhen="Object(201904, o =&gt; o.Distance &lt; 30) != null" X="-3245.815" Y="-2004.59" Z="87.92936" />
+		<CustomBehavior File="InteractWith" QuestId="24619" MobId="201904" NonCompeteDistance="0"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="1000" 
+			TerminateWhen="Object(201904) == null" X="-3245.815" Y="-2004.59" Z="87.92936" />
+	</While>
+	<Objective QuestName="Claim the Battle Scar" QuestId="24618" Type="KillMob" MobId="37923" KillCount="10" />
+	<CustomBehavior File="InteractWith" QuestId="24618" QuestObjectiveIndex="2" MobId="201877" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="100" X="-3245.815" Y="-2004.59" Z="87.92936" />
+	<Objective QuestName="Intelligence Warfare" QuestId="24634" Type="CollectItem" ItemId="50054" CollectCount="1" />
+	
+	<TurnIn QuestName="Parts-is-Parts" QuestId="24619" TurnInName="Calder Gray" TurnInId="37908" />
+	<PickUp QuestName="Hearts-is-Hearts" QuestId="24620" GiverName="Calder Gray" GiverId="37908" />
+	<TurnIn QuestName="Silithissues" QuestId="24654" TurnInName="Crawgol" TurnInId="37910" />
+	<PickUp QuestName="Firestone Point" QuestId="24667" GiverName="Crawgol" GiverId="37910" />
+	
+	<TurnIn QuestName="Claim the Battle Scar" QuestId="24618" TurnInName="Warlord Bloodhilt" TurnInId="37837" />
+	<TurnIn QuestName="Intelligence Warfare" QuestId="24634" TurnInName="Warlord Bloodhilt" TurnInId="37837" />
+	<PickUp QuestName="The Butcher of Taurajo" QuestId="24637" GiverName="Warlord Bloodhilt" GiverId="37837" />
+	
+	<TurnIn QuestName="Flightmare" QuestId="24631" TurnInName="Tomusa" TurnInId="37909" />
+	<PickUp QuestName="Tauren Vengeance" QuestId="24632" GiverName="Tomusa" GiverId="37909" />
+	
+	<CustomBehavior File="InteractWith" QuestId="24637" MobId="38015" InteractByGossipOptions="1" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="6000" X="-2674.016" Y="-2215.529" Z="92.14211" />
+	<Objective QuestName="The Butcher of Taurajo" QuestId="24637" Type="KillMob" MobId="38018" KillCount="1" />
+	<Objective QuestName="Hearts-is-Hearts" QuestId="24620" Type="CollectItem" ItemId="49946" CollectCount="1" />
+	<TurnIn QuestName="Hearts-is-Hearts" QuestId="24620" TurnInName="Calder Gray" TurnInId="37908" />
+	<PickUp QuestName="Smarts-is-Smarts" QuestId="24621" GiverName="Calder Gray" GiverId="37908" />
+	<TurnIn QuestName="The Butcher of Taurajo" QuestId="24637" TurnInName="Warlord Bloodhilt" TurnInId="37837" />
+	
+	<Objective QuestName="Smarts-is-Smarts" QuestId="24621" Type="CollectItem" ItemId="49947" CollectCount="1" />
+	<TurnIn QuestName="Smarts-is-Smarts" QuestId="24621" TurnInName="Calder Gray" TurnInId="37908" />
+	
+	<CustomBehavior File="Message" Text="Compiling Firestone Point Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn QuestName="Firestone Point" QuestId="24667" TurnInName="Tauna Skychaser" TurnInId="37834" />
+	<PickUp QuestName="The Disturbed Earth" QuestId="24824" GiverName="Tauna Skychaser" GiverId="37834" />
+	<PickUp QuestName="Concern for Mankrik" QuestId="24604" GiverName="Mahka" GiverId="37812" />
+	<Objective QuestName="The Disturbed Earth" QuestId="24824" Type="CollectItem" ItemId="50385" CollectCount="4" />
+	<TurnIn QuestName="The Disturbed Earth" QuestId="24824" TurnInName="Tauna Skychaser" TurnInId="37834" />
+	
+	<TurnIn QuestName="Concern for Mankrik" QuestId="24604" TurnInName="Mankrik" TurnInId="37847" />
+	<PickUp QuestName="Don't Stop Bereavin'" QuestId="24603" GiverName="Mankrik" GiverId="37847" />
+	<If Condition="!HasItem(49932) &amp;&amp; (!HasQuest(24606) &amp;&amp; !IsQuestCompleted(24606))" >
+		<CustomBehavior File="CollectThings" MobId="37560" MobId2="37660" MobId3="37661" CollectItemId="49932"
+			CollectItemCount="1" NonCompeteDistance="1" WaitTime="1000" >
+			<Hotspot X="-3729.644" Y="-1850.807" Z="92.93312" />
+			<Hotspot X="-3805.032" Y="-1833.855" Z="94.33714" />
+			<Hotspot X="-3835.817" Y="-1744.854" Z="94.34213" />
+			<Hotspot X="-3892.188" Y="-1648.519" Z="91.66713" />
+			<Hotspot X="-3960.652" Y="-1776.294" Z="91.66658" />
+			<Hotspot X="-4032.294" Y="-1838.064" Z="94.30338" />
+		</CustomBehavior>
+	</If>
+	<If Condition="HasItem(49932) &amp;&amp; (!HasQuest(24606) &amp;&amp; !IsQuestCompleted(24606))" >
+		<PickUp QuestName="Blood of the Barrens" QuestId="24606" GiverType="Item" GiverId="49932" />
+	</If>
+	<Objective QuestName="Blood of the Barrens" QuestId="24606" Type="CollectItem" ItemId="49934" CollectCount="6" />
+	<Objective QuestName="Don't Stop Bereavin'" QuestId="24603" Type="KillMob" MobId="37929" KillCount="13" />
+	<TurnIn QuestName="Don't Stop Bereavin'" QuestId="24603" TurnInName="Mankrik" TurnInId="37847" />
+	<PickUp QuestName="Mangletooth" QuestId="24608" GiverName="Mankrik" GiverId="37847" />
+	
+	<TurnIn QuestName="Blood of the Barrens" QuestId="24606" TurnInName="Mahka" TurnInId="37812" />
+	<PickUp QuestName="Echoes of Agamaggan" QuestId="24653" GiverName="Mahka" GiverId="37812" />
+	<Objective QuestName="Echoes of Agamaggan" QuestId="24653" Type="CollectItem" ItemId="50044" CollectCount="3" />
+	<Objective QuestName="Mangletooth" QuestId="24608" Type="KillMob" MobId="37940" KillCount="1" />
+	<TurnIn QuestName="Mangletooth" QuestId="24608" TurnInName="Mankrik" TurnInId="37847" />
+	<TurnIn QuestName="Echoes of Agamaggan" QuestId="24653" TurnInName="Mahka" TurnInId="37812" />
+	
+	<PickUp QuestName="Mahka's Plea" QuestId="24633" GiverName="Mahka" GiverId="37812" />
+	<CustomBehavior File="InteractWith" QuestId="24633" MobId="37847" InteractByGossipOptions="1" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" X="-4146.184" Y="-1943.497" Z="93.27454" />
+	<TurnIn QuestName="Mahka's Plea" QuestId="24633" TurnInName="Mahka" TurnInId="37812" />
+	
+	<CustomBehavior File="Message" Text="Compiling Spearhead Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn QuestName="Tauren Vengeance" QuestId="24632" TurnInName="Gann Stonespire" TurnInId="3341" />
+	<PickUp QuestName="A Weezil in the Henhouse" QuestId="24684" GiverName="Gann Stonespire" GiverId="3341" />
+	<Objective QuestName="A Weezil in the Henhouse" QuestId="24684" Type="KillMob" MobId="3378" KillCount="10" />
+	<TurnIn QuestName="A Weezil in the Henhouse" QuestId="24684" TurnInName="Weezil Slipshadow" TurnInId="38140" />
+
+	<PickUp QuestName="Dwarf Fortress" QuestId="24685" GiverName="Weezil Slipshadow" GiverId="38140" />
+	<Objective QuestName="Dwarf Fortress" QuestId="24685" Type="CollectItem" ItemId="50223" CollectCount="1" />
+	<TurnIn QuestName="Dwarf Fortress" QuestId="24685" TurnInName="Weezil Slipshadow" TurnInId="38140" />
+	
+	<PickUp QuestName="Sabotage!" QuestId="24747" GiverName="Weezil Slipshadow" GiverId="38140" />
+	<CustomBehavior File="InteractWith" QuestId="24747" QuestObjectiveIndex="1" MobId="38190" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" NumOfTimes="1000" X="-4065.33" Y="-2409.985" Z="126.1309" />
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Sabotage!" QuestId="24747" TurnInName="Gann Stonespire" TurnInId="3341" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+	<PickUp QuestName="Next of Kin" QuestId="25292" GiverName="Nato Raintree" GiverId="39697" />
+
+	<CustomBehavior File="Message" Text="Southern Barrens Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

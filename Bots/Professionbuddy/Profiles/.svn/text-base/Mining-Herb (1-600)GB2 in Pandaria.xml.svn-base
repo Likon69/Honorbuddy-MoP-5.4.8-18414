@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Professionbuddy>
+  <Custom Code="CharacterSettings.Instance.LootMobs = false;" />
+  <Setting DefaultValue="False" Type="Boolean" Name="AH Items" Summary="If set to true this profile will sell items on AH, otherwise it'll mail items to an alt.If mailing items to alt make sure to set the Grind Bot's 'Recipient' field to your alts name." Category="Profile" Global="False" Hidden="False" />
+  <Setting DefaultValue="true" Type="Boolean" Name="Herb" Summary="Set to true if you want to level herbalism" Category="Profile" Global="False" Hidden="False" />
+  <Setting DefaultValue="true" Type="Boolean" Name="Mining" Summary="Set to true if you want to level Mining" Category="Profile" Global="False" Hidden="False" />
+  <Setting DefaultValue="false" Type="Boolean" Name="Ignore grey nodes" Summary="Ignores grey nodes, not fully working yet" Category="Profile" Global="False" Hidden="False" />
+  <Declaration Code="bool mining,herb;" />
+  <Declaration Code="int MiningLevel,MiningMaxLevel,HerbLevel,HerbMaxLevel, LowestMinLevel;" />
+  <Declaration Code="int FreeBagSlots;" />
+  <Custom Code="MyLog(&quot;Made by Hawker and HighVoltz&quot;);" />
+  <Custom Code="MyLog(&quot;Mining: {0}&quot;,Settings[&quot;Mining&quot;]);" />
+  <Custom Code="MyLog(&quot;Herb: {0}&quot;,Settings[&quot;Herb&quot;]);" />
+  <Custom Code="MyLog(&quot;Mining.Level: {0}&quot;,Mining.Level);" />
+  <Custom Code="MyLog(&quot;Mining.MaxLevel: {0}&quot;,Mining.MaxLevel);" />
+  <Custom Code="MyLog(&quot;Herbalism.Level: {0}&quot;,Herbalism.Level);" />
+  <Custom Code="MyLog(&quot;Herbalism.MaxLevel: {0}&quot;,Herbalism.MaxLevel);" />
+  <LoadProfile ProfileType="Honorbuddy" Path="HBProfiles\GB2 Herb and Mining profiles\Neutral\(GB2 500-575)(JadeForest.Neutral)Herb&amp;Mining.xml" IsLocal="True" />
+  <Custom Code="var1 = false;" />
+  <!--mining = Gather Mines?-->
+  <Custom Code="mining = (bool)Settings[&quot;Mining&quot;];" />
+  <!--herb = Gather Herb?-->
+  <Custom Code="herb = (bool)Settings[&quot;Herb&quot;];" />
+  <!--MiningLevel = Mining.Level-->
+  <Custom Code="MiningLevel = 0;" />
+  <!--MiningMaxLevel = Mining.MaxLevel-->
+  <Custom Code="MiningMaxLevel = 0;" />
+  <!--HerbLevel = Herbalism.Level-->
+  <Custom Code="HerbLevel = 0;" />
+  <!--HerbMaxLevel = Herbalism.MaxLevel-->
+  <LoadProfile ProfileType="Honorbuddy" Path="HBProfiles\GB2 Herb and Mining profiles\Neutral\(GB2 500-575)(JadeForest.Neutral)Herb&amp;Mining.xml" IsLocal="True" />
+  <Custom Code="HerbMaxLevel = 0;" />
+  <!--LowestMinLevel = lowestMaxLevel-->
+  <Custom Code="LowestMinLevel = 0;" />
+  <If Condition="SecondaryBot.GetType().Name != &quot;GatherbuddyBot&quot;" IgnoreCanRun="True">
+    <ChangeBot BotName="GatherbuddyBot" />
+  </If>
+  <While Condition="true" IgnoreCanRun="True">
+    <Custom Code="MiningLevel = (int)Mining.Level;" />
+    <Custom Code="MiningMaxLevel = (int)Mining.MaxLevel;" />
+    <LoadProfile ProfileType="Honorbuddy" Path="HBProfiles\GB2 Herb and Mining profiles\Neutral\(GB2 500-575)(JadeForest.Neutral)Herb&amp;Mining.xml" IsLocal="True" />
+    <Custom Code="HerbLevel = (int)Herbalism.Level;" />
+    <Custom Code="HerbMaxLevel =  (int)Herbalism.MaxLevel;" />
+    <!--disable gathering of mines-->
+    <Custom Code="if (((bool)Settings[&quot;Mining&quot;] &amp;&amp;&#xD;&#xA;   (MiningLevel == MiningMaxLevel || ((bool)Settings[&quot;Herb&quot;] &amp;&amp; MiningMaxLevel &gt; HerbMaxLevel ))) ||&#xD;&#xA; !(bool)Settings[&quot;Mining&quot;])&#xD;&#xA;{&#xD;&#xA;    mining = Bots.Gatherbuddy.GatherbuddySettings.Instance.GatherMinerals = false;&#xD;&#xA;}" />
+    <!--enable gathering of mines-->
+    <Custom Code="if ((bool)Settings[&quot;Mining&quot;] &amp;&amp; MiningLevel != MiningMaxLevel &amp;&amp; &#xD;&#xA;    ( MiningMaxLevel &lt;= HerbMaxLevel || !(bool)Settings[&quot;Herb&quot;] ))&#xD;&#xA;{&#xD;&#xA;   mining = Bots.Gatherbuddy.GatherbuddySettings.Instance.GatherMinerals = true;&#xD;&#xA;}" />
+    <!--disable gathering of herbs-->
+    <Custom Code="if (((bool)Settings[&quot;Herb&quot;] &amp;&amp; (HerbLevel == HerbMaxLevel || ((bool)Settings[&quot;Mining&quot;] &amp;&amp; HerbMaxLevel &gt; MiningMaxLevel))) || !(bool)Settings[&quot;Herb&quot;]) herb = Bots.Gatherbuddy.GatherbuddySettings.Instance.GatherHerbs = false;" />
+    <!--enable Herb in GB2 if enabled in profile Settings and Herb MaxLevel <= Mining.MaxLevel-->
+    <Custom Code="if ((bool)Settings[&quot;Herb&quot;] &amp;&amp; HerbLevel != HerbMaxLevel &amp;&amp;&#xD;&#xA;  (HerbMaxLevel &lt;= MiningMaxLevel  || !(bool)Settings[&quot;Mining&quot;] ) )&#xD;&#xA;{&#xD;&#xA;   herb = Bots.Gatherbuddy.GatherbuddySettings.Instance.GatherHerbs = true;&#xD;&#xA;}" />
+    <Custom Code="LowestMinLevel = (bool)Settings[&quot;Mining&quot;] &amp;&amp; (bool)Settings[&quot;Herb&quot;] ? (MiningMaxLevel &lt; HerbMaxLevel ? MiningMaxLevel : HerbMaxLevel):(bool)Settings[&quot;Mining&quot;] ? MiningMaxLevel :HerbMaxLevel;" />
+    <Custom Code="FreeBagSlots = (int)Me.FreeNormalBagSlots;&#xD;&#xA;if(FreeBagSlots &lt; 4)&#xD;&#xA;  MyLog(&quot;FreeBagSlots: {0}&quot;,FreeBagSlots);" />
+    <If Condition="(bool)Settings[&quot;Ignore grey nodes&quot;]" IgnoreCanRun="True">
+      <Custom Code="using (StyxWoW.Memory.AcquireFrame())&#xD;&#xA;{&#xD;&#xA;  foreach (var node in ObjectManager.GetObjectsOfType&lt;WoWGameObject&gt;().Where( g =&gt; (g.IsMineral &amp;&amp; (bool)Settings[&quot;Mining&quot;] || g.IsHerb &amp;&amp; (bool)Settings[&quot;Herb&quot;]) &amp;&amp; !Blacklist.Contains(g)))&#xD;&#xA;  {&#xD;&#xA;    var requiredSkillLevel = node.RequiredSkill;&#xD;&#xA;    if (!requiredSkillLevel.HasValue) continue;&#xD;&#xA;    var skillLevel =  node.IsHerb ? HerbLevel : MiningLevel;&#xD;&#xA;    if (requiredSkillLevel.Value + 150 &lt; skillLevel)&#xD;&#xA;    {&#xD;&#xA;          Blacklist.Add(node, TimeSpan.FromDays(365));&#xD;&#xA;           MyLog(&quot;Blacklisting {0} because it's grey&quot;, node.Name);&#xD;&#xA;          MyLog(&quot;My Skill: {0}, Required Skill: {1}&quot;,skillLevel ,requiredSkillLevel.Value);&#xD;&#xA;    } &#xD;&#xA;  }&#xD;&#xA;}" />
+    </If>
+    <!--Train skills-->
+    <If Condition="((bool)Settings[&quot;Mining&quot;] &amp;&amp; MiningMaxLevel-MiningLevel &lt;=25  &amp;&amp; MiningMaxLevel &lt; 600 ) || ((bool)Settings[&quot;Herb&quot;] &amp;&amp; HerbMaxLevel - HerbLevel &lt;= 25 &amp;&amp; HerbMaxLevel &lt; 600 )" IgnoreCanRun="True">
+      <If Condition="Me.IsAlliance &amp;&amp; Me.MapId == 870" IgnoreCanRun="True">
+        <CallSubRoutine SubRoutineName="TrainInPawDonVillage" />
+        <CallSubRoutine SubRoutineName="TrainInPawDonVillage" />
+      </If>
+      <If Condition="Me.IsHorde &amp;&amp; Me.MapId == 870" IgnoreCanRun="True">
+        <CallSubRoutine SubRoutineName="TrainInHoneydewVillage" />
+        <CallSubRoutine SubRoutineName="TrainInHoneydewVillage" />
+      </If>
+    </If>
+    <If Condition="(mining &amp;&amp; MiningLevel &lt; 575) || (herb &amp;&amp; HerbLevel &lt; 575)" IgnoreCanRun="True">
+      <LoadProfile ProfileType="Honorbuddy" Path="HBProfiles\GB2 Herb and Mining profiles\Neutral\(GB2 500-575)(JadeForest.Neutral)Herb&amp;Mining.xml" IsLocal="True" />
+    </If>
+    <If Condition="(mining &amp;&amp; MiningLevel &gt;=575 &amp;&amp; herb &amp;&amp; HerbLevel &gt;=575 ) || ((mining &amp;&amp; !herb &amp;&amp; MiningLevel &gt;=575 ) ^ (herb &amp;&amp; !mining &amp;&amp; HerbLevel &gt;=575 ))" IgnoreCanRun="True">
+      <LoadProfile ProfileType="Honorbuddy" Path="HBProfiles\GB2 Herb and Mining profiles\Neutral\(GB2 575-600)(KunLaiSummit.Neutral)Herb&amp;Mining.xml" IsLocal="True" />
+    </If>
+    <!--Empty Bags-->
+    <If Condition="FreeBagSlots &lt;=4" IgnoreCanRun="True">
+      <Custom Code="MyLog(&quot;{0} free normal bags slots left, Emptying bags.&quot;, Me.FreeNormalBagSlots);" />
+      <If Condition="Me.IsAlliance" IgnoreCanRun="True">
+        <CallSubRoutine SubRoutineName="EmptyBagsInPawDonVillage" />
+      </If>
+      <If Condition="Me.IsHorde" IgnoreCanRun="True">
+        <CallSubRoutine SubRoutineName="EmptyBagsInHoneydewVillage" />
+      </If>
+    </If>
+    <!--Made it to level 600!. Train one before stopping profile.-->
+    <If Condition="(((bool)Settings[&quot;Mining&quot;] &amp;&amp; MiningLevel == 600)|| !(bool)Settings[&quot;Mining&quot;]) &amp;&amp; (((bool)Settings[&quot;Herb&quot;] &amp;&amp; HerbLevel &gt;= 600)|| !(bool)Settings[&quot;Herb&quot;])" IgnoreCanRun="True">
+      <If Condition="Me.IsAlliance &amp;&amp; Me.MapId == 870" IgnoreCanRun="True">
+        <CallSubRoutine SubRoutineName="TrainInPawDonVillage" />
+      </If>
+      <If Condition="Me.IsHorde &amp;&amp; Me.MapId == 870" IgnoreCanRun="True">
+        <CallSubRoutine SubRoutineName="TrainInHoneydewVillage" />
+      </If>
+      <Custom Code="Quit(&quot;Stopping HB since We are 600 herb/mining&quot;);" />
+    </If>
+    <!--Take portal to Pandaria-->
+    <If Condition="Me.IsAlliance &amp;&amp; Me.MapId == 0" IgnoreCanRun="True">
+      <FlyTo Dismount="False" Location="-8194.038, 528.3931, 117.3273" />
+      <Interact InteractType="GameObject" Entry="215457" InteractDelay="2000" GameObjectType="SpellCaster" SpellFocus="Anvil" />
+      <Wait Condition="Me.MapId == 870" Timeout="40000" />
+    </If>
+    <If Condition="Me.IsHorde &amp;&amp; Me.MapId == 1 " IgnoreCanRun="True">
+      <FlyTo Dismount="False" Location="2015.015, -4700.216, 28.6201" />
+      <Interact InteractType="GameObject" Entry="215424" InteractDelay="2000" GameObjectType="SpellCaster" SpellFocus="Anvil" />
+      <Wait Condition="Me.MapId == 870" Timeout="40000" />
+    </If>
+  </While>
+  <SubRoutine SubRoutineName="EmptyBagsInPawDonVillage">
+    <Custom Code="MyLog(&quot;Emptying my bags in Paw'Don Village&quot;);" />
+    <If Condition="Me.MapId == 870" IgnoreCanRun="True">
+      <FlyTo Dismount="True" Location="-303.113, -1668.471, 53.10573" />
+      <!-- Ghost Iron Nuggets -->
+      <If Condition="!Me.IsFlying &amp;&amp; InbagCount(97512) &gt;= 10" IgnoreCanRun="True">
+        <Custom Code="Lua.DoString(&quot;for bag = 0,4 do for slot=1,GetContainerNumSlots(bag) do local id = GetContainerItemID(bag,slot) or 0 if id == 97512 then UseContainerItem(bag,slot) end end end&quot;);" />
+      </If>
+      <!-- Torn Green Tea Leaf -->
+      <If Condition="!Me.IsFlying &amp;&amp; InbagCount(97619) &gt;= 10" IgnoreCanRun="True">
+        <Custom Code="Lua.DoString(&quot;for bag = 0,4 do for slot=1,GetContainerNumSlots(bag) do local id = GetContainerItemID(bag,slot) or 0 if id == 97619 then UseContainerItem(bag,slot) end end end&quot;);" />
+      </If>
+      <!-- Rain Poppy Petal -->
+      <If Condition="!Me.IsFlying &amp;&amp; InbagCount(97620) &gt;= 10" IgnoreCanRun="True">
+        <Custom Code="Lua.DoString(&quot;for bag = 0,4 do for slot=1,GetContainerNumSlots(bag) do local id = GetContainerItemID(bag,slot) or 0 if id == 97620 then UseContainerItem(bag,slot) end end end&quot;);" />
+      </If>
+      <!-- Snow Lily Petal -->
+      <If Condition="!Me.IsFlying &amp;&amp; InbagCount(97622) &gt;= 10" IgnoreCanRun="True">
+        <Custom Code="Lua.DoString(&quot;for bag = 0,4 do for slot=1,GetContainerNumSlots(bag) do local id = GetContainerItemID(bag,slot) or 0 if id == 97622 then UseContainerItem(bag,slot) end end end&quot;);" />
+      </If>
+      <GetMail GetMailType="AllItems" ItemID="0" CheckNewMail="True" MaxCODAmount="0g0s0c" MinFreeBagSlots="2" AutoFindMailBox="True" Location="0, 0, 0" />
+      <If Condition="!(bool)Settings[&quot;AH Items&quot;]" IgnoreCanRun="True">
+        <MailItem Category="Gem" SubCategoryType="WoWItemGemClass" SubCategory="None" Mail="All" ItemID="0" Amount="0" AutoFindMailBox="True" Location="0, 0, 0" ItemQuality="Uncommon" ItemSelection="Category" />
+        <MailItem Category="TradeGoods" SubCategoryType="WoWItemTradeGoodsClass" SubCategory="None" Mail="All" ItemID="0" Amount="0" AutoFindMailBox="True" Location="0, 0, 0" ItemQuality="Uncommon" ItemSelection="Category" />
+      </If>
+      <If Condition="(bool)Settings[&quot;AH Items&quot;]" IgnoreCanRun="True">
+        <FlyTo Dismount="False" Location="-311.6545, -1776.63, 62.67051" />
+        <Interact InteractType="GameObject" Entry="210805" InteractDelay="2000" GameObjectType="Transport" SpellFocus="Anvil" />
+        <Wait Condition="Me.MapId == 0" Timeout="40000" />
+      </If>
+    </If>
+    <If Condition="Me.MapId == 0 &amp;&amp; (bool)Settings[&quot;AH Items&quot;]" IgnoreCanRun="True">
+      <FlyTo Dismount="True" Location="-8358.339, 640.3275, 95.26459" />
+      <SellItemOnAH Category="Gem" SubCategoryType="WoWItemGemClass" SubCategory="None" UseCategory="True" RunTime="_24_Hours" AmountType="Everything" ItemID="13466" MinBuyout="0g10s0c" MaxBuyout="60g0s0c" StackSize="20" IgnoreStackSizeBelow="1" Amount="10" BidPrecent="95" UndercutPrecent="0.001" AutoFindAh="True" PostPartialStacks="True" PostIfBelowMinBuyout="True" Location="0, 0, 0" />
+      <SellItemOnAH Category="TradeGoods" SubCategoryType="WoWItemTradeGoodsClass" SubCategory="None" UseCategory="True" RunTime="_24_Hours" AmountType="Everything" ItemID="13466" MinBuyout="0g10s0c" MaxBuyout="60g0s0c" StackSize="20" IgnoreStackSizeBelow="1" Amount="10" BidPrecent="95" UndercutPrecent="0.001" AutoFindAh="True" PostPartialStacks="True" PostIfBelowMinBuyout="True" Location="0, 0, 0" />
+    </If>
+  </SubRoutine>
+  <SubRoutine SubRoutineName="TrainInPawDonVillage">
+    <!--Empty bags when training only if not posting items on AH since that would require switching maps-->
+    <If Condition="!(bool)Settings[&quot;AH Items&quot;]" IgnoreCanRun="True">
+      <CallSubRoutine SubRoutineName="EmptyBagsInPawDonVillage" />
+    </If>
+    <Custom Code="MyLog(&quot;Training in Paw'Don Village&quot;);" />
+    <If Condition="(bool)Settings[&quot;Mining&quot;]" IgnoreCanRun="True">
+      <FlyTo Dismount="True" Location="-340.3292, -1677.055, 46.24597" />
+      <!-- Name="Rockseeker Guo" Entry="67024" Type="Repair" X="-346.2431" Y="-1688.656" Z="46.29102" -->
+      <TrainSkill NpcEntry="67024" Location="-346.2431, -1688.656, 46.29102" />
+      <Wait Condition="Mining.MaxLevel-Mining.Level &gt; 25" Timeout="3000" />
+    </If>
+    <If Condition="(bool)Settings[&quot;Herb&quot;]" IgnoreCanRun="True">
+      <FlyTo Dismount="True" Location="-340.3292, -1677.055, 46.24597" />
+      <!-- Name="Orchard Keeper Li Mei" Entry="67025" Type="Repair" X="-352.8889" Y="-1726.339" Z="48.21716" -->
+      <TrainSkill NpcEntry="67025" Location="-351.5543, -1725.541, 48.34468" />
+      <Wait Condition="Herbalism.MaxLevel-Herbalism.Level &gt; 25" Timeout="3000" />
+    </If>
+  </SubRoutine>
+  <SubRoutine SubRoutineName="EmptyBagsInHoneydewVillage">
+    <Custom Code="MyLog(&quot;Emptying my bags in Honeydew Village&quot;);" />
+    <If Condition="Me.MapId == 870" IgnoreCanRun="True">
+      <FlyTo Dismount="True" Location="3012.327, -548.3291, 248.1479" />
+      <!-- Ghost Iron Nuggets -->
+      <If Condition="!Me.IsFlying &amp;&amp; InbagCount(97512) &gt;= 10" IgnoreCanRun="True">
+        <Custom Code="Lua.DoString(&quot;for bag = 0,4 do for slot=1,GetContainerNumSlots(bag) do local id = GetContainerItemID(bag,slot) or 0 if id == 97512 then UseContainerItem(bag,slot) end end end&quot;);" />
+      </If>
+      <!-- Torn Green Tea Leaf -->
+      <If Condition="!Me.IsFlying &amp;&amp; InbagCount(97619) &gt;= 10" IgnoreCanRun="True">
+        <Custom Code="Lua.DoString(&quot;for bag = 0,4 do for slot=1,GetContainerNumSlots(bag) do local id = GetContainerItemID(bag,slot) or 0 if id == 97619 then UseContainerItem(bag,slot) end end end&quot;);" />
+      </If>
+      <!-- Rain Poppy Petal -->
+      <If Condition="!Me.IsFlying &amp;&amp; InbagCount(97620) &gt;= 10" IgnoreCanRun="True">
+        <Custom Code="Lua.DoString(&quot;for bag = 0,4 do for slot=1,GetContainerNumSlots(bag) do local id = GetContainerItemID(bag,slot) or 0 if id == 97620 then UseContainerItem(bag,slot) end end end&quot;);" />
+      </If>
+      <!-- Snow Lily Petal -->
+      <If Condition="!Me.IsFlying &amp;&amp; InbagCount(97622) &gt;= 10" IgnoreCanRun="True">
+        <Custom Code="Lua.DoString(&quot;for bag = 0,4 do for slot=1,GetContainerNumSlots(bag) do local id = GetContainerItemID(bag,slot) or 0 if id == 97622 then UseContainerItem(bag,slot) end end end&quot;);" />
+      </If>
+      <GetMail GetMailType="AllItems" ItemID="0" CheckNewMail="True" MaxCODAmount="0g0s0c" MinFreeBagSlots="2" AutoFindMailBox="True" Location="0, 0, 0" />
+      <If Condition="!(bool)Settings[&quot;AH Items&quot;]" IgnoreCanRun="True">
+        <MailItem Category="Gem" SubCategoryType="WoWItemGemClass" SubCategory="None" Mail="All" ItemID="0" Amount="0" AutoFindMailBox="True" Location="0, 0, 0" ItemQuality="Uncommon" ItemSelection="Category" />
+        <MailItem Category="TradeGoods" SubCategoryType="WoWItemTradeGoodsClass" SubCategory="None" Mail="All" ItemID="0" Amount="0" AutoFindMailBox="True" Location="0, 0, 0" ItemQuality="Uncommon" ItemSelection="Category" />
+      </If>
+      <If Condition="(bool)Settings[&quot;AH Items&quot;]" IgnoreCanRun="True">
+        <FlyTo Dismount="False" Location="2924.921, -510.5903, 268.8555" />
+        <Interact InteractType="GameObject" Entry="210804" InteractDelay="2000" GameObjectType="Transport" SpellFocus="Anvil" />
+        <Wait Condition="Me.MapId == 1" Timeout="40000" />
+      </If>
+    </If>
+    <If Condition="Me.MapId == 1 &amp;&amp; (bool)Settings[&quot;AH Items&quot;]" IgnoreCanRun="True">
+      <FlyTo Dismount="True" Location="2012.031, -4690.59, 28.64125" />
+      <SellItemOnAH Category="Gem" SubCategoryType="WoWItemGemClass" SubCategory="None" UseCategory="True" RunTime="_24_Hours" AmountType="Everything" ItemID="13466" MinBuyout="0g10s0c" MaxBuyout="60g0s0c" StackSize="20" IgnoreStackSizeBelow="1" Amount="10" BidPrecent="95" UndercutPrecent="0.001" AutoFindAh="True" PostPartialStacks="True" PostIfBelowMinBuyout="True" Location="0, 0, 0" />
+      <SellItemOnAH Category="TradeGoods" SubCategoryType="WoWItemTradeGoodsClass" SubCategory="None" UseCategory="True" RunTime="_24_Hours" AmountType="Everything" ItemID="13466" MinBuyout="0g10s0c" MaxBuyout="60g0s0c" StackSize="20" IgnoreStackSizeBelow="1" Amount="10" BidPrecent="95" UndercutPrecent="0.001" AutoFindAh="True" PostPartialStacks="True" PostIfBelowMinBuyout="True" Location="0, 0, 0" />
+    </If>
+  </SubRoutine>
+  <SubRoutine SubRoutineName="TrainInHoneydewVillage">
+    <!--Empty bags when training only if not posting items on AH since that would require switching maps-->
+    <If Condition="!(bool)Settings[&quot;AH Items&quot;]" IgnoreCanRun="True">
+      <CallSubRoutine SubRoutineName="EmptyBagsInHoneydewVillage" />
+    </If>
+    <Custom Code="MyLog(&quot;Training in Honeydew Village&quot;);" />
+    <If Condition="(bool)Settings[&quot;Herb&quot;]" IgnoreCanRun="True">
+      <FlyTo Dismount="True" Location="2930.438, -488.7503, 268.8557" />
+      <TrainSkill NpcEntry="66980" Location="2930.438, -488.7503, 268.8557" />
+      <Wait Condition="Herbalism.MaxLevel-Herbalism.Level &gt; 25" Timeout="3000" />
+    </If>
+    <If Condition="(bool)Settings[&quot;Mining&quot;]" IgnoreCanRun="True">
+      <FlyTo Dismount="True" Location="2961.12, -491.3701, 268.8554" />
+      <TrainSkill NpcEntry="66979" Location="2961.12, -491.3701, 268.8554" />
+      <Wait Condition="Mining.MaxLevel-Mining.Level &gt; 25" Timeout="3000" />
+    </If>
+  </SubRoutine>
+  <Declaration Code="void Quit(string reason,params object[] args)&#xD;&#xA;{&#xD;&#xA;  MyLog(reason,args);&#xD;&#xA;  Bots.Gatherbuddy.GatherbuddySettings.Instance.GatherMinerals = true;&#xD;&#xA;  Bots.Gatherbuddy.GatherbuddySettings.Instance.GatherHerbs = true;&#xD;&#xA;   Lua.DoString(&quot;Logout()&quot;);&#xD;&#xA;  TreeRoot.Stop();&#xD;&#xA;}" />
+  <Declaration Code="void MyLog(string format, params object[] args)&#xD;&#xA;{&#xD;&#xA;    Log(Colors.Green,&quot;Mine/Herb 1-600 in Pandaria: &quot;,Colors.LightGreen,format, args);&#xD;&#xA;}" />
+  <If Condition="((bool)Settings[&quot;Mining&quot;] &amp;&amp; MiningMaxLevel-MiningLevel &lt;=25 &amp;&amp; HerbMaxLevel &lt; 600) || ((bool)Settings[&quot;Herb&quot;] &amp;&amp; HerbMaxLevel - HerbLevel &lt;= 25 &amp;&amp; HerbMaxLevel &lt; 600 )" IgnoreCanRun="True">
+    <If Condition="Me.IsAlliance &amp;&amp; Me.MapId == 870" IgnoreCanRun="True">
+      <CallSubRoutine SubRoutineName="TrainInPawDonVillage" />
+    </If>
+    <If Condition="Me.IsHorde &amp;&amp; Me.MapId == 870" IgnoreCanRun="True">
+      <CallSubRoutine SubRoutineName="TrainInHoneydewVillage" />
+    </If>
+  </If>
+</Professionbuddy>

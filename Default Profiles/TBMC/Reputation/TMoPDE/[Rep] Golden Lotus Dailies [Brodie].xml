@@ -1,0 +1,318 @@
+<HBProfile>
+	<Name>Golden Lotus ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Nav="Fly" Name="Merchant Tantan" Entry="59341" Type="Food" X="657.4722" Y="1967.49" Z="327.2953" />
+	</Vendors>
+
+	<Mailboxes>
+	</Mailboxes>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- Upon The Ramparts -->
+	<Quest Id="30246" Name="Upon The Ramparts"> 
+		<Objective Type="KillMob" MobId="63974" KillCount="10">
+			<Hotspots>
+				<Hotspot X="784.1627" Y="2302.708" Z="381.2356" />
+				<Hotspot X="825.4998" Y="2303.549" Z="381.2354" />
+				<Hotspot X="829.2582" Y="2363.91" Z="390.11" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Along the Serpent's Spine -->
+	<Quest Id="30244" Name="Along the Serpent's Spine"> 
+		<Objective Type="KillMob" MobId="63974" KillCount="10">
+			<Hotspots>
+				<Hotspot X="784.1627" Y="2302.708" Z="381.2356" />
+				<Hotspot X="825.4998" Y="2303.549" Z="381.2354" />
+				<Hotspot X="829.2582" Y="2363.91" Z="390.11" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<CustomBehavior File="RunMacro" Macro="/script SetCVar('AutoLootDefault', 1)" NumOfTimes="1" WaitTime="1000" />
+	<CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+
+	<!-- If I am in EK, take the SW portal -->
+	<If Condition="(Me.MapId == 0 &amp;&amp; Me.IsAlliance)" >
+		<CustomBehavior File="FlyTo" DestName="SW Portal" X="-8199.441" Y="529.3228" Z="117.0738" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="215457" Range="4" X="-8194.479" Y="528.1129" Z="117.2901" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+	</If>
+
+	<If Condition="(Me.MapId == 1 &amp;&amp; Me.IsHorde)" >
+		<CustomBehavior File="FlyTo" DestName="Org Portal" X="2013.813" Y="-4699.559" Z="28.61817" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="215424" Range="4.75" X="2014.819" Y="-4700.274" Z="28.62439" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Golden Lotus Quests..." LogColor="Green" />
+	
+	<If Condition="(!HasQuest(30306) &amp;&amp; IsQuestCompleted(30306)) ||
+					(!HasQuest(30242) &amp;&amp; IsQuestCompleted(30242)) ||
+					(!HasQuest(30240) &amp;&amp; IsQuestCompleted(30240)) ||
+					(!HasQuest(30264) &amp;&amp; IsQuestCompleted(30264)) ||
+					(!HasQuest(30245) &amp;&amp; IsQuestCompleted(30245)) ||
+					(!HasQuest(30444) &amp;&amp; IsQuestCompleted(30444)) ||
+					(!HasQuest(30246) &amp;&amp; IsQuestCompleted(30246)) ||
+					(!HasQuest(30243) &amp;&amp; IsQuestCompleted(30243)) ||
+					(!HasQuest(30244) &amp;&amp; IsQuestCompleted(30244)) ||
+					(!HasQuest(30266) &amp;&amp; IsQuestCompleted(30266))" >
+		<CustomBehavior File="Message" Text="Previously Completed Quests Detected" LogColor="CornflowerBlue" />
+		<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: Previously completed quests detected! \n\n Either you have done some of you quests already, and have restarted the bot...\n OR your cache folder is NOT clean, and must be deleted, and bot restarted." />
+	</If>
+
+	<If Condition="!HasQuest(30306) &amp;&amp; !HasQuest(30242) &amp;&amp; !HasQuest(30240) &amp;&amp; !HasQuest(30264) &amp;&amp;
+					!HasQuest(30245) &amp;&amp; !HasQuest(30444) &amp;&amp; !HasQuest(30246) &amp;&amp; !HasQuest(30243) &amp;&amp;
+					!HasQuest(30244) &amp;&amp; !HasQuest(30266)" >
+		<CustomBehavior File="FlyTo" X="723.5776" Y="1944.612" Z="320.833" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<!-- Anji Autumnlight -->
+		<While Condition="HasQuestAvailable(58919)" >
+			<CustomBehavior File="InteractWith" MobId="58919" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+
+		<!-- Kun Autumnlight -->
+		<While Condition="HasQuestAvailable(58920)" >
+			<CustomBehavior File="InteractWith" MobId="58920" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+		
+		<CustomBehavior File="FlyTo" X="739.1675" Y="2009.7" Z="316.4857" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		
+		<!-- Yumi Goldenpaw -->
+		<While Condition="HasQuestAvailable(58743)" >
+			<CustomBehavior File="InteractWith" MobId="58743" WaitTime="1000" InteractByQuestFrameDisposition="Ignore" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+		
+		<CustomBehavior File="FlyTo" X="685.3362" Y="1980.55" Z="325.4352" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		
+		<!-- Hai-Me Heavyhands -->
+		<While Condition="HasQuestAvailable(58962)" >
+			<CustomBehavior File="InteractWith" MobId="58962" WaitTime="1000" InteractByQuestFrameDisposition="Ignore" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+
+<!-- The Battle Ring -->
+	<If Condition="HasQuest(30306) &amp;&amp; !IsQuestCompleted(30306)" >
+		<CustomBehavior File="Message" Text="Starting The Battle Ring" LogColor="Green" />
+		<CustomBehavior File="KillUntilComplete" QuestId="30306" MobId="1" X="695.5954" Y="1984.769" Z="325.4346" />
+	</If>
+	
+	<If Condition="HasQuest(30306) &amp;&amp; IsQuestCompleted(30306)" >
+		<TurnIn Nav="Fly" QuestName="The Battle Ring" QuestId="30306" TurnInName="Hai-Me Heavyhands" TurnInId="58962" />
+	</If>
+	
+	<UseMount Value="False" />
+
+<!-- Survival Ring: Blades -->
+	<If Condition="HasQuest(30242) &amp;&amp; !IsQuestCompleted(30242)" >
+		<CustomBehavior File="Message" Text="Starting Survival Ring: Blades (Safety Not Guaranteed)" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="788.5397" Y="2040.471" Z="316.0875" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30242)" >
+			<MoveTo QuestId="30242" X="802.4619" Y="2000.587" Z="318.2415" />
+		</While>
+		<MoveTo X="788.5397" Y="2040.471" Z="316.0875" />
+	</If>
+
+<!-- Survival Ring: Flames -->
+	<If Condition="HasQuest(30240) &amp;&amp; !IsQuestCompleted(30240)" >
+		<CustomBehavior File="Message" Text="Starting Survival Ring: Flames (Safety Not Guaranteed)" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="812.2769" Y="1974.102" Z="316.0742" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30240)" >
+			<MoveTo QuestId="30240" X="799.5345" Y="1981.939" Z="316.1925" />
+			<MoveTo QuestId="30240" X="787.3194" Y="1986.719" Z="316.4765" />
+			<MoveTo QuestId="30240" X="781.7736" Y="1996.054" Z="317.2575" />
+			<MoveTo QuestId="30240" X="780.0711" Y="2006.924" Z="317.466" />
+			<MoveTo QuestId="30240" X="783.4292" Y="2016.436" Z="317.4283" />
+			<MoveTo QuestId="30240" X="791.3593" Y="2024.777" Z="316.8929" />
+			<MoveTo QuestId="30240" X="802.7999" Y="2025.383" Z="316.1107" />
+			<MoveTo QuestId="30240" X="816.3386" Y="2021.586" Z="316.7261" />
+			<MoveTo QuestId="30240" X="823.794" Y="2010.348" Z="316.8247" />
+			<MoveTo QuestId="30240" X="824.0526" Y="2001.122" Z="317.2933" />
+			<MoveTo QuestId="30240" X="818.5838" Y="1991.025" Z="317.737" />
+			<MoveTo QuestId="30240" X="809.9043" Y="1984.746" Z="316.7801" />
+		</While>
+		<MoveTo X="812.2769" Y="1974.102" Z="316.0742" />
+	</If>
+	
+	<If Condition="HasQuest(30242) &amp;&amp; IsQuestCompleted(30242)" >
+		<TurnIn Nav="Fly" QuestName="Survival Ring: Blades" QuestId="30242" TurnInName="Yumi Goldenpaw" TurnInId="58743" />
+	</If>
+
+  	<If Condition="HasQuest(30240) &amp;&amp; IsQuestCompleted(30240)" >
+		<TurnIn Nav="Fly" QuestName="Survival Ring: Flames" QuestId="30240" TurnInName="Yumi Goldenpaw" TurnInId="58743" />
+	</If>
+	
+	<UseMount Value="True" />
+
+<!-- Enemy at the Gates -->
+	<If Condition="HasQuest(30264) &amp;&amp; !IsQuestCompleted(30264)" >
+		<CustomBehavior File="Message" Text="Starting Enemy at the Gates" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="821.932" Y="2080.49" Z="316.099" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<CustomBehavior File="MountVehOnly" VehicleMountId="65336" X="821.932" Y="2080.49" Z="316.099" />
+		<CustomBehavior File="SpecificQuests\30264-VOEB-EnemyattheGates" />
+		<CustomBehavior File="WaitTimer" WaitTime="8000" />
+	</If>
+
+<!-- Lost Scouts -->
+	<If Condition="HasQuest(30245) &amp;&amp; !IsQuestCompleted(30245)" >
+		<CustomBehavior File="Message" Text="Starting Lost Scouts" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="1242.38" Y="2177.708" Z="334.9722" />
+		<While Condition="!IsQuestCompleted(30245)" >
+			<CustomBehavior File="FlyTo" QuestId="30245" X="1208.51" Y="2189.03" Z="341.99" />
+			<CustomBehavior File="InteractWith" QuestId="30245" MobId="58930" MobId2="58947" CollectionDistance="5000" WaitForNpcs="False" />
+			<CustomBehavior File="FlyTo" QuestId="30245" X="1302.94" Y="2157.54" Z="371.28" />
+			<CustomBehavior File="InteractWith" QuestId="30245" MobId="58930" MobId2="58947" CollectionDistance="5000" WaitForNpcs="False" />
+			<CustomBehavior File="FlyTo" QuestId="30245" X="1391.773" Y="2084.134" Z="377.346" />
+			<CustomBehavior File="InteractWith" QuestId="30245" MobId="58930" MobId2="58947" CollectionDistance="5000" WaitForNpcs="False" />
+			<CustomBehavior File="FlyTo" QuestId="30245" X="1156.07" Y="2048.46" Z="334.28" />
+			<CustomBehavior File="InteractWith" QuestId="30245" MobId="58930" MobId2="58947" CollectionDistance="5000" WaitForNpcs="False" />
+		</While>
+		<TurnIn QuestName="Lost Scouts" QuestId="30245" />
+	</If>
+
+<!-- No Reprieve -->
+	<If Condition="HasQuest(30444) &amp;&amp; !IsQuestCompleted(30444)" >
+		<CustomBehavior File="Message" Text="Starting No Reprieve" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="No Reprieve" QuestId="30444" Type="KillMob" MobId="58927" KillCount="8" />
+	</If>
+
+<!-- Upon The Ramparts -->
+	<If Condition="HasQuest(30246) &amp;&amp; !IsQuestCompleted(30246)" >
+		<CustomBehavior File="Message" Text="Starting Upon The Ramparts" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Upon The Ramparts" QuestId="30246" Type="KillMob" MobId="63974" KillCount="10" />
+	</If>
+
+<!-- Mantid Under Fire -->
+	<If Condition="HasQuest(30243) &amp;&amp; !IsQuestCompleted(30243)" >
+		<CustomBehavior File="Message" Text="Starting Mantid Under Fire" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="1025.549" Y="2407.683" Z="390.7802" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30243)" >
+			<CustomBehavior File="InteractWith" MovementBy="ClickToMoveOnly" MobId="64369" TerminateWhen="Me.IsOnTransport" CollectionDistance="100" WaitForNpcs="False" />
+			<CustomBehavior File="SpecificQuests\30243-VOEB-MantidUnderFire" />
+		</While>
+		<CustomBehavior File="EjectVeh" />
+	</If>
+
+<!-- Along the Serpent's Spine -->
+	<If Condition="HasQuest(30244) &amp;&amp; !IsQuestCompleted(30244)" >
+		<CustomBehavior File="Message" Text="Starting Along the Serpent's Spine" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Along the Serpent's Spine" QuestId="30244" Type="KillMob" MobId="63974" KillCount="10" />
+	</If>
+
+<!-- Bloodied Skies -->
+	<If Condition="HasQuest(30266) &amp;&amp; !IsQuestCompleted(30266)" >
+		<CustomBehavior File="Message" Text="Starting Bloodied Skies" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="721.186" Y="2340.127" Z="430.8784" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30266)" >
+			<CustomBehavior File="InteractWith" MobId="64336" Range="5" NonCompeteDistance="5" TerminateWhen="Me.IsOnTransport" X="718.1462" Y="2341.071" Z="430.8805" />
+			<CustomBehavior File="SpecificQuests\30266-VOEB-BloodiedSkies" />
+			<CustomBehavior File="EjectVeh" />
+		</While>
+		<MoveTo X="722.1974" Y="2346.617" Z="430.8828" />
+		<CustomBehavior File="FlyTo" X="682.0827" Y="2394.73" Z="447.0219" />
+		<CustomBehavior File="FlyTo" X="741.7631" Y="2342.811" Z="539.0228" />
+	</If>
+
+<!-- Quest Turn Ins -->
+
+	<CustomBehavior File="Message" Text="Completed Quests, moving to turn in." LogColor="Green" />
+
+  	<If Condition="HasQuest(30246) &amp;&amp; IsQuestCompleted(30246)" >
+		<TurnIn Nav="Fly" QuestName="Upon The Ramparts" QuestId="30246" TurnInName="Anji Autumnlight" TurnInId="58919" />
+	</If>
+
+  	<If Condition="HasQuest(30264) &amp;&amp; IsQuestCompleted(30264)" >
+		<TurnIn Nav="Fly" QuestName="Enemy at the Gates" QuestId="30264" TurnInName="Anji Autumnlight" TurnInId="58919" />
+	</If>
+
+  	<If Condition="HasQuest(30444) &amp;&amp; IsQuestCompleted(30444)" >
+		<TurnIn Nav="Fly" QuestName="No Reprieve" QuestId="30444" TurnInName="Anji Autumnlight" TurnInId="58919" />
+	</If>
+
+  	<If Condition="HasQuest(30245) &amp;&amp; IsQuestCompleted(30245)" >
+		<TurnIn Nav="Fly" QuestName="Lost Scouts" QuestId="30245" TurnInName="Kun Autumnlight" TurnInId="58920" />
+	</If>
+	
+	<If Condition="HasQuest(30243) &amp;&amp; IsQuestCompleted(30243)" >
+		<TurnIn Nav="Fly" QuestName="Mantid Under Fire" QuestId="30243" TurnInName="Kun Autumnlight" TurnInId="58920" />
+	</If>
+
+  	<If Condition="HasQuest(30266) &amp;&amp; IsQuestCompleted(30266)" >
+		<TurnIn Nav="Fly" QuestName="Bloodied Skies" QuestId="30266" TurnInName="Kun Autumnlight" TurnInId="58920" />
+	</If>
+
+	<While Condition="(GetItemCount(89112) &gt; 10)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+
+	<CustomBehavior File="ForcedDismount" />
+	<If Condition="HasItem(60498)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60498)" WaitTime="1500" />
+	<ElseIf Condition="HasItem(93672)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93672)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(54452)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(54452)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(64488)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(6948)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1500" />
+	</ElseIf>
+	</If>
+
+</QuestOrder>
+</HBProfile>

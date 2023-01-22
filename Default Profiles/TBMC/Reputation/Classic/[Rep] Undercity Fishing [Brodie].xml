@@ -1,0 +1,277 @@
+<HBProfile>
+
+	<Name>Undercity Fishing Dailies ($Rev$)</Name>
+	<MinLevel>10</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="Message" Text="ERROR!! Somehow you ended up starting an Horde profile. Terminating." LogColor="Red" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Undercity Fishing Daily Routine...Checking Location" LogColor="Green" />
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Undercity -->
+		<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326)) &gt;= 100" >
+			<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+			<CustomBehavior File="ForcedDismount" />
+		</If>
+		<CustomBehavior File="UserSettings" UseMount="False" />
+		<CustomBehavior File="InteractWith" MobId="215124" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1732.343" Y="881.7467" Z="487.0864" /> <!-- Undercity -->
+		<CustomBehavior File="UserSettings" UseMount="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+	</If>
+	
+	<!-- Needs conditional for Ghostlands -->
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487
+					&amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557" >
+	<!-- Outlands, but not Ghostlands/Eversong/Silvermoon or Azure/Bloodmyst/Exodar -->
+		<CustomBehavior File="FlyTo" X="-163.8283" Y="973.4586" Z="54.29" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="195140" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-163.8283" Y="973.4586" Z="54.29" />
+	</If>
+	
+	<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+		<CustomBehavior File="FlyTo" X="1844.718" Y="-4395.62" Z="135.2326" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="UseTransport" TransportId="164871"
+			WaitAtX="1844.718" WaitAtY="-4395.62" WaitAtZ="135.2326"
+			TransportStartX="1833.509" TransportStartY="-4391.543" TransportStartZ="152.7679"
+			TransportEndX="2062.376" TransportEndY="292.998" TransportEndZ="114.973"
+			StandOnX="1835.482" StandOnY="-4386.239" StandOnZ="135.0147" 
+			GetOffX="2070.155" GetOffY="289.2588" GetOffZ="97.0315" />
+	</If>
+	
+	<If Condition="!HasQuest(29317) &amp;&amp; !HasQuest(29320) &amp;&amp; !HasQuest(29361) &amp;&amp; !HasQuest(29319) &amp;&amp; !HasQuest(29322)" >
+		<CustomBehavior File="Message" Text="Grabbing Daily from Armand Cromwell" LogColor="CornflowerBlue" />
+		<MoveTo X="1676.084" Y="94.62909" Z="-62.09847" />
+		<If Condition="Me.GetSkill(Styx.SkillLine.Cooking).CurrentValue &lt; 1" >
+			<CustomBehavior File="ForceTrainRiding" MobId="4573" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</If>
+		<While Condition="HasQuestAvailable(4573)" >
+			<CustomBehavior File="InteractWith" MobId="4573" InteractByQuestFrameDisposition="Ignore" NonCompeteDistance="0" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+	
+	<If Condition="HasQuest(29317)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Fish Head" LogColor="CornflowerBlue" />
+		<If Condition="!IsQuestCompleted(29317)" >
+			<MoveTo X="1676.327" Y="94.46902" Z="-62.10641" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<CustomBehavior File="MrFishIt" QuestId="29317" CollectItemId="69901" CollectItemCount="1" X="1671.393" Y="104.763" Z="-66.3109" />
+		</If>
+		<TurnIn Nav="Fly" QuestName="Fish Head" QuestId="29317" TurnInName="Master Apothecary Faranell" TurnInId="2055" />
+	</If>
+	
+	<If Condition="HasQuest(29320)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Like Pike?" LogColor="CornflowerBlue" />
+		<CustomBehavior File="UserSettings" AutoEquip="False" />
+		<While Condition="!IsQuestCompleted(29320)" >
+			<!-- If we have a fishing pole, equip it -->
+			<If Condition="HasItem(44050)" >
+				<CustomBehavior File="EquipItem" ItemId="44050" />
+			<ElseIf Condition="HasItem(19970)" >
+				<CustomBehavior File="EquipItem" ItemId="19970" />
+			</ElseIf>
+			<ElseIf Condition="HasItem(45992)" >
+				<CustomBehavior File="EquipItem" ItemId="45992" />
+			</ElseIf>
+			<ElseIf Condition="HasItem(45991)" >
+				<CustomBehavior File="EquipItem" ItemId="45991" />
+			</ElseIf>
+			<ElseIf Condition="HasItem(45858)" >
+				<CustomBehavior File="EquipItem" ItemId="45858" />
+			</ElseIf>
+			<ElseIf Condition="HasItem(84661)" >
+				<CustomBehavior File="EquipItem" ItemId="84661" />
+			</ElseIf>
+			<ElseIf Condition="HasItem(6256)" >
+				<CustomBehavior File="EquipItem" ItemId="6256" />
+			</ElseIf>
+			<ElseIf Condition="HasItem(25978)" >
+				<CustomBehavior File="EquipItem" ItemId="25978" />
+			</ElseIf>
+			<ElseIf Condition="HasItem(6367)" >
+				<CustomBehavior File="EquipItem" ItemId="6367" />
+			</ElseIf>
+			<ElseIf Condition="HasItem(6366)" >
+				<CustomBehavior File="EquipItem" ItemId="6366" />
+			</ElseIf>
+			<ElseIf Condition="HasItem(84660)" >
+				<CustomBehavior File="EquipItem" ItemId="84660" />
+			</ElseIf>
+			<ElseIf Condition="HasItem(6365)" >
+				<CustomBehavior File="EquipItem" ItemId="6365" />
+			</ElseIf>
+			<ElseIf Condition="HasItem(106945)" >
+				<CustomBehavior File="EquipItem" ItemId="106945" />
+			</ElseIf>
+			<ElseIf Condition="HasItem(12225)" >
+				<CustomBehavior File="EquipItem" ItemId="12225" />
+			</ElseIf>
+			<ElseIf Condition="HasItem(46337)" >
+				<CustomBehavior File="EquipItem" ItemId="46337" />
+			</ElseIf>
+			<ElseIf Condition="HasItem(3567)" >
+				<CustomBehavior File="EquipItem" ItemId="3567" />
+			</ElseIf>
+			<ElseIf Condition="HasItem(4598)" >
+				<CustomBehavior File="EquipItem" ItemId="4598" />
+			</ElseIf>
+			<Else>
+				<CustomBehavior File="InteractWith" MobId="4574" InteractByBuyingItemId="6256" NonCompeteDistance="0"
+					WaitTime="2000" X="1676.794" Y="93.73164" Z="-62.13219" />
+				<CustomBehavior File="EquipItem" ItemId="6256" />
+			</Else>
+			</If>
+			<If Condition="!HasItem(69907) &amp;&amp; !Me.HasAura(99315)" >
+				<CustomBehavior File="InteractWith" QuestId="29320" MobId="208828" NonCompeteDistance="0"
+					PreInteractMountStrategy="Dismount" WaitTime="2500" NumOfTimes="1000"
+					TerminateWhen="HasItem(69907) || Me.HasAura(99315)" X="1780.907" Y="238.6673" Z="60.40886" />
+			</If>
+			<If Condition="Random(100) &lt; 33" >
+				<CustomBehavior File="FlyTo" X="2494.943" Y="-49.98228" Z="22.76519" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/castsequence item:69907" WaitTime="2000" />
+				<CustomBehavior File="RunMacro" Macro="/use 16" WaitTime="2000" />
+				<CustomBehavior File="MrFishIt" QuestId="29320" CollectItemId="69909" CollectItemCount="1" X="2481.092" Y="-39.61151" Z="21.19233" />
+			<ElseIf Condition="Random(100) &lt; 66" >
+				<CustomBehavior File="FlyTo" X="2496.667" Y="-25.38228" Z="22.65332" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/castsequence item:69907" WaitTime="2000" />
+				<CustomBehavior File="RunMacro" Macro="/use 16" WaitTime="2000" />
+				<CustomBehavior File="MrFishIt" QuestId="29320" CollectItemId="69909" CollectItemCount="1" X="2481.092" Y="-39.61151" Z="21.19233" />
+			</ElseIf>
+			<Else>
+				<CustomBehavior File="FlyTo" X="2511.463" Y="-92.92616" Z="22.06404" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/castsequence item:69907" WaitTime="2000" />
+				<CustomBehavior File="RunMacro" Macro="/use 16" WaitTime="2000" />
+				<CustomBehavior File="MrFishIt" QuestId="29320" CollectItemId="69909" CollectItemCount="1" X="2496.665" Y="-103.5123" Z="21.19247" />
+			</Else>
+			</If>
+		</While>
+		<TurnIn QuestName="Like Pike?" QuestId="29320" TurnInName="Armand Cromwell" TurnInId="4573" />
+	</If>
+	
+	<If Condition="HasQuest(29361)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Moat Monster!" LogColor="CornflowerBlue" />
+		<If Condition="HasItem(69999)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(69999)" WaitTime="2000" />
+		</If>
+		<While Condition="!IsQuestCompleted(29361)" >
+			<MoveTo X="1774.97" Y="214.7083" Z="59.64012" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(69998)" WaitTime="1500" />
+			<While Condition="Unit(53590) != null &amp;&amp; !IsQuestCompleted(29361)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(69995)" WaitTime="2200" />
+			</While>
+		</While>
+		<TurnIn Nav="Fly" QuestName="Moat Monster!" QuestId="29361" TurnInName="Armand Cromwell" TurnInId="4573" />
+	</If>
+	
+	<If Condition="HasQuest(29319)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Tadpole Terror" LogColor="CornflowerBlue" />
+		<If Condition="!IsQuestCompleted(29319)" >
+			<If Condition="Random(100) &lt; 25" >
+				<CustomBehavior File="FlyTo" X="2208.615" Y="714.5123" Z="36.73946" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" QuestId="29319" CollectItemId="69905" CollectItemCount="8" X="2200.956" Y="739.0664" Z="32.75515" />
+			<ElseIf Condition="Random(100) &lt; 50" >
+				<CustomBehavior File="FlyTo" X="2115.62" Y="777.7122" Z="33.4639" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" QuestId="29319" CollectItemId="69905" CollectItemCount="8" X="2139.998" Y="781.447" Z="32.7553" />
+			</ElseIf>
+			<ElseIf Condition="Random(100) &lt; 75" >
+				<CustomBehavior File="FlyTo" X="2185.547" Y="865.7671" Z="37.00016" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" QuestId="29319" CollectItemId="69905" CollectItemCount="8" X="2181.076" Y="844.641" Z="32.75524" />
+			</ElseIf>
+			<Else>
+				<CustomBehavior File="FlyTo" X="2288.411" Y="839.0109" Z="35.58503" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="MrFishIt" QuestId="29319" CollectItemId="69905" CollectItemCount="8" X="2272.68" Y="818.9682" Z="32.755" />
+			</Else>
+			</If>
+		</If>
+		<TurnIn Nav="Fly" QuestName="Tadpole Terror" QuestId="29319" TurnInName="Armand Cromwell" TurnInId="4573" />
+	</If>
+	
+	<If Condition="HasQuest(29322)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Time for Slime" LogColor="CornflowerBlue" />
+		<CustomBehavior File="InteractWith" QuestId="29322" MobId="53517" InteractByLooting="True"
+			NonCompeteDistance="5" NumOfTimes="1000" WaitTime="1000" CollectionDistance="500" >
+			<HuntingGrounds>
+				<Hotspot X="1581.777" Y="240.7135" Z="-62.07718" />
+				<Hotspot X="1594.886" Y="372.3039" Z="-62.17646" />
+				<Hotspot X="1727.858" Y="239.3128" Z="-62.17644" />
+				<Hotspot X="1594.474" Y="108.6208" Z="-62.1776" />
+				<Hotspot X="1464.276" Y="241.6593" Z="-62.17762" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<TurnIn Nav="Fly" QuestName="Time for Slime" QuestId="29322" TurnInName="Armand Cromwell" TurnInId="4573" />
+	</If>
+	
+	<While Condition="HasItem(67414)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(67414)" WaitTime="2000" />
+	</While>
+	
+	<CustomBehavior File="Message" Text="Double checking for training..." LogColor="Orange" />
+	<CustomBehavior File="ForceTrainRiding" MobId="4573" />
+
+	<CustomBehavior File="Message" Text="Fishing Daily Complete, signing off!" LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+		
+</QuestOrder>
+</HBProfile>

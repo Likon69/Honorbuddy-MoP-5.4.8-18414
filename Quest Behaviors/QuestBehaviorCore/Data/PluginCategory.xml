@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+    Plugins and their categories.
+    Behaviors may have a need to enable/disable plugins during certain activities.
+    
+    30Apr2013-07:56UTC chinajade
+ -->
+<Plugins>
+    <Plugin Name="Anti Drown" Category="SwimBreath" />
+    <Plugin Name="Anti-Drown" Category="SwimBreath" />
+    <Plugin Name="AutoEquip2" Category="GearManager" />
+</Plugins>

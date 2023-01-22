@@ -1,0 +1,138 @@
+<HBProfile>
+	<Name>Voice of the Gods ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>91</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder IgnoreCheckpoints="True" >
+
+<!-- He's In Deep -->
+	<If Condition="!HasQuest(32382) &amp;&amp; !IsQuestCompleted(32382)" >
+		<CustomBehavior File="FlyTo" X="-1131.48" Y="-1249.68" Z="28.51" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+
+		<!-- Admiral Taylor -->
+		<While Condition="HasQuestAvailable(67940)" >
+			<CustomBehavior File="InteractWith" MobId="67940" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+
+		<If Condition="!HasQuest(32382)" >
+			<CustomBehavior File="UserDialog" Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of storyline reached...for now! Level up your rep to continue!" />
+			<CustomBehavior File="Halt" />
+		</If>
+	</If>
+	
+	<If Condition="HasQuest(32382) &amp;&amp; !IsQuestCompleted(32382)" >
+		<CustomBehavior File="FlyTo" X="-1181.612" Y="-1194.751" Z="36.92921" />
+		<CustomBehavior File="InteractWith" MobId="68741" GossipOptions="1" WaitTime="1000" />
+		<CustomBehavior File="WaitTimer" WaitTime="152000" />
+	</If>
+	
+	<If Condition="HasQuest(32382) &amp;&amp; IsQuestCompleted(32382)" >
+		<TurnIn QuestName="He's In Deep" QuestId="32382" TurnInName="Cousin Goottooth" TurnInId="68417" />
+	</If>
+	
+	<If Condition="!HasQuest(32383) &amp;&amp; !IsQuestCompleted(32383)" >
+		<CustomBehavior File="FlyTo" X="2101.414" Y="1130.307" Z="483.9937" />
+		<PickUp QuestName="Bugging Out" QuestId="32383" GiverName="Cousin Goottooth" GiverId="68417" />
+	</If>
+	
+	<If Condition="!HasQuest(32397) &amp;&amp; !IsQuestCompleted(32397)" >
+		<CustomBehavior File="FlyTo" X="2101.414" Y="1130.307" Z="483.9937" />
+		<PickUp QuestName="He Won't Even Miss It" QuestId="32397" GiverName="Cousin Goottooth" GiverId="68417" />
+	</If>
+	
+	<If Condition="HasQuest(32397) || HasQuest(32383)" >
+		<CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="The next quests require you to avoid certain mobs to avoid getting killed. You can do it on your own, and hit continue when done, or risk it and hit continue now." />
+	</If>
+	
+	<If Condition="!Me.HasAura(134886) &amp;&amp; (HasQuest(32397) || HasQuest(32383))" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(92950)" />
+	</If>
+	
+<!-- He Won't Even Miss It -->
+	<If Condition="HasQuest(32397) &amp;&amp; !IsQuestCompleted(32397)" >
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="InteractWith" QuestId="32397" MobId="68413" WaitTime="1000" />
+		<RunTo X="2105.27" Y="1182.89" Z="476.57" />
+		<CustomBehavior File="InteractWith" QuestId="32397" MobId="216664" WaitTime="1000" />
+		<RunTo X="2101.414" Y="1130.307" Z="483.9937" />
+	</If>
+
+<!-- Bugging Out -->
+	<If Condition="HasQuest(32383) &amp;&amp; !IsQuestCompleted(32383)" >
+		<CustomBehavior File="UserSettings" QuestId="32383" LootMobs="False" PullDistance="1" />
+		<RunTo X="2101.414" Y="1130.307" Z="483.9937" />
+		<RunTo X="2117.74" Y="1173.17" Z="476.33" />
+		<CustomBehavior File="InteractWith" QuestId="32383" MobId="68413" WaitTime="1000" />
+		<If Condition="!IsObjectiveComplete(1,32383)" >
+			<CustomBehavior File="InteractWith" QuestId="32383" MobId="68913" IgnoreCombat="True" X="2111.623" Y="1188.063" Z="477.2256" />
+		</If>
+		<If Condition="!IsObjectiveComplete(3,32383)" >
+			<RunTo X="2101.414" Y="1130.307" Z="483.9937" />
+			<RunTo X="2045.51" Y="1184.72" Z="486.97" />
+			<CustomBehavior File="InteractWith" QuestId="32383" MobId="68913" IgnoreCombat="True" X="2074.503" Y="1196.068" Z="477.2921" />
+			<If Condition="!IsObjectiveComplete(2,32383)" >
+				<RunTo X="2091.48" Y="1212.02" Z="475.13" />
+				<CustomBehavior File="InteractWith" QuestId="32383" MobId="68913" IgnoreCombat="True" X="2090.332" Y="1204.74" Z="476.7347" />
+			</If>
+		</If>
+		<If Condition="!IsObjectiveComplete(2,32383)" >
+			<RunTo X="2101.414" Y="1130.307" Z="483.9937" />
+			<RunTo X="2045.51" Y="1184.72" Z="486.97" />
+			<RunTo X="2091.48" Y="1212.02" Z="475.13" />
+			<CustomBehavior File="InteractWith" QuestId="32383" MobId="68913" IgnoreCombat="True" X="2090.332" Y="1204.74" Z="476.7347" />
+		</If>
+		<RunTo X="2101.414" Y="1130.307" Z="483.9937" />
+	</If>
+	
+	<If Condition="HasQuest(32397) &amp;&amp; IsQuestCompleted(32397)" >
+		<TurnIn QuestName="He Won't Even Miss It" QuestId="32397" TurnInName="Cousin Goottooth" TurnInId="68417" />
+	</If>
+	
+	<If Condition="HasQuest(32383) &amp;&amp; IsQuestCompleted(32383)" >
+		<TurnIn QuestName="Bugging Out" QuestId="32383" TurnInName="Cousin Goottooth" TurnInId="68417" />
+	</If>
+	
+	<If Condition="Me.HasAura(134886)" >
+		<CustomBehavior File="Misc\RunLua" Lua="local n=GetSpellInfo(134886); CancelUnitBuff(&quot;player&quot;,n)" />
+	</If>
+
+<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Shieldwall Stories [Brodie]" />
+
+<CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="More Coming Soon" />
+
+</QuestOrder>
+</HBProfile>

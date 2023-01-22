@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Brewmoon Festival</Name>
+  <DungeonId>539</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="63529" name="Karsar the Bloodletter" killOrder="1" optional="false" X="1597.031" Y="199.309" Z="478.9505"/>
+    <Boss isFinal="false" entry="63518" name="Den Mother Moof" killOrder="1" optional="false" X="1769.517" Y="398.8038" Z="482.1555"/>
+    <Boss isFinal="false" entry="63520" name="Li Te" killOrder="1" optional="false" X="1945.811" Y="322.467" Z="478.1954"/>
+    <Boss isFinal="false" entry="63528" name="Warbringer Qobi" killOrder="1" optional="false" X="1802.689" Y="340.7202" Z="478.3181"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+
+  </PullBlackspots>
+</DungeonBuddyProfile>

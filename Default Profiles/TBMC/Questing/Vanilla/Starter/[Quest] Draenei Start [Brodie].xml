@@ -1,0 +1,272 @@
+<HBProfile>
+	<Name>Draenei Starter ($Rev$)</Name>
+	<MinLevel>1</MinLevel>
+	<MaxLevel>10</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>True</MailWhite>
+	<MailGreen>True</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>True</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>False</TargetElites>
+  
+	<AvoidMobs>
+		<Mob Name="Training Dummy" Entry="44703" />
+	</AvoidMobs>
+	
+	<Blackspots>
+		<Blackspot X="-4181.443" Y="-13735.03" Z="74.70583" Radius="4.272882" />
+		<Blackspot X="-4058.534" Y="-13712.52" Z="73.21595" Radius="4.018531" />
+		<Blackspot X="-4179.901" Y="-13734.12" Z="74.52544" Radius="3.264168" />
+		<Blackspot X="-4181.443" Y="-13735.03" Z="74.70583" Radius="4.272882" />
+		<Blackspot X="-4058.534" Y="-13712.52" Z="73.21595" Radius="4.018531" />
+		<Blackspot X="-4182.085" Y="-12499.44" Z="44.35985" Radius="4.693728" />
+		<Blackspot X="-4183.63" Y="-13736.32" Z="74.41099" Radius="3.822758" />
+		<Blackspot X="-4108.801" Y="-12461.35" Z="39.65593" Radius="9.141472" />
+		<Blackspot X="-4185.08" Y="-13738.31" Z="74.88866" Radius="5.165656" />
+		<Blackspot X="-3122.21" Y="-11914.92" Z="-0.343888" Radius="10.50159" />
+	</Blackspots>
+	
+	<Mailboxes>
+		<Mailbox X="-4047.621" Y="-13778.11" Z="74.96189" />
+		<Mailbox X="-4148.807" Y="-12490.85" Z="44.4998" />
+		<Mailbox X="-2045.372" Y="-11873.75" Z="46.75649" />
+	</Mailboxes>
+	
+	<Vendors>
+		<!-- Ammen Vale Vendors -->
+		<Vendor Name="Ryosh" Entry="16920" Type="Food" X="-4174.875" Y="-13726.35" Z="74.55257" />
+		<Vendor Name="Aurok" Entry="16917" Type="Repair" X="-4072.689" Y="-13755.99" Z="74.77484" />
+	</Vendors>
+	
+<!-- Quest Overrides -->
+
+<Quest Id="9280" Name="Replenishing the Healing Crystals">
+	<Objective Type="CollectItem" ItemId="22889" CollectCount="6">
+		<CollectFrom>
+			<Mob Id="16520" Name="Vale Moth" />
+		</CollectFrom>
+		<Hotspots>
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="9369" Name="Replenishing the Healing Crystals">
+	<Objective Type="CollectItem" ItemId="22889" CollectCount="6">
+		<CollectFrom>
+			<Mob Id="16520" Name="Vale Moth" />
+		</CollectFrom>
+		<Hotspots>
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+	
+	<CustomBehavior File="Message" Text="Compiling Azuremyst Isle Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Ammen Vale Quests" LogColor="CornflowerBlue" />
+
+<!-- You Survived! -->
+	<PickUp QuestName="You Survived!" QuestId="9279" GiverName="Megelon" GiverId="16475" />
+	<TurnIn QuestName="You Survived!" QuestId="9279" TurnInName="Proenitus" TurnInId="16477" />
+
+<!-- Replenishing the Healing Crystals -->
+	<PickUp QuestName="Replenishing the Healing Crystals" QuestId="9280" GiverName="Proenitus" GiverId="16477" />
+	<Objective QuestName="Replenishing the Healing Crystals" QuestId="9280" Type="CollectItem" ItemId="22889" CollectCount="6" />
+	<TurnIn QuestName="Replenishing the Healing Crystals" QuestId="9280" TurnInName="Proenitus" TurnInId="16477" />
+
+<!-- Urgent Delivery -->
+	<PickUp QuestName="Urgent Delivery!" QuestId="9409" GiverName="Proenitus" GiverId="16477" />
+	<TurnIn QuestName="Urgent Delivery!" QuestId="9409" TurnInName="Zalduun" TurnInId="16502" />
+	
+<!-- Race Specific -->
+	<If Condition="Me.Race == WoWRace.Draenei" >
+		<PickUp QuestName="Rescue the Survivors!" QuestId="9283" GiverName="Zalduun" GiverId="16502" />
+	</If>
+
+
+<!-- Botanist Taerix -->
+	<PickUp QuestName="Botanist Taerix" QuestId="9371" GiverName="Proenitus" GiverId="16477" />
+	<TurnIn QuestName="Botanist Taerix" QuestId="9371" TurnInName="Botanist Taerix" TurnInId="16514" />
+
+<!-- Volatile Mutations -->
+	<PickUp QuestName="Volatile Mutations" QuestId="10302" GiverName="Botanist Taerix" GiverId="16514" />
+	<Objective QuestName="Volatile Mutations" QuestId="10302" Type="KillMob" MobId="16516" KillCount="8" />
+	<If Condition="HasQuest(9283) &amp;&amp; !IsQuestCompleted(9283) &amp;&amp; Me.Race == WoWRace.Draenei" >
+		<If Condition="HasSpell(59545)" >
+			<CustomBehavior File="InteractWith" QuestId="9283" MobId="16483" Range="40" NumOfTimes="100" InteractByCastingSpellId="59545" NotMoving="True" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+				<HuntingGrounds>
+					<Hotspot X="-3945.152" Y="-13768" Z="65.11301" />
+					<Hotspot X="-3997.36" Y="-13820.78" Z="80.89042" />
+					<Hotspot X="-4007.942" Y="-13650.59" Z="63.02461" />
+					<Hotspot X="-3978.001" Y="-13561.38" Z="52.15265" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		<ElseIf Condition="HasSpell(59543)" >
+			<CustomBehavior File="InteractWith" QuestId="9283" MobId="16483" Range="40" NumOfTimes="100" InteractByCastingSpellId="59543" NotMoving="True" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+				<HuntingGrounds>
+					<Hotspot X="-3945.152" Y="-13768" Z="65.11301" />
+					<Hotspot X="-3997.36" Y="-13820.78" Z="80.89042" />
+					<Hotspot X="-4007.942" Y="-13650.59" Z="63.02461" />
+					<Hotspot X="-3978.001" Y="-13561.38" Z="52.15265" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</ElseIf>
+		<ElseIf Condition="HasSpell(59548)" >
+			<CustomBehavior File="InteractWith" QuestId="9283" MobId="16483" Range="40" NumOfTimes="100" InteractByCastingSpellId="59548" NotMoving="True" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+				<HuntingGrounds>
+					<Hotspot X="-3945.152" Y="-13768" Z="65.11301" />
+					<Hotspot X="-3997.36" Y="-13820.78" Z="80.89042" />
+					<Hotspot X="-4007.942" Y="-13650.59" Z="63.02461" />
+					<Hotspot X="-3978.001" Y="-13561.38" Z="52.15265" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</ElseIf>
+		<ElseIf Condition="HasSpell(121093)" >
+			<CustomBehavior File="InteractWith" QuestId="9283" MobId="16483" Range="40" NumOfTimes="100" InteractByCastingSpellId="121093" NotMoving="True" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+				<HuntingGrounds>
+					<Hotspot X="-3945.152" Y="-13768" Z="65.11301" />
+					<Hotspot X="-3997.36" Y="-13820.78" Z="80.89042" />
+					<Hotspot X="-4007.942" Y="-13650.59" Z="63.02461" />
+					<Hotspot X="-3978.001" Y="-13561.38" Z="52.15265" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</ElseIf>
+		<ElseIf Condition="HasSpell(59542)" >
+			<CustomBehavior File="InteractWith" QuestId="9283" MobId="16483" Range="40" NumOfTimes="100" InteractByCastingSpellId="59542" NotMoving="True" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+				<HuntingGrounds>
+					<Hotspot X="-3945.152" Y="-13768" Z="65.11301" />
+					<Hotspot X="-3997.36" Y="-13820.78" Z="80.89042" />
+					<Hotspot X="-4007.942" Y="-13650.59" Z="63.02461" />
+					<Hotspot X="-3978.001" Y="-13561.38" Z="52.15265" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</ElseIf>
+		<ElseIf Condition="HasSpell(59544)" >
+			<CustomBehavior File="InteractWith" QuestId="9283" MobId="16483" Range="40" NumOfTimes="100" InteractByCastingSpellId="59544" NotMoving="True" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+				<HuntingGrounds>
+					<Hotspot X="-3945.152" Y="-13768" Z="65.11301" />
+					<Hotspot X="-3997.36" Y="-13820.78" Z="80.89042" />
+					<Hotspot X="-4007.942" Y="-13650.59" Z="63.02461" />
+					<Hotspot X="-3978.001" Y="-13561.38" Z="52.15265" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</ElseIf>
+		<ElseIf Condition="HasSpell(59547)" >
+			<CustomBehavior File="InteractWith" QuestId="9283" MobId="16483" Range="40" NumOfTimes="100" InteractByCastingSpellId="59547" NotMoving="True" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+				<HuntingGrounds>
+					<Hotspot X="-3945.152" Y="-13768" Z="65.11301" />
+					<Hotspot X="-3997.36" Y="-13820.78" Z="80.89042" />
+					<Hotspot X="-4007.942" Y="-13650.59" Z="63.02461" />
+					<Hotspot X="-3978.001" Y="-13561.38" Z="52.15265" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</ElseIf>
+		<ElseIf Condition="HasSpell(28880)" >
+			<CustomBehavior File="InteractWith" QuestId="9283" MobId="16483" Range="40" NumOfTimes="100" InteractByCastingSpellId="28880" NotMoving="True" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+				<HuntingGrounds>
+					<Hotspot X="-3945.152" Y="-13768" Z="65.11301" />
+					<Hotspot X="-3997.36" Y="-13820.78" Z="80.89042" />
+					<Hotspot X="-4007.942" Y="-13650.59" Z="63.02461" />
+					<Hotspot X="-3978.001" Y="-13561.38" Z="52.15265" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="Message" Text="Not sure how you received this quest. This is for Draenei only. Ignoring quest." LogColor="Red" />
+		</Else>
+		</If>
+	</If>
+	<TurnIn QuestName="Volatile Mutations" QuestId="10302" TurnInName="Botanist Taerix" TurnInId="16514" />
+	<If Condition="HasQuest(9283) &amp;&amp; IsQuestCompleted(9283)" >
+		<TurnIn QuestName="Rescue the Survivors!" QuestId="9283" TurnInName="Zalduun" TurnInId="16502" />
+	</If>
+
+<!-- What Must Be Done.../Botanical Legwork/Spare Parts/Inoculation -->
+	<PickUp QuestName="Botanical Legwork" QuestId="9799" GiverName="Apprentice Vishael" GiverId="20233" />
+	<PickUp QuestName="What Must Be Done..." QuestId="9293" GiverName="Botanist Taerix" GiverId="16514" />
+	<PickUp QuestName="Spare Parts" QuestId="9305" GiverName="Technician Zhanaa" GiverId="17071" />
+	<PickUp QuestName="Inoculation" QuestId="9303" GiverName="Vindicator Aldar" GiverId="16535" />
+	<Objective QuestName="Botanical Legwork" QuestId="9799" Type="CollectItem" ItemId="24416" CollectCount="3" />
+	<Objective QuestName="What Must Be Done..." QuestId="9293" Type="CollectItem" ItemId="22934" CollectCount="10" />
+	<TurnIn QuestName="Botanical Legwork" QuestId="9799" TurnInName="Apprentice Vishael" TurnInId="20233" />
+	<TurnIn QuestName="What Must Be Done..." QuestId="9293" TurnInName="Botanist Taerix" TurnInId="16514" />
+	<PickUp QuestName="Healing the Lake" QuestId="9294" GiverName="Botanist Taerix" GiverId="16514" />
+	<CustomBehavior File="InteractWith" QuestId="9294" InteractByUsingItemId="22955" MobId="181433" NumOfTimes="100" Range="14" MinRange="8" IgnoreLoSToTarget="True" CollectionDistance="1000" X="-4386.737" Y="-13646.35" Z="38.52915" />
+	<CustomBehavior File="InteractWith" QuestId="9303" MobId="16518" InteractByUsingItemId="22962" NumOfTimes="100" Range="8" CollectionDistance="1000" X="-4412.28" Y="-13715.37" Z="52.34776" >
+		<HuntingGrounds>
+			<Hotspot X="-4477.111" Y="-13654.19" Z="48.42057" />
+			<Hotspot X="-4438.654" Y="-13703.11" Z="49.68235" />
+			<Hotspot X="-4410.41" Y="-13749.52" Z="53.42937" />
+			<Hotspot X="-4379.563" Y="-13789.37" Z="52.07661" />
+			<Hotspot X="-4611.139" Y="-13955.54" Z="83.23655" />
+			<Hotspot X="-4565.247" Y="-13998.53" Z="85.50555" />
+			<Hotspot X="-4499.28" Y="-14085.71" Z="108.472" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="Spare Parts" QuestId="9305" Type="CollectItem" ItemId="22978" CollectCount="4" />
+	<TurnIn QuestName="Healing the Lake" QuestId="9294" TurnInName="Botanist Taerix" TurnInId="16514" />
+	<TurnIn QuestName="Spare Parts" QuestId="9305" TurnInName="Technician Zhanaa" TurnInId="17071" />
+	<TurnIn QuestName="Inoculation" QuestId="9303" TurnInName="Vindicator Aldar" TurnInId="16535" />
+
+<!-- The Missing Scout -->
+	<PickUp QuestName="The Missing Scout" QuestId="9309" GiverName="Vindicator Aldar" GiverId="16535" />
+	<TurnIn QuestName="The Missing Scout" QuestId="9309" TurnInName="Tolaan" TurnInId="16546" />
+
+<!-- The Blood Elves -->
+	<PickUp QuestName="The Blood Elves" QuestId="10303" GiverName="Tolaan" GiverId="16546" />
+	<Objective QuestName="The Blood Elves" QuestId="10303" Type="KillMob" MobId="16521" KillCount="10" />
+	<TurnIn QuestName="The Blood Elves" QuestId="10303" TurnInName="Tolaan" TurnInId="16546" />
+
+<!-- Blood Elf Spy/Plans -->
+	<PickUp QuestName="Blood Elf Spy" QuestId="9311" GiverName="Tolaan" GiverId="16546" />
+	<Objective QuestName="Blood Elf Spy" QuestId="9311" Type="KillMob" MobId="16522" KillCount="1" />
+	<If Condition="!HasItem(24414) &amp;&amp; !IsQuestCompleted(9798)" >
+		<CustomBehavior File="CollectThings" MobId="16522" CollectItemId="24414" CollectItemCount="1" X="-4575.429" Y="-13323.26" Z="88.0428" />
+	</If>
+	<If Condition="HasItem(24414)" >
+		<PickUp QuestName="Blood Elf Plans" QuestId="9798" GiverType="Item" GiverId="24414" />
+	</If>
+	<TurnIn QuestName="Blood Elf Spy" QuestId="9311" TurnInName="Vindicator Aldar" TurnInId="16535" />
+	<TurnIn QuestName="Blood Elf Plans" QuestId="9798" TurnInName="Vindicator Aldar" TurnInId="16535" />
+
+<!-- The Emitter -->
+	<PickUp QuestName="The Emitter" QuestId="9312" GiverName="Vindicator Aldar" GiverId="16535" />
+	<TurnIn QuestName="The Emitter" QuestId="9312" TurnInName="Technician Zhanaa" TurnInId="17071" />
+
+<!-- Travel to/Word from Azure Watch/Red Snapper - Very Tasty! -->
+	<PickUp QuestName="Travel to Azure Watch" QuestId="9313" GiverName="Technician Zhanaa" GiverId="17071" />
+	<PickUp QuestName="Word from Azure Watch" QuestId="9314" GiverName="Aeun" GiverId="16554" />
+	<PickUp QuestName="Red Snapper - Very Tasty!" QuestId="9452" GiverName="Diktynna" GiverId="17101" />
+	<CustomBehavior File="InteractWith" QuestId="9452" MobId="181616" InteractByUsingItemId="23654" NumOfTimes="100" CollectionDistance="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-4304.939" Y="-13048.08" Z="-1.677107" />
+			<Hotspot X="-4215.212" Y="-13016.37" Z="0.07770048" />
+			<Hotspot X="-4138.19" Y="-13019.02" Z="0.5652822" />
+			<Hotspot X="-4040.833" Y="-13030.73" Z="0.4834671" />
+			<Hotspot X="-3936.635" Y="-13022.25" Z="-1.928468" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="Red Snapper - Very Tasty!" QuestId="9452" TurnInName="Diktynna" TurnInId="17101" />
+	<PickUp QuestName="Find Aceton!" QuestId="9453" GiverName="Diktynna" GiverId="17101" />
+	<TurnIn QuestName="Find Aceton!" QuestId="9453" TurnInName="Aceton" TurnInId="17110" />
+	<TurnIn QuestName="Travel to Azure Watch" QuestId="9313" TurnInName="Technician Dyvuun" TurnInId="16551" />
+	<TurnIn QuestName="Word from Azure Watch" QuestId="9314" TurnInName="Caregiver Chellan" TurnInId="16553" />
+
+	<CustomBehavior File="Message" Text="Completed Draenei Starting Area" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\..\[Quest] The Level Grind [Brodie]" /> 
+				
+</QuestOrder>
+</HBProfile>

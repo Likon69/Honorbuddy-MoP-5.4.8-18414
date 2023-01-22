@@ -1,0 +1,106 @@
+<HBProfile>
+	<Name>Shaohao Rep Farm ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>0</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Mama Stormstout" Entry="73649" Type="Food" X="-614.8577" Y="-4913.071" Z="2.056075" />
+		<Vendor Name="Brewmaster Tzu" Entry="73618" Type="Food" X="-512.4288" Y="-4946.128" Z="2.056667" />
+		<Vendor Name="Crafter Kwon" Entry="73656" Type="Repair" X="-511.3785" Y="-5008.741" Z="2.056738" />
+	</Vendors>
+  
+	<AvoidMobs>
+		<Mob Name="Tushui Sentry" Entry="73361" /> <!-- Alliance Guards -->
+		<Mob Name="Huojin Sentry" Entry="73362" /> <!-- Horde Guards -->
+		<Mob Name="Elder Great Turtle" Entry="72765" />
+		<Mob Name="Eroded Cliffdweller" Entry="72761" />
+	</AvoidMobs>
+   
+	<Blackspots>
+		<Blackspot X="-911.9672" Y="-4640.844" Z="4.998785" Radius="35" /> <!-- Alliance Camp -->
+	</Blackspots>
+	
+	<Blacklist>
+		<Mob Name="Elder Great Turtle" Entry="72765" Flags="Pull, Combat" />
+		<Mob Name="Great Turtle" Entry="72764" Flags="Pull, Combat" />
+		<Mob Name="Great Turtle Hatchling" Entry="72763" Flags="Pull, Combat" />
+		<Mob Name="Ironfur Great Bull" Entry="72844" Flags="Pull, Combat" />
+		<Mob Name="Ironfur Steelhorn" Entry="73160" Flags="Pull, Combat" />
+		<Mob Name="Ironfur Grazer" Entry="72843" Flags="Pull, Combat" />
+		<Mob Name="Ironfur Herdling" Entry="72842" Flags="Pull, Combat" />
+		<Mob Name="Brilliant Windfeather" Entry="72762" Flags="Pull, Combat" />
+		<Mob Name="Windfeather Nestkeeper" Entry="72761" Flags="Pull, Combat" />
+		<Mob Name="Windfeather Chick" Entry="71143" Flags="Pull, Combat" />
+		<Mob Name="Gulp Frog" Entry="72777" Flags="Pull, Combat" />
+		<Mob Name="Ancient Spineclaw" Entry="72766" Flags="Pull, Combat" />
+		<Mob Name="Eroded Cliffdweller" Entry="72761" Flags="Pull, Combat" />
+		<Mob Name="Death Adder" Entry="72841" Flags="Pull, Combat" />
+		<Mob Name="Crag Stalker" Entry="72807" Flags="Pull, Combat" />
+		<Mob Name="Primal Stalker" Entry="72805" Flags="Pull, Combat" />
+		<Mob Name="Spectral Brewmaster" Entry="73018" Flags="Pull, Combat" />
+		<Mob Name="Spectral Mistweaver" Entry="73025" Flags="Pull, Combat" />
+		<Mob Name="Spectral Windwalker" Entry="73021" Flags="Pull, Combat" />
+		<Mob Name="Ashleaf Sprite" Entry="72877" Flags="Pull" />
+	</Blacklist>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<CustomBehavior File="RunMacro" Macro="/script SetCVar('AutoLootDefault', 1)" WaitTime="1000" />
+	<CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+	
+	<SetMailboxes>
+		<Mailbox Nav="Fly" UsableWhen="Me.IsAlliance" X="-908.8835" Y="-4635.785" Z="4.628042" />
+		<Mailbox Nav="Fly" UsableWhen="Me.IsHorde" X="-428.5745" Y="-4614.354" Z="4.3078" />
+	</SetMailboxes>
+
+	<CustomBehavior File="Message" Text="Starting Shaohao Rep Farm" LogColor="Green" />
+
+	<If Condition="Me.ZoneId != 6757" >
+		<CustomBehavior File="FlyTo" X="-680.5806" Y="-4507.614" Z="0.1" />
+		<MoveTo X="-683.057" Y="-4819.213" Z="2.231921" />
+	</If>
+	
+	<!-- Chest Checks -->
+
+	<While Condition="Me.Level &gt;= 90" >
+		<SetGrindArea>
+			<GrindArea>
+				<Factions>16</Factions>
+				<Hotspots>
+					<Hotspot X="-1024.043" Y="-5242.951" Z="35.67918" />
+					<Hotspot X="-993.5952" Y="-5306.755" Z="55.75698" />
+					<Hotspot X="-1059.346" Y="-5339.686" Z="54.68626" />
+					<Hotspot X="-1085.031" Y="-5402.633" Z="55.60102" />
+					<Hotspot X="-1019.935" Y="-5397.173" Z="55.98228" />
+					<Hotspot X="-942.6592" Y="-5384.381" Z="57.22335" />
+					<Hotspot X="-981.5397" Y="-5461.04" Z="54.44702" />
+					<Hotspot X="-546.4556" Y="-5745.177" Z="83.37996" />
+					<Hotspot X="-568.0465" Y="-5850.09" Z="82.19998" />
+				</Hotspots>
+			</GrindArea> 
+		</SetGrindArea>
+		<GrindTo Condition="Me.Level &gt; 90" />
+	</While>
+
+</QuestOrder>
+</HBProfile>

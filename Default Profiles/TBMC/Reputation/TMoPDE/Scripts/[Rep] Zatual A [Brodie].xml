@@ -1,0 +1,299 @@
+<HBProfile>
+	<Name>Za'Tual (Alliance) ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Teng of the Flying Daggers" Entry="70535" Type="Repair" X="6865.31" Y="5515.42" Z="1.28" />
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- Surgical Strike -->
+	<Quest Id="32542" Name="Surgical Strike">
+		<Objective Type="KillMob" MobId="69379" MobId2="69412" MobId3="70509" MobId4="69397" MobId5="69780" KillCount="3" >
+			<Hotspots>
+				<Hotspot X="6335.694" Y="5995.143" Z="28.04009" />
+				<Hotspot X="6286.618" Y="6109.653" Z="27.35278" />
+				<Hotspot X="6271.932" Y="6238.423" Z="15.31726" />
+				<Hotspot X="6220.592" Y="6318.434" Z="12.7762" />
+				<Hotspot X="6179.856" Y="6207.406" Z="20.70942" />
+				<Hotspot X="6125.784" Y="6251.607" Z="29.02401" />
+				<Hotspot X="6042.262" Y="6206.613" Z="21.36201" />
+				<Hotspot X="6126.702" Y="6155.273" Z="25.10509" />
+				<Hotspot X="6115.352" Y="6006.785" Z="50.47056" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="69171" KillCount="3" >
+			<Hotspots>
+				<Hotspot X="6335.694" Y="5995.143" Z="28.04009" />
+				<Hotspot X="6286.618" Y="6109.653" Z="27.35278" />
+				<Hotspot X="6271.932" Y="6238.423" Z="15.31726" />
+				<Hotspot X="6220.592" Y="6318.434" Z="12.7762" />
+				<Hotspot X="6179.856" Y="6207.406" Z="20.70942" />
+				<Hotspot X="6125.784" Y="6251.607" Z="29.02401" />
+				<Hotspot X="6042.262" Y="6206.613" Z="21.36201" />
+				<Hotspot X="6126.702" Y="6155.273" Z="25.10509" />
+				<Hotspot X="6115.352" Y="6006.785" Z="50.47056" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="69254" MobId2="69256" MobId3="69255" MobId4="69225" KillCount="3" >
+			<Hotspots>
+				<Hotspot X="6335.694" Y="5995.143" Z="28.04009" />
+				<Hotspot X="6286.618" Y="6109.653" Z="27.35278" />
+				<Hotspot X="6271.932" Y="6238.423" Z="15.31726" />
+				<Hotspot X="6220.592" Y="6318.434" Z="12.7762" />
+				<Hotspot X="6179.856" Y="6207.406" Z="20.70942" />
+				<Hotspot X="6125.784" Y="6251.607" Z="29.02401" />
+				<Hotspot X="6042.262" Y="6206.613" Z="21.36201" />
+				<Hotspot X="6126.702" Y="6155.273" Z="25.10509" />
+				<Hotspot X="6115.352" Y="6006.785" Z="50.47056" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+<!-- Starting Quests -->
+
+<CustomBehavior File="Message" Text="Compiling Za'Tual Quests..." LogColor="CornflowerBlue"  />
+
+	<If Condition="(!HasQuest(32541) &amp;&amp; IsQuestCompleted(32541) ||
+					!HasQuest(32540) &amp;&amp; IsQuestCompleted(32540) ||
+					!HasQuest(32543) &amp;&amp; IsQuestCompleted(32543) ||
+					!HasQuest(32542) &amp;&amp; IsQuestCompleted(32542) ||
+					!HasQuest(32544) &amp;&amp; IsQuestCompleted(32544) ||
+					!HasQuest(32539) &amp;&amp; IsQuestCompleted(32539) ||
+					!HasQuest(32733) &amp;&amp; IsQuestCompleted(32733) ||
+					!HasQuest(32538) &amp;&amp; IsQuestCompleted(32538))" >
+		<CustomBehavior File="Message" Text="Previously Completed Quests Detected" LogColor="CornflowerBlue" />
+		<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: Previously completed quests detected! \n\n Either you have done some of you quests already, and have restarted the bot...\n OR your cache folder is NOT clean, and must be deleted, and bot restarted." />
+	</If>
+
+	<DisableBehavior Name="Pull, Combat" />
+	
+<!-- Za'Tual (Kicker) -->
+	<If Condition="HasQuest(32733)" >
+		<CustomBehavior File="Message" Text="Starting Za'Tual Kicker" LogColor="Green" />
+		<If Condition="!IsQuestCompleted(32644)" >
+			<MoveTo X="5853.921" Y="6349.672" Z="2.23" />
+		<ElseIf Condition="IsQuestCompleted(32644)" >
+			<MoveTo X="6320.61" Y="5909.59" Z="12.44" />
+		</ElseIf>
+		</If>
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<TurnIn QuestName="Za'Tual" QuestId="32733" TurnInName="Archmage Lan'dalock" TurnInId="70517" />
+	</If>
+	
+<!-- Archmage Lan'dalock -->
+	<While Condition="HasQuestAvailable(70517)" >
+		<CustomBehavior File="InteractWith" MobId="70517" InteractByQuestFrameDisposition="Ignore" IgnoreCombat="True" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Ako -->
+	<While Condition="HasQuestAvailable(69673)" >
+		<CustomBehavior File="InteractWith" MobId="69673" InteractByQuestFrameDisposition="Ignore" IgnoreCombat="True" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Dalvin Jaacor -->
+	<While Condition="HasQuestAvailable(69674)" >
+		<CustomBehavior File="InteractWith" MobId="69674" InteractByQuestFrameDisposition="Ignore" IgnoreCombat="True" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+	<EnableBehavior Name="Pull, Combat" />
+	
+<!-- Preventing a Future Threat -->
+	<If Condition="HasQuest(32541) &amp;&amp; !IsQuestCompleted(32541)" >
+		<CustomBehavior File="Message" Text="Starting Preventing a Future Threat" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="CollectThings" MobId="69128" CollectUntil="QuestComplete" QuestId="32541" HuntingGroundRadius="100" NonCompeteDistance="5" PostInteractDelay="1000" >
+			<Hotspot X="5956.03" Y="6407.93" Z="7.34" />
+			<Hotspot X="5920.20" Y="6445.44" Z="20.20" />
+		</CustomBehavior>
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- Heinous Sacrifice -->
+	<If Condition="HasQuest(32538) &amp;&amp; !IsQuestCompleted(32538)" >
+		<CustomBehavior File="Message" Text="Starting Heinous Sacrifice" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="InteractWith" QuestId="32538" QuestObjectiveIndex="1" MobId="217201" MobId2="218424" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" WaitTime="1000" NumOfTimes="100" X="6047.05" Y="6245.00" Z="22.96" />
+		<CustomBehavior File="InteractWith" QuestId="32538" QuestObjectiveIndex="3" MobId="217203" MobId2="218426" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" WaitTime="1000" NumOfTimes="100" X="5981.98" Y="6054.16" Z="58.59" />
+		<CustomBehavior File="InteractWith" QuestId="32538" QuestObjectiveIndex="2" MobId="217202" MobId2="218425" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" WaitTime="1000" NumOfTimes="100" X="6348.41" Y="6015.33" Z="29.35" />
+		<EnableBehavior Name="Pull" />
+	</If>
+	
+<!-- Dark Offerings -->
+	<If Condition="HasQuest(32539) &amp;&amp; !IsQuestCompleted(32539)" >
+		<CustomBehavior File="Message" Text="Starting Dark Offerings" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="CollectThings" QuestId="32539" ObjectId="216991" CollectUntil="QuestComplete" HuntingGroundRadius="120" NonCompeteDistance="5" PostInteractDelay="1000" >
+			<Hotspot X="6280.383" Y="6244.237" Z="15.92406" />
+			<Hotspot X="6284.976" Y="6139.48" Z="27.92483" />
+			<Hotspot X="6318.386" Y="6008.481" Z="25.94791" />
+			<Hotspot X="6221.089" Y="5949.176" Z="40.78794" />
+			<Hotspot X="6130.664" Y="6008.328" Z="50.47295" />
+			<Hotspot X="6111.66" Y="5973.602" Z="49.94812" />
+			<Hotspot X="6055.106" Y="6010.012" Z="56.07657" />
+			<Hotspot X="6010.951" Y="6075.733" Z="57.54343" />
+			<Hotspot X="6209.774" Y="6122.893" Z="46.67885" />
+			<Hotspot X="6052.726" Y="6259.134" Z="22.89777" />
+			<Hotspot X="6041.158" Y="6175.552" Z="22.89766" />
+		</CustomBehavior>
+		<EnableBehavior Name="Pull" />
+	</If>
+	
+<!-- Harbringers of the Loa -->
+	<If Condition="HasQuest(32540) &amp;&amp; !IsQuestCompleted(32540)" >
+		<CustomBehavior File="Message" Text="Starting Harbringers of the Loa" LogColor="Green" />
+		<Objective QuestName="Harbringers of the Loa" QuestId="32540" Type="KillMob" MobId="69281" MobId2="69285" KillCount="2" />
+	</If>
+	
+<!-- Surgical Strike -->
+	<If Condition="HasQuest(32542) &amp;&amp; !IsQuestCompleted(32542)" >
+		<CustomBehavior File="Message" Text="Starting Surgical Strike" LogColor="Green" />
+		<Objective QuestName="Surgical Strike" QuestId="32542" Type="KillMob" MobId="69379" MobId2="69412" MobId3="70509" MobId4="69397" MobId5="69780" KillCount="3" />
+		<Objective QuestName="Surgical Strike" QuestId="32542" Type="KillMob" MobId="69171" KillCount="3" />
+		<CustomBehavior File="CollectThings" QuestId="32542" CollectUntil="QuestComplete" MobId="69254" MobId2="69256" MobId3="69255" MobId4="69225" HuntingGroundRadius="120" >
+			<Hotspot X="6335.694" Y="5995.143" Z="28.04009" />
+			<Hotspot X="6286.618" Y="6109.653" Z="27.35278" />
+			<Hotspot X="6271.932" Y="6238.423" Z="15.31726" />
+			<Hotspot X="6220.592" Y="6318.434" Z="12.7762" />
+			<Hotspot X="6179.856" Y="6207.406" Z="20.70942" />
+			<Hotspot X="6125.784" Y="6251.607" Z="29.02401" />
+			<Hotspot X="6042.262" Y="6206.613" Z="21.36201" />
+			<Hotspot X="6126.702" Y="6155.273" Z="25.10509" />
+			<Hotspot X="6115.352" Y="6006.785" Z="50.47056" />
+		</CustomBehavior>
+	</If>
+
+<!-- Pterrible Ptorment -->
+	<If Condition="HasQuest(32544) &amp;&amp; !IsQuestCompleted(32544)" >
+		<CustomBehavior File="Message" Text="Starting Pterrible Ptorment" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="32544" MobId="69224" MobState="Alive" CollectionDistance="500" NumOfTimes="1000" 
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" X="6213.471" Y="5955.08" Z="40.78753" />
+	</If>
+	
+<!-- Dangers of Za'Tual -->
+	<If Condition="HasQuest(32543) &amp;&amp; !IsQuestCompleted(32543)" >
+		<CustomBehavior File="Message" Text="Starting Dangers of Za'Tual" LogColor="Green" />
+		<Objective QuestName="Dangers of Za'Tual" QuestId="32543" Type="KillMob" MobId="69780" MobId2="69065" KillCount="12" />
+	</If>
+	
+<!-- Za'Tual Turn-ins -->
+	<If Condition="HasQuest(32541) &amp;&amp; IsQuestCompleted(32541) ||
+					HasQuest(32540) &amp;&amp; IsQuestCompleted(32540) ||
+					HasQuest(32543) &amp;&amp; IsQuestCompleted(32543) ||
+					HasQuest(32542) &amp;&amp; IsQuestCompleted(32542) ||
+					HasQuest(32544) &amp;&amp; IsQuestCompleted(32544) ||
+					HasQuest(32539) &amp;&amp; IsQuestCompleted(32539) ||
+					HasQuest(32538) &amp;&amp; IsQuestCompleted(32538)" >
+		<CustomBehavior File="Message" Text="Heading back to Zu'Tual to Turn-In" LogColor="Green" />
+		<DisableBehavior Name="Pull, Combat, Loot" />
+		<If Condition="!IsQuestCompleted(32644)" >
+			<MoveTo X="5853.921" Y="6349.672" Z="2.23" />
+		<ElseIf Condition="IsQuestCompleted(32644)" >
+			<MoveTo X="6320.61" Y="5909.59" Z="12.44" />
+		</ElseIf>
+		</If>
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+	</If>
+	
+	<If Condition="HasQuest(32544) &amp;&amp; IsQuestCompleted(32544)" >
+		<TurnIn QuestName="Pterrible Ptorment" QuestId="32544" TurnInName="Ako" TurnInId="69673" />
+	</If>
+	
+	<If Condition="HasQuest(32541) &amp;&amp; IsQuestCompleted(32541)" >
+		<TurnIn QuestName="Preventing a Future Threat" QuestId="32541" TurnInName="Ako" TurnInId="69673" />
+	</If>
+	
+	<If Condition="HasQuest(32542) &amp;&amp; IsQuestCompleted(32542)" >
+		<TurnIn QuestName="Surgical Strike" QuestId="32542" TurnInName="Archmage Lan'dalock" TurnInId="70517" />
+	</If>
+	
+	<If Condition="HasQuest(32540) &amp;&amp; IsQuestCompleted(32540)" >
+		<TurnIn QuestName="Harbringers of the Loa" QuestId="32540" TurnInName="Archmage Lan'dalock" TurnInId="70517" />
+	</If>
+	
+	<If Condition="HasQuest(32543) &amp;&amp; IsQuestCompleted(32543)" >
+		<TurnIn QuestName="Dangers of Za'Tual" QuestId="32543" TurnInName="Archmage Lan'dalock" TurnInId="70517" />
+	</If>
+	
+	<If Condition="HasQuest(32538) &amp;&amp; IsQuestCompleted(32538)" >
+		<TurnIn QuestName="Heinous Sacrifice" QuestId="32538" TurnInName="Dalvin Jaacor" TurnInId="69674" />
+	</If>
+	
+	<If Condition="HasQuest(32539) &amp;&amp; IsQuestCompleted(32539)" >
+		<TurnIn QuestName="Dark Offerings" QuestId="32539" TurnInName="Dalvin Jaacor" TurnInId="69674" />
+	</If>
+	
+	<CustomBehavior File="WaitTimer" WaitTime="1000" />
+	
+<!-- Double Check for ender quests -->
+
+<!-- Archmage Lan'dalock -->
+	<While Condition="HasQuestAvailable(70517)" >
+		<CustomBehavior File="InteractWith" MobId="70517" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Ako -->
+	<While Condition="HasQuestAvailable(69673)" >
+		<CustomBehavior File="InteractWith" MobId="69673" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Dalvin Jaacor -->
+	<While Condition="HasQuestAvailable(69674)" >
+		<CustomBehavior File="InteractWith" MobId="69674" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+	<EnableBehavior Name="Pull, Combat, Loot" />
+	
+	<If Condition="HasItem(94566)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(94566)" />
+	</If>
+	
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+
+<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Isle of Thunder A [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

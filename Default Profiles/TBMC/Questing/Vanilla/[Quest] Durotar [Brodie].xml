@@ -1,0 +1,283 @@
+<HBProfile>
+	<Name>Durotar ($Rev$)</Name>
+	<MinLevel>4</MinLevel>
+	<MaxLevel>20</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>False</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+		<Blackspot X="943.5986" Y="-4226.784" Z="-5.198198" Radius="8" />
+		<Blackspot X="-248.2586" Y="-5120.507" Z="25.24466" Radius="1.987862" />
+		<Blackspot X="1162.285" Y="-4273.806" Z="21.43729" Radius="3.302218" />
+		<Blackspot X="1401.63" Y="-4866.159" Z="14.70915" Radius="2.256187" />
+		<Blackspot X="385.465" Y="-4578.318" Z="54.50182" Radius="2.877192" />
+	</Blackspots>
+
+	<Mailboxes>
+		<!-- Sen'jin Village -->
+		<Mailbox X="-814.5521" Y="-4927.984" Z="19.87724" />
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Sen'jin Village -->
+		<Vendor Name="Trayexir" Entry="10369" Type="Repair" X="-769.1502" Y="-4948.526" Z="22.84929" />
+		<Vendor Name="Tai'tasi" Entry="3187" Type="Food" X="-792.59" Y="-4945.023" Z="22.24637" />
+		<!-- Razor Hill -->
+		<Vendor Name="Wuark" Entry="3167" Type="Repair" X="358.1284" Y="-4706.727" Z="14.39384" />
+		<Vendor Name="Uhgar" Entry="3163" Type="Repair" X="381.653" Y="-4712.06" Z="16.03344" />
+		<Vendor Name="Flakk" Entry="3168" Type="Food" X="327.34" Y="-4764.9" Z="12.32436" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Name="Unbidden Visitors" Id="25194" >
+	<Objective Type="KillMob" MobId="39337" KillCount="3" >
+		<Hotspots>
+			<Hotspot X="251.8288" Y="-3806.865" Z="20.69249" />
+			<Hotspot X="202.3759" Y="-3840.742" Z="20.39097" />
+			<Hotspot X="81.32127" Y="-3813.332" Z="20.38975" />
+			<Hotspot X="3.939434" Y="-3815.487" Z="20.63608" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="From Bad to Worse" Id="25173" >
+	<Objective Type="KillMob" MobId="39269" KillCount="1" >
+		<Hotspots>
+			<Hotspot X="-247.85" Y="-5120.16" Z="42.64" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="25232" Name="The Burning Blade">
+	<Objective Type="CollectItem" ItemId="52564" CollectCount="6">
+		<CollectFrom>
+			<Mob Name="Burning Blade Neophyte" Id="3196" />
+			<Mob Name="Burning Blade Cultist" Id="3199" />
+			<Mob Name="Burning Blade Thug" Id="3195" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="787.2972" Y="-4756.537" Z="38.92015" />
+			<Hotspot X="828.08" Y="-4760.858" Z="38.78209" />
+			<Hotspot X="858.6271" Y="-4774.022" Z="38.1268" />
+			<Hotspot X="925.8235" Y="-4717.827" Z="20.56059" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+
+<Quest Id="25262" Name="Skull Rock">
+	<Objective Type="CollectItem" ItemId="4871" CollectCount="6">
+		<CollectFrom>
+			<Mob Name="Burning Blade Fanatic" Id="3197" />
+			<Mob Name="Burning Blade Apprentice" Id="3198" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="1451.385" Y="-4878.334" Z="11.90071" />
+			<Hotspot X="1478.56" Y="-4858.30" Z="11.39" />
+			<Hotspot X="1500.665" Y="-4844.086" Z="11.53322" />
+			<Hotspot X="1481.361" Y="-4793.785" Z="9.98082" />
+			<Hotspot X="1418.72" Y="-4771.02" Z="4.37" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Durotar Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Sen'jin Village Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Breaking the Chain" QuestId="25167" GiverName="Master Gadrin" GiverId="3188" />
+	<PickUp QuestName="Cleaning Up the Coastline" QuestId="25170" GiverName="Bom'bay" GiverId="10578" />
+	<Objective QuestName="Cleaning Up the Coastline" QuestId="25170" Type="CollectItem" ItemId="4888" CollectCount="5" />
+	<TurnIn QuestName="Cleaning Up the Coastline" QuestId="25170" TurnInName="Bom'bay" TurnInId="10578" />
+	<PickUp QuestName="Never Trust a Big Barb and a Smile" QuestId="25165" GiverName="Bom'bay" GiverId="10578" />
+	
+<!-- Breaking the Chain -->
+	<CustomBehavior File="CollectThings" QuestId="25167" MobId="39251" MobId2="39245" CollectUntil="QuestComplete" MobState="Alive" >
+		<Hotspot X="-962.868" Y="-4689.28" Z="26.48001" />
+		<Hotspot X="-1025.051" Y="-4714.836" Z="16.13305" />
+		<Hotspot X="-1065.897" Y="-4711.438" Z="17.05616" />
+	</CustomBehavior>
+
+<!-- Never Trust a Big Barb and a Smile -->
+	<CustomBehavior File="CombatUseItemOnV2" QuestId="25165" MobId="3125" ItemId="52505" UseWhenMobCastingSpellId="73672" 
+		CollectionDistance="500" MaxRangeToUseItem="10" ItemAppliesAuraId="AssumeItemUseAlwaysSucceeds" >
+		<HuntingGrounds>
+			<Hotspot X="-924.4694" Y="-4845.958" Z="14.23649" />
+			<Hotspot X="-884.2419" Y="-4752.278" Z="26.97385" />
+			<Hotspot X="-817.6902" Y="-4692.093" Z="34.29467" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="Never Trust a Big Barb and a Smile" QuestId="25165" TurnInName="Bom'bay" TurnInId="10578" />
+	<TurnIn QuestName="Breaking the Chain" QuestId="25167" TurnInName="Master Gadrin" TurnInId="3188" />
+
+<!-- Purge the Valley/The War of Northwatch Aggression -->
+	<PickUp QuestName="Purge the Valley" QuestId="25168" GiverName="Master Gadrin" GiverId="3188" />
+	<PickUp QuestName="The War of Northwatch Aggression" QuestId="25169" GiverName="Lar Prowltusk" GiverId="3140" />
+	<Objective QuestName="The War of Northwatch Aggression" QuestId="25169" Type="UseObject" ObjectId="3189" UseCount="1" />
+	<Objective QuestName="The War of Northwatch Aggression" QuestId="25169" Type="UseObject" ObjectId="3190" UseCount="1" />
+	<Objective QuestName="The War of Northwatch Aggression" QuestId="25169" Type="UseObject" ObjectId="3192" UseCount="1" />
+	<Objective QuestName="Purge the Valley" QuestId="25168" Type="KillMob" MobId="39262" KillCount="12" />
+	<DisableBehavior Name="Combat, Loot" />
+	<TurnIn QuestName="The War of Northwatch Aggression" QuestId="25169" TurnInName="Lar Prowltusk" TurnInId="3140" />
+	<TurnIn QuestName="Purge the Valley" QuestId="25168" TurnInName="Master Gadrin" TurnInId="3188" />
+	<EnableBehavior Name="Combat, Loot" />
+
+	<If Condition="!HasQuest(25171) &amp;&amp; !IsQuestCompleted(25171)" >
+		<PickUp QuestName="Riding On" QuestId="25171" GiverName="Master Gadrin" GiverId="3188" />
+		<CustomBehavior File="InteractWith" MobId="10676" InteractByGossipOptions="1" WaitTime="5000" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="Riding On" QuestId="25171" TurnInName="Gar'thok" TurnInId="3139" />
+	
+	<CustomBehavior File="Message" Text="Compiling Razor Hill Quests" LogColor="CornflowerBlue" />
+	
+	<If Condition="!HasQuest(25173) &amp;&amp; !IsQuestCompleted(25173)" >
+		<PickUp QuestName="From Bad to Worse" QuestId="25173" GiverName="Gar'thok" GiverId="3139" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" />
+	</If>
+	<PickUp QuestName="Exploiting the Situation" QuestId="25176" GiverName="Gail Nozzywig" GiverId="39423" />
+	<Objective QuestName="Exploiting the Situation" QuestId="25176" Type="CollectItem" ItemId="52558" CollectCount="6" />
+	<Objective QuestName="From Bad to Worse" QuestId="25173" Type="KillMob" MobId="39269" KillCount="1" />
+	<Objective QuestName="From Bad to Worse" QuestId="25173" Type="KillMob" MobId="39267" KillCount="6" />
+	<Objective QuestName="From Bad to Worse" QuestId="25173" Type="KillMob" MobId="39268" KillCount="6" />
+	<TurnIn QuestName="Exploiting the Situation" QuestId="25176" TurnInName="Gail Nozzywig" TurnInId="39423" />
+	<TurnIn QuestName="From Bad to Worse" QuestId="25173" TurnInName="Gar'thok" TurnInId="3139" />
+	
+	<PickUp QuestName="Storming the Beaches" QuestId="25177" GiverName="Gar'thok" GiverId="3139" />
+	<PickUp QuestName="Shipwreck Searching" QuestId="25178" GiverName="Gail Nozzywig" GiverId="39423" />
+	<Objective QuestName="Shipwreck Searching" QuestId="25178" Type="CollectItem" ItemId="4863" CollectCount="4" />
+	<Objective QuestName="Storming the Beaches" QuestId="25177" Type="KillMob" MobId="39272" KillCount="11" />
+	<TurnIn QuestName="Shipwreck Searching" QuestId="25178" TurnInName="Gail Nozzywig" TurnInId="39423" />
+	<TurnIn QuestName="Storming the Beaches" QuestId="25177" TurnInName="Gar'thok" TurnInId="3139" />
+	
+	<If Condition="!HasQuest(25227) &amp;&amp; !IsQuestCompleted(25227)" >
+		<PickUp QuestName="Thonk" QuestId="25227" GiverName="Gail Nozzywig" GiverId="39423" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	</If>
+	<TurnIn QuestName="Thonk" QuestId="25227" TurnInName="Thonk" TurnInId="39323" />
+	
+	<PickUp QuestName="Lost in the Floods" QuestId="25187" GiverName="Thonk" GiverId="39323" />
+	<While Condition="HasQuest(25187) &amp;&amp; !IsQuestCompleted(25187)" >
+		<RunTo X="393.386" Y="-4582.611" Z="76.61212" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(52514)" WaitTime="30000" />
+	</While>
+	<TurnIn QuestName="Lost in the Floods" QuestId="25187" TurnInName="Thonk" TurnInId="39323" />
+	
+	<PickUp QuestName="Watershed Patrol" QuestId="25188" GiverName="Thonk" GiverId="39323" />
+	
+	<CustomBehavior File="Message" Text="Compiling Watershed Patrol Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Lost But Not Forgotten" QuestId="25193" GiverName="Misha Tor'kren" GiverId="3193" />
+	<Objective QuestName="Lost But Not Forgotten" QuestId="25193" Type="CollectItem" ItemId="60615" CollectCount="250" />
+	<TurnIn QuestName="Lost But Not Forgotten" QuestId="25193" TurnInName="Misha Tor'kren" TurnInId="3193" />
+	
+	<PickUp QuestName="Spirits Be Praised" QuestId="25189" GiverName="Grandmatron Tekla" GiverId="39325" />
+	<CustomBehavior File="EscortGroup" QuestId="25189" EscortNpcId="39325" />
+	<TurnIn QuestName="Spirits Be Praised" QuestId="25189" TurnInName="Raggaran" TurnInId="39326" />
+	
+	<PickUp QuestName="Raggaran's Rage" QuestId="25190" GiverName="Raggaran" GiverId="39326" />
+	<Objective QuestName="Raggaran's Rage" QuestId="25190" Type="KillMob" MobId="3111" KillCount="4" />
+	<Objective QuestName="Raggaran's Rage" QuestId="25190" Type="KillMob" MobId="3112" KillCount="4" />
+	<TurnIn QuestName="Raggaran's Rage" QuestId="25190" TurnInName="Raggaran" TurnInId="39326" />
+	
+	<PickUp QuestName="Raggaran's Fury" QuestId="25192" GiverName="Raggaran" GiverId="39326" />
+	<Objective QuestName="Raggaran's Fury" QuestId="25192" Type="KillMob" MobId="3113" KillCount="5" />
+	<Objective QuestName="Raggaran's Fury" QuestId="25192" Type="KillMob" MobId="3114" KillCount="5" />
+	<TurnIn QuestName="Raggaran's Fury" QuestId="25192" TurnInName="Raggaran" TurnInId="39326" />
+	
+	<PickUp QuestName="Unbidden Visitors" QuestId="25194" GiverName="Zen'Taji" GiverId="39324" />
+	<Objective QuestName="Unbidden Visitors" QuestId="25194" Type="KillMob" MobId="39337" KillCount="3" />
+	<TurnIn QuestName="Unbidden Visitors" QuestId="25194" TurnInName="Zen'Taji" TurnInId="39324" />
+	
+	<PickUp QuestName="That's the End of That Raptor" QuestId="25195" GiverName="Zen'Taji" GiverId="39324" />
+	<Objective QuestName="That's the End of That Raptor" QuestId="25195" Type="KillMob" MobId="39385" KillCount="1" />
+	<TurnIn QuestName="That's the End of That Raptor" QuestId="25195" TurnInName="Zen'Taji" TurnInId="39324" />
+	
+	<TurnIn QuestName="Watershed Patrol" QuestId="25188" TurnInName="Thonk" TurnInId="39323" />
+	
+	<CustomBehavior File="Message" Text="Compiling Northern Durotar Quests" LogColor="CornflowerBlue" />
+	
+	<If Condition="!HasQuest(25232) &amp;&amp; !IsQuestCompleted(25232)" >
+		<PickUp QuestName="The Burning Blade" QuestId="25232" GiverName="Orgnil Soulscar" GiverId="3142" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	</If>
+	<Objective QuestName="The Burning Blade" QuestId="25232" Type="CollectItem" ItemId="52564" CollectCount="6" />
+	<TurnIn QuestName="The Burning Blade" QuestId="25232" TurnInName="Orgnil Soulscar" TurnInId="3142" />
+	
+	<PickUp QuestName="The Dranosh'ar Blockade" QuestId="25196" GiverName="Orgnil Soulscar" GiverId="3142" />
+	<TurnIn QuestName="The Dranosh'ar Blockade" QuestId="25196" TurnInName="Gor the Enforcer" TurnInId="39379" />
+	
+	<PickUp QuestName="Thunder Down Under" QuestId="25236" GiverName="Gor the Enforcer" GiverId="39379" />
+	<PickUp QuestName="Fizzled" QuestId="25260" GiverName="Gor the Enforcer" GiverId="39379" />
+	<If Condition="HasQuest(25260) &amp;&amp; !IsQuestCompleted(25260)" >
+		<CustomBehavior File="InteractWith" QuestId="25260" MobId="3203" InteractByGossipOptions="1,1" X="870.7054" Y="-4185.419" Z="0.1" />
+		<CustomBehavior File="AscendInWater" />
+	</If>
+	<If Condition="HasQuest(25236) &amp;&amp; !IsQuestCompleted(25236)" >
+		<CustomBehavior File="InteractWith" MovementBy="NavigatorPreferred" QuestId="25236" MobId="39464" NumOfTimes="100" CollectionDistance="500" 
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" >
+			<HuntingGrounds>
+				<Hotspot X="945.1332" Y="-4170.953" Z="12" />
+				<Hotspot X="941.9392" Y="-4165.733" Z="12" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="AscendInWater" />
+	</If>
+	<TurnIn QuestName="Thunder Down Under" QuestId="25236" TurnInName="Gor the Enforcer" TurnInId="39379" />
+	<TurnIn QuestName="Fizzled" QuestId="25260" TurnInName="Gor the Enforcer" TurnInId="39379" />
+	
+	<PickUp QuestName="Margoz" QuestId="25261" GiverName="Gor the Enforcer" GiverId="39379" />
+	<TurnIn QuestName="Margoz" QuestId="25261" TurnInName="Margoz" TurnInId="3208" />
+	
+	<PickUp QuestName="Skull Rock" QuestId="25262" GiverName="Margoz" GiverId="3208" />
+	<PickUp QuestName="Sent for Help" QuestId="25256" GiverName="Vek'nag" GiverId="39604" />
+	<TurnIn QuestName="Sent for Help" QuestId="25256" TurnInName="Spiketooth" TurnInId="39590" />
+	<PickUp QuestName="Gaur Icehorn" QuestId="25259" GiverName="Spiketooth" GiverId="39590" />
+	<PickUp QuestName="Ghislania" QuestId="25257" GiverName="Spiketooth" GiverId="39590" />
+	<PickUp QuestName="Griswold Hanniston" QuestId="25258" GiverName="Spiketooth" GiverId="39590" />
+	<CustomBehavior File="InteractWith" QuestId="25258" MobId="39353" InteractByGossipOptions="1" NumOfTimes="10" X="1020.437" Y="-5083.247" Z="2.454849" />
+	<CustomBehavior File="InteractWith" QuestId="25257" MobId="39351" InteractByGossipOptions="1" NumOfTimes="10" X="1020.437" Y="-5083.247" Z="2.454849" />
+	<CustomBehavior File="InteractWith" QuestId="25259" MobId="39352" InteractByGossipOptions="1" NumOfTimes="10" X="1020.437" Y="-5083.247" Z="2.454849" />
+	<TurnIn QuestName="Gaur Icehorn" QuestId="25259" TurnInName="Spiketooth" TurnInId="39590" />
+	<TurnIn QuestName="Ghislania" QuestId="25257" TurnInName="Spiketooth" TurnInId="39590" />
+	<TurnIn QuestName="Griswold Hanniston" QuestId="25258" TurnInName="Spiketooth" TurnInId="39590" />
+	
+	<Objective QuestName="Skull Rock" QuestId="25262" Type="CollectItem" ItemId="4871" CollectCount="6" />
+	<TurnIn QuestName="Skull Rock" QuestId="25262" TurnInName="Margoz" TurnInId="3208" />
+	
+	<PickUp QuestName="Neeru Fireblade" QuestId="25263" GiverName="Margoz" GiverId="3208" />
+	<TurnIn QuestName="Neeru Fireblade" QuestId="25263" TurnInName="Neeru Fireblade" TurnInId="3216" />
+	
+	<PickUp QuestName="Ak'Zeloth" QuestId="25264" GiverName="Neeru Fireblade" GiverId="3216" />
+	
+	<CustomBehavior File="Message" Text="Durotar Section Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

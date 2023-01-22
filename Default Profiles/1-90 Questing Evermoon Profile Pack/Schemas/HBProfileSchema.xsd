@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- This schema was originally created by HighVoltz but he admits to stealing some of the dox from the wiki -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!--============== Definition of simple Types ==============-->
+
+    <xs:simpleType name="blacklistFlagsType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="All" />
+            <xs:enumeration value="Combat" />
+            <xs:enumeration value="Interact" />
+            <xs:enumeration value="Loot" />
+            <xs:enumeration value="Node" />
+            <xs:enumeration value="Pull" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="booleanType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="True" />
+            <xs:enumeration value="False" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="durabilityType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">Acceptable values range from 0.0 to 0.9</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="0.0" />
+            <xs:maxInclusive value="0.9" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="navType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Fly" />
+            <xs:enumeration value="Run" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="positiveFloatType">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="0.0" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="positiveIntegerlistType">
+        <xs:list itemType="xs:positiveInteger"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="vendorTypeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Food" />
+            <xs:enumeration value="Repair" />
+            <!-- <xs:enumeration value="Train" /> No longer used? -->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--============== Definition of complex Types ==============-->
+
+    <xs:complexType name="avoidmobType">
+        <xs:annotation>
+            <xs:documentation>Identifies a mob (non-player in-game character) for use within the profile's AvoidMob list</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="mobType" />
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="blacklistMobType">
+        <xs:annotation>
+            <xs:documentation>Identifies a mob (non-player in-game character) for use within the profile's Blacklist</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="mobType">
+                <xs:attribute name="Flags" type="blacklistFlagsType" use="required" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="blackspotType">
+        <xs:annotation>
+            <xs:documentation>Identifies an area or volume through which Honorbuddy should avoid navigating, if possible.</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="Height" type="positiveFloatType" default="0" >
+            <xs:annotation>
+                <xs:documentation>Game units representing the Height to which the blackspot applies</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Radius" type="positiveFloatType" use="required" >
+            <xs:annotation>
+                <xs:documentation>Game units representing the Radius of the blackspot from the centerpoint provided in the X-Y-Z values</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attributeGroup ref="coord3dGroup_required" />
+    </xs:complexType>
+
+    <xs:complexType name="itemType">
+        <xs:annotation>
+            <xs:documentation>Identifies an item for use within the profile</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="Name" type="xs:string" >
+            <xs:annotation>
+                <xs:documentation>The name of the Item.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Entry" type="xs:positiveInteger" use="required" >
+            <xs:annotation>
+                <xs:documentation>The Id of the Item.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    
+    <xs:complexType name="mailboxType">
+        <xs:annotation>
+            <xs:documentation>Identifies the location of a Mailbox</xs:documentation>
+        </xs:annotation>
+        <xs:attribute ref="Nav" />
+        <xs:attributeGroup ref="coord3dGroup_required"/>
+    </xs:complexType>
+
+    <xs:complexType name="mobType">
+        <xs:annotation>
+            <xs:documentation>Identifies a mob (non-player in-game character) for use within the profile</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="Name" type="xs:string" >
+            <xs:annotation>
+                <xs:documentation>The name of the Mob.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Entry" type="xs:positiveInteger" use="required" >
+            <xs:annotation>
+                <xs:documentation>The Id of the Mob.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="point3dType">
+        <xs:attributeGroup ref="coord3dGroup_required" />
+    </xs:complexType>
+
+    <xs:complexType name="subProfileType">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Name" type="xs:string" maxOccurs="1" />
+            <xs:element name="MinLevel" type="xs:positiveInteger" maxOccurs="1" />
+            <xs:element name="MaxLevel" type="xs:positiveInteger" maxOccurs="1" />
+            <xs:element name="MinDurability" type="durabilityType" maxOccurs="1" />
+            <xs:element name="MinFreeBagSlots" type="xs:nonNegativeInteger" maxOccurs="1" />
+            <xs:element name="ContinentId" type="xs:nonNegativeInteger" maxOccurs="1" >
+                <xs:annotation>
+                    <xs:documentation>Specifies a specific continent (or dungeon) on which the profile should be run</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="TargetElites" type="booleanType" maxOccurs="1" default="False">
+                <xs:annotation>
+                    <xs:documentation>Determines whether or not Honorbuddy will be the initial aggressor against elites</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
+            <xs:element name="SellGrey" type="booleanType" maxOccurs="1" />
+            <xs:element name="SellWhite" type="booleanType" maxOccurs="1" />
+            <xs:element name="SellGreen" type="booleanType" maxOccurs="1" />
+            <xs:element name="SellBlue" type="booleanType" maxOccurs="1" />
+            <xs:element name="SellPurple" type="booleanType" maxOccurs="1" />
+
+            <xs:element name="MailGrey" type="booleanType" maxOccurs="1" />
+            <xs:element name="MailWhite" type="booleanType" maxOccurs="1" />
+            <xs:element name="MailGreen" type="booleanType" maxOccurs="1" />
+            <xs:element name="MailBlue" type="booleanType" maxOccurs="1" />
+            <xs:element name="MailPurple" type="booleanType" maxOccurs="1" />
+
+            <xs:element ref="AvoidMobs" maxOccurs="1" />
+            <xs:element ref="Vendors" maxOccurs="1" />
+            <xs:element ref="Mailboxes" maxOccurs="1" />
+            <xs:element ref="Blacklist" maxOccurs="1" />
+            <xs:element ref="Blackspots" maxOccurs="1" />
+            <xs:element ref="ForceMail" maxOccurs="1" />
+            <xs:element ref="ProtectedItems" maxOccurs="1" />
+
+            <xs:element ref="Hotspots" maxOccurs="1" />
+            <xs:element ref="GrindArea" maxOccurs="1" />
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="vendorType">
+        <xs:annotation>
+            <xs:documentation>Identifies the location of a Vendor</xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="Entry" type="xs:positiveInteger" use="required">
+            <xs:annotation>
+                <xs:documentation>Primary Id of the vendor</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Entry2" type="xs:positiveInteger">
+            <xs:annotation>
+                <xs:documentation>Secondary Id of the same vendor (as identified by the primary ID)</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="Name" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation>The human-readable identity of the mob</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute ref="Nav" />
+        <xs:attribute name="Type" type="vendorTypeType" use="required">
+            <xs:annotation>
+                <xs:documentation>identifies the general category of services provided by the vendor</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attributeGroup ref="coord3dGroup_optional"/>
+    </xs:complexType>
+
+    <!--============== Definition of Attributes ==============-->
+
+    <xs:attribute name="Nav" type="navType" default="Run" >
+        <xs:annotation>
+            <xs:documentation>Specifies which navigation sytem to use.</xs:documentation>
+        </xs:annotation>
+    </xs:attribute>
+
+    <!--============== Definition of Groups ==============-->
+
+    <xs:attributeGroup name="coord3dGroup_required">
+        <xs:attribute name="X" type="xs:float" use="required" />
+        <xs:attribute name="Y" type="xs:float" use="required" />
+        <xs:attribute name="Z" type="xs:float" use="required" />
+    </xs:attributeGroup>
+
+    <xs:attributeGroup name="coord3dGroup_optional">
+        <xs:attribute name="X" type="xs:float" />
+        <xs:attribute name="Y" type="xs:float" />
+        <xs:attribute name="Z" type="xs:float" />
+    </xs:attributeGroup>
+
+    <!--============== Definition of Elements ==============-->
+
+    <xs:element name="AvoidMobs">
+        <xs:complexType >
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Mob" type="mobType" />
+                <xs:element name="AvoidMob" type="mobType" />
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Blacklist">
+        <xs:complexType >
+            <xs:sequence>
+                <xs:element name="Mob" type="blacklistMobType" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Blackspots">
+        <xs:complexType >
+            <xs:sequence>
+                <xs:element name="Blackspot" type="blackspotType" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ForceMail">
+        <xs:annotation>
+            <xs:documentation>A list of items that will be mailed rather than sold</xs:documentation>
+        </xs:annotation>
+        <xs:complexType >
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Item" type="itemType" />
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GrindArea">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Name" type="xs:string" maxOccurs="1" />
+                <xs:element name="TargetMinLevel" type="xs:positiveInteger" minOccurs="1" maxOccurs="1" />
+                <xs:element name="TargetMaxLevel" type="xs:positiveInteger" minOccurs="1" maxOccurs="1" />
+                <xs:element name="Factions" type="positiveIntegerlistType" minOccurs="1" maxOccurs="1" >
+                    <xs:annotation>
+                        <xs:documentation>Identifies the type of mob that should be hunted by Honorbuddy.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+
+                <xs:element name="LootRadius" type="xs:positiveInteger" maxOccurs="1" />
+                <xs:element name="MaxDistance" type="xs:positiveInteger" maxOccurs="1" />
+                <xs:element name="MaximumHotspotTime" type="xs:positiveInteger" maxOccurs="1" >
+                    <xs:annotation>
+                        <xs:documentation>Time in milliseconds</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="RandomizeHotspots" type="booleanType" maxOccurs="1" />
+                <xs:element ref="Blacklist" maxOccurs="1" />
+                <xs:element ref="Hotspots" minOccurs="1" maxOccurs="1" />
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="HBProfile">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="subProfileType">
+                    <xs:choice minOccurs="0" maxOccurs="unbounded">
+                        <xs:element name="SubProfile" type="subProfileType" maxOccurs="unbounded" />
+                    </xs:choice>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Hotspot" type="point3dType" >
+        <xs:annotation>
+            <xs:documentation>Identifies an area that should be visited by Honorbuddy to complete the task at hand</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:element name="Hotspots">
+        <xs:annotation>
+            <xs:documentation>Identifies areas that should be visited by Honorbuddy to complete the task at hand</xs:documentation>
+        </xs:annotation>
+        <xs:complexType >
+            <xs:sequence>
+                <xs:element ref="Hotspot" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Mailboxes">
+        <xs:annotation>
+            <xs:documentation>A list of Mailboxes for use within the Profile</xs:documentation>
+        </xs:annotation>
+        <xs:complexType >
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Mailbox" type="mailboxType" />
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="ProtectedItems">
+        <xs:annotation>
+            <xs:documentation>A list of items that will not be sold or mailed</xs:documentation>
+        </xs:annotation>
+        <xs:complexType >
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Item" type="itemType" />
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="Vendors">
+        <xs:annotation>
+            <xs:documentation>A list of Vendors for use within the Profile</xs:documentation>
+        </xs:annotation>
+        <xs:complexType >
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Vendor" type="vendorType" />
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

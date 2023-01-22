@@ -1,0 +1,48 @@
+<HBProfile xsi:noNamespaceSchemaLocation="../../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- Developed by Kickazz006 -->
+    <Name>[H - Quest] 1-12 Auto-Loader [Kick] ($Rev: 3162 $)</Name>
+
+    <QuestOrder>
+        <CustomBehavior File="Misc\ProfileCompatibilityInfo"
+            AllowBrokenAddOns="true" AllowBrokenPlugIns="true" />
+
+        <CustomBehavior File="Misc\RunLua" Lua="SetCVar('AutoLootDefault', 1)" />
+        <CustomBehavior File="UserSettings" AutoEquip="true" />
+
+        <CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+        <CustomBehavior File="EnablePlugin" Names="Questhelper - ItemForAura" />
+        <CustomBehavior File="EnablePlugin" Names="Refreshment Detection" />
+
+        <CustomBehavior File="UserDialog" AllowBotStop="false" SoundCue="Exclamation" SoundCueInterval="15" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" Text="For new toons, be certain to configure your toon spec, auto-equip, and talent choices in Honorbuddy.\n\nIf you have money - set food and drinks as well\n\nYou may also want to set a mail recipient! (Settings and Tools Button)" />
+
+        <If Condition="Me.Race == WoWRace.BloodElf" >
+            <CustomBehavior File="LoadProfile" ProfileName="[H - Quest] 1-12 [Kick]\[H - Quest] Blood Elf 1-5 [Kick]" RememberProfile="true" />
+        </If>
+
+        <If Condition="Me.Race == WoWRace.Goblin" >
+            <CustomBehavior File="LoadProfile" ProfileName="[H - Quest] 1-12 [Kick]\[H - Quest] Goblin 1-12 [Kick]" RememberProfile="true" />
+        </If>
+
+        <If Condition="Me.Race == WoWRace.Orc" >
+            <CustomBehavior File="LoadProfile" ProfileName="[H - Quest] 1-12 [Kick]\[H - Quest] Orc 1-5 [Kick]" RememberProfile="true" />
+        </If>
+
+        <If Condition="Me.Race == WoWRace.Pandaren">
+            <CustomBehavior File="LoadProfile" ProfileName="[H - Quest] 1-12 [Kick]\[H - Quest] Panda 1-12 [Kick]" RememberProfile="true" />
+        </If>
+
+        <If Condition="Me.Race == WoWRace.Troll">
+            <CustomBehavior File="LoadProfile" ProfileName="[H - Quest] 1-12 [Kick]\[H - Quest] Troll 1-5 [Kick]" RememberProfile="true" />
+        </If>
+
+        <If Condition="Me.Race == WoWRace.Tauren" >
+            <CustomBehavior File="LoadProfile" ProfileName="[H - Quest] 1-12 [Kick]\[H - Quest] Tauren 1-5 [Kick]" RememberProfile="true" />
+        </If>
+
+        <If Condition="Me.Race == WoWRace.Undead" >
+            <CustomBehavior File="LoadProfile" ProfileName="[H - Quest] 1-12 [Kick]\[H - Quest] Undead 1-5 [Kick]" RememberProfile="true" />
+        </If>
+
+    </QuestOrder>
+
+</HBProfile>

@@ -1,0 +1,283 @@
+<HBProfile>
+	<Name>Jade Serpent Temple ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+		<Blackspot X="2198.714" Y="4604.928" Z="155.8178" Radius="20"/> <!-- Too many enemies here -->
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- Behind the Masks -->
+	<Quest Id="30063" Name="Behind the Masks"> 
+		<Objective Type="CollectItem" ItemId="77419" CollectCount="8">
+			<CollectFrom>
+				<Mob Name="Lingering Doubt" Id="57396" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="844.76" Y="-2330.13" Z="140.48" />
+				<Hotspot X="852.68" Y="-2314.80" Z="141.77" />
+				<Hotspot X="887.18" Y="-2280.73" Z="140.39" />
+				<Hotspot X="930.77" Y="-2244.20" Z="142.54" />
+				<Hotspot X="996.24" Y="-2211.94" Z="141.73" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- The Darkness Around Us -->
+	<Quest Id="30006" Name="The darkness Around Us"> 
+		<Objective Type="KillMob" MobId="57330" MobId2="57396" MobId3="57389" KillCount="15">
+			<Hotspots>
+				<Hotspot X="844.76" Y="-2330.13" Z="140.48" />
+				<Hotspot X="852.68" Y="-2314.80" Z="141.77" />
+				<Hotspot X="887.18" Y="-2280.73" Z="140.39" />
+				<Hotspot X="930.77" Y="-2244.20" Z="142.54" />
+				<Hotspot X="996.24" Y="-2211.94" Z="141.73" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+	
+<!-- Saving the Sutras -->
+	<Quest Id="30064" Name="Arrows of Fortune"> 
+		<Objective Type="CollectItem" ItemId="77432" CollectCount="6">
+			<CollectFrom>
+				<GameObject Name="Ancient Sutra" Id="210085" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="1277.841" Y="-2479.687" Z="143.5502" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Arrows of Fortune -->
+	<Quest Id="30065" Name="Arrows of Fortune"> 
+		<Objective Type="CollectItem" ItemId="77452" CollectCount="8">
+			<CollectFrom>
+				<GameObject Name="Defender's Arrow" Id="210087" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="844.76" Y="-2330.13" Z="140.48" />
+				<Hotspot X="852.68" Y="-2314.80" Z="141.77" />
+				<Hotspot X="887.18" Y="-2280.73" Z="140.39" />
+				<Hotspot X="930.77" Y="-2244.20" Z="142.54" />
+				<Hotspot X="996.24" Y="-2211.94" Z="141.73" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- The Shadow of Doubt -->
+	<Quest Id="30067" Name="The Shadow of Doubt"> 
+		<Objective Type="KillMob" MobId="57389" KillCount="1">
+			<Hotspots>
+				<Hotspot X="752.07" Y="-2578.66" Z="99.90" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+<CustomBehavior File="Message" Text="Beginning Jade Serpent Quests..." LogColor="Green"  />
+
+	<If Condition="HasQuest(31376)" >
+		<CustomBehavior File="Message" Text="Starting Temple of the Jade Serpent" LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="791.681" Y="-2333.588" Z="126.9131" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<TurnIn QuestName="Attack at the Temple of the Jade Serpent" QuestId="31376" TurnInName="Elder Sage Tai-Feng" TurnInID="57324" />
+	</If>
+
+	<If Condition="HasQuest(31377)" >
+		<CustomBehavior File="Message" Text="Starting Temple of the Jade Serpent" LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="791.681" Y="-2333.588" Z="126.9131" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<TurnIn QuestName="Attack at the Temple of the Jade Serpent" QuestId="31377" TurnInName="Elder Sage Tai-Feng" TurnInID="57324" />
+	</If>
+
+<!-- Elder Sage Tai-Feng -->
+	<While Condition="HasQuestAvailable(57324)" >
+		<CustomBehavior File="InteractWith" MobId="57324" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Elder Sage Storm-Sing -->
+	<While Condition="HasQuestAvailable(57319)" >
+		<CustomBehavior File="InteractWith" MobId="57319" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Arrows of Fortune -->
+	<If Condition="(HasQuest(30065) &amp;&amp; !IsQuestCompleted(30065))" >
+		<CustomBehavior File="Message" Text="Starting Arrows of Fortune" LogColor="Green"  />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="FlyTo" X="880.6826" Y="-2300.531" Z="139.7122" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Arrows of Fortune" QuestId="30065" Type="CollectItem" ItemId="77452" CollectCount="8" />
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- Saving the Sutras -->
+	<If Condition="(HasQuest(30064) &amp;&amp; !IsQuestCompleted(30064))" >
+		<CustomBehavior File="Message" Text="Starting Saving the Sutras" LogColor="Green"  />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="FlyTo" X="1277.841" Y="-2479.687" Z="143.5502" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Saving The Sutras" QuestId="30064" Type="CollectItem" ItemId="77432" CollectCount="6" />
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- Behind the Masks -->
+	<If Condition="(HasQuest(30063) &amp;&amp; !IsQuestCompleted(30063))" >
+		<CustomBehavior File="Message" Text="Starting Behind the Masks" LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="844.2975" Y="-2334.138" Z="140.4092" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Behind the Masks" QuestId="30063" Type="CollectItem" ItemId="77419" CollectCount="8" />
+	</If>
+
+<!-- The Darkness Around Us -->
+	<If Condition="(HasQuest(30006) &amp;&amp; !IsQuestCompleted(30006))" >
+		<CustomBehavior File="Message" Text="Starting The Darkness Around Us" LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="844.2975" Y="-2334.138" Z="140.4092" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="The Darkness Around Us" QuestId="30006" Type="KillMob" MobId="57330" MobId2="57396" MobId3="57389" KillCount="15" />
+	</If>
+
+<!-- Hidden Power -->
+	<If Condition="(HasQuest(30066) &amp;&amp; !IsQuestCompleted(30066))" >
+		<CustomBehavior File="Message" Text="Starting Hidden Power" LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="1005.98" Y="-2331.211" Z="155.51" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="30066" MobId="57316" MobId2="57400" InteractByUsingItemId="77475" AuraIdMissingFromMob="108868" Range="10" 
+			CollectionDistance="1000" ProactiveCombatStrategy="ClearMobsTargetingUs" PreInteractMountStrategy="Dismount" NumOfTimes="1000" X="1005.98" Y="-2331.211" Z="155.51" />
+	</If>
+
+<!-- Jade Serpent Turn Ins -->
+	<If Condition="((HasQuest(30063) &amp;&amp; IsQuestCompleted(30063)) ||
+			(HasQuest(30066) &amp;&amp; IsQuestCompleted(30066)) ||
+			(HasQuest(30065) &amp;&amp; IsQuestCompleted(30065)) ||
+			(HasQuest(30006) &amp;&amp; IsQuestCompleted(30006)) ||
+			(HasQuest(30064) &amp;&amp; IsQuestCompleted(30064)))" >
+		<CustomBehavior File="Message" Text="Quests Completed. Returning to Jade Serpent Temple." LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="791.681" Y="-2333.588" Z="126.9131" />
+		<CustomBehavior File="ForcedDismount" />
+	</If>
+
+	<If Condition="(HasQuest(30063) &amp;&amp; IsQuestCompleted(30063))" >
+		<TurnIn QuestName="Behind the Masks" QuestId="30063" TurnInName="Elder Sage Storm-Sing" TurnInID="57319" />
+	</If>
+
+	<If Condition="(HasQuest(30064) &amp;&amp; IsQuestCompleted(30064))" >
+		<TurnIn QuestName="Saving the Sutras" QuestId="30064" TurnInName="Elder Sage Storm-Sing" TurnInID="57319" />
+	</If>
+
+	<If Condition="(HasQuest(30006) &amp;&amp; IsQuestCompleted(30006))" >
+		<TurnIn QuestName="The Darkness Around Us" QuestId="30006" TurnInName="Elder Sage Tai-Feng" TurnInID="57324" />
+	</If>
+
+	<If Condition="(HasQuest(30066) &amp;&amp; IsQuestCompleted(30066))" >
+		<TurnIn QuestName="Hidden Power" QuestId="30066" TurnInName="Elder Sage Tai-Feng" TurnInID="57324" />
+	</If>
+
+	<If Condition="(HasQuest(30065) &amp;&amp; IsQuestCompleted(30065))" >
+		<TurnIn QuestName="Arrows of Fortune" QuestId="30065" TurnInName="Elder Sage Tai-Feng" TurnInID="57324" />
+	</If>
+
+<!-- Jade Serpent Phase 2 -->
+
+<!-- Elder Sage Tai-Feng -->
+	<While Condition="HasQuestAvailable(57324)" >
+		<CustomBehavior File="InteractWith" MobId="57324" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Flames of the Void -->
+<!--	<If Condition="(HasQuest(30068) &amp;&amp; !IsQuestCompleted(30068))" >
+		<CustomBehavior File="Message" Text="Starting Flames of the Void" LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="815.9733" Y="-2331.427" Z="128.949" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="57871" Range="10" WaitForNpcs="True" />
+		<While Condition="!IsQuestCompleted(30068)" >
+			<CustomBehavior File="FlyTo" X="938.5242" Y="-2304.787" Z="156.4555" />
+			<CustomBehavior File="InteractWith" Nav="CTM" MobId="210139" ObjectType="GameObject" Range="10" CollectionDistance="2000" WaitForNpcs="True" WaitTime="2000" />
+			<CustomBehavior File="FlyTo" X="1065.621" Y="-2345.234" Z="226.6013" />
+			<CustomBehavior File="CastSpellOn" MobId="57872" SpellId="109322" X="988.80" Y="-2386.12" Z="171.66" Range="100" MinRange="20" NumOfTimes="1" />
+		</While>
+	</If> -->
+
+<!-- The Shadow of Doubt --> <!-- NEEDS QB FOR MECHANICS -->
+	<If Condition="HasQuest(30067) &amp;&amp; !IsQuestCompleted(30067)" >
+		<CustomBehavior File="Message" Text="Starting The Shadow of Doubt" LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="742.73" Y="-2537.99" Z="93.66" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="The Shadow of Doubt" QuestId="30067" Type="KillMob" MobId="57389" KillCount="1" />
+	</If>
+
+	<If Condition="((HasQuest(30067)) &amp;&amp; (IsQuestCompleted(30067)) ||
+			(HasQuest(30068)) &amp;&amp; (IsQuestCompleted(30068)))" >
+		<CustomBehavior File="Message" Text="Quests Completed. Returning to Jade Serpent Temple." LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="791.681" Y="-2333.588" Z="126.9131" />
+		<CustomBehavior File="ForcedDismount" />
+	</If>
+
+	<If Condition="(HasQuest(30067) &amp;&amp; IsQuestCompleted(30067))" >
+		<TurnIn QuestName="The Shadow of Doubt" QuestId="30067" TurnInName="Elder Sage Tai-Feng" TurnInID="57324" />
+	</If>
+
+	<If Condition="(HasQuest(30068) &amp;&amp; IsQuestCompleted(30068))" >
+		<TurnIn QuestName="Flames of the Void" QuestId="30068" TurnInName="Elder Sage Tai-Feng" TurnInID="57324" />
+	</If>
+
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+	
+	<CustomBehavior File="ForcedDismount" />
+	<If Condition="HasItem(60498)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60498)" WaitTime="1500" />
+	<ElseIf Condition="HasItem(93672)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93672)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(54452)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(54452)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(64488)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(6948)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1500" />
+	</ElseIf>
+	</If>
+
+<CustomBehavior File="UserDialog" Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of August Celestials Dailies" />
+
+</QuestOrder>
+</HBProfile>

@@ -1,0 +1,333 @@
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/QuestProfileSchema.xsd"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>[N - Quest] MoP Train Flying LP [Kick] ($Rev: 3162 $)</Name>
+    <MinLevel>1</MinLevel>
+    <MaxLevel>1001</MaxLevel>
+
+    <MinDurability>0.2</MinDurability>
+    <MinFreeBagSlots>2</MinFreeBagSlots>
+
+    <!-- NB: Honorbuddy sells before mailing -->
+    <SellGrey>true</SellGrey>
+    <SellWhite>true</SellWhite>
+    <SellGreen>true</SellGreen>
+    <SellBlue>false</SellBlue>
+    <SellPurple>false</SellPurple>
+
+    <MailGrey>false</MailGrey>
+    <MailWhite>true</MailWhite>
+    <MailGreen>true</MailGreen>
+    <MailBlue>true</MailBlue>
+    <MailPurple>true</MailPurple>
+
+
+    <AvoidMobs>
+        <Mob Name="Thundermaw" Id="58456" />
+    </AvoidMobs>
+
+
+    <Blackspots>
+    </Blackspots>
+
+
+    <Vendors>
+    </Vendors>
+
+
+    <QuestOrder IgnoreCheckpoints="true">
+
+        <!-- BEGIN: Checkpoint Block
+             This code needs to be replicated after every checkpoint.
+             If you modify something in this block, don't forget to update the copy of this
+             block after each checkpoint, and the at the start of the <QuestOrder>, also.
+        -->
+        <CustomBehavior File="Misc\RunLua" Lua="SetCVar('AutoLootDefault', 1)" />
+        <CustomBehavior File="UserSettings" AutoEquip="true" />
+
+        <CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+        <CustomBehavior File="EnablePlugin" Names="Questhelper - ItemForAura" />
+        <CustomBehavior File="EnablePlugin" Names="Refreshment Detection" />
+
+        <CustomBehavior File="Misc\ProfileCompatibilityInfo" AllowBrokenAddOns="true" AllowBrokenPlugIns="true" />
+
+        <LootMobs Value="true" />
+        <TargetingDistance Value="null" />    <!-- Use LevelBot default -->
+        <UseMount Value="true" />
+        <!-- END: Checkpoint Block -->
+
+
+        <If Condition="HasSpell(115913)">
+            <CustomBehavior File="UserDialog" AllowBotStop="true" SoundCue="Exclamation" SoundCueInterval="1"
+                            Text="You already have MoP flying on this character!" />
+        </If>
+
+        <If Condition="Me.IsAlliance">
+            <!-- If I am in Dalaran, take the portal to SW -->
+            <If Condition="Me.ZoneId == 4395">
+                <If Condition="Me.IsAlliance">
+                    <CustomBehavior File="Message" Text="We are in Dalaran, using portal to SW"
+                                    LogColor="CornflowerBlue" />
+                    <CustomBehavior File="ForcedDismount" />
+                    <MoveTo X="5718.221" Y="721.2461" Z="641.7213" />
+                    <CustomBehavior File="ForcedDismount" />
+
+                    <CustomBehavior File="InteractWith" MobId="190960" X="5718.221" Y="721.2461" Z="641.7213" />
+                    <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for port {TimeRemaining}" />
+                    <If Condition="Me.ZoneId == 1519">
+                        <MoveTo X="-8988.831" Y="860.4624" Z="125.7445" />
+                    </If>
+                </If>
+            </If>
+
+            <!-- If I am in EK, take the SW portal -->
+            <If Condition="( Me.MapId == 0 ) &amp;&amp; ( Me.ZoneId != 5389 ) &amp;&amp; ( Me.ZoneId != 5095 )">
+                <CustomBehavior File="FlyTo" DestName="SW Portal to Jade Forest" X="-8193.133" Y="534.6311"
+                                Z="117.6105" />
+                <CustomBehavior File="ForcedDismount" />
+
+                <CustomBehavior File="InteractWith" MobId="215457" X="-8194.638" Y="529.1678" Z="117.3993" />
+                <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for port {TimeRemaining}" />
+            </If>
+            <If Condition="Me.ZoneId == 5785"> <!-- Jade Forest -->
+                <MoveTo X="-310.6441" Y="-1763.056" Z="61.59278" />
+                <CustomBehavior File="InteractWith" MobId="66023" X="-310.6441" Y="-1763.056" Z="61.59278" />
+                <CustomBehavior File="Message"
+                                Text="If you don't have all of the meshes downloaded for Jade Forest and Kun-Lai, it may take a while to download them all."
+                                LogColor="CornflowerBlue" />
+                <MoveTo X="1833.269" Y="1362.562" Z="468.1013" /> <!-- Gate of August Doorway, Kun-Lai side -->
+                <CustomBehavior File="WaitTimer" WaitTime="3000" GoalText="Waiting for flight {TimeRemaining}" />
+            </If>
+        </If>
+
+        <If Condition="Me.IsHorde">
+            <!-- If I am in Dalaran, take the portal to Org -->
+            <If Condition="Me.ZoneId == 4395">
+                <CustomBehavior File="ForcedDismount" />
+                <MoveTo X="5924.277" Y="589.9855" Z="639.8734" />
+                <CustomBehavior File="ForcedDismount" />
+                <CustomBehavior File="InteractWith" MobId="191009" X="5925.295" Y="593.4274" Z="640.5935" />
+                <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for port {TimeRemaining}" />
+                <If Condition="Me.ZoneId == 1637">
+                    <MoveTo X="1897.4" Y="-4523.682" Z="27.50176" />
+                </If>
+            </If>
+
+            <!-- If I am in Org, take the Org portal to Jade Forest -->
+            <If Condition="( Me.MapId == 1 ) &amp;&amp; ( Me.ZoneId != 5389 ) &amp;&amp; ( Me.ZoneId != 5095 )">
+                <CustomBehavior File="FlyTo" DestName="Org Portal to Jade Forest" X="2012.154" Y="-4695.624"
+                                Z="28.5676" />
+                <CustomBehavior File="ForcedDismount" />
+
+                <CustomBehavior File="InteractWith" MobId="215424" X="2015.709" Y="-4701.144" Z="28.6388" />
+                <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for port {TimeRemaining}" />
+            </If>
+
+            <If Condition="Me.ZoneId == 5785"> <!-- Jade Forest -->
+                <MoveTo X="2924.921" Y="-510.5903" Z="268.8554" />
+                <CustomBehavior File="InteractWith" MobId="66227" Range="4" X="2924.921" Y="-510.5903" Z="268.8554" />
+                <CustomBehavior File="Message"
+                                Text="If you don't have all of the meshes downloaded for Jade Forest and Kun-Lai, it may take a while to download them all."
+                                LogColor="CornflowerBlue" />
+                <MoveTo X="1833.269" Y="1362.562" Z="468.1013" /> <!-- Gate of August Doorway, Kun-Lai side -->
+                <CustomBehavior File="WaitTimer" WaitTime="3000" GoalText="Waiting for flight {TimeRemaining}" />
+            </If>
+        </If>
+
+        <!-- If we didn't complete A Witness to History A / H -->
+        <If Condition="!IsQuestCompleted(31511) &amp;&amp; Me.IsHorde"> <!-- H - A Witness to History -->
+            <If Condition="( Me.Z &gt;= 350 ) &amp;&amp; ( Me.Y &gt;= 2000 ) &amp;&amp; ( Me.Y &lt;= 2200 )"> <!-- Up on the Wall in DW / VoEB (stupid bullshit) -->
+                <MoveTo X="649.5884" Y="2121.534" Z="369.2021" />
+                <CustomBehavior File="InteractWith" MobId="212229" MovementBy="ClickToMoveOnly"
+                                X="652.8531" Y="2121.887" Z="370.0509" />
+            </If>
+            <If Condition="!HasQuest(31395) &amp;&amp; !IsQuestCompleted(31395)">
+                <PickUp QuestName="Temple of the White Tiger" QuestId="31393" GiverName="Farmhand Ko" GiverId="63751"
+                        X="2002.993" Y="854.2917" Z="489.1934" />
+            </If>
+            <If Condition="( HasQuest(31392) || HasQuest(31393) ) &amp;&amp; ( Me.Y &gt; 600 )">
+                <MoveTo X="3498.761" Y="690.0668" Z="608.1852" />
+                <CustomBehavior File="InteractWith" MobId="61118" X="3504.438" Y="689.9202" Z="608.1852" /> <!-- FP -->
+                <MoveTo X="3756.922" Y="538.9453" Z="639.691" />
+                <CustomBehavior File="MyCTM" X="3821.09" Y="536.347" Z="639.0074" />
+            </If>
+            <If Condition="HasQuest(31393) &amp;&amp; IsQuestCompleted(31393)">
+                <TurnIn QuestName="Temple of the White Tiger" QuestId="31393" TurnInName="Sunwalker Dezco"
+                        TurnInId="64542" X="3823.771" Y="538.2101" Z="639.0073" />
+                <PickUp QuestName="A Celestial Experience" QuestId="31395" GiverName="Sunwalker Dezco" GiverId="64542"
+                        X="3823.771" Y="538.2101" Z="639.0073" />
+            </If>
+            <If Condition="!HasQuest(31395) &amp;&amp; !IsQuestCompleted(31395)">
+                <MoveTo X="3498.761" Y="690.0668" Z="608.1852" />
+                <CustomBehavior File="InteractWith" MobId="61118" X="3504.438" Y="689.9202" Z="608.1852" />
+                <MoveTo X="3756.922" Y="538.9453" Z="639.691" />
+                <CustomBehavior File="MyCTM" X="3819.135" Y="535.2518" Z="639.0074" />
+                <PickUp QuestName="A Celestial Experience" QuestId="31395" GiverName="Sunwalker Dezco" GiverId="64542"
+                        X="3823.771" Y="538.2101" Z="639.0073" />
+            </If>
+            <If Condition="HasQuest(31395) &amp;&amp; !IsQuestCompleted(31395)">
+                <CustomBehavior File="GetOutOfGroundEffectAndAuras" StartNpcId="64528" QuestId="31395"
+                                EventX="3783.071" EventY="535.3829" EventZ="639.0076"
+                                MoveOutOfGroundEffectAuraId="126625" MoveBehindMobCastingSpellId="126631"
+                                MoveAwayFromMobCastingSpellId="126633" MoveAwayFromMobWithAuraId="23719"
+                                MoveAwayFromMobWithAuraId2="126633">
+                    <Safespots>
+                        <!-- safe spots in the room are the gold circles that comprise the big circle -->
+                        <Hotspot X="3825.954" Y="550.3646" Z="639.8345" />
+                        <Hotspot X="3800.181" Y="567.9801" Z="639.8226" />
+                        <Hotspot X="3770.128" Y="557.3201" Z="639.8259" />
+                        <Hotspot X="3765.737" Y="516.8966" Z="639.8144" />
+                        <Hotspot X="3791.67" Y="499.2032" Z="639.825" />
+                        <Hotspot X="3821.244" Y="509.5078" Z="639.8226" />
+                    </Safespots>
+                </CustomBehavior>
+            </If>
+            <TurnIn QuestName="A Celestial Experience" QuestId="31395" TurnInName="Sunwalker Dezco" TurnInId="64542"
+                    X="3823.771" Y="538.2101" Z="639.0078" />
+            <If Condition="!HasQuest(31511) &amp;&amp; !IsQuestCompleted(31511)">
+                <PickUp QuestName="A Witness to History" QuestId="31511" GiverName="Sunwalker Dezco" GiverId="64542" />
+                <CustomBehavior File="MyCTM" X="3734.216" Y="540.8579" Z="639.69" />
+            </If>
+            <If Condition="HasQuest(31511) &amp;&amp; !IsQuestCompleted(31511)"> <!-- H -->
+                <MoveTo X="1805.083" Y="1337.896" Z="468.8552" />
+                <CustomBehavior File="InteractWith" QuestId="31511" MobId="64853" InteractByGossipOptions="1"
+                                X="1805.083" Y="1337.896" Z="468.8552" />
+                <CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for scene {TimeRemaining}" />
+                <CustomBehavior File="Misc\RunLua" Lua="StopCinematic()" WaitTime="1000" />
+            </If>
+        </If>
+        <If Condition="HasQuest(31511) &amp;&amp; IsQuestCompleted(31511)"> <!-- H -->
+            <TurnIn QuestName="A Witness to History" QuestId="31511" TurnInName="Zhi the Harmonious" TurnInId="59905"
+                    X="1215.917" Y="1041.448" Z="425.9666" />
+        </If>
+
+        <If Condition="!IsQuestCompleted(31512) &amp;&amp; Me.IsAlliance"> <!-- A - A Witness to History -->
+            <If Condition="( Me.Z &gt;= 350 ) &amp;&amp; ( Me.Y &gt;= 2000 ) &amp;&amp; ( Me.Y &lt;= 2200 )"> <!-- Up on the Wall in DW / VoEB (stupid bullshit) -->
+                <MoveTo X="649.5884" Y="2121.534" Z="369.2021" />
+                <CustomBehavior File="InteractWith" MobId="212229" MovementBy="ClickToMoveOnly"
+                                X="652.8531" Y="2121.887" Z="370.0509" />
+            </If>
+            <If Condition="!HasQuest(31394) &amp;&amp; !IsQuestCompleted(31394)">
+                <PickUp QuestName="Temple of the White Tiger" QuestId="31392" GiverName="Farmhand Ko" GiverId="63754"
+                        X="2260.78" Y="1155.108" Z="495.101" />
+            </If>
+            <If Condition="( HasQuest(31392) || HasQuest(31393) ) &amp;&amp; ( Me.Y &gt; 600 )">
+                <MoveTo X="3498.761" Y="690.0668" Z="608.1852" />
+                <CustomBehavior File="InteractWith" MobId="61118" X="3504.438" Y="689.9202" Z="608.1852" /> <!-- FP -->
+                <MoveTo X="3756.922" Y="538.9453" Z="639.691" />
+                <CustomBehavior File="MyCTM" X="3821.09" Y="536.347" Z="639.0074" />
+            </If>
+            <If Condition="HasQuest(31392) &amp;&amp; IsQuestCompleted(31392)">
+                <TurnIn QuestName="Temple of the White Tiger" QuestId="31392" TurnInName="Anduin Wrynn"
+                        TurnInId="64540" X="3819.135" Y="535.2518" Z="639.0074" />
+                <PickUp QuestName="A Celestial Experience" QuestId="31394" GiverName="Anduin Wrynn" GiverId="64540"
+                        X="3819.135" Y="535.2518" Z="639.0074" />
+            </If>
+            <If Condition="!HasQuest(31394) &amp;&amp; !IsQuestCompleted(31394) &amp;&amp; ( Me.Y &gt; 600 )">
+                <MoveTo X="3498.761" Y="690.0668" Z="608.1852" />
+                <CustomBehavior File="InteractWith" MobId="61118" X="3504.438" Y="689.9202" Z="608.1852" />
+                <MoveTo X="3756.922" Y="538.9453" Z="639.691" />
+                <CustomBehavior File="MyCTM" X="3819.135" Y="535.2518" Z="639.0074" />
+            </If>
+            <PickUp QuestName="A Celestial Experience" QuestId="31394" GiverName="Anduin Wrynn" GiverId="64540"
+                    X="3819.135" Y="535.2518" Z="639.0074" />
+            <If Condition="HasQuest(31394) &amp;&amp; !IsQuestCompleted(31394)">
+                <CustomBehavior File="GetOutOfGroundEffectAndAuras" StartNpcId="64528" QuestId="31394"
+                                EventX="3791.613" EventY="534.3569" EventZ="639.0074"
+                                MoveOutOfGroundEffectAuraId="126625" MoveBehindMobCastingSpellId="126631"
+                                MoveAwayFromMobCastingSpellId="126633"
+                                MoveAwayFromMobWithAuraId="23719" MoveAwayFromMobWithAuraId2="126633">
+                    <Safespots>
+                        <!-- safe spots in the room are the gold circles that comprise the big circle -->
+                        <Hotspot X="3825.954" Y="550.3646" Z="639.8345" />
+                        <Hotspot X="3800.181" Y="567.9801" Z="639.8226" />
+                        <Hotspot X="3770.128" Y="557.3201" Z="639.8259" />
+                        <Hotspot X="3765.737" Y="516.8966" Z="639.8144" />
+                        <Hotspot X="3791.67" Y="499.2032" Z="639.825" />
+                        <Hotspot X="3821.244" Y="509.5078" Z="639.8226" />
+                    </Safespots>
+                </CustomBehavior>
+            </If>
+            <TurnIn QuestName="A Celestial Experience" QuestId="31394" TurnInName="Anduin Wrynn" TurnInId="64540"
+                    X="3819.135" Y="535.2518" Z="639.0074" />
+            <If Condition="!HasQuest(31512) &amp;&amp; !IsQuestCompleted(31512)">
+                <PickUp QuestName="A Witness to History" QuestId="31512" GiverName="Anduin Wrynn" GiverId="64540"
+                        X="3819.135" Y="535.2518" Z="639.0074" />
+                <CustomBehavior File="MyCTM" X="3734.216" Y="540.8579" Z="639.69" />
+            </If>
+            <If Condition="HasQuest(31512) &amp;&amp; !IsQuestCompleted(31512)"> <!-- A -->
+                <MoveTo X="1790.512" Y="1390.957" Z="468.854" />
+                <While Condition="!IsQuestCompleted(31512)">
+                    <CustomBehavior File="InteractWith" QuestId="31512" MobId="64848" InteractByGossipOptions="1"
+                                    WaitTime="1000" CollectionDistance="100"
+                                    X="1790.512" Y="1390.957" Z="468.854" />
+                </While>
+                <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for  {TimeRemaining}" />
+                <CustomBehavior File="Misc\RunLua" Lua="StopCinematic()" WaitTime="1000" />
+                <CustomBehavior File="WaitTimer" WaitTime="55000" />
+            </If>
+        </If>
+        <If Condition="HasQuest(31512) &amp;&amp; IsQuestCompleted(31512)"> <!-- A -->
+            <TurnIn QuestName="A Witness to History" QuestId="31512" TurnInName="Zhi the Harmonious" TurnInId="59905"
+                    X="1215.917" Y="1041.448" Z="425.9666" />
+        </If>
+
+        <If Condition="!( ( Me.ZoneId == 5840 ) &amp;&amp; ( Me.Z &lt; 350 ) )"> <!-- Not VoEB / 'The Wall' -->
+            <MoveTo X="1833.269" Y="1362.562" Z="468.1013" /> <!-- Gate of August Doorway, Kun-Lai side -->
+            <MoveTo X="1683.377" Y="1364.909" Z="453.5912" /> <!-- Gate of August Doorway, VoEB side -->
+        </If>
+
+        <If Condition="Me.ZoneId == 6138"> <!-- Dread Wastes to VoEB -->
+            <If Condition="Me.Y &gt; 2200">
+                <CustomBehavior File="ForcedDismount" />
+                <DisableBehavior Name="Pull" />
+                <CustomBehavior File="ForcedMount" MountType="Ground" />
+                <CustomBehavior File="NoCombatMoveTo" X="1436.687" Y="2799.713" Z="302.011" />
+                <CustomBehavior File="NoCombatMoveTo" X="1345.231" Y="2436.406" Z="330.6844" />
+                <CustomBehavior File="NoCombatMoveTo" X="1236.801" Y="2441.08" Z="315.4126" />
+                <CustomBehavior File="NoCombatMoveTo" X="1126.425" Y="2550.387" Z="322.8257" />
+                <CustomBehavior File="NoCombatMoveTo" X="1056.712" Y="2644.894" Z="292.8615" />
+                <CustomBehavior File="NoCombatMoveTo" X="762.5263" Y="2731.887" Z="300.8044" />
+                <CustomBehavior File="NoCombatMoveTo" X="532.0211" Y="2714.236" Z="240.4446" />
+                <CustomBehavior File="NoCombatMoveTo" X="411.5024" Y="2667.115" Z="213.7563" />
+                <CustomBehavior File="NoCombatMoveTo" X="360.1742" Y="2442.194" Z="218.1238" />
+                <CustomBehavior File="NoCombatMoveTo" X="505.4664" Y="2285.849" Z="256.4005" />
+                <CustomBehavior File="NoCombatMoveTo" X="505.4664" Y="2285.849" Z="256.4005" />
+                <CustomBehavior File="NoCombatMoveTo" X="597.1423" Y="2299.812" Z="297.0101" />
+                <EnableBehavior Name="Pull" />
+            </If>
+            <If Condition="Me.Z &lt; 350">
+                <CustomBehavior File="NoCombatMoveTo" X="660.4013" Y="2120.385" Z="327.155" />
+                <CustomBehavior File="InteractWith" MobId="215393" MovementBy="ClickToMoveOnly" X="658.0063"
+                                Y="2120.814" Z="326.8049" />
+                <CustomBehavior File="WaitTimer" WaitTime="12000" GoalText="Waiting for ride up {TimeRemaining}" />
+            </If>
+        </If>
+
+        <If Condition="( Me.Z &gt;= 350 ) &amp;&amp; ( Me.Y &gt;= 2000 ) &amp;&amp; ( Me.Y &lt;= 2200 )">
+            <!-- Up on the Wall in DW / VoEB (stupid bullshit) -->
+            <MoveTo X="668.6095" Y="2070.396" Z="371.7453" />
+            <CustomBehavior File="MyCTM" X="676.2925" Y="2029.575" Z="326.7312" />
+        </If>
+
+        <If Condition="Me.ZoneId == 5840"> <!-- VoEB -->
+            <If Condition="Me.IsAlliance">
+                <CustomBehavior File="NoCombatMoveTo" X="911.4259" Y="347.649" Z="506.0943" /> <!-- Seven Stars -->
+                <CustomBehavior File="InteractWith" MobId="60166" Range="20" X="911.4259" Y="347.649" Z="506.0943" />
+                <CustomBehavior File="UserDialog" AllowBotStop="true" SoundCue="Exclamation" SoundCueInterval="10"
+                                Text="Train Flying\n\nIf you would like to resume questing in Dread Wastes, press continue after training flying!" />
+                <!--<CustomBehavior File="ForceTrainRiding" MobId="60166" Range="12" />-->
+            </If>
+            <If Condition="Me.IsHorde">
+                <CustomBehavior File="NoCombatMoveTo" X="1555.219" Y="890.882" Z="478.4328" /> <!-- Two Moons -->
+                <CustomBehavior File="InteractWith" MobId="60167" Range="20" X="1555.219" Y="890.882" Z="478.4328" />
+                <CustomBehavior File="UserDialog" AllowBotStop="true" SoundCue="Exclamation" SoundCueInterval="10"
+                                Text="Train Flying\n\nIf you would like to resume questing in Dread Wastes, press continue after training flying!" />
+                <!--<CustomBehavior File="ForceTrainRiding" MobId="60167" Range="12" />-->
+            </If>
+        </If>
+
+        <CustomBehavior File="LoadProfile" ProfileName="..\MoP\[Fly][N - Quest] 90 Dread Wastes [Kick]" />
+
+    </QuestOrder>
+
+</HBProfile>

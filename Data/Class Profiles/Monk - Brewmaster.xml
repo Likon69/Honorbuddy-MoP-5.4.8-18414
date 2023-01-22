@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassProfile Class="Monk" Specialization="1" Name="Monk - Brewmaster">
+	<TalentTree>
+		<Talent Tier="1" Index="1" Name="Celerity" />
+		<Talent Tier="2" Index="2" Name="Zen Sphere" />
+		<Talent Tier="3" Index="1" Name="Power Strikes" />
+		<Talent Tier="4" Index="3" Name="Leg Sweep" />
+		<Talent Tier="5" Index="2" Name="Dampen Harm" />
+		<Talent Tier="6" Index="1" Name="Rushing Jade Wind" />
+	</TalentTree>
+	<WeightSet>
+		<DamagePerSecond>22</DamagePerSecond>
+		<Expertise>20</Expertise>
+		<Hit>19</Hit>
+		<Agility>18</Agility>
+		<Stamina>17</Stamina>
+		<Mastery>16</Mastery>
+		<Dodge>14</Dodge>
+		<CriticalStrike>14</CriticalStrike>
+		<Haste>12</Haste>
+		<AttackPower>5</AttackPower>
+		<Armor>0.01</Armor>
+	</WeightSet>
+</ClassProfile>

@@ -1,0 +1,367 @@
+<HBProfile>
+
+	<Name>Stonetalon Mountains ($Rev$)</Name>
+	<MinLevel>20</MinLevel>
+	<MaxLevel>35</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<!-- The Fold -->
+		<Vendor Name="Vernal the Fixer" Entry="41675" Type="Repair" X="1543.002" Y="-494.7188" Z="56.84977" />
+		<!-- Krom'gar Fortress -->
+		<Vendor Name="Krom'gar Quartermaster" Entry="42028" Type="Repair" X="881.3611" Y="16.40972" Z="92.87994" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="26045" Name="I Got Your Parts Right Here...">
+	<Objective Type="CollectItem" ItemId="56575" CollectCount="10">
+		<CollectFrom>
+			<GameObject Name="Spare Part" Id="203443" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="850.6812" Y="-52.45389" Z="10.97239" />
+			<Hotspot X="789.669" Y="-23.12846" Z="11.44364" />
+			<Hotspot X="718.0166" Y="-20.78541" Z="20.36477" />
+			<Hotspot X="648.7853" Y="-25.80166" Z="26.29358" />
+			<Hotspot X="588.8048" Y="-41.06203" Z="29.12783" />
+			<Hotspot X="530.6125" Y="-62.93356" Z="35.74822" />
+			<Hotspot X="456.792" Y="-81.51891" Z="37.69359" />
+			<Hotspot X="417.73" Y="-121.602" Z="44.18454" />
+			<Hotspot X="376.7597" Y="-171.7766" Z="55.91657" />
+			<Hotspot X="368.4394" Y="-239.7985" Z="63.57425" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="26046" Name="Between a Rock and a Hard Place">
+	<Objective Type="KillMob" MobId="41993" KillCount="12">
+		<Hotspots>
+			<Hotspot X="850.6812" Y="-52.45389" Z="10.97239" />
+			<Hotspot X="789.669" Y="-23.12846" Z="11.44364" />
+			<Hotspot X="718.0166" Y="-20.78541" Z="20.36477" />
+			<Hotspot X="648.7853" Y="-25.80166" Z="26.29358" />
+			<Hotspot X="588.8048" Y="-41.06203" Z="29.12783" />
+			<Hotspot X="530.6125" Y="-62.93356" Z="35.74822" />
+			<Hotspot X="456.792" Y="-81.51891" Z="37.69359" />
+			<Hotspot X="417.73" Y="-121.602" Z="44.18454" />
+			<Hotspot X="376.7597" Y="-171.7766" Z="55.91657" />
+			<Hotspot X="368.4394" Y="-239.7985" Z="63.57425" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="HasQuest(28532)" >
+		<TurnIn QuestName="Warchief's Command: Stonetalon Mountains" QuestId="28532" TurnInName="Huntress Jalin" TurnInId="34354" />
+	</If>
+	
+	<If Condition="!HasQuest(25945) &amp;&amp; !IsQuestCompleted(25945)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Stonetalon Mountain Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling The Fold Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="We're Here to do One Thing, Maybe Two..." QuestId="25945" GiverName="Blood Guard Aldo Rockrain" GiverId="41678" />
+	<If Condition="HasQuest(25945)" >
+		<CustomBehavior File="InteractWith" MobId="41744" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" 
+			TerminateWhen="Me.IsOnTransport" WaitTime="5000" X="2129.183" Y="-1104.835" Z="100.8969" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="We're Here to do One Thing, Maybe Two..." QuestId="25945" TurnInName="Saurboz" TurnInId="34341" />
+	
+	<PickUp QuestName="Barrier to Entry" QuestId="25999" GiverName="Saurboz" GiverId="34341" />
+	<CustomBehavior File="InteractWith" QuestId="25999" MobId="203413" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" >
+		<HuntingGrounds>
+			<Hotspot X="1636.463" Y="-429.7169" Z="73.35123" />
+			<Hotspot X="1680.591" Y="-425.9599" Z="87.75681" />
+			<Hotspot X="1724.544" Y="-427.8373" Z="103.2754" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="Barrier to Entry" QuestId="25999" TurnInName="Saurboz" TurnInId="34341" />
+	
+	<PickUp QuestName="The Missing Blastgineer" QuestId="26001" GiverName="Saurboz" GiverId="34341" />
+	<PickUp QuestName="Lessons From the Lost Isles" QuestId="26003" GiverName="Kilag Gorefang" GiverId="40926" />
+	<Objective QuestName="Lessons From the Lost Isles" QuestId="26003" Type="KillMob" MobId="41865" KillCount="12" />
+	
+	<TurnIn QuestName="The Missing Blastgineer" QuestId="26001" TurnInName="Blastgineer Fuzzwhistle" TurnInId="40901" />
+	
+	<PickUp QuestName="Alliance Attack Plans" QuestId="26002" GiverName="Blastgineer Fuzzwhistle" GiverId="40901" />
+	<Objective QuestName="Alliance Attack Plans" QuestId="26002" Type="CollectItem" ItemId="56469" CollectCount="1" />
+	<TurnIn QuestName="Alliance Attack Plans" QuestId="26002" TurnInName="Saurboz" TurnInId="34341" />
+	<TurnIn QuestName="Lessons From the Lost Isles" QuestId="26003" TurnInName="Kilag Gorefang" TurnInId="40926" />
+	
+	<PickUp QuestName="Krom'gar Fortress" QuestId="26004" GiverName="Saurboz" GiverId="34341" />
+	<TurnIn QuestName="Krom'gar Fortress" QuestId="26004" TurnInName="Overlord Krom'gar" TurnInId="41023" />
+	
+	<CustomBehavior File="Message" Text="Compiling Krom'gar Fortress Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Ashes to Ashes" QuestId="26010" GiverName="Overlord Krom'gar" GiverId="41023" />
+	<PickUp QuestName="Enemy of the Horde: Marshal Paltrow" QuestId="26011" GiverName="Spy-Mistress Anara" GiverId="40903" />
+	<If Condition="!IsQuestCompleted(28084)" >
+		<CustomBehavior File="InteractWith" MobId="42028" TerminateWhen="IsQuestCompleted(28084)" NonCompeteDistance="0" X="883.9051" Y="17.34057" Z="93.04855" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" WaitTime="1000" />
+	</If>
+	<PickUp QuestName="Dream of a Better Tomorrow" QuestId="26026" GiverName="Clarissa" GiverId="40907" />
+	
+	<Objective QuestName="Enemy of the Horde: Marshal Paltrow" QuestId="26011" Type="KillMob" MobId="41937" KillCount="1" />
+	<CustomBehavior File="InteractWith" QuestId="26010" MobId="203431" InteractByUsingItemId="56473" Range="10" NonCompeteDistance="0"
+		IgnoreLoSToTarget="True" NumOfTimes="1000" >
+		<HuntingGrounds>
+			<Hotspot X="787.6435" Y="255.5406" Z="22.38583" />
+			<Hotspot X="845.6652" Y="222.5621" Z="27.64786" />
+			<Hotspot X="895.9371" Y="292.0161" Z="21.83382" />
+			<Hotspot X="943.7557" Y="227.3571" Z="21.21861" />
+			<Hotspot X="984.551" Y="243.3783" Z="21.96978" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	
+	<Objective QuestName="Dream of a Better Tomorrow" QuestId="26026" Type="CollectItem" ItemId="55223" CollectCount="1" />
+	<If Condition="HasQuest(26026) &amp;&amp; !IsObjectiveComplete(2,26026)" > <!-- Due to tight corners and poor mesh -->
+		<MoveTo X="1150.986" Y="191.0681" Z="5.138127" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="MyCTM" X="1155.877" Y="188.1433" Z="5.877659" />
+		<CustomBehavior File="MyCTM" X="1166.295" Y="202.9105" Z="14.53024" />
+		<CustomBehavior File="MyCTM" X="1178.897" Y="194.6428" Z="17.91066" />
+		<CustomBehavior File="MyCTM" X="1173.053" Y="184.3876" Z="23.26561" />
+		<CustomBehavior File="InteractWith" QuestId="26026" QuestObjectiveIndex="2" MobId="203174" NumOfTimes="10" IgnoreCombat="True" NonCompeteDistance="0" />
+		<CustomBehavior File="MyCTM" X="1173.053" Y="184.3876" Z="23.26561" />
+		<CustomBehavior File="MyCTM" X="1178.897" Y="194.6428" Z="17.91066" />
+		<CustomBehavior File="MyCTM" X="1166.295" Y="202.9105" Z="14.53024" />
+		<CustomBehavior File="MyCTM" X="1155.877" Y="188.1433" Z="5.877659" />
+		<MoveTo X="1150.986" Y="191.0681" Z="5.138127" />
+	</If>
+	<Objective QuestName="Dream of a Better Tomorrow" QuestId="26026" Type="CollectItem" ItemId="55222" CollectCount="1" />
+	<CustomBehavior File="InteractWith" QuestId="26026" QuestObjectiveIndex="1" MobId="203088" NonCompeteDistance="0" 
+		ProactiveCombatStrategy="ClearMobsTargetingUs" X="1606.228" Y="181.6069" Z="104.6685" />
+	
+	<TurnIn QuestName="Dream of a Better Tomorrow" QuestId="26026" TurnInName="Clarissa" TurnInId="40907" />
+	<TurnIn QuestName="Enemy of the Horde: Marshal Paltrow" QuestId="26011" TurnInName="Spy-Mistress Anara" TurnInId="40903" />
+	<TurnIn QuestName="Ashes to Ashes" QuestId="26010" TurnInName="Overlord Krom\'gar" TurnInId="41023" />
+	
+	<PickUp QuestName="Mr. D's Wild Ride" QuestId="26028" GiverName="Clarissa" GiverId="40907" />
+	<While Condition="HasQuest(26028) &amp;&amp; !IsQuestCompleted(26028)" >
+		<CustomBehavior File="InteractWith" QuestId="26028" MobId="40907" InteractByGossipOptions="1" 
+			TerminateWhen="Me.HasAura(78257)" NonCompeteDistance="0" X="882.9863" Y="3.251799" Z="92.67562" />
+		<MoveTo X="1026.538" Y="5.600537" Z="14.27887" />
+		<CustomBehavior File="26028-MrDsWildRide" />
+		<If Condition="IsQuestCompleted(26028)" >
+			<MoveTo X="882.9863" Y="3.251799" Z="92.67562" />
+			<CustomBehavior File="EjectVeh" />
+		</If>
+	</While>
+	<TurnIn QuestName="Mr. D's Wild Ride" QuestId="26028" TurnInName="Overlord Krom\'gar" TurnInId="41023" />
+	
+	<PickUp QuestName="Report to Bombgutz" QuestId="26020" GiverName="Overlord Krom\'gar" GiverId="41023" />
+	<TurnIn QuestName="Report to Bombgutz" QuestId="26020" TurnInName="Chief Blastgineer Bombgutz" TurnInId="40902" />
+	
+	<PickUp QuestName="Where Are the Parts?" QuestId="26044" GiverName="Chief Blastgineer Bombgutz" GiverId="40902" />
+	<TurnIn QuestName="Where Are the Parts?" QuestId="26044" TurnInName="Sergeant Dontrag" TurnInId="41991" />
+	
+	<PickUp QuestName="I Got Your Parts Right Here..." QuestId="26045" GiverName="Sergeant Dontrag" GiverId="41991" />
+	<PickUp QuestName="Between a Rock and a Hard Place" QuestId="26046" GiverName="Scout Utvoch" GiverId="41990" />
+	<PickUp QuestName="And That's Why They Call Them Peons..." QuestId="26047" GiverName="Blastgineer Igore" GiverId="41992" />
+	
+	<Objective QuestName="I Got Your Parts Right Here..." QuestId="26045" Type="CollectItem" ItemId="56575" CollectCount="10" />
+	<CustomBehavior File="InteractWith" QuestId="26047" MobId="41989" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" >
+		<HuntingGrounds>
+			<Hotspot X="850.6812" Y="-52.45389" Z="10.97239" />
+			<Hotspot X="789.669" Y="-23.12846" Z="11.44364" />
+			<Hotspot X="718.0166" Y="-20.78541" Z="20.36477" />
+			<Hotspot X="648.7853" Y="-25.80166" Z="26.29358" />
+			<Hotspot X="588.8048" Y="-41.06203" Z="29.12783" />
+			<Hotspot X="530.6125" Y="-62.93356" Z="35.74822" />
+			<Hotspot X="456.792" Y="-81.51891" Z="37.69359" />
+			<Hotspot X="417.73" Y="-121.602" Z="44.18454" />
+			<Hotspot X="376.7597" Y="-171.7766" Z="55.91657" />
+			<Hotspot X="368.4394" Y="-239.7985" Z="63.57425" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="Between a Rock and a Hard Place" QuestId="26046" Type="KillMob" MobId="41993" KillCount="12" />
+	<TurnIn QuestName="Between a Rock and a Hard Place" QuestId="26046" TurnInName="Scout Utvoch" TurnInId="41990" />
+	<TurnIn QuestName="And That's Why They Call Them Peons..." QuestId="26047" TurnInName="Blastgineer Igore" TurnInId="41992" />
+	<TurnIn QuestName="I Got Your Parts Right Here..." QuestId="26045" TurnInName="Sergeant Dontrag" TurnInId="41991" />
+	
+	<PickUp QuestName="Spare Parts Up In Here!" QuestId="26048" GiverName="Sergeant Dontrag" GiverId="41991" />
+	<TurnIn QuestName="Spare Parts Up In Here!" QuestId="26048" TurnInName="Chief Blastgineer Bombgutz" TurnInId="40902" />
+	
+	<PickUp QuestName="In Defense of Krom'gar Fortress" QuestId="26058" GiverName="Chief Blastgineer Bombgutz" GiverId="40902" />
+	<If Condition="HasQuest(26058) &amp;&amp; !IsQuestCompleted(26058)" >
+		<CustomBehavior File="RunMacro" Macro="/cancelform" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="Vehicles\MountVehOnly" VehicleMountId="41895" X="921.0624" Y="-0.08786345" Z="92.5949" />
+		<CustomBehavior File="SpecificQuests\26058-Stonetalon-InDefenseofKromgarFortress" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+	</If>
+	<TurnIn QuestName="In Defense of Krom'gar Fortress" QuestId="26058" TurnInName="Overlord Krom\'gar" TurnInId="41023" />
+	
+	<PickUp QuestName="Eyes and Ears: Malaka'jin" QuestId="26059" GiverName="Overlord Krom\'gar" GiverId="41023" />
+	<TurnIn QuestName="Eyes and Ears: Malaka'jin" QuestId="26059" TurnInName="Witch Doctor Jin\'Zil" TurnInId="3995" />
+	
+	<CustomBehavior File="Message" Text="Compiling Malaka'jin Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Da Voodoo: Stormer Heart" QuestId="26060" GiverName="Witch Doctor Jin\'Zil" GiverId="3995" />
+	<PickUp QuestName="Da Voodoo: Ram Horns" QuestId="26061" GiverName="Witch Doctor Jin\'Zil" GiverId="3995" />
+	<Objective QuestName="Da Voodoo: Stormer Heart" QuestId="26060" Type="CollectItem" ItemId="56796" CollectCount="1" />
+	<Objective QuestName="Da Voodoo: Ram Horns" QuestId="26061" Type="CollectItem" ItemId="56797" CollectCount="6" />
+	<TurnIn QuestName="Da Voodoo: Stormer Heart" QuestId="26060" TurnInName="Witch Doctor Jin\'Zil" TurnInId="3995" />
+	<TurnIn QuestName="Da Voodoo: Ram Horns" QuestId="26061" TurnInName="Witch Doctor Jin\'Zil" TurnInId="3995" />
+	
+	<PickUp QuestName="Da Voodoo: Resonite Crystal" QuestId="26062" GiverName="Witch Doctor Jin\'Zil" GiverId="3995" />
+	<PickUp QuestName="Reinforcements..." QuestId="26066" GiverName="Subjugator Devo" GiverId="42023" />
+	<PickUp QuestName="Fight On Their Stomachs" QuestId="26064" GiverName="Denni\'ka" GiverId="3411" />
+	
+	<Objective QuestName="Fight On Their Stomachs" QuestId="26064" Type="CollectItem" ItemId="56041" CollectCount="8" />
+	<While Condition="HasQuest(26066) &amp;&amp; !IsQuestCompleted(26066)" >
+		<CustomBehavior File="CombatUseItemOnV2" QuestId="26066" MobId="11915" MobId2="11917" ItemId="56794" MaxRangeToUseItem="10" 
+			UseWhenMobHasHealthPercent="100" CollectionDistance="1000" UseItemStrategy="UseItemContinuouslyOnTarget" >
+			<HuntingGrounds>
+				<Hotspot X="-91.67847" Y="262.1777" Z="96.57218" />
+				<Hotspot X="-32.78941" Y="315.0538" Z="92.27602" />
+				<Hotspot X="-19.82744" Y="358.4617" Z="101.792" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<Objective QuestName="Da Voodoo: Resonite Crystal" QuestId="26062" Type="CollectItem" ItemId="56795" CollectCount="8" />
+	
+	<TurnIn QuestName="Fight On Their Stomachs" QuestId="26064" TurnInName="Denni\'ka" TurnInId="3411" />
+	<TurnIn QuestName="Reinforcements..." QuestId="26066" TurnInName="Subjugator Devo" TurnInId="42023" />
+	<PickUp QuestName="Kobold Fury!" QuestId="26068" GiverName="Subjugator Devo" GiverId="42023" />
+	<TurnIn QuestName="Da Voodoo: Resonite Crystal" QuestId="26062" TurnInName="Witch Doctor Jin\'Zil" TurnInId="3995" />
+	<PickUp QuestName="Jin'Zil's Blessing" QuestId="26067" GiverName="Witch Doctor Jin\'Zil" GiverId="3995" />
+	
+	<If Condition="HasQuest(26068) &amp;&amp; !IsQuestCompleted(26068)" >
+		<MoveTo X="207.7285" Y="-771.8249" Z="11.95932" />
+		<MoveTo X="321.2438" Y="-460.1366" Z="69.72063" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(56799)" WaitTime="2000" />
+		<MoveTo X="207.7285" Y="-771.8249" Z="11.95932" />
+	</If>
+	<CustomBehavior File="InteractWith" QuestId="26067" MobId="41360" CollectionDistance="500" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" InteractByUsingItemId="56798" Range="15" NumOfTimes="1000" >
+		<HuntingGrounds>
+			<Hotspot X="126.8839" Y="-409.4106" Z="2.363457" />
+			<Hotspot X="72.90442" Y="-446.1556" Z="-14.82668" />
+			<Hotspot X="73.04381" Y="-532.4484" Z="-19.76497" />
+			<Hotspot X="83.83376" Y="-620.2787" Z="-19.6346" />
+			<Hotspot X="-5.232351" Y="-615.64" Z="-36.12287" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	
+	<TurnIn QuestName="Kobold Fury!" QuestId="26068" TurnInName="Subjugator Devo" TurnInId="42023" />
+	<TurnIn QuestName="Jin'Zil's Blessing" QuestId="26067" TurnInName="Witch Doctor Jin\'Zil" TurnInId="3995" />
+	
+	<PickUp QuestName="All's Quiet on the Southern Front" QuestId="26073" GiverName="Witch Doctor Jin'Zil" GiverId="3995" />
+	
+	<PickUp QuestName="The Queen and Her Court" QuestId="26063" GiverName="Darn Talongrip" GiverId="11821" />
+	<Objective QuestName="The Queen and Her Court" QuestId="26063" Type="KillMob" MobId="41185" KillCount="1" />
+	<Objective QuestName="The Queen and Her Court" QuestId="26063" Type="KillMob" MobId="4006" KillCount="10" />
+	<TurnIn QuestName="The Queen and Her Court" QuestId="26063" TurnInName="Darn Talongrip" TurnInId="11821" />
+	
+	<TurnIn QuestName="All's Quiet on the Southern Front" QuestId="26073" TurnInName="Overlord Krom\'gar" TurnInId="41023" />
+	
+	<PickUp QuestName="Beginning of the End" QuestId="26074" GiverName="Overlord Krom\'gar" GiverId="41023" />
+	<If Condition="HasQuest(26074) &amp;&amp; !IsQuestCompleted(26074)" >
+		<CustomBehavior File="InteractWith" QuestId="26074" MobId="42029" NonCompeteDistance="0" 
+			TerminateWhen="Me.IsOnTransport" WaitTime="5000" X="906.3841" Y="-19.35352" Z="92.94392" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="Beginning of the End" QuestId="26074" TurnInName="Jibbly Rakit" TurnInId="42033" />
+	
+	<CustomBehavior File="Message" Text="Compiling The Sludgeworks Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="The Turd Problem" QuestId="26075" GiverName="Jibbly Rakit" GiverId="42033" />
+	<Objective QuestName="The Turd Problem" QuestId="26075" Type="KillMob" MobId="4012" KillCount="6" />
+	<TurnIn QuestName="The Turd Problem" QuestId="26075" TurnInName="Jibbly Rakit" TurnInId="42033" />
+	
+	<PickUp QuestName="Spy Infestation" QuestId="26076" GiverName="Jibbly Rakit" GiverId="42033" />
+	<CustomBehavior File="InteractWith" QuestId="26076" MobId="42035" InteractByUsingItemId="56800" Range="10" NonCompeteDistance="0" 
+		CollectionDistance="250" NumOfTimes="1000" >
+		<HuntingGrounds>
+			<Hotspot X="1780.841" Y="755.37" Z="135.6751" />
+			<Hotspot X="1694.534" Y="762.7936" Z="132.4002" />
+			<Hotspot X="1713.155" Y="831.7766" Z="126.4039" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="Spy Infestation" QuestId="26076" TurnInName="Jibbly Rakit" TurnInId="42033" />
+	
+	<PickUp QuestName="Final Delivery" QuestId="26077" GiverName="Jibbly Rakit" GiverId="42033" />
+	<If Condition="HasQuest(26077) &amp;&amp; !IsQuestCompleted(26077)" >
+		<MoveTo X="1644.902" Y="824.034" Z="130.3433" />
+		<MoveTo X="1603.94" Y="869.6636" Z="140.8038" />
+		<MoveTo X="1616.636" Y="882.4441" Z="147.7535" />
+		<CustomBehavior File="MountVehOnly" VehicleMountId="41418" QuestId="26077" X="1614.11" Y="881.40" Z="147.71" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="Final Delivery" QuestId="26077" TurnInName="General Grebo" TurnInId="42050" />
+	
+	<PickUp QuestName="To Battlescar!" QuestId="26082" GiverName="General Grebo" GiverId="42050" />
+	<Objective QuestName="To Battlescar!" QuestId="26082" Type="KillMob" MobId="35150" KillCount="5" />
+	<Objective QuestName="To Battlescar!" QuestId="26082" Type="KillMob" MobId="42056" KillCount="20" />
+	<TurnIn QuestName="To Battlescar!" QuestId="26082" TurnInName="General Grebo" TurnInId="42050" />
+	
+	<PickUp QuestName="Proof of Lies" QuestId="26097" GiverName="High Chieftain Cliffwalker" GiverId="42039" />
+	<TurnIn QuestName="Proof of Lies" QuestId="26097" TurnInName="Orthus Cliffwalker" TurnInId="42091" />
+	
+	<CustomBehavior File="Message" Text="Compiling Cliffwalker Post Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Betrayal at the Grove" QuestId="26098" GiverName="Orthus Cliffwalker" GiverId="42091" />
+	<TurnIn QuestName="Betrayal at the Grove" QuestId="26098" TurnInName="High Chieftain Cliffwalker" TurnInId="42039" />
+	
+	<PickUp QuestName="Is This Justice?" QuestId="26099" GiverName="High Chieftain Cliffwalker" GiverId="42039" />
+	<CustomBehavior File="EscortGroup" QuestId="26099" EscortNpcId="42039" EscortNpcId2="42047" EscortMaxFollowDistance="3" />
+	<TurnIn QuestName="Is This Justice?" QuestId="26099" TurnInName="Masha Cliffwalker" TurnInId="42047" />
+	
+	<PickUp QuestName="The General is Dead" QuestId="26100" GiverName="Masha Cliffwalker" GiverId="42047" />
+	<TurnIn QuestName="The General is Dead" QuestId="26100" TurnInName="Overlord Krom'gar" TurnInId="41023" />
+	
+	<PickUp QuestName="Might Makes Right" QuestId="26101" GiverName="Overlord Krom'gar" GiverId="41023" />
+	<TurnIn QuestName="Might Makes Right" QuestId="26101" TurnInName="Overlord Krom'gar" TurnInId="42106" />
+	
+	<PickUp QuestName="To Be Horde..." QuestId="26115" GiverName="Overlord Krom'gar" GiverId="42106" />
+	<While Condition="!IsQuestCompleted(26115)" />
+	<TurnIn QuestName="To Be Horde..." QuestId="26115" TurnInName="High Chieftain Cliffwalker" TurnInId="42039" />
+	
+	<PickUp QuestName="Nura Pathfinder" QuestId="26069" GiverName="Witch Doctor Jin'Zil" GiverId="3995" />
+	<TurnIn QuestName="Nura Pathfinder" QuestId="26069" TurnInName="Nura Pathfinder" TurnInId="37135" />
+
+	<CustomBehavior File="Message" Text="Stonetalon Mountains Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

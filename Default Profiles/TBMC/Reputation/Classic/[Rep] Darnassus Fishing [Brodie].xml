@@ -1,0 +1,245 @@
+<HBProfile>
+
+	<Name>Darnassus Fishing Dailies ($Rev$)</Name>
+	<MinLevel>10</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="Message" Text="ERROR!! Somehow you ended up starting an Alliance profile. Terminating." LogColor="Red" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Darnassus Fishing Daily Routine...Checking Location" LogColor="Green" />
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Darnassus -->
+		<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684)) &gt;= 100" >
+			<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+			<CustomBehavior File="ForcedDismount" />
+		</If>
+		<UseMount Value="False" />
+		<CustomBehavior File="InteractWith" MobId="215116" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+		<UseMount Value="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+	</If>
+	
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557
+			&amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487" > <!-- Outlands, but not Azure/Bloodmyst/Exodar or Ghostlands/Eversong/Silvermoon -->
+		<CustomBehavior File="FlyTo" X="-338.0062" Y="969.5461" Z="54.29" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="195139" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-338.0062" Y="969.5461" Z="54.29" />
+	</If>
+	
+	<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+		<If Condition="IsQuestCompleted(25316)" > <!-- If Has Hyjal Portal Available -->
+			<CustomBehavior File="FlyTo" X="-8211.945" Y="413.7261" Z="117.7627" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="207692" NonCompeteDistance="0" TerminateWhen="Me.MapId != 0" X="-8211.945" Y="413.7261" Z="117.7627" />
+		<Else> <!-- Boat to Darnassus -->
+			<CustomBehavior File="FlyTo" X="-8641.401" Y="1324.443" Z="5.505301" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="UseTransport" TransportId="176310"
+				WaitAtX="-8641.401" WaitAtY="1324.443" WaitAtZ="5.505301" 
+				TransportStartX="-8650.719" TransportStartY="1346.051" TransportStartZ="0.04218207"
+				TransportEndX="8162.587" TransportEndY="1005.365" TransportEndZ="-0.04571009"
+				StandOnX="-8643.596" StandOnY="1342.503" StandOnZ="6.104574"
+				GetOffX="8179.11" GetOffY="1002.75" GetOffZ="6.817571" />
+		</Else>
+		</If>
+	</If>
+	
+	<If Condition="Me.MapId == 1 &amp;&amp; Me.ZoneId != 1657" >
+		<CustomBehavior File="FlyTo" X="8378.422" Y="998.663" Z="28.47813" />
+		<While Condition="Me.ZoneId != 1657" >
+			<CustomBehavior File="MyCTM" X="8390.02" Y="1001.96" Z="30.05" />
+			<CustomBehavior File="WaitTimer" TerminateWhen="Me.ZoneId == 1657" WaitTime="5000" />
+		</While>
+	</If>
+	
+	<If Condition="!HasQuest(29345) &amp;&amp; !HasQuest(29359) &amp;&amp; !HasQuest(29321) &amp;&amp; !HasQuest(29323) &amp;&amp; !HasQuest(29324)" >
+		<CustomBehavior File="Message" Text="Grabbing Daily from Astaia" LogColor="CornflowerBlue" />
+		<CustomBehavior File="FlyTo" X="9838.012" Y="2437.421" Z="1315.718" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.GetSkill(Styx.SkillLine.Fishing).CurrentValue &lt; 1" >
+			<CustomBehavior File="ForceTrainRiding" MobId="4156" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</If>
+		<While Condition="HasQuestAvailable(4156)" >
+			<CustomBehavior File="InteractWith" MobId="4156" InteractByQuestFrameDisposition="Ignore" NonCompeteDistance="0" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+	
+	<If Condition="HasQuest(29325)" >
+		<CustomBehavior File="Message" Text="Starting Quest: A Slippery Snack" LogColor="CornflowerBlue" />
+		<If Condition="!IsQuestCompleted(29325)" >
+			<If Condition="Me.ZoneId == 1657" >
+				<CustomBehavior File="FlyTo" X="9946.069" Y="2610.65" Z="1316.251" />
+				<While Condition="Me.ZoneId == 1657" >
+					<CustomBehavior File="MyCTM" X="9946.80" Y="2624.89" Z="1318.14" />
+					<CustomBehavior File="WaitTimer" TerminateWhen="Me.ZoneId != 1657" WaitTime="5000" />
+				</While>
+			</If>
+			<CustomBehavior File="CollectThings" QuestId="29325" MobId="53522" NonCompeteDistance="5" CollectItemId="69915" CollectItemCount="6"
+				HuntingGroundRadius="200" >
+				<Hotspot X="8203.437" Y="961.9761" Z="-20.59825" />
+				<Hotspot X="8148.494" Y="890.6545" Z="-29.9856" />
+				<Hotspot X="8110.347" Y="1054.548" Z="-40.43048" />
+				<Hotspot X="8185.777" Y="1133.203" Z="-18.66864" />
+				<Hotspot X="8313.749" Y="1160.3" Z="-27.65244" />
+			</CustomBehavior>
+		</If>
+		<If Condition="Me.ZoneId != 1657" >
+			<CustomBehavior File="FlyTo" X="8378.422" Y="998.663" Z="28.47813" />
+			<While Condition="Me.ZoneId != 1657" >
+				<CustomBehavior File="MyCTM" X="8390.02" Y="1001.96" Z="30.05" />
+				<CustomBehavior File="WaitTimer" TerminateWhen="Me.ZoneId == 1657" WaitTime="5000" />
+			</While>
+		</If>
+		<TurnIn Nav="Fly" QuestName="A Slippery Snack" QuestId="29325" TurnInName="Astaia" TurnInId="4156" />
+	</If>
+	
+	<If Condition="HasQuest(29359)" >
+		<CustomBehavior File="Message" Text="Starting Quest: An Old Favorite" LogColor="CornflowerBlue" />
+		<If Condition="!IsQuestCompleted(29359)" >
+			<If Condition="Me.ZoneId == 1657" >
+				<CustomBehavior File="FlyTo" X="9946.069" Y="2610.65" Z="1316.251" />
+				<While Condition="Me.ZoneId == 1657" >
+					<CustomBehavior File="MyCTM" X="9946.80" Y="2624.89" Z="1318.14" />
+					<CustomBehavior File="WaitTimer" TerminateWhen="Me.ZoneId != 1657" WaitTime="5000" />
+				</While>
+			</If>
+			<If Condition="Chance(33.3)" >
+				<CustomBehavior File="FlyTo" X="8256.203" Y="967.2699" Z="3.058544" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="MrFishIt" QuestId="29359" CollectItemId="69987" CollectItemCount="8" X="8237.927" Y="965.5453" Z="0.1" />
+			<ElseIf Condition="Chance(66.6)" >
+				<CustomBehavior File="FlyTo" X="8258.173" Y="1010.195" Z="4.222829" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="MrFishIt" QuestId="29359" CollectItemId="69987" CollectItemCount="8" X="8241.527" Y="1010.111" Z="0.1" />
+			</ElseIf>
+			<Else>
+				<CustomBehavior File="FlyTo" X="8289.333" Y="1079.974" Z="2.469952" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="MrFishIt" QuestId="29359" CollectItemId="69987" CollectItemCount="8" X="8272.604" Y="1081.738" Z="0.1" />
+			</Else>
+			</If>
+		</If>
+		<If Condition="Me.ZoneId != 1657" >
+			<CustomBehavior File="FlyTo" X="8378.422" Y="998.663" Z="28.47813" />
+			<While Condition="Me.ZoneId != 1657" >
+				<CustomBehavior File="MyCTM" X="8390.02" Y="1001.96" Z="30.05" />
+				<CustomBehavior File="WaitTimer" TerminateWhen="Me.ZoneId == 1657" WaitTime="5000" />
+			</While>
+		</If>
+		<TurnIn Nav="Fly" QuestName="An Old Favorite" QuestId="29359" TurnInName="Astaia" TurnInId="4156" />
+	</If>
+	
+	<If Condition="HasQuest(29321)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Happy as a Clam Digger" LogColor="CornflowerBlue" />
+		<If Condition="!IsQuestCompleted(29321)" >
+			<If Condition="Me.ZoneId == 1657" >
+				<CustomBehavior File="FlyTo" X="9946.069" Y="2610.65" Z="1316.251" />
+				<While Condition="Me.ZoneId == 1657" >
+					<CustomBehavior File="MyCTM" X="9946.80" Y="2624.89" Z="1318.14" />
+					<CustomBehavior File="WaitTimer" TerminateWhen="Me.ZoneId != 1657" WaitTime="5000" />
+				</While>
+			</If>
+			<CustomBehavior File="CollectThings" QuestId="29321" MobId="208831" NonCompeteDistance="5" CollectItemId="69910" CollectItemCount="10"
+				HuntingGroundRadius="200" >
+				<Hotspot X="8203.437" Y="961.9761" Z="-20.59825" />
+				<Hotspot X="8148.494" Y="890.6545" Z="-29.9856" />
+				<Hotspot X="8110.347" Y="1054.548" Z="-40.43048" />
+				<Hotspot X="8185.777" Y="1133.203" Z="-18.66864" />
+				<Hotspot X="8313.749" Y="1160.3" Z="-27.65244" />
+			</CustomBehavior>
+		</If>
+		<If Condition="Me.ZoneId != 1657" >
+			<CustomBehavior File="FlyTo" X="8378.422" Y="998.663" Z="28.47813" />
+			<While Condition="Me.ZoneId != 1657" >
+				<CustomBehavior File="MyCTM" X="8390.02" Y="1001.96" Z="30.05" />
+				<CustomBehavior File="WaitTimer" TerminateWhen="Me.ZoneId == 1657" WaitTime="5000" />
+			</While>
+		</If>
+		<TurnIn Nav="Fly" QuestName="Happy as a Clam Digger" QuestId="29321" TurnInName="Astaia" TurnInId="4156" />
+	</If>
+	
+	<If Condition="HasQuest(29323)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Stocking Up" LogColor="CornflowerBlue" />
+		<If Condition="!IsQuestCompleted(29323)" >
+			<CustomBehavior File="FlyTo" X="9838.012" Y="2437.421" Z="1315.718" />
+			<If Condition="!IsQuestCompleted(29323)" >
+				<CustomBehavior File="MrFishIt" QuestId="29323" CollectItemId="69912" CollectItemCount="5" X="9847.035" Y="2425.297" Z="1312.138" />
+			</If>
+		</If>
+		<TurnIn Nav="Fly" QuestName="Stocking Up" QuestId="29323" TurnInName="Astaia" TurnInId="4156" />
+	</If>
+	
+	<If Condition="HasQuest(29324)" >
+		<CustomBehavior File="Message" Text="Starting Quest: The Sister's Pendant" LogColor="CornflowerBlue" />
+		<If Condition="!IsQuestCompleted(29324)" >
+			<CustomBehavior File="FlyTo" X="9838.012" Y="2437.421" Z="1315.718" />
+			<While Condition="!IsQuestCompleted(29324)" >
+				<If Condition="HasItem(69914)" >
+					<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(69914)" WaitTime="3000" />
+				</If>
+				<CustomBehavior File="MrFishIt" QuestId="29324" CollectItemId="69914" CollectItemCount="1" X="9847.035" Y="2425.297" Z="1312.138" />
+			</While>
+		</If>
+		<TurnIn Nav="Fly" QuestName="The Sister's Pendant" QuestId="29324" TurnInName="Astaia" TurnInId="4156" />
+	</If>
+	
+	<While Condition="HasItem(67414)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(67414)" WaitTime="2000" />
+	</While>
+	
+	<CustomBehavior File="Message" Text="Double checking for training..." LogColor="Orange" />
+	<CustomBehavior File="ForceTrainRiding" MobId="4156" />
+
+	<CustomBehavior File="Message" Text="Fishing Daily Complete, signing off!" LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+		
+</QuestOrder>
+</HBProfile>

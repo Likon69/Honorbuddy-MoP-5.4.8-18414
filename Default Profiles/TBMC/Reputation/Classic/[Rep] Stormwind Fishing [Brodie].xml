@@ -1,0 +1,280 @@
+<HBProfile>
+
+	<Name>Stormwind Fishing Dailies ($Rev$)</Name>
+	<MinLevel>10</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="Message" Text="ERROR!! Somehow you ended up starting an Alliance profile. Terminating." LogColor="Red" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Stormwind Fishing Daily Routine...Checking Location" LogColor="Green" />
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Stormwind -->
+		<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684)) &gt;= 100" >
+			<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+			<CustomBehavior File="ForcedDismount" />
+		</If>
+		<UseMount Value="False" />
+		<CustomBehavior File="InteractWith" MobId="215119" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+		<UseMount Value="True" />
+	</If>
+	<If Condition="Me.MapId == 571" >
+		<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0"
+			TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+	</If>
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487
+					&amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557" >
+					<!-- Outlands, but not Ghostlands/Eversong/Silvermoon or Azure/Bloodmyst/Exodar -->
+		<CustomBehavior File="FlyTo" X="-338.0062" Y="969.5461" Z="54.29" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="195139" NonCompeteDistance="0"
+			TerminateWhen="Me.MapId != 530" X="-338.0062" Y="969.5461" Z="54.29" />
+	</If>
+	<If Condition="Me.MapId == 1" >
+		<CustomBehavior File="FlyTo" X="8179.11" Y="1002.75" Z="6.817571" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="UseTransport" TransportId="176310"
+			WaitAtX="8179.11" WaitAtY="1002.75" WaitAtZ="6.817571" 
+			TransportStartX="8162.587" TransportStartY="1005.365" TransportStartZ="-0.04571009"
+			TransportEndX="-8650.719" TransportEndY="1346.051" TransportEndZ="0.04218207"
+			StandOnX="8162.587" StandOnY="1005.365" StandOnZ="6.18"
+			GetOffX="-8641.401" GetOffY="1324.443" GetOffZ="5.505301" />
+	</If>
+	
+	<If Condition="!HasQuest(26488) &amp;&amp; !HasQuest(26420) &amp;&amp; !HasQuest(26414) &amp;&amp; !HasQuest(26442) &amp;&amp; !HasQuest(26536)" >
+		<CustomBehavior File="Message" Text="Grabbing Daily from Catherine Leland" LogColor="CornflowerBlue" />
+		<CustomBehavior File="FlyTo" X="-8794.162" Y="768.9914" Z="96.33822" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.GetSkill(Styx.SkillLine.Fishing).CurrentValue &lt; 1" >
+			<CustomBehavior File="ForceTrainRiding" MobId="5493" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</If>
+		<While Condition="HasQuestAvailable(5494)" >
+			<CustomBehavior File="InteractWith" MobId="5494" InteractByQuestFrameDisposition="Ignore" NonCompeteDistance="0" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+	
+	<If Condition="HasQuest(26488)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Big Gulp" LogColor="CornflowerBlue" />
+		<If Condition="Random(100) &lt; 25" >
+			<CustomBehavior File="FlyTo" X="-8972.229" Y="408.0931" Z="74.68439" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<While Condition="!HasItem(58864)" >
+				<CustomBehavior File="MrFishIt" CollectItemId="58856" CollectItemCount="1" X="-8975.757" Y="419.1637" Z="69.6739" />
+				<While Condition="HasItem(58856)" >
+					<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(58856)" WaitTime="2000" />
+				</While>
+			</While>
+		<ElseIf Condition="Random(100) &lt; 50" >
+			<CustomBehavior File="FlyTo" X="-8962.368" Y="410.0297" Z="74.93356" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<While Condition="!HasItem(58864)" >
+				<CustomBehavior File="MrFishIt" CollectItemId="58856" CollectItemCount="1" X="-8954.581" Y="420.5808" Z="69.68388" />
+				<While Condition="HasItem(58856)" >
+					<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(58856)" WaitTime="2000" />
+				</While>
+			</While>
+		</ElseIf>
+		<ElseIf Condition="Random(100) &lt; 75" >
+			<CustomBehavior File="FlyTo" X="-9068.362" Y="505.4485" Z="75.43849" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<While Condition="!HasItem(58864)" >
+				<CustomBehavior File="MrFishIt" CollectItemId="58856" CollectItemCount="1" X="-9052.638" Y="510.4379" Z="69.68564" />
+				<While Condition="HasItem(58856)" >
+					<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(58856)" WaitTime="2000" />
+				</While>
+			</While>
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="FlyTo" X="-9066.866" Y="522.6432" Z="74.73818" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<While Condition="!HasItem(58864)" >
+				<CustomBehavior File="MrFishIt" CollectItemId="58856" CollectItemCount="1" X="-9046.637" Y="521.5164" Z="69.63115" />
+				<While Condition="HasItem(58856)" >
+					<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(58856)" WaitTime="2000" />
+				</While>
+			</While>
+		</Else>
+		</If>
+		<TurnIn Nav="Fly" QuestName="Big Gulp" QuestId="26488" TurnInName="Catherine Leland" TurnInId="5494" />
+	</If>
+	
+	<If Condition="HasQuest(26420)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Diggin' For Worms" LogColor="CornflowerBlue" />
+		<CustomBehavior File="FlyTo" X="-8180.334" Y="751.0151" Z="70.11829" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="HasQuest(26420) &amp;&amp; !IsQuestCompleted(26420)" >
+			<While Condition="!Me.HasAura(80534)">
+				<CustomBehavior File="InteractWith" QuestId="26420" MobId="204281" NumOfTimes="100"
+					NonCompeteDistance="0" TerminateWhen="HasItem(58788)" WaitTime="1000" >
+					<HuntingGrounds>
+						<Hotspot X="-8225.556" Y="767.5707" Z="71.46815" />
+						<Hotspot X="-8162.176" Y="744.7589" Z="70.22298" />
+						<Hotspot X="-8081.3" Y="702.7762" Z="70.21745" />
+					</HuntingGrounds>
+				</CustomBehavior>
+				<If Condition="HasItem(58788)">
+					<CustomBehavior File="Misc\RunLua" QuestId="26420" Lua="UseItemByName(58788)" WaitTime="2000" />
+				</If>
+			</While>
+			<If Condition="Me.HasAura(80534) &amp;&amp; !IsQuestCompleted(26420)">
+				<If Condition="Random(100) &lt; 25" >
+					<CustomBehavior File="FlyTo" X="-8081.04" Y="671.0651" Z="69.67648" />
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" />
+					<CustomBehavior File="MrFishIt" CollectItemId="58787" CollectItemCount="1" X="-8097.373" Y="663.9637" Z="64.70881" />
+				<ElseIf Condition="Random(100) &lt; 50" >
+					<CustomBehavior File="FlyTo" X="-8113.281" Y="696.4459" Z="69.13253" />
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" />
+					<CustomBehavior File="MrFishIt" CollectItemId="58787" CollectItemCount="1" X="-8125.596" Y="678.4094" Z="65.09861" />
+				</ElseIf>
+				<ElseIf Condition="Random(100) &lt; 75" >
+					<CustomBehavior File="FlyTo" X="-8164.52" Y="719.9143" Z="69.24646" />
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" />
+					<CustomBehavior File="MrFishIt" CollectItemId="58787" CollectItemCount="1" X="-8176.868" Y="700.5508" Z="65.12582" />
+				</ElseIf>
+				<Else>
+					<CustomBehavior File="FlyTo" X="-8192.715" Y="733.7313" Z="68.08179" />
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="WaitTimer" WaitTime="1000" />
+					<CustomBehavior File="MrFishIt" CollectItemId="58787" CollectItemCount="1" X="-8193.959" Y="710.4001" Z="63.72604" />
+				</Else>
+				</If>
+			</If>
+		</While>
+		<TurnIn Nav="Fly" QuestName="Diggin' For Worms" QuestId="26420" TurnInName="Catherine Leland" TurnInId="5494" />
+	</If>
+	
+	<If Condition="HasQuest(26414)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Hitting A Walleye" LogColor="CornflowerBlue" />
+		<If Condition="Random(100) &lt; 25" >
+			<CustomBehavior File="FlyTo" X="-8462.42" Y="777.3375" Z="99.6417" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<CustomBehavior File="MrFishIt" CollectItemId="58503" CollectItemCount="8" X="-8456.524" Y="761.5781" Z="93.42367" />
+		<ElseIf Condition="Random(100) &lt; 50" >
+			<CustomBehavior File="FlyTo" X="-8452.745" Y="814.7718" Z="102.8806" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<CustomBehavior File="MrFishIt" CollectItemId="58503" CollectItemCount="8" X="-8437.297" Y="814.7466" Z="93.41735" />
+		</ElseIf>
+		<ElseIf Condition="Random(100) &lt; 75" >
+			<CustomBehavior File="FlyTo" X="-8453.092" Y="880.6029" Z="99.03686" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<CustomBehavior File="MrFishIt" CollectItemId="58503" CollectItemCount="8" X="-8437.833" Y="875.5697" Z="93.49569" />
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="FlyTo" X="-8410.371" Y="905.3058" Z="97.41321" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<CustomBehavior File="MrFishIt" CollectItemId="58503" CollectItemCount="8" X="-8408.566" Y="889.84" Z="92.55386" />
+		</Else>
+		</If>
+		<TurnIn Nav="Fly" QuestName="Hitting A Walleye" QuestId="26414" TurnInName="Catherine Leland" TurnInId="5494" />
+	</If>
+	
+	<If Condition="HasQuest(26536)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Thunder Falls" LogColor="CornflowerBlue" />
+		<If Condition="Random(100) &lt; 33" >
+			<CustomBehavior File="FlyTo" X="-9306.183" Y="670.9383" Z="133.0728" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<CustomBehavior File="MrFishIt" CollectItemId="58899" CollectItemCount="4" X="-9316.672" Y="671.6676" Z="128.2464" />
+		<ElseIf Condition="Random(100) &lt; 66" >
+			<CustomBehavior File="FlyTo" X="-9307.278" Y="644.1546" Z="132.6746" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<CustomBehavior File="MrFishIt" CollectItemId="58899" CollectItemCount="4" X="-9315.038" Y="656.47" Z="128.2807" />
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="FlyTo" X="-9301.361" Y="690.7787" Z="132.8514" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+			<CustomBehavior File="MrFishIt" CollectItemId="58899" CollectItemCount="4" X="-9314.576" Y="691.566" Z="128.3178" />
+		</Else>
+		</If>
+		<TurnIn Nav="Fly" QuestName="Thunder Falls" QuestId="26536" TurnInName="Catherine Leland" TurnInId="5494" />
+	</If>
+	
+	<If Condition="HasQuest(26442)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Rock Lobster" LogColor="CornflowerBlue" />
+		<If Condition="Me.Level &lt; 15" >
+			<CustomBehavior File="Message" Text="WARNING! This quest involves Level 15 mobs. Run at own risk!" LogColor="Red" />
+		</If>
+		<CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+		<CustomBehavior File="FlyTo" X="-8588.815" Y="1343.465" Z="0.1" />
+		<CustomBehavior File="CollectThings" QuestId="26442" MobId="204284" CollectItemId="58809" CollectItemCount="6"
+			HuntingGroundRadius="200" NonCompeteDistance="5" >
+			<Hotspot X="-8588.815" Y="1343.465" Z="-48.11094" />
+			<Hotspot X="-8541.551" Y="1330.692" Z="-39.33355" />
+			<Hotspot X="-8483.415" Y="1364.096" Z="-48.68776" />
+			<Hotspot X="-8420.022" Y="1353.339" Z="-51.03005" />
+			<Hotspot X="-8345.594" Y="1360.941" Z="-46.12141" />
+			<Hotspot X="-8298.727" Y="1430.571" Z="-66.39525" />
+		</CustomBehavior>
+		<CustomBehavior File="AscendInWater" />
+		<TurnIn Nav="Fly" QuestName="Rock Lobster" QuestId="26442" TurnInName="Catherine Leland" TurnInId="5494" />
+	</If>
+	
+	<While Condition="HasItem(67414)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(67414)" WaitTime="2000" />
+	</While>
+	
+	<CustomBehavior File="Message" Text="Double checking for training..." LogColor="Orange" />
+	<CustomBehavior File="ForceTrainRiding" MobId="5493" />
+
+	<CustomBehavior File="Message" Text="Fishing Daily Complete, signing off!" LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+		
+</QuestOrder>
+</HBProfile>

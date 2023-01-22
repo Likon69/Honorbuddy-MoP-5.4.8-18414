@@ -1,0 +1,639 @@
+<HBProfile>
+
+	<Name>Cape of Stranglethorn ($Rev$)</Name>
+	<MinLevel>28</MinLevel>
+	<MaxLevel>40</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+		<Blacklist Name="Gringer" Entry="2858" Flags="Pull, Combat" />
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Explorer's League Digsite -->
+		<Vendor Name="Linzi Hewstrike" Entry="44083" Type="Repair" X="-13626.7" Y="-77.9288" Z="35.24041" />
+		<!-- Booty Bay -->
+		<Vendor Name="Jutak" Entry="2843" Type="Repair" X="-14467.77" Y="468.375" Z="15.02469" />
+		<!-- Buccaneer's Boat -->
+		<Vendor Name="Gurlgrl" Entry="44182" Type="Repair" X="-14929.22" Y="114.7743" Z="7.522846" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Name="Too Big For His Britches" Id="26823" >
+	<Objective Type="CollectItem" ItemId="60380" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Ironjaw Behemoth" Id="44113" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-13207.59" Y="-504.321" Z="4.427592" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Perfectly Pure" Id="26817" >
+	<Objective Type="CollectItem" ItemId="60386" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="The Holy Spring" Id="759" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-13806.12" Y="376.252" Z="93.62051" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Recipe for Disaster" Id="26816" >
+	<Objective Type="CollectItem" ItemId="58901" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Zanzil Witch Doctor" Id="1490" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-13659.69" Y="-304.8371" Z="8.176558" />
+			<Hotspot X="-13711.69" Y="-276.1753" Z="1.881059" />
+			<Hotspot X="-13642.67" Y="-363.9204" Z="10.83179" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="High Priest Venoxis" Id="26814" >
+	<Objective Type="KillMob" MobId="43323" KillCount="1" >
+		<Hotspots>
+			<Hotspot X="-12024.2" Y="-1708.68" Z="39.31858" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Kill-Collect" Id="26595" >
+	<Objective Type="CollectItem" ItemId="59034" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Freewheelin Juntz Fitztittle" Id="43376" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-14025.91" Y="-129.5149" Z="1.687132" />
+			<Hotspot X="-13955.32" Y="-138.5482" Z="1.781858" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Up to Snuff" Id="26613" >
+	<Objective Type="CollectItem" ItemId="3910" CollectCount="15" >
+		<CollectFrom>
+			<Mob Name="Bloodsail Elder Magus" Id="1653" />
+			<Mob Name="Bloodsail Sea Dog" Id="1565" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-14602.98" Y="261.4821" Z="1.878955" />
+			<Hotspot X="-14637.32" Y="334.9174" Z="3.107328" />
+			<Hotspot X="-14669.84" Y="393.5177" Z="4.669229" />
+			<Hotspot X="-14708" Y="458.4085" Z="0.4946487" />
+			<Hotspot X="-14723.22" Y="513.9998" Z="3.298905" />
+			<Hotspot X="-14902.95" Y="339.5395" Z="4.151712" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Keep An Eye Out" Id="26614" >
+	<Objective Type="CollectItem" ItemId="3897" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Bloodsail Elder Magus" Id="1653" />
+			<Mob Name="Bloodsail Sea Dog" Id="1565" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-14602.98" Y="261.4821" Z="1.878955" />
+			<Hotspot X="-14637.32" Y="334.9174" Z="3.107328" />
+			<Hotspot X="-14669.84" Y="393.5177" Z="4.669229" />
+			<Hotspot X="-14708" Y="458.4085" Z="0.4946487" />
+			<Hotspot X="-14723.22" Y="513.9998" Z="3.298905" />
+			<Hotspot X="-14902.95" Y="339.5395" Z="4.151712" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Details of the Attack" Id="26612" >
+	<Objective Type="KillMob" MobId="1565" KillCount="8" >
+		<Hotspots>
+			<Hotspot X="-14902.95" Y="339.5395" Z="4.151712" />
+			<Hotspot X="-14602.98" Y="261.4821" Z="1.878955" />
+			<Hotspot X="-14637.32" Y="334.9174" Z="3.107328" />
+			<Hotspot X="-14669.84" Y="393.5177" Z="4.669229" />
+			<Hotspot X="-14708" Y="458.4085" Z="0.4946487" />
+			<Hotspot X="-14723.22" Y="513.9998" Z="3.298905" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="1653" KillCount="8" >
+		<Hotspots>
+			<Hotspot X="-14602.98" Y="261.4821" Z="1.878955" />
+			<Hotspot X="-14637.32" Y="334.9174" Z="3.107328" />
+			<Hotspot X="-14669.84" Y="393.5177" Z="4.669229" />
+			<Hotspot X="-14708" Y="458.4085" Z="0.4946487" />
+			<Hotspot X="-14723.22" Y="513.9998" Z="3.298905" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Grubby Little Paws" Id="26605" >
+	<Objective Type="CollectItem" ItemId="59057" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Skymane Gorilla" Id="2521" />
+			<Mob Name="Skymane Bonobo" Id="43417" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-14676.31" Y="-416.4574" Z="4.520363" />
+			<Hotspot X="-14646.24" Y="-451.158" Z="0.9991995" />
+			<Hotspot X="-14573.1" Y="-454.5736" Z="1.40787" />
+			<Hotspot X="-14509.34" Y="-431.2865" Z="3.804191" />
+			<Hotspot X="-14490.25" Y="-387.1079" Z="3.988452" />
+			<Hotspot X="-14545.82" Y="-347.1788" Z="6.925043" />
+			<Hotspot X="-14618.76" Y="-331.5412" Z="8.728712" />
+			<Hotspot X="-14687.84" Y="-340.8972" Z="6.685202" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="59058" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Skymane Gorilla" Id="2521" />
+			<Mob Name="Skymane Bonobo" Id="43417" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-14676.31" Y="-416.4574" Z="4.520363" />
+			<Hotspot X="-14646.24" Y="-451.158" Z="0.9991995" />
+			<Hotspot X="-14573.1" Y="-454.5736" Z="1.40787" />
+			<Hotspot X="-14509.34" Y="-431.2865" Z="3.804191" />
+			<Hotspot X="-14490.25" Y="-387.1079" Z="3.988452" />
+			<Hotspot X="-14545.82" Y="-347.1788" Z="6.925043" />
+			<Hotspot X="-14618.76" Y="-331.5412" Z="8.728712" />
+			<Hotspot X="-14687.84" Y="-340.8972" Z="6.685202" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="59059" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Skymane Gorilla" Id="2521" />
+			<Mob Name="Skymane Bonobo" Id="43417" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-14676.31" Y="-416.4574" Z="4.520363" />
+			<Hotspot X="-14646.24" Y="-451.158" Z="0.9991995" />
+			<Hotspot X="-14573.1" Y="-454.5736" Z="1.40787" />
+			<Hotspot X="-14509.34" Y="-431.2865" Z="3.804191" />
+			<Hotspot X="-14490.25" Y="-387.1079" Z="3.988452" />
+			<Hotspot X="-14545.82" Y="-347.1788" Z="6.925043" />
+			<Hotspot X="-14618.76" Y="-331.5412" Z="8.728712" />
+			<Hotspot X="-14687.84" Y="-340.8972" Z="6.685202" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="59060" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Skymane Gorilla" Id="2521" />
+			<Mob Name="Skymane Bonobo" Id="43417" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-14676.31" Y="-416.4574" Z="4.520363" />
+			<Hotspot X="-14646.24" Y="-451.158" Z="0.9991995" />
+			<Hotspot X="-14573.1" Y="-454.5736" Z="1.40787" />
+			<Hotspot X="-14509.34" Y="-431.2865" Z="3.804191" />
+			<Hotspot X="-14490.25" Y="-387.1079" Z="3.988452" />
+			<Hotspot X="-14545.82" Y="-347.1788" Z="6.925043" />
+			<Hotspot X="-14618.76" Y="-331.5412" Z="8.728712" />
+			<Hotspot X="-14687.84" Y="-340.8972" Z="6.685202" />
+		</Hotspots>
+	</Objective>
+</Quest>
+	
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="!HasQuest(26805) &amp;&amp; !IsQuestCompleted(26805)" >
+		<PickUp QuestName="To the Cape!" QuestId="26805" GiverName="Wulfred Harrys" GiverId="44018" />
+	</If>
+	<If Condition="HasQuest(26805)" >
+		<TurnIn QuestName="To the Cape!" QuestId="26805" TurnInName="Bronwyn Hewstrike" TurnInId="44082" />
+	</If>
+	
+	<If Condition="!HasQuest(26825) &amp;&amp; !IsQuestCompleted(26825)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Cape of Stranglethorn Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Explorer's League Digsite Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Dask The Flask Gobfizzle" QuestId="26825" GiverName="Bronwyn Hewstrike" GiverId="44082" />
+	<TurnIn QuestName="Dask The Flask Gobfizzle" QuestId="26825" TurnInName="Dask The Flask Gobfizzle" TurnInId="44099" />
+	
+	<PickUp QuestName="Too Big For His Britches" QuestId="26823" GiverName="Dask The Flask Gobfizzle" GiverId="44099" />
+	<PickUp QuestName="Good-Fer-Nothin' Slither-Dogs" QuestId="26822" GiverName="Goris" GiverId="44100" />
+	
+	<Objective QuestName="Too Big For His Britches" QuestId="26823" Type="CollectItem" ItemId="60380" CollectCount="1" />
+	<Objective QuestName="Good-Fer-Nothin' Slither-Dogs" QuestId="26822" Type="KillMob" MobId="44127" KillCount="12" />
+	<TurnIn QuestName="Good-Fer-Nothin' Slither-Dogs" QuestId="26822" TurnInName="Goris" TurnInId="44100" />
+	<TurnIn QuestName="Too Big For His Britches" QuestId="26823" TurnInName="Dask The Flask Gobfizzle" TurnInId="44099" />
+	
+	<PickUp QuestName="Perfectly Pure" QuestId="26817" GiverName="Dask The Flask Gobfizzle" GiverId="44099" />
+	<PickUp QuestName="Plush Pelts" QuestId="26818" GiverName="Linzi Hewstrike" GiverId="44083" />
+	<PickUp QuestName="Akiris by the Bundle" QuestId="26819" GiverName="Linzi Hewstrike" GiverId="44083" />
+	<PickUp QuestName="If They're Just Going to Leave Them Lying Around..." QuestId="26820" GiverName="Linzi Hewstrike" GiverId="44083" />
+	
+	<Objective QuestName="Plush Pelts" QuestId="26818" Type="CollectItem" ItemId="58812" CollectCount="4" />
+	<Objective QuestName="Plush Pelts" QuestId="26818" Type="CollectItem" ItemId="58813" CollectCount="4" />
+	<If Condition="HasQuest(26818) &amp;&amp; IsQuestCompleted(26818)" >
+		<TurnIn QuestName="Plush Pelts" QuestId="26818" TurnInName="Linzi Hewstrike" TurnInId="44083" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" />
+	</If>
+	
+	<Objective QuestName="Perfectly Pure" QuestId="26817" Type="CollectItem" ItemId="60386" CollectCount="1" />
+	<Objective QuestName="If They're Just Going to Leave Them Lying Around..." QuestId="26820" Type="CollectItem" ItemId="58877" CollectCount="6" />
+	<Objective QuestName="Akiris by the Bundle" QuestId="26819" Type="CollectItem" ItemId="4029" CollectCount="6" />
+	<TurnIn QuestName="If They're Just Going to Leave Them Lying Around..." QuestId="26820" TurnInName="Linzi Hewstrike" TurnInId="44083" />
+	<TurnIn QuestName="Akiris by the Bundle" QuestId="26819" TurnInName="Linzi Hewstrike" TurnInId="44083" />
+	<PickUp QuestName="Maywiki" QuestId="26808" GiverName="Linzi Hewstrike" GiverId="44083" />
+	<TurnIn QuestName="Maywiki" QuestId="26808" TurnInName="Maywiki" TurnInId="44084" />
+	<PickUp QuestName="Backdoor Dealings" QuestId="26809" GiverName="Maywiki" GiverId="44084" />
+	<TurnIn QuestName="Perfectly Pure" QuestId="26817" TurnInName="Dask The Flask Gobfizzle" TurnInId="44099" />
+	<PickUp QuestName="Zanzil's Secret" QuestId="26815" GiverName="Dask The Flask Gobfizzle" GiverId="44099" />
+	
+	<While Condition="HasQuest(26809) &amp;&amp; !IsQuestCompleted(26809)" >
+		<CustomBehavior File="InteractWith" QuestId="26809" MobId="204361" InteractByGossipOptions="1" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			IgnoreLoSToTarget="True" Range="5" WaitTime="3000" X="-13343.5" Y="-29.61259" Z="22.37824" />
+		<While Condition="!IsQuestCompleted(26809)" />
+	</While>
+	<Objective QuestName="Zanzil's Secret" QuestId="26815" Type="CollectItem" ItemId="4016" CollectCount="5" />
+	
+	<TurnIn QuestName="Backdoor Dealings" QuestId="26809" TurnInName="Maywiki" TurnInId="44084" />
+	<PickUp QuestName="Eliminate the Outcast" QuestId="26810" GiverName="Maywiki" GiverId="44084" />
+	<TurnIn QuestName="Zanzil's Secret" QuestId="26815" TurnInName="Dask The Flask Gobfizzle" TurnInId="44099" />
+	<PickUp QuestName="Results: Inconclusive" QuestId="26824" GiverName="Dask The Flask Gobfizzle" GiverId="44099" />
+	<PickUp QuestName="Recipe for Disaster" QuestId="26816" GiverName="Dask The Flask Gobfizzle" GiverId="44099" />
+	<TurnIn QuestName="Results: Inconclusive" QuestId="26824" TurnInName="Bronwyn Hewstrike" TurnInId="44082" />
+	<PickUp QuestName="Airwyn Bantamflax" QuestId="26821" GiverName="Bronwyn Hewstrike" GiverId="44082" />
+	
+	<PickUp QuestName="Message in a Bottle" QuestId="26603" GiverType="Object" GiverName="Half-Buried Bottle"
+		GiverId="2634" X="-13744.25" Y="-352.0707" Z="1.275489" />
+		
+	<CustomBehavior File="Message" Text="Compiling Zanzil the Outcast Quests" LogColor="CornflowerBlue" />
+	
+	<While Condition="HasQuest(26810) &amp;&amp; !IsQuestCompleted(26810)" >
+		<MoveTo X="-13679.48" Y="-306.1377" Z="8.156116" />
+	</While>
+	
+	<TurnIn QuestName="Eliminate the Outcast" QuestId="26810" />
+	
+	<If Condition="!HasQuest(26811) &amp;&amp; !IsQuestCompleted(26811)" >
+		<CustomBehavior File="InteractWith" MobId="44084" InteractByGossipOptions="1" NonCompeteDistance="0" TerminateWhen="HasQuest(26811)"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" X="-13629.69" Y="-91.2664" Z="36.09901" />
+	</If>
+	
+	<Objective QuestName="Recipe for Disaster" QuestId="26816" Type="CollectItem" ItemId="58901" CollectCount="1" />
+	
+	<CustomBehavior File="InteractWith" QuestId="26811" MobId="204372" NonCompeteDistance="0" TerminateWhen="Me.ZoneId != 5287" WaitTime="5000" X="-13684.16" Y="-310.2918" Z="7.629565" />
+	
+	<TurnIn QuestName="Through the Troll Hole" QuestId="26811" />
+	
+	<If Condition="!HasQuest(26812) &amp;&amp; !IsQuestCompleted(26812)" >
+		<CustomBehavior File="InteractWith" MobId="44084" InteractByGossipOptions="1" NonCompeteDistance="0" TerminateWhen="HasQuest(26812)"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" X="-13629.69" Y="-91.2664" Z="36.09901" />
+	</If>
+	<Objective QuestName="High Priestess Jeklik" QuestId="26812" Type="KillMob" MobId="43257" KillCount="1" />
+	
+	<TurnIn QuestName="High Priestess Jeklik" QuestId="26812" />
+	
+	<If Condition="!HasQuest(26813) &amp;&amp; !IsQuestCompleted(26813)" >
+		<CustomBehavior File="InteractWith" MobId="44084" InteractByGossipOptions="1" NonCompeteDistance="0" TerminateWhen="HasQuest(26813)"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" X="-13629.69" Y="-91.2664" Z="36.09901" />
+	</If>
+	<CustomBehavior File="InteractWith" QuestId="26813" MobId="204386" NonCompeteDistance="0" WaitTime="5000" X="-12227.61" Y="-1452.5" Z="130.6844" />
+	
+	<TurnIn QuestName="Plunging Into Zul'Gurub" QuestId="26813" />
+	
+	<If Condition="!HasQuest(26814) &amp;&amp; !IsQuestCompleted(26814)" >
+		<CustomBehavior File="InteractWith" MobId="44084" InteractByGossipOptions="1" NonCompeteDistance="0" TerminateWhen="HasQuest(26814) &amp;&amp; Me.ZoneId != 5287"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="5000" X="-13629.69" Y="-91.2664" Z="36.09901" />
+	</If>
+	<If Condition="HasQuest(26814) &amp;&amp; !IsQuestCompleted(26814)" >
+		<DisableBehavior Name="Loot, Combat" />
+		<MoveTo X="-12024.2" Y="-1708.68" Z="39.31858" />
+		<CustomBehavior File="Message" Text="DUE TO INABILITY TO DROP COMBAT, Ignoring mobs until quest is completed (yes, this is acting as intended)" LogColor="Orange" />
+		<While Condition="!Me.HasAura(81011)" />
+		<CustomBehavior File="InteractWith" MobId="44157" NonCompeteDistance="0" CollectionDistance="10" IgnoreLoSToTarget="True" Range="10" TerminateWhen="Me.ZoneId == 5287" WaitTime="5000" />
+	</If>
+	<If Condition="HasQuest(26814) &amp;&amp; IsQuestCompleted(26814)" >
+		<If Condition="Me.ZoneId != 5287" >
+			<CustomBehavior File="Message" Text="SORRY! WE DIED! This means it didn't grab the ladder. Using the fetish to return!" LogColor="Orange" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60374)" WaitTime="5000" />
+		</If>
+		<TurnIn QuestName="High Priest Venoxis" QuestId="26814" TurnInName="Maywiki" TurnInId="44084" />
+	</If>
+	
+	<TurnIn QuestName="Recipe for Disaster" QuestId="26816" TurnInName="Dask The Flask Gobfizzle" TurnInId="44099" />
+	
+	<CustomBehavior File="Message" Text="Compiling Booty Bay Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn QuestName="Airwyn Bantamflax" QuestId="26821" TurnInName="Airwyn Bantamflax" TurnInId="44112" />
+	
+	<PickUp QuestName="Stranglethorn Fever" QuestId="26597" GiverName="Fin Fizracket" GiverId="2486" />
+	<PickUp QuestName="Scaring Shaky" QuestId="26593" GiverName="Sea Wolf MacKinley" GiverId="2501" />
+	<PickUp QuestName="The Captain's Chest" QuestId="26599" GiverName="Captain Hecklebury Smotts" GiverId="2500" />
+	
+	<Objective QuestName="The Captain's Chest" QuestId="26599" Type="CollectItem" ItemId="3932" CollectCount="1" />
+	<TurnIn QuestName="The Captain's Chest" QuestId="26599" TurnInName="Captain Hecklebury Smotts" TurnInId="2500" />
+	
+	<PickUp QuestName="A Giant's Feast" QuestId="26600" GiverName="Captain Hecklebury Smotts" GiverId="2500" />
+	<CustomBehavior File="InteractWith" QuestId="26600" QuestObjectiveIndex="1" MobId="2664" InteractByBuyingItemId="59036" NonCompeteDistance="0" X="-14333.04" Y="419.7151" Z="6.625934" />
+	<CustomBehavior File="InteractWith" QuestId="26600" QuestObjectiveIndex="2" MobId="2491" InteractByGossipOptions="1" InteractByBuyingItemId="59037" NonCompeteDistance="0" X="-14462.39" Y="490.1918" Z="15.12026" />
+	<TurnIn QuestName="A Giant's Feast" QuestId="26600" TurnInName="Captain Hecklebury Smotts" TurnInId="2500" />
+	
+	<PickUp QuestName="A Dish Best Served Huge" QuestId="26602" GiverName="Captain Hecklebury Smotts" GiverId="2500" />
+	
+	<Objective QuestName="Scaring Shaky" QuestId="26593" Type="CollectItem" ItemId="3919" CollectCount="5" />
+	<While Condition="HasQuest(26597) &amp;&amp; !IsQuestCompleted(26597)" >
+		<CustomBehavior File="CollectThings" MobId="1557" CollectItemId="2799" CollectItemCount="1" HuntingGroundRadius="200" >
+			<Hotspot X="-13875.12" Y="39.17516" Z="14.90676" />
+			<Hotspot X="-13911.67" Y="102.3449" Z="16.78475" />
+			<Hotspot X="-13979.23" Y="105.213" Z="14.27241" />
+			<Hotspot X="-14018.12" Y="175.3873" Z="12.21437" />
+		</CustomBehavior>
+		<RunTo X="-13739.96" Y="-25.94624" Z="44.58509" />
+		<While Condition="!(HasQuestAvailable(1449, &quot;TurnInRepeatable&quot;)) &amp;&amp; !IsQuestCompleted(26597)" >
+			<CustomBehavior File="CollectThings" MobId="1514" MobId2="1516" MobId3="1511" MobState="Alive" CollectItemId="2797" CollectItemCount="1" CollectUntil="NoTargetsInArea" 
+				HuntingGroundRadius="30" NonCompeteDistance="5" X="-13752.31" Y="-18.56272" Z="44.12894" />
+		</While>
+		<While Condition="HasQuestAvailable(1449, &quot;TurnInRepeatable&quot;) &amp;&amp; !IsQuestCompleted(26597)" >
+			<CustomBehavior File="InteractWith" MobId="1449" WaitTime="1000" X="-13739.96" Y="-25.94624" Z="44.58509" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteButton" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" WaitTime="1000" />
+		</While>
+	</While>
+	
+	<TurnIn QuestName="Stranglethorn Fever" QuestId="26597" TurnInName="Fin Fizracket" TurnInId="2486" />
+	<TurnIn QuestName="Scaring Shaky" QuestId="26593" TurnInName="Shaky Phillipe" TurnInId="2502" />
+	
+	<PickUp QuestName="Return to MacKinley" QuestId="26594" GiverName="Shaky Phillipe" GiverId="2502" />
+	<TurnIn QuestName="Return to MacKinley" QuestId="26594" TurnInName="Sea Wolf MacKinley" TurnInId="2501" />
+	
+	<PickUp QuestName="Kill-Collect" QuestId="26595" GiverName="Sea Wolf MacKinley" GiverId="2501" />
+	
+	<If Condition="HasQuest(26602) &amp;&amp; !IsQuestCompleted(26602)" >
+		<CustomBehavior File="InteractWith" QuestId="26602" MobId="2289" InteractByGossipOptions="1" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" WaitTime="5000" X="-14652.06" Y="151.4152" Z="3.468977" />
+		<CustomBehavior File="CollectThings" QuestId="26602" MobId="1494" MobState="Alive" CollectUntil="QuestComplete" HuntingGroundRadius="200" NonCompeteDistance="5" X="-14652.06" Y="151.4152" Z="3.468977" />
+	</If>
+	
+	<Objective QuestName="Kill-Collect" QuestId="26595" Type="CollectItem" ItemId="59034" CollectCount="1" />
+	<CustomBehavior File="InteractWith" QuestId="26595" QuestObjectiveIndex="3" MobId="43377" InteractByGossipOptions="1" ProactiveCombatStrategy="ClearMobsTargetingUs" 
+		NonCompeteDistance="0" X="-13872.06" Y="-97.8129" Z="15.00707" />
+	<Objective QuestName="Kill-Collect" QuestId="26595" Type="CollectItem" ItemId="3924" CollectCount="1" />
+	
+	<TurnIn QuestName="Kill-Collect" QuestId="26595" TurnInName="Sea Wolf MacKinley" TurnInId="2501" />
+	
+	<PickUp QuestName="The Bloodsail Buccaneers" QuestId="26609" GiverName="First Mate Crazz" GiverId="2490" />
+	
+	<TurnIn QuestName="A Dish Best Served Huge" QuestId="26602" TurnInName="Captain Hecklebury Smotts" TurnInId="2500" />
+	<PickUp QuestName="Mok'rash the Cleaver" QuestId="26601" GiverName="Captain Hecklebury Smotts" GiverId="2500" />
+	<Objective QuestName="Mok'rash the Cleaver" QuestId="26601" Type="KillMob" MobId="1493" KillCount="1" />
+	<TurnIn QuestName="Mok'rash the Cleaver" QuestId="26601" TurnInName="Captain Hecklebury Smotts" TurnInId="2500" />
+	
+	<TurnIn QuestName="The Bloodsail Buccaneers" QuestId="26609" TurnInType="Object" TurnInName="Bloodsail Correspondence" 
+		TurnInId="2083" X="-14120.61" Y="482.5017" Z="0.4873531" />
+		
+	<PickUp QuestName="Bloodsail Treachery" QuestId="26610" GiverType="Object" GiverName="Bloodsail Correspondence"
+		GiverId="2490" X="-14120.61" Y="482.5017" Z="0.4873531" />
+	<TurnIn QuestName="Bloodsail Treachery" QuestId="26610" TurnInName="First Mate Crazz" TurnInId="2490" />
+	
+	<PickUp QuestName="The Baron Must Be Told" QuestId="26611" GiverName="First Mate Crazz" GiverId="2490" />
+	<TurnIn QuestName="The Baron Must Be Told" QuestId="26611" TurnInName="Baron Revilgaz" TurnInId="2496" />
+	
+	<PickUp QuestName="Details of the Attack" QuestId="26612" GiverName="Baron Revilgaz" GiverId="2496" />
+	<PickUp QuestName="Up to Snuff" QuestId="26613" GiverName="Deeg" GiverId="2488" />
+	<PickUp QuestName="Keep An Eye Out" QuestId="26614" GiverName="Dizzy One-Eye" GiverId="2493" />
+	<Objective QuestName="Details of the Attack" QuestId="26612" Type="CollectItem" ItemId="3920" CollectCount="1" />
+	<Objective QuestName="Details of the Attack" QuestId="26612" Type="CollectItem" ItemId="59145" CollectCount="1" />
+	<Objective QuestName="Details of the Attack" QuestId="26612" Type="KillMob" MobId="1565" KillCount="8" />
+	<Objective QuestName="Details of the Attack" QuestId="26612" Type="KillMob" MobId="1653" KillCount="8" />
+	<Objective QuestName="Up to Snuff" QuestId="26613" Type="CollectItem" ItemId="3910" CollectCount="15" />
+	<Objective QuestName="Keep An Eye Out" QuestId="26614" Type="CollectItem" ItemId="3897" CollectCount="1" />
+	<TurnIn QuestName="Keep An Eye Out" QuestId="26614" TurnInName="Dizzy One-Eye" TurnInId="2493" />
+	<TurnIn QuestName="Up to Snuff" QuestId="26613" TurnInName="Deeg" TurnInId="2488" />
+	<TurnIn QuestName="Details of the Attack" QuestId="26612" TurnInName="Baron Revilgaz" TurnInId="2496" />
+	
+	<CustomBehavior File="Message" Text="Compiling Bloodsail Buccaneers Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Getting In With the Bloodsail" QuestId="26624" GiverName="Baron Revilgaz" GiverId="2496" />
+	<TurnIn QuestName="Getting In With the Bloodsail" QuestId="26624" TurnInName="Yancey Grillsen" TurnInId="43504" />
+	
+	<PickUp QuestName="Seeing Where Your Loyalties Lie" QuestId="26629" GiverName="Yancey Grillsen" GiverId="43504" />
+	<If Condition="HasQuest(26629) &amp;&amp; !IsQuestCompleted(26629)" >
+		<PickUp QuestName="Looks Like a Tauren Pirate to Me" QuestId="26630" GiverName="Fleet Master Seahorn" GiverId="2487" />
+	
+		<CustomBehavior File="InteractWith" QuestId="26630" QuestObjectiveIndex="3" MobId="43505" InteractByGossipOptions="1,1" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" X="-14403.99" Y="399.431" Z="27.91933" />
+		<CustomBehavior File="InteractWith" QuestId="26630" QuestObjectiveIndex="2" MobId="2663" InteractByGossipOptions="1" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" X="-14336.49" Y="423.1882" Z="6.625802" />
+		<CustomBehavior File="InteractWith" QuestId="26630" QuestObjectiveIndex="1" MobId="2487" InteractByGossipOptions="1,1" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" X="-14444.77" Y="488.9856" Z="28.71406" />
+	
+		<TurnIn QuestName="Looks Like a Tauren Pirate to Me" QuestId="26630" TurnInName="Fleet Master Seahorn" TurnInId="2487" />
+	</If>
+
+	<TurnIn QuestName="Seeing Where Your Loyalties Lie" QuestId="26629" TurnInName="Yancey Grillsen" TurnInId="43504" />
+	<PickUp QuestName="Your First Day as a Pirate" QuestId="26631" GiverName="Yancey Grillsen" GiverId="43504" />
+	<TurnIn QuestName="Your First Day as a Pirate" QuestId="26631" TurnInName="Captain Keelhaul" TurnInId="2548" />
+	
+	<PickUp QuestName="Swabbing Duty" QuestId="26633" GiverName="Captain Keelhaul" GiverId="2548" />
+	<PickUp QuestName="The Bane of Many A Pirate" QuestId="26634" GiverName="Garr Salthoof" GiverId="2549" />
+	<PickUp QuestName="Cannonball Swim" QuestId="26635" GiverName="Pretty Boy Duncan" GiverId="2545" />
+	<While Condition="HasQuest(26633) &amp;&amp; !IsQuestCompleted(26633)" >
+		<CustomBehavior File="InteractWith" QuestId="26633" MobId="2545" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="1000" X="-14958.41" Y="346.1712" Z="12.94364" />
+		<CustomBehavior File="RunMacro" Macro="/click StaticPopup1Button1" WaitTime="5000" />
+	</While>
+	<Objective QuestName="The Bane of Many A Pirate" QuestId="26634" Type="CollectItem" ItemId="59150" CollectCount="5" />
+	<If Condition="HasQuest(26635) &amp;&amp; !IsQuestCompleted(26635)" >
+		<CustomBehavior File="CollectThings" QuestId="26635" ObjectId="204433" CollectItemCount="6" CollectItemId="59151" HuntingGroundRadius="200" NonCompeteDistance="5" >
+			<Hotspot X="-15035.85" Y="94.52332" Z="-22.67421" />
+			<Hotspot X="-14967.23" Y="149.8199" Z="-23.88" />
+			<Hotspot X="-15025.59" Y="261.7798" Z="-30.26582" />
+			<Hotspot X="-15067.13" Y="311.4203" Z="-43.03812" />
+			<Hotspot X="-15083.69" Y="378.6766" Z="-45.64744" />
+		</CustomBehavior>
+		<CustomBehavior File="AscendInWater" />
+	</If>
+	
+	<TurnIn QuestName="Cannonball Swim" QuestId="26635" TurnInName="Pretty Boy Duncan" TurnInId="2545" />
+	<TurnIn QuestName="The Bane of Many A Pirate" QuestId="26634" TurnInName="Garr Salthoof" TurnInId="2549" />
+	<TurnIn QuestName="Swabbing Duty" QuestId="26633" TurnInName="Captain Keelhaul" TurnInId="2548" />
+	
+	<PickUp QuestName="Attracting Attention" QuestId="26644" GiverName="Captain Keelhaul" GiverId="2548" />
+	<TurnIn QuestName="Attracting Attention" QuestId="26644" TurnInName="Fleet Master Firallon" TurnInId="2546" />
+	
+	<PickUp QuestName="Our Mortal Enemies" QuestId="26648" GiverName="Dead-Eye Drederick McGumm" GiverId="43556" />
+	
+	<TurnIn QuestName="Message in a Bottle" QuestId="26603" TurnInName="Princess Poobah" TurnInId="2634" />
+	<PickUp QuestName="Protecting Her Royal Highness Poobah" QuestId="26604" GiverName="Princess Poobah" GiverId="2634" />
+	<Objective QuestName="Protecting Her Royal Highness Poobah" QuestId="26604" Type="KillMob" MobId="2522" KillCount="5" />
+	<TurnIn QuestName="Protecting Her Royal Highness Poobah" QuestId="26604" TurnInName="Princess Poobah" TurnInId="2634" />
+	
+	<PickUp QuestName="Grubby Little Paws" QuestId="26605" GiverName="Princess Poobah" GiverId="2634" />
+	<Objective QuestName="Grubby Little Paws" QuestId="26605" Type="CollectItem" ItemId="59057" CollectCount="1" />
+	<Objective QuestName="Grubby Little Paws" QuestId="26605" Type="CollectItem" ItemId="59058" CollectCount="1" />
+	<Objective QuestName="Grubby Little Paws" QuestId="26605" Type="CollectItem" ItemId="59059" CollectCount="1" />
+	<Objective QuestName="Grubby Little Paws" QuestId="26605" Type="CollectItem" ItemId="59060" CollectCount="1" />
+	<TurnIn QuestName="Grubby Little Paws" QuestId="26605" TurnInName="Princess Poobah" TurnInId="2634" />
+	
+	<PickUp QuestName="Mukla's Demise" QuestId="26606" GiverName="Princess Poobah" GiverId="2634" />
+	<Objective QuestName="Mukla's Demise" QuestId="26606" Type="CollectItem" ItemId="4103" CollectCount="1" />
+	<TurnIn QuestName="Mukla's Demise" QuestId="26606" TurnInName="Princess Poobah" TurnInId="2634" />
+	
+	<If Condition="HasQuest(26648) &amp;&amp; !IsQuestCompleted(26648)" >
+		<If Condition="!Me.HasAura(81471)" >
+			<RunTo QuestId="26648" X="-14600.68" Y="-233.0172" Z="24.64938" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(59226)" WaitTime="2000" />
+		</If>
+		<CustomBehavior File="CollectThings" QuestId="26648" MobId="43553" CollectUntil="QuestComplete" NonCompeteDistance="5" HuntingGroundRadius="200" >
+			<Hotspot X="-14556.31" Y="-210.5492" Z="12.99639" />
+			<Hotspot X="-14570.06" Y="-290.4495" Z="11.9493" />
+			<Hotspot X="-14598.24" Y="-347.4758" Z="8.981027" />
+			<Hotspot X="-14670.04" Y="-374.1916" Z="8.922172" />
+			<Hotspot X="-14530.99" Y="-359.9243" Z="5.12992" />
+			<Hotspot X="-14531.07" Y="-272.916" Z="11.11982" />
+			<Hotspot X="-14563.25" Y="-186.4696" Z="11.883" />
+			<Hotspot X="-14615.07" Y="-154.5302" Z="5.817226" />
+			<Hotspot X="-14677.84" Y="-163.7973" Z="8.361821" />
+		</CustomBehavior>
+	</If>
+	<TurnIn QuestName="Our Mortal Enemies" QuestId="26648" />
+	
+	<PickUp QuestName="Ol' Blasty" QuestId="26647" GiverName="Ironpatch" GiverId="2547" />
+	<If Condition="HasQuest(26647) &amp;&amp; !IsQuestCompleted(26647)" >
+		<CustomBehavior File="InteractWith" QuestId="26647" MobId="43562" PreInteractMountStrategy="DismountOrCancelShapeshift" X="-14981.58" Y="258.0815" Z="13.25772" />
+		<While Condition="!IsQuestCompleted(26647)">
+			<CustomBehavior File="SpecificQuests\26647-STV-Olblasty" /> <!-- May require small help on user's part -->
+		</While>
+		<CustomBehavior File="EjectVeh" />
+	</If>
+	<TurnIn QuestName="Ol' Blasty" QuestId="26647" TurnInName="Ironpatch" TurnInId="2547" />
+	
+	<PickUp QuestName="Drive-By Piracy" QuestId="26649" GiverName="Ironpatch" GiverId="2547" />
+	<If Condition="HasQuest(26649) &amp;&amp; !IsQuestCompleted(26649)" >
+		<CustomBehavior File="InteractWith" QuestId="26649" MobId="43605" InteractByGossipOptions="2" NonCompeteDistance="0" WaitTime="1000" X="-14876" Y="295.939" Z="0.4796115" />
+		<CustomBehavior File="SpecificQuests\26649-Stranglethorn-DriveByPiracy" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="Drive-By Piracy" QuestId="26649" TurnInName="Ironpatch" TurnInId="2547" />
+	
+	<PickUp QuestName="The Damsel's Luck" QuestId="26650" GiverName="Fleet Master Firallon" GiverId="2546" />
+	<TurnIn QuestName="The Damsel's Luck" QuestId="26650" TurnInType="Object" TurnInName="Captain Stillwater's Charts" TurnInId="204450" X="-14922.97" Y="122.0955" Z="7.520665" />
+	
+	<PickUp QuestName="The Brashtide Crew" QuestId="26662" GiverType="Object" GiverName="Captain Stillwater's Charts" GiverId="204450" X="-14922.97" Y="122.0955" Z="7.520665" />
+	<PickUp QuestName="Sinking From Within" QuestId="26663" GiverType="Object" GiverName="Captain Stillwater's Charts" GiverId="204450" X="-14922.97" Y="122.0955" Z="7.520665" />
+	<PickUp QuestName="Making Mutiny" QuestId="26664" GiverType="Object" GiverName="Captain Stillwater's Charts" GiverId="204450" X="-14922.97" Y="122.0955" Z="7.520665" />
+	
+	<CustomBehavior File="InteractWith" MovementBy="NavigatorPreferred" QuestId="26662" QuestObjectiveIndex="1" MobId="43659" InteractByGossipOptions="1" NonCompeteDistance="0" X="-14920.64" Y="82.94985" Z="7.522025" />
+	<CustomBehavior File="InteractWith" MovementBy="NavigatorPreferred" QuestId="26663" QuestObjectiveIndex="1" MobId="204454" InteractByGossipOptions="1" NonCompeteDistance="0" X="-14923.21" Y="111.4667" Z="0.1989492" />
+	<CustomBehavior File="InteractWith" QuestId="26664" MobId="43636" MobState="Alive" InteractByGossipOptions="1" NumOfTimes="100" WaitTime="3000" 
+		TerminateWhen="Unit(43636, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt; 100) == null" X="-14920.64" Y="82.94985" Z="7.53" />
+	<CustomBehavior File="InteractWith" MovementBy="NavigatorPreferred" QuestId="26663" QuestObjectiveIndex="2" MobId="204455" InteractByGossipOptions="1" NonCompeteDistance="0" X="-14983.02" Y="264.9231" Z="0.5992667" />
+	<CustomBehavior File="InteractWith" MovementBy="NavigatorPreferred" QuestId="26662" QuestObjectiveIndex="2" MobId="43660" InteractByGossipOptions="1" NonCompeteDistance="0" X="-14996.96" Y="262.9456" Z="0.6000521" />
+	<CustomBehavior File="InteractWith" MovementBy="NavigatorPreferred" QuestId="26663" QuestObjectiveIndex="3" MobId="204456" InteractByGossipOptions="1" NonCompeteDistance="0" X="-14957.43" Y="343.6071" Z="0.2210189" />
+	<CustomBehavior File="InteractWith" MovementBy="NavigatorPreferred" QuestId="26662" QuestObjectiveIndex="3" MobId="43661" InteractByGossipOptions="1" NonCompeteDistance="0" X="-14968.62" Y="348.4041" Z="7.54264" />
+	<CustomBehavior File="InteractWith" QuestId="26664" MobId="43636" MobState="Alive" InteractByGossipOptions="1" NumOfTimes="100" WaitTime="3000" X="-14968.62" Y="348.4041" Z="7.54264" />
+	
+	<TurnIn QuestName="The Brashtide Crew" QuestId="26662" />
+	<TurnIn QuestName="Sinking From Within" QuestId="26663" />
+	<TurnIn QuestName="Making Mutiny" QuestId="26664" />
+	
+	<PickUp QuestName="Call of Booty" QuestId="26665" GiverName="Captain Stillwater's Charts" GiverId="2496" />
+	<TurnIn QuestName="Call of Booty" QuestId="26665" TurnInName="Baron Revilgaz" TurnInId="2496" />
+	
+	<PickUp QuestName="Doublerum" QuestId="26678" GiverName="Baron Revilgaz" GiverId="2496" />
+	<TurnIn QuestName="Doublerum" QuestId="26678" TurnInType="Object" TurnInName="Barrel of Doublerum" 
+		TurnInId="204578" X="-14446.23" Y="501.728" Z="21.76864" />
+	
+	<PickUp QuestName="Return to Revilgaz" QuestId="26679" GiverType="Object" GiverName="Barrel of Doublerum" 
+		GiverId="204578" X="-14446.23" Y="501.728" Z="21.76864" />
+	<TurnIn QuestName="Return to Revilgaz" QuestId="26679" TurnInName="Baron Revilgaz" TurnInId="2496" />
+	
+	<PickUp QuestName="Prepare for Takeoff" QuestId="26695" GiverName="Baron Revilgaz" GiverId="2496" />
+	<PickUp QuestName="Seeking Seahorn" QuestId="26698" GiverName="Baron Revilgaz" GiverId="2496" />
+	<TurnIn QuestName="Seeking Seahorn" QuestId="26698" TurnInName="Fleet Master Seahorn" TurnInId="2487" />
+	<PickUp QuestName="The Damsel's (Bad) Luck" QuestId="26700" GiverName="Fleet Master Seahorn" GiverId="2487" />
+	<PickUp QuestName="Turning the Brashtide" QuestId="26699" GiverName="Fleet Master Seahorn" GiverId="2487" />
+	
+	<Objective QuestName="Prepare for Takeoff" QuestId="26695" Type="CollectItem" ItemId="59524" CollectCount="1" />
+	<Objective QuestName="Turning the Brashtide" QuestId="26699" Type="KillMob" MobId="43716" KillCount="10" />
+	<If Condition="HasQuest(26700) &amp;&amp; !IsQuestCompleted(26700)" >
+		<CustomBehavior File="InteractWith" MobId="204585" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" TerminateWhen="Navigator.CanNavigateFully(Me.Location, new WoWPoint(-14384.97, 477.8582, 13.07595))" 
+			X="-14437.72" Y="472.8777" Z="15.32215" />
+		<Objective QuestName="The Damsel's (Bad) Luck" QuestId="26700" Type="KillMob" MobId="43726" KillCount="8" />
+		<CustomBehavior File="InteractWith" MobId="204586" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" TerminateWhen="Navigator.CanNavigateFully(Me.Location, new WoWPoint(-14437.72, 472.8777, 15.32215))" 
+			X="-14384.97" Y="477.8582" Z="13.07595" />
+	</If>
+	
+	<TurnIn QuestName="Prepare for Takeoff" QuestId="26695" TurnInName="Baron Revilgaz" TurnInId="2496" />
+	<TurnIn QuestName="The Damsel's (Bad) Luck" QuestId="26700" TurnInName="Baron Revilgaz" TurnInId="2496" />
+	<TurnIn QuestName="Turning the Brashtide" QuestId="26699" TurnInName="Baron Revilgaz" TurnInId="2496" />
+	
+	<PickUp QuestName="The Final Voyage of the Brashtide" QuestId="26697" GiverName="Baron Revilgaz" GiverId="2496" />
+	<While Condition="HasQuest(26697)" >
+		<CustomBehavior File="InteractWith" QuestId="26697" MobId="737" InteractByGossipOptions="1" WaitTime="3000" NonCompeteDistance="0" TerminateWhen="Me.IsOnTransport" X="-14447.17" Y="511.1262" Z="26.28663" />
+		<While Condition="!IsQuestCompleted(26697) &amp;&amp; Me.IsOnTransport" >
+			<CustomBehavior File="Vehicles\NoControlVehicle" QuestId="26697" TargetId1="43717" TargetId2="43790" AttackButton="1" GoHomeButton="3" Range="100" WaitTime="1500" />
+		</While>
+		<If Condition="HasQuest(26697) &amp;&amp; IsQuestCompleted(26697)" >
+			<CustomBehavior File="UsePetAbility" AttackButton="3" />
+			<While Condition="Me.IsOnTransport" />
+			<TurnIn QuestName="The Final Voyage of the Brashtide" QuestId="26697" TurnInName="Baron Revilgaz" TurnInId="2496" />	
+		</If>
+	</While>
+	
+	<PickUp QuestName="Bloodsail's End" QuestId="26703" GiverName="Baron Revilgaz" GiverId="2496" />
+	<If Condition="HasQuest(26703) &amp;&amp; !IsQuestCompleted(26703)" >
+		<CustomBehavior File="InteractWith" QuestId="26703" MobId="737" InteractByGossipOptions="1" WaitTime="3000" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			TerminateWhen="Me.IsOnTransport" NonCompeteDistance="0" X="-14447.17" Y="511.1262" Z="26.28663" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<Objective QuestName="Bloodsail's End" QuestId="26703" Type="KillMob" MobId="43794" KillCount="1" />
+	<TurnIn QuestName="Bloodsail's End" QuestId="26703" TurnInName="Baron Revilgaz" TurnInId="2496" />
+	
+	<If Condition="HasItem(59143) &amp;&amp; (!HasQuest(26617) &amp;&amp; !IsQuestCompleted(26617))" >
+		<PickUp QuestName="An Old Sea Dog" QuestId="26617" GiverType="Item" GiverId="59143" />
+	</If>
+	<If Condition="HasQuest(26617)" >
+		<TurnIn QuestName="An Old Sea Dog" QuestId="26617" TurnInName="Fleet Master Seahorn" TurnInId="2487" />
+	</If>
+	
+	<PickUp QuestName="The Battle for Andorhal" QuestId="28749" GiverName="War-Mage Erallier" GiverId="49635" />
+	<While Condition="HasQuest(28749) &amp;&amp; Me.ZoneId == 5287" >
+		<CustomBehavior File="InteractWith" MobId="49635" InteractByGossipOptions="1" WaitTime="5000" NonCompeteDistance="0" X="-14469.94" Y="467.5609" Z="30.68888" />
+		<CustomBehavior File="InteractWith" MobId="49637" NonCompeteDistance="0" TerminateWhen="Me.ZoneId == 28" WaitTime="10000" />
+	</While>
+	<If Condition="HasQuest(28749)" >
+		<TurnIn QuestName="The Battle for Andorhal" QuestId="28749" TurnInName="Thassarian" TurnInId="44453" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Cape of Stranglethorn Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="[Quest] Western Plaguelands [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

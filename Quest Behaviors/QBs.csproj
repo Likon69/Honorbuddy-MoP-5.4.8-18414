@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59C93F8D-5CD2-4FEB-B916-3C3C849EE085}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ClassLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>QBs</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Chinajade|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Chinajade\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Chinajade|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Chinajade\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Chinajade|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Chinajade\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GreyMagic">
+      <HintPath>..\Dependencies\GreyMagic.dll</HintPath>
+    </Reference>
+    <Reference Include="Honorbuddy">
+      <HintPath>..\Dependencies\Honorbuddy.exe</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\Dependencies\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Tripper.RecastManaged">
+      <HintPath>..\Dependencies\Tripper.RecastManaged.dll</HintPath>
+    </Reference>
+    <Reference Include="Tripper.Tools">
+      <HintPath>..\Dependencies\Tripper.Tools.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbandonQuest.cs" />
+    <Compile Include="ArgentTournament\AtTheEnemysGates.cs" />
+    <Compile Include="ArgentTournament\BattleofTheCitadel.cs" />
+    <Compile Include="ArgentTournament\GetKraken.cs" />
+    <Compile Include="ArgentTournament\SpecialTurnIn.cs" />
+    <Compile Include="ArgentTournament\TheGrandMelee.cs" />
+    <Compile Include="AscendInWater.cs" />
+    <Compile Include="BarrelHook.cs" />
+    <Compile Include="BlackrockMaskHook.cs" />
+    <Compile Include="Hooks\DoWhen.cs" />
+    <Compile Include="Hooks\BarrelHook.cs" />
+    <Compile Include="Hooks\BlackrockMaskHook.cs" />
+    <Compile Include="Hooks\MountHook.cs" />
+    <Compile Include="Hooks\TheEndlessFlowHook.cs" />
+    <Compile Include="Misc\DKEnchantWeapon.cs" />
+    <Compile Include="Misc\InstanceTimer.cs" />
+    <Compile Include="Misc\LoadProfileOn.cs" />
+    <Compile Include="Misc\BreakImmunityByKillingMobsInCloseProximity.cs" />
+    <Compile Include="Misc\TargetAndMoveToMob.cs" />
+    <Compile Include="Misc\ProfileCompatibilityInfo.cs" />
+    <Compile Include="MountHook.cs" />
+    <Compile Include="QuestBehaviorCore\Extensions\Extensions_Coroutine.cs" />
+    <Compile Include="QuestBehaviorCore\Logging.cs" />
+    <Compile Include="QuestBehaviorCore\Extensions\Extensions_Generics.cs" />
+    <Compile Include="QuestBehaviorCore\QBCLog.cs" />
+    <Compile Include="QuestBehaviorCore\UtilityCoroutines\Combat.cs" />
+    <Compile Include="QuestBehaviorCore\UtilityCoroutines\Vehicle.cs" />
+    <Compile Include="QuestBehaviorCore\UtilityCoroutines\CastSpell.cs" />
+    <Compile Include="QuestBehaviorCore\UtilityCoroutines\Common.cs" />
+    <Compile Include="QuestBehaviorCore\UtilityCoroutines\Interact.cs" />
+    <Compile Include="QuestBehaviorCore\UtilityCoroutines\Looting.cs" />
+    <Compile Include="QuestBehaviorCore\UtilityCoroutines\Misc.cs" />
+    <Compile Include="QuestBehaviorCore\UtilityCoroutines\Mount.cs" />
+    <Compile Include="QuestBehaviorCore\UtilityCoroutines\Movement.cs" />
+    <Compile Include="QuestBehaviorCore\UtilityCoroutines\UseItem.cs" />
+    <Compile Include="QuestBehaviorCore\Utility\ConfigMemento.cs" />
+    <Compile Include="QuestBehaviorCore\Utility\QBCDebug.cs" />
+    <Compile Include="QuestBehaviorCore\Utility\PetControl.cs" />
+    <Compile Include="QuestBehaviorCore\Utility\Utility.cs" />
+    <Compile Include="QuestBehaviorCore\Utility\Query.cs" />
+    <Compile Include="QuestBehaviorCore\Utility\Query_Database.cs" />
+    <Compile Include="QuestBehaviorCore\Utility\Contract.cs" />
+    <Compile Include="QuestBehaviorCore\Extensions\Extensions_FullInfo.cs" />
+    <Compile Include="QuestBehaviorCore\Extensions\Extensions_LocalPlayer.cs" />
+    <Compile Include="QuestBehaviorCore\Extensions\Extensions_TreeSharp.cs" />
+    <Compile Include="QuestBehaviorCore\Extensions\Extensions_WoWObject.cs" />
+    <Compile Include="QuestBehaviorCore\Extensions\Extensions_WoWPoint.cs" />
+    <Compile Include="QuestBehaviorCore\Extensions\Extensions_WoWUnit.cs" />
+    <Compile Include="QuestBehaviorCore\QuestBehaviorCoreSettings.cs" />
+    <Compile Include="QuestBehaviorCore\UtilitiesDeprecation.cs" />
+    <Compile Include="QuestBehaviorCore\Types.cs" />
+    <Compile Include="QuestBehaviorCore\QuestBehaviorBase.cs" />
+    <Compile Include="QuestBehaviorCore\Utility\SpellCastMonitor.cs" />
+    <Compile Include="QuestBehaviorCore\Utility\WeaponArticulation.cs" />
+    <Compile Include="QuestBehaviorCore\Utility\VehicleAbility.cs" />
+    <Compile Include="QuestBehaviorCore\Utility\VehicleWeapon.cs" />
+    <Compile Include="QuestBehaviorCore\Utility\TargetAnalysis.cs" />
+    <Compile Include="QuestBehaviorCore\XmlElements\BlackspotsType.cs" />
+    <Compile Include="QuestBehaviorCore\XmlElements\VehicleAbilityType.cs" />
+    <Compile Include="QuestBehaviorCore\XmlElements\VehicleAbilitiesType.cs" />
+    <Compile Include="QuestBehaviorCore\XmlElements\BlackspotType.cs" />
+    <Compile Include="QuestBehaviorCore\XmlElements\AvoidMobsType.cs" />
+    <Compile Include="QuestBehaviorCore\XmlElements\MobType.cs" />
+    <Compile Include="QuestBehaviorCore\XmlElements\SwimBreathType.cs" />
+    <Compile Include="QuestBehaviorCore\XmlElements\SpellType.cs" />
+    <Compile Include="QuestBehaviorCore\XmlElements\SafePathType.cs" />
+    <Compile Include="QuestBehaviorCore\XmlElements\HuntingGroundsType.cs" />
+    <Compile Include="QuestBehaviorCore\QuestBehaviorXmlBase.cs" />
+    <Compile Include="QuestBehaviorCore\XmlElements\WaypointType.cs" />
+    <Compile Include="QuestBehaviorCore\DataFileAccess.cs" />
+    <Compile Include="QuestBehaviorCore\LocalBlacklist.cs" />
+    <Compile Include="QuestBehaviorCore\PetControl.cs" />
+    <Compile Include="BasicVehicleBehaviour.cs" />
+    <Compile Include="ButtonPress\ButtonPressOnAura.cs" />
+    <Compile Include="ButtonPress\ButtonPressOnChat.cs" />
+    <Compile Include="CollectThings.cs" />
+    <Compile Include="CombatUseItemOn.cs" />
+    <Compile Include="CombatUseItemOnV2.cs" />
+    <Compile Include="CompleteLogQuest.cs" />
+    <Compile Include="DefendObject.cs" />
+    <Compile Include="DeleteItems.cs" />
+    <Compile Include="QuestBehaviorCore\Helpers_Math.cs" />
+    <Compile Include="Development\TEMPLATE_QB.cs" />
+    <Compile Include="DisablePlugin.cs" />
+    <Compile Include="EjectVeh.cs" />
+    <Compile Include="EnablePlugin.cs" />
+    <Compile Include="EquipItem.cs" />
+    <Compile Include="Escort.cs" />
+    <Compile Include="EscortGroup.cs" />
+    <Compile Include="FlyTo.cs" />
+    <Compile Include="ForcedDismount.cs" />
+    <Compile Include="ForcedMount.cs" />
+    <Compile Include="ForceSetVendor.cs" />
+    <Compile Include="ForceTrainRiding.cs" />
+    <Compile Include="GetOutOfGroundEffectAndAuras.cs" />
+    <Compile Include="GoThruPortal.cs" />
+    <Compile Include="Halt.cs" />
+    <Compile Include="InteractWith.cs" />
+    <Compile Include="KillUntilComplete.cs" />
+    <Compile Include="LoadProfile.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="Misc\InInstance.cs" />
+    <Compile Include="Misc\RunLua.cs" />
+    <Compile Include="Misc\SafeQuestTurnin.cs" />
+    <Compile Include="MrFishIt.cs" />
+    <Compile Include="MyCTM.cs" />
+    <Compile Include="NoCombatMoveTo.cs" />
+    <Compile Include="RunCode.cs" />
+    <Compile Include="SockemBoppers.cs" />
+    <Compile Include="SpecificQuests\24697-Ungoro-HowToMakeMeatFresh.cs" />
+    <Compile Include="SpecificQuests\24707-ungoro-theballadofmaximillian.cs" />
+    <Compile Include="SpecificQuests\24958-LostIsles-Volcanoth.cs" />
+    <Compile Include="SpecificQuests\26647-STV-Olblasty.cs" />
+    <Compile Include="SpecificQuests\26755-Deepholm-KeepThemofftheFront.cs" />
+    <Compile Include="SpecificQuests\27232-SilverpineForest-WatersRunRed.cs" />
+    <Compile Include="SpecificQuests\28113-Felwood-BreaktheUnbreakable.cs" />
+    <Compile Include="SpecificQuests\24910-Tanaris-RocketRescue.cs" />
+    <Compile Include="SpecificQuests\29890-JadeForest-FindingYourCenter.cs" />
+    <Compile Include="SpecificQuests\30475-FourWinds-AGiftForFung.cs" />
+    <Compile Include="SpecificQuests\Holiday\Brewfest-RamRidingQuests.cs" />
+    <Compile Include="SpecificQuests\Kalimdor\Darkshore\13512-StrategicStrikes.cs" />
+    <Compile Include="SpecificQuests\Kalimdor\Teldrassil\14005-TheVengeanceOfElune.cs" />
+    <Compile Include="TaxiRide.cs" />
+    <Compile Include="TheEndlessFlowHook.cs" />
+    <Compile Include="UseHearthstone.cs" />
+    <Compile Include="Vehicles\BasicVehicleBehaviour.cs" />
+    <Compile Include="Vehicles\NoControlVehicle.cs" />
+    <Compile Include="NPCAssistance.cs" />
+    <Compile Include="PerformTradeskillOn.cs" />
+    <Compile Include="RunLikeHell.cs" />
+    <Compile Include="RunMacro.cs" />
+    <Compile Include="SetHearthstone.cs" />
+    <Compile Include="SlayTheFools.cs" />
+    <Compile Include="SpecificQuests\10129-10146-Hellfire-MurkethAndShaadraz.cs" />
+    <Compile Include="SpecificQuests\10162-10163-Hellfire-MissionTheAbyssalShelf.cs" />
+    <Compile Include="SpecificQuests\10838-Hellfire-TheDemoniacScryer.cs" />
+    <Compile Include="SpecificQuests\12255-GrizzlyHills-AllyTheThaneofVoldrune.cs" />
+    <Compile Include="SpecificQuests\12259-GrizzlyHills-HordeTheThaneofVoldrune.cs" />
+    <Compile Include="SpecificQuests\13947-Ashenvale-Blastranaar!.cs" />
+    <Compile Include="SpecificQuests\14122-Kezan-TheGreatBankHeist.cs" />
+    <Compile Include="SpecificQuests\14243-LostIsles-WarchiefsRevenge.cs" />
+    <Compile Include="SpecificQuests\14382-Gilneas-TwoBySea.cs" />
+    <Compile Include="SpecificQuests\14395-Gilneas-GaspingForBreath.cs" />
+    <Compile Include="SpecificQuests\24817-LostIsles-AGoblininSharksClothing.cs" />
+    <Compile Include="SpecificQuests\25066-LostIsles-ThePrideofKezan.cs" />
+    <Compile Include="SpecificQuests\25251-LostIsles-FinalConfrontation.cs" />
+    <Compile Include="SpecificQuests\25551-Hyjal-TheFirelord.cs" />
+    <Compile Include="SpecificQuests\26028-Stonetalons-MrDsWildRide.cs" />
+    <Compile Include="SpecificQuests\26058-Stonetalon-InDefenseofKromgarFortress.cs" />
+    <Compile Include="SpecificQuests\26501-Deepholm-SealingTheWay.cs" />
+    <Compile Include="SpecificQuests\26649-Stranglethorn-DriveByPiracy.cs" />
+    <Compile Include="SpecificQuests\26659-Deepholm-ResonatingBlow.cs" />
+    <Compile Include="SpecificQuests\26831-Deepholm-TheTwilightFlight.cs" />
+    <Compile Include="SpecificQuests\26875-Deepholm-UndyingTwilight.cs" />
+    <Compile Include="SpecificQuests\27001-WPL-ThisMeansWAR.cs" />
+    <Compile Include="SpecificQuests\27380-TwilightHighlands-Nightmare.cs" />
+    <Compile Include="SpecificQuests\27648-AllyTwilightHighlands-IntoTheFire.cs" />
+    <Compile Include="SpecificQuests\27702-27703-TwilightHighlands-CoupDeGrace.cs" />
+    <Compile Include="SpecificQuests\27738-Uldum-ThePitOfScales.cs" />
+    <Compile Include="SpecificQuests\27748-Uldum-FortuneAndGlory.cs" />
+    <Compile Include="SpecificQuests\27761-Uldum-ADisarmingDistraction.cs" />
+    <Compile Include="SpecificQuests\27779-Uldum-Gnomebliteration.cs" />
+    <Compile Include="SpecificQuests\27787-27788-TwilightHighlands-Skullcrusher.cs" />
+    <Compile Include="SpecificQuests\27789-Badlands-TroggishTroubles.cs" />
+    <Compile Include="SpecificQuests\27811-AllyTwilightHighlands-ScentOfBattle.cs" />
+    <Compile Include="SpecificQuests\27817-AllyTwilightHighlands-DroppingTheHammer.cs" />
+    <Compile Include="SpecificQuests\27990-Uldum-Battlezone.cs" />
+    <Compile Include="SpecificQuests\28173-TwilightHighlands-Blackout.cs" />
+    <Compile Include="SpecificQuests\28277-Uldum-SalhetTheTactician.cs" />
+    <Compile Include="SpecificQuests\28367-Uldum-ShroudOfTheMakers.cs" />
+    <Compile Include="SpecificQuests\28454-BurningSteppes-HordeAssaultonDreadmaulRock.cs" />
+    <Compile Include="SpecificQuests\28497-28736-Uldum-FireFromTheSky.cs" />
+    <Compile Include="SpecificQuests\28501-Uldum-TheDefenseOfNahom.cs" />
+    <Compile Include="SpecificQuests\28589-HordeTwilightHighlands-EverythingButTheKitchenSink.cs" />
+    <Compile Include="SpecificQuests\28591-HordeTwilightHighlands-OffTheWall.cs" />
+    <Compile Include="SpecificQuests\28611-Uldum-TheDefilersRitual.cs" />
+    <Compile Include="SpecificQuests\28758-TwilightHighlands-BattleofLifeandDeath.cs" />
+    <Compile Include="SpecificQuests\29661-PandaStarter-TheLessonofDryFur.cs" />
+    <Compile Include="SpecificQuests\29663-PandaStarter-TheLessonoftheBalancedRock.cs" />
+    <Compile Include="SpecificQuests\29679-PandaStarter-ANewFriend.cs" />
+    <Compile Include="SpecificQuests\29725-JadeForest-SI7ReportFireFromtheSky.cs" />
+    <Compile Include="SpecificQuests\29727-JadeForest-TakeNoPrisoners.cs" />
+    <Compile Include="SpecificQuests\29731-HordeJadeForest-ScoutingReportOnTheRightTrack.cs" />
+    <Compile Include="SpecificQuests\29786-PandaStarter-BattleForTheSkies.cs" />
+    <Compile Include="SpecificQuests\29798-PandaStarter-AnAncientEvil.cs" />
+    <Compile Include="SpecificQuests\29799-PandaStarter-HealingofShenZinSu.cs" />
+    <Compile Include="SpecificQuests\29823-HordeJadeForest-ScoutingReportTheFriendofMyEnemy.cs" />
+    <Compile Include="SpecificQuests\29824-HordeJadeForest-ScoutingReportLikeJinyuInABarrel.cs" />
+    <Compile Include="SpecificQuests\29827-HordeJadeForest-AcidRain.cs" />
+    <Compile Include="SpecificQuests\29918-FourWinds-ALessonInBravery.cs" />
+    <Compile Include="SpecificQuests\29952-VotFW-BrokenDreams.cs" />
+    <Compile Include="SpecificQuests\29967-HordeJadeForest-BoomGoesTheDoonamite!.cs" />
+    <Compile Include="SpecificQuests\30078-FourWinds-CleaningHouse.cs" />
+    <Compile Include="SpecificQuests\30231-VOEB-PompfruitPickup.cs" />
+    <Compile Include="SpecificQuests\30232-VOEB-RufflingSomeFeathers.cs" />
+    <Compile Include="SpecificQuests\30243-VOEB-MantidUnderFire.cs" />
+    <Compile Include="SpecificQuests\30273-KrasarangWilds-InTheHouseOfTheRedCrane.cs" />
+    <Compile Include="SpecificQuests\30310-VOEB-ThunderingSkies.cs" />
+    <Compile Include="SpecificQuests\30625-FourWinds-StudentsNoMore.cs" />
+    <Compile Include="SpecificQuests\30690-KunLai-UnmaskingTheYaungol.cs" />
+    <Compile Include="SpecificQuests\30747-KunLai-TheBurlapGrind.cs" />
+    <Compile Include="SpecificQuests\30798-KunLai-BreakingTheEmperorsShield.cs" />
+    <Compile Include="SpecificQuests\30855-KunLai-TheFallofShaiHu.cs" />
+    <Compile Include="SpecificQuests\30968-TownlongSteppes-TheShaofHatred.cs" />
+    <Compile Include="SpecificQuests\30973-TownlongSteppes-UpInFlames.cs" />
+    <Compile Include="SpecificQuests\30978-TownlongSteppes-HostileSkies.cs" />
+    <Compile Include="SpecificQuests\30991-KunLai-DoABarrelRoll.cs" />
+    <Compile Include="SpecificQuests\31046-TownlongSteppes-LittleHatchlings.cs" />
+    <Compile Include="SpecificQuests\31061-TownlongSteppes-RidingTheStorm.cs" />
+    <Compile Include="SpecificQuests\31190-DreadWastes-TheMarinersRevenge.cs" />
+    <Compile Include="SpecificQuests\31216-DreadWastes-DarkSkies.cs" />
+    <Compile Include="SpecificQuests\31228-KunLai-ProphetKharzul.cs" />
+    <Compile Include="SpecificQuests\31237-DreadWastes-DebuggingTheTerrace.cs" />
+    <Compile Include="SpecificQuests\31303-JadeForest-TheSealIsBroken.cs" />
+    <Compile Include="SpecificQuests\31758-VOEB-LaosyScouting.cs" />
+    <Compile Include="SpecificQuests\31765-JadeForest-PaintItRed.cs" />
+    <Compile Include="SpecificQuests\31769-JadeForest-TheFinalBlow.cs" />
+    <Compile Include="SpecificQuests\31808-DreadWastes-RampageAgainstTheMachine.cs" />
+    <Compile Include="SpecificQuests\DeathknightStart\AnEndToAllThings.cs" />
+    <Compile Include="SpecificQuests\DeathknightStart\TheLightOfDawn.cs" />
+    <Compile Include="SpecificQuests\DeathknightStart\WaitForPatrol.cs" />
+    <Compile Include="SpecificQuests\MountHyjal\BaronGeddon.cs" />
+    <Compile Include="SpecificQuests\MountHyjal\BearsUpThere.cs" />
+    <Compile Include="SpecificQuests\MountHyjal\GreaterOfTwoEvils.cs" />
+    <Compile Include="SpecificQuests\MountHyjal\MentalTraining.cs" />
+    <Compile Include="SpellLocation.cs" />
+    <Compile Include="StandAndKill.cs" />
+    <Compile Include="UseItem.cs" />
+    <Compile Include="UseItemTargetLocation.cs" />
+    <Compile Include="UsePetAbility.cs" />
+    <Compile Include="UserDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSettings.cs" />
+    <Compile Include="UseTransport.cs" />
+    <Compile Include="Vehicles\CannonControl.cs" />
+    <Compile Include="Vehicles\FlyingVehicle.cs" />
+    <Compile Include="Vehicles\MountVehOnly.cs" />
+    <Compile Include="Vehicles\VehicleBehavior.cs" />
+    <Compile Include="Vehicles\VehicleMover.cs" />
+    <Compile Include="WaitTimer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UserDialog.resx">
+      <DependentUpon>UserDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QuestBehaviorCore\Data\AuraIds_OccupiedVehicle.xml" />
+    <Content Include="QuestBehaviorCore\Data\BagContainers.xml" />
+    <Content Include="QuestBehaviorCore\Data\PluginCategory.xml" />
+    <Content Include="QuestBehaviorCore\Data\SwimBreath.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Deprecated\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Q /Y /I /E "$(ProjectDir)*" "E:\BosslandGmbH\Honorbuddy\Quest Behaviors"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,144 @@
+<HBProfile>
+	<Name>Nat Pagle Fish ($Rev$) -- Created/submitted by Tenne, translated by TheBrodieMan</Name>
+	<MinLevel>89</MinLevel>
+	<MaxLevel>91</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Nav="Fly" Name="Nat Pagle" Entry="63721" Type="Repair" X="-1470.55" Y="-259.85" Z="0.11" />
+	</Vendors>
+
+	<Mailboxes>
+		<Mailbox X="-1525.247" Y="-243.2205" Z="15.21873" />
+	</Mailboxes>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<QuestOrder>
+
+	<CustomBehavior File="Message" Text="Compiling Fish you have. CAREFUL! Fish in banks won't count, but also won't allow you to pick up new ones!" LogColor="Green" />
+
+<!-- check for Spinefish Alpha -->
+	<If Condition="!HasItem(86544) &amp;&amp; !IsQuestCompleted(31444)" >
+		<CustomBehavior File="Message" Text="Fishing for Spinefish Alpha" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2191.508" Y="116.6123" Z="478.9134" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Random(100) &lt; 33" >
+			<MoveTo X="2204.349" Y="107.5907" Z="475.9552" />
+			<CustomBehavior File="MrFishIt" CollectItemId="86544" CollectItemCount="1" X="2217" Y="110" Z="476" />
+		<ElseIf Condition="Random(100) &lt; 66" >
+			<MoveTo X="2200.091" Y="117.0685" Z="476.5378" />
+			<CustomBehavior File="MrFishIt" CollectItemId="86544" CollectItemCount="1" X="2214.216" Y="118.5562" Z="475.453" />
+		</ElseIf>
+		<Else>
+			<MoveTo X="2197.767" Y="124.9553" Z="476.7575" />
+			<CustomBehavior File="MrFishIt" CollectItemId="86544" CollectItemCount="1" X="2211.599" Y="133.1945" Z="475.4529" />
+		</Else>
+		</If>
+		<CustomBehavior File="Message" Text="Got the Spinefish Alpha!" LogColor="Green" />
+	</If>
+
+<!-- check for Flying Tiger Gourami -->
+	<If Condition="!HasItem(86542) &amp;&amp; !IsQuestCompleted(31443)" >
+		<CustomBehavior File="Message" Text="Fishing for Flying Tiger Gourami" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2411.644" Y="-247.2123" Z="318.2547" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Random(100) &lt; 33" >
+			<MoveTo X="2397.9" Y="-219.7038" Z="303.8641" />
+		<ElseIf Condition="Random(100) &lt; 66" >
+			<MoveTo X="2385.61" Y="-230.4093" Z="303.6621" />
+		</ElseIf>
+		<Else>
+			<MoveTo X="2392.85" Y="-223.9763" Z="303.94" />
+		</Else>
+		</If>
+		<CustomBehavior File="MrFishIt" CollectItemId="86542" CollectItemCount="1" X="2382.063" Y="-214.2688" Z="302.4337" />
+		<CustomBehavior File="Message" Text="Got the Flying Tiger Gourami!" LogColor="Green" />
+	</If>
+
+<!-- check for Mimic Octopus -->
+	<If Condition="!HasItem(86545) &amp;&amp; !IsQuestCompleted(31446)" >
+		<CustomBehavior File="Message" Text="Fishing for Mimic Octopus" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1429.329" Y="-131.3637" Z="1.204916" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Random(100) &lt; 33" >
+			<MoveTo X="-1453.122" Y="-149.5233" Z="-0.344867" />
+			<CustomBehavior File="MrFishIt" CollectItemId="86545" CollectItemCount="1" X="-1464.289" Y="-159.8228" Z="0.1" />
+		<ElseIf Condition="Random(100) &lt; 66" >
+			<MoveTo X="-1444.867" Y="-168.1631" Z="-0.5311388" />
+			<CustomBehavior File="MrFishIt" CollectItemId="86545" CollectItemCount="1" X="-1451.996" Y="-175.2637" Z="0.1" />
+		</ElseIf>
+		<Else>
+			<MoveTo X="-1466.405" Y="-129.0929" Z="-0.8634958" />
+			<CustomBehavior File="MrFishIt" CollectItemId="86545" CollectItemCount="1" X="-1472.756" Y="-138.7514" Z="0.1" />
+		</Else>
+		</If>
+		<CustomBehavior File="Message" Text="Got the Mimic Octopus!" LogColor="Green" />
+	</If>
+
+<!-- Grab Quests -->
+
+	<If Condition="HasItem(86542)" >
+		<If Condition="!HasQuest(31443) &amp;&amp; !IsQuestCompleted(31443)" >
+			<PickUp QuestName="Flying Tiger Gourami" QuestId="31443" GiverName="Flying Tiger Gourami" GiverId="86542" GiverType="Item" />
+		</If>
+	</If>
+
+	<If Condition="HasItem(86544)" >
+		<If Condition="!HasQuest(31444) &amp;&amp; !IsQuestCompleted(31444)" >
+			<PickUp QuestName="Spinefish Alpha" QuestId="31444" GiverName="Spinefish Alpha" GiverId="86544" GiverType="Item" />
+		</If>
+	</If>
+
+	<If Condition="HasItem(86545)" >
+		<If Condition="!HasQuest(31446) &amp;&amp; !IsQuestCompleted(31446)" >
+			<PickUp QuestName="Mimic Octopus" QuestId="31446" GiverName="Mimic Octopus" GiverId="86545" GiverType="Item" />
+		</If>
+	</If>
+
+<!-- Quest Turn ins -->
+
+	<If Condition="HasQuest(31443) || HasQuest(31444) || HasQuest(31446)" >
+		<CustomBehavior File="Message" Text="Have Fish, heading to Nat Pagle." LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-1437.63" Y="-253.9103" Z="0.7829753" />
+	</If>
+
+  	<If Condition="HasQuest(31443) &amp;&amp; IsQuestCompleted(31443)" >
+		<CustomBehavior File="FlyTo" X="-1465.597" Y="-253.7264" Z="0.3228427" />
+		<TurnIn Nav="Fly" QuestName="Flying Tiger Gourami" QuestId="31443" TurnInName="Nat Pagle" TurnInId="63721" />
+	</If>
+
+  	<If Condition="HasQuest(31444) &amp;&amp; IsQuestCompleted(31444)" >
+		<CustomBehavior File="FlyTo" X="-1465.597" Y="-253.7264" Z="0.3228427" />
+		<TurnIn Nav="Fly" QuestName="Spinefish Alpha" QuestId="31444" TurnInName="Nat Pagle" TurnInId="63721" />
+	</If>
+
+  	<If Condition="HasQuest(31446) &amp;&amp; IsQuestCompleted(31446)" >
+		<CustomBehavior File="FlyTo" X="-1465.597" Y="-253.7264" Z="0.3228427" />
+		<TurnIn Nav="Fly" QuestName="Mimic Octopus" QuestId="31446" TurnInName="Nat Pagle" TurnInId="63721" />
+	</If>
+
+<CustomBehavior File="UserDialog" Title="Title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="Finished Fishing!" />
+
+</QuestOrder>
+</HBProfile>

@@ -1,0 +1,425 @@
+<HBProfile>
+	<Name>Red Crane Dailies ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+		<Blackspot X="2198.714" Y="4604.928" Z="155.8178" Radius="20"/> <!-- Too many enemies here -->
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- Students of Chi-Ji -->
+	<Quest Id="30718" Name="Students of Chi-Ji"> 
+		<Objective Type="KillMob" MobId="60602" KillCount="10">
+			<Hotspots>
+				<Hotspot X="-2174.03" Y="1449.17" Z="5.26" />
+				<Hotspot X="-2255.33" Y="1432.49" Z="14.44" />
+				<Hotspot X="-2294.10" Y="1375.18" Z="25.50" />
+				<Hotspot X="-2365.69" Y="1404.47" Z="15.55" />
+				<Hotspot X="-2409.55" Y="1477.11" Z="15.88" />
+				<Hotspot X="-2354.72" Y="1537.84" Z="16.60" />
+				<Hotspot X="-2277.96" Y="1522.00" Z="16.82" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Gifts of the Great Crane -->
+	<Quest Id="30717" Name="Gifts of the Great Crane"> 
+		<Objective Type="CollectItem" ItemId="80938" CollectCount="10">
+			<CollectFrom>
+				<GameObject Name="Crimson Gift of the Crane" Id="211453" />
+				<GameObject Name="Bronze Gift of the Crane" Id="211452" />
+				<GameObject Name="Cerulean Gift of the Crane" Id="211451" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-2219.04" Y="1422.09" Z="24.88" />
+				<Hotspot X="-2247.48" Y="1507.54" Z="16.81" />
+				<Hotspot X="-2347.19" Y="1534.10" Z="15.68" />
+				<Hotspot X="-2434.43" Y="1512.91" Z="15.98" />
+				<Hotspot X="-2504.86" Y="1477.59" Z="17.56" />
+				<Hotspot X="-2509.82" Y="1351.95" Z="23.24" />
+				<Hotspot X="-2410.16" Y="1346.53" Z="22.59" />
+				<Hotspot X="-2335.23" Y="1293.96" Z="26.68" />
+				<Hotspot X="-2256.91" Y="1307.04" Z="31.82" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+<CustomBehavior File="Message" Text="Beginning Red Crane Quests..." LogColor="Green"  />
+
+<!-- Starting Quests -->
+
+	<If Condition="HasQuest(31378)" >
+		<CustomBehavior File="Message" Text="Starting Red Crane Temple" LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="-2092.698" Y="1470.864" Z="0.40" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<TurnIn QuestName="Challenge At the Temple of the Red Crane" QuestId="31378" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+
+	<If Condition="HasQuest(31379)" >
+		<CustomBehavior File="Message" Text="Starting Red Crane Temple" LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="-2092.698" Y="1470.864" Z="0.40" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<TurnIn QuestName="Challenge At the Temple of the Red Crane" QuestId="31379" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+
+<!-- Thelonius -->
+	<While Condition="HasQuestAvailable(60506)" >
+		<CustomBehavior File="InteractWith" MobId="60506" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Yan Quillpaw -->
+	<If Condition="HasQuestAvailable(60529)" >
+		<PickUp QuestName="Gifts of the Great Crane" QuestId="30717" GiverName="Yan Quillpaw" GiverId="60529" />
+	</If>
+
+<!-- Kuo-Na Quillpaw -->
+	<If Condition="HasQuestAvailable(60528)" >
+		<PickUp QuestName="Chasing Hope" QuestId="30716" GiverName="Kuo-Na Quillpaw" GiverId="60528" />
+	</If>
+
+<!-- Chasing Hope -->
+	<If Condition="HasQuest(30716) &amp;&amp; !IsQuestCompleted(30716)" >
+		<CustomBehavior File="Message" Text="Starting Chasing Hope" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2590.545" Y="1261.589" Z="18.10288" />
+		<CustomBehavior File="InteractWith" QuestId="30716" MobId="60487" PreInteractMountStrategy="Mount" CollectionDistance="1000" 
+			NumOfTimes="1000" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+			<HuntingGrounds>
+				<Hotspot X="-2577.867" Y="1273.161" Z="19.63133" />
+				<Hotspot X="-2522.238" Y="1360.792" Z="24.68696" />
+				<Hotspot X="-2426.871" Y="1474.672" Z="14.25396" />
+				<Hotspot X="-2254.85" Y="1488.964" Z="15.28901" />
+				<Hotspot X="-2305.868" Y="1335.956" Z="28.74695" />
+				<Hotspot X="-2437.296" Y="1330.144" Z="22.37825" />
+				<Hotspot X="-2561.071" Y="1285.567" Z="21.84223" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+
+<!-- Gifts of the Great Crane -->
+	<If Condition="HasQuest(30717) &amp;&amp; !IsQuestCompleted(30717)" >
+		<CustomBehavior File="Message" Text="Starting Gifts of the Great Crane" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<CustomBehavior File="FlyTo" X="-2235.208" Y="1469.433" Z="15.6879" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Gifts of the Great Crane" QuestId="30717" Type="CollectItem" ItemId="80938" CollectCount="10" />
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- Students of Chi-Ji -->
+	<If Condition="HasQuest(30718) &amp;&amp; !IsQuestCompleted(30718)" >
+		<CustomBehavior File="Message" Text="Starting Students of Chi-Ji" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2174.025" Y="1449.171" Z="5.254911" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective QuestName="Students of Chi-Ji" QuestId="30718" Type="KillMob" MobId="60602" MobId2="60603" KillCount="10" />
+	</If>
+
+<!-- Red Crane Quest Turn ins Phase 1 -->
+	<If Condition="(HasQuest(30716) &amp;&amp; IsQuestCompleted(30716)) ||
+			(HasQuest(30717) &amp;&amp; IsQuestCompleted(30717)) ||
+			(HasQuest(30718) &amp;&amp; IsQuestCompleted(30718))" >
+		<CustomBehavior File="Message" Text="Quests Completed. Returning to Red Crane Temple." LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2092.698" Y="1470.864" Z="0.40" />
+	</If>
+
+	<If Condition="HasQuest(30717) &amp;&amp; IsQuestCompleted(30717)" >
+		<TurnIn QuestName="Gifts of the Great Crane" QuestId="30717" TurnInName="Yan Quillpaw" TurnInId="60529" />
+	</If>
+
+	<If Condition="HasQuest(30716) &amp;&amp; IsQuestCompleted(30716)" >
+		<TurnIn QuestName="Chasing Hope" QuestId="30716" TurnInName="Kuo-Na Quillpaw" TurnInID="60528" />
+	</If>
+
+	<If Condition="HasQuest(30718) &amp;&amp; IsQuestCompleted(30718)" >
+		<TurnIn QuestName="Students of Chi-Ji" QuestId="30718" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+
+<!-- Thelonius -->
+	<While Condition="HasQuestAvailable(60506)" >
+		<CustomBehavior File="InteractWith" MobId="60506" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+
+<!-- Champion of Chi-Ji -->
+	<If Condition="HasQuest(30740) &amp;&amp; !IsQuestCompleted(30740)" >
+		<CustomBehavior File="Message" Text="Starting Champion of Chi-Ji" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2658.645" Y="1332.316" Z="35.65187" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30740)" >
+			<CustomBehavior File="InteractWith" QuestId="30740" MobId="60546" InteractByGossipOptions="1" X="-2686.64" Y="1320.181" Z="35.64653" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Dextrous Izissha -->
+	<If Condition="HasQuest(30730) &amp;&amp; !IsQuestCompleted(30730)" >
+		<CustomBehavior File="Message" Text="Starting Dextrous Izissha" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2612.034" Y="1458.487" Z="2.454301" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30730)" >
+			<CustomBehavior File="InteractWith" QuestId="30730" MobId="60536" InteractByGossipOptions="1" X="-2620.20" Y="1462.67" Z="0.73" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Ellia Ravenmane -->
+	<If Condition="HasQuest(30725) &amp;&amp; !IsQuestCompleted(30725)" >
+		<CustomBehavior File="Message" Text="Starting Ellia Ravenmane" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2291.721" Y="1465.953" Z="29.61829" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30725)" >
+			<CustomBehavior File="InteractWith" QuestId="30725" MobId="60530" InteractByGossipOptions="1" X="-2317.105" Y="1450.66" Z="29.61624" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Ellia Ravenmane: Redemption -->
+	<If Condition="HasQuest(30739) &amp;&amp; !IsQuestCompleted(30739)" >
+		<CustomBehavior File="Message" Text="Starting Ellia Ravenmane: Redemption" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2472.699" Y="1242.58" Z="89.14" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30739)" >
+			<CustomBehavior File="InteractWith" QuestId="30739" MobId="60545" InteractByGossipOptions="1" X="-2472.699" Y="1242.58" Z="89.14" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Ellia Ravenmane: Rematch -->
+	<If Condition="HasQuest(30727) &amp;&amp; !IsQuestCompleted(30727)" >
+		<CustomBehavior File="Message" Text="Starting Ellia Ravenmane: Rematch" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2449.671" Y="1318.952" Z="20.17832" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30727)" >
+			<CustomBehavior File="InteractWith" QuestId="30727" MobId="60533" InteractByGossipOptions="1" X="-2449.671" Y="1318.952" Z="20.17832" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Ellia Ravenmane: Revenge -->
+	<If Condition="HasQuest(30732) &amp;&amp; !IsQuestCompleted(30732)" >
+		<CustomBehavior File="Message" Text="Starting Ellia Ravenmane: Revenge" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2657.743" Y="1332.558" Z="35.62134" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30732)" >
+			<CustomBehavior File="InteractWith" QuestId="30732" MobId="60538" InteractByGossipOptions="1" X="-2685.745" Y="1321.32" Z="35.64643" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Fat Long-Fat -->
+	<If Condition="HasQuest(30728) &amp;&amp; !IsQuestCompleted(30728)" >
+		<CustomBehavior File="Message" Text="Starting Fat Long-Fat" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2319.32" Y="1448.80" Z="82.62" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30728)" >
+			<CustomBehavior File="InteractWith" QuestId="30728" MobId="60534" InteractByGossipOptions="1" X="-2319.32" Y="1448.80" Z="82.62" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Fat Long-Fat: Rematch -->
+	<If Condition="HasQuest(30737) &amp;&amp; !IsQuestCompleted(30737)" >
+		<CustomBehavior File="Message" Text="Starting Fat Long-Fat Rematch" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2687.9" Y="1317.054" Z="108.67" />
+		<While Condition="!IsQuestCompleted(30737)" >
+			<CustomBehavior File="InteractWith" QuestId="30737" MobId="60543" InteractByGossipOptions="1" X="-2687.9" Y="1317.054" Z="88.67" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Huck Wheelbarrow -->
+	<If Condition="HasQuest(30734) &amp;&amp; !IsQuestCompleted(30734)" >
+		<CustomBehavior File="Message" Text="Starting Huck Wheelbarrow" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2293.24" Y="1639.055" Z="1.90" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30734)" >
+			<CustomBehavior File="InteractWith" QuestId="30734" MobId="60540" InteractByGossipOptions="1" X="-2293.24" Y="1639.055" Z="1.90" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Julia Bates -->
+	<If Condition="HasQuest(30729) &amp;&amp; !IsQuestCompleted(30729)" >
+		<CustomBehavior File="Message" Text="Starting Julia Bates" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2461.924" Y="1589.542" Z="0.7653754" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30729)" >
+			<CustomBehavior File="InteractWith" QuestId="30729" MobId="60535" InteractByGossipOptions="1" X="-2470.33" Y="1593.42" Z="0.32" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Kuo-Na Quillpaw -->
+	<If Condition="HasQuest(30731) &amp;&amp; !IsQuestCompleted(30731)" >
+		<CustomBehavior File="Message" Text="Starting Kuo-Na Quillpaw" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2451.82" Y="1235.36" Z="36.13" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30731)" >
+			<CustomBehavior File="InteractWith" QuestId="30731" MobId="60537" InteractByGossipOptions="1" X="-2447.99" Y="1234.71" Z="36.13" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Mindel Sunspeaker -->
+	<If Condition="HasQuest(30735) &amp;&amp; !IsQuestCompleted(30735)" >
+		<CustomBehavior File="Message" Text="Starting Mindel Sunspeaker" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2319.32" Y="1448.74" Z="29.62" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30735)" >
+			<CustomBehavior File="InteractWith" QuestId="30735" MobId="60541" InteractByGossipOptions="1" X="-2319.32" Y="1448.74" Z="29.62" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Minh Do-Tan -->
+	<If Condition="HasQuest(30726) &amp;&amp; !IsQuestCompleted(30726)" >
+		<CustomBehavior File="Message" Text="Starting Minh Do-Tan" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2498.43" Y="1442.09" Z="14.64" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30726)" >
+			<CustomBehavior File="InteractWith" QuestId="30726" MobId="60532" InteractByGossipOptions="1" X="-2498.43" Y="1442.09" Z="14.64" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Thelonius -->
+	<If Condition="HasQuest(30738) &amp;&amp; !IsQuestCompleted(30738)" >
+		<CustomBehavior File="Message" Text="Starting Thelonius" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2359.96" Y="1594.56" Z="1.83" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30738)" >
+			<CustomBehavior File="InteractWith" QuestId="30738" MobId="60544" InteractByGossipOptions="1" X="-2359.96" Y="1594.56" Z="1.83" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Tukka-Tuk -->
+	<If Condition="HasQuest(30733) &amp;&amp; !IsQuestCompleted(30733)" >
+		<CustomBehavior File="Message" Text="Starting Tukka-Tuk" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2453.39" Y="1353.64" Z="20.32" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30733)" >
+			<CustomBehavior File="InteractWith" QuestId="30733" MobId="60539" InteractByGossipOptions="1" X="-2453.39" Y="1353.64" Z="20.32" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Yan Quillpaw -->
+	<If Condition="HasQuest(30736) &amp;&amp; !IsQuestCompleted(30736)" >
+		<CustomBehavior File="Message" Text="Starting Yan Quillpaw" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2477.44" Y="1238.50" Z="36.13" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(30736)" >
+			<CustomBehavior File="InteractWith" QuestId="30736" MobId="60542" InteractByGossipOptions="1" X="-2477.44" Y="1238.50" Z="36.13" WaitForNpcs="False" />
+		</While>
+	</If>
+
+<!-- Red Crane Quest Turn ins Phase 2 -->
+	<If Condition="((HasQuest(30740) &amp;&amp; IsQuestCompleted(30740)) ||
+			(HasQuest(30730) &amp;&amp; IsQuestCompleted(30730)) ||
+			(HasQuest(30725) &amp;&amp; IsQuestCompleted(30725)) ||
+			(HasQuest(30739) &amp;&amp; IsQuestCompleted(30739)) ||
+			(HasQuest(30727) &amp;&amp; IsQuestCompleted(30727)) ||
+			(HasQuest(30732) &amp;&amp; IsQuestCompleted(30732)) ||
+			(HasQuest(30728) &amp;&amp; IsQuestCompleted(30728)) ||
+			(HasQuest(30734) &amp;&amp; IsQuestCompleted(30734)) ||
+			(HasQuest(30737) &amp;&amp; IsQuestCompleted(30737)) ||
+			(HasQuest(30729) &amp;&amp; IsQuestCompleted(30729)) ||
+			(HasQuest(30731) &amp;&amp; IsQuestCompleted(30731)) ||
+			(HasQuest(30735) &amp;&amp; IsQuestCompleted(30735)) ||
+			(HasQuest(30726) &amp;&amp; IsQuestCompleted(30726)) ||
+			(HasQuest(30733) &amp;&amp; IsQuestCompleted(30733)) ||
+			(HasQuest(30736) &amp;&amp; IsQuestCompleted(30736)))" >
+		<CustomBehavior File="Message" Text="Quests Completed. Returning to Red Crane Temple." LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="-2092.698" Y="1470.864" Z="0.40" />
+	</If>
+
+	<If Condition="HasQuest(30740) &amp;&amp; IsQuestCompleted(30740)" >
+		<TurnIn QuestName="Champion of Chi-Ji" QuestId="30740" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+	<If Condition="HasQuest(30730) &amp;&amp; IsQuestCompleted(30730)" >
+		<TurnIn QuestName="Dextrous izissha" QuestId="30730" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+	<If Condition="HasQuest(30725) &amp;&amp; IsQuestCompleted(30725)" >
+		<TurnIn QuestName="Ellia Ravenmane" QuestId="30725" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+	<If Condition="HasQuest(30739) &amp;&amp; IsQuestCompleted(30739)" >
+		<TurnIn QuestName="Ellia Ravenmane Redemption" QuestId="30739" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+	<If Condition="HasQuest(30727) &amp;&amp; IsQuestCompleted(30727)" >
+		<TurnIn QuestName="Ellia Ravenmane Rematch" QuestId="30727" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+	<If Condition="HasQuest(30732) &amp;&amp; IsQuestCompleted(30732)" >
+		<TurnIn QuestName="Ellia Ravenmane Revenge" QuestId="30732" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+	<If Condition="HasQuest(30728) &amp;&amp; IsQuestCompleted(30728)" >
+		<TurnIn QuestName="Fat Long-Fat" QuestId="30728" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+	<If Condition="HasQuest(30737) &amp;&amp; IsQuestCompleted(30737)" >
+		<TurnIn QuestName="Fat Long-Fat Rematch" QuestId="30737" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+	<If Condition="HasQuest(30734) &amp;&amp; IsQuestCompleted(30734)" >
+		<TurnIn QuestName="Huck Wheelbarrow" QuestId="30734" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+	<If Condition="HasQuest(30729) &amp;&amp; IsQuestCompleted(30729)" >
+		<TurnIn QuestName="Julia Bates" QuestId="30729" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+	<If Condition="HasQuest(30731) &amp;&amp; IsQuestCompleted(30731)" >
+		<TurnIn QuestName="Kuo-Na Quillpaw" QuestId="30731" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+	<If Condition="HasQuest(30735) &amp;&amp; IsQuestCompleted(30735)" >
+		<TurnIn QuestName="Mindel Sunspeaker" QuestId="30735" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+	<If Condition="HasQuest(30726) &amp;&amp; IsQuestCompleted(30726)" >
+		<TurnIn QuestName="Minh Do-Tan" QuestId="30726" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+	<If Condition="HasQuest(30733) &amp;&amp; IsQuestCompleted(30733)" >
+		<TurnIn QuestName="Tukka-Tuk" QuestId="30733" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+	<If Condition="HasQuest(30736) &amp;&amp; IsQuestCompleted(30736)" >
+		<TurnIn QuestName="Yan Quillpaw" QuestId="30736" TurnInName="Thelonius" TurnInID="60506" />
+	</If>
+
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+	
+	<CustomBehavior File="ForcedDismount" />
+	<If Condition="HasItem(60498)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60498)" WaitTime="1500" />
+	<ElseIf Condition="HasItem(93672)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93672)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(54452)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(54452)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(64488)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(6948)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1500" />
+	</ElseIf>
+	</If>
+
+<CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of August Celestials Dailies" />
+
+</QuestOrder>
+</HBProfile>

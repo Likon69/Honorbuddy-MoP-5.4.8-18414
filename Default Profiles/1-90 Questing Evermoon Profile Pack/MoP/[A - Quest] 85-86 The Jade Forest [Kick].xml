@@ -1,0 +1,2146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- Developed by Kickazz006 -->
+    <Name>[A - Quest] 85-86 The Jade Forest [Kick] ($Rev: 3181 $)</Name>
+
+    <MinLevel>85</MinLevel>
+    <MaxLevel>1001</MaxLevel>
+
+    <MinDurability>0.3</MinDurability>
+    <MinFreeBagSlots>3</MinFreeBagSlots>
+
+    <!-- NB: Honorbuddy sells before mailing -->
+    <SellGrey>True</SellGrey>
+    <SellWhite>True</SellWhite>
+    <SellGreen>True</SellGreen>
+    <SellBlue>False</SellBlue>
+    <SellPurple>False</SellPurple>
+
+    <MailGrey>False</MailGrey>
+    <MailWhite>True</MailWhite>
+    <MailGreen>True</MailGreen>
+    <MailBlue>True</MailBlue>
+    <MailPurple>True</MailPurple>
+
+
+    <Vendors>
+        <Vendor Name="Jadori Ironeye" Entry="65900" Type="Repair" X="-308.9132" Y="-1659.717" Z="53.10682" />
+        <Vendor Name="Ot-Temmdo" Entry="56693" Type="Repair" X="-253.8247" Y="-2732.106" Z="-0.3309415" />
+        <Vendor Name="Singegruff" Entry="56705" Type="Repair" X="1528.802" Y="-1806.385" Z="246.2" />
+        <Vendor Name="Lina Stover" Entry="1297" Type="Repair" X="-8791.818" Y="702.6749" Z="102.2838" />
+        <Vendor Name="Craftsman Hui" Entry="65937" Type="Food" X="-335.2951" Y="-1675.063" Z="46.24451" />
+        <Vendor Name="Steepmaster Puoba" Entry="61596" Type="Food" X="-260.2222" Y="-2612.076" Z="0.8282368" />
+        <Vendor Name="Eel-Charmer Shaoshu" Entry="59059" Type="Food" X="-249.8906" Y="-2602.931" Z="0.7122681" />
+        <Vendor Name="Yol" Entry="56778" Type="Food" X="1530.153" Y="-1780.046" Z="246.1999" />
+        <Vendor Name="Elaine Trias" Entry="483" Type="Food" X="-8845.677" Y="566.4925" Z="94.68758" />
+    </Vendors>
+
+    <Mailboxes>
+        <Mailbox X="-287.0746" Y="-1679.202" Z="53.10557" />
+        <Mailbox X="-227.1745" Y="-2681.647" Z="0.3575681" />
+        <Mailbox X="1606.841" Y="-1792.427" Z="260.2145" />
+    </Mailboxes>
+
+    <Blackspots>
+        <Blackspot X="1390.319" Y="-1184.589" Z="217.8278" Radius="12" />
+        <Blackspot X="1403.938" Y="-531.559" Z="366.0105" Radius="10" />
+        <Blackspot X="1307.75" Y="-453.7899" Z="367.2821" Radius="12" Height="20" />
+        <Blackspot X="1350.375" Y="-472.6996" Z="366.5119" Radius="12" Height="20" />
+        <Blackspot X="2537.001" Y="-1022.849" Z="390.18" Radius="15" Height="20" />
+        <Blackspot X="2517.818" Y="-1005.626" Z="386.3051" Radius="15" Height="20" />
+        <Blackspot X="2519.718" Y="-990.9752" Z="386.1655" Radius="15" Height="20" />
+        <Blackspot X="2531.454" Y="-960.8619" Z="385.721" Radius="15" Height="20" />
+        <Blackspot X="868.4053" Y="-2478.666" Z="176.2997" Radius="10" />
+        <!-- stupid book -->
+        <Blackspot X="837.7302" Y="-2516.781" Z="179.9017" Radius="10" />
+        <!-- stupid book -->
+        <Blackspot X="855.0164" Y="-2513.708" Z="192.5493" Radius="10" />
+        <Blackspot X="858.1673" Y="-2507.091" Z="192.5526" Radius="10" />
+        <Blackspot X="855.1337" Y="-2480.054" Z="192.5522" Radius="10" />
+
+        <!-- CJ: Remove these when possible...
+             For "Pages of History" (http://wowhead.com/quest=30002).
+             It appears that QBcore-based behaviors have issues when adding QB-specific blackspots.
+             So, the work around or now is to add them to the global blackspot list, until the bug
+             is repaired in QBcore-based behaviors.
+        -->
+        <Blackspot Name="Pages of History quest 1" X="821.0117" Y="-2478.628" Z="192.5526" Radius="5" />
+        <Blackspot Name="Pages of History quest 2" X="854.1977" Y="-2444.09" Z="192.5632" Radius="5" />
+        <Blackspot Name="Pages of History quest 3" X="821.7141" Y="-2491.898" Z="179.902" Radius="5" />
+        <Blackspot Name="Pages of History quest 4" X="837.5516" Y="-2517.023" Z="179.9022" Radius="5" />
+        <Blackspot Name="Pages of History quest 5" X="872.4144" Y="-2436.604" Z="192.5647" Radius="5" />
+        <Blackspot Name="Pages of History quest 6" X="829.2274" Y="-2424.292" Z="192.5599" Radius="5" />
+        <Blackspot Name="Pages of History quest 7" X="805.1687" Y="-2495.39" Z="192.5486" Radius="5" />
+        <Blackspot Name="Pages of History quest 8" X="848.749" Y="-2510.958" Z="192.5531" Radius="5" />
+    </Blackspots>
+
+    <AvoidMobs>
+        <Mob Name="Bamboo Python" Entry="59769" />
+        <Mob Name="Hozen Captive" Entry="59560" />
+        <Mob Name="Sha Tendrils" Entry="66688" />
+        <Mob Name="Sha Remnant" Entry="59434" />
+    </AvoidMobs>
+
+    <!-- Quest Overrides -->
+    <Quest Id="30069" Name="No Plan Survives Contact with the Enemy">
+        <Objective Type="KillMob" MobId="66282" KillCount="6">
+            <Hotspots>
+                <Hotspot X="-675.4255" Y="-1646.891" Z="18.91182" />
+                <Hotspot X="-823.8742" Y="-1598.272" Z="0.7318842" />
+                <Hotspot X="-733.913" Y="-1672.698" Z="16.43394" />
+                <Hotspot X="-690.8334" Y="-1750.94" Z="6.031426" />
+                <Hotspot X="-693.3765" Y="-1763.55" Z="1.93566" />
+                <Hotspot X="-725.7912" Y="-1731.022" Z="27.75842" />
+                <Hotspot X="-815.9385" Y="-1609.257" Z="0.9412893" />
+                <Hotspot X="-663.3096" Y="-1694.13" Z="17.46247" />
+                <Hotspot X="-716.6027" Y="-1677.946" Z="16.09574" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="KillMob" MobId="66290" KillCount="4">
+            <Hotspots>
+                <Hotspot X="-675.4255" Y="-1646.891" Z="18.91182" />
+                <Hotspot X="-823.8742" Y="-1598.272" Z="0.7318842" />
+                <Hotspot X="-733.913" Y="-1672.698" Z="16.43394" />
+                <Hotspot X="-690.8334" Y="-1750.94" Z="6.031426" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="31737" Name="The Cost of War">
+        <!-- Sha Harbinger -->
+        <Objective Type="KillMob" MobId="66424" KillCount="5">
+            <Hotspots>
+                <Hotspot X="-808.2877" Y="-1650.576" Z="3.782124" />
+                <Hotspot X="-713.0797" Y="-1652.488" Z="16.08381" />
+                <Hotspot X="-610.3044" Y="-1662.521" Z="12.58719" />
+            </Hotspots>
+        </Objective>
+        <!-- Sha Haunt -->
+        <Objective Type="KillMob" MobId="66423" KillCount="15">
+            <Hotspots>
+                <Hotspot X="-808.2877" Y="-1650.576" Z="3.782124" />
+                <Hotspot X="-713.0797" Y="-1652.488" Z="16.08381" />
+                <Hotspot X="-610.3044" Y="-1662.521" Z="12.58719" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="31738" Name="Pillaging Peons">
+        <Objective Type="KillMob" MobId="59979" KillCount="12">
+            <Hotspots>
+                <Hotspot X="-443.1266" Y="-1563.94" Z="28.27024" />
+                <Hotspot X="-485.9838" Y="-1506.734" Z="21.26701" />
+                <Hotspot X="-410.5862" Y="-1445.66" Z="22.45845" />
+                <Hotspot X="-406.4748" Y="-1515.459" Z="25.4865" />
+                <Hotspot X="-311.0386" Y="-1569.802" Z="43.34619" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="31740" Name="Koukou's Rampage">
+        <Objective Type="KillMob" MobId="66213" KillCount="1">
+            <Hotspots>
+                <Hotspot X="-533.3644" Y="-1296.528" Z="1.861906" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="31744" Name="Unfair Trade">
+        <Objective Type="KillMob" MobId="66367" KillCount="8">
+            <Hotspots>
+                <Hotspot X="-165.766" Y="-1543.964" Z="72.84054" />
+                <Hotspot X="-117.8475" Y="-1553.233" Z="72.84054" />
+                <Hotspot X="-168.1282" Y="-1522.953" Z="72.84054" />
+                <Hotspot X="-178.8496" Y="-1377.211" Z="72.58119" />
+                <Hotspot X="-169.5622" Y="-1331.086" Z="72.58119" />
+                <Hotspot X="-137.9102" Y="-1328.629" Z="72.58119" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="31741" Name="Twinspire Keep">
+        <Objective Type="KillMob" MobId="66267" KillCount="15">
+            <Hotspots>
+                <Hotspot X="-165.766" Y="-1543.964" Z="72.84054" />
+                <Hotspot X="-117.8475" Y="-1553.233" Z="72.84054" />
+                <Hotspot X="-168.1282" Y="-1522.953" Z="72.84054" />
+                <Hotspot X="-178.8496" Y="-1377.211" Z="72.58119" />
+                <Hotspot X="-169.5622" Y="-1331.086" Z="72.58119" />
+                <Hotspot X="-137.9102" Y="-1328.629" Z="72.58119" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="31742" Name="Fractured Forces">
+        <Objective Type="KillMob" MobId="66275" KillCount="1">
+            <Hotspots>
+                <Hotspot X="-83.42188" Y="-1467.51" Z="128.1369" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="KillMob" MobId="66274" KillCount="1">
+            <Hotspots>
+                <Hotspot X="-81.00426" Y="-1425.349" Z="128.1374" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="30070" Name="The Fall of Ga'trul">
+        <Objective Type="KillMob" MobId="66276" KillCount="1">
+            <Hotspots>
+                <Hotspot X="42.56945" Y="-1434.332" Z="140.8309" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29556" Name="Hozen Aren't Your Friends, Hozen Are Your Enemies">
+        <Objective Type="KillMob" MobId="66153" KillCount="14">
+            <Hotspots>
+                <Hotspot X="-468.1469" Y="-2092.103" Z="19.78709" />
+                <Hotspot X="-505.275" Y="-2051.688" Z="1.298151" />
+                <Hotspot X="-474.2479" Y="-2047.356" Z="3.514092" />
+                <Hotspot X="-505.9236" Y="-2000.464" Z="3.915246" />
+                <Hotspot X="-559.1266" Y="-1991.095" Z="2.541532" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29555" Name="The White Pawn">
+        <Objective Type="CollectItem" ItemId="89603" CollectCount="1">
+            <CollectFrom>
+                <Mob Id="66148" Name="Hozen Diver" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-577.1519" Y="-2056.166" Z="-9.964939" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29560" Name="Ancient Power">
+        <Objective Type="CollectItem" ItemId="74033" CollectCount="8">
+            <CollectFrom>
+                <GameObject Name="Hozen Skull" Id="209595" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-104.0896" Y="-2377.539" Z="33.28468" />
+                <Hotspot X="-59.47893" Y="-2386.805" Z="35.15871" />
+                <Hotspot X="-49.47919" Y="-2346.731" Z="33.41353" />
+                <Hotspot X="-95.41581" Y="-2341.604" Z="33.16256" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29558" Name="The Path of War">
+        <Objective Type="KillMob" MobId="55193" KillCount="12">
+            <Hotspots>
+                <Hotspot X="-104.0896" Y="-2377.539" Z="33.28468" />
+                <Hotspot X="-59.47893" Y="-2386.805" Z="35.15871" />
+                <Hotspot X="-49.47919" Y="-2346.731" Z="33.41353" />
+                <Hotspot X="-95.41581" Y="-2341.604" Z="33.16256" />
+                <Hotspot X="-130.5539" Y="-2322.705" Z="31.36749" />
+                <Hotspot X="-92.36929" Y="-2283.421" Z="30.05382" />
+                <Hotspot X="-129.7766" Y="-2244.881" Z="34.92298" />
+                <Hotspot X="-153.8823" Y="-2293.24" Z="31.70378" />
+                <Hotspot X="-192.1511" Y="-2321.948" Z="35.47582" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29759" Name="Kung Din">
+        <Objective Type="CollectItem" ItemId="79753" CollectCount="1">
+            <CollectFrom>
+                <Mob Id="59037" Name="Kung Din" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-77.57258" Y="-2363.105" Z="27.99089" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29562" Name="Jailbreak">
+        <Objective Type="KillMob" MobId="55195" KillCount="10">
+            <Hotspots>
+                <Hotspot X="-178.4373" Y="-2433.18" Z="24.08242" />
+                <Hotspot X="-145.8521" Y="-2464.193" Z="12.27715" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29885" Name="Road Rations">
+        <Objective Type="CollectItem" ItemId="73368" CollectCount="6">
+            <CollectFrom>
+                <Mob Id="59084" Name="Pearly Tortoise" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-304.9972" Y="-2565.298" Z="-1.941045" />
+                <Hotspot X="-240.6853" Y="-2534.842" Z="-1.923201" />
+                <Hotspot X="-216.3367" Y="-2579.618" Z="-1.934626" />
+                <Hotspot X="-168.9752" Y="-2532.119" Z="-2.184522" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29887" Name="The Elder's Instruments">
+        <Objective Type="CollectItem" ItemId="79807" CollectCount="1">
+            <CollectFrom>
+                <Mob Id="55110" Name="Slingtail Stickypaw" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-426.8367" Y="-3139.069" Z="31.31693" />
+                <Hotspot X="-439.5449" Y="-3203.679" Z="37.38247" />
+                <Hotspot X="-428.9576" Y="-3246.795" Z="31.57241" />
+                <Hotspot X="-435.1849" Y="-3281.656" Z="31.13518" />
+                <Hotspot X="-402.3202" Y="-3287.6" Z="33.30472" />
+                <Hotspot X="-391.5354" Y="-3225.823" Z="32.51514" />
+                <Hotspot X="-371.6567" Y="-3168.389" Z="36.29922" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="79808" CollectCount="1">
+            <CollectFrom>
+                <Mob Id="55110" Name="Slingtail Stickypaw" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-426.8367" Y="-3139.069" Z="31.31693" />
+                <Hotspot X="-439.5449" Y="-3203.679" Z="37.38247" />
+                <Hotspot X="-428.9576" Y="-3246.795" Z="31.57241" />
+                <Hotspot X="-435.1849" Y="-3281.656" Z="31.13518" />
+                <Hotspot X="-402.3202" Y="-3287.6" Z="33.30472" />
+                <Hotspot X="-391.5354" Y="-3225.823" Z="32.51514" />
+                <Hotspot X="-371.6567" Y="-3168.389" Z="36.29922" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="79809" CollectCount="1">
+            <CollectFrom>
+                <Mob Id="55110" Name="Slingtail Stickypaw" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-426.8367" Y="-3139.069" Z="31.31693" />
+                <Hotspot X="-439.5449" Y="-3203.679" Z="37.38247" />
+                <Hotspot X="-428.9576" Y="-3246.795" Z="31.57241" />
+                <Hotspot X="-435.1849" Y="-3281.656" Z="31.13518" />
+                <Hotspot X="-402.3202" Y="-3287.6" Z="33.30472" />
+                <Hotspot X="-391.5354" Y="-3225.823" Z="32.51514" />
+                <Hotspot X="-371.6567" Y="-3168.389" Z="36.29922" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="79810" CollectCount="1">
+            <CollectFrom>
+                <Mob Id="55110" Name="Slingtail Stickypaw" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-426.8367" Y="-3139.069" Z="31.31693" />
+                <Hotspot X="-439.5449" Y="-3203.679" Z="37.38247" />
+                <Hotspot X="-428.9576" Y="-3246.795" Z="31.57241" />
+                <Hotspot X="-435.1849" Y="-3281.656" Z="31.13518" />
+                <Hotspot X="-402.3202" Y="-3287.6" Z="33.30472" />
+                <Hotspot X="-391.5354" Y="-3225.823" Z="32.51514" />
+                <Hotspot X="-371.6567" Y="-3168.389" Z="36.29922" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29906" Name="Carp Diem">
+        <Objective Type="KillMob" MobId="54868" KillCount="1">
+            <Hotspots>
+                <Hotspot X="-73.82058" Y="-2363.889" Z="27.99091" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29905" Name="Let Them Burn">
+        <Objective Type="KillMob" MobId="55461" KillCount="15">
+            <Hotspots>
+                <Hotspot X="-121.5947" Y="-2419.226" Z="26.77358" />
+                <Hotspot X="-171.6617" Y="-2393.641" Z="31.12641" />
+                <Hotspot X="-155.9776" Y="-2357.656" Z="32.64159" />
+                <Hotspot X="-181.8563" Y="-2337.473" Z="34.46997" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29891" Name="Potency">
+        <Objective Type="KillMob" MobId="56304" KillCount="8">
+            <Hotspots>
+                <Hotspot X="-654.2847" Y="-2435.005" Z="26.4146" />
+                <Hotspot X="-654.2847" Y="-2435.005" Z="26.4146" />
+                <Hotspot X="-689.2635" Y="-2532.481" Z="26.06712" />
+                <Hotspot X="-675.3683" Y="-2611.612" Z="19.3764" />
+                <Hotspot X="-619.6975" Y="-2683.45" Z="9.990462" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="76129" CollectCount="1">
+            <CollectFrom>
+                <Mob Id="56310" Name="Mist Horror" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-654.2847" Y="-2435.005" Z="26.4146" />
+                <Hotspot X="-654.2847" Y="-2435.005" Z="26.4146" />
+                <Hotspot X="-689.2635" Y="-2532.481" Z="26.06712" />
+                <Hotspot X="-675.3683" Y="-2611.612" Z="19.3764" />
+                <Hotspot X="-619.6975" Y="-2683.45" Z="9.990462" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29892" Name="Body">
+        <Objective Type="CollectItem" ItemId="76107" CollectCount="5">
+            <CollectFrom>
+                <Mob Id="54558" Name="Bog Crocolisk" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-533.4677" Y="-2697.265" Z="0.890718" />
+                <Hotspot X="-485.3233" Y="-2758.262" Z="3.865064" />
+                <Hotspot X="-516.2355" Y="-2849.414" Z="2.824336" />
+                <Hotspot X="-506.7089" Y="-2904.206" Z="-1.313707" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29900" Name="An Ancient Legend">
+        <Objective Type="KillMob" MobId="56441" KillCount="1">
+            <Hotspots>
+                <Hotspot X="-83.3475" Y="-3210.947" Z="81.38386" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29899" Name="Rest in Peace">
+        <Objective Type="KillMob" MobId="56444" KillCount="6">
+            <Hotspots>
+                <Hotspot X="-148.7483" Y="-3242.795" Z="65.39949" />
+                <Hotspot X="-141.8104" Y="-3289.149" Z="75.25442" />
+                <Hotspot X="-208.1416" Y="-3229.102" Z="57.16092" />
+                <Hotspot X="-171.6595" Y="-3196.155" Z="51.24582" />
+                <Hotspot X="-165.5485" Y="-3156.458" Z="47.26645" />
+                <Hotspot X="-139.3324" Y="-3139.93" Z="42.14346" />
+                <Hotspot X="-168.4885" Y="-3089.264" Z="35.3804" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29866" Name="The Threads that Stick">
+        <Objective Type="CollectItem" ItemId="75023" CollectCount="7">
+            <CollectFrom>
+                <GameObject Name="Silk Patch" Id="209951" />
+                <GameObject Name="Silk Patch" Id="209833" />
+                <GameObject Name="Silk Patch" Id="209826" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="1368.275" Y="-1487.718" Z="272.6338" />
+                <Hotspot X="1270.06" Y="-1513.889" Z="248.2551" />
+                <Hotspot X="1285.718" Y="-1620.366" Z="230.9354" />
+                <Hotspot X="1373.419" Y="-1680.365" Z="220.4242" />
+                <Hotspot X="1453.32" Y="-1666.312" Z="236.9703" />
+                <Hotspot X="1318.763" Y="-1575.857" Z="246.2861" />
+                <Hotspot X="1417.934" Y="-1587.774" Z="266.3169" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29865" Name="The Silkwood Road">
+        <Objective Type="KillMob" MobId="56070" KillCount="8">
+            <Hotspots>
+                <Hotspot X="1336.648" Y="-1665.314" Z="220.0438" />
+                <Hotspot X="1361.466" Y="-1599.66" Z="250.7068" />
+                <Hotspot X="1384.462" Y="-1550.279" Z="269.9716" />
+                <Hotspot X="1400.778" Y="-1500.676" Z="282.0865" />
+                <Hotspot X="1335.788" Y="-1475.473" Z="264.9185" />
+                <Hotspot X="1261.8" Y="-1466.167" Z="252.7963" />
+                <Hotspot X="1243.588" Y="-1516.693" Z="244.8603" />
+                <Hotspot X="1274.096" Y="-1574.059" Z="236.3909" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29717" Name="Down Kitty!">
+        <Objective Type="KillMob" MobId="55236" KillCount="8">
+            <Hotspots>
+                <Hotspot X="1592.712" Y="-1273.666" Z="243.8448" />
+                <Hotspot X="1636.948" Y="-1329.134" Z="243.2588" />
+                <Hotspot X="1712.366" Y="-1313.301" Z="244.9406" />
+                <Hotspot X="1680.894" Y="-1262.183" Z="249.6182" />
+                <Hotspot X="1620.433" Y="-1235.604" Z="244.9158" />
+                <Hotspot X="1564.323" Y="-1270.363" Z="242.4313" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29881" Name="The Perfect Color">
+        <Objective Type="CollectItem" ItemId="75219" CollectCount="8">
+            <CollectFrom>
+                <GameObject Name="Freshly Fallen Petals" Id="209836" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="1647.195" Y="-2324.054" Z="159.0822" />
+                <Hotspot X="1560.852" Y="-2186.425" Z="159.382" />
+                <Hotspot X="1590.736" Y="-2279.066" Z="153.6632" />
+                <Hotspot X="1685.029" Y="-2404.965" Z="155.7498" />
+                <Hotspot X="1683.315" Y="-2475.101" Z="152.5546" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29882" Name="Quill of Stingers">
+        <Objective Type="CollectItem" ItemId="75221" CollectCount="6">
+            <CollectFrom>
+                <Mob Id="56201" Name="Orchard Wasp" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="1647.195" Y="-2324.054" Z="159.0822" />
+                <Hotspot X="1560.852" Y="-2186.425" Z="159.382" />
+                <Hotspot X="1590.736" Y="-2279.066" Z="153.6632" />
+                <Hotspot X="1685.029" Y="-2404.965" Z="155.7498" />
+                <Hotspot X="1683.315" Y="-2475.101" Z="152.5546" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29928" Name="I Have No Jade And I Must Scream">
+        <Objective Type="CollectItem" ItemId="76209" CollectCount="15">
+            <CollectFrom>
+                <Mob Id="56349" Name="Puckish Sprite" />
+                <GameObject Name="Chunk of Jade" Id="209863" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="2231.843" Y="-1960.569" Z="223.3759" />
+                <Hotspot X="2175.657" Y="-1902.021" Z="219.0452" />
+                <Hotspot X="2125.428" Y="-1939.749" Z="217.9374" />
+                <Hotspot X="2165.321" Y="-1983.562" Z="223.81" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29745" Name="The Sprites' Plight">
+        <Objective Type="KillMob" MobId="55288" KillCount="10">
+            <Hotspots>
+                <Hotspot X="2739.438" Y="-2013.769" Z="197.9072" />
+                <Hotspot X="2660.171" Y="-1979.355" Z="212.721" />
+                <Hotspot X="2603.401" Y="-1958.222" Z="219.1385" />
+                <Hotspot X="2526.277" Y="-1956.961" Z="219.1596" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29747" Name="Break the Cycle">
+        <Objective Type="KillMob" MobId="55279" KillCount="8">
+            <Hotspots>
+                <Hotspot X="2710.842" Y="-1933.559" Z="214.7956" />
+                <Hotspot X="2768.981" Y="-1929.216" Z="214.2207" />
+                <Hotspot X="2813.944" Y="-1938.779" Z="213.3031" />
+                <Hotspot X="2872.224" Y="-1931.702" Z="212.6731" />
+                <Hotspot X="2888.313" Y="-1841.142" Z="233.939" />
+                <Hotspot X="2885.9" Y="-1795.376" Z="233.143" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29749" Name="An Urgent Plea">
+        <Objective Type="CollectItem" ItemId="74258" CollectCount="1">
+            <CollectFrom>
+                <GameObject Name="Staff of Pei-Zei" Id="209629" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="2956.156" Y="-1637.516" Z="252.8332" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29751" Name="Ritual Artifacts">
+        <Objective Type="CollectItem" ItemId="74762" CollectCount="1">
+            <CollectFrom>
+                <GameObject Name="Jade Cong" Id="209699" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="2920.738" Y="-1527.284" Z="255.8835" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="74761" CollectCount="1">
+            <CollectFrom>
+                <GameObject Name="Pungent Ritual Candle" Id="209701" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="2855.894" Y="-1501.322" Z="273.0155" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="74760" CollectCount="1">
+            <CollectFrom>
+                <GameObject Name="Chipped Ritual Bowl" Id="209700" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="2985.999" Y="-1454.534" Z="244.9068" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29750" Name="Vessels of the Spirit">
+        <Objective Type="CollectItem" ItemId="74763" CollectCount="8">
+            <CollectFrom>
+                <Mob Id="55291" Name="Shan'ze Spiritclaw" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="2963.413" Y="-1452.859" Z="244.1403" />
+                <Hotspot X="2972.904" Y="-1399.264" Z="244.1403" />
+                <Hotspot X="2969.448" Y="-1361.619" Z="246.2379" />
+                <Hotspot X="2909.332" Y="-1514.186" Z="255.8839" />
+                <Hotspot X="2856.351" Y="-1475.471" Z="275.5011" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29756" Name="A Humble Offering">
+        <Objective Type="CollectItem" ItemId="75214" CollectCount="10">
+            <CollectFrom>
+                <GameObject Name="Tidemist Cap" Id="209825" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="3117.439" Y="-1382.975" Z="207.7039" />
+                <Hotspot X="3086.218" Y="-1330.28" Z="207.1931" />
+                <Hotspot X="3075.495" Y="-1264.66" Z="198.8451" />
+                <Hotspot X="3166.342" Y="-1242.73" Z="201.1071" />
+                <Hotspot X="3167.155" Y="-1299.572" Z="203.5085" />
+                <Hotspot X="3162.051" Y="-1390.136" Z="210.0857" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29755" Name="Pei-Back">
+        <Objective Type="KillMob" MobId="56596" KillCount="1">
+            <Hotspots>
+                <Hotspot X="3174.949" Y="-1526.921" Z="200.2972" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29619" Name="A Courteous Guest">
+        <Objective Type="CollectItem" ItemId="72589" CollectCount="8">
+            <CollectFrom>
+                <GameObject Name="Ripe Orange" Id="209436" />
+                <Mob Id="54930" Name="Greenwood Thief" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="2393.848" Y="-1743.052" Z="373.6489" />
+                <Hotspot X="2333.073" Y="-1707.295" Z="325.4108" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29627" Name="A Proper Weapon">
+        <Objective Type="CollectItem" ItemId="72926" CollectCount="6">
+            <CollectFrom>
+                <GameObject Name="Rattan Switch" Id="209461" />
+                <GameObject Name="Rattan Switch" Id="209462" />
+                <GameObject Name="Rattan Switch" Id="209463" />
+                <GameObject Name="Rattan Switch" Id="209464" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="2502.554" Y="-1451.231" Z="388.1611" />
+                <Hotspot X="2440.42" Y="-1504.428" Z="392.4036" />
+                <Hotspot X="2482.74" Y="-1505.414" Z="389.1071" />
+                <Hotspot X="2545.373" Y="-1500.24" Z="396.7703" />
+                <Hotspot X="2563.949" Y="-1437.936" Z="406.9931" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29630" Name="And a Heavy Fist">
+        <Objective Type="KillMob" MobId="54987" KillCount="10">
+            <Hotspots>
+                <Hotspot X="2790.593" Y="-1220.896" Z="341.5711" />
+                <Hotspot X="2686.374" Y="-1155.66" Z="354.6712" />
+                <Hotspot X="2624.5" Y="-1198.725" Z="373.6781" />
+                <Hotspot X="2690.673" Y="-1241.363" Z="375.3259" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29629" Name="A Steady Hand">
+        <Objective Type="CollectItem" ItemId="73193" CollectCount="80">
+            <CollectFrom>
+                <GameObject Name="Blushleaf Cluster" Id="209550" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="2579.208" Y="-1051.186" Z="360.9216" />
+                <Hotspot X="2574.646" Y="-989.2601" Z="361.86" />
+                <Hotspot X="2558.058" Y="-944.2395" Z="366.3159" />
+                <Hotspot X="2622.862" Y="-989.6108" Z="353.845" />
+                <Hotspot X="2664.051" Y="-958.7451" Z="345.6852" />
+                <Hotspot X="2706.771" Y="-925.1069" Z="330.3941" />
+                <Hotspot X="2691.254" Y="-962.2443" Z="341.1428" />
+                <Hotspot X="2660.209" Y="-1005.319" Z="351.6455" />
+                <Hotspot X="2668.161" Y="-1064.728" Z="348.4767" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29631" Name="Burning Bright">
+        <Objective Type="KillMob" MobId="54988" KillCount="6">
+            <Hotspots>
+                <Hotspot X="2579.208" Y="-1051.186" Z="360.9216" />
+                <Hotspot X="2574.646" Y="-989.2601" Z="361.86" />
+                <Hotspot X="2558.058" Y="-944.2395" Z="366.3159" />
+                <Hotspot X="2622.862" Y="-989.6108" Z="353.845" />
+                <Hotspot X="2664.051" Y="-958.7451" Z="345.6852" />
+                <Hotspot X="2706.771" Y="-925.1069" Z="330.3941" />
+                <Hotspot X="2691.254" Y="-962.2443" Z="341.1428" />
+                <Hotspot X="2660.209" Y="-1005.319" Z="351.6455" />
+                <Hotspot X="2668.161" Y="-1064.728" Z="348.4767" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29926" Name="Calamity Jade">
+        <Objective Type="KillMob" MobId="56404" KillCount="6">
+            <Hotspots>
+                <Hotspot X="2334.537" Y="-1764.31" Z="185.0424" />
+                <Hotspot X="2271.888" Y="-1698.238" Z="186.2353" />
+                <Hotspot X="2219.628" Y="-1655.71" Z="185.9755" />
+                <Hotspot X="2246.192" Y="-1612.085" Z="186.1667" />
+                <Hotspot X="2297.208" Y="-1622.19" Z="180.3879" />
+                <Hotspot X="2347.103" Y="-1644.108" Z="184.6198" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="KillMob" MobId="56401" KillCount="12">
+            <Hotspots>
+                <Hotspot X="2334.537" Y="-1764.31" Z="185.0424" />
+                <Hotspot X="2271.888" Y="-1698.238" Z="186.2353" />
+                <Hotspot X="2219.628" Y="-1655.71" Z="185.9755" />
+                <Hotspot X="2246.192" Y="-1612.085" Z="186.1667" />
+                <Hotspot X="2297.208" Y="-1622.19" Z="180.3879" />
+                <Hotspot X="2347.103" Y="-1644.108" Z="184.6198" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29580" Name="Orchard-Supplied Hardware">
+        <Objective Type="CollectItem" ItemId="72133" CollectCount="6">
+            <CollectFrom>
+                <GameObject Name="Orchard Tool" Id="209344" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="208.5475" Y="-1573.382" Z="84.22189" />
+                <Hotspot X="241.3224" Y="-1631.558" Z="73.7492" />
+                <Hotspot X="205.4009" Y="-1658.769" Z="73.23776" />
+                <Hotspot X="150.3032" Y="-1655.377" Z="76.09695" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29578" Name="Defiance">
+        <Objective Type="KillMob" MobId="54703" KillCount="8">
+            <Hotspots>
+                <Hotspot X="208.5475" Y="-1573.382" Z="84.22189" />
+                <Hotspot X="241.3224" Y="-1631.558" Z="73.7492" />
+                <Hotspot X="205.4009" Y="-1658.769" Z="73.23776" />
+                <Hotspot X="150.3032" Y="-1655.377" Z="76.09695" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="KillMob" MobId="54702" KillCount="8">
+            <Hotspots>
+                <Hotspot X="208.5475" Y="-1573.382" Z="84.22189" />
+                <Hotspot X="241.3224" Y="-1631.558" Z="73.7492" />
+                <Hotspot X="205.4009" Y="-1658.769" Z="73.23776" />
+                <Hotspot X="150.3032" Y="-1655.377" Z="76.09695" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29670" Name="Maul Gormal">
+        <Objective Type="KillMob" MobId="55016" KillCount="1">
+            <Hotspots>
+                <Hotspot X="106.6267" Y="-1187.629" Z="4.947461" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="30001" Name="Moth-Ridden">
+        <Objective Type="KillMob" MobId="57232" KillCount="8">
+            <Hotspots>
+                <Hotspot X="857.2562" Y="-2488.644" Z="176.3019" />
+                <Hotspot X="818.4035" Y="-2475.059" Z="176.3028" />
+                <Hotspot X="851.3853" Y="-2444.993" Z="176.3208" />
+                <Hotspot X="850.8632" Y="-2507.412" Z="192.5512" />
+                <Hotspot X="811.1708" Y="-2491.723" Z="192.5511" />
+                <Hotspot X="849.9635" Y="-2435.728" Z="192.5598" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="29997" Name="The Scryer's Dilemma">
+        <Objective Type="CollectItem" ItemId="76725" CollectCount="1">
+            <CollectFrom>
+                <Mob Id="56820" Name="Water Fiend" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="1047.59" Y="-2560.368" Z="174.1573" />
+                <Hotspot X="1057.242" Y="-2529.011" Z="170.9273" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="30565" Name="An Unexpected Advantage">
+        <Objective Type="CollectItem" ItemId="80176" CollectCount="4">
+            <CollectFrom>
+                <Mob Id="59554" Name="Slingtail Ambusher" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-5.879415" Y="-3021.516" Z="43.36333" />
+                <Hotspot X="46.66657" Y="-3038.66" Z="48.17011" />
+                <Hotspot X="69.48777" Y="-3008.414" Z="51.63977" />
+                <Hotspot X="60.81417" Y="-2959.896" Z="50.33504" />
+                <Hotspot X="69.11539" Y="-2915.096" Z="49.57243" />
+                <Hotspot X="10.12724" Y="-2937.876" Z="32.23895" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="CollectItem" ItemId="80177" CollectCount="4">
+            <CollectFrom>
+                <Mob Id="59554" Name="Slingtail Ambusher" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-5.879415" Y="-3021.516" Z="43.36333" />
+                <Hotspot X="46.66657" Y="-3038.66" Z="48.17011" />
+                <Hotspot X="69.48777" Y="-3008.414" Z="51.63977" />
+                <Hotspot X="60.81417" Y="-2959.896" Z="50.33504" />
+                <Hotspot X="69.11539" Y="-2915.096" Z="49.57243" />
+                <Hotspot X="10.12724" Y="-2937.876" Z="32.23895" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="30500" Name="Residual Fallout">
+        <Objective Type="KillMob" MobId="59417" KillCount="10">
+            <Hotspots>
+                <Hotspot X="748.4898" Y="-1881.826" Z="59.75888" />
+                <Hotspot X="745.1878" Y="-1835.218" Z="58.31759" />
+                <Hotspot X="770.4871" Y="-1793.746" Z="56.52408" />
+                <Hotspot X="816.512" Y="-1767.527" Z="56.73822" />
+                <Hotspot X="866.2975" Y="-1771.503" Z="60.84173" />
+                <Hotspot X="897.3878" Y="-1811.99" Z="63.09089" />
+                <Hotspot X="903.3849" Y="-1862.239" Z="60.12987" />
+                <Hotspot X="878.2028" Y="-1913.409" Z="62.56068" />
+                <Hotspot X="842.6854" Y="-1955.636" Z="61.42988" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="30502" Name="Jaded Heart">
+        <Objective Type="CollectItem" ItemId="80074" CollectCount="6">
+            <CollectFrom>
+                <GameObject Name="Celestial Jade" Id="210921" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="776.3383" Y="-1951.615" Z="56.05598" />
+                <Hotspot X="750.0427" Y="-1818.586" Z="57.29971" />
+                <Hotspot X="791.8642" Y="-1791.872" Z="57.95396" />
+                <Hotspot X="849.9249" Y="-1773.382" Z="59.98481" />
+                <Hotspot X="903.2985" Y="-1838.898" Z="62.19221" />
+                <Hotspot X="920.4902" Y="-1872.877" Z="55.91155" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <QuestOrder IgnoreCheckPoints="False">
+        <!-- CHECKPOINT BLOCK START: This code needs to be replicated after every checkpoint.
+            If you modify something in this block, don't forget to update the copy of this
+            block after each checkpoint, and the at the start of the <QuestOrder>, also.
+            -->
+        <While Condition="Me.IsHorde">
+            <CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="You must be Alliance to run this profile!" />
+        </While>
+
+        <If Condition="!HasQuest(29547) &amp;&amp; !IsQuestCompleted(29547)">
+            <!-- SW Auto Pickup Quest -->
+            <CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="Go to Stormwind then press start" />
+        </If>
+
+        <CustomBehavior File="Misc\ProfileCompatibilityInfo"
+            AllowBrokenAddOns="true" AllowBrokenPlugIns="true" />
+        <CustomBehavior File="UserSettings" GroundMountFarmingMode="False" KillBetweenHotspots="False" />
+
+        <If Condition="Me.MapId == 0">
+            <If Condition="HasQuest(29547) &amp;&amp; !IsQuestCompleted(29547)">
+                <CustomBehavior File="FlyTo" X="-8446.922" Y="337.8389" Z="138.5415" />
+                <CustomBehavior File="ForcedDismount" />
+                <RunTo X="-8430.52" Y="316.8465" Z="145.4026" />
+                <CustomBehavior File="WaitTimer" WaitTime="5000" />
+                <CustomBehavior File="Misc\RunLua" Lua="StopCinematic()" WaitTime="1000" />
+                <CustomBehavior File="WaitTimer" QuestId="29547" WaitTime="60000" />
+            </If>
+            <TurnIn QuestName="The King's Command" QuestId="29547" TurnInName="Rell Nightwind" TurnInId="55789" X="-8459.021" Y="353.9254" Z="135.539" />
+            <PickUp QuestName="The Mission" QuestId="29548" GiverName="Rell Nightwind" GiverId="55789" X="-8459.021" Y="353.9254" Z="135.539" />
+            <If Condition="HasQuest(29548) &amp;&amp; !IsQuestCompleted(29548)">
+                <CustomBehavior File="FlyTo" X="-7879.679" Y="1276.953" Z="358.4807" />
+                <CustomBehavior File="ForcedDismount" />
+                <CustomBehavior File="InteractWith" QuestId="29548" MobId="66292" NonCompeteDistance="0" Range="5.5" GossipOptions="1" X="-7879.8" Y="1279.516" Z="358.4773" />
+                <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for  {TimeRemaining}" />
+                <CustomBehavior File="Misc\RunLua" Lua="StopCinematic()" WaitTime="1000" />
+                <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for  {TimeRemaining}" />
+                <CustomBehavior File="WaitTimer" WaitTime="100000" />
+            </If>
+        </If>
+        <!-- CHECKPOINT BLOCK END -->
+
+        <CustomBehavior File="Message" Text="Compiling Jade Forest (Alliance) Quests" LogColor="Green" />
+        <TurnIn QuestName="The Mission" QuestId="29548" TurnInName="Sky Admiral Rogers" TurnInId="66292" X="-664.6719" Y="-1483.295" Z="130.1999" />
+        <PickUp QuestName="Unleash Hell" QuestId="31732" GiverName="Sky Admiral Rogers" GiverId="66292" X="-664.6719" Y="-1483.295" Z="130.1999" />
+        <If Condition="HasQuest(31732) &amp;&amp; !IsQuestCompleted(31732)">
+            <If Condition="!Me.IsOnTransport">
+                <CustomBehavior File="MountVehOnly" VehicleMountId="66297" />
+                <CustomBehavior File="WaitTimer" WaitTime="12000" />
+            </If>
+            <!-- N.B this logic needs optimizing, NoControl Vehicle does not aim and is not using secondary ability. -->
+            <CustomBehavior File="NoControlVehicle" QuestId="31732" VehicleMountId="66297"
+                                                TargetId="66398" TargetId2="66397" TargetId3="66400" TargetId4="66401"
+                                                AttackButton="2" AttackButton2="1"/>
+            <CustomBehavior File="WaitTimer" WaitTime="10000" />
+        </If>
+        <TurnIn QuestName="Unleash Hell" QuestId="31732" TurnInName="Sky Admiral Rogers" TurnInId="66292" X="-664.6719" Y="-1483.295" Z="130.1999" />
+        <PickUp QuestName="Touching Ground" QuestId="31733" GiverName="Sky Admiral Rogers" GiverId="66292" X="-664.6719" Y="-1483.295" Z="130.1999" />
+        <If Condition="HasQuest(31733) &amp;&amp; !IsQuestCompleted(31733)">
+            <CustomBehavior File="InteractWith" MobId="215682" X="-667.0604" Y="-1500.546" Z="131.3873" />
+            <CustomBehavior File="WaitTimer" WaitTime="27000" />
+        </If>
+        <TurnIn QuestName="Touching Ground" QuestId="31733" TurnInName="Sully &quot;The Pickle&quot; McLeary" TurnInId="54616" X="-568.132" Y="-1593.469" Z="14.33411" />
+        <PickUp QuestName="No Plan Survives Contact with the Enemy" QuestId="30069" GiverName="Sully &quot;The Pickle&quot; McLeary" GiverId="54616" X="-568.132" Y="-1593.469" Z="14.33411" />
+        <PickUp QuestName="Welcome Wagons" QuestId="31734" GiverName="Sully &quot;The Pickle&quot; McLeary" GiverId="54616" X="-568.132" Y="-1593.469" Z="14.33411" />
+        <!-- N.B. This needs testing.
+            <CustomBehavior File="InteractWith" QuestId="31734" MobId="66339" InteractByUsingItemId="89612"
+                                            WaitTime="3000" CollectionDistance="1000" Range="5" >
+                <HuntingGrounds WaypointVisitStrategy="Random" >
+                    <Hotspot X="-673.4705" Y="-1516.729" Z="2.358646" />
+                    <Hotspot X="-734.7552" Y="-1616.88" Z="21.59753" />
+                    <Hotspot X="-698.8055" Y="-1629.752" Z="20.75871" />
+                    <Hotspot X="-749.1667" Y="-1647.58" Z="9.27113" />
+                    <Hotspot X="-814.5504" Y="-1606.54" Z="0.7552975" />
+                    <Hotspot X="-721.0191" Y="-1677.788" Z="16.15712" />
+                    <Hotspot X="-787.5087" Y="-1696.616" Z="10.87958" />
+                    <Hotspot X="-724.6893" Y="-1735.625" Z="27.94073" />
+                    <Hotspot X="-697.566" Y="-1765.017" Z="1.307348" />
+                    <Hotspot X="-661.0452" Y="-1697.576" Z="18.07457" />
+                </HuntingGrounds>
+            </CustomBehavior>
+            -->
+        <While Condition="HasQuest(31734) &amp;&amp; !IsQuestCompleted(31734)">
+            <CustomBehavior File="InteractWith" QuestId="31734" MobId="66339" InteractByUsingItemId="89612"
+                                            NumOfTimes="5" WaitTime="3000" CollectionDistance="1000" Range="5">
+                <HuntingGrounds>
+                    <Hotspot X="-693.3765" Y="-1763.55" Z="1.93566" />
+                    <Hotspot X="-725.7912" Y="-1731.022" Z="27.75842" />
+                    <Hotspot X="-815.9385" Y="-1609.257" Z="0.9412893" />
+                    <Hotspot X="-663.3096" Y="-1694.13" Z="17.46247" />
+                    <Hotspot X="-716.6027" Y="-1677.946" Z="16.09574" />
+                </HuntingGrounds>
+            </CustomBehavior>
+        </While>
+        <Objective QuestName="No Plan Survives Contact with the Enemy" QuestId="30069" Type="KillMob" MobId="66290" KillCount="4" />
+        <Objective QuestName="No Plan Survives Contact with the Enemy" QuestId="30069" Type="KillMob" MobId="66282" KillCount="6" />
+        <TurnIn QuestName="No Plan Survives Contact with the Enemy" QuestId="30069" TurnInName="Rell Nightwind" TurnInId="54617" X="-771.7859" Y="-1705.174" Z="10.31058" />
+        <TurnIn QuestName="Welcome Wagons" QuestId="31734" TurnInName="Rell Nightwind" TurnInId="54617" X="-768.2344" Y="-1702.464" Z="13.34221" />
+        <PickUp QuestName="The Right Tool For The Job" QuestId="31735" GiverName="Rell Nightwind" GiverId="54617" X="-768.2344" Y="-1702.464" Z="13.34221" />
+        <If Condition="HasQuest(31735) &amp;&amp; !IsQuestCompleted(31735)">
+            <!-- Break down the 1st barrier -->
+            <While Condition="!IsObjectiveComplete(1, 31735)">
+                <RunTo X="-779.6884" Y="-1732.613" Z="9.203844" />
+                <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89624)" WaitTime="1000" />
+                <CustomBehavior File="WaitTimer" WaitTime="2000" />
+            </While>
+            <!-- Break down the 2nd barrier -->
+            <While Condition="!IsObjectiveComplete(2, 31735)">
+                <RunTo X="-808.2636" Y="-1756.415" Z="9.183688" />
+                <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89624)" WaitTime="1000" />
+                <CustomBehavior File="WaitTimer" WaitTime="3000" />
+            </While>
+            <!-- HMm, not sure why this is here.. don't think it's needed. will remove on next run. -->
+            <CustomBehavior File="InteractWith" QuestId="31735" MobId="66396" X="-833.0087" Y="-1797.382" Z="4.735891" />
+            <CustomBehavior File="WaitTimer" WaitTime="15000" />
+            <RunTo X="-829.8229" Y="-1793.191" Z="5.146749" />
+        </If>
+        <If Condition="HasQuest(31735) &amp;&amp; IsQuestCompleted(31735)">
+            <RunTo X="-829.8229" Y="-1793.191" Z="5.146749" />
+            <TurnIn QuestName="The Right Tool For The Job" QuestId="31735" TurnInName="Rell Nightwind" TurnInId="54617" X="-829.8229" Y="-1793.191" Z="5.146749" />
+            <CustomBehavior File="WaitTimer" WaitTime="65000" />
+        </If>
+        <PickUp QuestName="Envoy of the Alliance" QuestId="31736" GiverName="Rell Nightwind" GiverId="54617" X="-835.3004" Y="-1792.729" Z="5.327979" />
+        <PickUp QuestName="The Cost of War" QuestId="31737" GiverName="Rell Nightwind" GiverId="54617" X="-835.3004" Y="-1792.729" Z="5.327979" />
+        <Objective QuestName="The Cost of War" QuestId="31737" Type="KillMob" MobId="66423" KillCount="15" />
+        <Objective QuestName="The Cost of War" QuestId="31737" Type="KillMob" MobId="66424" KillCount="5" />
+        <If Condition="HasQuest(31737) &amp;&amp; IsQuestCompleted(31737)">
+            <RunTo X="-455.3803" Y="-1632.413" Z="10.04305" />
+            <RunTo X="-292.5606" Y="-1776.679" Z="61.59298" />
+            <CustomBehavior File="ForcedDismount" />
+        </If>
+        <TurnIn QuestName="The Cost of War" QuestId="31737" TurnInName="Taran Zhu" TurnInId="66296" X="-294.7951" Y="-1777.75" Z="61.59273" />
+        <TurnIn QuestName="Envoy of the Alliance" QuestId="31736" TurnInName="Sunke Khang" TurnInId="65910" X="-291.1892" Y="-1778.066" Z="61.67279" />
+        <PickUp QuestName="Pillaging Peons" QuestId="31738" GiverName="Sunke Khang" GiverId="65910" X="-291.1892" Y="-1778.066" Z="61.67279" />
+        <PickUp QuestName="Priorities!" QuestId="31739" GiverName="Teng Applebloom" GiverId="64596" X="-289.29" Y="-1775.58" Z="61.8724" />
+        <PickUp QuestName="Critical Condition" QuestId="29552" GiverName="Mishka" GiverId="54614" X="-283.9236" Y="-1769.379" Z="61.63127" />
+
+        <While Condition="HasQuest(31739) &amp;&amp; !IsQuestCompleted(31739)">
+			<CustomBehavior File="UserSettings" UseMount="false" />
+            <!--<If Condition="(!Me.HasAura(130229))">  Summon Teng Thundermalt DESPAWNS IF YOU MOUNT UP -->
+            <If Condition="!(ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; u.Entry == 66209 &amp;&amp; u.Distance &lt;= 20))">
+                <CustomBehavior File="InteractWith" MobId="64596" GossipOptions="2" X="-289.2899" Y="-1775.578" Z="61.87213" />
+            </If>
+            <CustomBehavior File="InteractWith" QuestId="31739" MobId="215133"
+                                                PreInteractMountStrategy="CancelShapeshift" CollectionDistance="1000" >
+                <HuntingGrounds >
+                    <Hotspot X="-443.1266" Y="-1563.94" Z="28.27024" />
+                    <Hotspot X="-485.9838" Y="-1506.734" Z="21.26701" />
+                    <Hotspot X="-410.5862" Y="-1445.66" Z="22.45845" />
+                    <Hotspot X="-406.4748" Y="-1515.459" Z="25.4865" />
+                    <Hotspot X="-311.0386" Y="-1569.802" Z="43.34619" />
+                </HuntingGrounds>
+            </CustomBehavior>
+        </While>
+		
+		<CustomBehavior File="UserSettings" UseMount="true" />
+		
+        <CustomBehavior File="InteractWith" QuestId="29552" MobId="61492"
+            NumOfTimes="100" CollectionDistance="1000" >
+            <HuntingGrounds >
+                <Hotspot X="-443.1266" Y="-1563.94" Z="28.27024" />
+                <Hotspot X="-485.9838" Y="-1506.734" Z="21.26701" />
+                <Hotspot X="-410.5862" Y="-1445.66" Z="22.45845" />
+                <Hotspot X="-406.4748" Y="-1515.459" Z="25.4865" />
+                <Hotspot X="-311.0386" Y="-1569.802" Z="43.34619" />
+            </HuntingGrounds>
+        </CustomBehavior>
+        <Objective QuestName="Pillaging Peons" QuestId="31738" Type="KillMob" MobId="59979" KillCount="12" />
+        <TurnIn QuestName="Priorities!" QuestId="31739" TurnInName="Lin Applebloom" TurnInId="66199" X="-538.1255" Y="-1309.742" Z="3.000579" />
+        <PickUp QuestName="Koukou's Rampage" QuestId="31740" GiverName="Lin Applebloom" GiverId="66199" X="-538.1255" Y="-1309.742" Z="3.000579" />
+        <Objective QuestName="Koukou's Rampage" QuestId="31740" Type="KillMob" MobId="66213" KillCount="1" />
+        <If Condition="HasQuest(31740) &amp;&amp; IsQuestCompleted(31740)">
+            <RunTo X="-284.6526" Y="-1767.003" Z="61.59366" />
+            <CustomBehavior File="ForcedDismount" />
+        </If>
+        <TurnIn QuestName="Critical Condition" QuestId="29552" TurnInName="Mishka" TurnInId="54614" X="-283.9236" Y="-1769.379" Z="61.63127" />
+        <TurnIn QuestName="Pillaging Peons" QuestId="31738" TurnInName="Sunke Khang" TurnInId="65910" X="-291.1892" Y="-1778.066" Z="61.67279" />
+        <TurnIn QuestName="Koukou's Rampage" QuestId="31740" TurnInName="Sunke Khang" TurnInId="65910" X="-291.1892" Y="-1778.066" Z="61.67279" />
+        <PickUp QuestName="Twinspire Keep" QuestId="31741" GiverName="Sunke Khang" GiverId="65910" X="-291.1892" Y="-1778.066" Z="61.67279" />
+        <PickUp QuestName="Unfair Trade" QuestId="31744" GiverName="Sunke Khang" GiverId="65910" X="-291.1892" Y="-1778.066" Z="61.67279" />
+        <PickUp QuestName="Fractured Forces" QuestId="31742" GiverName="Rell Nightwind" GiverId="54617" X="-295.2621" Y="-1774.125" Z="61.59274" />
+        <If Condition="!HasQuest(31743) &amp;&amp; !IsQuestCompleted(31743)">
+            <PickUp QuestName="Smoke Before Fire" QuestId="31743" GiverName="Rell Nightwind" GiverId="54617" X="-295.2621" Y="-1774.125" Z="61.59274" />
+            <RunTo X="-177.8308" Y="-1566.598" Z="75.13071" />
+            <CustomBehavior File="ForcedDismount" />
+            <CustomBehavior File="MyCTM" X="-174.7141" Y="-1556.167" Z="72.84017" />
+        </If>
+        <Objective QuestName="Unfair Trade" QuestId="31744" Type="KillMob" MobId="66367" KillCount="8" />
+        <While Condition="HasQuest(31743) &amp;&amp; !IsQuestCompleted(31743)">
+            <If Condition="HasQuest(31743) &amp;&amp; !IsObjectiveComplete(4, 31743)">
+                <RunTo X="-143.5509" Y="-1564.653" Z="72.8403" />
+                <CustomBehavior File="UseItemTargetLocation" MobId="66278" ItemId="89602" UseType="PointToObject" Range="30" WaitTime="10000" />
+            </If>
+            <If Condition="HasQuest(31743) &amp;&amp; !IsObjectiveComplete(1, 31743)">
+                <RunTo X="-172.2935" Y="-1405.508" Z="72.58109" />
+                <CustomBehavior File="UseItemTargetLocation" MobId="215215" ObjectType="GameObject" ItemId="89602" UseType="PointToObject" Range="30" WaitTime="10000" />
+            </If>
+            <If Condition="HasQuest(31743) &amp;&amp; !IsObjectiveComplete(3, 31743)">
+                <RunTo X="-162.0598" Y="-1350.365" Z="72.58113" />
+                <CustomBehavior File="UseItemTargetLocation" MobId="66277" ItemId="89602" UseType="PointToObject" Range="30" WaitTime="10000" />
+            </If>
+            <If Condition="HasQuest(31743) &amp;&amp; !IsObjectiveComplete(2, 31743)">
+                <RunTo X="-130.1599" Y="-1437.785" Z="83.37261" />
+                <CustomBehavior File="UseItemTargetLocation" MobId="66279" ItemId="89602" UseType="PointToObject" Range="30" WaitTime="10000" />
+            </If>
+        </While>
+        <Objective QuestName="Twinspire Keep" QuestId="31741" Type="KillMob" MobId="66267" KillCount="15" />
+        <If Condition="HasQuest(31742) &amp;&amp; !IsQuestCompleted(31742)">
+            <RunTo X="-97.00577" Y="-1442.491" Z="128.1204" />
+            <Objective QuestName="Fractured Forces" QuestId="31742" Type="KillMob" MobId="66275" KillCount="1" />
+            <Objective QuestName="Fractured Forces" QuestId="31742" Type="KillMob" MobId="66274" KillCount="1" />
+        </If>
+        <TurnIn QuestName="Twinspire Keep" QuestId="31741" TurnInName="Sully &quot;The Pickle&quot; McLeary" TurnInId="54616" X="-51.28471" Y="-1438.179" Z="138.3563" />
+        <TurnIn QuestName="Unfair Trade" QuestId="31744" TurnInName="Sully &quot;The Pickle&quot; McLeary" TurnInId="54616" X="-51.28471" Y="-1438.179" Z="138.3563" />
+        <TurnIn QuestName="Fractured Forces" QuestId="31742" TurnInName="Sully &quot;The Pickle&quot; McLeary" TurnInId="54616" X="-51.28471" Y="-1438.179" Z="138.3563" />
+        <TurnIn QuestName="Smoke Before Fire" QuestId="31743" TurnInName="Sully &quot;The Pickle&quot; McLeary" TurnInId="54616" X="-51.28471" Y="-1438.179" Z="138.3563" />
+        <PickUp QuestName="The Fall of Ga'trul" QuestId="30070" GiverName="Sully &quot;The Pickle&quot; McLeary" GiverId="54616" />
+        <Objective QuestName="The Fall of Ga'trul" QuestId="30070" Type="KillMob" MobId="66276" KillCount="1" />
+        <TurnIn QuestName="The Fall of Ga'trul" QuestId="30070" TurnInName="Rell Nightwind" TurnInId="66581" X="-31.60938" Y="-1443.189" Z="138.5014" />
+        <PickUp QuestName="Onward and Inward" QuestId="31745" GiverName="Rell Nightwind" GiverId="66581" X="-31.60938" Y="-1443.189" Z="138.5014" />
+        <If Condition="HasQuest(31745) &amp;&amp; !IsQuestCompleted(31745)">
+            <CustomBehavior File="MountVehOnly" VehicleMountId="67067" X="-59.82118" Y="-1446.536" Z="139.5281" />
+            <CustomBehavior File="WaitTimer" WaitTime="30000" />
+        </If>
+        <If Condition="HasQuest(31745) &amp;&amp; IsQuestCompleted(31745)">
+            <RunTo X="-461.9169" Y="-1901.328" Z="53.42297" />
+            <CustomBehavior File="ForcedDismount" />
+        </If>
+        <TurnIn QuestName="Onward and Inward" QuestId="31745" TurnInName="Sky Admiral Rogers" TurnInId="66292" X="-461.8108" Y="-1903.417" Z="53.45635" />
+        <PickUp QuestName="The White Pawn" QuestId="29555" GiverName="Sky Admiral Rogers" GiverId="66292" X="-461.8108" Y="-1903.417" Z="53.45635" />
+        <PickUp QuestName="Hozen Aren't Your Friends, Hozen Are Your Enemies" QuestId="29556" GiverName="Sky Admiral Rogers" GiverId="66292" X="-461.8108" Y="-1903.417" Z="53.45635" />
+        <!-- The White Pawn -  under water quest -->
+        <If Condition="HasQuest(29555) &amp;&amp; !IsQuestCompleted(29555)">
+            <If Condition="!IsObjectiveComplete(1, 29555)">
+                <RunTo X="-553.2003" Y="-2040.456" Z="2.053866" />
+                <!-- Alliance Bodyguard -->
+                <CustomBehavior File="InteractWith" QuestId="29555" MobId="55168" ProactiveCombatStrategy="ClearMobsTargetingUs"
+                                                    NonCompeteDistance="0" X="-548.3036" Y="-2027.14" Z="6.038692" />
+                <!-- Fine leather book -->
+                <CustomBehavior File="InteractWith" QuestId="29555" MobId="55155" Range="2" ProactiveCombatStrategy="ClearMobsTargetingUs"
+                                                    NonCompeteDistance="0" X="-549.0764" Y="-2038.774" Z="-2.888357" />
+                <!-- Alliance Banner -->
+                <CustomBehavior File="InteractWith" QuestId="29555" MobId="55167" Range="2" ProactiveCombatStrategy="ClearMobsTargetingUs"
+                                                    NonCompeteDistance="0" X="-572.8108" Y="-2050.03" Z="-7.121428" />
+            </If>
+            <!-- If needed. get some air to prevent drowning -->
+            <While Condition="!IsQuestCompleted(29555)  &amp;&amp; !IsObjectiveComplete(2, 29555)" >
+                <If Condition=" Me.GetMirrorTimerInfo(MirrorTimerType.Breath).IsVisible &amp;&amp; Me.GetMirrorTimerInfo(MirrorTimerType.Breath).CurrentTime &lt; 30000" >
+                    <RunTo X="-541.5739" Y="-2023.69" Z="-0.53947" />
+                </If>
+                <RunTo X="-576.42" Y="-2055.868" Z="-9.887738" />
+                <CustomBehavior File="KillUntilComplete" MobId="66148" QuestId="29555"
+                                                    X="-576.42" Y="-2055.868" Z="-9.887738" />
+            </While>
+        </If>
+        <Objective QuestName="Hozen Aren't Your Friends, Hozen Are Your Enemies" QuestId="29556" Type="KillMob" MobId="66153" KillCount="14" />
+        <!-- disable pulling because bot goes nuts when inside the ship -->
+        <DisableBehavior Name="Pull" />
+        <TurnIn QuestName="The White Pawn" QuestId="29555" TurnInName="Nodd Codejack" TurnInId="54615" X="-455.5938" Y="-2068.398" Z="28.73144" />
+        <EnableBehavior Name="Pull" />
+        <TurnIn QuestName="Hozen Aren't Your Friends, Hozen Are Your Enemies" QuestId="29556" TurnInName="Nodd Codejack" TurnInId="54615" X="-455.5938" Y="-2068.398" Z="28.73144" />
+        <PickUp QuestName="The Missing Admiral" QuestId="29553" GiverName="Nodd Codejack" GiverId="54615" X="-455.5938" Y="-2068.398" Z="28.73144" />
+        <If Condition="HasQuest(29553)">
+            <RunTo X="-187.8179" Y="-2331.158" Z="35.90141" />
+            <CustomBehavior File="ForcedDismount" />
+        </If>
+        <TurnIn QuestName="The Missing Admiral" QuestId="29553" TurnInName="Admiral Taylor" TurnInId="59022" X="-187.3837" Y="-2333.851" Z="35.90991" />
+        <PickUp QuestName="The Path of War" QuestId="29558" GiverName="Bold Karasshi" GiverId="55196" X="-183.592" Y="-2331.502" Z="35.84907" />
+        <PickUp QuestName="Freeing Our Brothers" QuestId="29559" GiverName="Bold Karasshi" GiverId="55196" X="-183.592" Y="-2331.502" Z="35.84907" />
+        <PickUp QuestName="Ancient Power" QuestId="29560" GiverName="Bold Karasshi" GiverId="55196" X="-183.592" Y="-2331.502" Z="35.84907" />
+        <Objective QuestName="Ancient Power" QuestId="29560" Type="CollectItem" ItemId="74033" CollectCount="8" />
+        <If Condition="HasQuest(29559) &amp;&amp; !IsQuestCompleted(29559)">
+            <While Condition="!IsQuestCompleted(29559)">
+                <If Condition="GetItemCount(74260) &lt; 1">
+                    <SetGrindArea>
+                        <GrindArea>
+                            <Factions>2392</Factions>
+                            <TargetMinLevel>83</TargetMinLevel>
+                            <TargetMaxLevel>85</TargetMaxLevel>
+                            <Hotspots>
+                                <Hotspot X="-194.681" Y="-2313.141" Z="35.67667" />
+                                <Hotspot X="-133.3714" Y="-2264.529" Z="32.83332" />
+                                <Hotspot X="-92.20955" Y="-2277.017" Z="29.53618" />
+                                <Hotspot X="-112.316" Y="-2305.106" Z="29.20715" />
+                            </Hotspots>
+                        </GrindArea>
+                    </SetGrindArea>
+                    <GrindTo Condition="GetItemCount(74260) &gt;= 1" />
+                </If>
+                <While Condition="HasQuest(29559) &amp;&amp; !IsQuestCompleted(29559) &amp;&amp; HasItem(74260)">
+                    <CustomBehavior File="InteractWith" QuestId="29559" MobId1="55201" MobId2="55490" CollectionDistance="2000"
+                                                    X="-162.8641" Y="-2307.913" Z="33.49401" />
+                    <CustomBehavior File="InteractWith" QuestId="29559" MobId="209586" WaitTime="2000"
+                                                    X="-162.8641" Y="-2307.913" Z="33.49401" />
+                    <CustomBehavior File="WaitTimer" WaitTime="4000" />
+                </While>
+            </While>
+        </If>
+        <Objective QuestName="The Path of War" QuestId="29558" Type="KillMob" MobId="55193" KillCount="12" />
+        <TurnIn QuestName="The Path of War" QuestId="29558" TurnInName="Bold Karasshi" TurnInId="55196" X="-183.592" Y="-2331.502" Z="35.84907" />
+        <TurnIn QuestName="Freeing Our Brothers" QuestId="29559" TurnInName="Bold Karasshi" TurnInId="55196" X="-183.592" Y="-2331.502" Z="35.84907" />
+        <TurnIn QuestName="Ancient Power" QuestId="29560" TurnInName="Bold Karasshi" TurnInId="55196" X="-183.592" Y="-2331.502" Z="35.84907" />
+        <PickUp QuestName="Kung Din" QuestId="29759" GiverName="Bold Karasshi" GiverId="55196" X="-183.592" Y="-2331.502" Z="35.84907" />
+        <If Condition="HasQuest(29759) &amp;&amp; !IsQuestCompleted(29759)">
+            <DisableBehavior Name="Combat" />
+            <RunTo X="-77.57258" Y="-2363.105" Z="27.99089" />
+            <EnableBehavior Name="Combat" />
+            <Objective QuestName="Kung Din" QuestId="29759" Type="CollectItem" ItemId="79753" CollectCount="1" />
+            <DisableBehavior Name="Combat" />
+            <Run X="-189.491" Y="-2323.721" Z="35.44769" />
+            <EnableBehavior Name="Combat" />
+        </If>
+        <TurnIn QuestName="Kung Din" QuestId="29759" TurnInName="Bold Karasshi" TurnInId="55196" X="-183.592" Y="-2331.502" Z="35.84907" />
+        <PickUp QuestName="Jailbreak" QuestId="29562" GiverName="Bold Karasshi" GiverId="55196" X="-183.592" Y="-2331.502" Z="35.84907" />
+        <If Condition="HasQuest(29562) &amp;&amp; !IsQuestCompleted(29562)">
+            <Objective QuestName="Jailbreak" QuestId="29562" Type="KillMob" MobId="55195" KillCount="10" />
+            <DisableBehavior Name="Combat" />
+            <Run X="-150.0955" Y="-2665.972" Z="1.485512" />
+            <EnableBehavior Name="Combat" />
+        </If>
+        <TurnIn QuestName="Jailbreak" QuestId="29562" TurnInName="Bold Karasshi" TurnInId="56222" X="-150.0955" Y="-2665.972" Z="1.485512" />
+        <PickUp QuestName="The Pearlfin Situation" QuestId="29883" GiverName="Rell Nightwind" GiverId="66949" X="-161.1372" Y="-2663.207" Z="1.146861" />
+        <PickUp QuestName="Road Rations" QuestId="29885" GiverName="Rell Nightwind" GiverId="66949" X="-161.1372" Y="-2663.207" Z="1.146861" />
+        <If Condition="HasQuest(29883) &amp;&amp; !IsQuestCompleted(29883)">
+            <CustomBehavior File="ForcedMount" />
+            <CustomBehavior File="InteractWith" QuestId="29883" QuestObjectiveIndex="1" MobId="59058" GossipOptions="1" NonCompeteDistance="0" X="-130.6441" Y="-2651.087" Z="1.209112" />
+            <CustomBehavior File="InteractWith" QuestId="29883" QuestObjectiveIndex="4" MobId="54960" GossipOptions="1" NonCompeteDistance="0" X="-96.99827" Y="-2601.177" Z="17.4189" />
+            <CustomBehavior File="InteractWith" QuestId="29883" QuestObjectiveIndex="2" MobId="56693" GossipOptions="2" NonCompeteDistance="0" X="-253.8247" Y="-2732.106" Z="-0.3312029" />
+            <CustomBehavior File="InteractWith" QuestId="29883" QuestObjectiveIndex="3" MobId="56690" GossipOptions="1" NonCompeteDistance="0" X="-284.4201" Y="-2653.135" Z="0.9313372" />
+            <CustomBehavior File="RunMacro" Macro="/cleartarget" />
+        </If>
+        <If Condition="HasQuest(29885) &amp;&amp; !IsQuestCompleted(29885)">
+            <RunTo X="-284.4201" Y="-2653.135" Z="0.9313372" />
+            <CustomBehavior File="RunMacro" Macro="/cleartarget" />
+            <Objective QuestName="Road Rations" QuestId="29885" Type="CollectItem" ItemId="73368" CollectCount="6" />
+        </If>
+        <TurnIn QuestName="The Pearlfin Situation" QuestId="29883" TurnInName="Rell Nightwind" TurnInId="66949" X="-161.1372" Y="-2663.207" Z="1.146861" />
+        <TurnIn QuestName="Road Rations" QuestId="29885" TurnInName="Rell Nightwind" TurnInId="66949" X="-161.1372" Y="-2663.207" Z="1.146861" />
+        <PickUp QuestName="The Elder's Instruments" QuestId="29887" GiverName="Pearlkeeper Fujin" GiverId="59058" X="-130.6441" Y="-2651.087" Z="1.208979" />
+        <PickUp QuestName="Family Heirlooms" QuestId="29762" GiverName="Bold Karasshi" GiverId="56366" X="-150.0955" Y="-2665.972" Z="1.485627" />
+        <If Condition="HasQuest(29887) &amp;&amp; !IsQuestCompleted(29887)">
+            <RunTo X="-400.3448" Y="-3094.874" Z="35.10278" />
+        </If>
+        <CustomBehavior File="InteractWith" PreInteractMountStrategy="DismountOrCancelShapeshift" QuestId="29762" MobId="56233" CollectionDistance="1000" MobState="Dead" NumOfTimes="1000">
+            <HuntingGrounds>
+                <Hotspot X="-426.8367" Y="-3139.069" Z="31.31693" />
+                <Hotspot X="-439.5449" Y="-3203.679" Z="37.38247" />
+                <Hotspot X="-428.9576" Y="-3246.795" Z="31.57241" />
+                <Hotspot X="-435.1849" Y="-3281.656" Z="31.13518" />
+                <Hotspot X="-402.3202" Y="-3287.6" Z="33.30472" />
+                <Hotspot X="-391.5354" Y="-3225.823" Z="32.51514" />
+                <Hotspot X="-371.6567" Y="-3168.389" Z="36.29922" />
+            </HuntingGrounds>
+        </CustomBehavior>
+        <Objective QuestName="The Elder's Instruments" QuestId="29887" Type="CollectItem" ItemId="79807" CollectCount="1" />
+        <Objective QuestName="The Elder's Instruments" QuestId="29887" Type="CollectItem" ItemId="79808" CollectCount="1" />
+        <Objective QuestName="The Elder's Instruments" QuestId="29887" Type="CollectItem" ItemId="79809" CollectCount="1" />
+        <Objective QuestName="The Elder's Instruments" QuestId="29887" Type="CollectItem" ItemId="79810" CollectCount="1" />
+        <TurnIn QuestName="Family Heirlooms" QuestId="29762" TurnInName="Bold Karasshi" TurnInId="56222" X="-150.0955" Y="-2665.972" Z="1.485627" />
+        <TurnIn QuestName="The Elder's Instruments" QuestId="29887" TurnInName="Pearlkeeper Fujin" TurnInId="59058" X="-130.6441" Y="-2651.087" Z="1.208979" />
+        <PickUp QuestName="Spirits of the Water" QuestId="29894" GiverName="Pearlkeeper Fujin" GiverId="59058" X="-130.6441" Y="-2651.087" Z="1.208979" />
+        <While Condition="HasQuest(29894) &amp;&amp; !IsObjectiveComplete(1, 29894)">
+            <CustomBehavior File="InteractWith" QuestId="29894" MobId="54960" GossipOptions="1" X="-205.6736" Y="-2638.665" Z="-0.2980881" />
+        </While>
+        <If Condition="HasQuest(29894) &amp;&amp; !IsQuestCompleted(29894)">
+            <CustomBehavior File="WaitTimer" WaitTime="45000" />
+        </If>
+        <TurnIn QuestName="Spirits of the Water" QuestId="29894" TurnInName="Bold Karasshi" TurnInId="56222" X="-150.0955" Y="-2665.972" Z="1.485627" />
+        <PickUp QuestName="SI:7 Report: Lost in the Woods" QuestId="29733" GiverName="Rell Nightwind" GiverId="55333" X="-156.2778" Y="-2666.545" Z="1.331864" />
+        <If Condition="HasQuest(29733) &amp;&amp; !IsQuestCompleted(29733)">
+            <If Condition="!Me.IsOnTransport">
+                <CustomBehavior File="InteractWith" QuestId="29733" MobId="55333" GossipOptions="1" X="-156.2778" Y="-2666.545" Z="1.331864" />
+            </If>
+            <CustomBehavior File="WaitTimer" WaitTime="31000" />
+            <RunTo X="356.4044" Y="-2030.196" Z="57.73584" />
+            <CustomBehavior File="InteractWith" QuestId="29733" MobId="55343" GossipOptions="1" X="359.3056" Y="-2030.759" Z="57.10135" />
+            <CustomBehavior File="WaitTimer" WaitTime="12000" />
+            <CustomBehavior File="NoControlVehicle" QuestId="29733" GoHomeButton="12" TargetId="55344" TargetId2="55454" TypeId="5" AttackButton="2" AttackButtonSecondary="1" />
+            <CustomBehavior File="WaitTimer" WaitTime="2000" />
+            <CustomBehavior File="EjectVeh" />
+        </If>
+        <TurnIn QuestName="SI:7 Report: Lost in the Woods" QuestId="29733" TurnInName="Rell Nightwind" TurnInId="55333" X="-156.2778" Y="-2666.545" Z="1.331864" />
+        <If Condition="!HasQuest(29725) &amp;&amp; !IsQuestCompleted(29725)">
+            <PickUp QuestName="SI:7 Report: Fire From the Sky" QuestId="29725" GiverName="Sully &quot;The Pickle&quot; McLeary" GiverId="55282" X="-156.0701" Y="-2658.927" Z="0.9811339" />
+            <CustomBehavior File="WaitTimer" WaitTime="56000" />
+        </If>
+        <If Condition="HasQuest(29725) &amp;&amp; !IsQuestCompleted(29725)">
+            <CustomBehavior File="SpecificQuests\29725-JadeForest-SI7ReportFireFromtheSky" />
+        </If>
+        <TurnIn QuestName="SI:7 Report: Fire From the Sky" QuestId="29725" TurnInName="Sully &quot;The Pickle&quot; McLeary" TurnInId="55282" X="-156.0701" Y="-2658.927" Z="0.9811339" />
+        <PickUp QuestName="SI:7 Report: Hostile Natives" QuestId="29726" GiverName="Little Lu" GiverId="55284" X="-159.2535" Y="-2672.84" Z="1.058113" />
+        <While Condition="HasQuest(29726) &amp;&amp; !IsQuestCompleted(29726)">
+            <If Condition="!Me.IsOnTransport">
+                <CustomBehavior File="InteractWith" QuestId="29726" MobId="55284"
+                                InteractByGossipOptions="1" X="-159.2535" Y="-2672.84" Z="1.058113" />
+            </If>
+            <CustomBehavior File="WaitTimer" WaitTime="35000" GoalText="Waiting for vehicle {TimeRemaining}" />
+            <If Condition="!IsObjectiveComplete(1, 29726)">
+                <CustomBehavior File="WaitTimer" WaitTime="35000" />
+                <RunTo X="1537.268" Y="-1223.223" Z="240.5337" />
+                <CustomBehavior File="InteractWith" MobId="209615" ObjectType="GameObject" Range="5" X="1537.268" Y="-1223.223" Z="240.5337" />
+                <CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for interact {TimeRemaining}" />
+            </If>
+            <If Condition="!IsObjectiveComplete(2, 29726)">
+                <RunTo X="1491.455" Y="-1263.658" Z="244.3396" />
+                <CustomBehavior File="InteractWith" MobId="55378" Range="2" X="1491.455" Y="-1263.658" Z="244.3396" />
+                <CustomBehavior File="WaitTimer" WaitTime="5000" />
+            </If>
+            <If Condition="!IsObjectiveComplete(3, 29726)">
+                <RunTo X="1494.302" Y="-1267.697" Z="244.6581" />
+                <CustomBehavior File="WaitTimer" WaitTime="2000" />
+                <CustomBehavior File="InteractWith" MobId="55380" Range="5" X="1494.302" Y="-1267.697" Z="244.6581" />
+                <CustomBehavior File="WaitTimer" WaitTime="6000" />
+            </If>
+            <If Condition="!IsObjectiveComplete(4, 29726)">
+                <RunTo X="1501.259" Y="-1288.729" Z="248.6164" />
+                <CustomBehavior File="WaitTimer" WaitTime="15000" GoalText="Waiting for Widow {TimeRemaining}" />
+                <CustomBehavior File="InteractWith" MobId="55381" Range="2" GossipOptions="1" WaitForNpcs="False" X="1501.259" Y="-1288.729" Z="248.6164" />
+                <CustomBehavior File="WaitTimer" WaitTime="63000" />
+            </If>
+            <CustomBehavior File="Misc\RunLua" Lua="VehicleExit()" WaitTime="1000" />
+            <CustomBehavior File="WaitTimer" WaitTime="6000" />
+        </While>
+        <TurnIn QuestName="SI:7 Report: Hostile Natives" QuestId="29726" TurnInName="Little Lu" TurnInId="55284" X="-159.2535" Y="-2672.84" Z="1.058113" />
+        <PickUp QuestName="SI:7 Report: Take No Prisoners" QuestId="29727" GiverName="Amber Kearnen" GiverId="55283" X="-161.1372" Y="-2663.21" Z="1.14709" />
+        <If Condition="HasQuest(29727) &amp;&amp; !IsQuestCompleted(29727)">
+            <CustomBehavior File="SpecificQuests\29727-JadeForest-TakeNoPrisoners" />
+        </If>
+        <TurnIn QuestName="SI:7 Report: Take No Prisoners" QuestId="29727" TurnInName="Amber Kearnen" TurnInId="55283" X="-161.1372" Y="-2663.21" Z="1.14709" />
+        <PickUp QuestName="A Perfect Match" QuestId="29903" GiverName="Admiral Taylor" GiverId="60970" X="-149.2969" Y="-2658.823" Z="0.911442" />
+        <While Condition="HasQuest(29903) &amp;&amp; !IsQuestCompleted(29903)">
+            <CustomBehavior File="InteractWith" QuestId="29903" MobId="56585" GossipOptions="2" CollectionDistance="1000" WaitForNpcs="False" X="-283.5978" Y="-2684.298" Z="0.09210362" />
+            <CustomBehavior File="InteractWith" QuestId="29903" MobId="56591" GossipOptions="3" CollectionDistance="1000" WaitForNpcs="False" X="-283.5978" Y="-2684.298" Z="0.09210362" />
+            <CustomBehavior File="InteractWith" QuestId="29903" MobId="56592" GossipOptions="4" CollectionDistance="1000" WaitForNpcs="False" X="-283.5978" Y="-2684.298" Z="0.09210362" />
+        </While>
+        <TurnIn QuestName="A Perfect Match" QuestId="29903" TurnInName="Admiral Taylor" TurnInId="60970" X="-149.2969" Y="-2658.823" Z="0.911442" />
+        <PickUp QuestName="Bigger Fish to Fry" QuestId="29904" GiverName="Admiral Taylor" GiverId="60970" X="-149.2969" Y="-2658.823" Z="0.911442" />
+        <If Condition="HasQuest(29904) &amp;&amp; !IsQuestCompleted(29904)">
+            <SetGrindArea>
+                <GrindArea>
+                    <Factions>16 2156</Factions>
+                    <TargetMinLevel>84</TargetMinLevel>
+                    <TargetMaxLevel>86</TargetMaxLevel>
+                    <Hotspots>
+                        <Hotspot X="60.02675" Y="-2771.548" Z="34.062" />
+                        <Hotspot X="90.85622" Y="-2685.843" Z="44.62914" />
+                        <Hotspot X="126.6413" Y="-2652.431" Z="46.95366" />
+                        <Hotspot X="149.3045" Y="-2680.936" Z="49.77859" />
+                        <Hotspot X="144.1926" Y="-2729.568" Z="44.02981" />
+                        <Hotspot X="112.2049" Y="-2823.543" Z="43.94075" />
+                        <Hotspot X="179.8855" Y="-2820.316" Z="53.05257" />
+                    </Hotspots>
+                </GrindArea>
+            </SetGrindArea>
+            <GrindTo Condition="IsQuestCompleted(29904)" />
+        </If>
+        <TurnIn QuestName="Bigger Fish to Fry" QuestId="29904" TurnInName="Admiral Taylor" TurnInId="60970" X="-149.2969" Y="-2658.823" Z="0.911442" />			
+        <PickUp QuestName="Let Them Burn" QuestId="29905" GiverName="Admiral Taylor" GiverId="60970" X="-149.2969" Y="-2658.823" Z="0.911442" />
+        <PickUp QuestName="Carp Diem" QuestId="29906" GiverName="Admiral Taylor" GiverId="60970" X="-149.2969" Y="-2658.823" Z="0.911442" />
+        <If Condition="HasQuest(29905) || HasQuest(29906)">
+            <Objective QuestName="Carp Diem" QuestId="29906" Type="KillMob" MobId="54868" KillCount="1" />
+            <Objective QuestName="Let Them Burn" QuestId="29905" Type="KillMob" MobId="55461" KillCount="15" />
+        </If>
+        <If Condition="HasQuest(29905) &amp;&amp; IsQuestCompleted(29905)">
+            <TurnIn QuestName="Let Them Burn" QuestId="29905" TurnInName="Elder Lusshan" TurnInId="54960" X="-140.2014" Y="-2660.83" Z="1.696073" />
+            <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(84105)" WaitTime="1000" />
+            <!-- Fishy -->
+        </If>
+        <If Condition="HasQuest(29906) &amp;&amp; IsQuestCompleted(29906)">
+            <TurnIn QuestName="Carp Diem" QuestId="29906" TurnInName="Elder Lusshan" TurnInId="54960" X="-140.2014" Y="-2660.83" Z="1.696073" />
+        </If>
+        <PickUp QuestName="Seek Out the Lorewalker" QuestId="29888" GiverName="Bold Karasshi" GiverId="56222" X="-150.0955" Y="-2665.972" Z="1.485618" />
+		<TurnIn QuestName="Seek Out the Lorewalker" QuestId="29888" TurnInName="Mouthwatering Brew" TurnInId="209845" TurnInType="GameObject" X="-605.6422" Y="-2300.581" Z="21.71956" />
+        <PickUp QuestName="Borrowed Brew" QuestId="29889" GiverName="Mouthwatering Brew" GiverId="209845" GiverType="Object" X="-605.6422" Y="-2300.581" Z="21.71956" />
+        <While Condition="HasQuest(29889) &amp;&amp; !IsQuestCompleted(29889)">
+            <CustomBehavior File="InteractWith" QuestId="29889" MobId="209847" ObjectType="GameObject" X="-605.6422" Y="-2300.581" Z="21.71956" />
+            <CustomBehavior File="WaitTimer" QuestId="29889" WaitTime="55000" />
+        </While>
+        <TurnIn QuestName="Borrowed Brew" QuestId="29889" TurnInName="Lorewalker Cho" TurnInId="54961" X="-602.0243" Y="-2295.336" Z="21.7198" />
+        <PickUp QuestName="A Visit with Lorewalker Cho" QuestId="31130" GiverName="Lorewalker Cho" GiverId="54961" X="-602.0243" Y="-2295.336" Z="21.7198" />
+        <If Condition="HasQuest(31130) &amp;&amp; !IsQuestCompleted(31130)">
+            <While Condition="!IsObjectiveComplete(1, 31130)">
+                <CustomBehavior File="WaitTimer" WaitTime="11000" />
+                <CustomBehavior File="InteractWith" MobId="211659" ObjectType="GameObject" X="-580.9454" Y="-2302.055" Z="18.62611" />
+                <CustomBehavior File="WaitTimer" WaitTime="42000" />
+            </While>
+            <While Condition="!IsObjectiveComplete(2, 31130)">
+                <CustomBehavior File="InteractWith" MobId="211661" ObjectType="GameObject" GossipOptions="1" X="-567.749" Y="-2324.343" Z="18.45944" />
+                <CustomBehavior File="WaitTimer" WaitTime="45000" />
+            </While>
+            <While Condition="!IsObjectiveComplete(3, 31130)">
+                <CustomBehavior File="InteractWith" MobId="213191" ObjectType="GameObject" X="-598.0771" Y="-2320.607" Z="18.76598" />
+                <RunTo X="-592.1667" Y="-2320.578" Z="18.47412" />
+                <CustomBehavior File="WaitTimer" WaitTime="20000" />
+            </While>
+        </If>
+        <TurnIn QuestName="A Visit with Lorewalker Cho" QuestId="31130" TurnInName="Lorewalker Cho" TurnInId="61218" X="-592.1667" Y="-2320.578" Z="18.47412" />
+        <PickUp QuestName="Potency" QuestId="29891" GiverName="Lorewalker Cho" GiverId="61218" X="-592.1667" Y="-2320.578" Z="18.47412" />
+        <PickUp QuestName="Body" QuestId="29892" GiverName="Lorewalker Cho" GiverId="61218" X="-592.1667" Y="-2320.578" Z="18.47412" />
+        <PickUp QuestName="Hue" QuestId="29893" GiverName="Lorewalker Cho" GiverId="61218" X="-592.1667" Y="-2320.578" Z="18.47412" />
+        <While Condition="HasQuest(29893) &amp;&amp; !IsQuestCompleted(29893)">
+            <CustomBehavior File="UserSettings" SkinMobs="False" />
+            <CustomBehavior File="InteractWith" MobId="54559" MobState="Alive" CollectionDistance="1000">
+                <HuntingGrounds WaypointVisitStrategy="Random">
+                    <Hotspot Name="Waypoint A" X="-654.2847" Y="-2435.005" Z="26.4146" />
+                    <Hotspot Name="Waypoint B" X="-654.2847" Y="-2435.005" Z="26.4146" />
+                    <Hotspot Name="Waypoint C" X="-689.2635" Y="-2532.481" Z="26.06712" />
+                    <Hotspot Name="Waypoint D" X="-675.3683" Y="-2611.612" Z="19.3764" />
+                    <Hotspot Name="Waypoint E" X="-619.6975" Y="-2683.45" Z="9.990462" />
+                </HuntingGrounds>
+            </CustomBehavior>
+            <CustomBehavior File="InteractWith" MobId="54559" MobState="Dead" WaitForNpcs="False" InteractByUsingItemId="76128" WaitTime="3000" Range="5" CollectionDistance="5" />
+            <CustomBehavior File="UserSettings" SkinMobs="original" />
+        </While>
+        <Objective QuestName="Body" QuestId="29892" Type="CollectItem" ItemId="76107" CollectCount="5" />
+        <While Condition="HasQuest(29891) &amp;&amp; !IsQuestCompleted(29891)">
+            <RunTo X="-592.1667" Y="-2320.578" Z="18.47412" />
+            <Objective QuestName="Potency" QuestId="29891" Type="KillMob" MobId="56304" KillCount="8" />
+
+            <RunTo DestName="Acquire orange mist buff" x="-592.1667" y="-2320.578" z="18.47412" />
+            <RunTo DestName="Mist Horror spawn point" x="-613.3589" y="-2682.857" z="8.484043" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" />
+            <CustomBehavior File="InteractWith" PreInteractMountStrategy="DismountOrCancelShapeshift" MobId="56330" WaitForNpcs="False" />
+            <!-- Mist -->
+            <CustomBehavior File="WaitTimer" WaitTime="10000" />
+            <CustomBehavior File="InteractWith" MobId="56310" WaitForNpcs="False" />
+            <!-- Horror -->
+            <!--<Objective QuestName="Potency" QuestId="29891" Type="CollectItem" ItemId="76129" CollectCount="1" />-->
+        </While>
+        <TurnIn QuestName="Potency" QuestId="29891" TurnInName="Lorewalker Cho" TurnInId="56287" X="-566.1215" Y="-2303.628" Z="18.45896" />
+        <TurnIn QuestName="Body" QuestId="29892" TurnInName="Lorewalker Cho" TurnInId="56287" X="-566.1 215" Y="-2303.628" Z="18.45896" />
+        <TurnIn QuestName="Hue" QuestId="29893" TurnInName="Lorewalker Cho" TurnInId="56287" X="-566.1215" Y="-2303.628" Z="18.45896" />
+        <PickUp QuestName="Finding Your Center" QuestId="29890" GiverName="Lorewalker Cho" GiverId="56287" X="-566.1215" Y="-2303.628" Z="18.45896" />
+        <If Condition="HasQuest(29890) &amp;&amp; !IsQuestCompleted(29890)">
+            <RunTo X="-630.2978" Y="-2364.32" Z="22.86646" />
+            <CustomBehavior File="SpecificQuests\29890-JadeForest-FindingYourCenter" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for quest to complete {TimeRemaining}" />
+        </If>
+        <If Condition="HasQuest(29890) &amp;&amp; IsQuestCompleted(29890)">
+            <DisableBehavior Name="Pull" />
+            <TurnIn QuestName="Finding Your Center" QuestId="29890" TurnInName="Anduin Wrynn" TurnInId="56434" X="-37.23264" Y="-3150.474" Z="86.16225" />
+            <EnableBehavior Name="Pull" />
+        </If>
+        <PickUp QuestName="Sacred Waters" QuestId="29898" GiverName="Anduin Wrynn" GiverId="56434" X="-37.23264" Y="-3150.474" Z="86.16225" />
+        <PickUp QuestName="Rest in Peace" QuestId="29899" GiverName="Ren Whitepaw" GiverId="56432" X="-37.73958" Y="-3155.663" Z="86.16234" />
+        <PickUp QuestName="An Ancient Legend" QuestId="29900" GiverName="Lina Whitepaw" GiverId="56433" X="-42.57292" Y="-3155.851" Z="86.16283" />
+        <If Condition="HasQuest(29900) &amp;&amp; !IsObjectiveComplete(1,29900)" >
+            <MoveTo X="-125.4099" Y="-3237.491" Z="72.95513" />
+            <!-- Pulling mob from afar can cause it to evade  -->
+            <TargetingDistance Value="10" />
+            <Objective QuestName="An Ancient Legend" QuestId="29900" Type="KillMob" MobId="56441" KillCount="1" />
+            <TargetingDistance Value="null" />
+        </If>
+        <While Condition="HasQuest(29900) &amp;&amp; !IsQuestCompleted(29900)">
+            <CustomBehavior File="InteractWith" MobId="209582" ObjectType="GameObject" Range="15" X="-95.33253" Y="-3192.702" Z="81.19375" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for quest to complete {TimeRemaining}" />
+        </While>
+        <If Condition="HasQuest(29898) &amp;&amp; !IsQuestCompleted(29898)">
+            <While Condition="!IsObjectiveComplete(4, 29898)">
+                <CustomBehavior File="InteractWith" MobId="209890" ObjectType="GameObject" X="-70.86828" Y="-3186.611" Z="81.2214" />
+            </While>
+            <While Condition="!IsObjectiveComplete(3, 29898)">
+                <CustomBehavior File="InteractWith" MobId="209889" ObjectType="GameObject" X="-157.7872" Y="-3299.589" Z="74.85137" />
+            </While>
+            <While Condition="!IsObjectiveComplete(2, 29898)">
+                <CustomBehavior File="InteractWith" MobId="209888" ObjectType="GameObject" X="-145.7457" Y="-3245.312" Z="66.33968" />
+            </While>
+            <While Condition="!IsObjectiveComplete(1, 29898)">
+                <RunTo X="-169.7215" Y="-3199.441" Z="51.37831" />
+                <CustomBehavior File="InteractWith" MobId="209885" ObjectType="GameObject" Range="4" X="-168.0851" Y="-3215.406" Z="51.14627" />
+                <RunTo X="-169.7215" Y="-3199.441" Z="51.37831" />
+            </While>
+        </If>
+        <Objective QuestName="Rest in Peace" QuestId="29899" Type="KillMob" MobId="56444" KillCount="6" Range="100" X="-83.3475" Y="-3210.947" Z="81.38386" />
+        <TurnIn QuestName="Sacred Waters" QuestId="29898" TurnInName="Lina Whitepaw" TurnInId="56433" X="-42.57292" Y="-3155.851" Z="86.16266" />
+        <TurnIn QuestName="Rest in Peace" QuestId="29899" TurnInName="Ren Whitepaw" TurnInId="56432" X="-37.73958" Y="-3155.663" Z="86.16234" />
+        <TurnIn QuestName="An Ancient Legend" QuestId="29900" TurnInName="Ren Whitepaw" TurnInId="56432" X="-37.73958" Y="-3155.663" Z="86.16234" />
+        <!-- <PickUp QuestName="Anduin's Decision" QuestId="29901" GiverName="" GiverId="" />  -->
+        <While Condition="!HasQuest(29901) &amp;&amp; !IsQuestCompleted(29901)">
+            <CustomBehavior File="InteractWith" MobId="56434" GossipOptions="1" X="-37.23264" Y="-3150.474" Z="86.16225" />
+            <CustomBehavior File="WaitTimer" WaitTime="70000" />
+        </While>
+        <While Condition="HasQuest(29901) &amp;&amp; !IsQuestCompleted(29901)">
+            <CustomBehavior File="InteractWith" MobId="56434" GossipOptions="1" X="-37.23264" Y="-3150.474" Z="86.16225" />
+            <CustomBehavior File="WaitTimer" WaitTime="70000" />
+        </While>
+        <TurnIn QuestName="Anduin's Decision" QuestId="29901" TurnInName="Admiral Taylor" TurnInId="60970" X="-149.2969" Y="-2658.823" Z="0.9117871" />
+        <PickUp QuestName="In Search of Wisdom" QuestId="29922" GiverName="Elder Lusshan" GiverId="54960" X="-96.99827" Y="-2601.177" Z="17.41883" />
+        <While Condition="(HasQuest(29922)) &amp;&amp; (!IsQuestCompleted(29922))">
+            <RunTo X="-188.3524" Y="-2594.55" Z="1.136874" />
+            <CustomBehavior File="InteractWith" MobId="56737" GossipOptions="2"
+                                                PreInteractMountStrategy="DismountOrCancelShapeshift" X="-188.3524" Y="-2594.55" Z="1.136874" />
+            <!-- Kitemaster Ut-Nam -->
+            <CustomBehavior File="WaitTimer" WaitTime="5000" />
+        </While>
+        <TurnIn QuestName="In Search of Wisdom" QuestId="29922" TurnInName="Lorewalker Cho" TurnInId="63577" X="1504.736" Y="-1817.182" Z="246.1822" />
+        <!-- End of Ally specific quests -->
+
+        <!-- Dawn's Blossom quests -->
+        <CustomBehavior File="Message" Text="Compiling Dawn's Blossom quests" LogColor="CornflowerBlue" />
+
+        <PickUp QuestName="Welcome to Dawn's Blossom" QuestId="31230" GiverName="Toya" GiverId="56348" X="1503.337" Y="-1840.993" Z="246.2003" />
+        <If Condition="HasQuest(31230) &amp;&amp; !IsQuestCompleted(31230)">
+            <CustomBehavior File="InteractWith" QuestId="31230" QuestObjectiveIndex="3" MobId="59173" X="1510.594" Y="-1830.516" Z="246.1987" />
+            <CustomBehavior File="InteractWith" QuestId="31230" QuestObjectiveIndex="2" MobId="55809" X="1615.476" Y="-1744.455" Z="263.1201" />
+            <CustomBehavior File="InteractWith" QuestId="31230" QuestObjectiveIndex="1" MobId="59160" X="1581.536" Y="-1934.231" Z="268.9171" />
+        </If>
+        <TurnIn QuestName="Welcome to Dawn's Blossom" QuestId="31230" TurnInName="Toya" TurnInId="56348" X="1503.337" Y="-1840.993" Z="246.2003" />
+        <PickUp QuestName="An Air of Worry" QuestId="29576" GiverName="Old Man Misteye" GiverId="59383" X="1508.38" Y="-1922.587" Z="258.809" />
+        <PickUp QuestName="Tian Monastery" QuestId="29617" GiverName="Apprentice Yufi" GiverId="54998" X="1518.981" Y="-2015.104" Z="247.0745" />
+        <PickUp QuestName="The Threads that Stick" QuestId="29866" GiverName="Lo Wanderbrew" GiverId="59178" X="1543.097" Y="-1804.175" Z="246.1997" />
+        <PickUp QuestName="The Silkwood Road" QuestId="29865" GiverName="Tzu the Ironbelly" GiverId="56062" X="1520.274" Y="-1792.156" Z="246.3586" />
+        <PickUp QuestName="The Double Hozen Dare" QuestId="29716" GiverName="An Windfur" GiverId="55234" X="1504.25" Y="-1805.726" Z="246.1824" />
+        <Objective QuestName="The Threads that Stick" QuestId="29866" Type="CollectItem" ItemId="75023" CollectCount="7" />
+        <Objective QuestName="The Silkwood Road" QuestId="29865" Type="KillMob" MobId="56070" KillCount="8" />
+        <If Condition="!HasQuest(29717) &amp;&amp; !IsQuestCompleted(29717)">
+            <RunTo X="1409.831" Y="-1348.027" Z="242.2481" />
+        </If>
+        <While Condition="HasQuest(29716) &amp;&amp; !IsQuestCompleted(29716)">
+            <CustomBehavior File="InteractWith" QuestId="29716" MobId="55267"
+                                                GossipOptions="1" IgnoreMobsInBlackspots="True"
+                                                CollectionDistance="1000">
+                <HuntingGrounds>
+                    <Hotspot X="1430.401" Y="-1345.01" Z="243.1724" />
+                    <Hotspot X="1376.539" Y="-1296.408" Z="221.8525" />
+                    <Hotspot X="1301.063" Y="-1227.426" Z="191.4972" />
+                    <Hotspot X="1376.113" Y="-1194.45" Z="213.1586" />
+                    <Hotspot X="1432.904" Y="-1235.755" Z="232.9145" />
+                    <Hotspot X="1557.185" Y="-1266.601" Z="242.2967" />
+                    <Hotspot X="1589.498" Y="-1354.784" Z="243.1858" />
+                    <Hotspot X="1722.512" Y="-1207.224" Z="264.3888" />
+                    <Hotspot X="1632.859" Y="-1137.749" Z="257.3562" />
+                    <Hotspot X="1543.71" Y="-1098.829" Z="254.1499" />
+                    <Hotspot X="1550.583" Y="-1170.17" Z="244.3325" />
+                    <Hotspot X="1474.748" Y="-1188.978" Z="234.3311" />
+                </HuntingGrounds>
+            </CustomBehavior>
+        </While>
+        <TurnIn QuestName="The Double Hozen Dare" QuestId="29716" TurnInName="An Windfur" TurnInId="55234" X="1504.25" Y="-1805.726" Z="246.1824" />
+        <PickUp QuestName="The Jade Witch" QuestId="29723" GiverName="An Windfur" GiverId="55234" X="1504.25" Y="-1805.726" Z="246.1824" />
+        <If Condition="HasQuest(29723) &amp;&amp; !IsQuestCompleted(29723)">
+            <RunTo X="1500.917" Y="-1295.403" Z="249.6229" />
+            <CustomBehavior File="InteractWith" QuestId="29723" MobId="55368" InteractByGossipOptions="1" X="1500.917" Y="-1295.403" Z="249.6229" />
+            <RunTo X="1498.604" Y="-1324.384" Z="245.6443" />
+            <While Condition="HasQuest(29723) &amp;&amp; !IsQuestCompleted(29723)">
+                <CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for quest to complete {TimeRemaining}" />
+            </While>
+        </If>
+        <TurnIn QuestName="The Threads that Stick" QuestId="29866" TurnInName="Lo Wanderbrew" TurnInId="59178" X="1543.097" Y="-1804.175" Z="246.1997" />
+        <TurnIn QuestName="The Silkwood Road" QuestId="29865" TurnInName="Tzu the Ironbelly" TurnInId="56062" X="1520.274" Y="-1792.156" Z="246.3586" />
+		<TurnIn QuestName="The Jade Witch" QuestId="29723" TurnInName="An Windfur" TurnInId="55413" X="1507.068" Y="-1822.134" Z="246.1902" />
+        <PickUp QuestName="Find the Boy" QuestId="29993" GiverName="Kai Wanderbrew" GiverId="59173" X="1518.775" Y="-1812.76" Z="246.1964" />
+        <!-- Ignoring All We Can Spare - for now -->
+
+        <CustomBehavior File="Message" Text="Compiling The Aboretum Quests" LogColor="CornflowerBlue" />
+
+        <TurnIn QuestName="Find the Boy" QuestId="29993" TurnInName="Inkmaster Wei" TurnInId="56065" X="1563.556" Y="-2387.405" Z="161.0437" />
+        <PickUp QuestName="Shrine of the Dawn" QuestId="29995" GiverName="Inkmaster Wei" GiverId="56065" X="1563.556" Y="-2387.405" Z="161.0437" />
+        <PickUp QuestName="The Perfect Color" QuestId="29881" GiverName="Inkmaster Glenzu" GiverId="56064" X="1543.438" Y="-2381.016" Z="162.0046" />
+        <PickUp QuestName="Quill of Stingers" QuestId="29882" GiverName="Inkmaster Jo Po" GiverId="56063" X="1546.922" Y="-2407.792" Z="161.2809" />
+        <Objective QuestName="The Perfect Color" QuestId="29881" Type="CollectItem" ItemId="75219" CollectCount="8" />
+        <Objective QuestName="Quill of Stingers" QuestId="29882" Type="CollectItem" ItemId="75221" CollectCount="6" />
+        <TurnIn QuestName="The Perfect Color" QuestId="29881" TurnInName="Inkmaster Glenzu" TurnInId="56064" X="1543.438" Y="-2381.016" Z="162.0046" />
+        <TurnIn QuestName="Quill of Stingers" QuestId="29882" TurnInName="Inkmaster Jo Po" TurnInId="56063" X="1546.922" Y="-2407.792" Z="161.2809" />
+        <TurnIn QuestName="Shrine of the Dawn" QuestId="29995" TurnInName="Syra Goldendraft" TurnInId="56708" X="1878.137" Y="-2218.962" Z="232.4578" />
+        <!-- Travel to the Shire of the Dawn -->
+        <PickUp QuestName="Getting Permission" QuestId="29920" GiverName="Syra Goldendraft" GiverId="56708" X="1878.137" Y="-2218.962" Z="232.4578" />
+        <While Condition="HasQuest(29920) &amp;&amp; !IsQuestCompleted(29920)">
+            <While Condition="(HasQuest(29920)) &amp;&amp; (!IsObjectiveComplete(3, 29920))">
+                <CustomBehavior File="InteractWith" QuestId="29920" MobId="56210" WaitTime="5000" GossipOptions="1" X="1942.63" Y="-2290.531" Z="240.3459" />
+                <!-- 3 Pandriarch Goldendraft -->
+            </While>
+            <While Condition="(HasQuest(29920)) &amp;&amp; (!IsObjectiveComplete(2, 29920))">
+                <CustomBehavior File="InteractWith" QuestId="29920" MobId="56209" WaitTime="5000" GossipOptions="1" X="1862.304" Y="-2325.064" Z="256.9791" />
+                <!-- 2 Pandriarch Bramblestaff -->
+            </While>
+            <While Condition="(HasQuest(29920)) &amp;&amp; (!IsObjectiveComplete(1, 29920))">
+                <CustomBehavior File="InteractWith" QuestId="29920" MobId="56206" WaitTime="5000" GossipOptions="1" X="1996.759" Y="-2216.783" Z="247.6418" />
+                <!-- 1 Pandriarch Windfur -->
+            </While>
+        </While>
+        <TurnIn QuestName="Getting Permission" QuestId="29920" TurnInName="Lo Wanderbrew" TurnInId="55788" X="1877.722" Y="-2220.642" Z="232.297" />
+
+        <!-- Emperor's Omen quests -->
+        <CustomBehavior File="Message" Text="Compiling Emperor's Omen Quests" LogColor="CornflowerBlue" />
+
+        <If Condition="!HasQuest(29925) &amp;&amp; !IsQuestCompleted(29925)">
+            <!-- To Emperor's Omen -->
+            <PickUp QuestName="All We Can Spare" QuestId="29925" GiverName="Toya" GiverId="56348" X="1503.337" Y="-1840.993" Z="246.2001" />
+            <RunTo X="1503.337" Y="-1840.993" Z="246.2001" />
+            <CustomBehavior File="InteractWith" PreInteractMountStrategy="DismountOrCancelShapeshift" MobId="56348" GossipOptions="1" X="1503.337" Y="-1840.993" Z="246.2001" />
+            <CustomBehavior File="InteractWith" PreInteractMountStrategy="DismountOrCancelShapeshift" MobId="59735" X="2404.778" Y="-2096.951" Z="227.3152" />
+        </If>
+        <TurnIn QuestName="All We Can Spare" QuestId="29925" TurnInName="Lorewalker Cho" TurnInId="56345" X="2391.898" Y="-2102.967" Z="230.8555" />
+        <PickUp QuestName="I Have No Jade And I Must Scream" QuestId="29928" GiverName="Foreman Mann" GiverId="56346" X="2394.139" Y="-2105.363" Z="230.0331" />
+        <Objective QuestName="I Have No Jade And I Must Scream" QuestId="29928" Type="CollectItem" ItemId="76209" CollectCount="15" />
+        <If Condition="HasQuest(29928) &amp;&amp; IsQuestCompleted(29928)">
+            <TurnIn QuestName="I Have No Jade And I Must Scream" QuestId="29928" TurnInName="Foreman Mann" TurnInId="56346" X="2394.139" Y="-2105.363" Z="230.0331" />
+            <CustomBehavior File="WaitTimer" WaitTime="3000" GoalText="Waiting for quest to complete {TimeRemaining}" />
+            <CustomBehavior File="Misc\RunLua" Lua="StopCinematic()" WaitTime="1000" />
+        </If>
+        <PickUp QuestName="Calamity Jade" QuestId="29926" GiverName="Foreman Mann" GiverId="56346" X="2394.139" Y="-2105.363" Z="230.0331" />
+        <PickUp QuestName="Mann's Man" QuestId="29927" GiverName="Foreman Mann" GiverId="56346" X="2394.139" Y="-2105.363" Z="230.0331" />
+        <While Condition="!HasQuest(29745) &amp;&amp; !IsQuestCompleted(29745)">
+            <RunTo X="2492.045" Y="-1947.335" Z="217.6414" />
+            <CustomBehavior File="InteractWith" MobId="55438" Range="8" CollectionDistance="2" KeepTargetSelected="true" X="2491.445" Y="-1946.844" Z="217.6123" />
+            <CustomBehavior File="RunMacro" Macro="/click QuestFrameAcceptButton" />
+            <!--<PickUp QuestName="The Sprites' Plight" QuestId="29745" GiverName="Dead Putcast Sprite" GiverId="55438" X="2490.071" Y="-1946.614" Z="217.3746" /> -->
+        </While>
+        <If Condition="HasQuest(29745) &amp;&amp; !IsQuestCompleted(29745)">
+            <Objective QuestName="The Sprites' Plight" QuestId="29745" Type="KillMob" MobId="55288" KillCount="10" />
+            <While Condition="(HasQuest(29745)) &amp;&amp; (!IsObjectiveComplete(2, 29745))">
+                <RunTo X="2706.854" Y="-1946.902" Z="213.3528" />
+            </While>
+        </If>
+        <While Condition="HasQuest(29745)">
+            <!-- The Sprites' Plight -->
+            <TurnIn QuestId="29745" />
+            <!-- 29747 -->
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for CLQ {TimeRemaining}" />
+        </While>
+        <PickUp QuestName="Simulacrumble" QuestId="29748" GiverName="Shattered Destroyer" GiverId="214871" GiverType="Object" X="2693.197" Y="-1940.574" Z="215.1012" />
+        <While Condition="HasQuest(29748) &amp;&amp; !IsQuestCompleted(29748)">
+            <CustomBehavior File="InteractWith" QuestId="29748" MobId="214873" CollectionDistance="1000" >
+                <HuntingGrounds>
+                    <Hotspot X="2866.353" Y="-1808.805" Z="233.968" />
+                    <Hotspot X="2921.643" Y="-1786.199" Z="237.6495" />
+                    <Hotspot X="2869.269" Y="-1928.48" Z="213.3026" />
+                    <Hotspot X="2814.458" Y="-1904.909" Z="214.0017" />
+                    <Hotspot X="2698.959" Y="-1947.112" Z="213.7986" />
+                </HuntingGrounds>
+            </CustomBehavior>
+        </While>
+        <While Condition="HasQuest(29748) &amp;&amp; IsQuestCompleted(29748)">
+            <!-- Simulacrumble -->
+            <TurnIn QuestId="29748" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for CLQ {TimeRemaining}" />
+        </While>
+        <If Condition="HasQuest(29747) &amp;&amp; !IsQuestCompleted(29747)">
+            <Objective QuestName="Break the Cycle" QuestId="29747" Type="KillMob" MobId="55279" KillCount="8" />
+        </If>
+        <!--        <If Condition="GlobalSettings.Instance.ProfileDebuggingMode" >
+            <CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation"
+                                            SoundCueInterval="2" ExpiryTime="30" ExpiryAction="InputEnabled_BotStop"
+                                            Text="Developer Message HERE" />
+        </If>        -->
+        <While Condition="HasQuest(29747) &amp;&amp; IsQuestCompleted(29747)">
+            <!-- Break the Cycle -->
+            <TurnIn QuestId="29747" />
+            <!-- 29749 -->
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for CLQ {TimeRemaining}" />
+        </While>
+		<If Condition="!HasQuest(29749) &amp;&amp; !IsQuestCompleted(29749)">
+		<MoveTo X="2956.155" Y="-1636.795" Z="252.8338" />
+		<PickUp QuestName="An Urgent Plea" QuestId="29749" GiverName="Pei-Zhi" GiverId="55480" X="2956.153" Y="-1636.98" Z="260.8333" />
+        </If>
+		<If Condition="HasQuest(29749) &amp;&amp; !IsQuestCompleted(29749)">
+            <MoveTo X="2956.202" Y="-1636.843" Z="252.8336"
+                    DestName="Move to hunting ground for &quot;An Urgent Plea&quot;" />
+            <Objective QuestName="An Urgent Plea" QuestId="29749" Type="CollectItem" ItemId="74258" CollectCount="1" />
+            <SetGrindArea>
+                <GrindArea>
+                    <Factions>16 190</Factions>
+                    <Hotspots>
+                        <Hotspot X="2930.426" Y="-1644.892" Z="252.8332" />
+                    </Hotspots>
+                </GrindArea>
+            </SetGrindArea>
+            <GrindTo Condition="IsQuestCompleted(29749)" />
+        </If>
+        <TurnIn QuestName="An Urgent Plea" QuestId="29749" TurnInName="Pei-Zhi" TurnInId="55614" X="2952.861" Y="-1636.967" Z="252.8331" />
+        <PickUp QuestName="Ritual Artifacts" QuestId="29751" GiverName="Pei-Zhi" GiverId="55614" X="2952.861" Y="-1636.967" Z="252.8331" />
+        <PickUp QuestName="Vessels of the Spirit" QuestId="29750" GiverName="Pei-Zhi" GiverId="55614" X="2952.861" Y="-1636.967" Z="252.8331" />
+        <PickUp QuestName="The Wayward Dead" QuestId="29752" GiverName="Pei-Zhi" GiverId="55614" X="2952.861" Y="-1636.967" Z="252.8331" />
+        <Objective QuestName="Ritual Artifacts" QuestId="29751" Type="CollectItem" ItemId="74762" CollectCount="1" />
+        <Objective QuestName="Ritual Artifacts" QuestId="29751" Type="CollectItem" ItemId="74761" CollectCount="1" />
+        <Objective QuestName="Ritual Artifacts" QuestId="29751" Type="CollectItem" ItemId="74760" CollectCount="1" />
+        <While Condition="HasQuest(29752) &amp;&amp; !IsQuestCompleted(29752)">
+            <CustomBehavior File="InteractWith" QuestId="29752" MobId="55290" MobState="Alive" InteractByUsingItemId="74771"
+                                                Range="25" WaitTime="4000" CollectionDistance="1000">
+                <HuntingGrounds>
+                    <Hotspot X="2963.413" Y="-1452.859" Z="244.1403" />
+                    <Hotspot X="2972.904" Y="-1399.264" Z="244.1403" />
+                    <Hotspot X="2969.448" Y="-1361.619" Z="246.2379" />
+                    <Hotspot X="2909.332" Y="-1514.186" Z="255.8839" />
+                    <Hotspot X="2856.351" Y="-1475.471" Z="275.5011" />
+                </HuntingGrounds>
+            </CustomBehavior>
+        </While>
+        <Objective QuestName="Vessels of the Spirit" QuestId="29750" Type="CollectItem" ItemId="74763" CollectCount="8" />
+        <TurnIn QuestName="Ritual Artifacts" QuestId="29751" TurnInName="Pei-Zhi" TurnInId="55614" X="2952.861" Y="-1636.967" Z="252.8331" />
+        <TurnIn QuestName="Vessels of the Spirit" QuestId="29750" TurnInName="Pei-Zhi" TurnInId="55614" X="2952.861" Y="-1636.967" Z="252.8331" />
+        <TurnIn QuestName="The Wayward Dead" QuestId="29752" TurnInName="Pei-Zhi" TurnInId="55614" X="2952.861" Y="-1636.967" Z="252.8331" />
+        <PickUp QuestName="Back to Nature" QuestId="29753" GiverName="Pei-Zhi" GiverId="55614" X="2952.861" Y="-1636.967" Z="252.8331" />
+        <PickUp QuestName="A Humble Offering" QuestId="29756" GiverName="Pei-Zhi" GiverId="55614" X="2952.861" Y="-1636.967" Z="252.8331" />
+        <If Condition="HasQuest(29753) &amp;&amp; !IsQuestCompleted(29753)">
+            <While Condition="HasQuest(29753) &amp;&amp; !IsQuestCompleted(29753)">
+                <RunTo X="3123.986" Y="-1310.986" Z="204.2493" />
+                <!-- CJ: Wait for patrolling mobs to leave area, as they will interfere with UseItemTargetLocation -->
+                <While Condition="ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;(true, false).Count(u =&gt; u.IsHostile &amp;&amp; !u.IsDead &amp;&amp; u.Distance &lt; 18) &gt; 0">
+                    <CustomBehavior File="Message" Text="Waiting for patrolling mobs to clear" />
+                    <CustomBehavior File="WaitTimer" WaitTime="3000" />
+                </While>
+                <!-- CJ: Move back into position in case battle pulled us away -->
+                <RunTo X="3123.986" Y="-1310.986" Z="204.2493" />
+                <CustomBehavior File="UseItemTargetLocation" ItemId="74808" WaitTime="4000" ClickToX="3120.403" ClickToY="-1313.888" ClickToZ="203.7833" />
+            </While>
+            <CustomBehavior File="UserSettings" Preset="UserOriginal" />
+        </If>
+        <Objective QuestName="A Humble Offering" QuestId="29756" Type="CollectItem" ItemId="75214" CollectCount="10" />
+        <TurnIn QuestName="Back to Nature" QuestId="29753" TurnInName="Pei-Zhi" TurnInId="55614" X="2952.861" Y="-1636.967" Z="252.8331" />
+        <TurnIn QuestName="A Humble Offering" QuestId="29756" TurnInName="Pei-Zhi" TurnInId="55614" X="2952.861" Y="-1636.967" Z="252.8331" />
+        <If Condition="HasQuest(29754) &amp;&amp; !IsQuestCompleted(29754)">
+            <CustomBehavior File="AbandonQuest" QuestId="29754" Type="Incomplete" />
+        </If>
+        <PickUp QuestName="To Bridge Earth and Sky" QuestId="29754" GiverName="Pei-Zhi" GiverId="55614" X="2952.861" Y="-1636.967" Z="252.8331" />
+        <If Condition="HasQuest(29754) &amp;&amp; !IsQuestCompleted(29754)">
+            <!-- This quest may bug and will have to be abandoned -->
+            <RunTo X="3059.411" Y="-1600.553" Z="222.7645" />
+            <!-- If we stay mounted, we run past the quest mobs... -->
+            <CustomBehavior File="ForcedDismount" />
+            <CustomBehavior File="SlayTheFools" QuestId="29754" MobId="55902" CollectionDistance="20" X="3059.411" Y="-1600.553" Z="222.7645" />
+        </If>
+        <While Condition="HasQuest(29754) &amp;&amp; IsQuestCompleted(29754)">
+            <TurnIn QuestId="29754" />
+            <!-- 29755 -->
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for CLQ {TimeRemaining}" />
+        </While>
+        <While Condition="HasQuest(29755) &amp;&amp; !IsQuestCompleted(29755)">
+            <CustomBehavior File="InteractWith" InteractByQuestFrameDisposition="Accept" QuestId="29755" MobId="56595" WaitTime="1" CollectionDistance="1000" X="3149.503" Y="-1512.377" Z="200.2956" />
+            <CustomBehavior File="InteractWith" QuestId="29755" MobId="56596" WaitTime="1" CollectionDistance="1000" X="3149.503" Y="-1512.377" Z="200.2956" />
+        </While>
+        <TurnIn QuestName="Pei-Back" QuestId="29755" TurnInName="Pei-Zhi" TurnInId="59492" X="3069.28" Y="-1609.01" Z="222.8473" />
+
+        <CustomBehavior File="Message" Text="Compiling Tian Monastery Quests" LogColor="CornflowerBlue" />
+
+        <If Condition="HasQuest(29617) &amp;&amp; IsQuestCompleted(29617)">
+            <RunTo X="2510.256" Y="-1590.87" Z="400.8684" />
+            <CustomBehavior File="InteractWith" MobId="59736" PreInteractMountStrategy="DismountOrCancelShapeshift" X="2510.256" Y="-1590.87" Z="400.8684" />
+            <TurnIn QuestName="Tian Monastery" QuestId="29617" TurnInName="Lin Tenderpaw" TurnInId="54913" X="2490.712" Y="-1689.844" Z="429.9666" />
+            <!-- Going to Tian Monastery -->
+        </If>
+        <PickUp QuestName="The High Elder" QuestId="29618" GiverName="Lin Tenderpaw" GiverId="54913" X="2490.712" Y="-1689.844" Z="429.9666" />
+        <TurnIn QuestName="The High Elder" QuestId="29618" TurnInName="High Elder Cloudfall" TurnInId="54914" X="2485.408" Y="-1705.783" Z="448.8286" />
+        <PickUp QuestName="A Courteous Guest" QuestId="29619" GiverName="Lin Tenderpaw" GiverId="54913" X="2490.712" Y="-1689.844" Z="429.9666" />
+        <Objective QuestName="A Courteous Guest" QuestId="29619" Type="CollectItem" ItemId="72589" CollectCount="8" />
+        <TurnIn QuestName="A Courteous Guest" QuestId="29619" TurnInName="Lin Tenderpaw" TurnInId="54913" X="2490.712" Y="-1689.844" Z="429.9666" />
+        <PickUp QuestName="The Great Banquet" QuestId="29620" GiverName="Lin Tenderpaw" GiverId="54913" X="2490.712" Y="-1689.844" Z="429.9666" />
+        <While Condition="HasQuest(29620) &amp;&amp; !IsQuestCompleted(29620)">
+            <RunTo X="2573.698" Y="-1532.576" Z="406.2952" />
+            <CustomBehavior File="InteractWith" QuestId="29620" MobId="54914" GossipOptions="2, 2" X="2573.698" Y="-1532.576" Z="406.2952" />
+        </While>
+        <If Condition="HasQuest(29620) &amp;&amp; IsQuestCompleted(29620)">
+            <TurnIn QuestName="The Great Banquet" QuestId="29620" TurnInName="High Elder Cloudfall" TurnInId="54914" X="2573.698" Y="-1532.576" Z="406.2947" />
+            <CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for quest to complete {TimeRemaining}" />
+        </If>
+        <PickUp QuestName="Your Training Starts Now" QuestId="29622" GiverName="Xiao" GiverId="54926" X="2552.339" Y="-1559.682" Z="406.9221" />
+        <PickUp QuestName="Groundskeeper Wu" QuestId="29626" GiverName="Xiao" GiverId="54926" X="2552.339" Y="-1559.682" Z="406.9221" />
+        <PickUp QuestName="Becoming Battle-Ready" QuestId="29632" GiverName="Master Stone Fist" GiverId="54922" X="2499.927" Y="-1567.247" Z="400.8686" />
+        <While Condition="HasQuest(29632) &amp;&amp; !IsQuestCompleted(29632)">
+            <CustomBehavior File="InteractWith" QuestId="29632" MobId="54944" GossipOptions="1" NumOfTimes="8" X="2477.271" Y="-1572.878" Z="400.8682" />
+        </While>
+        <TurnIn QuestName="Becoming Battle-Ready" QuestId="29632" TurnInName="Master Stone Fist" TurnInId="54922" X="2499.927" Y="-1567.247" Z="400.8686" />
+        <PickUp QuestName="Husshun, the Wizened" QuestId="29634" GiverName="Master Stone Fist" GiverId="54922" X="2499.927" Y="-1567.247" Z="400.8686" />
+        <PickUp QuestName="Zhi-Zhi, the Dextrous" QuestId="29633" GiverName="Master Stone Fist" GiverId="54922" X="2499.927" Y="-1567.247" Z="400.8686" />
+        <While Condition="HasQuest(29633) &amp;&amp; !IsQuestCompleted(29633)">
+            <CustomBehavior File="InteractWith" QuestId="29633" MobId="54924" GossipOptions="1" X="2442.217" Y="-1554.717" Z="411.5492" />
+            <!-- Zhi-Zhi -->
+        </While>
+        <While Condition="HasQuest(29634) &amp;&amp; !IsQuestCompleted(29634)">
+            <CustomBehavior File="InteractWith" QuestId="29634" MobId="54925" GossipOptions="1" X="2532.645" Y="-1659.851" Z="401.1934" />
+            <!-- Hasshun -->
+        </While>
+        <TurnIn QuestName="Husshun, the Wizened" QuestId="29634" TurnInName="Master Stone Fist" TurnInId="54922" X="2499.927" Y="-1567.247" Z="400.8686" />
+        <TurnIn QuestName="Zhi-Zhi, the Dextrous" QuestId="29633" TurnInName="Master Stone Fist" TurnInId="54922" X="2499.927" Y="-1567.247" Z="400.8686" />
+        <PickUp QuestName="Xiao, the Eater" QuestId="29635" GiverName="Master Stone Fist" GiverId="54922" X="2499.927" Y="-1567.247" Z="400.8686" />
+        <While Condition="HasQuest(29635) &amp;&amp; !IsQuestCompleted(29635)">
+            <CustomBehavior File="InteractWith" QuestId="29635" MobId="54926" GossipOptions="1" X="2552.339" Y="-1559.682" Z="406.9221" />
+            <!-- Xiao -->f
+        </While>
+        <TurnIn QuestName="Xiao, the Eater" QuestId="29635" TurnInName="Master Stone Fist" TurnInId="54922" X="2499.927" Y="-1567.247" Z="400.8686" />
+        <PickUp QuestName="A Test of Endurance" QuestId="29636" GiverName="Master Stone Fist" GiverId="54922" X="2499.927" Y="-1567.247" Z="400.8686" />
+        <TurnIn QuestName="Your Training Starts Now" QuestId="29622" TurnInName="Instructor Xann" TurnInId="54917" X="2333.715" Y="-1453.293" Z="362.2596" />
+        <!-- Ignoring this quest - natfoth can script it if he wants - and the next quest 'Attention'
+        <PickUp QuestName="Perfection" QuestId="29623" GiverName="Instructor Xann" GiverId="54917" X="2333.715" Y="-1453.293" Z="362.2596" />
+            <Objective QuestName="Perfection" QuestId="29623" Type="KillMob" MobId="54970" KillCount="12" />
+        <TurnIn QuestName="Perfection" QuestId="29623" TurnInName="Instructor Xann" TurnInId="54917" X="2333.715" Y="-1453.293" Z="362.2596" />
+                Attention quests
+            -->
+        <TurnIn QuestName="Groundskeeper Wu" QuestId="29626" TurnInName="Groundskeeper Wu" TurnInId="54915" X="2549.117" Y="-1454.125" Z="406.1271" />
+        <PickUp QuestName="A Proper Weapon" QuestId="29627" GiverName="Groundskeeper Wu" GiverId="54915" X="2549.117" Y="-1454.125" Z="406.1271" />
+        <While Condition="HasQuest(29627) &amp;&amp; !IsQuestCompleted(29627)">
+            <If Condition="(HasQuest(29627)) &amp;&amp; (!IsObjectiveComplete(2, 29627))">
+                <CustomBehavior File="InteractWith" QuestId="29627" MobId="54981" BuyItemId="72954" BuyItemCount="1" X="2528.148" Y="-1438.694" Z="388.1575" />
+            </If>
+            <If Condition="(HasQuest(29627)) &amp;&amp; (!IsObjectiveComplete(3, 29627))">
+                <CustomBehavior File="InteractWith" QuestId="29627" MobId="54982" BuyItemId="72979" BuyItemCount="3" X="2506.907" Y="-1465.212" Z="388.158" />
+            </If>
+            <If Condition="(HasQuest(29627)) &amp;&amp; (!IsObjectiveComplete(1, 29627))">
+                <Objective QuestName="A Proper Weapon" QuestId="29627" Type="CollectItem" ItemId="72926" CollectCount="6" />
+            </If>
+        </While>
+        <TurnIn QuestName="A Proper Weapon" QuestId="29627" TurnInName="Groundskeeper Wu" TurnInId="54915" />
+        <PickUp QuestName="A Strong Back" QuestId="29628" GiverName="Groundskeeper Wu" GiverId="54915" X="2549.117" Y="-1454.125" Z="406.1271" />
+        <PickUp QuestName="A Steady Hand" QuestId="29629" GiverName="Groundskeeper Wu" GiverId="54915" X="2549.117" Y="-1454.125" Z="406.1271" />
+        <PickUp QuestName="And a Heavy Fist" QuestId="29630" GiverName="Groundskeeper Wu" GiverId="54915" X="2549.117" Y="-1454.125" Z="406.1271" />
+        <Objective QuestName="And a Heavy Fist" QuestId="29630" Type="KillMob" MobId="54987" KillCount="10" />
+        <While Condition="HasQuest(29628) &amp;&amp; !IsQuestCompleted(29628)">
+            <RunTo X="2834.103" Y="-1185.551" Z="330.1515" />
+            <CustomBehavior File="InteractWith" PreInteractMountStrategy="DismountOrCancelShapeshift" QuestId="29628" ObjectType="GameObject" MobId="209551" X="2834.103" Y="-1185.551" Z="330.1515" />
+            <!-- Pick up the cauldron -->
+            <CustomBehavior File="UserSettings" UseMount="False" />
+
+            <RunTo X="2750.931" Y="-1203.015" Z="351.9894" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for cauldron {TimeRemaining}" />
+            <RunTo X="2709.253" Y="-1211.353" Z="360.3828" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for cauldron {TimeRemaining}" />
+            <RunTo X="2642.954" Y="-1233.188" Z="377.8906" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for cauldron {TimeRemaining}" />
+            <RunTo X="2566.184" Y="-1309.947" Z="390.8049" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for cauldron {TimeRemaining}" />
+            <RunTo X="2519.183" Y="-1384.029" Z="388.5232" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for cauldron {TimeRemaining}" />
+            <RunTo X="2552.082" Y="-1419.584" Z="396.8929" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for cauldron {TimeRemaining}" />
+            <RunTo X="2550.697" Y="-1446.418" Z="406.1151" />            
+        </While>
+		<CustomBehavior File="UserSettings" UseMount="True" />
+        <TurnIn QuestName="A Strong Back" QuestId="29628" TurnInName="Groundskeeper Wu" TurnInId="54915" X="2549.117" Y="-1454.125" Z="406.1271" />
+        <TurnIn QuestName="And a Heavy Fist" QuestId="29630" TurnInName="Groundskeeper Wu" TurnInId="54915" X="2549.117" Y="-1454.125" Z="406.1271" />
+        <PickUp QuestName="Burning Bright" QuestId="29631" GiverName="Guard Shan Long" GiverId="55094" X="2544.614" Y="-1202.526" Z="380.6914" />
+        <TurnIn QuestName="A Test of Endurance" QuestId="29636" TurnInName="Instructor Myang" TurnInId="54918" X="2532.964" Y="-1269.073" Z="388.0885" />
+        <PickUp QuestName="The Rumpus" QuestId="29637" GiverName="Instructor Myang" GiverId="54918" X="2532.964" Y="-1269.073" Z="388.0885" />
+        <While Condition="HasQuest(29637) &amp;&amp; !IsQuestCompleted(29637)">
+            <UseItem QuestId="29637" ItemId="73369" X="2573.383" Y="-1269.167" Z="377.7172" />
+            <CustomBehavior QuestId="29637" File="WaitTimer" WaitTime="250000" />
+        </While>
+        <TurnIn QuestName="The Rumpus" QuestId="29637" TurnInName="Instructor Myang" TurnInId="54918" X="2532.964" Y="-1269.073" Z="388.0885" />
+        <While Condition="HasQuest(29629) &amp;&amp; (!IsQuestCompleted(29629))">
+            <CustomBehavior File="InteractWith" QuestId="29629" MobId="209550" WaitTime="4000" CollectionDistance="1000">
+                <HuntingGrounds>
+                    <Hotspot X="2677.401" Y="-1014.769" Z="348.7084" />
+                    <Hotspot X="2553.207" Y="-1010.786" Z="367.0496" />
+                    <Hotspot X="2607.136" Y="-949.4142" Z="353.0586" />
+                    <Hotspot X="2726.901" Y="-866.2299" Z="324.8917" />
+                </HuntingGrounds>
+            </CustomBehavior>
+        </While>
+        <Objective QuestName="Burning Bright" QuestId="29631" Type="KillMob" MobId="54988" KillCount="6" />
+        <TurnIn QuestName="Burning Bright" QuestId="29631" TurnInName="Guard Shan Long" TurnInId="55094" X="2544.614" Y="-1202.526" Z="380.6914" />
+        <TurnIn QuestName="A Steady Hand" QuestId="29629" TurnInName="Groundskeeper Wu" TurnInId="54915" X="2549.117" Y="-1454.125" Z="406.1271" />
+        <!-- Flying Colors - we turned in Tian Monastery -->
+        <TurnIn QuestName="Mann's Man" QuestId="29927" TurnInName="Hao Mann" TurnInId="56347" X="2297.663" Y="-1718.575" Z="219.2191" />
+        <PickUp QuestName="Trapped!" QuestId="29929" GiverName="Hao Mann" GiverId="56347" X="2297.663" Y="-1718.575" Z="219.2191" />
+        <While Condition="HasQuest(29929) &amp;&amp; !IsQuestCompleted(29929)">
+            <CustomBehavior File="InteractWith" QuestId="29929" MobId="56464" CollectionDistance="1000">
+                <HuntingGrounds>
+                    <Hotspot X="2322.95" Y="-1794.673" Z="180.9512" />
+                    <Hotspot X="2195.635" Y="-1633.136" Z="186.9365" />
+                    <Hotspot X="2248.057" Y="-1608.369" Z="186.0525" />
+                    <Hotspot X="2381.674" Y="-1638.897" Z="184.6435" />
+                    <Hotspot X="2335.286" Y="-1679.648" Z="186.6916" />
+                </HuntingGrounds>
+            </CustomBehavior>
+        </While>
+        <Objective QuestName="Calamity Jade" QuestId="29926" Type="KillMob" MobId="56404" KillCount="6" />
+        <Objective QuestName="Calamity Jade" QuestId="29926" Type="KillMob" MobId="56401" KillCount="12" />
+        <TurnIn QuestName="Trapped!" QuestId="29929" TurnInName="Hao Mann" TurnInId="56467" X="2283.887" Y="-1781.267" Z="233.6791" />
+        <PickUp QuestName="What's Mined Is Yours" QuestId="29930" GiverName="Hao Mann" GiverId="56467" X="2283.887" Y="-1781.267" Z="233.6791" />
+        <If Condition="HasQuest(29930) &amp;&amp; !IsQuestCompleted(29930)">
+            <CustomBehavior File="InteractWith" QuestId="29930" MobId="56527" X="2284.792" Y="-1780.064" Z="233.7642" />
+            <CustomBehavior File="WaitTimer" WaitTime="90000" GoalText="Waiting for quest to complete {TimeRemaining}" />
+        </If>
+        <If Condition="HasQuest(29930) &amp;&amp; IsQuestCompleted(29930)">
+            <TurnIn QuestName="What's Mined Is Yours" QuestId="29930" TurnInName="Foreman Mann" TurnInId="56346" X="2392.4" Y="-2107.32" Z="230.1798" />
+            <CustomBehavior File="WaitTimer" WaitTime="3000" GoalText="Waiting for quest to complete {TimeRemaining}" />
+            <CustomBehavior File="Misc\RunLua" Lua="StopCinematic()" WaitTime="1000" />
+        </If>
+        <TurnIn QuestName="Calamity Jade" QuestId="29926" TurnInName="Foreman Mann" TurnInId="56346" X="2392.4" Y="-2107.32" Z="230.1798" />
+        <PickUp QuestName="The Serpent's Heart" QuestId="29931" GiverName="Foreman Mann" GiverId="56346" X="2392.4" Y="-2107.32" Z="230.1798" />
+        <!-- To Serpent's Heart -->
+
+        <CustomBehavior File="Message" Text="Compiling Serpent's Heart Quests" LogColor="CornflowerBlue" />
+
+        <TurnIn QuestName="The Serpent's Heart" QuestId="29931" TurnInName="Foreman Raike" TurnInId="59391" X="796.934" Y="-1921.526" Z="58.96725" />
+        <!-- To Serpent's Heart -->
+        <PickUp QuestName="Love's Labor" QuestId="30495" GiverName="Foreman Raike" GiverId="59391" X="796.934" Y="-1921.526" Z="58.96725" />
+        <If Condition="HasQuest(30495) &amp;&amp; !IsQuestCompleted(30495)">
+            <While Condition="(HasQuest(30495)) &amp;&amp; (!IsObjectiveComplete(1, 30495))">
+                <CustomBehavior File="InteractWith" QuestId="30495" NonCompeteDistance="0" MobId="59395" GossipOptions="1" X="775.8038" Y="-1785.62" Z="56.52417" />
+                <!-- Dinh -->
+            </While>
+            <While Condition="(HasQuest(30495)) &amp;&amp; (!IsObjectiveComplete(2, 30495))">
+                <CustomBehavior File="InteractWith" QuestId="30495" MobId="59401" NonCompeteDistance="0" GossipOptions="1" X="842.9028" Y="-1825.842" Z="66.12762" />
+                <!-- Sawa -->
+            </While>
+            <While Condition="(HasQuest(30495)) &amp;&amp; (!IsObjectiveComplete(3, 30495))">
+                <CustomBehavior File="InteractWith" QuestId="30495" MobId="59392" NonCompeteDistance="0" GossipOptions="2" X="858.5382" Y="-1912.387" Z="63.64378" />
+                <!-- Kitemaster Shoku -->
+            </While>
+            <While Condition="(HasQuest(30495)) &amp;&amp; (!IsObjectiveComplete(4, 30495))">
+                <If Condition="Me.Location.Distance(new WoWPoint (829.1943, -1872.618, 172.209)) &gt;= 25">
+                    <RunTo X="858.5382" Y="-1912.387" Z="63.64399" />
+                    <CustomBehavior File="InteractWith" PreInteractMountStrategy="DismountOrCancelShapeshift" QuestId="30495" MobId="59392" GossipOptions="1" X="858.5382" Y="-1912.387" Z="63.64399" />
+                    <!-- Kitemaster Shoku gives ride up -->
+                    <CustomBehavior File="WaitTimer" WaitTime="15000" GoalText="Waiting for flight {TimeRemaining}" />
+                </If>
+                <If Condition="Me.Location.Distance(new WoWPoint (829.1943, -1872.618, 172.209)) &lt; 25">
+                    <CustomBehavior File="InteractWith" MobId="59397" PreInteractMountStrategy="DismountOrCancelShapeshift" NonCompeteDistance="0"  GossipOptions="1" Nav="CTM" X="828.4011" Y="-1870.391" Z="172.2085" />
+                    <!-- Taskmaster Emi -->
+                    <CustomBehavior File="InteractWith" MobId="59400" Nav="CTM" X="835.9531" Y="-1861.436" Z="172.2077" />
+                    <CustomBehavior File="InteractWith" PreInteractMountStrategy="DismountOrCancelShapeshift" MobId="59400" GossipOptions="1" Nav="CTM" X="835.9531" Y="-1861.436" Z="172.2077" />
+                    <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for flight {TimeRemaining}" />
+                </If>
+            </While>
+        </If>
+        <If Condition="HasQuest(30495) &amp;&amp; IsQuestCompleted(30495) &amp;&amp; (Me.Z &gt; 150)">
+            <CustomBehavior File="InteractWith" MobId="59400" Nav="CTM" X="835.9531" Y="-1861.436" Z="172.2077" />
+            <CustomBehavior File="InteractWith" PreInteractMountStrategy="DismountOrCancelShapeshift" MobId="59400" GossipOptions="1" Nav="CTM" X="835.9531" Y="-1861.436" Z="172.2077" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for flight {TimeRemaining}" />
+        </If>
+        <TurnIn QuestName="Love's Labor" QuestId="30495" TurnInName="Foreman Raike" TurnInId="59391" X="796.934" Y="-1921.526" Z="58.96725" />
+
+        <!--
+            <CustomBehavior File="Message" Text="Ignoring Jade Temple Quests due to mesh issues atm" LogColor="CornflowerBlue" />
+
+            Jade Temple Quests will have mesh issues -->
+        <CustomBehavior File="Message" Text="Compiling Jade Temple Quests" LogColor="CornflowerBlue" />
+
+        <If Condition="!HasQuest(29932) &amp;&amp; !IsQuestCompleted(29932)">
+            <PickUp QuestName="The Temple of the Jade Serpent" QuestId="29932" GiverName="Foreman Raike" GiverId="59391" X="796.934" Y="-1921.526" Z="58.9674" />
+            <RunTo X="858.5382" Y="-1912.387" Z="63.64399" />
+            <CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" MobId="59392" GossipOptions="2" X="858.5382" Y="-1912.387" Z="63.64399" />
+            <CustomBehavior File="WaitTimer" WaitTime="3000" GoalText="Waiting for ride {TimeRemaining}" />
+        </If>
+        <If Condition="HasQuest(29932) &amp;&amp; !IsQuestCompleted(29932)">
+            <CustomBehavior File="InteractWith" QuestId="29932" MobId="57242" GossipOptions="1" X="995.6285" Y="-2447.675" Z="168.5978" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for objective to complete {TimeRemaining}" />
+            <CustomBehavior File="Misc\RunLua" Lua="StopCinematic()" WaitTime="1000" />
+            <CustomBehavior File="WaitTimer" WaitTime="35000" GoalText="Waiting for objective to complete {TimeRemaining}" />
+        </If>
+        <TurnIn QuestName="The Temple of the Jade Serpent" QuestId="29932" TurnInName="Elder Sage Rain-Zhu" TurnInId="56782" X="921.8958" Y="-2607.582" Z="185.1195" />
+        <!-- Theres no vendors inside the Temple of the Jade Serpent -->
+        <DisableBehavior Name="Vendor" />
+        <PickUp QuestName="The Scryer's Dilemma" QuestId="29997" GiverName="Elder Sage Rain-Zhu" GiverId="56782" X="921.8958" Y="-2607.582" Z="185.1195" />
+        <PickUp QuestName="The Librarian's Quandary" QuestId="29998" GiverName="Elder Sage Rain-Zhu" GiverId="56782" X="921.8958" Y="-2607.582" Z="185.1195" />
+        <PickUp QuestName="The Rider's Bind" QuestId="29999" GiverName="Fei" GiverId="56784" X="905.5399" Y="-2600.372" Z="185.1206" />
+        <PickUp QuestName="Lighting Up the Sky" QuestId="30005" GiverName="Fei" GiverId="56784" X="905.5399" Y="-2600.372" Z="185.1206" />
+        <While Condition="HasQuest(30005) &amp;&amp; !IsQuestCompleted(30005)">
+            <CustomBehavior File="InteractWith" QuestId="30005" CollectionDistance="1000" WaitTime="2000" MovementBy="NavigatorOnly"
+                                            PreInteractMountStrategy="DismountOrCancelShapeshift"   MobId1="215568" MobId2="210003" MobId3="209996" MobId4="210004">
+                <HuntingGrounds>
+                    <Hotspot X="877.8337" Y="-2605.169" Z="181.3216" />
+                    <Hotspot X="914.0335" Y="-2518.007" Z="181.3212" />
+                    <Hotspot X="965.2648" Y="-2536.005" Z="181.3213" />
+                    <Hotspot X="937.9841" Y="-2622.05" Z="181.3514" />
+                    <Hotspot X="972.4467" Y="-2642.668" Z="182.11" />
+                    <Hotspot X="1005.86" Y="-2671.944" Z="186.4" />
+                    <Hotspot X="1019.199" Y="-2636.237" Z="186.4827" />
+                    <Hotspot X="952.8834" Y="-2495.143" Z="180.6072" />
+                    <Hotspot X="800.5415" Y="-2589.265" Z="186.4824" />
+                    <Hotspot X="859.7446" Y="-2565.477" Z="181.287" />
+                </HuntingGrounds>
+            </CustomBehavior>
+        </While>
+        <While Condition="(HasQuest(29999)) &amp;&amp; (!IsObjectiveComplete(2, 29999))">
+            <CustomBehavior File="InteractWith" QuestId="29999" QuestObjectiveIndex="2" MobId="56852" Range="5" X="793.6768" Y="-2612.263" Z="187.5209" />
+        </While>
+        <While Condition="(HasQuest(29999)) &amp;&amp; (!IsObjectiveComplete(3, 29999))">
+            <CustomBehavior File="InteractWith" QuestId="29999" QuestObjectiveIndex="3" MobId="56851" Range="5" X="933.2105" Y="-2496.116" Z="181.5241" />
+        </While>
+        <While Condition="(HasQuest(29999)) &amp;&amp; (!IsObjectiveComplete(1, 29999))">
+            <CustomBehavior File="InteractWith" QuestId="29999" QuestObjectiveIndex="1" MobId="56853" X="1013.754" Y="-2679.993" Z="188.0081" />
+        </While>
+        <TurnIn QuestName="The Librarian's Quandary" QuestId="29998" TurnInName="Lorewalker Stonestep" TurnInId="56786" X="839.3281" Y="-2476.998" Z="176.3033" />
+        <PickUp QuestName="Moth-Ridden" QuestId="30001" GiverName="Lorewalker Stonestep" GiverId="56786" X="839.3281" Y="-2476.998" Z="176.3033" />
+        <PickUp QuestName="Pages of History" QuestId="30002" GiverName="Lorewalker Stonestep" GiverId="56786" X="839.3281" Y="-2476.998" Z="176.3033" />
+        <While Condition="HasQuest(30002) &amp;&amp; !IsQuestCompleted(30002)">
+			<CustomBehavior File="InteractWith" QuestId="30002" MobId="209594" WaitTime="2000"
+                            IgnoreMobsInBlackspots="True" CollectionDistance="200">
+                <Blackspots>
+                    <Blackspot X="821.0117" Y="-2478.628" Z="192.5526" Radius="5" />
+                    <Blackspot X="854.1977" Y="-2444.09" Z="192.5632" Radius="5" />
+                    <Blackspot X="821.7141" Y="-2491.898" Z="179.902" Radius="5" />
+                    <Blackspot X="837.5516" Y="-2517.023" Z="179.9022" Radius="5" />
+                    <Blackspot X="872.4144" Y="-2436.604" Z="192.5647" Radius="5" />
+                    <Blackspot X="829.2274" Y="-2424.292" Z="192.5599" Radius="5" />
+                    <Blackspot X="805.1687" Y="-2495.39" Z="192.5486" Radius="5" />
+                    <Blackspot X="848.749" Y="-2510.958" Z="192.5531" Radius="5" />
+                </Blackspots>
+                <HuntingGrounds>
+                    <Hotspot X="844.6694" Y="-2458.594" Z="174.9597" />
+                </HuntingGrounds>
+            </CustomBehavior>
+            <CustomBehavior File="InteractWith" QuestId="30002" MobId="57237" CollectionDistance="200"
+                            MobState="Alive" NonCompeteDistance="10" InteractBlacklistTimeInSeconds="1"
+                            IgnoreMobsInBlackspots="True" IgnoreLoSToTarget="True" WaitForNpcs="False"
+                            NumOfTimes="12" X="844.6836" Y="-2460.097" Z="174.9617" />
+        </While>
+        <Objective QuestName="Moth-Ridden" QuestId="30001" Type="KillMob" MobId="57232" KillCount="8" />
+        <TurnIn QuestName="Pages of History" QuestId="30002" TurnInName="Lorewalker Stonestep" TurnInId="56786" X="839.3281" Y="-2476.998" Z="176.3033" />
+        <TurnIn QuestName="Moth-Ridden" QuestId="30001" TurnInName="Lorewalker Stonestep" TurnInId="56786" X="839.3281" Y="-2476.998" Z="176.3033" />
+        <If Condition="!HasQuest(30004) &amp;&amp; !IsQuestCompleted(30004)">
+            <PickUp QuestName="Everything In Its Place" QuestId="30004" GiverName="Lorewalker Stonestep"
+                    GiverId="56786" X="839.3281" Y="-2476.998" Z="176.3033" />
+            <!-- CJ: Navigation in this room is borked...
+                 These CtM commands will get us out of the room and back into sanity.
+            -->
+            <CustomBehavior File="MyCTM" X="838.3664" Y="-2480.586" Z="176.6582" />
+            <CustomBehavior File="MyCTM" X="812.8027" Y="-2559.374" Z="186.4825" />
+        </If>
+        <While Condition="(HasQuest(29999)) &amp;&amp; !IsObjectiveComplete(4, 29999)">
+            <CustomBehavior File="InteractWith" QuestId="29999" QuestObjectiveIndex="4" MobId="56850" Range="5" X="843.3549" Y="-2459.354" Z="179.2966" />
+        </While>
+        <If Condition="HasQuest(29997) &amp;&amp; !IsQuestCompleted(29997)">
+            <RunTo X="1047.59" Y="-2560.368" Z="174.1573" />
+            <Objective QuestName="The Scryer's Dilemma" QuestId="29997" Type="CollectItem" ItemId="76725" CollectCount="1" />
+        </If>
+        <TurnIn QuestName="The Scryer's Dilemma" QuestId="29997" TurnInName="Wise Mari" TurnInId="56787" X="1044.292" Y="-2568.181" Z="174.6981" />
+        <PickUp QuestName="A New Vision" QuestId="30011" GiverName="Wise Mari" GiverId="56787" X="1044.292" Y="-2568.181" Z="174.6981" />
+        <TurnIn QuestName="A New Vision" QuestId="30011" TurnInName="Elder Sage Rain-Zhu" TurnInId="56782" X="921.8958" Y="-2607.582" Z="185.1194" />
+        <TurnIn QuestName="Everything In Its Place" QuestId="30004" TurnInName="Elder Sage Rain-Zhu" TurnInId="56782" X="921.8958" Y="-2607.582" Z="185.1194" />
+        <TurnIn QuestName="The Rider's Bind" QuestId="29999" TurnInName="Fei" TurnInId="56784" X="905.5399" Y="-2600.372" Z="185.1206" />
+        <TurnIn QuestName="Lighting Up the Sky" QuestId="30005" TurnInName="Fei" TurnInId="56784" X="905.5399" Y="-2600.372" Z="185.1206" />
+        <EnableBehavior Name="Vendor" />
+        <If Condition="!HasQuest(30000) &amp;&amp; !IsQuestCompleted(30000)">
+            <PickUp QuestName="The Jade Serpent" QuestId="30000" GiverName="Fei" GiverId="56784" X="905.5399" Y="-2600.372" Z="185.1206" />
+            <CustomBehavior File="WaitTimer" WaitTime="170000" />
+        </If>
+        <TurnIn QuestName="The Jade Serpent" QuestId="30000" TurnInName="Elder Sage Wind-Yi" TurnInId="57242" X="995.6285" Y="-2447.675" Z="168.5979" />
+        <If Condition="!HasQuest(30498) &amp;&amp; !IsQuestCompleted(30498)">
+            <PickUp QuestName="Get Back Here!" QuestId="30498" GiverName="Elder Sage Wind-Yi" GiverId="57242" X="995.6285" Y="-2447.675" Z="168.5979" />
+        </If>
+        <If Condition="HasQuest(30498) &amp;&amp; IsQuestCompleted(30498) &amp;&amp; (Me.X &gt; 700)">
+            <RunTo X="777.8055" Y="-2358.609" Z="120.8827" />
+            <CustomBehavior File="InteractWith" MobId="59727" PreInteractMountStrategy="Dismount"  X="777.8055" Y="-2358.609" Z="120.8827" />
+            <!-- FP -->
+            <CustomBehavior File="InteractWith" MobId="59727" GossipOptions="2" X="777.8055" Y="-2358.609" Z="120.8829" />
+            <CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for flight {TimeRemaining}" />
+        </If>
+
+        <CustomBehavior File="Message" Text="Compiling Nectarbreeze Orchard Quests" LogColor="CornflowerBlue" />
+
+        <TurnIn QuestName="An Air of Worry" QuestId="29576" TurnInName="Shao the Defiant" TurnInId="54697" X="118.6111" Y="-1584.5" Z="92.76532" />
+        <!-- Travel to Nectarbreeze Orchard -->
+        <PickUp QuestName="Defiance" QuestId="29578" GiverName="Shao the Defiant" GiverId="54697" X="118.6111" Y="-1584.5" Z="92.76532" />
+        <PickUp QuestName="Rally the Survivors" QuestId="29579" GiverName="Shao the Defiant" GiverId="54697" X="118.6111" Y="-1584.5" Z="92.76532" />
+        <PickUp QuestName="Orchard-Supplied Hardware" QuestId="29580" GiverName="Gentle Mother Hanae" GiverId="54854" X="128.1257" Y="-1570.136" Z="93.47578" />
+        <!--<PickUp QuestName="Spitfire" QuestId="29585" GiverName="Gentle Mother Hanae" GiverId="54854" X="128.1257" Y="-1570.136" Z="93.47578" />
+                I can come back and fiddle with this one when I have some spare time; it seems easy enough and it's optional / no chain -->
+        <CustomBehavior File="InteractWith" QuestId="29579" MobId="54763" MobState="AliveNotInCombat" NumOfTimes="50" GossipOptions="1" CollectionDistance="1000">
+            <HuntingGrounds>
+                <Hotspot X="93.37485" Y="-1596.48" Z="91.06828" />
+                <Hotspot X="151.5261" Y="-1643.344" Z="78.00822" />
+                <Hotspot X="218.0805" Y="-1572.82" Z="83.49409" />
+                <Hotspot X="287.0885" Y="-1615.347" Z="73.28522" />
+            </HuntingGrounds>
+        </CustomBehavior>
+        <Objective QuestName="Orchard-Supplied Hardware" QuestId="29580" Type="CollectItem" ItemId="72133" CollectCount="6" />
+        <While Condition="HasQuest(29585) &amp;&amp; !IsQuestCompleted(29585)">
+            <!-- Issue with hotspots on top of houses and find end poly -->
+            <CustomBehavior File="InteractWith" QuestId="29585" MobId="54780" Range="9" CollectionDistance="1000" InteractByBuyingItemId="72578">
+                <HuntingGrounds>
+                    <Hotspot X="89.79124" Y="-1596.039" Z="91.25565" />
+                    <Hotspot X="134.8403" Y="-1644.674" Z="76.88028" />
+                    <Hotspot X="192.9349" Y="-1655.546" Z="75.27157" />
+                    <Hotspot X="266.6496" Y="-1636.546" Z="71.76299" />
+                    <Hotspot X="324.1593" Y="-1618.13" Z="71.79546" />
+                    <Hotspot X="261.1234" Y="-1599.09" Z="76.54282" />
+                    <Hotspot X="217.7616" Y="-1563.552" Z="83.92526" />
+                    <Hotspot X="165.0011" Y="-1568.513" Z="93.64317" />
+                </HuntingGrounds>
+            </CustomBehavior>
+        </While>
+        <Objective QuestName="Defiance" QuestId="29578" Type="KillMob" MobId="54702" KillCount="8" />
+        <Objective QuestName="Defiance" QuestId="29578" Type="KillMob" MobId="54703" KillCount="8" />
+        <!--<TurnIn QuestName="Spitfire" QuestId="29585" TurnInName="Gentle Mother Hanae" TurnInId="54854" X="128.1257" Y="-1570.136" Z="93.47578" /> -->
+        <TurnIn QuestName="Orchard-Supplied Hardware" QuestId="29580" TurnInName="Gentle Mother Hanae" TurnInId="54854" X="128.1257" Y="-1570.136" Z="93.47578" />
+        <TurnIn QuestName="Rally the Survivors" QuestId="29579" TurnInName="Shao the Defiant" TurnInId="54697" X="118.6111" Y="-1584.5" Z="92.76532" />
+        <TurnIn QuestName="Defiance" QuestId="29578" TurnInName="Shao the Defiant" TurnInId="54697" X="118.6111" Y="-1584.5" Z="92.76532" />
+        <PickUp QuestName="The Splintered Path" QuestId="29586" GiverName="Traumatized Nectarbreeze Farmer" GiverId="55209" X="117.9045" Y="-1565.095" Z="93.47723" />
+        <!-- To Camp Gormals -->
+
+        <CustomBehavior File="Message" Text="Compiling Camp Gormals Quests" LogColor="CornflowerBlue" />
+
+        <TurnIn QuestName="The Splintered Path" QuestId="29586" TurnInName="Shao the Defiant" TurnInId="55009" X="209.3385" Y="-1411.356" Z="76.53178" />
+        <!-- Travel to Camp Gormals -->
+        <PickUp QuestName="Maul Gormal" QuestId="29670" GiverName="Shao the Defiant" GiverId="55009" X="209.3385" Y="-1411.356" Z="76.53178" />
+        <PickUp QuestName="Unbound" QuestId="29587" GiverName="Shao the Defiant" GiverId="55009" X="209.3385" Y="-1411.356" Z="76.53178" />
+        <While Condition="HasQuest(29587) &amp;&amp; !IsQuestCompleted(29587)">
+            <CustomBehavior File="InteractWith" QuestId="29587" MobId="54990" CollectionDistance="1000" NumOfTimes="10">
+                <HuntingGrounds>
+                    <Hotspot X="182.763" Y="-1341.724" Z="66.72571" />
+                    <Hotspot X="131.1819" Y="-1282.142" Z="50.08719" />
+                    <Hotspot X="78.00295" Y="-1191.037" Z="2.829817" />
+                </HuntingGrounds>
+            </CustomBehavior>
+        </While>
+        <Objective QuestName="Maul Gormal" QuestId="29670" Type="KillMob" MobId="55016" KillCount="1" />
+        <TurnIn QuestName="Maul Gormal" QuestId="29670" TurnInName="Shao the Defiant" TurnInId="55009" X="209.3385" Y="-1411.356" Z="76.53178" />
+        <TurnIn QuestName="Unbound" QuestId="29587" TurnInName="Shao the Defiant" TurnInId="55009" X="209.3385" Y="-1411.356" Z="76.53178" />
+
+        <CustomBehavior File="Message" Text="Compiling Pearlfin Village Quests (Ally)" LogColor="CornflowerBlue" />
+
+        <PickUp QuestName="An Unexpected Advantage" QuestId="30565" GiverName="Sully &quot;The Pickle&quot; McLeary" GiverId="59550" X="-178.3889" Y="-2636.837" Z="0.9640999" />
+        <TurnIn QuestName="Get Back Here!" QuestId="30498" TurnInName="Admiral Taylor" TurnInId="55122" X="-101.6424" Y="-2603.09" Z="15.97676" />
+        <PickUp QuestName="Helping the Cause" QuestId="30568" GiverName="Admiral Taylor" GiverId="55122" X="-101.6424" Y="-2603.09" Z="15.97676" />
+        <If Condition="HasQuest(30568) &amp;&amp; !IsQuestCompleted(30568)">
+            <While Condition="!IsObjectiveComplete(1, 30568)">
+                <CustomBehavior File="InteractWith" MobId="59572" GossipOptions="1" CollectionDistance="1000" X="-262.0134" Y="-2699.32" Z="-0.3219208" />
+            </While>
+            <While Condition="!IsObjectiveComplete(3, 30568)">
+                <If Condition="!IsObjectiveComplete(3, 30568)">
+                    <CustomBehavior File="InteractWith" MobId="59609" CollectionDistance="1000" WaitTime="8000">
+                        <HuntingGrounds>
+                            <Hotspot X="-404.9135" Y="-2797.378" Z="9.369388"/>
+                            <Hotspot  X="-445.5693" Y="-2731.886" Z="5.550815" />
+                        </HuntingGrounds>
+                    </CustomBehavior>
+                </If>
+            </While>
+        </If>
+        <Objective QuestName="An Unexpected Advantage" QuestId="30565" Type="CollectItem" ItemId="80176" CollectCount="4" />
+        <Objective QuestName="An Unexpected Advantage" QuestId="30565" Type="CollectItem" ItemId="80177" CollectCount="4" />
+        <While Condition="HasQuest(30568) &amp;&amp; !IsQuestCompleted(30568)">
+            <CustomBehavior File="InteractWith" QuestId="30568" MobId="59563" GossipOptions="1" X="-59.71875" Y="-2375.474" Z="34.22054" />
+            <CustomBehavior File="InteractWith" QuestId="30568" MobId="59562" WaitForNpcs="False" X="-76.80101" Y="-2365.528" Z="27.99059" />
+            <CustomBehavior File="WaitTimer" WaitTime="10000" />
+        </While>
+        <TurnIn QuestName="An Unexpected Advantage" QuestId="30565" TurnInName="Sully &quot;The Pickle&quot; McLeary" TurnInId="59550" X="-178.3889" Y="-2636.837" Z="0.9640999" />
+        <TurnIn QuestName="Helping the Cause" QuestId="30568" TurnInName="Admiral Taylor" TurnInId="55122" X="-101.6424" Y="-2603.09" Z="15.97676" />
+        <If Condition="!HasQuest(31362) &amp;&amp; !IsQuestCompleted(31362)">
+            <PickUp QuestName="Last Piece of the Puzzle" QuestId="31362" GiverName="Lorewalker Cho" GiverId="59620" X="-123.1615" Y="-2657.717" Z="2.645605" />
+            <RunTo X="-121.3646" Y="-2656.535" Z="2.664594" />
+            <CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" MobId="64475" GossipOptions="1" X="-121.3646" Y="-2656.535" Z="2.664594" />
+            <CustomBehavior File="WaitTimer" WaitTime="3000" />
+            <RunTo X="535.8745" Y="-1656.537" Z="200.7" />
+            <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(80071)" WaitTime="1000" />
+            <CustomBehavior File="WaitTimer" WaitTime="115000" />
+        </If>
+        <While Condition="HasQuest(31362) &amp;&amp; !IsQuestCompleted(31362)">
+            <RunTo X="-121.3646" Y="-2656.535" Z="2.664594" />
+            <CustomBehavior File="InteractWith" PreInteractMountStrategy="Dismount" MobId="64475" GossipOptions="1" X="-121.3646" Y="-2656.535" Z="2.664594" />
+            <CustomBehavior File="WaitTimer" WaitTime="3000" />
+            <RunTo X="535.8745" Y="-1656.537" Z="200.7" />
+            <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(80071)" WaitTime="1000" />
+            <CustomBehavior File="WaitTimer" WaitTime="115000" />
+        </While>
+        <TurnIn QuestName="Last Piece of the Puzzle" QuestId="31362" TurnInName="Lorewalker Cho" TurnInId="59411" X="529.7031" Y="-1674.799" Z="198.8996" />
+        <CustomBehavior File="Message" Text="Compiling Serpent's Overlook Quests" LogColor="CornflowerBlue" />
+
+        <If Condition="!HasQuest(31303) &amp;&amp; !IsQuestCompleted(31303)">
+            <!-- If we are not at serpent's overlook -->
+            <If Condition="(!((Me.Z &lt; 200) &amp;&amp; (Me.Z &gt; 180))) &amp;&amp; (!((Me.X &gt; 450) &amp;&amp; (Me.X &lt; 530))) &amp;&amp; (!((Me.Y &gt; -1750) &amp;&amp; (Me.Y &lt; -1500)))">
+                <RunTo X="1499.969" Y="-1833.453" Z="246.2003" />
+                <CustomBehavior File="UserSettings" UseFlightPaths="True" />
+                <CustomBehavior File="InteractWith" MobId="59186" X="1499.969" Y="-1833.453" Z="246.2003" />
+                <!-- FP Master, Dawn's Overlook -->
+                <CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for transport to mount {TimeRemaining}" />
+                <RunTo X="526.9421" Y="-1672.902" Z="198.8996" />
+                <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for transport to mount {TimeRemaining}" />
+            </If>
+        </If>
+        <PickUp QuestName="The Seal is Broken" QuestId="31303" GiverName="Lorewalker Cho" GiverId="59411" X="529.7031" Y="-1674.799" Z="198.8996" />
+        <DisableBehavior Name="Combat" />
+        <If Condition="HasQuest(31303) &amp;&amp; !IsQuestCompleted(31303)">
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for transport to mount {TimeRemaining}" />
+            <If Condition="!Me.IsOnTransport">
+                <!-- If we are not at serpent's overlook -->
+                <If Condition="(!((Me.Z &lt; 200) &amp;&amp; (Me.Z &gt; 180))) &amp;&amp; (!((Me.X &gt; 450) &amp;&amp; (Me.X &lt; 530))) &amp;&amp; (!((Me.Y &gt; -1750) &amp;&amp; (Me.Y &lt; -1500)))">
+                    <RunTo X="1499.969" Y="-1833.453" Z="246.2003" />
+                    <CustomBehavior File="UserSettings" UseFlightPaths="True" />
+                    <CustomBehavior File="InteractWith" MobId="59186" X="1499.969" Y="-1833.453" Z="246.2003" />
+                    <!-- FP Master, Dawn's Overlook -->
+                    <CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for transport to mount {TimeRemaining}" />
+                    <RunTo X="526.9421" Y="-1672.902" Z="198.8996" />
+                    <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for transport to mount {TimeRemaining}" />
+                </If>
+                <CustomBehavior File="InteractWith" MobId="64244" TerminateWhen="Me.IsOnTransport" GossipOptions="1" WaitTime="7000" X="531.9583" Y="-1674.62" Z="198.8996" />
+            </If>
+            <If Condition="Me.IsOnTransport">
+                <CustomBehavior File="SpecificQuests\31303-JadeForest-TheSealIsBroken" />
+                <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for transport to mount {TimeRemaining}" />
+            </If>
+            <CustomBehavior File="Misc\RunLua" Lua="StopCinematic()" WaitTime="1000" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for transport to mount {TimeRemaining}" />
+        </If>
+        <EnableBehavior Name="Combat" />
+        <TurnIn QuestName="The Seal is Broken" QuestId="31303" TurnInName="Lorewalker Cho" TurnInId="59418" X="790.9219" Y="-1990.325" Z="54.25745" />
+        <PickUp QuestName="Residual Fallout" QuestId="30500" GiverName="Lorewalker Cho" GiverId="59418" X="790.9219" Y="-1990.325" Z="54.25745" />
+        <!-- optional quest, too hard for now
+        <PickUp QuestName="Jaded Heart" QuestId="30502" GiverName="Lorewalker Cho" GiverId="59418" X="790.9219" Y="-1990.325" Z="54.25745" />-->
+        <PickUp QuestName="Emergency Response" QuestId="31319" GiverName="Lorewalker Cho" GiverId="59418" X="790.9219" Y="-1990.325" Z="54.25745" />
+        <If Condition="HasQuest(31319) &amp;&amp; !IsQuestCompleted(31319)">
+            <While Condition="!IsObjectiveComplete(1, 31319)">
+                <RunTo X="764.0306" Y="-1878.369" Z="62.19342" />
+                <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(86511)" WaitTime="1000" />
+            </While>
+            <While Condition="!IsObjectiveComplete(2, 31319)">
+                <RunTo X="783.4726" Y="-1786.991" Z="56.5227" />
+                <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(86511)" WaitTime="1000" />
+            </While>
+            <While Condition="!IsObjectiveComplete(3, 31319)">
+                <RunTo X="897.5157" Y="-1867.394" Z="60.43275" />
+                <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(86511)" WaitTime="1000" />
+            </While>
+        </If>
+        <While Condition="HasQuest(30502) &amp;&amp; !IsQuestCompleted(30502)">
+            <Objective QuestName="Jaded Heart" QuestId="30502" Type="CollectItem" ItemId="80074" CollectCount="6" />
+            <While Condition="GetItemCount(80074) &lt; 1">
+                <CustomBehavior File="InteractWith" QuestId="30502" MobId="210921" ObjectType="GameObject" WaitTime="2000" CollectionDistance="1000" X="812.5245" Y="-1922.784" Z="60.64294" />
+            </While>
+            <CustomBehavior File="CombatUseItemOnV2" QuestId="30502" MobId="59434" ItemId="80074" UseWhenMobHasHealthPercent="100" MaxRange="5" X="812.5245" Y="-1922.784" Z="60.64294" />
+        </While>
+        <Objective QuestName="Residual Fallout" QuestId="30500" Type="KillMob" MobId="59417" KillCount="10" />
+        <TurnIn QuestName="Residual Fallout" QuestId="30500" TurnInName="Lorewalker Cho" TurnInId="59418" />
+        <If Condition="HasQuest(30502) &amp;&amp; IsQuestCompleted(30502)">
+            <TurnIn QuestName="Jaded Heart" QuestId="30502" TurnInName="Lorewalker Cho" TurnInId="59418" />
+        </If>
+        <TurnIn QuestName="Emergency Response" QuestId="31319" TurnInName="Lorewalker Cho" TurnInId="59418" X="790.9219" Y="-1990.325" Z="54.25745" />
+        <PickUp QuestName="Moving On" QuestId="30648" GiverName="Fei" GiverId="59899" X="793.3941" Y="-1990.938" Z="54.30451" />
+        <If Condition="HasQuest(30648) &amp;&amp; !IsQuestCompleted(30648)">
+            <CustomBehavior File="InteractWith" MobId="59899" GossipOptions="1" X="793.3941" Y="-1990.938" Z="54.30451" />
+            <CustomBehavior File="WaitTimer" WaitTime="120000" />
+        </If>
+        <While Condition="HasQuest(30648) &amp;&amp; IsQuestCompleted(30648)">
+            <TurnIn QuestId="30648" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for CLQ {TimeRemaining}" />
+        </While>
+
+        <!-- His Name Was... Stormstout - Dawn's Blossom - see where to add this into the profile at?
+            <If Condition="((!HasQuest(32018)) &amp;&amp; (!IsQuestCompleted(32018))) &amp;&amp; ((!HasQuest(32019)) &amp;&amp; (!IsQuestCompleted(32019)))" >
+                <RunTo X="1604.366" Y="-1744.601" Z="263.989" />
+                <CustomBehavior File="InteractWith" MobId="56774" X="1604.366" Y="-1744.601" Z="263.989" />
+                <CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+                <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for quest to register {TimeRemaining}" />
+            </If>
+            -->
+        <If Condition="HasQuest(32018) &amp;&amp; IsQuestCompleted(32018)">
+            <RunTo X="517.3177" Y="-693.7483" Z="247.2532" />
+            <TurnIn QuestName="His Name Was... Stormstout" QuestId="32018" TurnInName="Chen Stormstout" TurnInId="56133" X="517.3177" Y="-693.7483" Z="247.2532" />
+        </If>
+        <If Condition="HasQuest(32018) &amp;&amp; IsQuestCompleted(32019)">
+            <RunTo X="517.3177" Y="-693.7483" Z="247.2532" />
+            <TurnIn QuestName="They Call Him... Stormstout" QuestId="32019" TurnInName="Chen Stormstout" TurnInId="56133" X="517.3177" Y="-693.7483" Z="247.2532" />
+        </If>
+
+        <If Condition="!HasQuest(29907) &amp;&amp; !IsQuestCompleted(29907)">
+            <PickUp QuestName="Chen and Li Li" QuestId="29907" GiverName="Chen Stormstout" GiverId="56133" X="517.0702" Y="-692.7645" Z="247.2814" />
+            <CustomBehavior File="InteractWith" MobId="60230" X="544.8073" Y="-637.2621" Z="257.8604" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for quest to complete {TimeRemaining}" />
+        </If>
+
+        <CustomBehavior File="LoadProfile" ProfileName="[N - Quest] 86-87 Valley of the Four Winds [Kick]" RememberProfile="true" />
+    </QuestOrder>
+</HBProfile>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Zul'Farrak</Name>
+  <DungeonId>24</DungeonId>
+  <BossEncounters>
+		<Boss isFinal="false" entry="10082" name="Zerillis" killOrder="1" optional="true" X="1651.038" Y="899.133" Z="8.876932" />
+		<Boss isFinal="false" entry="10080" name="Sandarr Dunereaver" killOrder="2" optional="true" X="1556.98" Y="1000.412" Z="8.877719" />
+    <Boss isFinal="false" entry="7272" name="Theka the Martyr" killOrder="3" optional="false" X="1803.00" Y="892.96" Z="8.91" />
+    <Boss isFinal="false" entry="8127" name="Antu'sul" killOrder="4" optional="false" X="1811.347" Y="710.0153" Z="15.21295" />
+    <Boss isFinal="false" entry="7271" name="Witch Doctor Zum'rah" killOrder="5" optional="false" X="1908.23" Y="1015.041" Z="11.51554"/>
+    <Boss isFinal="false" entry="7604" name="Sergeant Bly" killOrder="6" optional="false" X="1885.295" Y="1202.984" Z="8.87686" />
+		<Boss isFinal="false" entry="7795" name="Hydromancer Velratha" killOrder="7" optional="false" X="1677.47" Y="1223.534" Z="8.87708"/>
+		<Boss isFinal="false" entry="7273" name="Gahz'rilla" killOrder="8" optional="true" X="1677.47" Y="1223.534" Z="8.87708"/>
+    <Boss isFinal="false" entry="7797" name="Ruuzlu" killOrder="9" optional="false" X="1730.438" Y="1015.554" Z="54.8781"/>
+    <Boss isFinal="true" entry="7267" name="Chief Ukorz Sandscalp" killOrder="10" optional="false" X="1726.733" Y="1018.31" Z="54.88902"/>
+  </BossEncounters>
+  <Blackspots>
+    <!--<Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

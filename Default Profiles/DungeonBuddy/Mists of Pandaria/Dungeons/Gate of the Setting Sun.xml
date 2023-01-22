@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<DungeonBuddyProfile>
+  <Name>Gate of the Setting Sun</Name>
+  <DungeonId>631</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="56906" name="Saboteur Kip'tilak" killOrder="1" optional="false" X="722.2803" Y="2318.485" Z="391.0808"/>
+    <Boss isFinal="false" entry="56589" name="Striker Ga'dok" killOrder="2" optional="false" X="1234.365" Y="2304.075" Z="430.8807"/>
+    <Boss isFinal="false" entry="56636" name="Commander Ri'mok" killOrder="3" optional="false" X="1264.226" Y="2304.488" Z="381.2407"/>
+    <Boss isFinal="true" entry="56877" name="Raigonn" killOrder="4" optional="false" X="960.558" Y="2305.877" Z="296.1044"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+    <!-- At entrance to the left side-->
+    <PullBlackspot X="-3930.801" Y="-2612.666" Z="22.34698" Radius="13.83166" />
+  </PullBlackspots>
+</DungeonBuddyProfile>

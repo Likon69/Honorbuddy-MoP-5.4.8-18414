@@ -1,0 +1,352 @@
+﻿<HBProfile>
+	<Name>Noblegarden Quests and Egg Grinding ($Rev$)</Name>
+   
+	<MinLevel>1</MinLevel>
+	<MaxLevel>100</MaxLevel>
+   
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>True</MailPurple>
+   
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+   
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+	
+	<Blackspots>
+	</Blackspots>
+
+	<Mailboxes>
+	</Mailboxes>
+ 
+	<Vendors>
+	</Vendors>
+	
+	<Quest Id="13480" Name="The Great Egg Hunt" >
+		<Objective Type="CollectItem" ItemId="44806" CollectCount="20" >
+			<CollectFrom>
+				<GameObject Name="Brightly Colored Egg" Id="113771" />
+				<GameObject Name="Brightly Colored Egg" Id="113770" />
+				<GameObject Name="Brightly Colored Egg" Id="113769" />
+				<GameObject Name="Brightly Colored Egg" Id="113768" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-9446.031" Y="47.44922" Z="57.09554" />
+				<Hotspot X="-9481.134" Y="48.15244" Z="57.14623" />
+				<Hotspot X="-9490.59" Y="2.03937" Z="58.10727" />
+				<Hotspot X="-9474.42" Y="-13.74485" Z="56.88443" />
+				<Hotspot X="-9450.656" Y="-16.51215" Z="58.20425" />
+				<Hotspot X="-9445.474" Y="46.28344" Z="57.19984" />
+				<Hotspot X="-9441.979" Y="72.80905" Z="56.31504" />
+				<Hotspot X="-9416.487" Y="126.8291" Z="59.74757" />
+				<Hotspot X="-9480.949" Y="135.5611" Z="56.60959" />
+				<Hotspot X="-9485.315" Y="59.19498" Z="56.2053" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+	<Quest Id="13502" Name="A Tisket, a Tasket, a Noblegarden Basket" >
+		<Objective Type="CollectItem" ItemId="44791" CollectCount="10" >
+			<CollectFrom>
+				<GameObject Name="Brightly Colored Egg" Id="113771" />
+				<GameObject Name="Brightly Colored Egg" Id="113770" />
+				<GameObject Name="Brightly Colored Egg" Id="113769" />
+				<GameObject Name="Brightly Colored Egg" Id="113768" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-9446.031" Y="47.44922" Z="57.09554" />
+				<Hotspot X="-9481.134" Y="48.15244" Z="57.14623" />
+				<Hotspot X="-9490.59" Y="2.03937" Z="58.10727" />
+				<Hotspot X="-9474.42" Y="-13.74485" Z="56.88443" />
+				<Hotspot X="-9450.656" Y="-16.51215" Z="58.20425" />
+				<Hotspot X="-9445.474" Y="46.28344" Z="57.19984" />
+				<Hotspot X="-9441.979" Y="72.80905" Z="56.31504" />
+				<Hotspot X="-9416.487" Y="126.8291" Z="59.74757" />
+				<Hotspot X="-9480.949" Y="135.5611" Z="56.60959" />
+				<Hotspot X="-9485.315" Y="59.19498" Z="56.2053" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance" >
+		<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Stormwind -->
+			<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684) &gt;= 100)" >
+				<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="UserSettings" UseMount="False" />
+			<CustomBehavior File="InteractWith" MobId="215119" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+			<CustomBehavior File="UserSettings" UseMount="True" />
+		</If>
+		<If Condition="Me.MapId == 571" >
+			<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0"
+				TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+		</If>
+		<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487
+						&amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557" >
+						<!-- Outlands, but not Ghostlands/Eversong/Silvermoon or Azure/Bloodmyst/Exodar -->
+			<CustomBehavior File="FlyTo" X="-338.0062" Y="969.5461" Z="54.29" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="195139" NonCompeteDistance="0"
+				TerminateWhen="Me.MapId != 530" X="-338.0062" Y="969.5461" Z="54.29" />
+		</If>
+		<If Condition="Me.MapId == 1" >
+			<CustomBehavior File="FlyTo" X="8179.11" Y="1002.75" Z="6.817571" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="UseTransport" TransportId="176310"
+				WaitAtX="8179.11" WaitAtY="1002.75" WaitAtZ="6.817571" 
+				TransportStartX="8162.587" TransportStartY="1005.365" TransportStartZ="-0.04571009"
+				TransportEndX="-8650.719" TransportEndY="1346.051" TransportEndZ="0.04218207"
+				StandOnX="8162.587" StandOnY="1005.365" StandOnZ="6.18"
+				GetOffX="-8641.401" GetOffY="1324.443" GetOffZ="5.505301" />
+		</If>
+	
+		<If Condition="!HasQuest(13484) &amp;&amp; !IsQuestCompleted(13484)" >
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+			<PickUp Nav="Fly" QuestName="Spring Collectors" QuestId="13484" GiverName="Human Commoner" GiverId="18927" X="-8831.468" Y="555.3558" Z="95.4536" />
+		</If>
+		
+		<If Condition="HasQuest(13484) &amp;&amp; IsQuestCompleted(13484)" >
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+			<TurnIn Nav="Fly" QuestName="Spring Collectors" QuestId="13484" TurnInName="Spring Collector" TurnInId="32799" X="-9459.528" Y="61.56404" Z="55.82569" />
+		</If>
+
+		<If Condition="!HasQuest(13480) &amp;&amp; !IsQuestCompleted(13480)" >
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+			<PickUp Nav="Fly" QuestName="The Great Egg Hunt" QuestId="13480" GiverName="Spring Collector" GiverId="32799" X="-9459.528" Y="61.56404" Z="55.82569" />
+		</If>
+
+		<If Condition="!HasQuest(13502) &amp;&amp; !IsQuestCompleted(13502)" >
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+			<PickUp Nav="Fly" QuestName="A Tisket, a Tasket, a Noblegarden Basket" QuestId="13502" GiverName="Noblegarden Vendor" GiverId="32836" X="-9459.528" Y="61.56404" Z="55.82569" />
+		</If>
+		
+		<While Condition="HasQuest(13480) &amp;&amp; !IsQuestCompleted(13480)" >
+			<CustomBehavior File="InteractWith" QuestId="13480" MobId="113768" MobId2="113769" MobId3="113770" MobId4="113771"
+				NonCompeteDistance="0" ProactiveCombatStrategy="NoClear" NumOfTimes="1000" WaitTime="1000"
+				TerminateWhen="HasItem(45072)" CollectionDistance="300" MovementBy="NavigatorPreferred" >
+				<HuntingGrounds>
+					<Hotspot X="-9446.031" Y="47.44922" Z="57.09554" />
+					<Hotspot X="-9481.134" Y="48.15244" Z="57.14623" />
+					<Hotspot X="-9490.59" Y="2.03937" Z="58.10727" />
+					<Hotspot X="-9474.42" Y="-13.74485" Z="56.88443" />
+					<Hotspot X="-9450.656" Y="-16.51215" Z="58.20425" />
+					<Hotspot X="-9445.474" Y="46.28344" Z="57.19984" />
+					<Hotspot X="-9441.979" Y="72.80905" Z="56.31504" />
+					<Hotspot X="-9416.487" Y="126.8291" Z="59.74757" />
+					<Hotspot X="-9480.949" Y="135.5611" Z="56.60959" />
+					<Hotspot X="-9485.315" Y="59.19498" Z="56.2053" />
+				</HuntingGrounds>
+			</CustomBehavior>
+			<If Condition="HasItem(45072)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(45072)" WaitTime="1000" />
+			</If>
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+		</While>
+		<While Condition="HasQuest(13502) &amp;&amp; !IsQuestCompleted(13502)" >
+			<CustomBehavior File="InteractWith" QuestId="13502" MobId="113768" MobId2="113769" MobId3="113770" MobId4="113771"
+				NonCompeteDistance="0" ProactiveCombatStrategy="NoClear" NumOfTimes="1000" WaitTime="1000"
+				TerminateWhen="HasItem(45072)" CollectionDistance="300" MovementBy="NavigatorPreferred" >
+				<HuntingGrounds>
+					<Hotspot X="-9446.031" Y="47.44922" Z="57.09554" />
+					<Hotspot X="-9481.134" Y="48.15244" Z="57.14623" />
+					<Hotspot X="-9490.59" Y="2.03937" Z="58.10727" />
+					<Hotspot X="-9474.42" Y="-13.74485" Z="56.88443" />
+					<Hotspot X="-9450.656" Y="-16.51215" Z="58.20425" />
+					<Hotspot X="-9445.474" Y="46.28344" Z="57.19984" />
+					<Hotspot X="-9441.979" Y="72.80905" Z="56.31504" />
+					<Hotspot X="-9416.487" Y="126.8291" Z="59.74757" />
+					<Hotspot X="-9480.949" Y="135.5611" Z="56.60959" />
+					<Hotspot X="-9485.315" Y="59.19498" Z="56.2053" />
+				</HuntingGrounds>
+			</CustomBehavior>
+			<If Condition="HasItem(45072)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(45072)" WaitTime="1000" />
+			</If>
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+		</While>
+		
+		<If Condition="HasQuest(13480) &amp;&amp; IsQuestCompleted(13480)" >
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+			<TurnIn Nav="Fly" QuestName="The Great Egg Hunt" QuestId="13480" TurnInName="Spring Collector" TurnInId="32799" X="-9459.528" Y="61.56404" Z="55.82569" />
+		</If>
+
+		<If Condition="HasQuest(13502) &amp;&amp; IsQuestCompleted(13502)" >
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+			<TurnIn Nav="Fly" QuestName="A Tisket, a Tasket, a Noblegarden Basket" QuestId="13502" TurnInName="Noblegarden Vendor" TurnInId="32836" X="-9459.528" Y="61.56404" Z="55.82569" />
+		</If>
+		
+		<While Condition="true" >
+			<CustomBehavior File="InteractWith" MobId="113768" MobId2="113769" MobId3="113770" MobId4="113771"
+				NonCompeteDistance="0" ProactiveCombatStrategy="NoClear" NumOfTimes="1000" WaitTime="1000"
+				TerminateWhen="HasItem(45072)" CollectionDistance="300" MovementBy="NavigatorPreferred" >
+				<HuntingGrounds>
+					<Hotspot X="-9446.031" Y="47.44922" Z="57.09554" />
+					<Hotspot X="-9481.134" Y="48.15244" Z="57.14623" />
+					<Hotspot X="-9490.59" Y="2.03937" Z="58.10727" />
+					<Hotspot X="-9474.42" Y="-13.74485" Z="56.88443" />
+					<Hotspot X="-9450.656" Y="-16.51215" Z="58.20425" />
+					<Hotspot X="-9445.474" Y="46.28344" Z="57.19984" />
+					<Hotspot X="-9441.979" Y="72.80905" Z="56.31504" />
+					<Hotspot X="-9416.487" Y="126.8291" Z="59.74757" />
+					<Hotspot X="-9480.949" Y="135.5611" Z="56.60959" />
+					<Hotspot X="-9485.315" Y="59.19498" Z="56.2053" />
+				</HuntingGrounds>
+			</CustomBehavior>
+			<If Condition="HasItem(45072)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(45072)" WaitTime="1000" />
+			</If>
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+		</While>
+	</If>
+	
+	<If Condition="Me.IsHorde" >
+		<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Orgrimmar -->
+			<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326) &gt;= 100)" >
+				<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="UserSettings" UseMount="False" />
+			<CustomBehavior File="InteractWith" MobId="215127" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1730.643" Y="922.8421" Z="470.7326" />
+			<CustomBehavior File="UserSettings" UseMount="True" />
+		</If>
+		<If Condition="Me.MapId == 571" >
+			<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+		</If>
+		<!-- Needs conditional for Ghostlands -->
+		<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557
+				&amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487" > <!-- Outlands, but not Azure/Bloodmyst/Exodar or Ghostlands/Eversong/Silvermoon -->
+			<CustomBehavior File="FlyTo" X="-163.8283" Y="973.4586" Z="54.29" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="195140" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-163.8283" Y="973.4586" Z="54.29" />
+		</If>
+		<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+			<CustomBehavior File="FlyTo" X="2070.155" Y="289.2588" Z="97.0315" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="UseTransport" TransportId="164871"
+				WaitAtX="2070.155" WaitAtY="289.2588" WaitAtZ="97.0315" 
+				TransportStartX="2062.376" TransportStartY="292.998" TransportStartZ="114.973"
+				TransportEndX="1833.509" TransportEndY="-4391.543" TransportEndZ="152.7679"
+				StandOnX="2067.979" StandOnY="295.2747" StandOnZ="97.23677" 
+				GetOffX="1840.225" GetOffY="-4390.912" GetOffZ="135.2337" />	
+		</If>
+		
+		<If Condition="!HasQuest(13483) &amp;&amp; !IsQuestCompleted(13483)" >
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+			<PickUp Nav="Fly" QuestName="Spring Gatherers" QuestId="13483" GiverName="Troll Commoner" GiverId="19177" X="1775.355" Y="-4364.016" Z="102.5204" />
+		</If>
+		
+		<If Condition="HasQuest(13483) &amp;&amp; IsQuestCompleted(13483)" >
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+			<TurnIn Nav="Fly" QuestName="Spring Gatherers" QuestId="13483" TurnInName="Spring Gatherer" TurnInId="32798" X="327.7972" Y="-4707.08" Z="15.33386" />
+		</If>
+
+		<If Condition="!HasQuest(13479) &amp;&amp; !IsQuestCompleted(13479)" >
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+			<PickUp Nav="Fly" QuestName="The Great Egg Hunt" QuestId="13479" GiverName="Spring Gatherer" GiverId="32798" X="327.7972" Y="-4707.08" Z="15.33386" />
+		</If>
+
+		<If Condition="!HasQuest(13503) &amp;&amp; !IsQuestCompleted(13503)" >
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+			<PickUp Nav="Fly" QuestName="A Tisket, a Tasket, a Noblegarden Basket" QuestId="13503" GiverName="Noblegarden Merchant" GiverId="32837" X="327.7972" Y="-4707.08" Z="15.33386" />
+		</If>
+		
+		<While Condition="HasQuest(13479) &amp;&amp; !IsQuestCompleted(13479)" >
+			<CustomBehavior File="InteractWith" QuestId="13479" MobId="113768" MobId2="113769" MobId3="113770" MobId4="113771"
+				NonCompeteDistance="0" ProactiveCombatStrategy="NoClear" NumOfTimes="1000" WaitTime="1000"
+				TerminateWhen="HasItem(45072)" CollectionDistance="300" MovementBy="NavigatorPreferred" >
+				<HuntingGrounds>
+					<Hotspot X="293.5237" Y="-4658.63" Z="17.88936" />
+					<Hotspot X="260.0004" Y="-4694.722" Z="14.99274" />
+					<Hotspot X="270.3328" Y="-4763.039" Z="11.4025" />
+					<Hotspot X="272.3475" Y="-4827.079" Z="10.63357" />
+					<Hotspot X="305.9975" Y="-4854.767" Z="10.23709" />
+					<Hotspot X="341.9552" Y="-4854.525" Z="10.32657" />
+					<Hotspot X="354.5378" Y="-4815.661" Z="10.74299" />
+					<Hotspot X="342.421" Y="-4758.396" Z="12.73126" />
+					<Hotspot X="349.438" Y="-4714.9" Z="14.18559" />
+					<Hotspot X="371.0721" Y="-4670.003" Z="16.20271" />
+				</HuntingGrounds>
+			</CustomBehavior>
+			<If Condition="HasItem(45072)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(45072)" WaitTime="1000" />
+			</If>
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+		</While>
+		<While Condition="HasQuest(13503) &amp;&amp; !IsQuestCompleted(13503)" >
+			<CustomBehavior File="InteractWith" QuestId="13503" MobId="113768" MobId2="113769" MobId3="113770" MobId4="113771"
+				NonCompeteDistance="0" ProactiveCombatStrategy="NoClear" NumOfTimes="1000" WaitTime="1000"
+				TerminateWhen="HasItem(45072)" CollectionDistance="300" MovementBy="NavigatorPreferred" >
+				<HuntingGrounds>
+					<Hotspot X="293.5237" Y="-4658.63" Z="17.88936" />
+					<Hotspot X="260.0004" Y="-4694.722" Z="14.99274" />
+					<Hotspot X="270.3328" Y="-4763.039" Z="11.4025" />
+					<Hotspot X="272.3475" Y="-4827.079" Z="10.63357" />
+					<Hotspot X="305.9975" Y="-4854.767" Z="10.23709" />
+					<Hotspot X="341.9552" Y="-4854.525" Z="10.32657" />
+					<Hotspot X="354.5378" Y="-4815.661" Z="10.74299" />
+					<Hotspot X="342.421" Y="-4758.396" Z="12.73126" />
+					<Hotspot X="349.438" Y="-4714.9" Z="14.18559" />
+					<Hotspot X="371.0721" Y="-4670.003" Z="16.20271" />
+				</HuntingGrounds>
+			</CustomBehavior>
+			<If Condition="HasItem(45072)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(45072)" WaitTime="1000" />
+			</If>
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+		</While>
+		
+		<If Condition="HasQuest(13479) &amp;&amp; IsQuestCompleted(13479)" >
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+			<TurnIn Nav="Fly" QuestName="The Great Egg Hunt" QuestId="13479" TurnInName="Spring Gatherer" TurnInId="32798" X="327.7972" Y="-4707.08" Z="15.33386" />
+		</If>
+
+		<If Condition="HasQuest(13503) &amp;&amp; IsQuestCompleted(13503)" >
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+			<TurnIn Nav="Fly" QuestName="A Tisket, a Tasket, a Noblegarden Basket" QuestId="13503" TurnInName="Noblegarden Merchant" TurnInId="32837" X="327.7972" Y="-4707.08" Z="15.33386" />
+		</If>
+		
+		<While Condition="true" >
+			<CustomBehavior File="InteractWith" MobId="113768" MobId2="113769" MobId3="113770" MobId4="113771"
+				NonCompeteDistance="0" ProactiveCombatStrategy="NoClear" NumOfTimes="1000" WaitTime="1000"
+				TerminateWhen="HasItem(45072)" CollectionDistance="300" MovementBy="NavigatorPreferred" >
+				<HuntingGrounds>
+					<Hotspot X="293.5237" Y="-4658.63" Z="17.88936" />
+					<Hotspot X="260.0004" Y="-4694.722" Z="14.99274" />
+					<Hotspot X="270.3328" Y="-4763.039" Z="11.4025" />
+					<Hotspot X="272.3475" Y="-4827.079" Z="10.63357" />
+					<Hotspot X="305.9975" Y="-4854.767" Z="10.23709" />
+					<Hotspot X="341.9552" Y="-4854.525" Z="10.32657" />
+					<Hotspot X="354.5378" Y="-4815.661" Z="10.74299" />
+					<Hotspot X="342.421" Y="-4758.396" Z="12.73126" />
+					<Hotspot X="349.438" Y="-4714.9" Z="14.18559" />
+					<Hotspot X="371.0721" Y="-4670.003" Z="16.20271" />
+				</HuntingGrounds>
+			</CustomBehavior>
+			<If Condition="HasItem(45072)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(45072)" WaitTime="1000" />
+			</If>
+			<If Condition="new Func&lt;bool&gt;(() =&gt; { if (Me.HasAura(61734)) Me.GetAuraById(61734).TryCancelAura(); return true; })()" />
+		</While>
+	</If>
+	
+	</QuestOrder>
+
+</HBProfile>

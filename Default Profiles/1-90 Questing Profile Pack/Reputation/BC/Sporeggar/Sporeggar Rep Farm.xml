@@ -1,0 +1,400 @@
+<HBProfile>
+	<Name>Hawker's 'Sporeggar Rep Farm' Profile</Name>
+	<MinLevel>1</MinLevel>
+	<MaxLevel>101</MaxLevel>
+	<MinDurability>0.3</MinDurability>
+	<MinFreeBagSlots>3</MinFreeBagSlots>
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>True</MailWhite>
+	<MailGreen>True</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<Vendors>
+		<Vendor Nav="Fly" Name="Innkeeper Coryth Stoktron" Id="18907" Type="Food" X="-174.478" Y="5529.211" Z="29.40774" />
+		<Vendor Nav="Fly" Name="Fedryen Swiftspear" Id="17904" Type="Repair" X="-198.9696" Y="5490.686" Z="21.84618" />
+		<Vendor Nav="Fly" Name="Pilot Marsha" Id="18278" Type="Repair" X="-1480.122" Y="6357.977" Z="34.26571" />
+	</Vendors>
+
+	<Mailboxes>
+		<!-- Cenarion Refuge -->
+		<Mailbox Nav="Fly" X="-200.4296" Y="5505.128" Z="22.50458" />
+	</Mailboxes>
+
+	<Quest Id="9743" Name="Natural Enemies">
+		<Objective Type="CollectItem" ItemId="24291" CollectCount="6">
+			<CollectFrom>
+				<Mob Name="Starving Fungal Giant" Id="18125" />
+				<Mob Name="Starving Bog Lord" Id="19519" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="-96.18167" Y="8618.017" Z="18.95027" />
+				<Hotspot X="-138.753" Y="8689.542" Z="18.47086" />
+				<Hotspot X="-107.3501" Y="8780.593" Z="19.63899" />
+				<Hotspot X="-126.3722" Y="8895.549" Z="18.6275" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+	<Quest Id="9806" Name="Fertile Spores">
+		<Objective Type="CollectItem" ItemId="24449" CollectCount="6">
+			<CollectFrom>
+				<Mob Name="Greater Sporebat" Id="18129" />
+				<Mob Name="Marsh Walker" Id="18135" />
+				<Mob Name="Fen Strider" Id="18134" />
+				<Mob Name="Sporebat" Id="18128" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="45.85601" Y="7723.255" Z="17.78051" />
+				<Hotspot X="-18.9345" Y="7633.376" Z="18.26947" />
+				<Hotspot X="-31.57349" Y="7642.593" Z="18.26788" />
+				<Hotspot X="-105.4048" Y="7717.121" Z="18.26946" />
+				<Hotspot X="-180.7069" Y="7774.474" Z="21.47496" />
+				<Hotspot X="-215.5683" Y="7694.51" Z="18.26912" />
+				<Hotspot X="-186.8665" Y="7591.278" Z="23.9116" />
+				<Hotspot X="-226.9711" Y="7548.509" Z="21.8358" />
+				<Hotspot X="-172.9081" Y="7497.748" Z="17.57507" />
+				<Hotspot X="-113.3081" Y="7528.696" Z="18.2686" />
+				<Hotspot X="-81.181" Y="7438.45" Z="18.268" />
+				<Hotspot X="-8.665869" Y="7355.115" Z="24.17558" />
+				<Hotspot X="139.7109" Y="7423.667" Z="18.99246" />
+				<Hotspot X="184.3334" Y="7493.072" Z="22.58115" />
+				<Hotspot X="204.9558" Y="7519.729" Z="22.96791" />
+				<Hotspot X="282.1923" Y="7533.538" Z="17.85877" />
+				<Hotspot X="343.7852" Y="7525.594" Z="22.93169" />
+				<Hotspot X="273.7076" Y="7617.923" Z="23.1047" />
+				<Hotspot X="314.709" Y="7716.739" Z="19.96644" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+	<Quest Id="9808" Name="Glowcap Mushrooms">
+		<Objective Type="CollectItem" ItemId="24245" CollectCount="10">
+			<CollectFrom>
+				<GameObject Name="Glowcap" Id="182053" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="264.3096" Y="8548.396" Z="19.32652" />
+				<Hotspot X="37.09456" Y="8467.272" Z="22.16614" />
+				<Hotspot X="51.54716" Y="8247.072" Z="19.68765" />
+				<Hotspot X="-78.59985" Y="8256.303" Z="22.52275" />
+				<Hotspot X="-194.8239" Y="8415.507" Z="22.05967" />
+				<Hotspot X="759.6376" Y="7490.848" Z="22.93312" />
+				<Hotspot X="726.6383" Y="7451.616" Z="22.13844" />
+				<Hotspot X="814.2993" Y="7334.911" Z="18.74368" />
+				<Hotspot X="876.7604" Y="7423.715" Z="21.86059" />
+				<Hotspot X="852.3602" Y="7561.914" Z="21.79051" />
+				<Hotspot X="816.7776" Y="7694.704" Z="22.01726" />
+				<Hotspot X="745.2712" Y="7727.497" Z="22.05815" />
+				<Hotspot X="637.3478" Y="7738.797" Z="21.39376" />
+				<Hotspot X="766.7106" Y="7862.464" Z="21.487" />
+				<Hotspot X="717.5608" Y="8151.924" Z="20.22891" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+	<Quest Name="Now That We're Still Friends..." Id="9726">
+		<Objective Type="KillMob" MobId="18089" KillCount="12">
+			<Hotspots>
+				<Hotspot X="572.5067" Y="8188.215" Z="18.86026" />
+				<Hotspot X="470.2513" Y="8161.388" Z="22.77806" />
+				<Hotspot X="389.2868" Y="8156.895" Z="22.21127" />
+				<Hotspot X="333.3442" Y="8117.49" Z="17.40527" />
+				<Hotspot X="437.4489" Y="8097.01" Z="17.38597" />
+				<Hotspot X="506.4895" Y="8065.697" Z="23.40695" />
+				<Hotspot X="531.1058" Y="8129.181" Z="21.43892" />
+				<Hotspot X="603.675" Y="8082.076" Z="17.73405" />
+				<Hotspot X="637.6079" Y="8133.776" Z="23.9664" />
+				<Hotspot X="665.0836" Y="8181.369" Z="22.95399" />
+				<Hotspot X="711.2183" Y="8109.109" Z="24.01489" />
+				<Hotspot X="662.7373" Y="8224.507" Z="22.91521" />
+				<Hotspot X="606.9743" Y="8157.605" Z="20.6932" />
+				<Hotspot X="560.7531" Y="8193.819" Z="18.08574" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="18088" KillCount="6">
+			<Hotspots>
+				<Hotspot X="572.5067" Y="8188.215" Z="18.86026" />
+				<Hotspot X="470.2513" Y="8161.388" Z="22.77806" />
+				<Hotspot X="389.2868" Y="8156.895" Z="22.21127" />
+				<Hotspot X="333.3442" Y="8117.49" Z="17.40527" />
+				<Hotspot X="437.4489" Y="8097.01" Z="17.38597" />
+				<Hotspot X="506.4895" Y="8065.697" Z="23.40695" />
+				<Hotspot X="531.1058" Y="8129.181" Z="21.43892" />
+				<Hotspot X="603.675" Y="8082.076" Z="17.73405" />
+				<Hotspot X="637.6079" Y="8133.776" Z="23.9664" />
+				<Hotspot X="665.0836" Y="8181.369" Z="22.95399" />
+				<Hotspot X="711.2183" Y="8109.109" Z="24.01489" />
+				<Hotspot X="662.7373" Y="8224.507" Z="22.91521" />
+				<Hotspot X="606.9743" Y="8157.605" Z="20.6932" />
+				<Hotspot X="560.7531" Y="8193.819" Z="18.08574" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+	<Quest Name="Now That We're Still Friends..." Id="9727">
+		<Objective Type="KillMob" MobId="18089" KillCount="12">
+			<Hotspots>
+				<Hotspot X="572.5067" Y="8188.215" Z="18.86026" />
+				<Hotspot X="470.2513" Y="8161.388" Z="22.77806" />
+				<Hotspot X="389.2868" Y="8156.895" Z="22.21127" />
+				<Hotspot X="333.3442" Y="8117.49" Z="17.40527" />
+				<Hotspot X="437.4489" Y="8097.01" Z="17.38597" />
+				<Hotspot X="506.4895" Y="8065.697" Z="23.40695" />
+				<Hotspot X="531.1058" Y="8129.181" Z="21.43892" />
+				<Hotspot X="603.675" Y="8082.076" Z="17.73405" />
+				<Hotspot X="637.6079" Y="8133.776" Z="23.9664" />
+				<Hotspot X="665.0836" Y="8181.369" Z="22.95399" />
+				<Hotspot X="711.2183" Y="8109.109" Z="24.01489" />
+				<Hotspot X="662.7373" Y="8224.507" Z="22.91521" />
+				<Hotspot X="606.9743" Y="8157.605" Z="20.6932" />
+				<Hotspot X="560.7531" Y="8193.819" Z="18.08574" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="18088" KillCount="6">
+			<Hotspots>
+				<Hotspot X="264.3096" Y="8548.396" Z="19.32652" />
+				<Hotspot X="37.09456" Y="8467.272" Z="22.16614" />
+				<Hotspot X="51.54716" Y="8247.072" Z="19.68765" />
+				<Hotspot X="-78.59985" Y="8256.303" Z="22.52275" />
+				<Hotspot X="-194.8239" Y="8415.507" Z="22.05967" />
+				<Hotspot X="759.6376" Y="7490.848" Z="22.93312" />
+				<Hotspot X="726.6383" Y="7451.616" Z="22.13844" />
+				<Hotspot X="814.2993" Y="7334.911" Z="18.74368" />
+				<Hotspot X="876.7604" Y="7423.715" Z="21.86059" />
+				<Hotspot X="852.3602" Y="7561.914" Z="21.79051" />
+				<Hotspot X="816.7776" Y="7694.704" Z="22.01726" />
+				<Hotspot X="745.2712" Y="7727.497" Z="22.05815" />
+				<Hotspot X="637.3478" Y="7738.797" Z="21.39376" />
+				<Hotspot X="766.7106" Y="7862.464" Z="21.487" />
+				<Hotspot X="717.5608" Y="8151.924" Z="20.22891" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+
+
+	<QuestOrder>
+
+		<CustomBehavior File="Message" Text="Compiling Hawker's 'Sporeggar Rep Farm' Profile" LogColor="CornflowerBlue" />
+
+		<PickUp QuestName="The Sporelings' Plight" QuestId="9739" GiverName="Fahssn" GiverId="17923" X="-214.1056"
+            Y="8514.414" Z="22.89437" />
+		<PickUp QuestName="Natural Enemies" QuestId="9743" GiverName="Fahssn" GiverId="17923" X="-214.1056"
+            Y="8514.414" Z="22.89437" />
+		<While Condition="HasQuest(9739) &amp;&amp; !IsQuestCompleted(9739)">
+			<CustomBehavior File="InteractWith" QuestId="9739" ObjectType="GameObject" MobId="182069"
+                      WaitForNpcs="False" PreInteractMountStrategy="Dismount" NumOfTimes="20"
+                      CollectionDistance="500" X="-80.25971" Y="8692.001" Z="19.71755" />
+			<CustomBehavior File="InteractWith" QuestId="9739" ObjectType="GameObject" MobId="182069"
+                      WaitForNpcs="False" PreInteractMountStrategy="Dismount" NumOfTimes="20"
+                      CollectionDistance="500" X="-102.7065" Y="8836.516" Z="18.96124" />
+		</While>
+		<Objective QuestName="Natural Enemies" QuestId="9743" Type="CollectItem" ItemId="24291" CollectCount="6" />
+		<TurnIn QuestName="Natural Enemies" QuestId="9743" TurnInName="Fahssn" TurnInId="17923" X="-214.1056"
+            Y="8514.414" Z="22.89437" />
+		<TurnIn QuestName="The Sporelings' Plight" QuestId="9739" TurnInName="Fahssn" TurnInId="17923" X="-214.1056"
+            Y="8514.414" Z="22.89437" />
+
+		<While Condition="Me.GetReputationLevelWith(970) &lt; Styx.WoWUnitReaction.Friendly">
+			<If Condition="GetItemCount(24291) &lt; 6">
+				<SetGrindArea>
+					<GrindArea>
+						<Factions>1706</Factions>
+						<!-- [Giant] -->
+						<Hotspots>
+							<Hotspot X="-107.7487" Y="7848.042" Z="19.60284" />
+							<Hotspot X="-96.18167" Y="8618.017" Z="18.95027" />
+							<Hotspot X="-138.753" Y="8689.542" Z="18.47086" />
+							<Hotspot X="-107.3501" Y="8780.593" Z="19.63899" />
+							<Hotspot X="-126.3722" Y="8895.549" Z="18.6275" />
+
+							<Hotspot X="-133.1768" Y="8087.978" Z="19.43793" />
+							<Hotspot X="-136.38" Y="7960.24" Z="18.63629" />
+						</Hotspots>
+					</GrindArea>
+				</SetGrindArea>
+				<GrindTo Condition="GetItemCount(24291) &gt;= 6" />
+			</If>
+			<If Condition="GetItemCount(24291) &gt;= 6">
+				<CustomBehavior File="FlyTo" X="-214.1056" Y="8514.414" Z="22.89437" />
+				<CustomBehavior File="InteractWith" MobId="17923" NumOfTimes="1" CollectionDistance="50"
+                        WaitTime="1000" X="-214.1056" Y="8514.414" Z="22.89437" />
+				<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton2" NumOfTimes="1" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteButton" NumOfTimes="1" WaitTime="1000" />
+				<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" NumOfTimes="1"
+                        WaitTime="1000" />
+			</If>
+		</While>
+
+		<!-- Quests avail at Neutral -->
+		<Pickup QuestName="Sporeggar" QuestId="9919" GiverName="Fahssn" GiverId="17923" X="-195.0107" Y="8518.729"
+            Z="22.5245" />
+		<If Condition="HasQuest(9919)">
+			<CustomBehavior File="FlyTo" DestName="TurnIn: Sporeggar" X="210.8893" Y="8504.154" Z="24.22618" />
+			<MoveTo X="205.8044" Y="8500.641" Z="24.57679" />
+			<CustomBehavior File="ForcedDismount" />
+			<TurnIn QuestName="Sporeggar" QuestId="9919" TurnInName="Msshi'fn" TurnInId="17924" X="189.901"
+              Y="8485.713" Z="26.94084" />
+		</If>
+
+
+		<ClearVendor />
+		<SetVendor>
+			<Vendors>
+				<Vendor Name="Mycah" Entry="18382" Type="Repair" X="221.3056" Y="8577.191" Z="24.65688" />
+				<Vendor Nav="Fly" Name="Innkeeper Coryth Stoktron" Id="18907" Type="Food" X="-174.478" Y="5529.211" Z="29.40774" />
+				<Vendor Nav="Fly" Name="Fedryen Swiftspear" Id="17904" Type="Repair" X="-198.9696" Y="5490.686" Z="21.84618" />
+				<Vendor Nav="Fly" Name="Pilot Marsha" Id="18278" Type="Repair" X="-1480.122" Y="6357.977" Z="34.26571" />
+			</Vendors>
+		</SetVendor>
+		<!-- This is a daily so added check if Unfinished Business' 9901 is already done -->
+		<If Condition="!HasQuest(9808) &amp;&amp; !IsQuestCompleted(9808) &amp;&amp; !IsQuestCompleted(9901)">
+			<!-- "Glowcap Mushrooms" quest is only available if your less-than-Friendly with Sporeggar(faction: 970) -->
+			<If Condition="HasFaction(970) &amp;&amp; (Me.GetReputationLevelWith(970) &lt; WoWUnitReaction.Friendly)" >
+				<PickUp Nav="Fly" QuestName="Glowcap Mushrooms" QuestId="9808" GiverName="Msshi'fn" GiverId="17924"
+                X="189.901" Y="8485.713" Z="26.94084" />
+			</If>
+		</If>
+
+		<If Condition="!HasQuest(9806) &amp;&amp; !IsQuestCompleted(9806)">
+			<!-- CJ: PickUp NPC is in a house, we fly and land outside, since Flightor
+                 has issues, if left unassisted.
+            -->
+			<CustomBehavior File="FlyTo" DestName="Workaraound for Quest PickUp: Fertile Spores"
+                      Land="True" X="238.1418" Y="8508.891" Z="23.04393" />
+			<PickUp QuestName="Fertile Spores" QuestId="9806" GiverName="Gshaff" GiverId="17925"
+              X="280.2096" Y="8512.685" Z="24.21214" Nav="Run" />
+		</If>
+
+		<If Condition="HasQuest(9808)">
+			<Objective QuestName="Glowcap Mushrooms" QuestId="9808" Type="CollectItem" ItemId="24245" CollectCount="10" />
+		</If>
+		<Objective QuestName="Fertile Spores" QuestId="9806" Type="CollectItem" ItemId="24449" CollectCount="6" />
+
+		<!-- CJ: This quest is not available if you are Friendly or higher with Sporeggar;
+             so, need to accommodate that. -->
+		<If Condition="HasQuest(9808) &amp;&amp; IsQuestCompleted(9808) &amp;&amp; (Me.GetReputationLevelWith(970) &lt; WoWUnitReaction.Friendly)" >
+			<TurnIn QuestName="Glowcap Mushrooms" QuestId="9808" TurnInName="Msshi'fn" TurnInId="17924" Nav="Fly" X="189.901" Y="8485.713" Z="26.94084" />
+		</If>
+
+		<If Condition="HasQuest(9806) &amp;&amp; IsQuestCompleted(9806)">
+			<!-- CJ: TurnIn NPC is in a house, we fly and land outside, since Flightor
+                     has issues, if left unassisted.
+                -->
+			<CustomBehavior File="FlyTo" DestName="Workaraound for Quest TurnIn: Fertile Spores"
+                      Land="True" X="238.1418" Y="8508.891" Z="23.04393" />
+			<TurnIn QuestName="Fertile Spores" QuestId="9806" TurnInName="Gshaff" TurnInId="17925"
+              X="280.2096" Y="8512.685" Z="24.21214" Nav="Run" />
+		</If>
+
+		<If Condition="!HasQuest(9726) &amp;&amp; !IsQuestCompleted(9726)">
+			<CustomBehavior File="FlyTo" DestName="Sporeggar" X="254.0195" Y="8503.667" Z="22.98337" />
+			<CustomBehavior File="ForcedDismount" />
+			<PickUp QuestName="Now That We're Still Friends..." QuestId="9726" GiverName="Gzhun'tt" GiverId="17856" />
+		</If>
+		<If Condition="HasQuest(9726) &amp;&amp; !IsQuestCompleted(9726)">
+			<CustomBehavior File="FlyTo" DestName="Bloodscale Enclave" X="572.5067" Y="8188.215" Z="18.86026" />
+			<CustomBehavior File="ForcedDismount" />
+			<Objective QuestName="Now That We're Friends..." QuestId="9726" Type="KillMob" MobId="18089" KillCount="12" />
+			<Objective QuestName="Now That We're Friends..." QuestId="9726" Type="KillMob" MobId="18088" KillCount="6" />
+		</If>
+		<If Condition="HasQuest(9726) &amp;&amp; IsQuestCompleted(9726)">
+			<CustomBehavior File="FlyTo" DestName="Sporeggar" X="254.0195" Y="8503.667" Z="22.98337" />
+			<CustomBehavior File="ForcedDismount" />
+			<TurnIn QuestName="Now That We're Friends..." QuestId="9726" TurnInName="Gzhun'tt" TurnInId="17856" />
+		</If>
+
+
+
+		<While Condition="Me.GetReputationLevelWith(970) &lt; Styx.WoWUnitReaction.Exalted" >
+			<!-- get glowcaps to buy the Tiny Sporebat first -->
+			<While Condition="(GetItemCount(24245) &lt; 30)" >
+				<CustomBehavior File="InteractWith" MobId="182053" WaitTime="500" CollectionDistance="100" PreInteractMountStrategy="Dismount" >
+					<HuntingGrounds>
+						<Hotspot X="264.3096" Y="8548.396" Z="19.32652" />
+						<Hotspot X="37.09456" Y="8467.272" Z="22.16614" />
+						<Hotspot X="51.54716" Y="8247.072" Z="19.68765" />
+						<Hotspot X="-78.59985" Y="8256.303" Z="22.52275" />
+						<Hotspot X="-194.8239" Y="8415.507" Z="22.05967" />
+						<Hotspot X="759.6376" Y="7490.848" Z="22.93312" />
+						<Hotspot X="726.6383" Y="7451.616" Z="22.13844" />
+						<Hotspot X="814.2993" Y="7334.911" Z="18.74368" />
+						<Hotspot X="876.7604" Y="7423.715" Z="21.86059" />
+						<Hotspot X="852.3602" Y="7561.914" Z="21.79051" />
+						<Hotspot X="816.7776" Y="7694.704" Z="22.01726" />
+						<Hotspot X="745.2712" Y="7727.497" Z="22.05815" />
+						<Hotspot X="637.3478" Y="7738.797" Z="21.39376" />
+						<Hotspot X="766.7106" Y="7862.464" Z="21.487" />
+						<Hotspot X="717.5608" Y="8151.924" Z="20.22891" />
+					</HuntingGrounds>
+				</CustomBehavior>
+			</While>
+
+			<CustomBehavior File="FlyTo" DestName="Sporeggar to pick up 'Now That We're Still Friends...' again."
+                      X="254.0195" Y="8503.667" Z="22.98337" />
+			<CustomBehavior File="ForcedDismount" />
+			<PickUp QuestName="Now That We're Still Friends..." QuestId="9727" GiverName="Gzhun'tt" GiverId="17856" />
+
+			<LootMobs Value="False" />
+
+			<If Condition="HasQuest(9727) &amp;&amp; !IsQuestCompleted(9727)">
+				<CustomBehavior File="FlyTo" DestName="Bloodscale Enclave" X="572.5067" Y="8188.215" Z="18.86026" />
+				<CustomBehavior File="ForcedDismount" />
+				<Objective QuestName="Now That We're Friends..." QuestId="9727" Type="KillMob" MobId="18089" KillCount="12" />
+				<Objective QuestName="Now That We're Friends..." QuestId="9727" Type="KillMob" MobId="18088" KillCount="6" />
+			</If>
+
+
+			<If Condition="HasQuest(9727) &amp;&amp; IsQuestCompleted(9727)">
+				<CustomBehavior File="FlyTo" DestName="Sporeggar" X="254.0195" Y="8503.667" Z="22.98337" />
+				<CustomBehavior File="ForcedDismount" />
+				<TurnIn QuestName="Now That We're Friends..." QuestId="9727" TurnInName="Gzhun'tt" TurnInId="17856" />
+			</If>
+
+			<LootMobs Value="True" />
+
+		</While>
+
+		<LootMobs Value="True" />
+
+
+		<!-- buy the Tiny Sporebat -->
+		<If Condition="(GetItemCount(24245) &gt; 29) &amp;&amp; !HasItem(34478) &amp;&amp; !HasSpell(45082)" >
+			<CustomBehavior File="FlyTo" DestName="Mycah" Entry="18382" X="221.3056" Y="8577.191" Z="24.65688" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="18382" NumOfTimes="1"
+						InteractByBuyingItemId="34478" WaitTime="3000" X="221.3056" Y="8577.191" Z="24.65688" />
+		</If>
+
+		<!-- get rid of the unidentified Plant Parts -->
+		<PickUp Nav="Fly" QuestName="Plants of Zangarmarsh" QuestId="9802" GiverName="Lauranna Thar'well" GiverId="17909" X="-215.5434" Y="5437.267" Z="21.4277" />
+		<If Condition="HasQuest(9802) &amp;&amp; IsQuestCompleted(9802)">
+			<TurnIn QuestName="Plants of Zangarmarsh" QuestId="9802" TurnInName="Lauranna Thar'well" TurnInId="17909" X="-215.5434" Y="5437.267" Z="21.4277" />
+		</If>
+
+
+	</QuestOrder>
+
+	<ProtectedItems>
+		<Item Name="Arakkoa Feather" Entry="25719" />
+		<Item Name="Glowcap" Entry="24245" />
+		<Item Name="Fertile Spores" Entry="24449" />
+		<Item Name="Mature Spore Sac" Entry="24290" />
+		<Item Name="Bog Lord Tendril" Entry="24291" />
+		<Item Name="Unidentified Plant Parts" Id="24401" />
+		<Item Name="Obsidian Warbead" Id="25433" />
+
+	</ProtectedItems>
+	<!-- 
+A comment:
+				<CustomBehavior File="ForcedDismount" />
+				Nav="Fly" 
+				/dump IsQuestFlaggedCompleted(11350)
+-->
+
+</HBProfile>

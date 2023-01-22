@@ -1,0 +1,492 @@
+<HBProfile>
+
+	<Name>Dustwallow Marsh (Alliance) ($Rev$)</Name>
+	<MinLevel>30</MinLevel>
+	<MaxLevel>45</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+		<Mob Name="Ithania" Entry="17119" Flags="Pull" />
+		<Mob Name="Tethyr" Entry="23899" Flags="Pull, Combat" />
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Foothill Citadel -->
+		<Vendor Name="Piter Verance" Entry="4890" Type="Repair" X="-3708.592" Y="-4513.147" Z="11.89761" />
+		<Vendor Name="Jensen Farran" Entry="4892" Type="Repair" X="-3779.608" Y="-4542.269" Z="11.37828" />
+		<Vendor Name="Hans Weston" Entry="4886" Type="Repair" X="-3797.941" Y="-4367.986" Z="16.79411" />
+		<Vendor Name="Marie Holdston" Entry="4888" Type="Repair" X="-3785.934" Y="-4366.851" Z="16.79308" />
+		<!-- Tabetha's Farm -->
+		<Vendor Name="Regina Salister" Entry="44383" Type="Repair" X="-4042.56" Y="-3385.49" Z="38.05668" />
+		<!-- Mudsprocket -->
+		<Vendor Name="Razbo Rustgear" Entry="23571" Type="Repair" X="-4603.661" Y="-3210.939" Z="34.92606" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="HasQuest(26687)" >
+		<TurnIn QuestName="Reinforcements From Theramore" QuestId="26687" TurnInName="Captain Garran Vimes" TurnInId="4944" />
+	</If> <!-- LM Counts but requires Pre-Reqs -->
+	
+	<If Condition="!HasQuest(27249) &amp;&amp; !IsQuestCompleted(27249)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Dustwallow Marsh Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Foothill Citadel Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Inspecting the Ruins" QuestId="27249" GiverName="Captain Garran Vimes" GiverId="4944" />
+	
+	<PickUp QuestName="Traitors Among Us" QuestId="27210" GiverName="Calia Hastings" GiverId="23566" />
+	<CustomBehavior File="InteractWith" QuestId="27210" MobId="23602" InteractByGossipOptions="1" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" NotMoving="True" WaitTime="2000" >
+		<HuntingGrounds>
+			<Hotspot X="-3823.846" Y="-4535.108" Z="9.219081" />
+			<Hotspot X="-3814.99" Y="-4433.003" Z="12.74961" />
+			<Hotspot X="-3719.141" Y="-4365.342" Z="10.61195" />
+			<Hotspot X="-3675.243" Y="-4459.486" Z="11.43746" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="Traitors Among Us" QuestId="27210" TurnInName="Calia Hastings" TurnInId="23566" />
+	
+	<PickUp QuestName="Propaganda War" QuestId="27211" GiverName="Calia Hastings" GiverId="23566" />
+	<Objective QuestName="Propaganda War" QuestId="27211" Type="CollectItem" ItemId="33008" CollectCount="1" />
+	<TurnIn QuestName="Propaganda War" QuestId="27211" TurnInName="Calia Hastings" TurnInId="23566" />
+
+	<PickUp QuestName="Discrediting the Deserters" QuestId="27212" GiverName="Calia Hastings" GiverId="23566" />
+	<CustomBehavior File="InteractWith" QuestId="27212" MobId="4979" InteractByGossipOptions="1" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" NotMoving="True" WaitTime="2000" >
+		<HuntingGrounds>
+			<Hotspot X="-3823.846" Y="-4535.108" Z="9.219081" />
+			<Hotspot X="-3814.99" Y="-4433.003" Z="12.74961" />
+			<Hotspot X="-3719.141" Y="-4365.342" Z="10.61195" />
+			<Hotspot X="-3675.243" Y="-4459.486" Z="11.43746" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="Discrediting the Deserters" QuestId="27212" TurnInName="Calia Hastings" TurnInId="23566" />
+	
+	<PickUp QuestName="The End of the Deserters" QuestId="27213" GiverName="Calia Hastings" GiverId="23566" />
+	<Objective QuestName="The End of the Deserters" QuestId="27213" Type="KillMob" MobId="23941" KillCount="1" X="-4026.152" Y="-4985.357" Z="7.783735" />
+	<TurnIn QuestName="The End of the Deserters" QuestId="27213" TurnInName="Calia Hastings" TurnInId="23566" />
+
+	<PickUp QuestName="This Old Lighthouse" QuestId="27216" GiverName="Sergeant Amelyn" GiverId="23835" />
+	<PickUp QuestName="The Hermit of Swamplight Manor" QuestId="27215" GiverName="Sergeant Amelyn" GiverId="23835" />
+	<TurnIn QuestName="This Old Lighthouse" QuestId="27216" TurnInName="Babs Fizzletorque" TurnInId="23892" />
+	
+	<PickUp QuestName="Thresher Oil" QuestId="27217" GiverName="Babs Fizzletorque" GiverId="23892" />
+	<Objective QuestName="Thresher Oil" QuestId="27217" Type="CollectItem" ItemId="33126" CollectCount="4" />
+	<TurnIn QuestName="Thresher Oil" QuestId="27217" TurnInName="Babs Fizzletorque" TurnInId="23892" />
+
+	<PickUp QuestName="Dastardly Denizens of the Deep" QuestId="27218" GiverName="Babs Fizzletorque" GiverId="23892" />
+	<TurnIn QuestName="Dastardly Denizens of the Deep" QuestId="27218" TurnInName="Dirty Michael Crowe" TurnInId="23896" />
+
+	<PickUp QuestName="Is it Real?" QuestId="27219" GiverName="Dirty Michael Crowe" GiverId="23896" />
+	
+	<TurnIn QuestName="Inspecting the Ruins" QuestId="27249" TurnInName="Inspector Tarem" TurnInId="23567" />
+	
+	<PickUp QuestName="Suspicious Hoofprints" QuestId="27262" GiverName="Suspicious Hoofprint" GiverId="187273" 
+		GiverType="Object" X="-3699.326" Y="-2535.947" Z="69.31902" />
+	<PickUp QuestName="Lieutenant Paval Reethe" QuestId="27263" GiverName="Theramore Guard Badge" GiverId="21042" 
+		GiverType="Object" X="-3720.371" Y="-2538.461" Z="69.5658" />
+	<PickUp QuestName="The Black Shield" QuestId="27252" GiverName="Black Shield" GiverId="20992" 
+		GiverType="Object" X="-3720.371" Y="-2538.461" Z="69.5658" />
+	<TurnIn QuestName="Suspicious Hoofprints" QuestId="27262" TurnInName="Captain Garran Vimes" TurnInId="4944" />
+	<TurnIn QuestName="Lieutenant Paval Reethe" QuestId="27263" TurnInName="Captain Garran Vimes" TurnInId="4944" />
+	<TurnIn QuestName="The Black Shield" QuestId="27252" TurnInName="Captain Garran Vimes" TurnInId="4944" />
+	
+	<PickUp QuestName="The Black Shield" QuestId="27284" GiverName="Captain Garran Vimes" GiverId="4944" />
+	<PickUp QuestName="Lieutenant Paval Reethe" QuestId="27264" GiverName="Captain Garran Vimes" GiverId="4944" />
+	<TurnIn QuestName="Lieutenant Paval Reethe" QuestId="27264" TurnInName="Adjutant Tesoran" TurnInId="4948" />
+	<PickUp QuestName="Daelin's Men" QuestId="27286" GiverName="Adjutant Tesoran" GiverId="4948" />
+	<TurnIn QuestName="Daelin's Men" QuestId="27286" TurnInName="Captain Garran Vimes" TurnInId="4944" />
+	<PickUp QuestName="The Deserters" QuestId="27287" GiverName="Captain Garran Vimes" GiverId="4944" />
+	<TurnIn QuestName="The Black Shield" QuestId="27284" TurnInName="Caz Twosprocket" TurnInId="4941" />
+	
+	<PickUp QuestName="The Black Shield" QuestId="27285" GiverName="Caz Twosprocket" GiverId="4941" />
+	<TurnIn QuestName="The Black Shield" QuestId="27285" TurnInName="Captain Garran Vimes" TurnInId="4944" />
+
+	<DisableBehavior Name="Pull" />
+	<TurnIn QuestName="The Deserters" QuestId="27287" TurnInName="Balos Jacken" TurnInId="5089" />
+	<PickUp QuestName="The Deserters" QuestId="27288" GiverName="Balos Jacken" GiverId="5089" />
+	<TurnIn QuestName="The Deserters" QuestId="27288" TurnInName="Captain Garran Vimes" TurnInId="4944" />
+	<EnableBehavior Name="Pull" />
+	
+	<PickUp QuestName="A Grim Connection" QuestId="27425" GiverName="Captain Garran Vimes" GiverId="4944" />
+	<PickUp QuestName="Mudrock Soup and Bugs" QuestId="1204" GiverName="Morgan Stern" GiverId="4794" />
+	<Objective QuestName="Mudrock Soup and Bugs" QuestId="1204" Type="CollectItem" ItemId="5883" CollectCount="8" />
+	
+	<TurnIn QuestName="A Grim Connection" QuestId="27425" TurnInName="Captain Darill" TurnInId="23568" />
+	
+	<CustomBehavior File="Message" Text="Compiling North Point Tower Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Confirming the Suspicion" QuestId="27426" GiverName="Captain Darill" GiverId="23568" />
+	<PickUp QuestName="Arms of the Grimtotems" QuestId="27427" GiverName="Captain Darill" GiverId="23568" />
+	<PickUp QuestName="Raptor Captor" QuestId="27242" GiverName="Sergeant Lukas" GiverId="23723" />
+	<Objective QuestName="Arms of the Grimtotems" QuestId="27427" Type="CollectItem" ItemId="33071" CollectCount="7" />
+	<If Condition="!HasItem(33051) &amp;&amp; HasQuest(27426)" >
+		<Objective QuestName="Confirming the Suspicion" QuestId="27426" Type="CollectItem" ItemId="33050" CollectCount="4" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(33050)" WaitTime="2000" />
+	</If>
+	<CustomBehavior File="CombatUseItemOnV2" QuestId="27242" MobId="4352" MobId2="4351" ItemId="33069" ItemAppliesAuraId="AssumeItemUseAlwaysSucceeds"
+		NonCompeteDistance="1" UseWhenMobHasHealthPercent="25" MaxRangeToUseItem="15" UseItemStrategy="UseItemContinuouslyOnTarget" >
+		<HuntingGrounds>
+			<Hotspot X="-2739.358" Y="-3448.73" Z="33.20273" />
+			<Hotspot X="-2651.517" Y="-3361.486" Z="34.25794" />
+			<Hotspot X="-2604.19" Y="-3478.024" Z="34.24556" />
+			<Hotspot X="-2644.88" Y="-3593.488" Z="35.79744" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<PickUp QuestName="Stinky's Escape" QuestId="1222" GiverName="Stinky Ignatz" GiverId="4880" />
+	<CustomBehavior File="EscortGroup" QuestId="1222" EscortNpcId="4880" EscortMaxFollowDistance="5" />
+	<TurnIn QuestName="Raptor Captor" QuestId="27242" TurnInName="Sergeant Lukas" TurnInId="23723" />
+	<PickUp QuestName="Unleash the Raptors" QuestId="27243" GiverName="Sergeant Lukas" GiverId="23723" />
+	<PickUp QuestName="Prisoners of the Grimtotems" QuestId="27245" GiverName="Sergeant Lukas" GiverId="23723" />
+	<TurnIn QuestName="Arms of the Grimtotems" QuestId="27427" TurnInName="Captain Darill" TurnInId="23568" />
+	<TurnIn QuestName="Confirming the Suspicion" QuestId="27426" TurnInName="Captain Darill" TurnInId="23568" />
+	
+	<CustomBehavior File="InteractWith" QuestId="27243" MobId="23727" InteractByUsingItemId="33070" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" Range="15" NumOfTimes="100" WaitTime="2000" X="-2437.029" Y="-3148.947" Z="35.85897" />
+	<While Condition="HasQuest(27245) &amp;&amp; !IsQuestCompleted(27245)" >
+		<CustomBehavior File="CollectThings" QuestId="27245" MobId="23592" MobId2="23593" MobId3="23714" CollectItemId="33061"
+			CollectItemCount="1" NonCompeteDistance="1" HuntingGroundRadius="120" MobState="Alive" >
+			<Hotspot X="-2591.217" Y="-3267.242" Z="35.00944" />
+			<Hotspot X="-2554.095" Y="-3239.682" Z="33.62273" />
+			<Hotspot X="-2474.892" Y="-3179.092" Z="33.14386" />
+			<Hotspot X="-2420.708" Y="-3150.596" Z="35.85681" />
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" QuestId="27245" MobId="186287" TerminateWhen="!HasItem(33061)" NonCompeteDistance="0"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" WaitTime="1000" >
+			<HuntingGrounds>
+				<Hotspot X="-2591.217" Y="-3267.242" Z="35.00944" />
+				<Hotspot X="-2554.095" Y="-3239.682" Z="33.62273" />
+				<Hotspot X="-2474.892" Y="-3179.092" Z="33.14386" />
+				<Hotspot X="-2420.708" Y="-3150.596" Z="35.85681" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	<TurnIn QuestName="Unleash the Raptors" QuestId="27243" TurnInName="Sergeant Lukas" TurnInId="23723" />
+	<TurnIn QuestName="Prisoners of the Grimtotems" QuestId="27245" TurnInName="Sergeant Lukas" TurnInId="23723" />
+	
+	<CustomBehavior File="Message" Text="Compiling Swamplight Manor Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn QuestName="The Hermit of Swamplight Manor" QuestId="27215" TurnInName="Swamp Eye Jarl" TurnInId="4792" />
+	
+	<PickUp QuestName="Marsh Frog Legs" QuestId="27183" GiverName="Swamp Eye Jarl" GiverId="4792" />
+	<PickUp QuestName="What's Haunting Witch Hill?" QuestId="27188" GiverName="Mordant Grimsby" GiverId="23843" />
+	<PickUp QuestName="The Orc Report" QuestId="27246" GiverName="Loose Dirt" GiverId="20985" 
+		GiverType="Object" X="-2942.604" Y="-3885.491" Z="34.73953" />
+	<Objective QuestName="Marsh Frog Legs" QuestId="27183" Type="CollectItem" ItemId="33202" CollectCount="10" />
+	<Objective QuestName="What's Haunting Witch Hill?" QuestId="27188" Type="KillMob" MobId="23861" KillCount="10" />
+	<TurnIn QuestName="Marsh Frog Legs" QuestId="27183" TurnInName="Swamp Eye Jarl" TurnInId="4792" />
+	<PickUp QuestName="Jarl Needs Eyes" QuestId="27184" GiverName="Swamp Eye Jarl" GiverId="4792" />
+	<TurnIn QuestName="What's Haunting Witch Hill?" QuestId="27188" TurnInName="Mordant Grimsby" TurnInId="23843" />
+	<PickUp QuestName="The Witch's Bane" QuestId="27189" GiverName="Mordant Grimsby" GiverId="23843" />
+	
+	<Objective QuestName="The Witch's Bane" QuestId="27189" Type="CollectItem" ItemId="33112" CollectCount="9" />
+	<Objective QuestName="Jarl Needs Eyes" QuestId="27184" Type="CollectItem" ItemId="5884" CollectCount="20" />
+	<TurnIn QuestName="The Witch's Bane" QuestId="27189" TurnInName="Mordant Grimsby" TurnInId="23843" />
+	<PickUp QuestName="Cleansing Witch Hill" QuestId="27190" GiverName="Mordant Grimsby" GiverId="23843" />
+	<TurnIn QuestName="Jarl Needs Eyes" QuestId="27184" TurnInName="Swamp Eye Jarl" TurnInId="4792" />
+	<PickUp QuestName="Hungry as an Ogre!" QuestId="27191" GiverName="Swamp Eye Jarl" GiverId="4792" />
+	<PickUp QuestName="Jarl Needs a Blade" QuestId="27186" GiverName="Swamp Eye Jarl" GiverId="4792" />
+	
+	<Objective QuestName="Jarl Needs a Blade" QuestId="27186" Type="CollectItem" ItemId="33110" CollectCount="1" />
+	<Objective QuestName="Hungry as an Ogre!" QuestId="27191" Type="CollectItem" ItemId="5847" CollectCount="8" />
+	<TurnIn QuestName="Jarl Needs a Blade" QuestId="27186" TurnInName="Swamp Eye Jarl" TurnInId="4792" />
+	<TurnIn QuestName="Hungry as an Ogre!" QuestId="27191" TurnInName="Swamp Eye Jarl" TurnInId="4792" />
+	
+	<CustomBehavior File="InteractWith" QuestId="27190" MobId="23868" InteractByUsingItemId="33113" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" Range="10" WaitTime="2000" X="-2965.292" Y="-3874.803" Z="31.42879" />
+	<TurnIn QuestName="Cleansing Witch Hill" QuestId="27190" TurnInName="Mordant Grimsby" TurnInId="23843" />
+	
+	<TurnIn QuestName="The Orc Report" QuestId="27246" TurnInName="Lieutenant Aden" TurnInId="23951" />
+	<PickUp QuestName="A Disturbing Development" QuestId="27214" GiverName="Lieutenant Aden" GiverId="23951" />
+	<PickUp QuestName="Captain Vimes" QuestId="27247" GiverName="Lieutenant Aden" GiverId="23951" />
+	<TurnIn QuestName="Captain Vimes" QuestId="27247" TurnInName="Captain Garran Vimes" TurnInId="4944" />
+	
+	<TurnIn QuestName="Stinky's Escape" QuestId="1222" TurnInName="Morgan Stern" TurnInId="4794" />
+	<TurnIn QuestName="Mudrock Soup and Bugs" QuestId="1204" TurnInName="Morgan Stern" TurnInId="4794" />
+	
+	<PickUp QuestName="... and Bugs" QuestId="1258" GiverName="Morgan Stern" GiverId="4794" />
+	<Objective QuestName="... and Bugs" QuestId="1258" Type="CollectItem" ItemId="5938" CollectCount="12" />
+	<TurnIn QuestName="... and Bugs" QuestId="1258" TurnInName="Morgan Stern" TurnInId="4794" />
+
+	<PickUp QuestName="Tabetha's Farm" QuestId="11212" GiverName="Guard Byron" GiverId="4921" />
+	<PickUp QuestName="Mission to Mudsprocket" QuestId="27248" GiverName="Lieutenant Aden" GiverId="23951" />
+	
+	<TurnIn QuestName="A Disturbing Development" QuestId="27214" TurnInName="Captain Wymor" TurnInId="5086" />
+	
+	<CustomBehavior File="Message" Text="Compiling Sentry Point Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Defias in Dustwallow?" QuestId="27234" GiverName="Captain Wymor" GiverId="5086" />
+	<Objective QuestName="Defias in Dustwallow?" QuestId="27234" Type="CollectItem" ItemId="33037" CollectCount="1" />
+	<TurnIn QuestName="Defias in Dustwallow?" QuestId="27234" TurnInName="Captain Wymor" TurnInId="5086" />
+
+	<PickUp QuestName="Renn McGill" QuestId="27235" GiverName="Captain Wymor" GiverId="5086" />
+	<TurnIn QuestName="Renn McGill" QuestId="27235" TurnInName="Renn McGill" TurnInId="23569" />
+
+	<PickUp QuestName="Secondhand Diving Gear" QuestId="27236" GiverName="Renn McGill" GiverId="23569" />
+	<Objective QuestName="Secondhand Diving Gear" QuestId="27236" Type="CollectItem" ItemId="33038" CollectCount="1" />
+	<Objective QuestName="Secondhand Diving Gear" QuestId="27236" Type="CollectItem" ItemId="33039" CollectCount="1" />
+	<TurnIn QuestName="Secondhand Diving Gear" QuestId="27236" TurnInName="Renn McGill" TurnInId="23569" />
+
+	<PickUp QuestName="Recover the Cargo!" QuestId="27237" GiverName="Renn McGill" GiverId="23569" />
+	<If Condition="HasQuest(27237) &amp;&amp; !IsQuestCompleted(27237)" >
+		<If Condition="HasItem(33045)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(33045)" WaitTime="2000" />
+		</If>
+		<CustomBehavior File="InteractWith" QuestId="27237" MobId="186283" InteractByUsingItemId="33044" NonCompeteDistance="0"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" Range="10" WaitTime="2000" >
+			<HuntingGrounds>
+				<Hotspot X="-2655.176" Y="-4463.005" Z="-1.611398" />
+				<Hotspot X="-2591.906" Y="-4452.786" Z="-1.652154" />
+				<Hotspot X="-2700.511" Y="-4356.902" Z="-8.512424" />
+				<Hotspot X="-2774.501" Y="-4492.7" Z="-1.524678" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+	<TurnIn QuestName="Recover the Cargo!" QuestId="27237" TurnInName="Renn McGill" TurnInId="23569" />
+	
+	<PickUp QuestName="Jaina Must Know" QuestId="27238" GiverName="Renn McGill" GiverId="23569" />
+	<TurnIn QuestName="Jaina Must Know" QuestId="27238" TurnInName="Lady Jaina Proudmoore" TurnInId="4968" />
+	
+	<PickUp QuestName="Survey Alcaz Island" QuestId="27239" GiverName="Lady Jaina Proudmoore" GiverId="4968" />
+	<CustomBehavior File="InteractWith" QuestId="27239" MobId="23704" InteractByGossipOptions="1" NonCompeteDistance="0"
+		WaitTime="2000" PreInteractMountStrategy="DismountOrCancelShapeshift" X="-3822.577" Y="-4510.127" Z="10.92772" />
+	<TurnIn QuestName="Survey Alcaz Island" QuestId="27239" TurnInName="Lady Jaina Proudmoore" TurnInId="4968" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Dustwallow Marsh Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Tabetha's Farm Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn QuestName="Tabetha's Farm" QuestId="11212" TurnInName="Tabetha" TurnInId="6546" />
+	<PickUp QuestName="The Grimtotem Weapon" QuestId="27336" GiverName="Apprentice Garion" GiverId="23601" />
+	<PickUp QuestName="The Reagent Thief" QuestId="27339" GiverName="Apprentice Garion" GiverId="23601" />
+	<PickUp QuestName="Direhorn Raiders" QuestId="27340" GiverName="Apprentice Morlann" GiverId="23600" />
+	<PickUp QuestName="The Zeppelin Crash" QuestId="27346" GiverName="Apprentice Morlann" GiverId="23600" />
+	
+	<CustomBehavior File="InteractWith" QuestId="27336" MobId="4344" MobState="Alive" InteractByUsingItemId="33101" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" Range="10" NumOfTimes="1000" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-4021.725" Y="-3281.194" Z="29.71048" />
+			<Hotspot X="-4086.99" Y="-3183.168" Z="37.88689" />
+			<Hotspot X="-4100.321" Y="-3088.742" Z="29.1768" />
+			<Hotspot X="-4076.667" Y="-2961.42" Z="36.74816" />
+			<Hotspot X="-4000.983" Y="-2859.415" Z="37.12354" />
+			<Hotspot X="-3817.367" Y="-2824.776" Z="35.80804" />
+			<Hotspot X="-3636.163" Y="-2905.88" Z="37.44152" />
+			<Hotspot X="-3682.844" Y="-3040.448" Z="38.97098" />
+			<Hotspot X="-3761.02" Y="-3131.384" Z="34.91151" />
+			<Hotspot X="-3922.938" Y="-3213.431" Z="36.09959" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="Direhorn Raiders" QuestId="27340" Type="KillMob" MobId="23594" KillCount="12" />
+	<Objective QuestName="The Reagent Thief" QuestId="27339" Type="CollectItem" ItemId="33103" CollectCount="6" />
+	
+	<TurnIn QuestName="The Zeppelin Crash" QuestId="27346" TurnInName="Moxie Steelgrille" TurnInId="23797" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Dustwallow Marsh Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Corrosion Prevention" QuestId="27347" GiverName="Moxie Steelgrille" GiverId="23797" />
+	<PickUp QuestName="Secure the Cargo!" QuestId="27348" GiverName="Moxie Steelgrille" GiverId="23797" />
+	
+	<While Condition="HasQuest(27347) &amp;&amp; !IsQuestCompleted(27347)" >
+		<CustomBehavior File="InteractWith" QuestId="27347" MobId="186441" CollectionDistance="30" 
+			NonCompeteDistance="0" TerminateWhen="Me.HasAura(42490)" NumOfTimes="1000" >
+			<HuntingGrounds>
+				<Hotspot X="-3998.194" Y="-3792.574" Z="38.67852" />
+				<Hotspot X="-3857.14" Y="-3759.874" Z="36.487" />
+				<Hotspot X="-3968.539" Y="-3601.763" Z="36.06032" />
+				<Hotspot X="-4093.533" Y="-3760.367" Z="38.89018" />
+				<Hotspot X="-4083.852" Y="-3686.325" Z="43.90271" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" QuestId="27347" MobId="4393" MobId2="4394" MobState="Alive" InteractByUsingItemId="33108" NumOfTimes="1000" 
+			TerminateWhen="!Me.HasAura(42490)" Range="30" NonCompeteDistance="0" CollectionDistance="60" />
+	</While>
+	<Objective QuestName="Secure the Cargo!" QuestId="27348" Type="CollectItem" ItemId="33163" CollectCount="8" />
+	<TurnIn QuestName="Secure the Cargo!" QuestId="27348" TurnInName="Moxie Steelgrille" TurnInId="23797" />
+	<TurnIn QuestName="Corrosion Prevention" QuestId="27347" TurnInName="Moxie Steelgrille" TurnInId="23797" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Dustwallow Marsh Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Delivery for Drazzit" QuestId="11208" GiverName="Moxie Steelgrille" GiverId="23797" />
+	
+	<TurnIn QuestName="Direhorn Raiders" QuestId="27340" TurnInName="Apprentice Morlann" TurnInId="23600" />
+	<TurnIn QuestName="The Grimtotem Weapon" QuestId="27336" TurnInName="Apprentice Garion" TurnInId="23601" />
+	<TurnIn QuestName="The Reagent Thief" QuestId="27339" TurnInName="Apprentice Garion" TurnInId="23601" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Dustwallow Marsh Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Help for Mudsprocket" QuestId="11211" GiverName="Tabetha" GiverId="6546" />
+	
+	<CustomBehavior File="Message" Text="Compiling Nat Pagle Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn QuestName="Is it Real?" QuestId="27219" TurnInName="Nat Pagle" TurnInId="12919" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Dustwallow Marsh Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Nat's Bargain" QuestId="27220" GiverName="Nat Pagle" GiverId="12919" />
+	<While Condition="HasQuest(27220) &amp;&amp; !IsQuestCompleted(27220)" >
+		<If Condition="!Me.HasAura(42644)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(33166)" WaitTime="2000" />
+		</If>
+		<MoveTo X="-4271.182" Y="-3926.642" Z="-1.586919" />
+	</While>
+	<TurnIn QuestName="Nat's Bargain" QuestId="27220" TurnInName="Nat Pagle" TurnInId="12919" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Dustwallow Marsh Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Oh, It's Real" QuestId="27221" GiverName="Nat Pagle" GiverId="12919" />
+	<TurnIn QuestName="Oh, It's Real" QuestId="27221" TurnInName="Major Mills" TurnInId="23905" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Dustwallow Marsh Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Take Down Tethyr!" QuestId="27222" GiverName="Major Mills" GiverId="23905" />
+	<While Condition="HasQuest(27222) &amp;&amp; !IsQuestCompleted(27222)" >
+		<CustomBehavior File="InteractWith" QuestId="27222" MobId="186432" NonCompeteDistance="0" ProactiveCombatStrategy="NoClear"
+			NumOfTimes="3" Range="5" IgnoreLoSToTarget="True" X="-3841.339" Y="-4631.506" Z="8.746079" />
+	</While>
+	<TurnIn QuestName="Take Down Tethyr!" QuestId="27222" TurnInName="Major Mills" TurnInId="23905" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Dustwallow Marsh Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Mudsprocket Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn QuestName="Help for Mudsprocket" QuestId="11211" TurnInName="Drazzit Dripvalve" TurnInId="23572" />
+	<TurnIn QuestName="Mission to Mudsprocket" QuestId="27248" TurnInName="Drazzit Dripvalve" TurnInId="23572" />
+	<TurnIn QuestName="Delivery for Drazzit" QuestId="11208" TurnInName="Drazzit Dripvalve" TurnInId="23572" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Dustwallow Marsh Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="WANTED: Goreclaw the Ravenous" QuestId="27412" GiverName="Wanted Poster" GiverType="Object" GiverId="186426" X="-4590.474" Y="-3167.038" Z="34.14642" />
+	<PickUp QuestName="Bloodfen Feathers" QuestId="27407" GiverName="Brogg" GiverId="23579" />
+	<PickUp QuestName="Catch a Dragon by the Tail" QuestId="27413" GiverName="Gizzix Grimegurgle" GiverId="23570" />
+	
+	<Objective QuestName="Catch a Dragon by the Tail" QuestId="27413" Type="CollectItem" ItemId="33175" CollectCount="8" />
+	<TurnIn QuestName="Catch a Dragon by the Tail" QuestId="27413" TurnInName="Gizzix Grimegurgle" TurnInId="23570" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Dustwallow Marsh Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+
+	<Objective QuestName="WANTED: Goreclaw the Ravenous" QuestId="27412" Type="KillMob" MobId="23873" KillCount="1" />
+	<Objective QuestName="Bloodfen Feathers" QuestId="27407" Type="CollectItem" ItemId="33085" CollectCount="5" />
+	<TurnIn QuestName="WANTED: Goreclaw the Ravenous" QuestId="27412" TurnInName="Drazzit Dripvalve" TurnInId="23572" />
+	<TurnIn QuestName="Bloodfen Feathers" QuestId="27407" TurnInName="Brogg" TurnInId="23579" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Dustwallow Marsh Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Banner of the Stonemaul" QuestId="27408" GiverName="Brogg" GiverId="23579" />
+	<PickUp QuestName="The Essence of Enmity" QuestId="27409" GiverName="Brogg" GiverId="23579" />
+	<Objective QuestName="Banner of the Stonemaul" QuestId="27408" Type="CollectItem" ItemId="33086" CollectCount="1" X="-4460.569" Y="-2976.359" Z="30.686" />
+	<CustomBehavior File="InteractWith" QuestId="27409" MobId="4328" MobId2="4329" MobId3="4331" InteractByUsingItemId="33088" MobState="Dead"
+		NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" Range="10" >
+		<HuntingGrounds>
+			<Hotspot X="-4316.752" Y="-3055.383" Z="29.51851" />
+			<Hotspot X="-4373.862" Y="-2982.822" Z="28.4213" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="Banner of the Stonemaul" QuestId="27408" TurnInName="Brogg" TurnInId="23579" />
+	<TurnIn QuestName="The Essence of Enmity" QuestId="27409" TurnInName="Brogg" TurnInId="23579" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Dustwallow Marsh Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Spirits of Stonemaul Hold" QuestId="27410" GiverName="Brogg" GiverId="23579" />
+	<CustomBehavior File="InteractWith" QuestId="27410" MobId="186332" NonCompeteDistance="0" NumOfTimes="1000"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-4387.69" Y="-3221.807" Z="34.38305" />
+			<Hotspot X="-4305.439" Y="-3236.557" Z="34.58778" />
+			<Hotspot X="-4261.266" Y="-3314.223" Z="38.1696" />
+			<Hotspot X="-4281.24" Y="-3375.164" Z="36.25797" />
+			<Hotspot X="-4368.709" Y="-3397.623" Z="38.93554" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="Spirits of Stonemaul Hold" QuestId="27410" TurnInName="Brogg" TurnInId="23579" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Dustwallow Marsh Complete" LogColor="Orange" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Challenge to the Black Flight" QuestId="27411" GiverName="Brogg" GiverId="23579" />
+	<While Condition="HasQuest(27411) &amp;&amp; !IsQuestCompleted(27411)" >
+		<MoveTo X="-4691.059" Y="-3714.878" Z="49.02055" />
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(33095)" WaitTime="2000" />
+		<CustomBehavior File="EscortGroup" QuestId="27411" EscortNpcId="186335" EscortCompleteWhen="QuestCompleteOrFails" />
+	</While>
+	<TurnIn QuestName="Challenge to the Black Flight" QuestId="27411" TurnInName="Brogg" TurnInId="23579" />
+
+	<CustomBehavior File="Message" Text="Dustwallow Marsh Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

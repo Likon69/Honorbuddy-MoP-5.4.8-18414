@@ -1,0 +1,932 @@
+<HBProfile>
+
+	<Name>Hellfire Peninsula (Alliance) ($Rev$)</Name>
+	<MinLevel>58</MinLevel>
+	<MaxLevel>70</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+		<Mob Name="Fel Reaver" Entry="18733" />
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+		<Mob Name="Eye of Grillok" Entry="19440" Flags="Pull, Combat" />
+		<Mob Name="Female Kaliri Hatchling" Entry="17034" Flags="Pull" />
+		<Mob Name="Fel Reaver" Entry="18733" Flags="Pull" />
+		<Mob Name="Arzeth the Merciless" Entry="19354" Flags="Pull" />
+	</Blacklist>
+
+	<Mailboxes>
+		<Mailbox X="-706.5545" Y="2700.936" Z="94.53797" />
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Honor Hold -->
+		<Vendor Nav="Fly" Name="Humphry" Entry="16823" Type="Repair" X="-717.3172" Y="2607.582" Z="91.01124" />
+		<!-- Expedition Point -->
+		<Vendor Nav="Fly" Name="Supply Officer Shandria" Entry="19314" Type="Food" X="-696.8386" Y="1875.516" Z="63.40075" />
+		<!-- Temple of Telhamat -->
+		<Vendor Nav="Fly" Name="Talaara" Entry="19001" Type="Repair" X="105.5018" Y="4337.619" Z="101.4662" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="10079" Name="When This Mine's a-Rockin'">
+	<Objective Type="KillMob" MobId="18827" KillCount="12">
+		<Hotspots>
+			<Hotspot X="-671.2743" Y="2798.144" Z="45.04766" />
+			<Hotspot X="-704.5858" Y="2740.681" Z="35.24194" />
+			<Hotspot X="-740.2617" Y="2717.897" Z="26.2826" />
+			<Hotspot X="-682.6372" Y="2698.521" Z="1.523128" />
+			<Hotspot X="-649.2946" Y="2652.601" Z="-3.19917" />
+			<Hotspot X="-641.7152" Y="2642.332" Z="-3.182091" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="10399" Name="The Heart of Darkness">
+	<Objective Type="KillMob" MobId="16951" KillCount="10">
+		<Hotspots>
+			<Hotspot X="80.66534" Y="3510.709" Z="61.88625" />
+			<Hotspot X="149.2625" Y="3498.976" Z="62.08236" />
+			<Hotspot X="224.2081" Y="3480.936" Z="62.05389" />
+			<Hotspot X="302.809" Y="3464.927" Z="61.90628" />
+			<Hotspot X="383.0473" Y="3501.131" Z="62.4032" />
+			<Hotspot X="400.1902" Y="3430.885" Z="62.01171" />
+			<Hotspot X="391.8856" Y="3354.029" Z="62.38839" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde || Me.MapId != 530">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="HasQuest(10119)" >
+		<TurnIn Nav="Fly" QuestName="Through the Dark Portal" QuestId="10119" TurnInName="Commander Duron" TurnInId="19229" />
+	</If>
+	
+	<If Condition="!HasQuest(10288) &amp;&amp; !IsQuestCompleted(10288)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Hellfire Peninsula Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Honor Hold Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="Arrival in Outland" QuestId="10288" GiverName="Commander Duron" GiverId="19229" />
+	<TurnIn Nav="Fly" QuestName="Arrival in Outland" QuestId="10288" TurnInName="Amish Wildhammer" TurnInId="18931" />
+	
+	<PickUp Nav="Fly" QuestName="Journey to Honor Hold" QuestId="10140" GiverName="Amish Wildhammer" GiverId="18931" />
+	<TurnIn Nav="Fly" QuestName="Journey to Honor Hold" QuestId="10140" TurnInName="Marshal Isildor" TurnInId="19308" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Force Commander Danath" QuestId="10254" GiverName="Marshal Isildor" GiverId="19308" />
+	<TurnIn Nav="Fly" QuestName="Force Commander Danath" QuestId="10254" TurnInName="Force Commander Danath Trollbane" TurnInId="16819" />
+	<PickUp Nav="Fly" QuestName="The Legion Reborn" QuestId="10141" GiverName="Force Commander Danath Trollbane" GiverId="16819" />
+	<PickUp Nav="Fly" QuestName="Know your Enemy" QuestId="10160" GiverName="Force Commander Danath Trollbane" GiverId="16819" />
+	<TurnIn Nav="Fly" QuestName="The Legion Reborn" QuestId="10141" TurnInName="Sergeant Altumus" TurnInId="19309" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="The Path of Anguish" QuestId="10142" GiverName="Sergeant Altumus" GiverId="19309" />
+	<Objective Nav="Fly" QuestName="The Path of Anguish" QuestId="10142" Type="KillMob" MobId="19434" KillCount="1" />
+	<Objective Nav="Fly" QuestName="The Path of Anguish" QuestId="10142" Type="KillMob" MobId="19136" KillCount="4" />
+	<Objective Nav="Fly" QuestName="The Path of Anguish" QuestId="10142" Type="KillMob" MobId="19261" KillCount="6" />
+	<TurnIn Nav="Fly" QuestName="The Path of Anguish" QuestId="10142" TurnInName="Sergeant Altumus" TurnInId="19309" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Expedition Point" QuestId="10143" GiverName="Sergeant Altumus" GiverId="19309" />
+	<TurnIn Nav="Fly" QuestName="Expedition Point" QuestId="10143" TurnInName="Forward Commander Kingston" TurnInId="19310" />
+	<PickUp Nav="Fly" QuestName="Disrupt Their Reinforcements" QuestId="10144" GiverName="Forward Commander Kingston" GiverId="19310" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<While Condition="!IsQuestCompleted(10895)" >
+		<If Condition="HasQuest(10895) &amp;&amp; !HasItem(31739)" >
+			<CustomBehavior File="AbandonQuest" QuestId="10895" Type="All" />
+		</If>
+		<PickUp Nav="Fly" QuestName="Zeth'Gor Must Burn!" QuestId="10895" GiverName="Wing Commander Dabiree" GiverId="19409" />
+		<While Condition="HasQuest(10895) &amp;&amp; !IsObjectiveComplete(3,10895)" >
+			<MoveTo Nav="Fly" X="-896.8455" Y="1920.366" Z="66.93677" />
+			<UseItem QuestId="10895" ItemId="31739" X="-896.8455" Y="1920.366" Z="66.93677" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+		</While>
+		<While Condition="HasQuest(10895) &amp;&amp; !IsObjectiveComplete(1, 10895)" >
+			<MoveTo Nav="Fly" X="-821.5377" Y="2027.032" Z="39.2443" />
+			<UseItem QuestId="10895" ItemId="31739" X="-821.5377" Y="2027.032" Z="39.2443" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+		</While>
+		<While Condition="HasQuest(10895) &amp;&amp; !IsObjectiveComplete(4, 10895)" >
+			<MoveTo Nav="Fly" X="-977.0312" Y="1877.425" Z="94.81053" />
+			<UseItem QuestId="10895" ItemId="31739" X="-977.0312" Y="1877.425" Z="94.81053" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+		</While>
+		<While Condition="HasQuest(10895) &amp;&amp; !IsObjectiveComplete(2,10895)" >
+			<MoveTo Nav="Fly" X="-1154.532" Y="2108.149" Z="68.1768" />
+			<UseItem QuestId="10895" ItemId="31739" X="-1154.532" Y="2108.149" Z="68.1768" />
+			<CustomBehavior File="WaitTimer" WaitTime="1000" />
+		</While>
+	</While>
+	<TurnIn Nav="Fly" QuestName="Zeth'Gor Must Burn!" QuestId="10895" TurnInName="Wing Commander Dabiree" TurnInId="19409" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<Objective Nav="Fly" QuestName="Disrupt Their Reinforcements" QuestId="10144" Type="CollectItem" ItemId="28513" CollectCount="8" />			
+	<If Condition="HasQuest(10144) &amp;&amp; !IsObjectiveComplete(2, 10144)" >
+		<CustomBehavior File="InteractWith" QuestId="10144" QuestObjectiveIndex="2" MobId="184415" Range="8"  
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" NumOfTimes="100" WaitTime="5000"
+			PreInteractMountStrategy="Dismount" X="-548.9393" Y="1783.983" Z="56.2879" />
+	</If>
+	<If Condition="HasQuest(10144) &amp;&amp; !IsObjectiveComplete(1, 10144)" >
+		<CustomBehavior File="InteractWith" QuestId="10144" QuestObjectiveIndex="1" MobId="184414" Range="8"
+			ProactiveCOmbatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" NumOfTimes="100" WaitTime="5000"
+			PreInteractMountStrategy="Dismount" X="-418.401" Y="1848.877" Z="78.58884" />
+	</If>
+	<TurnIn Nav="Fly" QuestName="Disrupt Their Reinforcements" QuestId="10144" TurnInName="Forward Commander Kingston" TurnInId="19310" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Mission: The Murketh and Shaadraz Gateways" QuestId="10146" GiverName="Forward Commander Kingston" GiverId="19310" />
+	<While Condition="HasQuest(10146) &amp;&amp; !IsQuestCompleted(10146)" >
+		<CustomBehavior File="FlyTo" X="-672.2167" Y="1858.05" Z="66.91027" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="SpecificQuests\10129-10146-Hellfire-MurkethAndShaadraz" QuestId="10146" />
+	</While>
+	<TurnIn Nav="Fly" QuestName="Mission: The Murketh and Shaadraz Gateways" QuestId="10146" TurnInName="Forward Commander Kingston" TurnInId="19310" />
+	
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Shatter Point" QuestId="10340" GiverName="Forward Commander Kingston" GiverId="19310" />
+	<TurnIn Nav="Fly" QuestName="Shatter Point" QuestId="10340" TurnInName="Runetog Wildhammer" TurnInId="20234" />
+	<PickUp Nav="Fly" QuestName="Wing Commander Gryphongar" QuestId="10344" GiverName="Runetog Wildhammer" GiverId="20234" />
+	<TurnIn Nav="Fly" QuestName="Wing Commander Gryphongar" QuestId="10344" TurnInName="Wing Commander Gryphongar" TurnInId="20232" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Mission: The Abyssal Shelf" QuestId="10163" GiverName="Wing Commander Gryphongar" GiverId="20232" />
+	<While Condition="HasQuest(10163) &amp;&amp; !IsQuestCompleted(10163)" >
+		<CustomBehavior File="FlyTo" X="298.478" Y="1494.619" Z="-13.82222" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="SpecificQuests\10162-10163-Hellfire-MissionTheAbyssalShelf" QuestId="10163" />
+	</While>
+	<TurnIn Nav="Fly" QuestName="Mission: The Abyssal Shelf" QuestId="10163" TurnInName="Wing Commander Gryphongar" TurnInId="20232" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Go to the Front" QuestId="10382" GiverName="Wing Commander Gryphongar" GiverId="20232" />
+	<TurnIn Nav="Fly" QuestName="Go to the Front" QuestId="10382" TurnInName="Field Marshal Brock" TurnInId="20793" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Disruption - Forge Camp: Mageddon" QuestId="10394" GiverName="Field Marshal Brock" GiverId="20793" />
+	<Objective Nav="Fly" QuestName="Disruption - Forge Camp: Mageddon" QuestId="10394" Type="KillMob" MobId="16947" KillCount="10" />
+	<Objective Nav="Fly" QuestName="Disruption - Forge Camp: Mageddon" QuestId="10394" Type="KillMob" MobId="20798" KillCount="1" X="395.9071" Y="2165.626" Z="117.2621" />
+	<TurnIn Nav="Fly" QuestName="Disruption - Forge Camp: Mageddon" QuestId="10394" TurnInName="Field Marshal Brock" TurnInId="20793" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Enemy of my Enemy..." QuestId="10396" GiverName="Field Marshal Brock" GiverId="20793" />
+	<Objective Nav="Fly" QuestName="Enemy of my Enemy..." QuestId="10396" Type="KillMob" MobId="22461" KillCount="3" />
+	<TurnIn Nav="Fly" QuestName="Enemy of my Enemy..." QuestId="10396" TurnInName="Field Marshal Brock" TurnInId="20793" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Invasion Point: Annihilator" QuestId="10397" GiverName="Field Marshal Brock" GiverId="20793" />
+	<Objective Nav="Fly" QuestName="Invasion Point: Annihilator" QuestId="10397" Type="KillMob" MobId="19298" KillCount="1" />
+	<Objective Nav="Fly" QuestName="Invasion Point: Annihilator" QuestId="10397" Type="CollectItem" ItemId="29795" CollectCount="1" />
+	<Objective Nav="Fly" QuestName="Invasion Point: Annihilator" QuestId="10397" Type="UseObject" ObjectId="182935" UseCount="1" />
+	<TurnIn Nav="Fly" QuestName="Invasion Point: Annihilator" QuestId="10397" TurnInName="Field Marshal Brock" TurnInId="20793" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<If Condition="!HasQuest(10395) &amp;&amp; !IsQuestCompleted(10395)" >
+		<CustomBehavior File="InteractWith" MobId="19298" MobState="Alive" NonCompeteDistance="5"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="1000" WaitTime="1000" TerminateWhen="HasItem(29588)" X="569.7789" Y="2797.706" Z="218.5364" />
+		<PickUp QuestName="The Dark Missive" QuestId="10395" GiverType="Item" GiverName="Burning Legion Missive" GiverId="29588" />
+	</If>
+	
+	<TurnIn Nav="Fly" QuestName="The Dark Missive" QuestId="10395" TurnInName="Warp-Scryer Kryv" TurnInId="16839" />
+	<PickUp Nav="Fly" QuestName="The Path of Glory" QuestId="10047" GiverName="Warp-Scryer Kryv" GiverId="16839" />
+	<PickUp Nav="Fly" QuestName="The Heart of Darkness" QuestId="10399" GiverName="Warp-Scryer Kryv" GiverId="16839" />
+	<PickUp Nav="Fly" QuestName="Overlord" QuestId="10400" GiverName="Force Commander Danath Trollbane" GiverId="16819" />
+	<TurnIn Nav="Fly" QuestName="Know your Enemy" QuestId="10160" TurnInName="Lieutenant Amadi" TurnInId="16820" />
+	<PickUp Nav="Fly" QuestName="Fel Orc Scavengers" QuestId="10482" GiverName="Lieutenant Amadi" GiverId="16820" />
+	<PickUp Nav="Fly" QuestName="Unyielding Souls" QuestId="10050" GiverName="Honor Guard Wesilow" GiverId="16827" />
+	<PickUp Nav="Fly" QuestName="Waste Not, Want Not" QuestId="10055" GiverName="Dumphry" GiverId="21209" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<Objective Nav="Fly" QuestName="Waste Not, Want Not" QuestId="10055" Type="CollectItem" ItemId="25912" CollectCount="8" />
+	<Objective Nav="Fly" QuestName="Waste Not, Want Not" QuestId="10055" Type="CollectItem" ItemId="25911" CollectCount="8" />
+	<Objective Nav="Fly" QuestName="Fel Orc Scavengers" QuestId="10482" Type="KillMob" MobId="21161" KillCount="20" />
+	
+	<TurnIn Nav="Fly" QuestName="Waste Not, Want Not" QuestId="10055" TurnInName="Dumphry" TurnInId="21209" />
+	<PickUp Nav="Fly" QuestName="Laying Waste to the Unwanted" QuestId="10078" GiverName="Dumphry" GiverId="21209" />
+	<TurnIn Nav="Fly" QuestName="Fel Orc Scavengers" QuestId="10482" TurnInName="Lieutenant Amadi" TurnInId="16820" />
+	<PickUp Nav="Fly" QuestName="Ill Omens" QuestId="10483" GiverName="Lieutenant Amadi" GiverId="16820" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<Objective Nav="Fly" QuestName="Ill Omens" QuestId="10483" Type="CollectItem" ItemId="30157" CollectCount="1" />
+	<TurnIn Nav="Fly" QuestName="Ill Omens" QuestId="10483" TurnInName="Corporal Ironridge" TurnInId="21133" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Cursed Talismans" QuestId="10484" GiverName="Corporal Ironridge" GiverId="21133" />
+	<Objective Nav="Fly" QuestName="Cursed Talismans" QuestId="10484" Type="CollectItem" ItemId="30157" CollectCount="12" />
+	<TurnIn Nav="Fly" QuestName="Cursed Talismans" QuestId="10484" TurnInName="Corporal Ironridge" TurnInId="21133" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Warlord of the Bleeding Hollow" QuestId="10485" GiverName="Corporal Ironridge" GiverId="21133" />
+	<Objective Nav="Fly" QuestName="Warlord of the Bleeding Hollow" QuestId="10485" Type="CollectItem" ItemId="30158" CollectCount="1" X="-1173.464" Y="1920.362" Z="81.51942" />
+	<TurnIn Nav="Fly" QuestName="Warlord of the Bleeding Hollow" QuestId="10485" TurnInName="Corporal Ironridge" TurnInId="21133" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Return to Honor Hold" QuestId="10903" GiverName="Corporal Ironridge" GiverId="21133" />
+	
+	<Objective Nav="Fly" QuestName="Unyielding Souls" QuestId="10050" Type="KillMob" MobId="16904" KillCount="12" />
+	<Objective Nav="Fly" QuestName="Unyielding Souls" QuestId="10050" Type="KillMob" MobId="16905" KillCount="10" />
+	<Objective Nav="Fly" QuestName="Unyielding Souls" QuestId="10050" Type="KillMob" MobId="16906" KillCount="5" />
+	
+	<TurnIn Nav="Fly" QuestName="Return to Honor Hold" QuestId="10903" TurnInName="Assistant Klatu" TurnInId="22430" />
+	<PickUp Nav="Fly" QuestName="Fel Spirits" QuestId="10909" GiverName="Assistant Klatu" GiverId="22430" />
+	<PickUp Nav="Fly" QuestName="Digging for Prayer Beads" QuestId="10916" GiverName="Assistant Klatu" GiverId="22430" />
+	<PickUp Nav="Fly" QuestName="An Old Gift" QuestId="10058" GiverName="Father Malgor Devidicus" GiverId="16825" />
+	<TurnIn Nav="Fly" QuestName="Unyielding Souls" QuestId="10050" TurnInName="Honor Guard Wesilow" TurnInId="16827" />
+	<PickUp Nav="Fly" QuestName="Looking to the Leadership" QuestId="10057" GiverName="Honor Guard Wesilow" GiverId="16827" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<If Condition="HasQuest(10078) &amp;&amp; !IsQuestCompleted(10078)">
+		<CustomBehavior File="InteractWith" QuestId="10078" QuestObjectiveIndex="4" MobId="21236" InteractByUsingItemId="26002"
+			NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="100" WaitTime="3000" IgnoreLoSToTarget="True" Range="30" InteractBlacklistTimeInSeconds="5"
+			X="-149.6744" Y="2814.058" Z="34.84263" />
+		<CustomBehavior File="InteractWith" QuestId="10078" QuestObjectiveIndex="3" MobId="19009" InteractByUsingItemId="26002"
+			NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="100" WaitTime="3000" IgnoreLoSToTarget="True" Range="30" InteractBlacklistTimeInSeconds="5"
+			X="-156.6577" Y="2778.788" Z="38.05223" />
+		<CustomBehavior File="InteractWith" QuestId="10078" QuestObjectiveIndex="2" MobId="21237" InteractByUsingItemId="26002"
+			NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="100" WaitTime="3000" IgnoreLoSToTarget="True" Range="30" InteractBlacklistTimeInSeconds="5"
+			X="-133.5764" Y="2657.482" Z="48.00873" />
+		<CustomBehavior File="InteractWith" QuestId="10078" QuestObjectiveIndex="1" MobId="18818" InteractByUsingItemId="26002"
+			NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="100" WaitTime="3000" IgnoreLoSToTarget="True" Range="30" InteractBlacklistTimeInSeconds="5"
+			X="-137.5683" Y="2518.587" Z="45.58668" />
+	</If>
+	<CustomBehavior File="InteractWith" QuestId="10047" MobId="182789" InteractByUsingItemId="25889" Range="2"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NumOfTimes="1000" WaitTime="1000" IgnoreLoSToTarget="True" CollectionDistance="150" >
+		<HuntingGrounds>
+			<Hotspot X="-207.8209" Y="2081.696" Z="91.50137" />
+			<Hotspot X="-214.8759" Y="2188.63" Z="73.69221" />
+			<Hotspot X="-219.7095" Y="2309.748" Z="49.44372" />
+			<Hotspot X="-224.642" Y="2390.064" Z="31.79509" />
+			<Hotspot X="-231.7965" Y="2494.139" Z="12.59907" />
+			<Hotspot X="-239.5321" Y="2549.451" Z="4.435051" />
+			<Hotspot X="-246.835" Y="2618.36" Z="-7.137088" />
+			<Hotspot X="-253.012" Y="2688.918" Z="-18.2407" />
+			<Hotspot X="-262.0058" Y="2775.798" Z="-34.20302" />
+			<Hotspot X="-273.7913" Y="2861.318" Z="-49.38061" />
+			<Hotspot X="-287.0797" Y="2923.93" Z="-59.90517" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn Nav="Fly" QuestName="Laying Waste to the Unwanted" QuestId="10078" TurnInName="Dumphry" TurnInId="21209" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="A Job for an Intelligent Man" QuestId="9355" GiverName="Foreman Biggums" GiverId="16837" />
+	<PickUp Nav="Fly" QuestName="When This Mine's a-Rockin'" QuestId="10079" GiverName="Foreman Biggums" GiverId="16837" />
+	<Objective QuestName="When This Mine's a-Rockin'" QuestId="10079" Type="KillMob" MobId="18827" KillCount="12" />
+	<DisableBehavior Name="Pull" />
+	<TurnIn Nav="Fly" QuestName="When This Mine's a-Rockin'" QuestId="10079" TurnInName="Foreman Biggums" TurnInId="16837" />
+	<EnableBehavior Name="Pull" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="The Mastermind" QuestId="10099" GiverName="Foreman Biggums" GiverId="16837" />
+	<Objective QuestName="The Mastermind" QuestId="10099" Type="KillMob" MobId="18974" KillCount="1" X="-641.7152" Y="2642.332" Z="-3.182091" />
+	<DisableBehavior Name="Pull" />
+	<TurnIn Nav="Fly" QuestName="The Mastermind" QuestId="10099" TurnInName="Foreman Biggums" TurnInId="16837" />
+	<EnableBehavior Name="Pull" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<CustomBehavior File="InteractWith" QuestId="9355" MobId="16857" MobState="Alive" NonCompeteDistance="5"
+		PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000"
+		WaitTime="1000" IgnoreLoSToTarget="True" >
+		<HuntingGrounds>
+			<Hotspot X="-860.966" Y="3043.299" Z="10.38862" />
+			<Hotspot X="-840.9182" Y="3112.006" Z="9.845476" />
+			<Hotspot X="-785.329" Y="3133.672" Z="-11.77797" />
+			<Hotspot X="-776.5629" Y="3093.946" Z="-2.476487" />
+			<Hotspot X="-751.605" Y="3027.201" Z="10.87881" />
+			<Hotspot X="-659.2036" Y="3092.232" Z="2.27761" />
+			<Hotspot X="-718.9045" Y="3184.778" Z="-18.20048" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<If Condition="!HasItem(23338) &amp;&amp; !HasQuest(9373) &amp;&amp; !IsQuestCompleted(9373)" >
+		<CustomBehavior File="InteractWith" MobId="16857" MobId2="16968" MobState="Alive"
+			NonCompeteDistance="5" ProactiveCombatStrategy="ClearMobsTargetingUs" PreInteractMountStrategy="Dismount"
+			NumOfTimes="1000" WaitTime="1000" TerminateWhen="HasItem(23338) || HasQuest(9373) || IsQuestCompleted(9373)" >
+			<HuntingGrounds>
+				<Hotspot X="-744.8123" Y="3031.693" Z="10.3115" />
+				<Hotspot X="-666.6166" Y="3097.361" Z="0.8618149" />
+				<Hotspot X="-728.4886" Y="3201.143" Z="-7.585929" />
+				<Hotspot X="-864.3915" Y="3053.042" Z="12.37495" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+	<If Condition="HasItem(23338) &amp;&amp; !HasQuest(9373) &amp;&amp; !IsQuestCompleted(9373)" >
+		<PickUp Nav="Fly" QuestName="Missing Missive" QuestId="9373" GiverName="Eroded Leather Case" GiverType="Item" GiverId="23338" />
+	</If>
+	<TurnIn QuestName="A Job for an Intelligent Man" QuestId="9355" TurnInName="Foreman Biggums" TurnInId="16837" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<Objective Nav="Fly" QuestName="An Old Gift" QuestId="10058" Type="CollectItem" ItemId="25938" CollectCount="1" />
+	<Objective Nav="Fly" QuestName="Looking to the Leadership" QuestId="10057" Type="KillMob" MobId="16977" KillCount="1" />
+	<Objective Nav="Fly" QuestName="Looking to the Leadership" QuestId="10057" Type="KillMob" MobId="16978" KillCount="1" />
+	
+	<While Condition="HasQuest(10909) &amp;&amp; !IsQuestCompleted(10909)" >
+		<CustomBehavior File="InteractWith" QuestId="10909" MobId="16878" MobState="Alive" InteractByUsingItemId="31772"
+			Range="25" NonCompeteDistance="5" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="NoClear"
+			NumOfTimes="100" WaitTime="10000" TerminateWhen="Unit(16878, u =&gt; u.HasAura(39184) &amp;&amp; u.IsAlive) != null || Unit(22454, u =&gt; u.IsAlive) != null"
+			X="-1123.139" Y="3224.751" Z="67.4407" CollectionDistance="250" />
+		<CustomBehavior File="InteractWith" QuestId="10909" MobId="16878" MobState="Alive" AuraIdOnMob="39184"
+			NonCompeteDistance="5" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="100" WaitTime="1000" TerminateWhen="Unit(16878, u =&gt; u.HasAura(39184) &amp;&amp; u.IsAlive) == null || Unit(22454, u =&gt; u.IsAlive) != null"
+			X="-1123.139" Y="3224.751" Z="67.4407" CollectionDistance="250" />
+		<CustomBehavior File="InteractWith" QuestId="10909" MobId="22454" MobState="Alive" CollectionDistance="250"
+			NonCompeteDistance="5" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="100" WaitTime="1000" TerminateWhen="Unit(22454, u =&gt; u.IsAlive) == null"
+			X="-1123.139" Y="3224.751" Z="67.4407" />
+	</While>
+	
+	<TurnIn Nav="Fly" QuestName="Looking to the Leadership" QuestId="10057" TurnInName="Honor Guard Wesilow" TurnInId="16827" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Outland Sucks!" QuestId="10236" GiverName="Foreman Razelcraz" GiverId="16915" />
+	<Objective Nav="Fly" QuestName="Outland Sucks!" QuestId="10236" Type="CollectItem" ItemId="28554" CollectCount="6" />
+	<TurnIn Nav="Fly" QuestName="Outland Sucks!" QuestId="10236" TurnInName="Foreman Razelcraz" TurnInId="16915" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="How to Serve Goblins" QuestId="10238" GiverName="Foreman Razelcraz" GiverId="16915" />
+	<Objective Nav="Fly" QuestName="How to Serve Goblins" QuestId="10238" Type="UseObject" ObjectId="183936" UseCount="1" />
+	<Objective Nav="Fly" QuestName="How to Serve Goblins" QuestId="10238" Type="UseObject" ObjectId="183940" UseCount="1" />
+	<Objective Nav="Fly" QuestName="How to Serve Goblins" QuestId="10238" Type="UseObject" ObjectId="183941" UseCount="1" />
+	<TurnIn Nav="Fly" QuestName="How to Serve Goblins" QuestId="10238" TurnInName="Foreman Razelcraz" TurnInId="16915" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Shizz Work" QuestId="10629" GiverName="Foreman Razelcraz" GiverId="16915" />
+	<While Condition="HasQuest(10629) &amp;&amp; !IsQuestCompleted(10629)" >
+		<If Condition="HasItem(30803) &amp;&amp; !Me.Minions.Any(m =&gt; m.Entry == 21847)" >
+			<CustomBehavior File="FlyTo" X="431.15" Y="2889.70" Z="52.17" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(30803)" WaitTime="3000" />
+		</If>
+		<CustomBehavior File="InteractWith" QuestId="10629" MobId="16863" NonCompeteDistance="5" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="15000" CollectionDistance="200"
+			MobState="Alive" TerminateWhen="!Me.Minions.Any(m =&gt; m.Entry == 21847) || Object(184980) != null" >
+			<HuntingGrounds>
+				<Hotspot X="450.3281" Y="2979.167" Z="23.8316" />
+				<Hotspot X="358.4205" Y="3078.583" Z="22.5267" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" QuestId="10629" MobId="184980" NonCompeteDistance="0"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" 
+			NumOfTimes="100" WaitTime="1000" CollectionDistance="200"
+			TerminateWhen="!Me.Minions.Any(m =&gt; m.Entry == 21847) || Object(184980) == null" />
+	</While>
+	<TurnIn Nav="Fly" QuestName="Shizz Work" QuestId="10629" TurnInName="Foreman Razelcraz" TurnInId="16915" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Beneath Thrallmar" QuestId="10630" GiverName="Foreman Razelcraz" GiverId="16915" />
+	<Objective Nav="Fly" QuestName="Beneath Thrallmar" QuestId="10630" Type="KillMob" MobId="18976" KillCount="1" X="401.9726" Y="2730.862" Z="51.91708" />
+	<TurnIn Nav="Fly" QuestName="Beneath Thrallmar" QuestId="10630" TurnInName="Foreman Razelcraz" TurnInId="16915" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<Objective Nav="Fly" QuestName="Overlord" QuestId="10400" Type="KillMob" MobId="19191" KillCount="1" />
+	<Objective Nav="Fly" QuestName="The Heart of Darkness" QuestId="10399" Type="KillMob" MobId="16951" KillCount="10" />
+	
+	<CustomBehavior File="InteractWith" QuestId="10916" MobId="185302" NonCompeteDistance="0"
+		PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		WaitTime="3000" X="-699.3247" Y="2744.698" Z="94.18965" />
+
+	<TurnIn Nav="Fly" QuestName="Digging for Prayer Beads" QuestId="10916" TurnInName="Assistant Klatu" TurnInId="22430" />
+	<TurnIn Nav="Fly" QuestName="Fel Spirits" QuestId="10909" TurnInName="Assistant Klatu" TurnInId="22430" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="The Exorcism of Colonel Jules" QuestId="10935" GiverName="Assistant Klatu" GiverId="22430" />
+	<While Condition="HasQuest(10935) &amp;&amp; !IsQuestCompleted(10935)" >
+		<CustomBehavior File="InteractWith" QuestId="10935" MobId="22431" MobState="Alive" AuraIdMissingFromMob="39277"
+			InteractByGossipOptions="1" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="20000"
+			TerminateWhen="Unit(22431, u =&gt; u.HasAura(39277)) != null" X="-707.6236" Y="2751.751" Z="101.5913" />
+		<CustomBehavior File="InteractWith" QuestId="10935" MobId1="22506" MobId2="22507" MobState="Alive"
+			InteractByUsingItemId="31828" IgnoreLoSToTarget="True" Range="20" NumOfTimes="1000" WaitTime="2000"
+			NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			TerminateWhen="Unit(22432, u =gt; u.CanGossip) != null" X="-709.876" Y="2749.535" Z="101.5916" />
+		<If Condition="Unit(22432, u =&gt; u.CanGossip) != null" >
+			<CustomBehavior File="InteractWith" QuestId="10935" MobId1="22432" MobState="Alive" NonCompeteDistance="0" 
+				ProactiveCombatStrategy="NoClear" WaitTime="1000" TerminateWhen="Unit(22432, u =&gt; u.CanGossip) == null" 
+				X="-709.876" Y="2749.535" Z="101.5916" />
+		</If>
+	</While>
+	<TurnIn Nav="Fly" QuestName="The Exorcism of Colonel Jules" QuestId="10935" TurnInName="Assistant Klatu" TurnInId="22430" />
+	<PickUp Nav="Fly" QuestName="Trollbane is Looking for You" QuestId="10936" GiverName="Assistant Klatu" GiverId="22430" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<TurnIn Nav="Fly" QuestName="An Old Gift" QuestId="10058" TurnInName="Father Malgor Devidicus" TurnInId="16825" />
+	<PickUp Nav="Fly" QuestName="The Longbeards" QuestId="9558" GiverName="Sid Limbardi" GiverId="16826" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<TurnIn Nav="Fly" QuestName="Trollbane is Looking for You" QuestId="10936" TurnInName="Force Commander Danath Trollbane" TurnInId="16819" />
+	<TurnIn Nav="Fly" QuestName="Overlord" QuestId="10400" TurnInName="Force Commander Danath Trollbane" TurnInId="16819" />
+	<PickUp Nav="Fly" QuestName="Drill the Drillmaster" QuestId="10937" GiverName="Force Commander Danath Trollbane" GiverId="16819" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<TurnIn Nav="Fly" QuestName="The Path of Glory" QuestId="10047" TurnInName="Warp-Scryer Kryv" TurnInId="16839" />
+	<TurnIn Nav="Fly" QuestName="The Heart of Darkness" QuestId="10399" TurnInName="Warp-Scryer Kryv" TurnInId="16839" />
+	<PickUp Nav="Fly" QuestName="The Temple of Telhamat" QuestId="10093" GiverName="Warp-Scryer Kryv" GiverId="16839" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<Objective Nav="Fly" QuestName="Drill the Drillmaster" QuestId="10937" Type="KillMob" MobId="19312" KillCount="1" />
+	<TurnIn Nav="Fly" QuestName="Drill the Drillmaster" QuestId="10937" TurnInName="Force Commander Danath Trollbane" TurnInId="16819" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Crash Site Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="In Case of Emergency..." QuestId="10161" GiverName="Screaming Screed Luckheed" GiverId="19367" />
+	<PickUp Nav="Fly" QuestName="Ravager Egg Roundup" QuestId="9349" GiverName="Legassi" GiverId="19344" />
+
+	<Objective Nav="Fly" QuestName="In Case of Emergency..." QuestId="10161" Type="CollectItem" ItemId="28116" CollectCount="30" />
+	
+	<TurnIn Nav="Fly" QuestName="In Case of Emergency..." QuestId="10161" TurnInName="Screaming Screed Luckheed" TurnInId="19367" />
+	<PickUp Nav="Fly" QuestName="Voidwalkers Gone Wild" QuestId="9351" GiverName="Screaming Screed Luckheed" GiverId="19367" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<Objective Nav="Fly" QuestName="Voidwalkers Gone Wild" QuestId="9351" Type="CollectItem" ItemId="23218" CollectCount="10" />
+	<Objective Nav="Fly" QuestName="Ravager Egg Roundup" QuestId="9349" Type="CollectItem" ItemId="23217" CollectCount="12" />
+	
+	<TurnIn Nav="Fly" QuestName="Voidwalkers Gone Wild" QuestId="9351" TurnInName="Screaming Screed Luckheed" TurnInId="19367" />
+	<TurnIn Nav="Fly" QuestName="Ravager Egg Roundup" QuestId="9349" TurnInName="Legassi" TurnInId="19344" />
+	<PickUp Nav="Fly" QuestName="Helboar, the Other White Meat" QuestId="9361" GiverName="Legassi" GiverId="19344" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<While Condition="HasQuest(9361) &amp;&amp; !IsQuestCompleted(9361)" >
+		<CustomBehavior File="InteractWith" QuestId="9361" MobId="16863" MobId2="16879" MobId3="16880"
+			MobState="Alive" NonCompeteDistance="5" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			PreInteractMountStrategy="Dismount" NumOfTimes="1000" WaitTime="1000" TerminateWhen="HasItem(23270)" >
+			<HuntingGrounds>
+				<Hotspot X="-1053.009" Y="3037.14" Z="15.59422" />
+				<Hotspot X="-1059.869" Y="3088.721" Z="29.46016" />
+				<Hotspot X="-1005.791" Y="3126.033" Z="30.52945" />
+				<Hotspot X="-973.5661" Y="3202.319" Z="40.31314" />
+				<Hotspot X="-941.471" Y="3272.473" Z="49.45" />
+				<Hotspot X="-923.3354" Y="3166.578" Z="25.15282" />
+				<Hotspot X="-897.6036" Y="3110.942" Z="14.998" />
+				<Hotspot X="-943.9377" Y="3077.457" Z="18.09771" />
+				<Hotspot X="-943.1705" Y="2968.371" Z="11.69323" />
+				<Hotspot X="-911.9988" Y="2925.64" Z="6.892007" />
+				<Hotspot X="-872.2956" Y="2877.183" Z="8.227814" />
+				<Hotspot X="-923.0892" Y="2826.274" Z="5.629612" />
+				<Hotspot X="-1020.213" Y="2894.663" Z="-0.08141365" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(23268)" WaitTime="2000" />
+	</While>
+	
+	<TurnIn Nav="Fly" QuestName="Helboar, the Other White Meat" QuestId="9361" TurnInName="Legassi" TurnInId="19344" />
+	<CustomBehavior File="DeleteItems" Ids="23248,23270" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Smooth as Butter" QuestId="9356" GiverName="Legassi" GiverId="19344" />
+	<Objective Nav="Fly" QuestName="Smooth as Butter" QuestId="9356" Type="CollectItem" ItemId="23239" CollectCount="12" />
+	<TurnIn Nav="Fly" QuestName="Smooth as Butter" QuestId="9356" TurnInName="Legassi" TurnInId="19344" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Den of Haal'esh Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn Nav="Fly" QuestName="The Longbeards" QuestId="9558" TurnInName="Gremni Longbeard" TurnInId="16850" />
+	<PickUp Nav="Fly" QuestName="The Arakkoa Threat" QuestId="9417" GiverName="Gremni Longbeard" GiverId="16850" />
+	<PickUp Nav="Fly" QuestName="Rampaging Ravagers" QuestId="9385" GiverName="Gremni Longbeard" GiverId="16850" />
+	<PickUp Nav="Fly" QuestName="Gaining Mirren's Trust" QuestId="9563" GiverName="Mirren Longbeard" GiverId="16851" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<Objective Nav="Fly" QuestName="The Arakkoa Threat" QuestId="9417" Type="KillMob" MobId="16966" KillCount="4" />
+	<Objective Nav="Fly" QuestName="The Arakkoa Threat" QuestId="9417" Type="KillMob" MobId="16967" KillCount="6" />
+
+	<If Condition="!HasQuest(9418) &amp;&amp; !IsQuestCompleted(9418)" >
+		<CustomBehavior File="InteractWith" MobId="17084" MobState="Alive" NonCompeteDistance="0"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			TerminateWhen="HasItem(23580)" NumOfTimes="1000" WaitTime="1000" X="-1116.818" Y="4218.721" Z="53.32315" />
+		<PickUp QuestName="Avruu's Orb" QuestId="9418" GiverName="Avruu's Orb" GiverId="23580" GiverType="Item" />
+	</If>
+	
+	<While Condition="HasQuest(9418)" >
+		<If Condition="Unit(17085,u =&gt; u.IsAlive) == null" >
+			<CustomBehavior File="InteractWith" MobId="181606" InteractByGossipOptions="1"
+				NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+				ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="5000" X="-1323.761" Y="4046.083" Z="116.0264" />
+		<Else>
+			<CustomBehavior File="InteractWith" MobId="17085" MobState="Alive" NonCompeteDistance="0"
+				PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="1000"
+				TerminateWhen="Unit(17085,u =&gt; u.IsAlive) == null" />
+			<CustomBehavior File="Misc\RunLua" Lua="GossipTitleButton1:Click()" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="CompleteQuest();" WaitTime="2000" />
+			<If Condition="Me.Class == WoWClass.Hunter || Me.Class == WoWClass.Rogue || Me.Class == WoWClass.Monk" >
+				<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(3)" WaitTime="2000" />
+			<Else>
+				<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(2)" WaitTime="2000" />
+			</Else>
+			</If>
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="2000" />
+		</Else>
+		</If>
+	</While>
+	
+	<TurnIn Nav="Fly" QuestName="The Arakkoa Threat" QuestId="9417" TurnInName="Gremni Longbeard" TurnInId="16850" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<Objective Nav="Fly" QuestName="Rampaging Ravagers" QuestId="9385" Type="KillMob" MobId="16934" KillCount="10" />
+	<TurnIn Nav="Fly" QuestName="Rampaging Ravagers" QuestId="9385" TurnInName="Gremni Longbeard" TurnInId="16850" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<If Condition="HasQuest(9563)" >
+		<While Condition="!IsQuestCompleted(9563)" >
+			<If Condition="Me.MapId == 530" >
+				<CustomBehavior File="FlyTo" X="-245.3775" Y="911.0024" Z="84.38076" />
+				<CustomBehavior File="Misc\InInstance" X="-247.2715" Y="896.9266" Z="84.38077" />
+				<CustomBehavior File="WaitTimer" WaitTime="10000" />
+			</If>
+			<If Condition="Me.MapId == 0" >
+				<CustomBehavior File="InteractWith" QuestId="9563" MobId="3546" InteractByBuyingItemId="23848"
+					BuyItemCount="1" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+					WaitTime="3000" MobState="Alive" X="-10945.04" Y="-3369.76" Z="66.49869" />
+			</If>
+		</While>
+		<If Condition="Me.MapId == 0" >
+			<CustomBehavior File="FlyTo" X="-11899.66" Y="-3208.164" Z="-14.73684" />
+			<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+			<CustomBehavior File="WaitTimer" WaitTime="10000" />
+		</If>
+	</If>
+	
+	<TurnIn Nav="Fly" QuestName="Gaining Mirren's Trust" QuestId="9563" TurnInName="Mirren Longbeard" TurnInId="16851" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="The Finest Down" QuestId="9420" GiverName="Mirren Longbeard" GiverId="16851" />
+	<Objective Nav="Fly" QuestName="The Finest Down" QuestId="9420" Type="CollectItem" ItemId="23588" CollectCount="8" />
+	<TurnIn Nav="Fly" QuestName="The Finest Down" QuestId="9420" TurnInName="Mirren Longbeard" TurnInId="16851" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Temple of Telhamat Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn Nav="Fly" QuestName="The Temple of Telhamat" QuestId="10093" TurnInName="Amaan the Wise" TurnInId="16796" />
+	<PickUp Nav="Fly" QuestName="The Pools of Aggonar" QuestId="9426" GiverName="Amaan the Wise" GiverId="16796" />
+	<PickUp Nav="Fly" QuestName="Cruel Taskmasters" QuestId="9399" GiverName="Ikan" GiverId="16799" />
+	<PickUp Nav="Fly" QuestName="The Rock Flayer Matriarch" QuestId="9490" GiverName="Ikan" GiverId="16799" />
+	<PickUp Nav="Fly" QuestName="In Search of Sedai" QuestId="9390" GiverName="Anchorite Obadei" GiverId="16834" />
+	<PickUp Nav="Fly" QuestName="Deadly Predators" QuestId="9398" GiverName="Scout Vanura" GiverId="16797" />
+	<TurnIn Nav="Fly" QuestName="In Search of Sedai" QuestId="9390" TurnInName="Sedais Corpse" TurnInId="16852" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Return to Obadei" QuestId="9423" GiverName="Sedais Corpse" GiverId="16852" />
+	<TurnIn Nav="Fly" QuestName="Return to Obadei" QuestId="9423" TurnInName="Anchorite Obadei" TurnInId="16834" />
+	<PickUp Nav="Fly" QuestName="Makuru's Vengeance" QuestId="9424" GiverName="Makuru" GiverId="16833" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<Objective Nav="Fly" QuestName="Makuru's Vengeance" QuestId="9424" Type="CollectItem" ItemId="23589" CollectCount="10" />
+	
+	<CustomBehavior File="FlyTo" QuestId="9426" X="271.7972" Y="3465.289" Z="62.90021" 
+		TerminateWhen="Unit(16951, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt; 40) != null || Unit(16901, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt; 40) != null" />
+	<Objective Nav="Fly" QuestName="The Pools of Aggonar" QuestId="9426" Type="KillMob" MobId="16951" KillCount="6" />
+	<Objective Nav="Fly" QuestName="The Pools of Aggonar" QuestId="9426" Type="KillMob" MobId="16901" KillCount="6" />
+
+	<CustomBehavior File="FlyTo" QuestId="9398" X="-670.0667" Y="3676.104" Z="29.11151"
+		TerminateWhen="Unit(16929, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt; 40) != null || Unit(16927, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt; 40) != null" />
+	<Objective Nav="Fly" QuestName="Deadly Predators" QuestId="9398" Type="KillMob" MobId="16929" KillCount="4" />
+	<Objective Nav="Fly" QuestName="Deadly Predators" QuestId="9398" Type="KillMob" MobId="16927" KillCount="8" />
+	<Objective Nav="Fly" QuestName="The Rock Flayer Matriarch" QuestId="9490" Type="CollectItem" ItemId="23687" CollectCount="1" X="-757.3754" Y="3818.872" Z="19.71826" />
+	
+	<TurnIn Nav="Fly" QuestName="Deadly Predators" QuestId="9398" TurnInName="Scout Vanura" TurnInId="16797" />
+	<TurnIn Nav="Fly" QuestName="Makuru's Vengeance" QuestId="9424" TurnInName="Makuru" TurnInId="16833" />
+	<TurnIn Nav="Fly" QuestName="The Rock Flayer Matriarch" QuestId="9490" TurnInName="Ikan" TurnInId="16799" />
+	<PickUp Nav="Fly" QuestName="Atonement" QuestId="9543" GiverName="Anchorite Obadei" GiverId="16834" />
+	<TurnIn Nav="Fly" QuestName="Atonement" QuestId="9543" TurnInName="Amaan the Wise" TurnInId="16796" />
+	<TurnIn Nav="Fly" QuestName="The Pools of Aggonar" QuestId="9426" TurnInName="Amaan the Wise" TurnInId="16796" />
+	<PickUp Nav="Fly" QuestName="Sha'naar Relics" QuestId="9430" GiverName="Amaan the Wise" GiverId="16796" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Cleansing the Waters" QuestId="9427" GiverName="Amaan the Wise" GiverId="16796" />
+	<While Condition="HasQuest(9427) &amp;&amp; !IsQuestCompleted(9427)" >
+		<If Condition="Unit(17000, u =&gt; u.IsAlive) == null" >
+			<CustomBehavior File="FlyTo" X="417.6233" Y="3459.71" Z="63.39288" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(23361)" WaitTime="5000" />
+		</If>
+		<CustomBehavior File="InteractWith" QuestId="9427" MobId="17000" MobState="Alive" NonCompeteDistance="0"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="100" WaitTime="1000" X="417.6233" Y="3459.71" Z="63.39288"
+			TerminateWhen="Unit(17000, u =&gt; u.IsAlive) == null" />
+	</While>
+	<TurnIn Nav="Fly" QuestName="Cleansing the Waters" QuestId="9427" TurnInName="Amaan the Wise" TurnInId="16796" />
+	<PickUp Nav="Fly" QuestName="Helping the Cenarion Post" QuestId="10443" GiverName="Amaan the Wise" GiverId="16796" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Cenarion Post Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn Nav="Fly" QuestName="Missing Missive" QuestId="9373" TurnInName="Thiah Redmane" TurnInId="16991" />
+	<TurnIn Nav="Fly" QuestName="Helping the Cenarion Post" QuestId="10443" TurnInName="Thiah Redmane" TurnInId="16991" />
+	<PickUp Nav="Fly" QuestName="Demonic Contamination" QuestId="9372" GiverName="Thiah Redmane" GiverId="16991" />
+	<PickUp Nav="Fly" QuestName="Colossal Menace" QuestId="10132" GiverName="Tolathion" GiverId="19293" />
+	<PickUp Nav="Fly" QuestName="Keep Thornfang Hill Clear!" QuestId="10159" GiverName="Mahuram Stouthoof" GiverId="16888" />
+	<PickUp Nav="Fly" QuestName="The Cenarion Expedition" QuestId="9912" GiverName="Amythiel Mistwalker" GiverId="16885" />
+
+	<Objective Nav="Fly" QuestName="Demonic Contamination" QuestId="9372" Type="CollectItem" ItemId="23336" CollectCount="6" />
+	<TurnIn Nav="Fly" QuestName="Demonic Contamination" QuestId="9372" TurnInName="Thiah Redmane" TurnInId="16991" />
+	<PickUp Nav="Fly" QuestName="Testing the Antidote" QuestId="10255" GiverName="Thiah Redmane" GiverId="16991" />
+
+	<CustomBehavior File="InteractWith" QuestId="10255" MobId="16880" MobState="Alive" InteractByUsingItemId="23337"
+		NonCompeteDistance="5" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="NoClear"
+		NumOfTimes="1000" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-351.663" Y="4626.353" Z="31.01198" />
+			<Hotspot X="-411.5049" Y="4542.441" Z="40.8257" />
+			<Hotspot X="-409.5969" Y="4444.217" Z="52.16512" />
+			<Hotspot X="-459.2202" Y="4363.614" Z="45.05343" />
+			<Hotspot X="-538.0127" Y="4320.092" Z="45.06823" />
+			<Hotspot X="-616.7787" Y="4286.91" Z="43.68391" />
+			<Hotspot X="-698.3133" Y="4275.157" Z="49.85724" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	
+	<TurnIn Nav="Fly" QuestName="Testing the Antidote" QuestId="10255" TurnInName="Thiah Redmane" TurnInId="16991" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<Objective Nav="Fly" QuestName="Keep Thornfang Hill Clear!" QuestId="10159" Type="KillMob" MobId="19349" KillCount="8" />
+	<Objective Nav="Fly" QuestName="Keep Thornfang Hill Clear!" QuestId="10159" Type="KillMob" MobId="19350" KillCount="8" />
+
+	<TurnIn Nav="Fly" QuestName="Keep Thornfang Hill Clear!" QuestId="10159" TurnInName="Mahuram Stouthoof" TurnInId="16888" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Naladu" QuestId="10403" GiverName="Aylaan the Waterwaker" GiverId="20679" />
+	<TurnIn Nav="Fly" QuestName="Naladu" QuestId="10403" TurnInName="Naladu" TurnInId="19361" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="A Traitor Among Us" QuestId="10367" GiverName="Naladu" GiverId="19361" />
+	<Objective QuestName="A Traitor Among Us" QuestId="10367" Type="CollectItem" ItemId="29501" CollectCount="1" />
+	<TurnIn QuestName="A Traitor Among Us" QuestId="10367" TurnInName="Naladu" TurnInId="19361" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="The Dreghood Elders" QuestId="10368" GiverName="Naladu" GiverId="19361" />
+	<CustomBehavior File="InteractWith" QuestId="10368" QuestObjectiveIndex="2" MobId="20678" InteractByGossipOptions="1"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		WaitTime="1000" X="-541.7875" Y="4734.32" Z="38.71293" />
+	<CustomBehavior File="InteractWith" QuestId="10368" QuestObjectiveIndex="3" MobId="20679" InteractByGossipOptions="1"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		WaitTime="1000" X="-530.684" Y="4867.858" Z="34.12392" />
+	<CustomBehavior File="InteractWith" QuestId="10368" QuestObjectiveIndex="1" MobId="20677" InteractByGossipOptions="1"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		WaitTime="1000" X="-620.888" Y="4861.629" Z="41.41795" />
+	<TurnIn Nav="Fly" QuestName="The Dreghood Elders" QuestId="10368" TurnInName="Naladu" TurnInId="19361" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Arzeth's Demise" QuestId="10369" GiverName="Naladu" GiverId="19361" />
+	<CustomBehavior File="InteractWith" QuestId="10369" MobId="19354" MobState="Alive" InteractByUsingItemId="29513"
+		Range="25" NonCompeteDistance="5" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NumOfTimes="100" WaitTime="5000" X="-601.0579" Y="4802.72" Z="36.86103" />
+	<TurnIn Nav="Fly" QuestName="Arzeth's Demise" QuestId="10369" TurnInName="Naladu" TurnInId="19361" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<Objective Nav="Fly" QuestName="Sha'naar Relics" QuestId="9430" Type="CollectItem" ItemId="23642" CollectCount="10" />
+	
+	<TurnIn Nav="Fly" QuestName="Cruel Taskmasters" QuestId="9399" TurnInName="Ikan" TurnInId="16799" />
+	<TurnIn Nav="Fly" QuestName="Sha'naar Relics" QuestId="9430" TurnInName="Amaan the Wise" TurnInId="16796" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="The Seer's Relic" QuestId="9545" GiverName="Amaan the Wise" GiverId="16796" />
+	<CustomBehavior File="InteractWith" QuestId="9545" MobId="16852" InteractByUsingItemId="23645"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NumOfTimes="1000" WaitTime="5000" X="192.8721" Y="4146.273" Z="73.36452" />
+	<TurnIn Nav="Fly" QuestName="The Seer's Relic" QuestId="9545" TurnInName="Amaan the Wise" TurnInId="16796" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<Objective Nav="Fly" QuestName="Colossal Menace" QuestId="10132" Type="KillMob" MobId="19188" KillCount="5" />
+	
+	<If Condition="!HasQuest(10134) &amp;&amp; !IsQuestCompleted(10134)" >
+		<CustomBehavior File="InteractWith" MobId="19188" MobState="Alive" NonCompeteDistance="5"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="1000" WaitTime="1000" TerminateWhen="HasItem(29476)" CollectionDistance="300" >
+			<HuntingGrounds>
+				<Hotspot X="78.34917" Y="4585.159" Z="65.95859" />
+				<Hotspot X="30.3724" Y="4708.433" Z="45.56114" />
+				<Hotspot X="23.56608" Y="4803.679" Z="59.77428" />
+				<Hotspot X="106.9685" Y="4864.311" Z="75.41445" />
+				<Hotspot X="157.2288" Y="4796.923" Z="77.56612" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<PickUp QuestName="Crimson Crystal Clue" QuestId="10134" GiverType="Item" GiverName="Crimson Crystal Shard" GiverId="29476" />
+	</If>
+	
+	<TurnIn Nav="Fly" QuestName="Colossal Menace" QuestId="10132" TurnInName="Tolathion" TurnInId="19293" />
+	<TurnIn Nav="Fly" QuestName="Crimson Crystal Clue" QuestId="10134" TurnInName="Tolathion" TurnInId="19293" />
+	<PickUp Nav="Fly" QuestName="The Earthbinder" QuestId="10349" GiverName="Tolathion" GiverId="19293" />
+	<TurnIn Nav="Fly" QuestName="The Earthbinder" QuestId="10349" TurnInName="Earthbinder Galandria Nightbreeze" TurnInId="19294" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<PickUp Nav="Fly" QuestName="Natural Remedies" QuestId="10351" GiverName="Earthbinder Galandria Nightbreeze" GiverId="19294" />
+	<While Condition="HasQuest(10351) &amp;&amp; !IsQuestCompleted(10351)" >
+		<CustomBehavior File="InteractWith" QuestId="10351" MobId="184454" InteractByUsingItemId="29478" NonCompeteDistance="0"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="2"
+			WaitTime="60000" TerminateWhen="Unit(19305,u =&gt; u.IsAlive) != null" X="134.119" Y="4835.124" Z="76.72873" />
+		<CustomBehavior File="InteractWith" QuestId="10351" MobId="19305" NonCompeteDistance="0"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			WaitTime="1000" TerminateWhen="Unit(19305,u =&gt; u.IsAlive) == null" CollectionDistance="200" />
+	</While>
+	<TurnIn Nav="Fly" QuestName="Natural Remedies" QuestId="10351" TurnInName="Earthbinder Galandria Nightbreeze" TurnInId="19294" />
+
+	<If Condition="Me.Level &gt;= 60 &amp;&amp; Me.GetSkill(Styx.SkillLine.Riding).CurrentValue &lt;= 150 &amp;&amp; Me.Gold &gt;= 250" >
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Mounts [Brodie]" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Hellfire Peninsula Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="[Quest] Zangarmarsh A [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

@@ -1,0 +1,202 @@
+<HBProfile>
+
+	<Name>Ironforge Cooking Dailies ($Rev$)</Name>
+	<MinLevel>10</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="29353" Name="Keepin' the Haggis Flowin'" >
+	<Objective Type="CollectItem" ItemId="69985" CollectCount="5" >
+		<CollectFrom>
+			<GameObject Name="Sack of Oatmeal" Id="208870" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-4791.738" Y="-1167.634" Z="502.2098" />
+			<Hotspot X="-4829.507" Y="-1161.815" Z="502.2051" />
+			<Hotspot X="-4871.182" Y="-1120.749" Z="502.2118" />
+			<Hotspot X="-4820.602" Y="-1078.423" Z="502.209" />
+			<Hotspot X="-4764.46" Y="-1043.043" Z="502.2108" />
+			<Hotspot X="-4733.844" Y="-1085.191" Z="502.2119" />
+			<Hotspot X="-4739.296" Y="-1137.962" Z="502.2115" />
+			<Hotspot X="-4936.335" Y="-1254.114" Z="501.6613" />
+			<Hotspot X="-5014.199" Y="-1177.324" Z="501.6591" />
+			<Hotspot X="-5003.513" Y="-1116.639" Z="501.6733" />
+		</Hotspots>
+	</Objective>
+</Quest>
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde">
+		<CustomBehavior File="Message" Text="ERROR!! Somehow you ended up starting an Alliance profile. Terminating." LogColor="Red" />
+		<CustomBehavior File="Halt" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Ironforge Cooking Daily Routine...Checking Location" LogColor="Green" />
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Stormwind -->
+		<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684)) &gt;= 100" >
+			<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+			<CustomBehavior File="ForcedDismount" />
+		</If>
+		<UseMount Value="False" />
+		<CustomBehavior File="InteractWith" MobId="215118" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+		<UseMount Value="True" />
+	</If>
+	<If Condition="Me.MapId == 571" >
+		<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0"
+			TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+	</If>
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487
+					&amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557" >
+					<!-- Outlands, but not Ghostlands/Eversong/Silvermoon or Azure/Bloodmyst/Exodar -->
+		<CustomBehavior File="FlyTo" X="-338.0062" Y="969.5461" Z="54.29" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="195139" NonCompeteDistance="0"
+			TerminateWhen="Me.MapId != 530" X="-338.0062" Y="969.5461" Z="54.29" />
+	</If>
+	<If Condition="Me.MapId == 1" >
+		<CustomBehavior File="FlyTo" X="8179.11" Y="1002.75" Z="6.817571" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="UseTransport" TransportId="176310"
+			WaitAtX="8179.11" WaitAtY="1002.75" WaitAtZ="6.817571" 
+			TransportStartX="8162.587" TransportStartY="1005.365" TransportStartZ="-0.04571009"
+			TransportEndX="-8650.719" TransportEndY="1346.051" TransportEndZ="0.04218207"
+			StandOnX="8162.587" StandOnY="1005.365" StandOnZ="6.18"
+			GetOffX="-8641.401" GetOffY="1324.443" GetOffZ="5.505301" />
+	</If>
+	
+	<If Condition="!HasQuest(29351) &amp;&amp; !HasQuest(29352) &amp;&amp; !HasQuest(29355) &amp;&amp; !HasQuest(29356) &amp;&amp; !HasQuest(29353)" >
+		<CustomBehavior File="Message" Text="Grabbing Daily from Daryl Riknussun" LogColor="CornflowerBlue" />
+		<CustomBehavior File="FlyTo" X="-4761.46" Y="-1188.56" Z="509.40" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.GetSkill(Styx.SkillLine.Cooking).CurrentValue &lt; 1" >
+			<CustomBehavior File="ForceTrainRiding" MobId="5159" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</If>
+		<While Condition="HasQuestAvailable(5159)" >
+			<CustomBehavior File="InteractWith" MobId="5159" InteractByQuestFrameDisposition="Ignore" NonCompeteDistance="0" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+	</If>
+	
+	<If Condition="HasQuest(29351)" >
+		<CustomBehavior File="Message" Text="Starting Quest: A Round for the Guards" LogColor="CornflowerBlue" />
+		<CustomBehavior File="InteractWith" QuestId="29351" MobId="5595" AuraIdMissingFromMob="99478" InteractByUsingItemId="69981"
+			NonCompeteDistance="0" CollectionDistance="200" NumOfTimes="1000" WaitTime="1000" >
+			<HuntingGrounds>
+				<Hotspot X="-4737.967" Y="-1175.928" Z="501.6982" />
+				<Hotspot X="-4752.23" Y="-993.9973" Z="501.698" />
+				<Hotspot X="-4820.409" Y="-1073.332" Z="502.2042" />
+				<Hotspot X="-4905.405" Y="-1118.294" Z="501.6977" />
+				<Hotspot X="-4830.185" Y="-1170.646" Z="502.1986" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<TurnIn Nav="Fly" QuestName="A Round for the Guards" QuestId="29351" TurnInName="Daryl Riknussun" TurnInId="5159" />
+	</If>
+	
+	<If Condition="HasQuest(29352)" >
+		<CustomBehavior File="Message" Text="Starting Quest: A Fowl Shortage" LogColor="CornflowerBlue" />
+		<Objective Nav="Fly" QuestName="A Fowl Shortage" QuestId="29352" Type="CollectItem" ItemId="69982" CollectCount="6" />
+		<TurnIn Nav="Fly" QuestName="A Fowl Shortage" QuestId="29352" TurnInName="Daryl Riknussun" TurnInId="5159" X="-4761.46" Y="-1188.56" Z="509.40" />
+	</If>
+	
+	<If Condition="HasQuest(29355)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Can't Get Enough Spice Bread" LogColor="CornflowerBlue" />
+		<While Condition="!IsQuestCompleted(29355)" >
+			<If Condition="GetItemCount(30817) &lt; 10" >
+				<CustomBehavior File="InteractWith" MobId="5160" InteractByBuyingItemId="30817" BuyItemCount="10" NonCompeteDistance="0" WaitTime="5000"
+					X="-4768.258" Y="-1187.805" Z="502.7277" />
+			</If>
+			<If Condition="GetItemCount(2678) &lt; 10" >
+				<CustomBehavior File="InteractWith" MobId="5160" InteractByBuyingItemId="2678" BuyItemCount="10" NonCompeteDistance="0" WaitTime="5000"
+					X="-4768.258" Y="-1187.805" Z="502.7277" />
+			</If>
+			<If Condition="GetItemCount(30817) &gt;= 10 &amp;&amp; GetItemCount(2678) &gt;= 10" >
+				<MoveTo X="-4771.379" Y="-1190.921" Z="509.3963" />
+				<While Condition="GetItemCount(30816) &lt; 10" >
+					<CustomBehavior File="PerformTradeskillOn" TradeSkillId="185" TradeSkillItemId="30816" NumOfTimes="1" />
+				</While>
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+				<CustomBehavior File="Misc\RunLua" Lua="CloseTradeSkill()" />
+			</If>
+		</While>
+		<TurnIn Nav="Fly" QuestName="Can't Get Enough Spice Bread" QuestId="29355" TurnInName="Daryl Riknussun" TurnInId="5159" X="-4761.46" Y="-1188.56" Z="509.40" />
+	</If>
+	
+	<If Condition="HasQuest(29356)" >
+		<CustomBehavior File="Message" Text="Starting Quest: I Need to Cask a Favor" LogColor="CornflowerBlue" />
+		<While Condition="!IsQuestCompleted(29356)" >
+			<If Condition="!Me.HasAura(99491)" >
+				<CustomBehavior File="FlyTo" X="-5599.768" Y="-503.2075" Z="400.3918" />
+				<UseMount Value="False" />
+				<CustomBehavior File="InteractWith" QuestId="29356" MobId="208872" NonCompeteDistance="0"
+					PreInteractMountStrategy="DismountOrCancelShapeshift" WaitTime="1000"
+					TerminateWhen="Me.HasAura(99491)" X="-5599.768" Y="-503.2075" Z="400.3918" />
+			<Else>
+				<UseMount Value="False" />
+				<CustomBehavior File="RunLikeHell" >
+					<Hotspot X="-4761.456" Y="-1188.56" Z="509.3968" />
+				</CustomBehavior>
+			</Else>
+			</If>
+		</While>
+		<UseMount Value="True" />
+		<TurnIn Nav="Fly" QuestName="I Need to Cask a Favor" QuestId="29356" TurnInName="Daryl Riknussun" TurnInId="5159" />
+	</If>
+	
+	<If Condition="HasQuest(29353)" >
+		<CustomBehavior File="Message" Text="Starting Quest: Keepin' the Haggis Flowin'" LogColor="CornflowerBlue" />
+		<CustomBehavior File="InteractWith" QuestId="29353" QuestObjectiveIndex="3" MobId="5160" InteractByBuyingItemId="2678"
+			BuyItemCount="5" WaitTime="2000" X="-4767.358" Y="-1187.89" Z="502.7282" />
+		<CustomBehavior File="InteractWith" QuestId="29353" QuestObjectiveIndex="1" MobId="5124" InteractByBuyingItemId="69984"
+			BuyItemCount="1" WaitTime="2000" X="-4977.934" Y="-1202.851" Z="502.0074" />
+		<Objective QuestName="Keepin' the Haggis Flowin'" QuestId="29353" Type="CollectItem" ItemId="69985" CollectCount="5" />
+		<TurnIn Nav="Fly" QuestName="Keepin' the Haggis Flowin'" QuestId="29353" TurnInName="Daryl Riknussun" TurnInId="5159" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Double checking for training..." LogColor="Orange" />
+	<CustomBehavior File="ForceTrainRiding" MobId="5159" />
+	
+	<CustomBehavior File="Message" Text="Ironforge Cooking Daily Complete" LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+		
+</QuestOrder>
+</HBProfile>

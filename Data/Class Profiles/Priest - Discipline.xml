@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassProfile Class="Priest" Specialization="1" Name="Priest - Discipline">
+	<TalentTree>
+		<Talent Tier="1" Index="2" Name="Psyfiend" />
+		<Talent Tier="2" Index="1" Name="Body and Soul" />
+		<Talent Tier="3" Index="2" Name="Mindbender" />
+		<Talent Tier="4" Index="1" Name="Desperate Prayer" />
+		<Talent Tier="5" Index="3" Name="Divine Insight" />
+		<Talent Tier="6" Index="2" Name="Divine Star" />
+	</TalentTree>
+	<WeightSet>
+		<Spirit>20</Spirit>
+		<Intellect>18</Intellect>
+		<SpellPower>18</SpellPower>
+		<CriticalStrike>16</CriticalStrike>
+		<Mastery>14</Mastery>
+		<Haste>12</Haste>
+		<Stamina>5</Stamina>
+		<Armor>0.01</Armor>
+		<DamagePerSecond>0.01</DamagePerSecond>
+	</WeightSet>
+</ClassProfile>

@@ -1,0 +1,447 @@
+<HBProfile>
+
+	<Name>Swamp of Sorrows ($Rev$)</Name>
+	<MinLevel>48</MinLevel>
+	<MaxLevel>62</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Bogpaddle -->
+		<Vendor Name="Dronk Drophammer" Entry="47059" Type="Repair" X="-9764.96" Y="-3900.45" Z="21.79957" />
+		<!-- Sorrowmurk -->
+		<Vendor Name="Darbo Stableflux" Entry="47532" Type="Repair" X="-10203.7" Y="-4200.89" Z="22.47914" />
+		<!-- Stagalbog -->
+		<Vendor Name="Brita Bramblebrush" Entry="47545" Type="Repair" X="-10823.3" Y="-3813.69" Z="21.9256" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="27694" Name="Pool of Tears">
+	<Objective Type="CollectItem" ItemId="6175" CollectCount="5">
+		<CollectFrom>
+			<Mob Name="Atal'ai Artifact" Id="30854" />
+			<Mob Name="Atal'ai Artifact" Id="30855" />
+			<Mob Name="Atal'ai Artifact" Id="30856" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-10465.06" Y="-3706.705" Z="-1.955024" />
+			<Hotspot X="-10519.17" Y="-3735.117" Z="-1.951684" />
+			<Hotspot X="-10540.45" Y="-3787.427" Z="-1.384951" />
+			<Hotspot X="-10554.42" Y="-3826.188" Z="-1.383904" />
+			<Hotspot X="-10537.61" Y="-3890.938" Z="-1.383908" />
+			<Hotspot X="-10464.84" Y="-3938.495" Z="-1.494991" />
+			<Hotspot X="-10382.51" Y="-3950.226" Z="-1.384179" />
+			<Hotspot X="-10336.18" Y="-3887.805" Z="-1.383926" />
+			<Hotspot X="-10299.8" Y="-3829.762" Z="-1.384131" />
+			<Hotspot X="-10329.92" Y="-3767.107" Z="-1.383903" />
+			<Hotspot X="-10394.99" Y="-3722.378" Z="-1.383904" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="27852" Name="Orcs and Humans">
+	<Objective Type="KillMob" MobId="46164" KillCount="10">
+		<Hotspots>
+			<Hotspot X="-10200.82" Y="-3677.708" Z="22.73791" />
+			<Hotspot X="-10257.08" Y="-3619.16" Z="23.08001" />
+			<Hotspot X="-10316.13" Y="-3563.092" Z="20.97668" />
+			<Hotspot X="-10245.48" Y="-3492.931" Z="18.54141" />
+			<Hotspot X="-10212.32" Y="-3555.853" Z="23.35151" />
+			<Hotspot X="-10182.1" Y="-3625.751" Z="18.35005" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="27853" Name="Lumbering Oafs">
+	<Objective Type="KillMob" MobId="46487" KillCount="5">
+		<Hotspots>
+			<Hotspot X="-10054.23" Y="-3857.903" Z="23.07034" />
+			<Hotspot X="-10149.15" Y="-3686.608" Z="21.55669" />
+			<Hotspot X="-10129.16" Y="-3597.432" Z="24.44602" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="27849" Name="Assault on Stonard">
+	<Objective Type="KillMob" MobId="46870" KillCount="6">
+		<Hotspots>
+			<Hotspot X="-10404.04" Y="-3296.869" Z="20.14099" />
+			<Hotspot X="-10431.61" Y="-3239.008" Z="20.45123" />
+			<Hotspot X="-10455.22" Y="-3281.429" Z="21.39992" />
+			<Hotspot X="-10503.75" Y="-3318.948" Z="20.66889" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="27851" Name="Cutting Supply">
+	<Objective Type="CollectItem" ItemId="62516" CollectCount="5">
+		<CollectFrom>
+			<GameObject Name="Stonard Supplies" Id="206391" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-10404.04" Y="-3296.869" Z="20.14099" />
+			<Hotspot X="-10431.61" Y="-3239.008" Z="20.45123" />
+			<Hotspot X="-10455.22" Y="-3281.429" Z="21.39992" />
+			<Hotspot X="-10503.75" Y="-3318.948" Z="20.66889" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde &amp;&amp; HasQuest(28570)" >
+		<CustomBehavior File="Message" Text="Compiling Kicker Quest..." LogColor="CornflowerBlue" />
+		<TurnIn QuestName="The Bogpaddle Bullet" QuestId="28570" TurnInName="Trade Baron Silversnap" TurnInId="45786" />
+	</If>
+	
+	<If Condition="Me.IsAlliance &amp;&amp; HasQuest(28569)" >
+		<CustomBehavior File="Message" Text="Compiling Kicker Quest..." LogColor="CornflowerBlue" />
+		<TurnIn QuestName="The Bogpaddle Bullet" QuestId="28569" TurnInName="Trade Baron Silversnap" TurnInId="45786" />
+	</If>
+	
+	<If Condition="!HasQuest(27587) &amp;&amp; !IsQuestCompleted(27587)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Swamp of Sorrows Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Bogpaddle Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Maliciously Delicious" QuestId="27587" GiverName="Trade Baron Silversnap" GiverId="45786" />
+	<PickUp QuestName="Drinks on the Rocks" QuestId="27592" GiverName="Brono Goodgroove" GiverId="46010" />
+	<If Condition="HasQuest(27587) &amp;&amp; !IsQuestCompleted(27587) &amp;&amp; HasItem(62795)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(27587)" WaitTime="2000" />
+	</If>
+	<Objective QuestName="Maliciously Delicious" QuestId="27587" Type="CollectItem" ItemId="61633" CollectCount="6" />
+	<Objective QuestName="Drinks on the Rocks" QuestId="27592" Type="CollectItem" ItemId="61356" CollectCount="10" />
+	<TurnIn QuestName="Drinks on the Rocks" QuestId="27592" TurnInName="Brono Goodgroove" TurnInId="46010" />
+	<TurnIn QuestName="Maliciously Delicious" QuestId="27587" TurnInName="Trade Baron Silversnap" TurnInId="45786" />
+	
+	<PickUp QuestName="Mostly Harmless" QuestId="27536" GiverName="Trade Baron Silversnap" GiverId="45786" />
+	<PickUp QuestName="Croc-Out" QuestId="27656" GiverName="Trade Baron Silversnap" GiverId="45786" />
+	<PickUp QuestName="Tastes Like Strider" QuestId="27663" GiverName="Pierre Fishflay" GiverId="46182" />
+	
+	<Objective QuestName="Mostly Harmless" QuestId="27536" Type="CollectItem" ItemId="61349" CollectCount="8" />
+	<Objective QuestName="Tastes Like Strider" QuestId="27663" Type="CollectItem" ItemId="62043" CollectCount="9" />
+	<Objective QuestName="Croc-Out" QuestId="27656" Type="KillMob" MobId="45807" KillCount="8" />
+	
+	<TurnIn QuestName="Tastes Like Strider" QuestId="27663" TurnInName="Pierre Fishflay" TurnInId="46182" />
+	<TurnIn QuestName="Mostly Harmless" QuestId="27536" TurnInName="Trade Baron Silversnap" TurnInId="45786" />
+	<TurnIn QuestName="Croc-Out" QuestId="27656" TurnInName="Trade Baron Silversnap" TurnInId="45786" />
+	
+	<PickUp QuestName="Crazy Larry" QuestId="27597" GiverName="Trade Baron Silversnap" GiverId="45786" />
+	<TurnIn QuestName="Crazy Larry" QuestId="27597" TurnInName="Crazy Larry" TurnInId="45948" />
+	
+	<CustomBehavior File="Message" Text="Compiling Sorrowmurk Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Kill Gil" QuestId="27598" GiverName="Crazy Larry" GiverId="45948" />
+	<PickUp QuestName="Can't Take It With Them" QuestId="27599" GiverName="Crazy Larry" GiverId="45948" />
+	
+	<CustomBehavior File="InteractWith" QuestId="27599" MobId="46014" InteractByLooting="True" NonCompeteDistance="5"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="2000" >
+		<HuntingGrounds>
+			<Hotspot X="-10016.67" Y="-4329.397" Z="-2.072144" />
+			<Hotspot X="-10076.57" Y="-4323.271" Z="-0.3109176" />
+			<Hotspot X="-9987.685" Y="-4394.582" Z="-1.491746" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective QuestName="Kill Gil" QuestId="27598" Type="KillMob" MobId="45701" KillCount="7" />
+	
+	<TurnIn QuestName="Kill Gil" QuestId="27598" TurnInName="Crazy Larry" TurnInId="45948" />
+	<TurnIn QuestName="Can't Take It With Them" QuestId="27599" TurnInName="Crazy Larry" TurnInId="45948" />
+	
+	<PickUp QuestName="In With a Bang" QuestId="27600" GiverName="Crazy Larry" GiverId="45948" />
+	<If Condition="HasQuest(27600) &amp;&amp; !IsQuestCompleted(27600)" >
+		<CustomBehavior File="InteractWith" MobId="46245" InteractByGossipOptions="1" WaitTime="15000" 
+			TerminateWhen="Me.Location.Distance(new WoWPoint(-9966.784, -4545.546, 11.83024)) &lt; 40" X="-10172.56" Y="-4176.574" Z="22.78065" />
+	</If>
+	<DisableBehavior Name="Pull" /> <!-- too close quarters, ignore those that ignore us -->
+	<Objective QuestName="In With a Bang" QuestId="27600" Type="CollectItem" ItemId="61921" CollectCount="1" />
+	<Objective QuestName="In With a Bang" QuestId="27600" Type="CollectItem" ItemId="61922" CollectCount="1" />
+	<Objective QuestName="In With a Bang" QuestId="27600" Type="CollectItem" ItemId="61373" CollectCount="1" />
+	<If Condition="HasQuest(27600) &amp;&amp; IsQuestCompleted(27600) &amp;&amp; Me.Location.Distance(new WoWPoint(-9966.784, -4545.546, 11.83024)) &lt; 40" >
+		<MoveTo X="-9972.35" Y="-4543.236" Z="11.71844" />
+		<CustomBehavior File="InteractWith" MobId="206679" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="15000" 
+			TerminateWhen="Me.Location.Distance(new WoWPoint(-9966.784, -4545.546, 11.83024)) &gt; 40"
+			ProactiveCombatStrategy="NoClear" X="-9972.35" Y="-4543.236" Z="11.71844" />
+	</If>
+	<EnableBehavior Name="Pull" />
+	<TurnIn QuestName="In With a Bang" QuestId="27600" TurnInName="Crazy Larry" TurnInId="45948" />
+	
+	<PickUp QuestName="Baba Bogbrew" QuestId="27740" GiverName="Crazy Larry" GiverId="45948" />
+	<If Condition="HasQuest(27740) &amp;&amp; Me.Location.Distance(new WoWPoint(-10203.36, -4184.931, 22.2872)) &lt; 200" >
+		<CustomBehavior File="InteractWith" MobId="46503" InteractByGossipOptions="1" WaitTime="15000" 
+			TerminateWhen="Me.Location.Distance(new WoWPoint(-10203.36, -4184.931, 22.2872)) &gt; 200" 
+			ProactiveCombatStrategy="ClearMobsTargetingUs" X="-10220.86" Y="-4158.598" Z="23.299" />
+	</If>
+	<TurnIn QuestName="Baba Bogbrew" QuestId="27740" TurnInName="Baba Bogbrew" TurnInId="46172" X="-10812.65" Y="-3813.776" Z="21.90502" />
+	
+	<CustomBehavior File="Message" Text="Compiling Stagalbog Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Marshfin Madness" QuestId="27691" GiverName="Baba Bogbrew" GiverId="46172" X="-10812.65" Y="-3813.776" Z="21.90502" />
+	<Objective QuestName="Marshfin Madness" QuestId="27691" Type="KillMob" MobId="45967" KillCount="12" />
+	<TurnIn QuestName="Marshfin Madness" QuestId="27691" TurnInName="Baba Bogbrew" TurnInId="46172" X="-10812.65" Y="-3813.776" Z="21.90502" />
+	
+	<PickUp QuestName="The Darkest Depths" QuestId="27757" GiverName="Baba Bogbrew" GiverId="46172" X="-10812.65" Y="-3813.776" Z="21.90502" />
+	<Objective QuestName="The Darkest Depths" QuestId="27757" Type="KillMob" MobId="46371" KillCount="1" />
+	<TurnIn QuestName="The Darkest Depths" QuestId="27757" TurnInName="Baba Bogbrew" TurnInId="46172" X="-10812.65" Y="-3813.776" Z="21.90502" />
+	
+	<PickUp QuestName="Slithering Signs" QuestId="27818" GiverName="Baba Bogbrew" GiverId="46172" X="-10812.65" Y="-3813.776" Z="21.90502" />
+	<Objective QuestName="Slithering Signs" QuestId="27818" Type="CollectItem" ItemId="62551" CollectCount="5" />
+	<TurnIn QuestName="Slithering Signs" QuestId="27818" TurnInName="Baba Bogbrew" TurnInId="46172" X="-10812.65" Y="-3813.776" Z="21.90502" />
+	
+	<PickUp QuestName="The Dragon and the Temple" QuestId="27869" GiverName="Baba Bogbrew" GiverId="46172" X="-10812.65" Y="-3813.776" Z="21.90502" />
+	<TurnIn QuestName="The Dragon and the Temple" QuestId="27869" TurnInName="Lord Itharius" TurnInId="46071" />
+	
+	<CustomBehavior File="Message" Text="Compiling Sunken Temple Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Pool of Tears" QuestId="27694" GiverName="Lord Itharius" GiverId="46071" />
+	<Objective QuestName="Pool of Tears" QuestId="27694" Type="CollectItem" ItemId="6175" CollectCount="5" />
+	<TurnIn QuestName="Pool of Tears" QuestId="27694" TurnInName="Lord Itharius" TurnInId="46071" />
+	
+	<PickUp QuestName="Legends of the Sunken Temple" QuestId="27704" GiverName="Lord Itharius" GiverId="46071" />
+	<If Condition="HasQuest(27704) &amp;&amp; !IsQuestCompleted(27704)" > <!-- From Cava's, saves a few minutes -->
+		<MoveTo X="-10412.14" Y="-3836.152" Z="-0.184679" />
+		<CustomBehavior File="MyCTM" X="-10400.16" Y="-3824.631" Z="-3.297482" />
+		<CustomBehavior File="MyCTM" X="-10407.66" Y="-3816.514" Z="-3.304227" />
+		<CustomBehavior File="MyCTM" X="-10436.74" Y="-3815.51" Z="-24.44962" />
+		<CustomBehavior File="MyCTM" X="-10430.18" Y="-3831.274" Z="-24.45874" />
+		<CustomBehavior File="MyCTM" X="-10393.17" Y="-3840.792" Z="-55.08086" />
+		<CustomBehavior File="MyCTM" X="-10370.72" Y="-3849.297" Z="-53.44215" />
+		<CustomBehavior File="MyCTM" X="-10321.08" Y="-3868.939" Z="-42.03773" />
+		<CustomBehavior File="MyCTM" X="-10314.37" Y="-3865.791" Z="-38.97695" />
+		<CustomBehavior File="MyCTM" X="-10301.66" Y="-3861.826" Z="-38.979" />
+		<MoveTo X="-10280.15" Y="-3943.958" Z="-70.84999" />
+	</If>
+	<TurnIn QuestName="Legends of the Sunken Temple" QuestId="27704" />
+	
+	<DisableBehavior Name="Pull" />
+	<PickUp QuestName="Step One: The Priestess" QuestId="27705" GiverName="Lord Itharius" GiverId="46071" />
+	<Objective QuestName="Step One: The Priestess" QuestId="27705" Type="KillMob" MobId="46424" KillCount="1" X="-10359.85" Y="-3956.93" Z="-99.56" />
+	<TurnIn QuestName="Step One: The Priestess" QuestId="27705" />
+	
+	<PickUp QuestName="Step Two: The Bloodletter" QuestId="27768" GiverName="Lord Itharius" GiverId="46071" />
+	<Objective QuestName="Step Two: The Bloodletter" QuestId="27768" Type="KillMob" MobId="46623" KillCount="1" X="-10305.52" Y="-4026.98" Z="-76.55" />
+	<TurnIn QuestName="Step Two: The Bloodletter" QuestId="27768" />
+	
+	<PickUp QuestName="Step Three: Prophet" QuestId="27773" GiverName="Lord Itharius" GiverId="46071" />
+	<Objective QuestName="Step Three: Prophet" QuestId="27773" Type="KillMob" MobId="46656" KillCount="1" X="-10230.21" Y="-4003.17" Z="-110.08" />
+	<TurnIn QuestName="Step Three: Prophet" QuestId="27773" TurnInName="Lord Itharius" TurnInId="46071" />
+	
+	<PickUp QuestName="Blessing of the Green Dragonflight" QuestId="27914" GiverName="Lord Itharius" GiverId="46071" />
+	<TurnIn QuestName="Blessing of the Green Dragonflight" QuestId="27914" TurnInName="Lord Itharius" TurnInId="46071" />
+	<EnableBehavior Name="Pull" />
+	
+	<If Condition="Me.IsHorde" >
+		<PickUp QuestName="To Stonard" QuestId="27871" GiverName="Lord Itharius" GiverId="46071" />
+		<TurnIn QuestName="To Stonard" QuestId="27871" TurnInName="Dispatch Commander Ruag" TurnInId="7623" />
+		<CustomBehavior File="Message" Text="Compiling Stonard Quests" LogColor="CornflowerBlue" />
+		<SetVendor>
+			<Vendors>
+				<!-- Stonard -->
+				<Vendor Name="Hartash" Entry="981" Type="Repair" X="-10399.47" Y="-3270.429" Z="21.7536" />
+				<Vendor Name="Gharash" Entry="8176" Type="Repair" X="-10406.97" Y="-3265.748" Z="21.89233" />
+				<Vendor Name="Thralosh" Entry="984" Type="Repair" X="-10406.85" Y="-3256.554" Z="21.97731" />
+			</Vendors>
+		</SetVendor>
+	</If>
+	<If Condition="Me.IsAlliance" >
+		<PickUp QuestName="To Marshtide Watch" QuestId="27870" GiverName="Lord Itharius" GiverId="46071" />
+		<TurnIn QuestName="To Marshtide Watch" QuestId="27870" TurnInName="Joanna Blueheart" TurnInId="46676" />
+		<CustomBehavior File="Message" Text="Compiling Marshtide Watch Quests" LogColor="CornflowerBlue" />
+		<SetVendor>
+			<Vendors>
+				<!-- Marshtide Watch -->
+				<Vendor Name="Hull Forgehammer" Entry="46702" Type="Repair" X="-10125.5" Y="-3819.97" Z="19.1014" />
+			</Vendors>
+		</SetVendor>
+	</If>
+	
+	<If Condition="Me.IsHorde" >
+		<PickUp QuestName="Orcs and Humans" QuestId="27852" GiverName="Dispatch Commander Ruag" GiverId="7623" />
+		<PickUp QuestName="Lumbering Oafs" QuestId="27853" GiverName="Dispatch Commander Ruag" GiverId="7623" />
+		
+		<Objective QuestName="Orcs and Humans" QuestId="27852" Type="KillMob" MobId="46164" KillCount="10" />
+		<Objective QuestName="Lumbering Oafs" QuestId="27853" Type="KillMob" MobId="46487" KillCount="5" />
+		
+		<TurnIn QuestName="Orcs and Humans" QuestId="27852" TurnInName="Dispatch Commander Ruag" TurnInId="7623" />
+		<TurnIn QuestName="Lumbering Oafs" QuestId="27853" TurnInName="Dispatch Commander Ruag" TurnInId="7623" />
+		
+		<PickUp QuestName="Tides of Darkness" QuestId="27854" GiverName="Dispatch Commander Ruag" GiverId="7623" />
+		<PickUp QuestName="Reinforcements Denied" QuestId="27855" GiverName="Dispatch Commander Ruag" GiverId="7623" />
+		<PickUp QuestName="Marking the Fallen" QuestId="27856" GiverName="Dispatch Commander Ruag" GiverId="7623" />
+		
+		<CustomBehavior File="InteractWith" QuestId="27856" MobId="46882" MobState="Dead" InteractByUsingItemId="62548"
+			NonCompeteDistance="5" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="1000" >
+			<HuntingGrounds>
+				<Hotspot X="-10200.82" Y="-3677.708" Z="22.73791" />
+				<Hotspot X="-10257.08" Y="-3619.16" Z="23.08001" />
+				<Hotspot X="-10316.13" Y="-3563.092" Z="20.97668" />
+				<Hotspot X="-10245.48" Y="-3492.931" Z="18.54141" />
+				<Hotspot X="-10212.32" Y="-3555.853" Z="23.35151" />
+				<Hotspot X="-10182.1" Y="-3625.751" Z="18.35005" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<Objective QuestName="Reinforcements Denied" QuestId="27855" Type="KillMob" MobId="46775" KillCount="3" />
+		<Objective QuestName="Tides of Darkness" QuestId="27854" Type="KillMob" MobId="46414" KillCount="6" />
+		
+		<TurnIn QuestName="Tides of Darkness" QuestId="27854" TurnInName="Dispatch Commander Ruag" TurnInId="7623" />
+		<TurnIn QuestName="Reinforcements Denied" QuestId="27855" TurnInName="Dispatch Commander Ruag" TurnInId="7623" />
+		<TurnIn QuestName="Marking the Fallen" QuestId="27856" TurnInName="Dispatch Commander Ruag" TurnInId="7623" />
+		
+		<PickUp QuestName="We're Under Attack!" QuestId="27857" GiverName="Dispatch Commander Ruag" GiverId="7623" />
+		<Objective QuestName="We're Under Attack!" QuestId="27857" Type="KillMob" MobId="46869" KillCount="12" />
+		<TurnIn QuestName="We're Under Attack!" QuestId="27857" TurnInName="Dispatch Commander Ruag" TurnInId="7623" />
+		
+		<PickUp QuestName="Neeka Bloodscar" QuestId="27906" GiverName="Dispatch Commander Ruag" GiverId="7623" />
+		<TurnIn QuestName="Neeka Bloodscar" QuestId="27906" TurnInName="Neeka Bloodscar" TurnInId="47041" />
+		
+		<CustomBehavior File="Message" Text="Compiling Splinterspear Junction Quests" LogColor="CornflowerBlue" />
+		
+		<PickUp QuestName="Prayerblossom" QuestId="27907" GiverName="Neeka Bloodscar" GiverId="47041" />
+		<PickUp QuestName="Secrets of the Mire" QuestId="27908" GiverName="Neeka Bloodscar" GiverId="47041" />
+		
+		<Objective QuestName="Prayerblossom" QuestId="27907" Type="CollectItem" ItemId="62550" CollectCount="10" />
+		<Objective QuestName="Secrets of the Mire" QuestId="27908" Type="CollectItem" ItemId="62593" CollectCount="10" />
+		
+		<TurnIn QuestName="Prayerblossom" QuestId="27907" TurnInName="Neeka Bloodscar" TurnInId="47041" />
+		<TurnIn QuestName="Secrets of the Mire" QuestId="27908" TurnInName="Neeka Bloodscar" TurnInId="47041" />
+		
+		<PickUp QuestName="The Purespring" QuestId="27909" GiverName="Neeka Bloodscar" GiverId="47041" />
+		<PickUp QuestName="Last Regrets" QuestId="27910" GiverName="Neeka Bloodscar" GiverId="47041" />
+		
+		<Objective QuestName="The Purespring" QuestId="27909" Type="CollectItem" ItemId="62609" CollectCount="8" />
+		<Objective QuestName="Last Regrets" QuestId="27910" Type="CollectItem" ItemId="62714" CollectCount="1" />
+		
+		<TurnIn QuestName="The Purespring" QuestId="27909" TurnInName="Neeka Bloodscar" TurnInId="47041" />
+		<TurnIn QuestName="Last Regrets" QuestId="27910" TurnInName="Neeka Bloodscar" TurnInId="47041" />
+		
+		<PickUp QuestName="With Dying Breath" QuestId="27911" GiverName="Neeka Bloodscar" GiverId="47041" />
+		<TurnIn QuestName="With Dying Breath" QuestId="27911" TurnInName="Neeka Bloodscar" TurnInId="47041" />
+		
+		<PickUp QuestName="Ruag's Report" QuestId="27916" GiverName="Neeka Bloodscar" GiverId="47041" />
+		<TurnIn QuestName="Ruag's Report" QuestId="27916" TurnInName="Dispatch Commander Ruag" TurnInId="7623" />
+		
+		<PickUp QuestName="Okrilla and the Blasted Lands" QuestId="28553" GiverName="Dispatch Commander Ruag" GiverId="7623" />
+		<TurnIn QuestName="Okrilla and the Blasted Lands" QuestId="28553" TurnInName="Okrilla" TurnInId="41124" />
+	</If>
+	
+	<If Condition="Me.IsAlliance" >
+		<PickUp QuestName="Orcs and Humans" QuestId="27821" GiverName="Joanna Blueheart" GiverId="46676" />
+		<PickUp QuestName="Lumbering Oafs" QuestId="27822" GiverName="Joanna Blueheart" GiverId="46676" />
+		
+		<Objective QuestName="Orcs and Humans" QuestId="27821" Type="KillMob" MobId="46166" KillCount="10" />
+		<Objective QuestName="Lumbering Oafs" QuestId="27822" Type="KillMob" MobId="46486" KillCount="5" />
+		
+		<TurnIn QuestName="Orcs and Humans" QuestId="27821" TurnInName="Joanna Blueheart" TurnInId="46676" />
+		<TurnIn QuestName="Lumbering Oafs" QuestId="27822" TurnInName="Joanna Blueheart" TurnInId="46676" />
+		
+		<PickUp QuestName="Tides of Darkness" QuestId="27795" GiverName="Joanna Blueheart" GiverId="46676" />
+		<PickUp QuestName="Reinforcements Denied" QuestId="27843" GiverName="Joanna Blueheart" GiverId="46676" />
+		<PickUp QuestName="Marking the Fallen" QuestId="27845" GiverName="Joanna Blueheart" GiverId="46676" />
+		
+		<CustomBehavior File="InteractWith" QuestId="27845" MobId="46881" MobState="Dead" InteractByUsingItemId="62517"
+			NonCompeteDistance="5" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="1000" >
+			<HuntingGrounds>
+				<Hotspot X="-10200.82" Y="-3677.708" Z="22.73791" />
+				<Hotspot X="-10257.08" Y="-3619.16" Z="23.08001" />
+				<Hotspot X="-10316.13" Y="-3563.092" Z="20.97668" />
+				<Hotspot X="-10245.48" Y="-3492.931" Z="18.54141" />
+				<Hotspot X="-10212.32" Y="-3555.853" Z="23.35151" />
+				<Hotspot X="-10182.1" Y="-3625.751" Z="18.35005" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<Objective QuestName="Reinforcements Denied" QuestId="27843" Type="KillMob" MobId="46770" KillCount="3" />
+		<Objective QuestName="Tides of Darkness" QuestId="27795" Type="KillMob" MobId="46765" KillCount="6" />
+		
+		<TurnIn QuestName="Tides of Darkness" QuestId="27795" TurnInName="Joanna Blueheart" TurnInId="46676" />
+		<TurnIn QuestName="Reinforcements Denied" QuestId="27843" TurnInName="Joanna Blueheart" TurnInId="46676" />
+		<TurnIn QuestName="Marking the Fallen" QuestId="27845" TurnInName="Joanna Blueheart" TurnInId="46676" />
+		
+		<PickUp QuestName="Assault on Stonard" QuestId="27849" GiverName="Joanna Blueheart" GiverId="46676" />
+		<PickUp QuestName="Cutting Supply" QuestId="27851" GiverName="Joanna Blueheart" GiverId="46676" />
+		<PickUp QuestName="The Lost Ones" QuestId="27860" GiverName="Holaaru" GiverId="18221" />
+		<PickUp QuestName="Draenethyst Crystals" QuestId="27840" GiverName="Holaaru" GiverId="18221" />
+		
+		<Objective QuestName="Assault on Stonard" QuestId="27849" Type="KillMob" MobId="46870" KillCount="6" />
+		<Objective QuestName="Cutting Supply" QuestId="27851" Type="CollectItem" ItemId="62516" CollectCount="5" />
+		
+		<TurnIn QuestName="Assault on Stonard" QuestId="27849" TurnInName="Joanna Blueheart" TurnInId="46676" />
+		<TurnIn QuestName="Cutting Supply" QuestId="27851" TurnInName="Joanna Blueheart" TurnInId="46676" />
+		
+		<Objective QuestName="Draenethyst Crystals" QuestId="27840" Type="CollectItem" ItemId="6071" CollectCount="5" />
+		<Objective QuestName="The Lost Ones" QuestId="27860" Type="KillMob" MobId="46959" KillCount="12" />
+		
+		<TurnIn QuestName="The Lost Ones" QuestId="27860" TurnInName="Holaaru" TurnInId="18221" />
+		<TurnIn QuestName="Draenethyst Crystals" QuestId="27840" TurnInName="Holaaru" TurnInId="18221" />
+		
+		<PickUp QuestName="The Harborage" QuestId="27918" GiverName="Holaaru" GiverId="18221" />
+		<TurnIn QuestName="The Harborage" QuestId="27918" TurnInName="Anchorite Avuun" TurnInId="17127" />
+		
+		<CustomBehavior File="Message" Text="Compiling The Harborage Quests" LogColor="CornflowerBlue" />
+		
+		<PickUp QuestName="Prayerblossom" QuestId="27875" GiverName="Anchorite Avuun" GiverId="17127" />
+		<PickUp QuestName="Secrets of the Mire" QuestId="27876" GiverName="Anchorite Avuun" GiverId="17127" />
+		
+		<Objective QuestName="Prayerblossom" QuestId="27875" Type="CollectItem" ItemId="62550" CollectCount="10" />
+		<Objective QuestName="Secrets of the Mire" QuestId="27876" Type="CollectItem" ItemId="62593" CollectCount="10" />
+		
+		<TurnIn QuestName="Prayerblossom" QuestId="27875" TurnInName="Anchorite Avuun" TurnInId="17127" />
+		<TurnIn QuestName="Secrets of the Mire" QuestId="27876" TurnInName="Anchorite Avuun" TurnInId="17127" />
+		
+		<PickUp QuestName="The Purespring" QuestId="27902" GiverName="Anchorite Avuun" GiverId="17127" />
+		<PickUp QuestName="Breath of Mist" QuestId="27904" GiverName="Anchorite Avuun" GiverId="17127" />
+		
+		<Objective QuestName="The Purespring" QuestId="27902" Type="CollectItem" ItemId="62609" CollectCount="6" />
+		<Objective QuestName="Breath of Mist" QuestId="27904" Type="CollectItem" ItemId="62749" CollectCount="5" />
+		
+		<TurnIn QuestName="The Purespring" QuestId="27902" TurnInName="Anchorite Avuun" TurnInId="17127" />
+		<TurnIn QuestName="Breath of Mist" QuestId="27904" TurnInName="Anchorite Avuun" TurnInId="17127" />
+		
+		<PickUp QuestName="Remember the Light" QuestId="24913" GiverName="Anchorite Avuun" GiverId="17127" />
+		<While Condition="!IsQuestCompleted(24913)" />
+		<TurnIn QuestName="Remember the Light" QuestId="24913" TurnInName="Anchorite Avuun" TurnInId="17127" X="-10098.19" Y="-2752.264" Z="25.3495" />
+		
+		<PickUp QuestName="Onward to the Blasted Lands" QuestId="27919" GiverName="Anchorite Avuun" GiverId="17127" />
+		<TurnIn QuestName="Onward to the Blasted Lands" QuestId="27919" TurnInName="Enohar Thunderbrew" TurnInId="9540" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Swamp of Sorrows Complete" LogColor="Orange" />
+	<If Condition="Me.IsHorde" >
+		<CustomBehavior File="LoadProfile" ProfileName="[Quest] Blasted Lands H [Brodie]" />
+	<Else>
+		<CustomBehavior File="LoadProfile" ProfileName="[Quest] Blasted Lands A [Brodie]" />
+	</Else>
+	</If>
+		
+</QuestOrder>
+</HBProfile>

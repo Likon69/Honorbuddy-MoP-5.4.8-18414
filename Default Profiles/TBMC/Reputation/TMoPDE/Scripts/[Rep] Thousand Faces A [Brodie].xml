@@ -1,0 +1,136 @@
+<HBProfile>
+	<Name>The Man With A Thousand Faces ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>91</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder IgnoreCheckpoints="True" >
+
+<!-- The Best Around -->
+	<If Condition="!HasQuest(32380) &amp;&amp; !IsQuestCompleted(32380)" >
+
+		<CustomBehavior File="FlyTo" X="-1155.29" Y="-1247.7" Z="28.5142" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+
+		<!-- Admiral Taylor -->
+		<While Condition="HasQuestAvailable(67940)" >
+			<CustomBehavior File="InteractWith" MobId="67940" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+
+		<If Condition="!HasQuest(32380)" >
+			<CustomBehavior File="UserDialog" Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of storyline reached...for now! Level up your rep to continue!" />
+			<CustomBehavior File="UserSettings" StopBot="True" />
+		</If>
+	</If>
+
+	<If Condition="HasQuest(32380) &amp;&amp; !IsQuestCompleted(32380)" >
+
+		<If Condition="(Me.MapId != 0)" >
+			<CustomBehavior File="FlyTo" X="-1155.29" Y="-1247.7" Z="28.5142" />
+			<CustomBehavior File="ForcedDismount" />
+			<If Condition="!HasItem(92431) &amp;&amp; (GetItemCount(91877) &gt; 4)" >
+				<CustomBehavior File="InteractWith" MobId="67881" BuyItemId="92431" BuyItemCount="1" />
+			</If>
+			<If Condition="HasItem(92431)" >
+				<CustomBehavior File="FlyTo" X="-1163.095" Y="-1229.698" Z="28.65738" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" MobId="67738" Range="5" WaitForNpcs="False" />
+				<CustomBehavior File="WaitTimer" WaitTime="5000" />
+				<If Condition="(Me.MapId != 0)" >
+					<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(92431)" WaitTime="1000" />
+					<CustomBehavior File="WaitTimer" WaitTime="5000" />
+					<CustomBehavior File="InteractWith" MobId="67738" WaitForNpcs="False" />
+					<CustomBehavior File="WaitTimer" WaitTime="5000" />
+				</If>
+			<Else>
+				<CustomBehavior File="FlyTo" X="863.86" Y="284.01" Z="503.68" />
+				<RunTo X="826.9441" Y="179.9505" Z="519.5612" />
+				<CustomBehavior File="InteractWith" MobId="215119" ObjectType="GameObject" />
+				<CustomBehavior File="WaitTimer" WaitTime="3000" />
+			</Else>
+			</If>
+		</If>
+		<CustomBehavior File="FlyTo" DestName="Deeprun Tram" X="-8403.6" Y="570.7051" Z="92.18417" />
+		<CustomBehavior File="Misc\InInstance" X="-8354.12" Y="511.17" Z="84.41" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<RunTo X="1.57" Y="2461.00" Z="-13.86" />
+		<RunTo X="-89.00" Y="2461.68" Z="-43.11" />
+		<CustomBehavior File="InteractWith" MobId="68526" GossipOptions="1" WaitTime="1000" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<TurnIn QuestName="The Best Around" QuestId="32380" TurnInName="Barkeep Townsley" TurnInId="68526" />
+		<PickUp QuestName="To Catch A Spy" QuestId="32381" GiverName="Barkeep Townsley" GiverId="68526" />
+	</If>
+
+<!-- To Catch A Spy -->
+	<If Condition="HasQuest(32381) &amp;&amp; !IsQuestCompleted(32381)" >
+
+		<CustomBehavior File="InteractWith" MobId="68526" GossipOptions="1" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="68537" GossipOptions="1" WaitTime="1000" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="68526" GossipOptions="1" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="68540" GossipOptions="1" WaitTime="1000" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="68526" GossipOptions="1" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" Range="5" MobId="68539" GossipOptions="1" WaitTime="1000" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<TurnIn QuestName="To Catch A Spy" QuestId="32381" TurnInName="Barkeep Townsley" TurnInId="68526" />
+		<PickUp QuestName="Stirred, Not Shaken" QuestId="32426" GiverName="Barkeep Townsley" GiverId="68526" />
+	</If>
+
+<!-- Stirred, Not Shaken -->
+	<If Condition="HasQuest(32426) &amp;&amp; !IsQuestCompleted(32426)" >
+		<RunTo X="-150.43" Y="2548.58" Z="-29.44" />
+		<TurnIn QuestName="Stirred, Not Shaken" QuestId="32426" TurnInName="Professor Kilt" TurnInId="68531" />
+	</If>
+
+<If Condition="HasItem(6948)" >
+	<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1000" />
+	<CustomBehavior File="WaitTimer" WaitTime="5000" />
+</If>
+
+<If Condition="HasItem(64488)" >
+	<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" WaitTime="1000" />
+	<CustomBehavior File="WaitTimer" WaitTime="5000" />
+</If>
+
+<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Shieldwall Stories [Brodie]" />
+
+<CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of Dailies" />
+
+</QuestOrder>
+</HBProfile>

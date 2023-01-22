@@ -1,0 +1,442 @@
+<HBProfile>
+
+	<Name>Ghostlands Memory Block ($Rev$)</Name>
+	<MinLevel>60</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+		<Blackspot X="7560.934" Y="-7669.184" Z="151.0301" Radius="2.67172" />
+	</Blackspots>
+
+	<Mailboxes>
+		<Mailbox X="7579.02" Y="-6860.12" Z="93.34931" />
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Tranquillien -->
+		<Vendor Name="Quartermaster Lymel" Entry="16187" Type="Food" X="7622.968" Y="-6845.611" Z="83.89045" />
+		<Vendor Name="Blacksmith Frances" Entry="17655" Type="Repair" X="7600.523" Y="-6904.995" Z="93.78819" />
+		<Vendor Name="Eralan" Entry="16268" Type="Repair" X="7511.88" Y="-6841.079" Z="83.6666" />
+		<!-- Farstrider's Enclave -->
+		<Vendor Name="Heron Skygaze" Entry="17656" Type="Food" X="7555.502" Y="-7668.759" Z="151.2846" />
+		<Vendor Name="Narina" Entry="16274" Type="Repair" X="7561.884" Y="-7663.498" Z="151.2827" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Name="Curbing the Plague" Id="9159" >
+	<Objective Type="KillMob" MobId="16351" KillCount="8" >
+		<Hotspots>
+			<Hotspot X="7396.642" Y="-6420.696" Z="32.09044" />
+			<Hotspot X="7377.991" Y="-6341.356" Z="42.8056" />
+			<Hotspot X="7406.029" Y="-6240.438" Z="32.56119" />
+			<Hotspot X="7315.911" Y="-6189.064" Z="30.78055" />
+			<Hotspot X="7339.356" Y="-6092.94" Z="20.33039" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Shadowpine Weaponry" Id="9214" >
+	<Objective Type="CollectItem" ItemId="22677" CollectCount="3" >
+		<CollectFrom>
+			<Mob Name="Shadowpine Catlord" Id="16345" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="7177.347" Y="-7550.257" Z="49.81013" />
+			<Hotspot X="7118.243" Y="-7546.504" Z="47.69952" />
+			<Hotspot X="7109.292" Y="-7493.707" Z="48.43567" />
+			<Hotspot X="7029.8" Y="-7495.262" Z="47.68685" />
+			<Hotspot X="6972.778" Y="-7483.937" Z="46.8566" />
+			<Hotspot X="6832.91" Y="-7374.02" Z="46.693" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="23166" CollectCount="3" >
+		<CollectFrom>
+			<Mob Name="Shadowpine Hexxer" Id="16346" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="7177.347" Y="-7550.257" Z="49.81013" />
+			<Hotspot X="7118.243" Y="-7546.504" Z="47.69952" />
+			<Hotspot X="7109.292" Y="-7493.707" Z="48.43567" />
+			<Hotspot X="7029.8" Y="-7495.262" Z="47.68685" />
+			<Hotspot X="6972.778" Y="-7483.937" Z="46.8566" />
+			<Hotspot X="6832.91" Y="-7374.02" Z="46.693" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Dar'Khan's Lieutenants" Id="9170" >
+	<Objective Type="KillMob" MobId="16247" KillCount="1" >
+		<Hotspots>
+			<Hotspot X="6435.98" Y="-6621.437" Z="107.438" />
+			<Hotspot X="6291.479" Y="-6363.143" Z="78.01933" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="16249" KillCount="1" >
+		<Hotspots>
+			<Hotspot X="6311.542" Y="-6471.57" Z="83.01143" />
+			<Hotspot X="6326.189" Y="-6263.25" Z="80.81287" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="Message" Text="Fatal Desynchronization: Incorrect faction linking." LogColor="Red" />
+		<CustomBehavior File="Halt" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Beginning Memory Block: Ghostlands" LogColor="Green" />
+	<CustomBehavior File="UserSettings" LootMobs="True" UseFlightPaths="True" PullDistance="25" />
+	
+	<If Condition="!HasQuest(9144) &amp;&amp; !IsQuestCompleted(9144)" >
+		<CustomBehavior File="Message" Text="Parsing for Breadcrumbs..." LogColor="CornflowerBlue" />
+		<PickUp QuestName="Missing in the Ghostlands" QuestId="9144" GiverName="Magistrix Landra Dawnstrider" GiverId="16210" />
+	</If>
+	<TurnIn QuestName="Missing in the Ghostlands" QuestId="9144" TurnInName="Courier Dawnstrider" TurnInId="16183" />
+	
+	<CustomBehavior File="Message" Text="Fast Fowarding memory to Eversong Woods Border" LogColor="CornflowerBlue" />
+
+<!-- The Fallen Courier -->
+	<PickUp QuestName="The Fallen Courier" QuestId="9147" GiverName="Apothecary Thedra" GiverId="16196" />
+	<Objective QuestName="The Fallen Courier" QuestId="9147" Type="CollectItem" ItemId="22570" CollectCount="4" />
+	<TurnIn QuestName="The Fallen Courier" QuestId="9147" TurnInName="Apothecary Thedra" TurnInId="16196" />
+	
+	<PickUp QuestName="Delivery to Tranquillien" QuestId="9148" GiverName="Courier Dawnstrider" GiverId="16183" />
+	<TurnIn QuestName="Delivery to Tranquillien" QuestId="9148" TurnInName="Arcanist Vandril" TurnInId="16197" />
+	
+	<CustomBehavior File="Message" Text="Fast Fowarding memory to Tranquillien" LogColor="CornflowerBlue" />
+	
+	<If Condition="Me.Race == WoWRace.BloodElf" >
+		<PickUp QuestName="The Forsaken" QuestId="9327" GiverName="Arcanist Vandril" GiverId="16197" />
+		<TurnIn QuestName="The Forsaken" QuestId="9327" TurnInName="High Executor Mavren" TurnInId="16252" />
+	<Else>
+		<PickUp QuestName="The Forsaken" QuestId="9329" GiverName="Arcanist Vandril" GiverId="16197" />
+		<TurnIn QuestName="The Forsaken" QuestId="9329" TurnInName="High Executor Mavren" TurnInId="16252" />
+	</Else>
+	</If>
+	
+	<PickUp QuestName="Return to Arcanist Vandril" QuestId="9758" GiverName="High Executor Mavren" GiverId="16252" />
+	<TurnIn QuestName="Return to Arcanist Vandril" QuestId="9758" TurnInName="Arcanist Vandril" TurnInId="16197" />
+	
+	<PickUp QuestName="Suncrown Village" QuestId="9138" GiverName="Arcanist Vandril" GiverId="16197" />
+	<PickUp QuestName="Tomber's Supplies" QuestId="9152" GiverName="Rathis Tomber" GiverId="16224" />
+	<PickUp QuestName="Wanted: Knucklerot and Luzran" QuestId="9156" GiverType="Object" GiverName="Wanted Poster" 
+		GiverId="181147" X="7569.912" Y="-6878.853" Z="96.03343" />
+	<PickUp QuestName="The Plagued Coast" QuestId="9149" GiverName="Apothecary Renzithen" GiverId="16198" />
+	
+	<PickUp QuestName="Anok'suten" QuestId="9315" GiverName="Dying Blood Elf" GiverId="16601" />
+<!-- Suncrown Village/Anok'suten -->
+	<Objective QuestName="Suncrown Village" QuestId="9138" Type="KillMob" MobId="16313" KillCount="10" />
+	<Objective QuestName="Anok'suten" QuestId="9315" Type="KillMob" MobId="16357" KillCount="1" />
+	<TurnIn QuestName="Anok'suten" QuestId="9315" TurnInName="Arcanist Vandril" TurnInId="16197" />
+	<TurnIn QuestName="Suncrown Village" QuestId="9138" TurnInName="Arcanist Vandril" TurnInId="16197" />
+	
+	<PickUp QuestName="Goldenmist Village" QuestId="9139" GiverName="Arcanist Vandril" GiverId="16197" />
+	<PickUp QuestName="Salvaging the Past" QuestId="9150" GiverName="Magister Darenis" GiverId="16199" />
+	<PickUp QuestName="Help Ranger Valanna!" QuestId="9145" GiverName="Ranger Lethvalin" GiverId="16213" />
+	<PickUp QuestName="Investigate An'daroth" QuestId="9160" GiverName="Dame Auriferous" GiverId="16231" />
+	<PickUp QuestName="Trouble at the Underlight Mines" QuestId="9192" GiverName="Deathstalker Maltendis" GiverId="16251" />
+	<PickUp QuestName="Down the Dead Scar" QuestId="9155" GiverName="Deathstalker Rathiel" GiverId="16200" />
+	
+<!-- Investigate An'daroth/Goldenmist Village -->
+	<Objective QuestName="Investigate An'daroth" QuestId="9160" Type="KillMob" MobId="16330" KillCount="12" />
+	<If Condition="HasQuest(9160) &amp;&amp; !IsObjectiveComplete(2,9160)" >
+		<RunTo X="7923.504" Y="-6511.445" Z="46.87927" />
+	</If>
+	<Objective QuestName="Goldenmist Village" QuestId="9139" Type="KillMob" MobId="16325" KillCount="6" />
+	<Objective QuestName="Goldenmist Village" QuestId="9139" Type="KillMob" MobId="16326" KillCount="4" />
+	
+<!-- The Plagued Coast -->
+	<Objective QuestName="The Plagued Coast" QuestId="9149" Type="CollectItem" ItemId="22579" CollectCount="6" />
+	
+<!-- Tomber's Supplies -->
+	<CustomBehavior File="InteractWith" QuestId="9152" MobId="181133" NumOfTimes="100" X="7687.207" Y="-6391.498" Z="20.29264" />
+	
+<!-- Salvaging the Past -->
+	<Objective QuestName="Salvaging the Past" QuestId="9150" Type="CollectItem" ItemId="22580" CollectCount="8" />
+	
+<!-- Down the Dead Scar -->
+	<Objective QuestName="Down the Dead Scar" QuestId="9155" Type="KillMob" MobId="16301" KillCount="10" />
+	<Objective QuestName="Down the Dead Scar" QuestId="9155" Type="KillMob" MobId="16309" KillCount="10" />
+
+	<TurnIn QuestName="The Plagued Coast" QuestId="9149" TurnInName="Apothecary Renzithen" TurnInId="16198" />
+	<TurnIn QuestName="Down the Dead Scar" QuestId="9155" TurnInName="Deathstalker Rathiel" TurnInId="16200" />
+	<TurnIn QuestName="Investigate An'daroth" QuestId="9160" TurnInName="Dame Auriferous" TurnInId="16231" />
+	<PickUp QuestName="Into Occupied Territory" QuestId="9163" GiverName="Dame Auriferous" GiverId="16231" />
+	<TurnIn QuestName="Salvaging the Past" QuestId="9150" TurnInName="Magister Darenis" TurnInId="16199" />
+	
+	<PickUp QuestName="Culinary Crunch" QuestId="9171" GiverName="Master Chef Mouldier" GiverId="16253" />
+	
+	<TurnIn QuestName="Tomber's Supplies" QuestId="9152" TurnInName="Rathis Tomber" TurnInId="16224" />
+	<TurnIn QuestName="Goldenmist Village" QuestId="9139" TurnInName="Arcanist Vandril" TurnInId="16197" />
+	
+	<PickUp QuestName="Windrunner Village" QuestId="9140" GiverName="Arcanist Vandril" GiverId="16197" />
+	
+	<TurnIn QuestName="Help Ranger Valanna!" QuestId="9145" TurnInName="Ranger Valanna" TurnInId="16219" />
+
+<!-- Dealing with Zeb'Sora/Forgotten Rituals/Vanquishing Aquantion -->
+	<PickUp QuestName="Dealing with Zeb'Sora" QuestId="9143" GiverName="Ranger Valanna" GiverId="16219" />
+	<PickUp QuestName="Forgotten Rituals" QuestId="9157" GiverName="Geranis Whitemorn" GiverId="16201" />
+	<CustomBehavior File="InteractWith" QuestId="9157" MobId="181151" NumOfTimes="1000" CollectionDistance="500" NonCompeteDistance="0" 
+		ProactiveCombatStrategy="ClearMobsTargetingUs" >
+		<HuntingGrounds>
+			<Hotspot X="7671.08" Y="-7659.328" Z="143.4354" />
+			<Hotspot X="7763.594" Y="-7666.842" Z="142.1562" />
+			<Hotspot X="7872.657" Y="-7650.884" Z="142.2245" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<If Condition="HasQuest(9157)" >
+		<CustomBehavior File="AscendInWater" />
+	</If>
+	<TurnIn QuestName="Forgotten Rituals" QuestId="9157" TurnInName="Geranis Whitemorn" TurnInId="16201" />
+	<PickUp QuestName="Vanquishing Aquantion" QuestId="9174" GiverName="Geranis Whitemorn" GiverId="16201" />
+	<CustomBehavior File="InteractWith" QuestId="9174" MobId="181157" NumOfTimes="1000" X="7933.415" Y="-7635.308" Z="115.6591" />
+	<If Condition="HasQuest(9174)" >
+		<CustomBehavior File="AscendInWater" />
+	</If>
+	<TurnIn QuestName="Vanquishing Aquantion" QuestId="9174" TurnInName="Geranis Whitemorn" TurnInId="16201" />
+	<Objective QuestName="Dealing with Zeb'Sora" QuestId="9143" Type="CollectItem" ItemId="22639" CollectCount="6" />
+	<TurnIn QuestName="Dealing with Zeb'Sora" QuestId="9143" TurnInName="Ranger Valanna" TurnInId="16219" />
+	
+	<PickUp QuestName="Report to Captain Helios" QuestId="9146" GiverName="Ranger Valanna" GiverId="16219" />
+	<TurnIn QuestName="Report to Captain Helios" QuestId="9146" TurnInName="Captain Helios" TurnInId="16220" />
+	
+	<PickUp QuestName="Spirits of the Drowned" QuestId="9274" GiverName="Ranger Krenn'an" GiverId="16462" />
+	<PickUp QuestName="Bring Me Kel'gash's Head!" QuestId="9215" GiverType="Object" GiverName="Wanted Poster" 
+		GiverId="181153" X="7581.686" Y="-7665.071" Z="151.6608" />
+	<PickUp QuestName="Bearers of the Plague" QuestId="9158" GiverName="Farstrider Sedina" GiverId="16202" />
+	
+<!-- Spirits of the Drowned/Bearers of the Plague -->
+	<Objective QuestName="Spirits of the Drowned" QuestId="9274" Type="KillMob" MobId="16327" KillCount="8" />
+	<Objective QuestName="Spirits of the Drowned" QuestId="9274" Type="KillMob" MobId="16328" KillCount="8" />
+	<Objective QuestName="Bearers of the Plague" QuestId="9158" Type="KillMob" MobId="16348" KillCount="10" />
+	<TurnIn QuestName="Bearers of the Plague" QuestId="9158" TurnInName="Farstrider Sedina" TurnInId="16202" />
+	<PickUp QuestName="Curbing the Plague" QuestId="9159" GiverName="Farstrider Sedina" GiverId="16202" />
+	<TurnIn QuestName="Spirits of the Drowned" QuestId="9274" TurnInName="Ranger Krenn'an" TurnInId="16462" />
+
+<!-- Curbing the Plague -->
+	<Objective QuestName="Curbing the Plague" QuestId="9159" Type="KillMob" MobId="16354" KillCount="10" />
+	<PickUp QuestName="Troll Juju" QuestId="9199" GiverName="Deathstalker Maltendis" GiverId="16251" />
+	<PickUp QuestName="Investigate the Amani Catacombs" QuestId="9193" GiverName="Advisor Valwyn" GiverId="16289" />
+	<Objective QuestName="Curbing the Plague" QuestId="9159" Type="KillMob" MobId="16351" KillCount="8" /> <!-- Needs an Override -->
+	<If Condition="HasQuest(9171) &amp;&amp; !IsQuestCompleted(9171)" >
+		<CustomBehavior File="CollectThings" QuestId="9171" MobId="16351" MobState="Alive" CollectUntil="QuestComplete" HuntingGroundRadius="200" NonCompeteDistance="1" >
+			<Hotspot X="7396.642" Y="-6420.696" Z="32.09044" />
+			<Hotspot X="7377.991" Y="-6341.356" Z="42.8056" />
+			<Hotspot X="7406.029" Y="-6240.438" Z="32.56119" />
+			<Hotspot X="7315.911" Y="-6189.064" Z="30.78055" />
+			<Hotspot X="7339.356" Y="-6092.94" Z="20.33039" />
+		</CustomBehavior>
+	</If>
+	
+<!-- Trouble at the Underlight Mines -->
+	<PickUp QuestName="Underlight Ore Samples" QuestId="9207" GiverName="Apprentice Shatharia" GiverId="16293" />
+	<Objective QuestName="Underlight Ore Samples" QuestId="9207" Type="CollectItem" ItemId="22634" CollectCount="6" />
+	<Objective QuestName="Trouble at the Underlight Mines" QuestId="9192" Type="KillMob" MobId="16334" KillCount="8" />
+	<Objective QuestName="Trouble at the Underlight Mines" QuestId="9192" Type="KillMob" MobId="16335" KillCount="6" />
+	<Objective QuestName="Trouble at the Underlight Mines" QuestId="9192" Type="KillMob" MobId="16337" KillCount="4" />
+	
+<!-- Windrunner Village -->
+	<Objective QuestName="Windrunner Village" QuestId="9140" Type="CollectItem" ItemId="22566" CollectCount="6" />
+	<Objective QuestName="Windrunner Village" QuestId="9140" Type="CollectItem" ItemId="22567" CollectCount="4" />
+	
+<!-- Into Occupied Territory -->
+	<CustomBehavior File="InteractWith" QuestId="9163" QuestObjectiveIndex="1" MobId="181138" X="7684.537" Y="-5768.306" Z="4.624454" />
+	<CustomBehavior File="InteractWith" QuestId="9163" QuestObjectiveIndex="2" MobId="181139" X="7715.949" Y="-5692.38" Z="3.577756" />
+	<CustomBehavior File="InteractWith" QuestId="9163" QuestObjectiveIndex="3" MobId="181140" X="7773.066" Y="-5632.977" Z="17.6742" />
+	
+	<TurnIn QuestName="Windrunner Village" QuestId="9140" TurnInName="Arcanist Vandril" TurnInId="16197" />
+	<TurnIn QuestName="Into Occupied Territory" QuestId="9163" TurnInName="Dame Auriferous" TurnInId="16231" />
+	<PickUp QuestName="Deliver the Plans to An'telas" QuestId="9166" GiverName="Dame Auriferous" GiverId="16231" />
+	<TurnIn QuestName="Trouble at the Underlight Mines" QuestId="9192" TurnInName="Deathstalker Maltendis" TurnInId="16251" />
+	<PickUp QuestName="Retaking Windrunner Spire" QuestId="9173" GiverName="High Executor Mavren" GiverId="16252" />
+	<TurnIn QuestName="Culinary Crunch" QuestId="9171" TurnInName="Master Chef Mouldier" TurnInId="16253" />
+	<PickUp QuestName="Spinal Dust" QuestId="9218" GiverName="Magistrix Aminel" GiverId="16205" />
+	<PickUp QuestName="Rotting Hearts" QuestId="9216" GiverName="Magistrix Aminel" GiverId="16205" />
+	
+	<Objective QuestName="Retaking Windrunner Spire" QuestId="9173" Type="KillMob" MobId="16315" KillCount="8" />
+	<Objective QuestName="Retaking Windrunner Spire" QuestId="9173" Type="KillMob" MobId="16314" KillCount="10" />
+	<If Condition="!HasQuest(9175) &amp;&amp; !IsQuestCompleted(9175)" >
+		<CustomBehavior File="CollectThings" MobId="16315" MobId2="16314" CollectItemId="22597" CollectItemCount="1" HuntingGroundRadius="200" NonCompeteDistance="1" >
+			<Hotspot X="6989.266" Y="-5839.931" Z="50.38189" />
+			<Hotspot X="7020.771" Y="-5753.074" Z="100.6529" />
+			<Hotspot X="7006.689" Y="-5713.099" Z="105.6675" />
+		</CustomBehavior>
+		<PickUp QuestName="The Lady's Necklace" QuestId="9175" GiverType="Item" GiverId="22597" />
+	</If>
+	
+<!-- Spinal Dust/Rotting Hearts -->
+	<Objective QuestName="Spinal Dust" QuestId="9218" Type="CollectItem" ItemId="22642" CollectCount="10" />
+	<Objective QuestName="Rotting Hearts" QuestId="9216" Type="CollectItem" ItemId="22641" CollectCount="10" />
+	<TurnIn QuestName="Spinal Dust" QuestId="9218" TurnInName="Magistrix Aminel" TurnInId="16205" />
+	<TurnIn QuestName="Rotting Hearts" QuestId="9216" TurnInName="Magistrix Aminel" TurnInId="16205" />
+	<TurnIn QuestName="Retaking Windrunner Spire" QuestId="9173" TurnInName="High Executor Mavren" TurnInId="16252" />
+	<TurnIn QuestName="The Lady's Necklace" QuestId="9175" TurnInName="High Executor Mavren" TurnInId="16252" />
+	
+	<PickUp QuestName="The Sanctum of the Sun" QuestId="9151" GiverName="Magister Darenis" GiverId="16199" />
+	
+	<TurnIn QuestName="Deliver the Plans to An'telas" QuestId="9166" TurnInName="Magister Sylastor" TurnInId="16237" />
+	<PickUp QuestName="Deactivate An'owyn" QuestId="9169" GiverName="Magister Sylastor" GiverId="16237" />
+	
+	<TurnIn QuestName="Curbing the Plague" QuestId="9159" TurnInName="Farstrider Sedina" TurnInId="16202" />
+	
+	<PickUp QuestName="Attack on Zeb'Tela" QuestId="9276" GiverName="Farstrider Solanna" GiverId="16463" />
+	<PickUp QuestName="Shadowpine Weaponry" QuestId="9214" GiverName="Captain Helios" GiverId="16220" />
+	<PickUp QuestName="A Little Dash of Seasoning" QuestId="9275" GiverName="Apothecary Venustus" GiverId="16464" />
+	<PickUp QuestName="The Traitor's Shadow" QuestId="9161" GiverName="Ranger Vynna" GiverId="16203" />
+	
+	<TurnIn QuestName="The Traitor's Shadow" QuestId="9161" TurnInName="Dusty Journal" TurnInId="181150" 
+		TurnInType="Object" X="7880.24" Y="-7911.188" Z="182.8032" />
+	<PickUp QuestName="Hints of the Past" QuestId="9162" GiverName="Dusty Journal" GiverId="181150" 
+		GiverType="Object" X="7880.24" Y="-7911.188" Z="182.8032" />
+	
+<!-- Attack on Zeb'Tela/Shadowpine Weaponry -->
+	<Objective QuestName="Shadowpine Weaponry" QuestId="9214" Type="CollectItem" ItemId="23165" CollectCount="3" />
+	<Objective QuestName="Shadowpine Weaponry" QuestId="9214" Type="CollectItem" ItemId="23167" CollectCount="3" />
+	<Objective QuestName="Attack on Zeb'Tela" QuestId="9276" Type="KillMob" MobId="16469" KillCount="8" />
+	<Objective QuestName="Attack on Zeb'Tela" QuestId="9276" Type="KillMob" MobId="16344" KillCount="8" />
+	
+	<TurnIn QuestName="Attack on Zeb'Tela" QuestId="9276" TurnInName="Farstrider Solanna" TurnInId="16463" />
+	<PickUp QuestName="Attack on Zeb'Nowa" QuestId="9277" GiverName="Farstrider Solanna" GiverId="16463" />
+
+<!-- Attack on Zeb'Nowa/Shadowpine Weaponry/A Little Dash of Seasoning -->
+	<CustomBehavior File="InteractWith" QuestId="9275" QuestObjectiveIndex="3" MobId="181252" NumOfTimes="100" X="6991.026" Y="-7534.729" Z="48.84222" />
+	<CustomBehavior File="InteractWith" QuestId="9275" QuestObjectiveIndex="1" MobId="181250" NumOfTimes="100" X="6802.667" Y="-7425.663" Z="48.11272" />
+	<CustomBehavior File="InteractWith" QuestId="9275" QuestObjectiveIndex="2" MobId="181251" NumOfTimes="100" X="6613.168" Y="-7347.571" Z="53.76469" />
+	<Objective QuestName="Shadowpine Weaponry" QuestId="9214" Type="CollectItem" ItemId="22677" CollectCount="3" />
+	<Objective QuestName="Shadowpine Weaponry" QuestId="9214" Type="CollectItem" ItemId="23166" CollectCount="3" />
+	<Objective QuestName="Attack on Zeb'Nowa" QuestId="9277" Type="KillMob" MobId="16345" KillCount="10" />
+	<Objective QuestName="Attack on Zeb'Nowa" QuestId="9277" Type="KillMob" MobId="16346" KillCount="10" />
+	
+	<If Condition="HasQuest(9169) &amp;&amp; !IsQuestCompleted(9169) &amp;&amp; !HasItem(23191)" >
+		<CustomBehavior File="CollectThings" QuestId="9169" MobId="16333" MobState="Alive" CollectItemId="23191" CollectItemCount="1" HuntingGroundRadius="200"
+			X="6833.694" Y="-7203.042" Z="27.77619" />
+	</If>
+	<If Condition="HasQuest(9169) &amp;&amp; !IsQuestCompleted(9169) &amp;&amp; HasItem(23191)" >
+		<CustomBehavior File="InteractWith" QuestId="9169" MobId="181359" IgnoreLoSToTarget="True" Range="10" MinRange="6" X="6833.694" Y="-7203.042" Z="27.77619" />
+	</If>
+	
+	<TurnIn QuestName="Attack on Zeb'Nowa" QuestId="9277" TurnInName="Farstrider Solanna" TurnInId="16463" />
+	<TurnIn QuestName="Shadowpine Weaponry" QuestId="9214" TurnInName="Captain Helios" TurnInId="16220" />
+	<TurnIn QuestName="A Little Dash of Seasoning" QuestId="9275" TurnInName="Apothecary Venustus" TurnInId="16464" />
+	<TurnIn QuestName="Hints of the Past" QuestId="9162" TurnInName="Ranger Vynna" TurnInId="16203" />
+	<PickUp QuestName="Report to Magister Kaendris" QuestId="9172" GiverName="Ranger Vynna" GiverId="16203" />
+	
+<!-- Troll Juju/Investigate the Amani Catacombs -->
+	<CustomBehavior File="InteractWith" QuestId="9193" QuestObjectiveIndex="1" MobId="181148" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="8000" >
+		<HuntingGrounds>
+			<Hotspot X="7638.109" Y="-7446.556" Z="163.0519" />
+			<Hotspot X="7637.168" Y="-7398.078" Z="162.0679" />
+			<Hotspot X="7570.611" Y="-7344.801" Z="162.2446" />
+			<Hotspot X="7624.737" Y="-7320.129" Z="155.5788" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<If Condition="HasQuest(9193) &amp;&amp; !IsObjectiveComplete(2,9193)" >
+		<RunTo X="7561.759" Y="-7360.733" Z="161.7384" />
+	</If>
+	<Objective QuestName="Troll Juju" QuestId="9199" Type="CollectItem" ItemId="22633" CollectCount="8" />
+	<If Condition="!HasQuest(9212) &amp;&amp; !IsQuestCompleted(9212)" >
+		<PickUp QuestName="Escape from the Catacombs" QuestId="9212" GiverName="Ranger Lilatha" GiverId="16295" />
+	</If>
+	<CustomBehavior File="EscortGroup" QuestId="9212" EscortNpcId="16295" CombatMaxEngagementRangeDistance="15" EscortMaxFightDistance="20" />
+	<TurnIn QuestName="Escape from the Catacombs" QuestId="9212" TurnInName="Captain Helios" TurnInId="16220" />
+	
+	<TurnIn QuestName="Deactivate An'owyn" QuestId="9169" TurnInName="Magister Sylastor" TurnInId="16237" />
+	<TurnIn QuestName="Underlight Ore Samples" QuestId="9207" TurnInName="Magister Quallestis" TurnInId="16291" />
+	<TurnIn QuestName="The Sanctum of the Sun" QuestId="9151" TurnInName="Magister Idonis" TurnInId="16204" />
+	<PickUp QuestName="War on Deatholme" QuestId="9220" GiverName="Magister Idonis" GiverId="16204" />
+	<TurnIn QuestName="Report to Magister Kaendris" QuestId="9172" TurnInName="Magister Kaendris" TurnInId="16239" />
+	<PickUp QuestName="The Twin Ziggurats" QuestId="9176" GiverName="Magister Kaendris" GiverId="16239" />
+	
+	<CustomBehavior File="Message" Text="Fast Fowarding memory to Final Quests" LogColor="CornflowerBlue" />
+	
+<!-- Wanted: Knucklerot & Luzran -->
+	<Objective QuestName="Wanted: Knucklerot and Luzran" QuestId="9156" Type="CollectItem" ItemId="22894" KillCount="1" />
+	<Objective QuestName="Wanted: Knucklerot and Luzran" QuestId="9156" Type="CollectItem" ItemId="22893" KillCount="1" />
+	<TurnIn QuestName="Wanted: Knucklerot and Luzran" QuestId="9156" TurnInName="Deathstalker Rathiel" TurnInId="16200" />
+	<TurnIn QuestName="Investigate the Amani Catacombs" QuestId="9193" TurnInName="Advisor Valwyn" TurnInId="16289" />
+	<TurnIn QuestName="Troll Juju" QuestId="9199" TurnInName="Deathstalker Maltendis" TurnInId="16251" />
+	
+<!-- The Twin Ziggurats -->
+	<CustomBehavior File="InteractWith" QuestId="9176" QuestObjectiveIndex="1" MobId="181239" X="7168.26" Y="-6614.937" Z="63.04429" />
+	<CustomBehavior File="InteractWith" QuestId="9176" QuestObjectiveIndex="2" MobId="181238" X="7222.002" Y="-6414.819" Z="58.41433" />
+	<TurnIn QuestName="The Twin Ziggurats" QuestId="9176" TurnInName="Magister Kaendris" TurnInId="16239" />
+	
+	<PickUp QuestName="The Traitor's Destruction" QuestId="9167" GiverName="Magister Kaendris" GiverId="16239" />
+	
+<!-- Bring Me Kel'gash's Head -->
+	<Objective QuestName="Bring Me Kel'gash's Head" QuestId="9215" Type="CollectItem" ItemId="22640" CollectCount="1" />
+	<TurnIn QuestName="Bring Me Kel'gash's Head" QuestId="9215" TurnInName="Captain Helios" TurnInId="16220" />
+	
+	<PickUp QuestName="Clearing the Way" QuestId="9281" GiverName="Apprentice Vor'el" GiverId="16480" />
+	<Objective QuestName="Clearing the Way" QuestId="9281" Type="KillMob" MobId="16352" KillCount="10" />
+	<Objective QuestName="Clearing the Way" QuestId="9281" Type="KillMob" MobId="16349" KillCount="10" />
+	<TurnIn QuestName="Clearing the Way" QuestId="9281" TurnInName="Apprentice Vor'el" TurnInId="16480" />
+	
+	<Objective QuestName="War on Deatholme" QuestId="9220" Type="KillMob" MobId="16320" KillCount="5" />
+	<Objective QuestName="War on Deatholme" QuestId="9220" Type="KillMob" MobId="16319" KillCount="6" />
+	<Objective QuestName="War on Deatholme" QuestId="9220" Type="KillMob" MobId="16321" KillCount="6" />
+	<TurnIn QuestName="War on Deatholme" QuestId="9220" TurnInName="Magister Idonis" TurnInId="16204" />
+	<PickUp QuestName="Dar'khan's Lieutenants" QuestId="9170" GiverName="Magister Idonis" GiverId="16204" />
+	<PickUp QuestName="A Restorative Draught" QuestId="9877" GiverName="Arcanist Janeda" GiverId="16240" />
+	<TurnIn QuestName="A Restorative Draught" QuestId="9877" TurnInName="Apothecary Renzithen" TurnInId="16198" />
+	<PickUp QuestName="Captives at Deatholme" QuestId="9164" GiverName="Apothecary Renzithen" GiverId="16198" />
+	
+	<Objective QuestName="Dar'khan's Lieutenants" QuestId="9170" Type="KillMob" MobId="16248" KillCount="1" />
+	<CustomBehavior File="InteractWith" QuestId="9164" QuestObjectiveIndex="1" InteractByGossipOptions="1,1,1" MobId="16208" NumOfTimes="100" X="6644.565" Y="-6343.801" Z="9.439247" />
+	<Objective QuestName="Dar'khan's Lieutenants" QuestId="9170" Type="KillMob" MobId="16250" KillCount="1" />
+	<Objective QuestName="Dar'khan's Lieutenants" QuestId="9170" Type="KillMob" MobId="16247" KillCount="1" />
+	<CustomBehavior File="InteractWith" QuestId="9164" QuestObjectiveIndex="2" InteractByGossipOptions="1,1,1" MobId="16206" NumOfTimes="100" X="6435.98" Y="-6621.437" Z="107.438" />
+	<Objective QuestName="Dar'khan's Lieutenants" QuestId="9170" Type="KillMob" MobId="16249" KillCount="1" />
+	<CustomBehavior File="InteractWith" QuestId="9164" QuestObjectiveIndex="3" InteractByGossipOptions="1,1,1" MobId="16209" NumOfTimes="100" X="6291.479" Y="-6363.143" Z="78.01933" />
+	
+	<Objective QuestName="The Traitor's Destruction" QuestId="9167" Type="CollectItem" ItemId="22653" CollectCount="1" />
+	<TurnIn QuestName="Dar'khan's Lieutenants" QuestId="9170" TurnInName="Magister Idonis" TurnInId="16204" />
+	<TurnIn QuestName="Captives at Deatholme" QuestId="9164" TurnInName="Arcanist Janeda" TurnInId="16240" />
+	<TurnIn QuestName="The Traitor's Destruction" QuestId="9167" TurnInName="Magister Kaendris" TurnInId="16239" />
+	
+	<If Condition="Me.Race == WoWRace.BloodElf" >
+		<PickUp QuestName="Hero of the Sin'dorei" QuestId="9328" GiverName="Magister Kaendris" GiverId="16239" />
+		<TurnIn QuestName="Hero of the Sin'dorei" QuestId="9328" TurnInName="Lor'themar Theron" TurnInId="16802" />
+		<PickUp QuestName="Envoy to the Horde" QuestId="9621" GiverName="Lor'themar Theron" GiverId="16802" />
+		<If Condition="HasQuest(9621)" >
+			<If Condition="Me.ZoneId == 3487 || Me.ZoneId == 3433 || Me.ZoneId == 3430" >
+				<CustomBehavior File="InteractWith" MobId="184502" WaitTime="10000" X="10009.28" Y="-7027.485" Z="50.13657" />
+			</If>
+			<TurnIn QuestName="Envoy to the Horde" QuestId="9621" TurnInName="Lady Sylvanas Windrunner" TurnInId="10181" />
+		</If>
+	<Else>
+		<PickUp QuestName="Friend of the Sin'dorei" QuestId="9811" GiverName="Magister Kaendris" GiverId="16239" />
+		<TurnIn QuestName="Friend of the Sin'dorei" QuestId="9811" TurnInName="Lor'themar Theron" TurnInId="16802" />
+	</Else>
+	</If>
+	
+	<CustomBehavior File="Message" Text="Ghostlands Memory Synchronized" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\EKMemBlock [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

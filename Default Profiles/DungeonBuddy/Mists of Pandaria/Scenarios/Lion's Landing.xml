@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Lion's Landing</Name>
+  <DungeonId>590</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="true" entry="67692" name="Thaumaturge Saresse" killOrder="1" optional="false" X="-968.5972" Y="-1047.11" Z="12.43452"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+
+  </PullBlackspots>
+</DungeonBuddyProfile>

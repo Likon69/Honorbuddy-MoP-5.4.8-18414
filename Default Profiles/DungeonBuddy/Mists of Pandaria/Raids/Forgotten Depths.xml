@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile xsi:noNamespaceSchemaLocation="../../DungeonbuddyProfile.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Forgotten Depths</Name>
+  <DungeonId>611</DungeonId>
+
+  <BossEncounters>
+    <Boss isFinal="false" entry="60708" name="Tortos" killOrder="1" optional="false" X="6054.889" Y="4935.637" Z="-61.18876" />
+    <Boss isFinal="false" entry="60709" name="Megaera" killOrder="2" optional="false" X="6435.174" Y="4546.373" Z="-209.2975" />
+    <Boss isFinal="true" entry="69712" name="Ji-Kun" killOrder="3" optional="false" X="6147.131" Y="4318.494" Z="-31.86258"/>
+  </BossEncounters>
+  <Blackspots>
+  </Blackspots>
+  <PullBlackspots>
+  </PullBlackspots>
+</DungeonBuddyProfile>

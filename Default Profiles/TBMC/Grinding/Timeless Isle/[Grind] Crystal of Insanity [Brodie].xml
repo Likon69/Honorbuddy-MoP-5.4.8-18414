@@ -1,0 +1,86 @@
+<HBProfile>
+	<Name>Crystal of Insanity Farm</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+		<Mob Name="Tushui Sentry" Entry="73361" /> <!-- Alliance Guards -->
+		<Mob Name="Huojin Sentry" Entry="73362" /> <!-- Horde Guards -->
+		<Mob Name="Elder Great Turtle" Entry="72765" />
+	</AvoidMobs>
+
+	<Blackspots>
+		<Blackspot X="-911.9672" Y="-4640.844" Z="4.998785" Radius="35" /> <!-- Alliance Camp -->
+		<Blackspot X="-416.3032" Y="-4604.876" Z="3.685226" Radius="40" /> <!-- Horde Camp -->
+		<Blackspot X="-752.384" Y="-5110.958" Z="2.069843" Radius="4.822655" />
+	</Blackspots>
+	
+	<Blacklist>
+		<Mob Name="Royal Bodyguard" Entry="73484" Flags="Pull" />
+		<Mob Name="Spotted Swarmer" Entry="72908" Flags="Pull" />
+		<Mob Name="High Priest of Ordos" Entry="72898" Flags="Pull" />
+		<Mob Name="Eternal Kilnmaster" Entry="72896" Flags="Pull" />
+		<Mob Name="Molten Guardian" Entry="72888" Flags="Pull" />
+		<Mob Name="Blazebound Chanter" Entry="72897" Flags="Pull" />
+	</Blacklist>
+
+	<Vendors>
+		<Vendor Name="Mama Stormstout" Entry="73649" Type="Food" X="-614.8577" Y="-4913.071" Z="2.056075" />
+		<Vendor Name="Brewmaster Tzu" Entry="73618" Type="Food" X="-512.4288" Y="-4946.128" Z="2.056667" />
+		<Vendor Name="Crafter Kwon" Entry="73656" Type="Repair" X="-511.3785" Y="-5008.741" Z="2.056738" />
+	</Vendors>
+	
+<QuestOrder>
+
+	<CustomBehavior File="RunMacro" Macro="/script SetCVar('AutoLootDefault', 1)" WaitTime="1000" />
+	<CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+	
+	<SetMailboxes>
+		<Mailbox Nav="Fly" UsableWhen="Me.IsAlliance" X="-908.8835" Y="-4635.785" Z="4.628042" />
+		<Mailbox Nav="Fly" UsableWhen="Me.IsHorde" X="-428.5745" Y="-4614.354" Z="4.3078" />
+	</SetMailboxes>
+	
+	<CustomBehavior File="Message" Text="Starting Crystal of Insanity Grind" LogColor="Green" />
+	
+	<If Condition="Me.ZoneId != 6757" >
+		<CustomBehavior File="FlyTo" X="-680.5806" Y="-4507.614" Z="0.1" />
+		<MoveTo X="-683.057" Y="-4819.213" Z="2.231921" />
+	</If>
+
+	<While Condition="!HasItem(86569)" >
+		<CustomBehavior File="InteractWith" MobId="222686" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" WaitTime="2000" CollectionDistance="200"
+			TerminateWhen="HasItem(86569)" >
+			<HuntingGrounds>
+				<Hotspot X="-380.3192" Y="-5147.709" Z="6.433185" />
+				<Hotspot X="-368.235" Y="-5214.807" Z="10.26647" />
+				<Hotspot X="-338.9068" Y="-5234.106" Z="-9.723372" />
+				<Hotspot X="-225.5555" Y="-5234.966" Z="-17.42379" />
+				<Hotspot X="-275.127" Y="-5103.096" Z="1.51701" />
+				<Hotspot X="-276.3883" Y="-5170.92" Z="17.14139" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</While>
+	
+	<CustomBehavior File="Message" Text="Item obtained, moving out of cave." LogColor="Orange" />
+	<MoveTo X="-650.81" Y="-4880.85" Z="2.06" />
+	
+</QuestOrder>
+</HBProfile>

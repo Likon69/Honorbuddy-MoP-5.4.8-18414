@@ -1,0 +1,298 @@
+<HBProfile xsi:noNamespaceSchemaLocation="../../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <!--
+        Original contribution by Hawker.
+        Details:
+        * This profile works up to the max level allowed for a toon (90, as of this writing).
+        * The profile will fly, if the toon is capable of such.
+        * The profile works for both factions, and may be started anywhere in Easter Kingdoms
+          or Kalimdor.
+    -->
+    
+    <Name>Hawker's Cenarion Circle Reputation Profile ($Rev: 3177 $)</Name>
+
+    <MinLevel>54</MinLevel>
+    <MaxLevel>1001</MaxLevel>
+
+    <MinDurability>0.3</MinDurability>
+    <MinFreeBagSlots>3</MinFreeBagSlots>
+
+    <!-- NB: Honorbuddy sells before mailing -->
+    <SellGrey>true</SellGrey>
+    <SellWhite>true</SellWhite>
+    <SellGreen>true</SellGreen>
+    <SellBlue>false</SellBlue>
+    <SellPurple>false</SellPurple>
+
+    <MailGrey>false</MailGrey>
+    <MailWhite>true</MailWhite>
+    <MailGreen>true</MailGreen>
+    <MailBlue>true</MailBlue>
+    <MailPurple>true</MailPurple>
+
+
+    <Blackspots>
+        <!-- Pillar at entrance to Silithus-->
+        <Blackspot X="-6532.299" Y="-542.1953" Z="-269.6691" Height="1" Radius="2" />
+        <!-- Hive'Zora Alliance Camp-->
+        <Blackspot X="-7157.741" Y="1417.392" Z="5.509088" Radius="45" />
+        <!-- Hive'Regal Horde Camp-->
+        <Blackspot X="-7595.551" Y="768.6691" Z="-17.59448" Radius="20" />
+    </Blackspots>
+
+
+    <QuestOrder>
+        <CustomBehavior File="Misc\ProfileCompatibilityInfo"
+            AllowBrokenAddOns="true" AllowBrokenPlugIns="true" />
+
+        <TargetingDistance Value="null" />
+
+        <!-- For toons that are on Eastern Kingdoms -->
+        <If Condition="Me.MapId == 0" >
+            <If Condition="CanFly()">
+                <CustomBehavior File="FlyTo" X="-14288.29" Y="549.3284" Z="8.689642" />
+            </If>
+            <MoveTo X="-14288.29" Y="549.3284" Z="8.689642" />
+
+            <!-- BB dock to Ratchet -->
+            <CustomBehavior File="UseTransport" TransportId="20808"
+                                        WaitAtX="-14280.88" WaitAtY="566.6268" WaitAtZ="6.979454"
+                                        TransportStartX="-14277.75" TransportStartY="582.8661" TransportStartZ="0.01553879"
+                                        StandOnX="-14270.46" StandOnY="579.9881" StandOnZ="6.088587"
+                                        TransportEndX="-1005.613" TransportEndY="-3841.648" TransportEndZ="0.03330701"
+                                        GetOffX="-996.8669" GetOffY="-3826.07" GetOffZ="5.536246" />
+        </If>
+
+
+        <PickUp Nav="Fly" QuestName="Twilight Geolords" QuestId="8320" GiverName="Huum Wildmane" GiverId="15270" X="-6825.453" Y="824.4618" Z="49.49794" />
+        <PickUp Nav="Fly" QuestName="Secret Communication" QuestId="8318" GiverName="Bor Wildmane" GiverId="15306" X="-6825.453" Y="824.4618" Z="49.49794" />
+        <Objective QuestName="Twilight Geolords" QuestId="8320" Type="KillMob" MobId="11881" KillCount="10" />
+        <Objective QuestName="Secret Communication" QuestId="8318" Type="CollectItem" ItemId="20404" CollectCount="10" />
+
+        <TurnIn Nav="Fly" QuestName="Secret Communication" QuestId="8318" TurnInName="Bor Wildmane" TurnInId="15306" />
+        <TurnIn Nav="Fly" QuestName="Twilight Geolords" QuestId="8320" TurnInName="Huum Wildmane" TurnInId="15270" />
+
+
+        <!-- Farming for Farming for Twilight Texts - 10 for each turnin -->
+        <While Condition="Me.GetReputationLevelWith(609) &lt; WoWUnitReaction.Exalted" >
+
+            <If Condition="GetItemCount(20404) &lt; 10" >
+                <If Condition="CanFly()">
+                    <CustomBehavior File="FlyTo" DestName="Staghelm Point" Land="true" X="-6320.698" Y="300.9105" Z="13.979" />
+                </If>
+                <SetGrindArea>
+                    <GrindArea>
+                        <TargetMinLevel>45</TargetMinLevel>
+                        <TargetMaxLevel>65</TargetMaxLevel>
+                        <Factions>16</Factions> <!-- [Twilights] -->
+                        <Hotspots>
+                            <Hotspot X="-6320.698" Y="300.9105" Z="13.979" />
+                            <Hotspot X="-6286.031" Y="30.159" Z="-10.57119" />
+                            <Hotspot X="-6443.08" Y="221.4986" Z="4.518787" />
+                        </Hotspots>
+                    </GrindArea>
+                </SetGrindArea>
+                <GrindTo Condition="GetItemCount(20404) &gt;= 10" GoalText="Getting 10 Encrypted Twilight Text." />
+				<!--
+				<CustomBehavior File="DeleteItems" Ids="20406, 20407, 20408" />
+				-->
+            </If>
+
+            <If Condition="GetItemCount(20404) &lt; 20" >
+                <If Condition="CanFly()">
+                    <CustomBehavior File="FlyTo" DestName="Twilight Base Camp" Land="true" X="-6915.267" Y="1152.079" Z="2.841989" />
+                </If>
+                <SetGrindArea>
+                    <GrindArea>
+                        <TargetMinLevel>45</TargetMinLevel>
+                        <TargetMaxLevel>65</TargetMaxLevel>
+                        <Factions>16</Factions> <!-- [Twilights] -->
+                        <Hotspots>
+                            <Hotspot X="-7076.695" Y="1141.456" Z="4.160188" />
+                            <Hotspot X="-6995.52" Y="1259.741" Z="0.1039294" />
+                            <Hotspot X="-6915.267" Y="1152.079" Z="2.841989" />
+                        </Hotspots>
+                    </GrindArea>
+                </SetGrindArea>
+                <GrindTo Condition="GetItemCount(20404) &gt;= 20" GoalText="Getting 20 Encrypted Twilight Text." />
+            </If>
+
+            <If Condition="GetItemCount(20404) &lt; 30" >
+                <If Condition="CanFly()">
+                    <CustomBehavior File="FlyTo" DestName="Twilight Outpost" Land="true" X="-7839.408" Y="1838.146" Z="4.190873" />
+                </If>
+                <SetGrindArea>
+                    <GrindArea>
+                        <TargetMinLevel>45</TargetMinLevel>
+                        <TargetMaxLevel>65</TargetMaxLevel>
+                        <Factions>16</Factions> <!-- [Twilights] -->
+                        <Hotspots>
+                            <Hotspot X="-7839.408" Y="1838.146" Z="4.190873" />
+                            <Hotspot X="-7991.599" Y="1970.619" Z="6.466719" />
+                            <Hotspot X="-7943.687" Y="1759.027" Z="-2.132666" />
+                            <Hotspot X="-7919.254" Y="1965.546" Z="5.663015" />
+                        </Hotspots>
+                    </GrindArea>
+                </SetGrindArea>
+                <GrindTo Condition="GetItemCount(20404) &gt;= 30" GoalText="Getting 30 Encrypted Twilight Text." />
+            </If>
+
+            <If Condition="CanFly()">
+                <CustomBehavior File="FlyTo" Land="true" DestName="Cenarion Hold" X="-6822.05" Y="829.7651" Z="49.46407" />
+            </If>
+            <MoveTo DestName="Cenarion Hold" X="-6822.05" Y="829.7651" Z="49.46407" />
+
+            <While Condition="( GetItemCount(20404) &gt;= 10 ) &amp;&amp; ( Me.GetReputationLevelWith(609) &lt; WoWUnitReaction.Exalted )" >
+                <CustomBehavior File="InteractWith"  MobId="15306" CollectionDistance="50" WaitTime="1000" X="-6836.007" Y="845.5305" Z="48.99781" />
+                <CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+                <CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteButton" WaitTime="1000" />
+                <CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" WaitTime="1000" />
+                <CustomBehavior File="WaitTimer" WaitTime="3000" />
+
+                <While Condition="HasItem(20768)" >
+                    <!-- Oozing Bag -->
+                    <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(20768)" WaitTime="1000" />
+                    <CustomBehavior File="WaitTimer" WaitTime="1000" GoalText="Waiting for Oozing Bag loot {TimeRemaining}" />
+                </While>
+
+                <While Condition="HasItem(20767)" >
+                    <!-- Scum Covered Bag -->
+                    <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(20767)" WaitTime="1000" />
+                    <CustomBehavior File="WaitTimer" WaitTime="1000" GoalText="Waiting for Scum Covered Bag loot {TimeRemaining}" />
+                </While>
+
+                <!-- We might have Brann Bronzebeard's Lost Letter by now -->
+                <If Condition="HasItem(20461)" >
+                    <PickUp QuestName="Brann Bronzebeard's Lost Letter" QuestId="8308" GiverName="Brann Bronzebeard's Lost Letter" GiverId="20461" GiverType="Item" />
+                </If>
+
+                <If Condition="HasQuest(8308)" >
+                    <CustomBehavior File="Message" Text="Moving to turn in 'Brann Bronzebeard's Lost Letter'" LogColor="Green" />
+                    <MoveTo X="-8022.499" Y="1115.789" Z="2.738349" />
+                    <TurnIn QuestName="Brann Bronzebeard's Lost Letter" QuestId="8308" TurnInName="Rutgar Glyphshaper" TurnInId="15170" X="-8013.063" Y="1099.647" Z="4.636414" />
+                </If>
+
+            </While>
+			<CustomBehavior File="ForceSetVendor" DoMail="True" DoSell="True" DoRepair="True" />
+        </While>
+
+        <If Condition="GetItemCount(20404) &lt; 20" >
+            <If Condition="CanFly()">
+                <CustomBehavior File="FlyTo" DestName="Twilight Outpost" Land="true" X="-7839.408" Y="1838.146" Z="4.190873" />
+            </If>
+            <CustomBehavior File="UserSettings" PullDistance="35" />
+            <SetGrindArea>
+                <GrindArea>
+                    <TargetMinLevel>45</TargetMinLevel>
+                    <TargetMaxLevel>65</TargetMaxLevel>
+                    <Factions>16</Factions> <!-- [Twilights] -->
+                    <Hotspots>
+                        <Hotspot X="-7839.408" Y="1838.146" Z="4.190873" />
+                        <Hotspot X="-7991.599" Y="1970.619" Z="6.466719" />
+                        <Hotspot X="-7943.687" Y="1759.027" Z="-2.132666" />
+                        <Hotspot X="-7919.254" Y="1965.546" Z="5.663015" />
+                    </Hotspots>
+                </GrindArea>
+            </SetGrindArea>
+            <GrindTo Condition="GetItemCount(20404) &gt;= 20" GoalText="Getting 20 more texts to get to 999/1000 Exalted." />
+        </If>
+
+        <If Condition="CanFly()">
+            <CustomBehavior File="FlyTo" DestName="The Inn at Cenarion Hold" Land="true" X="-6867.857" Y="730.6714" Z="45.66279" />
+        </If>
+        <MoveTo DestName="The Inn at Cenarion Hold" X="-6867.857" Y="730.6714" Z="45.66279" />
+        <While Condition="HasItem(20768)" >
+            <!-- Oozing Bag -->
+            <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(20768)" WaitTime="1000" />
+            <CustomBehavior File="WaitTimer" WaitTime="1000" GoalText="Waiting for Oozing Bag loot {TimeRemaining}" />
+        </While>
+
+        <While Condition="HasItem(20767)" >
+            <!-- Scum Covered Bag -->
+            <CustomBehavior File="Misc\RunLua" Lua="UseItemByName(20767)" WaitTime="1000" />
+            <CustomBehavior File="WaitTimer" WaitTime="1000" GoalText="Waiting for Scum Covered Bag loot {TimeRemaining}" />
+        </While>
+
+
+        <CustomBehavior File="Message" Text="All done in Silithus." LogColor="Yellow" />
+        <CustomBehavior File="Halt" CloseWoW="true" />
+    </QuestOrder>
+
+    <!--Quest Overrides-->
+    <Quest Name="Twilight Geolords" Id="8320" >
+        <Objective Type="KillMob" MobId="11881" MobName="Twilight Geolord" KillCount="10">
+            <Hotspots>
+                <Hotspot X="-7035.473" Y="1099.451" Z="5.219384" />
+                <Hotspot X="-6926.106" Y="1249.856" Z="5.20635" />
+                <Hotspot X="-6943.58" Y="1094.687" Z="1.608419" />
+                <Hotspot X="-7059.649" Y="1210.637" Z="0.3497658" />
+                <Hotspot X="-7827.51" Y="1926.173" Z="5.640767" />
+                <Hotspot X="-7972.875" Y="1806.636" Z="2.405842" />
+                <Hotspot X="-7948.423" Y="1946.38" Z="6.90883" />
+                <Hotspot X="-6800.691" Y="1620.447" Z="3.199211" />
+                <Hotspot X="-6839.785" Y="1689.428" Z="-0.01458124" />
+                <Hotspot X="-6748.827" Y="1695.199" Z="2.267287" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="8318" Name="Secret Communication">
+        <Objective Type="CollectItem" ItemId="20404" CollectCount="10">
+            <Hotspots>
+                <Hotspot X="-7035.473" Y="1099.451" Z="5.219384" />
+                <Hotspot X="-6926.106" Y="1249.856" Z="5.20635" />
+                <Hotspot X="-6943.58" Y="1094.687" Z="1.608419" />
+                <Hotspot X="-7059.649" Y="1210.637" Z="0.3497658" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="DummyKillMob" Id="123456" >
+        <Objective Type="KillMob" MobId="1" MobName="Mob" KillCount="1">
+            <Hotspots>
+                <Hotspot X="1" Y="1" Z="1" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="DummyCollectfromMob" Id="123456" >
+        <Objective Type="CollectItem" ItemId="1" ItemName="Item" CollectCount="1">
+            <CollectFrom>
+                <Mob Name="Mob"  Id="1" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="1" Y="1" Z="1" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Name="DummyCollectfromGameObject" Id="123456" >
+        <Objective Type="CollectItem" ItemId="1" ItemName="Item" CollectCount="1">
+            <CollectFrom>
+                <Object Name="GameObject" Id="1"/>
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="1" Y="1" Z="1" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+
+    <Vendors>
+        <Vendor Nav="Fly" Name="Krinkle Goodsteel" Id="5411" Type="Repair" X="-7232.01" Y="-3751.71" Z="9.093862" />
+        <Vendor Nav="Fly" Name="Gibbert" Id="3000" Type="Repair" X="-7491.394" Y="-1501.245" Z="-266.0465" />
+        <Vendor Nav="Fly" Name="Vargus" Id="15176" Type="Repair" X="-6860.931" Y="753.0439" Z="42.47247" />
+    </Vendors>
+
+    
+    <Mailboxes>
+        <!-- Cenarion Hold -->
+        <Mailbox Nav="Fly" X="-6838.836" Y="734.1841" Z="42.18411" />
+    </Mailboxes>
+
+
+    <Blacklist>
+        <Mob Name="Covert Ops Pounder" Id="38649" Flags="Combat, Pull, Interact" />
+    </Blacklist>
+
+</HBProfile>

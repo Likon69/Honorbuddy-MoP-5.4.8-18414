@@ -1,0 +1,59 @@
+<HBProfile xsi:noNamespaceSchemaLocation="../../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- Originally contributed by Kickazz006 -->
+    <Name>[A - Quest] 1-12 Auto-Loader [Kick] ($Rev: 3162 $)</Name>
+
+    <QuestOrder>
+        <!-- BEGIN: Checkpoint Block
+             This code needs to be replicated after every checkpoint.
+             If you modify something in this block, don't forget to update the copy of this
+             block after each checkpoint, and the at the start of the <QuestOrder>, also.
+        -->
+        <CustomBehavior File="Misc\RunLua" Lua="SetCVar('AutoLootDefault', 1)" />
+        <CustomBehavior File="UserSettings" AutoEquip="true" />
+
+        <CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+        <CustomBehavior File="EnablePlugin" Names="Questhelper - ItemForAura" />
+        <CustomBehavior File="EnablePlugin" Names="Refreshment Detection" />
+
+        <CustomBehavior File="Misc\ProfileCompatibilityInfo" AllowBrokenAddOns="true" AllowBrokenPlugIns="true" />
+
+        <LootMobs Value="true" />
+        <TargetingDistance Value="null" />    <!-- Use LevelBot default -->
+        <UseMount Value="true" />
+        <!-- END: Checkpoint Block -->
+
+        <CustomBehavior File="UserDialog" AllowBotStop="false" SoundCue="Exclamation" SoundCueInterval="15"
+                        ExpiryTime="30" ExpiryAction="InputEnabled_Continue"
+                        Text="For new toons, be certain to configure your toon spec, auto-equip, and talent choices in Honorbuddy.\n\nIf you have money - set food and drinks as well\n\nYou may also want to set a mail recipient! (Settings and Tools Button)" />
+
+        <If Condition="Me.Race == WoWRace.Draenei">
+            <CustomBehavior File="LoadProfile" ProfileName="[A - Quest] 1-12 [Kick]\[A - Quest] Draenei 1-5 [Kick]" RememberProfile="true" />
+        </If>
+
+        <If Condition="Me.Race == WoWRace.Dwarf">
+            <CustomBehavior File="LoadProfile" ProfileName="[A - Quest] 1-12 [Kick]\[A - Quest] Dwarf 1-5 [Kick]" RememberProfile="true" />
+        </If>
+
+        <If Condition="Me.Race == WoWRace.Gnome">
+            <CustomBehavior File="LoadProfile" ProfileName="[A - Quest] 1-12 [Kick]\[A - Quest] Gnome 1-5 [Kick]" RememberProfile="true" />
+        </If>
+
+        <If Condition="Me.Race == WoWRace.Human">
+            <CustomBehavior File="LoadProfile" ProfileName="[A - Quest] 1-12 [Kick]\[A - Quest] Human 1-5 [Kick]" RememberProfile="true" />
+        </If>
+
+        <If Condition="Me.Race == WoWRace.NightElf">
+            <CustomBehavior File="LoadProfile" ProfileName="[A - Quest] 1-12 [Kick]\[A - Quest] Night Elf 1-5 [Kick]" RememberProfile="true" />
+        </If>
+
+        <If Condition="Me.Race == WoWRace.Pandaren">
+            <CustomBehavior File="LoadProfile" ProfileName="[A - Quest] 1-12 [Kick]\[A - Quest] Panda 1-12 [Kick]" RememberProfile="true" />
+        </If>
+
+        <If Condition="Me.Race == WoWRace.Worgen" >
+            <CustomBehavior File="LoadProfile" ProfileName="[A - Quest] 1-12 [Kick]\[A - Quest] Worgen 1-12 [Kick]" RememberProfile="true" />
+        </If>
+
+    </QuestOrder>
+
+</HBProfile>

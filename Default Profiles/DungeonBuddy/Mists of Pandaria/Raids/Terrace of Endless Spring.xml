@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile xsi:noNamespaceSchemaLocation="../../DungeonbuddyProfile.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Terrace of Endless Spring</Name>
+  <DungeonId>526</DungeonId>
+
+  <BossEncounters>
+    <Boss isFinal="false" entry="60583" name="Protector Kaolan" killOrder="1" optional="false" X="-1017.872" Y="-3058.726" Z="12.82395"/>
+    <Boss isFinal="false" entry="60585" name="Elder Regail" killOrder="1" optional="false" X="-1009.938" Y="-3045.016" Z="12.82397"/>
+    <Boss isFinal="false" entry="60586" name="Elder Asani" killOrder="1" optional="false" X="-1025.783" Y="-3044.844" Z="12.82385"/>
+
+    <Boss isFinal="false" entry="62442" name="Tsulong" killOrder="2" optional="false" X="-1017.988" Y="-3049.625" Z="12.82386"/>
+
+    <Boss isFinal="false" entry="62983" name="Lei Shi" killOrder="3" optional="false" X="-1017.93" Y="-2911.302" Z="19.81817"/>
+    <Boss isFinal="true" entry="60999" name="Sha of Fear" killOrder="4" optional="false" X="-1017.885" Y="-2758.34" Z="38.57111"/>
+  </BossEncounters>
+
+  <Blackspots>
+
+  </Blackspots>
+  <PullBlackspots>
+  </PullBlackspots>
+</DungeonBuddyProfile>

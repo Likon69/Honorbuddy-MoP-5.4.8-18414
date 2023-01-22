@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfessionBuddy", "ProfessionBuddy.csproj", "{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E0206E55-5441-4978-AA5B-D69358E48437} = {E0206E55-5441-4978-AA5B-D69358E48437}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BehaviorTree", "UberBehaviorTree\BehaviorTree.csproj", "{E0206E55-5441-4978-AA5B-D69358E48437}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug - Highvoltz|Any CPU = Debug - Highvoltz|Any CPU
+		Debug - Highvoltz|Mixed Platforms = Debug - Highvoltz|Mixed Platforms
+		Debug - Highvoltz|x86 = Debug - Highvoltz|x86
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}.Debug - Highvoltz|Any CPU.ActiveCfg = Debug - Highvoltz|x86
+		{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}.Debug - Highvoltz|Mixed Platforms.ActiveCfg = Debug - Highvoltz|x86
+		{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}.Debug - Highvoltz|Mixed Platforms.Build.0 = Debug - Highvoltz|x86
+		{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}.Debug - Highvoltz|x86.ActiveCfg = Debug - Highvoltz|x86
+		{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}.Debug - Highvoltz|x86.Build.0 = Debug - Highvoltz|x86
+		{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}.Debug|x86.ActiveCfg = Debug|x86
+		{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}.Debug|x86.Build.0 = Debug|x86
+		{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}.Release|Any CPU.ActiveCfg = Release|x86
+		{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}.Release|Mixed Platforms.Build.0 = Release|x86
+		{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}.Release|x86.ActiveCfg = Release|x86
+		{F2B81CCA-6ABB-4AFF-A4A0-B13963668802}.Release|x86.Build.0 = Release|x86
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Debug - Highvoltz|Any CPU.ActiveCfg = Debug - Highvoltz|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Debug - Highvoltz|Any CPU.Build.0 = Debug - Highvoltz|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Debug - Highvoltz|Mixed Platforms.ActiveCfg = Debug - Highvoltz|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Debug - Highvoltz|Mixed Platforms.Build.0 = Debug - Highvoltz|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Debug - Highvoltz|x86.ActiveCfg = Debug - Highvoltz|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Debug - Highvoltz|x86.Build.0 = Debug - Highvoltz|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Debug|x86.Build.0 = Debug|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Release|x86.ActiveCfg = Release|Any CPU
+		{E0206E55-5441-4978-AA5B-D69358E48437}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,734 @@
+<HBProfile>
+
+	<Name>Western Plaguelands ($Rev$)</Name>
+	<MinLevel>30</MinLevel>
+	<MaxLevel>45</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+		<Blackspot X="964.3961" Y="-1415.185" Z="67.21433" Radius="1.296551" />
+	</Blackspots>
+	
+	<Blacklist>
+		<Mob Name="Stickbone Berserker" Entry="44329" Flags="Pull" />
+		<Mob Name="Provincial Minuteman" Entry="44944" Flags="Pull" />
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Name="Scourge First... Horde Later" Id="27159" >
+	<Objective Type="KillMob" MobId="44574" KillCount="15" >
+		<Hotspots>
+			<Hotspot X="1396.71" Y="-1408.371" Z="55.56348" />
+			<Hotspot X="1343.287" Y="-1444.334" Z="52.50087" />
+			<Hotspot X="1357.024" Y="-1471.323" Z="56.80576" />
+			<Hotspot X="1326.994" Y="-1380.353" Z="45.99244" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="War Machines" Id="27160" >
+	<Objective Type="KillMob" MobId="44562" KillCount="6" >
+		<Hotspots>
+			<Hotspot X="1396.71" Y="-1408.371" Z="55.56348" />
+			<Hotspot X="1343.287" Y="-1444.334" Z="52.50087" />
+			<Hotspot X="1357.024" Y="-1471.323" Z="56.80576" />
+			<Hotspot X="1326.994" Y="-1380.353" Z="45.99244" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Scourge First... Alliance Later" Id="26921" >
+	<Objective Type="KillMob" MobId="44574" KillCount="15" >
+		<Hotspots>
+			<Hotspot X="1396.71" Y="-1408.371" Z="55.56348" />
+			<Hotspot X="1343.287" Y="-1444.334" Z="52.50087" />
+			<Hotspot X="1357.024" Y="-1471.323" Z="56.80576" />
+			<Hotspot X="1326.994" Y="-1380.353" Z="45.99244" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="War Machines" Id="26923" >
+	<Objective Type="KillMob" MobId="44562" KillCount="6" >
+		<Hotspots>
+			<Hotspot X="1396.71" Y="-1408.371" Z="55.56348" />
+			<Hotspot X="1343.287" Y="-1444.334" Z="52.50087" />
+			<Hotspot X="1357.024" Y="-1471.323" Z="56.80576" />
+			<Hotspot X="1326.994" Y="-1380.353" Z="45.99244" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Latent Disease" Id="26934" >
+	<Objective Type="CollectItem" ItemId="60679" CollectCount="20" >
+		<CollectFrom>
+			<Mob Name="Diseased Black Bear" Entry="1815" />
+			<GameObject Name="Plague Tangle" Entry="205060" />
+		</CollectFrom>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+	
+	<If Condition="(!HasQuest(27159) &amp;&amp; !IsQuestCompleted(27159)) &amp;&amp; (!HasQuest(26921) &amp;&amp; !IsQuestCompleted(26921))" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Western Plaguelands Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Andorhal Quests" LogColor="CornflowerBlue" />
+	
+	<If Condition="Me.IsAlliance" >
+		<PickUp QuestName="Scourge First... Horde Later" QuestId="27159" GiverName="Thassarian" GiverId="44453" />
+		<PickUp QuestName="War Machines" QuestId="27160" GiverName="Lurid" GiverId="44471" />
+		<PickUp QuestName="The Endless Flow" QuestId="27161" GiverName="Lang Loosegrip" GiverId="44467" />
+	<Else>
+		<PickUp QuestName="Scourge First... Alliance Later" QuestId="26921" GiverName="Koltira Deathweaver" GiverId="44452" />
+		<PickUp QuestName="War Machines" QuestId="26923" GiverName="Lindsay Ravensun" GiverId="44466" />
+		<PickUp QuestName="The Endless Flow" QuestId="26922" GiverName="Jearl Donald" GiverId="44462" />
+	</Else>
+	</If>
+	
+	<If Condition="Me.IsAlliance" >
+		<CustomBehavior File="Hooks\TheEndlessFlowHook" />
+	<Else>
+		<CustomBehavior File="Hooks\TheEndlessFlowHook-Horde" />
+	</Else>
+	</If>
+	
+	<DisableBehavior Name="Pull" />
+	<While Condition="HasQuest(27161) &amp;&amp; !IsQuestCompleted(27161)" >
+		<RunTo X="1404.302" Y="-1372.374" Z="53.94452" />
+		<DisableBehavior Name="Combat" />
+		<RunTo X="1453.76" Y="-1389.88" Z="62.24825" />
+		<RunTo X="1411.516" Y="-1363.721" Z="58.78331" />
+		<EnableBehavior Name="Combat" />
+	</While>
+	<While Condition="HasQuest(26922) &amp;&amp; !IsQuestCompleted(26922)" >
+		<RunTo X="1540.125" Y="-1536.902" Z="61.28788" />
+		<DisableBehavior Name="Combat" />
+		<RunTo X="1556.911" Y="-1475.652" Z="68.39574" />
+		<RunTo X="1540.125" Y="-1536.902" Z="61.28788" />
+		<EnableBehavior Name="Combat" />
+	</While>
+	<EnableBehavior Name="Pull" />
+	
+	<If Condition="Me.IsAlliance" >
+		<Objective QuestName="Scourge First... Horde Later" QuestId="27159" Type="KillMob" MobId="44574" KillCount="15" />
+		<Objective QuestName="War Machines" QuestId="27160" Type="KillMob" MobId="44562" KillCount="6" />
+		<TurnIn QuestName="The Endless Flow" QuestId="27161" TurnInName="Lang Loosegrip" TurnInId="44467" />
+		<TurnIn QuestName="Scourge First... Horde Later" QuestId="27159" TurnInName="Thassarian" TurnInId="44453" />
+		<TurnIn QuestName="War Machines" QuestId="27160" TurnInName="Lurid" TurnInId="44471" />
+	<Else>
+		<Objective QuestName="Scourge First... Alliance Later" QuestId="26921" Type="KillMob" MobId="44574" KillCount="15" />
+		<Objective QuestName="War Machines" QuestId="26923" Type="KillMob" MobId="44562" KillCount="6" />
+		<TurnIn QuestName="The Endless Flow" QuestId="26922" TurnInName="Jearl Donald" TurnInId="44462" />
+		<TurnIn QuestName="Scourge First... Alliance Later" QuestId="26921" TurnInName="Koltira Deathweaver" TurnInId="44452" />
+		<TurnIn QuestName="War Machines" QuestId="26923" TurnInName="Lindsay Ravensun" TurnInId="44466" />
+	</Else>
+	</If>
+	
+	<If Condition="Me.IsAlliance" >
+		<DisableBehavior Name="Pull, Combat" />
+		<PickUp QuestName="Araj the Summoner" QuestId="27164" GiverName="Lang Loosegrip" GiverId="44467" />
+		<CustomBehavior File="Hooks\TheEndlessFlowHook" />
+		<PickUp QuestName="Scholomancer" QuestId="27162" GiverName="Thassarian" GiverId="44453" />
+		<PickUp QuestName="Brute Strength" QuestId="27163" GiverName="Thassarian" GiverId="44453" />
+		<EnableBehavior Name="Pull, Combat" />
+		<If Condition="HasQuest(27164) &amp;&amp; !IsQuestCompleted(27164)" >
+			<MoveTo X="1381.563" Y="-1554.551" Z="58.88749" />
+			<CustomBehavior File="27164-ArajTheSummoner" />
+			<While Condition="HasQuest(27164) &amp;&amp; !IsQuestCompleted(27164)" >
+				<CustomBehavior File="InteractWith" QuestId="27164" MobId="177241" ProactiveCombatStrategy="NoClear" WaitTime="2000"
+					NonCompeteDistance="0" NumOfTimes="100" TerminateWhen="Me.Combat" X="1381.224" Y="-1552.654" Z="58.81734" />
+				<If Condition="!HasItem(60849)" >
+					<CustomBehavior File="AbandonQuest" QuestId="27164" />
+					<PickUp QuestName="Araj the Summoner" QuestId="27164" GiverName="Lang Loosegrip" GiverId="44467" />
+				</If>
+			</While>
+		</If>
+		<Objective QuestName="Scholomancer" QuestId="27162" Type="KillMob" MobId="44323" KillCount="1" />
+		<Objective QuestName="Brute Strength" QuestId="27163" Type="KillMob" MobId="44318" KillCount="1" />
+		<TurnIn QuestName="Araj the Summoner" QuestId="27164" TurnInName="Thassarian" TurnInId="44453" />
+		<TurnIn QuestName="Scholomancer" QuestId="27162" TurnInName="Thassarian" TurnInId="44453" />
+		<TurnIn QuestName="Brute Strength" QuestId="27163" TurnInName="Thassarian" TurnInId="44453" />
+	<Else>
+		<DisableBehavior Name="Pull, Combat" />
+		<PickUp QuestName="Araj the Summoner" QuestId="26925" GiverName="Jearl Donald" GiverId="44462" />
+		<CustomBehavior File="Hooks\TheEndlessFlowHook-Horde" />
+		<PickUp QuestName="Scholomancer" QuestId="26924" GiverName="Koltira Deathweaver" GiverId="44452" />
+		<PickUp QuestName="Brute Strength" QuestId="27117" GiverName="Koltira Deathweaver" GiverId="44452" />
+		<EnableBehavior Name="Pull, Combat" />
+		<If Condition="HasQuest(26925) &amp;&amp; !IsQuestCompleted(26925)" >
+			<MoveTo X="1381.563" Y="-1554.551" Z="58.88749" />
+			<CustomBehavior File="26925-ArajTheSummoner" />
+			<While Condition="HasQuest(26925) &amp;&amp; !IsQuestCompleted(26925)" >
+				<CustomBehavior File="InteractWith" QuestId="26925" MobId="177241" ProactiveCombatStrategy="NoClear" WaitTime="2000"
+					NonCompeteDistance="0" NumOfTimes="100" TerminateWhen="Me.Combat" X="1381.224" Y="-1552.654" Z="58.81734" />
+				<If Condition="!HasItem(60678)" >
+					<CustomBehavior File="AbandonQuest" QuestId="26925" />
+					<PickUp QuestName="Araj the Summoner" QuestId="26925" GiverName="Jearl Donald" GiverId="44462" />
+				</If>
+			</While>
+		</If>
+		<Objective QuestName="Scholomancer" QuestId="26924" Type="KillMob" MobId="44323" KillCount="1" />
+		<Objective QuestName="Brute Strength" QuestId="27117" Type="KillMob" MobId="44318" KillCount="1" />
+		<TurnIn QuestName="Araj the Summoner" QuestId="26925" TurnInName="Koltira Deathweaver" TurnInId="44452" X="1498.931" Y="-1639.688" Z="66.30856" />
+		<TurnIn QuestName="Scholomancer" QuestId="26924" TurnInName="Koltira Deathweaver" TurnInId="44452" X="1498.931" Y="-1639.688" Z="66.30856" />
+		<TurnIn QuestName="Brute Strength" QuestId="27117" TurnInName="Koltira Deathweaver" TurnInId="44452" X="1498.931" Y="-1639.688" Z="66.30856" />
+	</Else>
+	</If>
+	
+	<If Condition="Me.IsAlliance" >
+		<PickUp QuestName="Victory, For Now" QuestId="27165" GiverName="Thassarian" GiverId="44453" />
+		<TurnIn QuestName="Victory, For Now" QuestId="27165" TurnInName="Commander Ashlam Valorfist" TurnInId="10838" />
+	<Else>
+		<PickUp QuestName="Victory, For Now" QuestId="26926" GiverName="Koltira Deathweaver" GiverId="44452" />
+		<TurnIn QuestName="Victory, For Now" QuestId="26926" TurnInName="High Executor Derrington" TurnInId="10837" />
+	</Else>
+	</If>
+	
+	<If Condition="Me.IsAlliance" >
+		<CustomBehavior File="Message" Text="Compiling Chillwind Camp Quests" LogColor="CornflowerBlue" />
+		
+		<PickUp QuestName="Go Fletch!" QuestId="27166" GiverName="Commander Ashlam Valorfist" GiverId="10838" />
+		<PickUp QuestName="A Mighty Hunger" QuestId="27167" GiverName="Thurman Grant" GiverId="45165" />
+		<Objective QuestName="Go Fletch!" QuestId="27166" Type="CollectItem" ItemId="60850" CollectCount="9" />
+		<Objective QuestName="A Mighty Hunger" QuestId="27167" Type="CollectItem" ItemId="60851" CollectCount="5" />
+		<TurnIn QuestName="Go Fletch!" QuestId="27166" TurnInName="Commander Ashlam Valorfist" TurnInId="10838" />
+		<TurnIn QuestName="A Mighty Hunger" QuestId="27167" TurnInName="Thurman Grant" TurnInId="45165" />
+		
+		<PickUp QuestName="Uther's Blessing" QuestId="27169" GiverName="Commander Ashlam Valorfist" GiverId="10838" />
+		<PickUp QuestName="Those That Couldn't Let Go" QuestId="27168" GiverName="High Priestess MacDonnell" GiverId="11053" />
+		<CustomBehavior File="InteractWith" QuestId="27168" MobId="45166" InteractByUsingItemId="60861" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NonCompeteDistance="0" Range="25" NumOfTimes="1000" WaitTime="2000" X="1106.992" Y="-1728.988" Z="62.07987" />
+		<CustomBehavior File="InteractWith" QuestId="27169" MobId="181653" InteractByUsingItemId="61920" Range="5" WaitTime="2000"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" NumOfTimes="100" X="975.7527" Y="-1823.753" Z="81.07993" />
+		<TurnIn QuestName="Uther's Blessing" QuestId="27169" TurnInName="High Priest Thel'danis" TurnInId="1854" />
+		
+		<PickUp QuestName="The Abandoned Crypt" QuestId="27170" GiverName="High Priest Thel'danis" GiverId="1854" />
+		<TurnIn QuestName="The Abandoned Crypt" QuestId="27170" TurnInName="Broken Weapons Crate" TurnInId="205258" 
+			TurnInType="Object" X="1060.892" Y="-1900.757" Z="30.82498" />
+			
+		<PickUp QuestName="Ambushed!" QuestId="27171" GiverName="Broken Weapons Crate" GiverId="205258"
+			GiverType="Object" X="1060.892" Y="-1900.757" Z="30.82498" />
+		<Objective QuestName="Ambushed!" QuestId="27171" Type="CollectItem" ItemId="60863" CollectCount="4" />
+		<Objective QuestName="Ambushed!" QuestId="27171" Type="CollectItem" ItemId="60864" CollectCount="4" />
+		<TurnIn QuestName="Those That Couldn't Let Go" QuestId="27168" TurnInName="High Priestess MacDonnell" TurnInId="11053" />
+		<TurnIn QuestName="Ambushed!" QuestId="27171" TurnInName="Commander Ashlam Valorfist" TurnInId="10838" />
+		
+		<PickUp QuestName="The Writhing Haunt" QuestId="27172" GiverName="Commander Ashlam Valorfist" GiverId="10838" />
+		<TurnIn QuestName="The Writhing Haunt" QuestId="27172" TurnInName="Thurman Grant" TurnInId="45165" />
+	<Else>
+		<CustomBehavior File="Message" Text="Compiling The Bulwark Quests" LogColor="CornflowerBlue" />
+		
+		<PickUp QuestName="After the Crusade" QuestId="26930" GiverName="High Executor Derrington" GiverId="10837" />
+		<PickUp QuestName="Latent Disease" QuestId="26934" GiverName="Apothecary Dithers" GiverId="11057" />
+		<PickUp QuestName="Foxes and Hounds" QuestId="26931" GiverName="Shadow Priestess Vandis" GiverId="11055" />
+		
+		<While Condition="HasQuest(26930) &amp;&amp; !IsQuestCompleted(26930)" >
+			<MoveTo X="1871.101" Y="-1329.881" Z="60.12513" />
+		</While>
+		
+		<Objective QuestName="Foxes and Hounds" QuestId="26931" Type="KillMob" MobId="44432" KillCount="4" />
+		<Objective QuestName="Foxes and Hounds" QuestId="26931" Type="KillMob" MobId="44476" KillCount="4" />
+		<Objective QuestName="Foxes and Hounds" QuestId="26931" Type="KillMob" MobId="44474" KillCount="4" />
+		<Objective QuestName="Latent Disease" QuestId="26934" Type="CollectItem" ItemId="60679" CollectCount="20" />
+		
+		<DisableBehavior Name="Pull, Combat" />
+		<TurnIn QuestName="Foxes and Hounds" QuestId="26931" TurnInName="Shadow Priestess Vandis" TurnInId="11055" />
+		<PickUp QuestName="Foes Before Hoes" QuestId="26933" GiverName="Shadow Priestess Vandis" GiverId="11055" />
+		<TurnIn QuestName="Latent Disease" QuestId="26934" TurnInName="Apothecary Dithers" TurnInId="11057" />
+		<PickUp QuestName="Who Needs Cauldrons?" QuestId="26978" GiverName="Apothecary Dithers" GiverId="11057" />
+		<TurnIn QuestName="After the Crusade" QuestId="26930" TurnInName="High Executor Derrington" TurnInId="10837" />
+		<EnableBehavior Name="Pull, Combat" />
+		
+		<!-- Need 4 InteractWiths or MoveTo/LuaUseItems for this -->
+		<If Condition="HasQuest(26978) &amp;&amp; !IsObjectiveComplete(1,26978)" >
+			<MoveTo X="1747.276" Y="-1184.559" Z="59.81129" />
+			<CustomBehavior File="InteractWith" QuestId="26978" QuestObjectiveIndex="1" MobIdIncludesSelf="True" InteractByUsingItemId="60753" NonCompeteDistance="0"
+				ProactiveCombatStrategy="ClearMobsTargetingUs" />
+		</If>
+		<If Condition="HasQuest(26978) &amp;&amp; !IsObjectiveComplete(2,26978)" >
+			<MoveTo X="1798.644" Y="-1170.451" Z="59.70759" />
+			<CustomBehavior File="InteractWith" QuestId="26978" QuestObjectiveIndex="2" MobIdIncludesSelf="True" InteractByUsingItemId="60753" NonCompeteDistance="0"
+				ProactiveCombatStrategy="ClearMobsTargetingUs" />
+		</If>
+		<If Condition="HasQuest(26978) &amp;&amp; !IsObjectiveComplete(3,26978)" >
+			<MoveTo X="1808.642" Y="-1225.042" Z="60.41973" />
+			<CustomBehavior File="InteractWith" QuestId="26978" QuestObjectiveIndex="3" MobIdIncludesSelf="True" InteractByUsingItemId="60753" NonCompeteDistance="0"
+				ProactiveCombatStrategy="NoClear" />
+		</If>
+		<If Condition="HasQuest(26978) &amp;&amp; !IsObjectiveComplete(4,26978)" >
+			<MoveTo X="1789.023" Y="-1251.192" Z="60.00635" />
+			<CustomBehavior File="InteractWith" QuestId="26978" QuestObjectiveIndex="4" MobIdIncludesSelf="True" InteractByUsingItemId="60753" NonCompeteDistance="0"
+				ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" />
+		</If>
+		<Objective QuestName="Foes Before Hoes" QuestId="26933" Type="KillMob" MobId="44433" KillCount="9" />
+		
+		<DisableBehavior Name="Pull, Combat" />
+		<TurnIn QuestName="Foes Before Hoes" QuestId="26933" TurnInName="Shadow Priestess Vandis" TurnInId="11055" />
+		<TurnIn QuestName="Who Needs Cauldrons?" QuestId="26978" TurnInName="Apothecary Dithers" TurnInId="11057" />
+		<CustomBehavior File="InteractWith" MobId="10837" InteractByQuestFrameDisposition="Complete" TerminateWhen="IsQuestCompleted(26936)" 
+			NonCompeteDistance="0" X="1759.053" Y="-726.0234" Z="60.0661" />
+		<PickUp QuestName="Strange New Faces" QuestId="26979" GiverName="High Executor Derrington" GiverId="10837" />
+		<PickUp QuestName="The Menders' Stead" QuestId="26952" GiverName="Argent Officer Garush" GiverId="10839" />
+		<TurnIn QuestName="Strange New Faces" QuestId="26979" TurnInName="Lindsay Ravensun" TurnInId="44466" />
+		<EnableBehavior Name="Pull, Combat" />
+	</Else>
+	</If>
+	
+	<If Condition="Me.IsAlliance" >
+		<CustomBehavior File="Message" Text="Compiling The Writhing Haunt Quests" LogColor="CornflowerBlue" />
+		
+		<PickUp QuestName="This Is Our Army" QuestId="27173" GiverName="Thurman Grant" GiverId="45165" />
+		<Objective QuestName="This Is Our Army" QuestId="27173" Type="KillMob" MobId="45209" KillCount="10" />
+		<TurnIn QuestName="This Is Our Army" QuestId="27173" TurnInName="Thurman Grant" TurnInId="45165" />
+		
+		<PickUp QuestName="Combat Training" QuestId="27174" GiverName="Thurman Grant" GiverId="45165" />
+		<While Condition="HasQuest(27174) &amp;&amp; !IsQuestCompleted(27174)" >
+			<CustomBehavior File="InteractWith" QuestId="27174" MobId="45212" InteractByGossipOptions="1" 
+				ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" WaitTime="3000"
+				X="1480.873" Y="-1905.689" Z="59.94658" />
+		</While>
+		<TurnIn QuestName="Combat Training" QuestId="27174" TurnInName="Thurman Grant" TurnInId="45165" />
+		
+		<PickUp QuestName="The Menders' Stead" QuestId="27233" GiverName="Thurman Grant" GiverId="45165" />
+		<TurnIn QuestName="The Menders' Stead" QuestId="27233" TurnInName="Field Agent Kaartish" TurnInId="44454" />
+	<Else>
+		<CustomBehavior File="Message" Text="Compiling The Charred Outpost Quests" LogColor="CornflowerBlue" />
+		
+		<PickUp QuestName="When Death is Not Enough" QuestId="26937" GiverName="Lindsay Ravensun" GiverId="44466" />
+		<Objective QuestName="When Death is Not Enough" QuestId="26937" Type="KillMob" MobId="45089" KillCount="8" />
+		<TurnIn QuestName="When Death is Not Enough" QuestId="26937" />
+		
+		<DisableBehavior Name="Pull, Combat" />
+		<PickUp QuestName="Combat Training" QuestId="26938" GiverName="Lindsay Ravensun" GiverId="44466" X="1872.142" Y="-1331.961" Z="60.0746" />
+		<EnableBehavior Name="Pull, Combat" />
+		<While Condition="HasQuest(26938) &amp;&amp; !IsObjectiveComplete(1,26938)" >
+			<CustomBehavior File="InteractWith" MobId="45085" KeepTargetSelected="True" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				NonCompeteDistance="10" Range="10" WaitTime="1000" X="1739.702" Y="-1156.833" Z="59.66819" />
+			<CustomBehavior File="Misc\RunLua" Lua="CastPetAction(4)" WaitTime="1000" />
+		</While>
+		<Objective QuestName="Combat Training" QuestId="26938" Type="KillMob" MobId="45098" KillCount="1" X="1782.828" Y="-1243.349" Z="59.9439" />
+		
+		<DisableBehavior Name="Pull, Combat" />
+		<TurnIn QuestName="Combat Training" QuestId="26938" TurnInName="Lindsay Ravensun" TurnInId="44466" X="1872.142" Y="-1331.961" Z="60.0746" />
+		<TurnIn QuestName="The Menders' Stead" QuestId="26952" TurnInName="Field Agent Kaartish" TurnInId="44454" />
+		<EnableBehavior Name="Pull, Combat" />
+	</Else>
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling The Mender's Stead Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="A New Era for the Plaguelands" QuestId="26999" GiverName="Field Agent Kaartish" GiverId="44454" />
+	<PickUp QuestName="Zen'Kiki, the Druid" QuestId="26953" GiverName="Adrine Towhide" GiverId="44456" />
+	<PickUp QuestName="I Ain't Sayin' You a Gourd-Digger..." QuestId="26956" GiverName="Selyria Groenveld" GiverId="44457" />
+	
+	<CustomBehavior File="InteractWith" QuestId="26956" QuestObjectiveIndex="1" MobId="205054" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="1000" X="1862.582" Y="-1545.763" Z="59.07036" />
+	<CustomBehavior File="InteractWith" QuestId="26956" QuestObjectiveIndex="2" MobId="205053" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="1000" X="1811.938" Y="-1583.83" Z="59.30599" />
+	<CustomBehavior File="InteractWith" QuestId="26956" QuestObjectiveIndex="3" MobId="205052" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" NumOfTimes="1000" X="1849.129" Y="-1619.674" Z="58.90495" />
+	
+	<Objective QuestName="A New Era for the Plaguelands" QuestId="26999" Type="CollectItem" ItemId="60760" CollectCount="4" />
+	<Objective QuestName="A New Era for the Plaguelands" QuestId="26999" Type="CollectItem" ItemId="60761" CollectCount="4" />
+	<Objective QuestName="A New Era for the Plaguelands" QuestId="26999" Type="CollectItem" ItemId="60762" CollectCount="4" />
+	<Objective QuestName="A New Era for the Plaguelands" QuestId="26999" Type="CollectItem" ItemId="60763" CollectCount="4" />
+
+	<If Condition="HasQuest(26953) &amp;&amp; !IsQuestCompleted(26953)" >
+		<CustomBehavior File="InteractWith" QuestId="26953" MobId="44863" InteractByGossipOptions="1" NonCompeteDistance="0"
+			TerminateWhen="Me.HasAura(83456)" WaitTime="2000" X="1803.004" Y="-1696.451" Z="60.17066" />
+		<CustomBehavior File="CollectThings" QuestId="26953" CollectUntil="QuestComplete" MobId="1817" MobId2="44482" >
+			<Hotspot X="1803.004" Y="-1696.451" Z="60.17066" />
+			<Hotspot X="1902.449" Y="-1794.513" Z="62.2292" />
+			<Hotspot X="1945.755" Y="-1830.291" Z="70.14159" />
+			<Hotspot X="1926.864" Y="-1916.575" Z="76.12106" />
+			<Hotspot X="1876.308" Y="-2018.07" Z="81.49572" />
+			<Hotspot X="1894.514" Y="-2117.766" Z="71.59908" />
+			<Hotspot X="1915.326" Y="-2195.728" Z="68.37859" />
+			<Hotspot X="1932.319" Y="-2267.328" Z="59.52493" />
+			<Hotspot X="1753.478" Y="-2065.827" Z="62.84114" />
+		</CustomBehavior>
+	</If>
+	
+	<TurnIn QuestName="A New Era for the Plaguelands" QuestId="26999" TurnInName="Field Agent Kaartish" TurnInId="44454" />
+	<TurnIn QuestName="Zen'Kiki, the Druid" QuestId="26953" TurnInName="Adrine Towhide" TurnInId="44456" />
+	<PickUp QuestName="A Different Approach" QuestId="26954" GiverName="Adrine Towhide" GiverId="44456" />
+	<TurnIn QuestName="I Ain't Sayin' You a Gourd-Digger..." QuestId="26956" TurnInName="Selyria Groenveld" TurnInId="44457" />
+	
+	<While Condition="HasQuest(26954) &amp;&amp; !IsQuestCompleted(26954)" >
+		<MoveTo X="1830.656" Y="-1901.323" Z="120.5063" />
+		<CustomBehavior File="InteractWith" QuestId="26954" MobId="44269" NonCompeteDistance="0" CollectionDistance="10"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" TerminateWhen="!Me.HasAura(83456)" WaitTime="5000" />
+		<CustomBehavior File="InteractWith" QuestId="26953" MobId="44863" InteractByGossipOptions="1" NonCompeteDistance="0"
+			TerminateWhen="Me.HasAura(83456)" WaitTime="2000" X="1803.004" Y="-1696.451" Z="60.17066" />
+	</While>
+	
+	<TurnIn QuestName="A Different Approach" QuestId="26954" TurnInName="Adrine Towhide" TurnInId="44456" />
+	
+	<PickUp QuestName="Northridge Lumber Mill" QuestId="26935" GiverName="Field Agent Kaartish" GiverId="44454" />
+	<TurnIn QuestName="Northridge Lumber Mill" QuestId="26935" TurnInName="Nathaniel Dumah" TurnInId="11616" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+		<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Adrine Towhide" GiverId="44456" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Northridge Lumber Camp Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Learning the Ropes" QuestId="27000" GiverName="Nathaniel Dumah" GiverId="11616" />
+	<PickUp QuestName="Too Close for Comfort" QuestId="27013" GiverName="Kelly Dumah" GiverId="44472" />
+	
+	<Objective QuestName="Too Close for Comfort" QuestId="27013" Type="KillMob" MobId="44551" KillCount="12" />
+	<If Condition="HasQuest(27000) &amp;&amp; !IsQuestCompleted(27000)" >
+		<While Condition="!IsQuestCompleted(27000)" >
+			<If Condition="!Me.IsOnTransport" >
+				<CustomBehavior File="Vehicles\MountVehOnly" QuestId="27000" VehicleMountId="44836" X="2455.725" Y="-1629.899" Z="105.567" />
+			</If>
+			<CustomBehavior File="Vehicles\VehicleBehavior" QuestId="27000" VehicleId="44832" VehicleMountId="44836"
+				MobId="44284" VehicleType="2" FireHeight="1" AttackButton="1"
+				StartPointX="2365.248" StartPointY="-1542.353" StartPointZ="104.0908"
+				EndPointX="2455.725" EndPointY="-1629.899" EndPointZ="105.567" >
+				<Start X="2365.248" Y="-1542.353" Z="104.0908" />
+				<Path X="2340.379" Y="-1550.432" Z="99.50044" />
+				<Path X="2317.262" Y="-1560.907" Z="95.75754" />
+				<Path X="2322.437" Y="-1583.307" Z="101.2633" />
+				<Path X="2344.191" Y="-1611.216" Z="106.1319" />
+				<Path X="2348.606" Y="-1637.695" Z="106.2367" />
+				<Path X="2333.266" Y="-1660.336" Z="106.5574" />
+				<Path X="2330.726" Y="-1696.552" Z="102.3862" />
+				<Path X="2295.032" Y="-1684.836" Z="99.32666" />
+			</CustomBehavior>
+		</While>
+		<CustomBehavior File="EjectVeh" />
+	</If>
+	
+	<TurnIn QuestName="Learning the Ropes" QuestId="27000" TurnInName="Nathaniel Dumah" TurnInId="11616" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+		<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Adrine Towhide" GiverId="44456" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="This Means WAR (Wild Arachnid Roundup)" QuestId="27001" GiverName="Nathaniel Dumah" GiverId="11616" />
+	<TurnIn QuestName="Too Close for Comfort" QuestId="27013" TurnInName="Kelly Dumah" TurnInId="44472" />
+	<PickUp QuestName="Redpine Thievery" QuestId="27011" GiverName="Kelly Dumah" GiverId="44472" />
+	<PickUp QuestName="A Gnoll's Resolve" QuestId="27012" GiverName="Kelly Dumah" GiverId="44472" />
+	
+	<If Condition="HasQuest(27001) &amp;&amp; !IsQuestCompleted(27001)" >
+		<While Condition="!IsQuestCompleted(27001)" >
+			<If Condition="!Me.IsOnTransport" >
+				<CustomBehavior File="Vehicles\MountVehOnly" QuestId="27001" VehicleMountId="44836" X="2455.725" Y="-1629.899" Z="105.567" />
+			</If>
+			<CustomBehavior File="SpecificQuests\27001-WPL-ThisMeansWAR" />
+		</While>
+		<CustomBehavior File="EjectVeh" />
+	</If>
+	<Objective QuestName="Redpine Thievery" QuestId="27011" Type="CollectItem" ItemId="60750" CollectCount="10" />
+	<Objective QuestName="A Gnoll's Resolve" QuestId="27012" Type="CollectItem" ItemId="60748" CollectCount="6" />
+	<Objective QuestName="A Gnoll's Resolve" QuestId="27012" Type="CollectItem" ItemId="60747" CollectCount="6" />
+	
+	<TurnIn QuestName="This Means WAR (Wild Arachnid Roundup)" QuestId="27001" TurnInName="Nathaniel Dumah" TurnInId="11616" />
+	<TurnIn QuestName="Redpine Thievery" QuestId="27011" TurnInName="Kelly Dumah" TurnInId="44472" />
+	<TurnIn QuestName="A Gnoll's Resolve" QuestId="27012" TurnInName="Kelly Dumah" TurnInId="44472" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+		<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Adrine Towhide" GiverId="44456" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="An Audience with the Highlord" QuestId="27002" GiverName="Nathaniel Dumah" GiverId="11616" />
+	<TurnIn QuestName="An Audience with the Highlord" QuestId="27002" TurnInName="Highlord Tirion Fordring" TurnInId="44441" />
+	
+	<CustomBehavior File="Message" Text="Compiling Hearthglen Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="The Long Trip Home" QuestId="26957" GiverName="Del Gahrron" GiverId="44905" />
+	<PickUp QuestName="Taelan Fordring's Legacy" QuestId="27151" GiverName="Daria L'Rayne" GiverId="45147" />
+	
+	<PickUp QuestName="It's About Time!" QuestId="27156" GiverName="Lieutenant Myner" GiverId="45157" />
+	<CustomBehavior File="InteractWith" QuestId="27156" MobId="45162" InteractByGossipOptions="1" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="3000" NumOfTimes="1000" X="2895.427" Y="-1440.253" Z="146.6614" />
+	<TurnIn QuestName="It's About Time!" QuestId="27156" TurnInName="Lieutenant Myner" TurnInId="45157" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+		<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Adrine Towhide" GiverId="44456" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Drudges... Sigh" QuestId="27157" GiverName="Lieutenant Myner" GiverId="45157" />
+	<Objective QuestName="Drudges... Sigh" QuestId="27157" Type="KillMob" MobId="45156" KillCount="1" />
+	<TurnIn QuestName="Drudges... Sigh" QuestId="27157" TurnInName="Lieutenant Myner" TurnInId="45157" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+		<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Adrine Towhide" GiverId="44456" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<Objective QuestName="Taelan Fordring's Legacy" QuestId="27151" Type="KillMob" MobId="45153" KillCount="10" />
+	<TurnIn QuestName="Taelan Fordring's Legacy" QuestId="27151" />
+	<PickUp QuestName="Unusual Behavior... Even For Gnolls" QuestId="27152" GiverName="Daria L'Rayne" GiverId="45147" />
+	<Objective QuestName="Unusual Behavior... Even For Gnolls" QuestId="27152" Type="KillMob" MobId="45155" KillCount="1" />
+	<TurnIn QuestName="Unusual Behavior... Even For Gnolls" QuestId="27152" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+		<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Adrine Towhide" GiverId="44456" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="The Good People of Hearthglen" QuestId="27153" GiverName="Daria L'Rayne" GiverId="45147" />
+	<CustomBehavior File="InteractWith" QuestId="27153" QuestObjectiveIndex="1" MobId="45148" InteractByGossipOptions="1" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" X="2978.92" Y="-1491.019" Z="147.0397" />
+	<CustomBehavior File="InteractWith" QuestId="27153" QuestObjectiveIndex="2" MobId="45149" InteractByGossipOptions="1" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" X="3007.452" Y="-1510.852" Z="146.1675" />
+	<CustomBehavior File="InteractWith" QuestId="27153" QuestObjectiveIndex="3" MobId="45150" InteractByGossipOptions="1" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" X="2874.759" Y="-1459.4" Z="145.6062" />
+	<CustomBehavior File="InteractWith" QuestId="27153" QuestObjectiveIndex="4" MobId="45151" InteractByGossipOptions="1" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" X="2842.505" Y="-1396.715" Z="147.5477" />
+	<TurnIn QuestName="The Good People of Hearthglen" QuestId="27153" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+		<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Adrine Towhide" GiverId="44456" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Bagging Bisp" QuestId="27154" GiverName="Daria L'Rayne" GiverId="45147" />
+	<CustomBehavior File="InteractWith" QuestId="27154" MobId="45152" InteractByGossipOptions="1" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" WaitTime="2000" X="2839.746" Y="-1555.473" Z="186.2915" />
+	<TurnIn QuestName="Bagging Bisp" QuestId="27154" />
+	
+	<PickUp QuestName="Turning Yourself In" QuestId="27155" GiverName="Daria L'Rayne" GiverId="45147" />
+	
+	<If Condition="HasQuest(27155) &amp;&amp; IsQuestCompleted(27155)" >
+		<CustomBehavior File="InteractWith" MobId="44441" NonCompeteDistance="0" WaitTime="2000" X="2936.218" Y="-1388.197" Z="167.7839" />
+		<If Condition="Me.Class == WoWClass.Hunter || Me.Class == WoWClass.Monk || Me.Class == WoWClass.Rogue" >
+			<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(3)" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+		<ElseIf Condition="Me.Class == WoWClass.Priest || Me.Class == WoWClass.Mage || Me.Class == WoWClass.Warlock" >
+			<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(2)" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="RunMacro" Macro="/script GetQuestReward(1)" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+		</Else>
+		</If>
+	</If>
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+		<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Adrine Towhide" GiverId="44456" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Gahrron's Withering Quests" LogColor="CornflowerBlue" />
+	
+	<TurnIn QuestName="The Long Trip Home" QuestId="26957" TurnInName="Del Gahrron" TurnInId="44458" />
+	
+	<PickUp QuestName="Memories from a Lost Past" QuestId="27017" GiverName="Del Gahrron" GiverId="44458" />
+	<PickUp QuestName="Gahrron's Withering Cauldron" QuestId="27053" GiverName="Field Agent Kaartish" GiverId="44454" />
+	
+	<Objective QuestName="Memories from a Lost Past" QuestId="27017" Type="CollectItem" ItemId="60770" CollectCount="1" />
+	<Objective QuestName="Memories from a Lost Past" QuestId="27017" Type="CollectItem" ItemId="60771" CollectCount="1" />
+	<Objective QuestName="Gahrron's Withering Cauldron" QuestId="27053" Type="CollectItem" ItemId="13196" CollectCount="1" />
+	
+	<TurnIn QuestName="Gahrron's Withering Cauldron" QuestId="27053" TurnInName="Scourge Cauldron" TurnInId="176392" 
+		TurnInType="Object" X="1684.375" Y="-2275.381" Z="60.9535" />
+	<PickUp QuestName="Return to the Stead" QuestId="27057" GiverName="Scourge Cauldron" GiverId="176392" 
+		GiverType="Object" X="1684.375" Y="-2275.381" Z="60.9535" />
+	
+	<TurnIn QuestName="Memories from a Lost Past" QuestId="27017" TurnInName="Del Gahrron" TurnInId="44458" />
+	<TurnIn QuestName="Return to the Stead" QuestId="27057" TurnInName="Field Agent Kaartish" TurnInId="44454" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+		<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Adrine Towhide" GiverId="44456" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Desperate Acts" QuestId="27054" GiverName="Field Agent Kaartish" GiverId="44454" />
+	<PickUp QuestName="Zen'Kiki and the Cultists" QuestId="26955" GiverName="Adrine Towhide" GiverId="44456" />
+	
+	<While Condition="HasQuest(26955) &amp;&amp; !IsQuestCompleted(26955)" >
+		<CustomBehavior File="InteractWith" QuestId="26955" MobId="44863" InteractByGossipOptions="1" NonCompeteDistance="0"
+			TerminateWhen="Me.HasAura(83819)" WaitTime="2000" X="1803.004" Y="-1696.451" Z="60.17066" />
+		<CustomBehavior File="InteractWith" QuestId="26955" MobId="205159" MobId2="205155" MobId3="205156" MobId4="207429" MobId5="207430"
+			MobId6="207428" MobId7="207427" MobId8="205160" MobId9="205158" MobId10="205157" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			TerminateWhen="!Me.HasAura(83819)" WaitTime="2000" NumOfTimes="100" CollectionDistance="250" X="1999.25" Y="-2423.35" Z="60.57" />
+	</While>
+	<Objective QuestName="Desperate Acts" QuestId="27054" Type="CollectItem" ItemId="60772" CollectCount="1" />
+	<TurnIn QuestName="Desperate Acts" QuestId="27054" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+		<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Adrine Towhide" GiverId="44456" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<PickUp QuestName="Students of Krastinov" QuestId="27055" GiverName="Field Agent Kaartish" GiverId="44454" />
+	<Objective QuestName="Students of Krastinov" QuestId="27055" Type="KillMob" MobId="44445" KillCount="2" />
+	<Objective QuestName="Students of Krastinov" QuestId="27055" Type="KillMob" MobId="44484" KillCount="2" />
+	<Objective QuestName="Students of Krastinov" QuestId="27055" Type="KillMob" MobId="44485" KillCount="2" />
+	<Objective QuestName="Students of Krastinov" QuestId="27055" Type="KillMob" MobId="44486" KillCount="4" />
+	<TurnIn QuestName="Students of Krastinov" QuestId="27055" TurnInName="Field Agent Kaartish" TurnInId="44454" />
+	<TurnIn QuestName="Zen'Kiki and the Cultists" QuestId="26955" TurnInName="Adrine Towhide" TurnInId="44456" />
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+		<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Adrine Towhide" GiverId="44456" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="Me.IsAlliance" >
+		<PickUp QuestName="The Battle Resumes!" QuestId="27197" GiverName="Durnt Brightfalcon" GiverId="45012" />
+		<TurnIn QuestName="The Battle Resumes!" QuestId="27197" TurnInName="Thassarian" TurnInId="44453" />
+	<Else>
+		<PickUp QuestName="The Battle Resumes!" QuestId="27083" GiverName="Damion Steel" GiverId="45013" />
+		<TurnIn QuestName="The Battle Resumes!" QuestId="27083" TurnInName="Koltira Deathweaver" TurnInId="44452" />
+	</Else>
+	</If>
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+		<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Adrine Towhide" GiverId="44456" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Andorhal Round 2 Quests" LogColor="CornflowerBlue" />
+	
+	<If Condition="Me.IsAlliance" >
+		<PickUp QuestName="Ashes to Ashes" QuestId="27199" GiverName="Thassarian" GiverId="44453" />
+		<PickUp QuestName="Supporting the Troops" QuestId="27198" GiverName="Lang Loosegrip" GiverId="44467" />
+		<Objective QuestName="Ashes to Ashes" QuestId="27199" Type="KillMob" MobId="44449" KillCount="3" />
+		<Objective QuestName="Supporting the Troops" QuestId="27198" Type="KillMob" MobId="44447" KillCount="15" />
+		<TurnIn QuestName="Supporting the Troops" QuestId="27198" TurnInName="Lang Loosegrip" TurnInId="44467" />
+		<TurnIn QuestName="Ashes to Ashes" QuestId="27199" TurnInName="Thassarian" TurnInId="44453" />
+	<Else>
+		<PickUp QuestName="The Farmers' Militia" QuestId="27084" GiverName="Koltira Deathweaver" GiverId="44452" />
+		<PickUp QuestName="Ashes to Ashes" QuestId="27086" GiverName="Koltira Deathweaver" GiverId="44452" />
+		<PickUp QuestName="Supporting the Troops" QuestId="27085" GiverName="Jearl Donald" GiverId="44462" />
+		<CustomBehavior File="InteractWith" QuestId="27084" MobId="44944" MobState="Alive" InteractByUsingItemId="60815"
+			ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" Range="20" NumOfTimes="1000"
+			X="1499.147" Y="-1644.128" Z="66.78869" />
+		<Objective QuestName="Ashes to Ashes" QuestId="27086" Type="KillMob" MobId="44450" KillCount="3" />
+		<Objective QuestName="Supporting the Troops" QuestId="27085" Type="KillMob" MobId="44448" KillCount="15" />
+		<DisableBehavior Name="Pull, Combat" />
+		<TurnIn QuestName="Supporting the Troops" QuestId="27085" TurnInName="Jearl Donald" TurnInId="44462" />
+		<TurnIn QuestName="The Farmers' Militia" QuestId="27084" TurnInName="Koltira Deathweaver" TurnInId="44452" />
+		<TurnIn QuestName="Ashes to Ashes" QuestId="27086" TurnInName="Koltira Deathweaver" TurnInId="44452" />
+		<EnableBehavior Name="Pull, Combat" />
+	</Else>
+	</If>
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+		<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Adrine Towhide" GiverId="44456" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="Me.IsAlliance" >
+		<PickUp QuestName="The Depravity of the Forsaken" QuestId="27205" GiverName="Thassarian" GiverId="44453" />
+		<TurnIn QuestName="The Depravity of the Forsaken" QuestId="27205" TurnInName="Thassarian" TurnInId="44453" />
+	<Else>
+		<PickUp QuestName="Lindsay Ravensun, Revealed" QuestId="27087" GiverName="Koltira Deathweaver" GiverId="44452" />
+		<TurnIn QuestName="Lindsay Ravensun, Revealed" QuestId="27087" TurnInName="Lindsay Ravensun" TurnInId="44466" />
+	</Else>
+	</If>
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+		<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Argent Officer Pureheart" GiverId="10840" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="Me.IsAlliance" >
+		<PickUp QuestName="Val'kyr Incursion" QuestId="27201" GiverName="Thassarian" GiverId="44453" />
+		<PickUp QuestName="Brother Against Brother" QuestId="27202" GiverName="Thurman Grant" GiverId="45165" />
+		<Objective QuestName="Val'kyr Incursion" QuestId="27201" Type="KillMob" MobId="45239" KillCount="9" />
+		<Objective QuestName="Brother Against Brother" QuestId="27202" Type="KillMob" MobId="45240" KillCount="20" />
+		<TurnIn QuestName="Brother Against Brother" QuestId="27202" TurnInName="Thurman Grant" TurnInId="45165" />
+		<TurnIn QuestName="Val'kyr Incursion" QuestId="27201" TurnInName="Thassarian" TurnInId="44453" />
+	<Else>
+		<PickUp QuestName="Ace in the Hole" QuestId="27089" GiverName="Lady Sylvanas Windrunner" GiverId="44451" X="1539.846" Y="-1688.546" Z="57.39849" />
+		<Objective QuestName="Ace in the Hole" QuestId="27089" Type="KillMob" MobId="45102" KillCount="5" />
+		<If Condition="HasQuest(27089) &amp;&amp; !IsObjectiveComplete(3,27089)" >
+			<CustomBehavior File="UserSettings" KillBetweenHotspots="False" />
+			<MoveTo X="1605.416" Y="-1408.229" Z="65.67879" />
+			<MoveTo X="1464.22" Y="-1267.017" Z="61.80863" />
+			<MoveTo X="1345.859" Y="-1278.421" Z="56.81543" />
+			<CustomBehavior File="UserSettings" KillBetweenHotspots="True" />
+		</If>
+		<DisableBehavior Name="Pull, Combat" />
+		<TurnIn QuestName="Ace in the Hole" QuestId="27089" TurnInName="Lurid" TurnInId="45129" />
+		<PickUp QuestName="Andorhal, Once and For All" QuestId="27090" GiverName="Lurid" GiverId="45129" />
+		<TurnIn QuestName="Andorhal, Once and For All" QuestId="27090" TurnInName="Lady Sylvanas Windrunner" TurnInId="44451" />
+		<PickUp QuestName="The Reckoning" QuestId="27144" GiverName="Lady Sylvanas Windrunner" GiverId="44451" />
+		<While Condition="HasQuest(27144) &amp;&amp; !IsQuestCompleted(27144)" />
+		<TurnIn QuestName="The Reckoning" QuestId="27144" TurnInName="Lady Sylvanas Windrunner" TurnInId="44451" />
+		<EnableBehavior Name="Pull, Combat" />
+	</Else>
+	</If>
+	
+	<If Condition="Me.LevelFraction &gt;= 40" >
+		<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+		<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Adrine Towhide" GiverId="44456" />
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="Me.IsAlliance" >
+		<PickUp QuestName="Aradne" QuestId="27204" GiverName="Thassarian" GiverId="44453" />
+		<Objective QuestName="Aradne" QuestId="27204" Type="KillMob" MobId="45235" KillCount="1" />
+		<TurnIn QuestName="Aradne" QuestId="27204" TurnInName="Thassarian" TurnInId="44453" />
+	
+		<If Condition="Me.LevelFraction &gt;= 40" >
+			<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+			<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Argent Officer Pureheart" GiverId="10840" />
+			<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		</If>
+	
+		<PickUp QuestName="Alas, Andorhal" QuestId="27206" GiverName="Thassarian" GiverId="44453" />
+		<TurnIn QuestName="Alas, Andorhal" QuestId="27206" TurnInName="Commander Ashlam Valorfist" TurnInId="10838" />
+	</If>
+	
+	<PickUp QuestName="Into the Woods" QuestId="27683" GiverName="Adrine Towhide" GiverId="44456" />
+	
+	<CustomBehavior File="Message" Text="Western Plaguelands Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="[Quest] Eastern Plaguelands [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

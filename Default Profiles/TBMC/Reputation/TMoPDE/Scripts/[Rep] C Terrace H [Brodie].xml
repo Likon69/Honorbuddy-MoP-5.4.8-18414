@@ -1,0 +1,234 @@
+<HBProfile>
+	<Name>Conqueror's Terrace (Horde) ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Teng of the Flying Daggers" Entry="70535" Type="Repair" X="6865.31" Y="5515.42" Z="1.28" />
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- Very Disarming -->
+	<Quest Id="32233" Name="Very Disarming">
+		<Objective Type="CollectItem" ItemId="93736" CollectCount="7">
+			<CollectFrom>
+				<GameObject Name="Loa-Infused Blade" Id="218055" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="6699.982" Y="5122.509" Z="29.53163" />
+				<Hotspot X="6706.123" Y="5212.516" Z="30.02921" />
+				<Hotspot X="6731.59" Y="5296.625" Z="29.76926" />
+				<Hotspot X="6802.548" Y="5369.425" Z="30.98167" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Power Play -->
+	<Quest Id="32494" Name="Power Play">
+		<Objective Type="CollectItem" ItemId="93733" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Spiritbinder Tu'chek" Id="69301" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="6587.73" Y="5200.61" Z="32.91" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="CollectItem" ItemId="93734" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Spiritbinder Ra'kul" Id="69300" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="6875.18" Y="5304.74" Z="34.58" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+<CustomBehavior File="Message" Text="Compiling Conqueror's Terrace Quests..." LogColor="CornflowerBlue"  />
+
+	<If Condition="((!HasQuest(32206) &amp;&amp; IsQuestCompleted(32206)) ||
+					(!HasQuest(32232) &amp;&amp; IsQuestCompleted(32232)) ||
+					(!HasQuest(32494) &amp;&amp; IsQuestCompleted(32494)) ||
+					(!HasQuest(32234) &amp;&amp; IsQuestCompleted(32234)) ||
+					(!HasQuest(32233) &amp;&amp; IsQuestCompleted(32233)) ||
+					(!HasQuest(32493) &amp;&amp; IsQuestCompleted(32493)))" >
+		<CustomBehavior File="Message" Text="Previously Completed Quests Detected" LogColor="CornflowerBlue" />
+		<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: Previously completed quests detected! \n\n Either you have done some of you quests already, and have restarted the bot...\n OR your cache folder is NOT clean, and must be deleted, and bot restarted." />
+	</If>
+
+	<DisableBehavior Name="Pull, Combat" />
+	
+<!-- The Beating of Troll Drums (Kicker) -->
+	<If Condition="HasQuest(32524)" >
+		<CustomBehavior File="Message" Text="Starting Conqueror's Terrace Kicker" LogColor="Green" />
+		<TurnIn QuestName="The Beating of Troll Drums" QuestId="32524" TurnInName="Scout Captain Elisa" TurnInId="67985" />
+	</If>
+	
+<!-- Scout Captain Elisa -->
+	<While Condition="HasQuestAvailable(67985)" >
+		<CustomBehavior File="InteractWith" MobId="67985" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Magister Edien Sunhollow -->
+	<While Condition="HasQuestAvailable(67986)" >
+		<CustomBehavior File="InteractWith" MobId="67986" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+	<EnableBehavior Name="Pull, Combat" />
+	
+<!-- What's Inside Counts -->
+	<If Condition="HasQuest(32232) &amp;&amp; !IsQuestCompleted(32232)" >
+		<CustomBehavior File="Message" Text="Starting What's Inside Counts" LogColor="Green" />
+		<CustomBehavior File="CollectThings" QuestId="32232" CollectUntil="QuestComplete" MobId="69567" MobId2="69568" MobId3="69569" MobId4="69570" MobId5="69336" HuntingGroundRadius="100" NonCompeteDistance="1" >
+			<Hotspot X="6655.33" Y="5163.00" Z="31.78" />
+		</CustomBehavior>
+	</If>
+	
+<!-- Power Play -->
+	<If Condition="HasQuest(32494) &amp;&amp; !IsQuestCompleted(32494)" >
+		<CustomBehavior File="Message" Text="Starting Power Play" LogColor="Green" />
+		<Objective QuestName="Power Play" QuestId="32494" Type="CollectItem" ItemId="93733" CollectCount="1" />
+		<Objective QuestName="Power Play" QuestId="32494" Type="CollectItem" ItemId="93734" CollectCount="1" />
+	</If>
+	
+<!-- Knowledge Is Power -->
+	<If Condition="HasQuest(32234) &amp;&amp; !IsQuestCompleted(32234)" >
+		<CustomBehavior File="Message" Text="Starting Knowledge Is Power" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="32234" MobId="218049" MobId2="218050" MobId3="218052" MobId4="218053" NonCompeteDistance="0"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" IgnoreLoSToTarget="True" NumOfTimes="1000" WaitTime="1000" >
+			<HuntingGrounds>
+				<Hotspot X="6587.73" Y="5200.61" Z="32.91" />
+				<Hotspot X="6699.982" Y="5122.509" Z="29.53163" />
+				<Hotspot X="6706.123" Y="5212.516" Z="30.02921" />
+				<Hotspot X="6731.59" Y="5296.625" Z="29.76926" />
+				<Hotspot X="6802.548" Y="5369.425" Z="30.98167" />
+				<Hotspot X="6875.18" Y="5304.74" Z="34.58" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+	
+<!-- Very Disarming -->
+	<If Condition="HasQuest(32233) &amp;&amp; !IsQuestCompleted(32233)" >
+		<CustomBehavior File="Message" Text="Starting Very Disarming" LogColor="Green" />
+		<Objective QuestName="Very Disarming" QuestId="32233" Type="CollectItem" ItemId="93736" CollectCount="7" />
+	</If>
+	
+<!-- They All Fall Down -->
+	<If Condition="HasQuest(32493) &amp;&amp; !IsQuestCompleted(32493)" >
+		<CustomBehavior File="Message" Text="Starting They All Fall Down" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="32493" InteractByUsingItemId="93806" MobId="69335" MobState="Dead" AuraIdOnMob="136972" CollectionDistance="1000" NumOfTimes="100" >
+			<HuntingGrounds>
+				<Hotspot X="6699.982" Y="5122.509" Z="29.53163" />
+				<Hotspot X="6706.123" Y="5212.516" Z="30.02921" />
+				<Hotspot X="6731.59" Y="5296.625" Z="29.76926" />
+				<Hotspot X="6802.548" Y="5369.425" Z="30.98167" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+	
+<!-- This Just Won't Do -->
+	<If Condition="HasQuest(32206) &amp;&amp; !IsQuestCompleted(32206)" >
+		<CustomBehavior File="Message" Text="Starting This Just Won't Do" LogColor="Green" />
+		<Objective QuestName="This Just Won't Do" QuestId="32206" Type="KillMob" MobId="69294" MobId2="62927" MobId3="62926" KillCOunt="8" />
+	</If>
+	
+<!-- Conqueror's Terrace Turn-ins -->
+	<If Condition="HasQuest(32233) &amp;&amp; IsQuestCompleted(32233) ||
+					HasQuest(32493) &amp;&amp; IsQuestCompleted(32493) ||
+					HasQuest(32494) &amp;&amp; IsQuestCompleted(32494) ||
+					HasQuest(32234) &amp;&amp; IsQuestCompleted(32234) ||
+					HasQuest(32206) &amp;&amp; IsQuestCompleted(32206) ||
+					HasQuest(32232) &amp;&amp; IsQuestCompleted(32232)" >
+		<CustomBehavior File="Message" Text="Heading back to Conqueror's Terrace to Turn-In" LogColor="Green" />
+		<DisableBehavior Name="Pull, Combat" />
+		<MoveTo X="6773.851" Y="5422.806" Z="31.10268" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+	</If>
+	
+	<If Condition="HasQuest(32493) &amp;&amp; IsQuestCompleted(32493)" >
+		<TurnIn QuestName="They All Fall Down" QuestId="32493" TurnInName="Magister Edien Sunhollow" TurnInId="67986" />
+	</If>
+	
+	<If Condition="HasQuest(32494) &amp;&amp; IsQuestCompleted(32494)" >
+		<TurnIn QuestName="Power Play" QuestId="32494" TurnInName="Magister Edien Sunhollow" TurnInId="67986" />
+	</If>
+	
+	<If Condition="HasQuest(32234) &amp;&amp; IsQuestCompleted(32234)" >
+		<TurnIn QuestName="Knowledge Is Power" QuestId="32234" TurnInName="Magister Edien Sunhollow" TurnInId="67986" />
+	</If>
+	
+	<If Condition="HasQuest(32206) &amp;&amp; IsQuestCompleted(32206)" >
+		<TurnIn QuestName="This Just Won't Do" QuestId="32206" TurnInName="Scout Captain Elsia" TurnInId="67985" />
+	</If>
+	
+	<If Condition="HasQuest(32233) &amp;&amp; IsQuestCompleted(32233)" >
+		<TurnIn QuestName="Very Disarming" QuestId="32233" TurnInName="Scout Captain Elsia" TurnInId="67985" />
+	</If>
+	
+	<If Condition="HasQuest(32232) &amp;&amp; IsQuestCompleted(32232)" >
+		<TurnIn QuestName="What's Inside Counts" QuestId="32232" TurnInName="Scout Captain Elsia" TurnInId="67985" />
+	</If>
+	
+	<CustomBehavior File="WaitTimer" WaitTime="1000" />
+	
+<!-- Double check for ender quests -->
+
+<!-- Scout Captain Elsia -->
+	<While Condition="HasQuestAvailable(67985)" >
+		<CustomBehavior File="InteractWith" MobId="67985" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Magister Edien Sunhollow -->
+	<While Condition="HasQuestAvailable(67986)" >
+		<CustomBehavior File="InteractWith" MobId="67986" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+	<EnableBehavior Name="Pull, Combat" />
+
+	<If Condition="HasItem(94566)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(94566)" />
+	</If>
+	
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+
+<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Isle of Thunder H [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

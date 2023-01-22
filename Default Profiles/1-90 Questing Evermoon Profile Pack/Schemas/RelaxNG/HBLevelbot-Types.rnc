@@ -1,0 +1,198 @@
+# =====
+# Original contribution by chinajade
+#   $Rev: 3160 $
+#   $Date: 2014-03-19 04:57:53 -0300 (qua, 19 mar 2014) $
+#
+# WARNING: DO NOT EDIT .xsd files.
+#   They are not authoritative and will be overwritten!
+#   Instead, regenerate the .xsd files from the .rnc 'sources'.
+#   Its a one-line command to do this. Please see README.txt
+#   for more information.
+# =====
+
+
+HBType-BehaviorFlags =
+   xsd:token { pattern="All|((Combat|Death|Interact|Loot|Pull|Rest|Roam|Vendor)(,\s*(Combat|Death|Interact|Loot|Pull|Rest|Roam|Vendor))*)" }
+
+   
+HBType-Boolean =
+  "false"
+  | "true"
+
+  
+HBType-CollectFromType =
+  "Mob"
+  | "Object"
+  | "Vendor"
+
+  
+HBType-Count =
+  xsd:positiveInteger
+
+  
+HBType-Distance =
+  xsd:decimal { minInclusive="0.0" }
+
+
+HBType-DistancePositive =
+  xsd:decimal { minExclusive="0.0" }
+
+
+HBType-Faction =
+  "Alliance"
+  | "Horde"
+  | "Neutral"
+
+  
+HBType-HotbarIndex =
+  xsd:integer { minInclusive="1" maxInclusive="12" }
+  
+
+HBType-Id =
+  xsd:positiveInteger
+
+  
+HBType-InventorySlot =
+  "AmmoSlot"
+  | "BackSlot"
+  | "Bag0Slot"
+  | "Bag1Slot"
+  | "Bag2Slot"
+  | "Bag3Slot"
+  | "ChestSlot"
+  | "FeetSlot"
+  | "Finger0Slot"
+  | "Finger1Slot"
+  | "HandsSlot"
+  | "HeadSlot"
+  | "LegsSlot"
+  | "MainHandSlot"
+  | "NeckSlot"
+  | "None"
+  | "RangedSlot"
+  | "SecondaryHandSlot"
+  | "ShirtSlot"
+  | "ShoulerSlot"
+  | "TabardSlot"
+  | "Trinket0Slot"
+  | "Trinket1Slot"
+  | "WaistSlot"
+  | "WristSlot"
+  
+
+HBType-Level =
+  xsd:decimal { minInclusive="1.0" }
+
+
+HBType-LogLevel =
+  "Diagnostic"
+  | "None"
+  | "Normal"
+  | "Quiet"
+  | "Verbose"
+
+  
+HBType-MapId =
+  xsd:nonNegativeInteger
+
+  
+HBType-MetaBoolean =
+  HBType-Boolean
+  | "null"
+
+  
+HBType-MetaDecimal =
+  xsd:decimal
+  | "null"
+
+  
+HBType-MetaDecimalNonNegative =
+  xsd:decimal { minInclusive="0.0" }
+  | "null"
+
+  
+HBType-Name =
+  text
+
+  
+HBType-Nav =
+  "Fly"
+  | "Run"
+
+  
+HBType-ObjectiveType =
+  "CollectItem"
+  | "KillMob"
+  | "UseObject"
+
+  
+HBType-Percent =
+  xsd:decimal { minInclusive="0.0" maxInclusive="100.0" }
+
+  
+HBType-RecognizedPluginNames =
+  "Anti Drown"
+  | "Questhelper - ItemForAura"
+  | "Refreshment Detection"
+
+  
+HBType-QuestGiverType =
+  "Item"
+  | "Npc"
+  | "Object"
+
+  
+HBType-QuestTurnInType =
+  "Npc"
+  | "Object"
+
+  
+HBType-UseItemType =
+  "GameObject"
+  | "None"
+  | "Npc"
+
+  
+HBType-TimeDuration =
+  xsd:positiveInteger
+
+  
+HBType-TrainClass =
+  "Deathknight"
+  | "Druid"
+  | "Hunter"
+  | "Mage"
+  | "Monk"
+  | "Paladin"
+  | "Priest"
+  | "Rogue"
+  | "Shaman"
+  | "Warlock"
+  | "Warrior"
+
+
+HBType-VendorType =
+  "Food"
+  | "Repair"
+  | "Sell"
+  | "Train"
+
+  
+HBType-WeaponStyle =
+  "Automatic"
+  | "DualWieldTwoHanders"
+  | "MainHandAndOffHand"
+  | "TwoHander"
+
+  
+HBType-WoWItemQuality =
+  "Artifact"
+  | "Common"
+  | "Epic"
+  | "Heirloom"
+  | "Legendary"
+  | "Poor"
+  | "Rare"
+  | "Uncommon"
+  
+

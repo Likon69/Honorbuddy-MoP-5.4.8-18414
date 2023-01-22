@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile xsi:noNamespaceSchemaLocation="../../DungeonbuddyProfile.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Guardians of Mogu'shan</Name>
+  <DungeonId>527</DungeonId>
+
+  <BossEncounters>
+    <Boss isFinal="false" entry="59915" name="Jasper Guardian" killOrder="1" optional="false" X="3898.869" Y="1245.587" Z="466.1702" />
+    <Boss isFinal="false" entry="60043" name="Jade Guardian" killOrder="1" optional="false" X="3898.869" Y="1245.587" Z="466.1702" />
+    <Boss isFinal="false" entry="60047" name="Amethyst Guardian" killOrder="1" optional="false" X="3898.869" Y="1245.587" Z="466.1702" />
+    <Boss isFinal="false" entry="60051" name="Cobalt Guardian" killOrder="1" optional="false" X="3898.869" Y="1245.587" Z="466.1702" />
+    
+    <Boss isFinal="false" entry="60009" name="Feng the Accursed" killOrder="2" optional="false" X="4040.798" Y="1341.27" Z="466.304" />
+    <Boss isFinal="true" entry="60143" name="Gara'jal the Spiritbinder" killOrder="3" optional="false" X="4276.919" Y="1340.711" Z="454.4608" />
+  </BossEncounters>
+
+  <Blackspots>
+
+  </Blackspots>
+  <PullBlackspots>
+  </PullBlackspots>
+</DungeonBuddyProfile>

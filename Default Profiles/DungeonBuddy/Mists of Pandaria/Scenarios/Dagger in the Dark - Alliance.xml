@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Dagger in the Dark</Name>
+  <DungeonId>616</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="67263" name="Darkhatched Lizard-Lord" killOrder="1" optional="false" X="1150.741" Y="-128.9521" Z="477.3422"/>
+    <Boss isFinal="false" entry="67264" name="Broodmaster Noshi" killOrder="2" optional="false" X="1551.236" Y="-10.22602" Z="479.2455"/>
+    <Boss isFinal="true" entry="67266" name="Rak'gor Bloodrazor" killOrder="3" optional="false" X="1571.932" Y="-20.85271" Z="479.2452"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+
+  </PullBlackspots>
+</DungeonBuddyProfile>

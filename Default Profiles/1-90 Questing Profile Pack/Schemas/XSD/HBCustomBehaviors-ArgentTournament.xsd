@@ -1,0 +1,2093 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <!--
+    =====
+    Original contribution by chinajade
+      $Rev: 3159 $
+      $Date: 2014-03-19 01:34:46 -0500 (Wed, 19 Mar 2014) $
+    
+    WARNING: DO NOT EDIT .xsd files.
+      They are not authoritative and will be overwritten!
+      Instead, regenerate the .xsd files from the .rnc 'sources'.
+      Its a one-line command to do this. Please see README.txt
+      for more information.
+    =====
+  -->
+  <xs:group name="CustomBehavior">
+    <xs:choice>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="AtTheEnemysGates"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier-MandatoryQuestId"/>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="BattleofTheCitadel"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier-MandatoryQuestId"/>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="GetKraken"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecialTurnin"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier-MandatoryQuestId"/>
+          <xs:attribute name="LootId" use="required" type="HBType-Id"/>
+          <xs:attribute name="QuestName" use="required" type="xs:string"/>
+          <xs:attribute name="TurnInName" use="required" type="xs:string"/>
+          <xs:attribute name="TurnInId" use="required" type="HBType-Id"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="TheGrandMelee"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier-MandatoryQuestId"/>
+          <xs:attribute name="Enemys" use="required">
+            <xs:simpleType>
+              <xs:restriction>
+                <xs:simpleType>
+                  <xs:list itemType="HBType-Id"/>
+                </xs:simpleType>
+                <xs:minLength value="1"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="EnemesDebuff" use="required">
+            <xs:simpleType>
+              <xs:list itemType="HBType-Id"/>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="ButtonPress\ButtonPressOnAura"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier-MandatoryQuestId"/>
+          <xs:attribute name="Button1TargetAuraId" type="HBType-Id"/>
+          <xs:attribute name="Button1TargetAuraId2" type="HBType-Id"/>
+          <xs:attribute name="Button1TargetAuraId3" type="HBType-Id"/>
+          <xs:attribute name="Button1TargetAuraId4" type="HBType-Id"/>
+          <xs:attribute name="Button1TargetAuraId5" type="HBType-Id"/>
+          <xs:attribute name="Button2TargetAuraId" type="HBType-Id"/>
+          <xs:attribute name="Button2TargetAuraId2" type="HBType-Id"/>
+          <xs:attribute name="Button2TargetAuraId3" type="HBType-Id"/>
+          <xs:attribute name="Button2TargetAuraId4" type="HBType-Id"/>
+          <xs:attribute name="Button2TargetAuraId5" type="HBType-Id"/>
+          <xs:attribute name="Button3TargetAuraId" type="HBType-Id"/>
+          <xs:attribute name="Button3TargetAuraId2" type="HBType-Id"/>
+          <xs:attribute name="Button3TargetAuraId3" type="HBType-Id"/>
+          <xs:attribute name="Button3TargetAuraId4" type="HBType-Id"/>
+          <xs:attribute name="Button3TargetAuraId5" type="HBType-Id"/>
+          <xs:attribute name="Button4TargetAuraId" type="HBType-Id"/>
+          <xs:attribute name="Button4TargetAuraId2" type="HBType-Id"/>
+          <xs:attribute name="Button4TargetAuraId3" type="HBType-Id"/>
+          <xs:attribute name="Button4TargetAuraId4" type="HBType-Id"/>
+          <xs:attribute name="Button4TargetAuraId5" type="HBType-Id"/>
+          <xs:attribute name="Button5TargetAuraId" type="HBType-Id"/>
+          <xs:attribute name="Button5TargetAuraId2" type="HBType-Id"/>
+          <xs:attribute name="Button5TargetAuraId3" type="HBType-Id"/>
+          <xs:attribute name="Button5TargetAuraId4" type="HBType-Id"/>
+          <xs:attribute name="Button5TargetAuraId5" type="HBType-Id"/>
+          <xs:attribute name="Button6TargetAuraId" type="HBType-Id"/>
+          <xs:attribute name="Button6TargetAuraId2" type="HBType-Id"/>
+          <xs:attribute name="Button6TargetAuraId3" type="HBType-Id"/>
+          <xs:attribute name="Button6TargetAuraId4" type="HBType-Id"/>
+          <xs:attribute name="Button6TargetAuraId5" type="HBType-Id"/>
+          <xs:attribute name="Button7TargetAuraId" type="HBType-Id"/>
+          <xs:attribute name="Button7TargetAuraId2" type="HBType-Id"/>
+          <xs:attribute name="Button7TargetAuraId3" type="HBType-Id"/>
+          <xs:attribute name="Button7TargetAuraId4" type="HBType-Id"/>
+          <xs:attribute name="Button7TargetAuraId5" type="HBType-Id"/>
+          <xs:attribute name="Button8TargetAuraId" type="HBType-Id"/>
+          <xs:attribute name="Button8TargetAuraId2" type="HBType-Id"/>
+          <xs:attribute name="Button8TargetAuraId3" type="HBType-Id"/>
+          <xs:attribute name="Button8TargetAuraId4" type="HBType-Id"/>
+          <xs:attribute name="Button8TargetAuraId5" type="HBType-Id"/>
+          <xs:attribute name="Button9TargetAuraId" type="HBType-Id"/>
+          <xs:attribute name="Button9TargetAuraId2" type="HBType-Id"/>
+          <xs:attribute name="Button9TargetAuraId3" type="HBType-Id"/>
+          <xs:attribute name="Button9TargetAuraId4" type="HBType-Id"/>
+          <xs:attribute name="Button9TargetAuraId5" type="HBType-Id"/>
+          <xs:attribute name="Button10TargetAuraId" type="HBType-Id"/>
+          <xs:attribute name="Button10TargetAuraId2" type="HBType-Id"/>
+          <xs:attribute name="Button10TargetAuraId3" type="HBType-Id"/>
+          <xs:attribute name="Button10TargetAuraId4" type="HBType-Id"/>
+          <xs:attribute name="Button10TargetAuraId5" type="HBType-Id"/>
+          <xs:attribute name="Button11TargetAuraId" type="HBType-Id"/>
+          <xs:attribute name="Button11TargetAuraId2" type="HBType-Id"/>
+          <xs:attribute name="Button11TargetAuraId3" type="HBType-Id"/>
+          <xs:attribute name="Button11TargetAuraId4" type="HBType-Id"/>
+          <xs:attribute name="Button11TargetAuraId5" type="HBType-Id"/>
+          <xs:attribute name="Button12TargetAuraId" type="HBType-Id"/>
+          <xs:attribute name="Button12TargetAuraId2" type="HBType-Id"/>
+          <xs:attribute name="Button12TargetAuraId3" type="HBType-Id"/>
+          <xs:attribute name="Button12TargetAuraId4" type="HBType-Id"/>
+          <xs:attribute name="Button12TargetAuraId5" type="HBType-Id"/>
+          <xs:attribute name="ButtonOnQuestComplete" type="QBType-HotbarButton"/>
+          <xs:attribute name="X" type="xs:decimal"/>
+          <xs:attribute name="Y" type="xs:decimal"/>
+          <xs:attribute name="Z" type="xs:decimal"/>
+          <xs:attribute name="HuntingGroundRadius" type="HBType-DistancePositive"/>
+          <xs:attribute name="IgnoreMobsInBlackspots" type="HBType-Boolean"/>
+          <xs:attributeGroup ref="Attributes-MobIdN-Mandatory1"/>
+          <xs:attribute name="NonCompeteDistance" type="HBType-Distance"/>
+          <xs:attribute name="PostInteractDelay" type="HBType-TimeDuration"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="ButtonPress\ButtonPressOnChat"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier-MandatoryQuestId"/>
+          <xs:attribute name="Button1Phrase"/>
+          <xs:attribute name="Button1Phrase2"/>
+          <xs:attribute name="Button1Phrase3"/>
+          <xs:attribute name="Button1Phrase4"/>
+          <xs:attribute name="Button1Phrase5"/>
+          <xs:attribute name="Button2Phrase"/>
+          <xs:attribute name="Button2Phrase2"/>
+          <xs:attribute name="Button2Phrase3"/>
+          <xs:attribute name="Button2Phrase4"/>
+          <xs:attribute name="Button2Phrase5"/>
+          <xs:attribute name="Button3Phrase"/>
+          <xs:attribute name="Button3Phrase2"/>
+          <xs:attribute name="Button3Phrase3"/>
+          <xs:attribute name="Button3Phrase4"/>
+          <xs:attribute name="Button3Phrase5"/>
+          <xs:attribute name="Button4Phrase"/>
+          <xs:attribute name="Button4Phrase2"/>
+          <xs:attribute name="Button4Phrase3"/>
+          <xs:attribute name="Button4Phrase4"/>
+          <xs:attribute name="Button4Phrase5"/>
+          <xs:attribute name="Button5Phrase"/>
+          <xs:attribute name="Button5Phrase2"/>
+          <xs:attribute name="Button5Phrase3"/>
+          <xs:attribute name="Button5Phrase4"/>
+          <xs:attribute name="Button5Phrase5"/>
+          <xs:attribute name="Button6Phrase"/>
+          <xs:attribute name="Button6Phrase2"/>
+          <xs:attribute name="Button6Phrase3"/>
+          <xs:attribute name="Button6Phrase4"/>
+          <xs:attribute name="Button6Phrase5"/>
+          <xs:attribute name="Button7Phrase"/>
+          <xs:attribute name="Button7Phrase2"/>
+          <xs:attribute name="Button7Phrase3"/>
+          <xs:attribute name="Button7Phrase4"/>
+          <xs:attribute name="Button7Phrase5"/>
+          <xs:attribute name="Button8Phrase"/>
+          <xs:attribute name="Button8Phrase2"/>
+          <xs:attribute name="Button8Phrase3"/>
+          <xs:attribute name="Button8Phrase4"/>
+          <xs:attribute name="Button8Phrase5"/>
+          <xs:attribute name="Button9Phrase"/>
+          <xs:attribute name="Button9Phrase2"/>
+          <xs:attribute name="Button9Phrase3"/>
+          <xs:attribute name="Button9Phrase4"/>
+          <xs:attribute name="Button9Phrase5"/>
+          <xs:attribute name="Button10Phrase"/>
+          <xs:attribute name="Button10Phrase2"/>
+          <xs:attribute name="Button10Phrase3"/>
+          <xs:attribute name="Button10Phrase4"/>
+          <xs:attribute name="Button10Phrase5"/>
+          <xs:attribute name="Button11Phrase"/>
+          <xs:attribute name="Button11Phrase2"/>
+          <xs:attribute name="Button11Phrase3"/>
+          <xs:attribute name="Button11Phrase4"/>
+          <xs:attribute name="Button11Phrase5"/>
+          <xs:attribute name="Button12Phrase"/>
+          <xs:attribute name="Button12Phrase2"/>
+          <xs:attribute name="Button12Phrase3"/>
+          <xs:attribute name="Button12Phrase4"/>
+          <xs:attribute name="Button12Phrase5"/>
+          <xs:attribute name="ButtonOnQuestComplete" type="QBType-HotbarButton"/>
+          <xs:attribute name="DebugShowText" type="HBType-Boolean"/>
+          <xs:attribute name="ExitVehicleAtQuestComplete" type="HBType-Boolean"/>
+          <xs:attribute name="FeedbackPhraseFail"/>
+          <xs:attribute name="FeedbackPhraseFail2"/>
+          <xs:attribute name="FeedbackPhraseFail3"/>
+          <xs:attribute name="FeedbackPhraseFail4"/>
+          <xs:attribute name="FeedbackPhraseFail5"/>
+          <xs:attribute name="FeedbackPhraseSuccess"/>
+          <xs:attribute name="FeedbackPhraseSuccess2"/>
+          <xs:attribute name="FeedbackPhraseSuccess3"/>
+          <xs:attribute name="FeedbackPhraseSuccess4"/>
+          <xs:attribute name="FeedbackPhraseSuccess5"/>
+          <xs:attribute name="InputResponseDelay" type="HBType-TimeDuration"/>
+          <xs:attribute name="ItemId" type="HBType-Id"/>
+          <xs:attribute name="MobId" type="HBType-Id"/>
+          <xs:attribute name="X" type="xs:decimal"/>
+          <xs:attribute name="Y" type="xs:decimal"/>
+          <xs:attribute name="Z" type="xs:decimal"/>
+          <xs:attribute name="MonitorStartPhrase"/>
+          <xs:attribute name="MonitorStartPhrase2"/>
+          <xs:attribute name="MonitorStartPhrase3"/>
+          <xs:attribute name="MonitorStartPhrase4"/>
+          <xs:attribute name="MonitorStartPhrase5"/>
+          <xs:attribute name="MonitorStopPhrase"/>
+          <xs:attribute name="MonitorStopPhrase2"/>
+          <xs:attribute name="MonitorStopPhrase3"/>
+          <xs:attribute name="MonitorStopPhrase4"/>
+          <xs:attribute name="MonitorStopPhrase5"/>
+          <xs:attribute name="SupportedLocale"/>
+          <xs:attribute name="SupportedLocale2"/>
+          <xs:attribute name="SupportedLocale3"/>
+          <xs:attribute name="SupportedLocale4"/>
+          <xs:attribute name="SupportedLocale5"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="AbandonQuest"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="QuestId" use="required" type="HBType-Id"/>
+          <xs:attribute name="Type" type="QBType-AbandonQuest-AbandonType"/>
+          <xs:attribute name="WaitTime" type="HBType-TimeDuration"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="AscendInWater"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:group minOccurs="0" maxOccurs="unbounded" ref="QBSubElement-CollectThings-Hotspot"/>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="CollectThings"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="CollectUntil" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="NoTargetsInArea"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="MobId" type="HBType-Id"/>
+          <xs:attribute name="MobId2" type="HBType-Id"/>
+          <xs:attribute name="MobId3" type="HBType-Id"/>
+          <xs:attribute name="MobId4" type="HBType-Id"/>
+          <xs:attribute name="MobId5" type="HBType-Id"/>
+          <xs:attribute name="MobId6" type="HBType-Id"/>
+          <xs:attribute name="MobId7" type="HBType-Id"/>
+          <xs:attribute name="MobId8" type="HBType-Id"/>
+          <xs:attribute name="MobId9" type="HBType-Id"/>
+          <xs:attribute name="MobId10" type="HBType-Id"/>
+          <xs:attribute name="MobId11" type="HBType-Id"/>
+          <xs:attribute name="MobId12" type="HBType-Id"/>
+          <xs:attribute name="MobId13" type="HBType-Id"/>
+          <xs:attribute name="MobId14" type="HBType-Id"/>
+          <xs:attribute name="MobId15" type="HBType-Id"/>
+          <xs:attribute name="MobId16" type="HBType-Id"/>
+          <xs:attribute name="MobId17" type="HBType-Id"/>
+          <xs:attribute name="MobId18" type="HBType-Id"/>
+          <xs:attribute name="MobId19" type="HBType-Id"/>
+          <xs:attribute name="MobId20" type="HBType-Id"/>
+          <xs:attribute name="ObjectId" type="HBType-Id"/>
+          <xs:attribute name="ObjectId2" type="HBType-Id"/>
+          <xs:attribute name="ObjectId3" type="HBType-Id"/>
+          <xs:attribute name="ObjectId4" type="HBType-Id"/>
+          <xs:attribute name="ObjectId5" type="HBType-Id"/>
+          <xs:attribute name="ObjectId6" type="HBType-Id"/>
+          <xs:attribute name="ObjectId7" type="HBType-Id"/>
+          <xs:attribute name="ObjectId8" type="HBType-Id"/>
+          <xs:attribute name="ObjectId9" type="HBType-Id"/>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="X" type="xs:decimal"/>
+          <xs:attribute name="Y" type="xs:decimal"/>
+          <xs:attribute name="Z" type="xs:decimal"/>
+          <xs:attribute name="CollectItemCount" type="HBType-Count"/>
+          <xs:attribute name="CollectItemId" use="required" type="HBType-Id"/>
+          <xs:attribute name="HuntingGroundRadius" type="HBType-Distance"/>
+          <xs:attribute name="IgnoreMobsInBlackspots" type="HBType-Boolean"/>
+          <xs:attribute name="MobState" type="QBType-CollectThings-MobState"/>
+          <xs:attribute name="NonCompeteDistance" type="HBType-Distance"/>
+          <xs:attribute name="PostInteractDelay" type="HBType-TimeDuration"/>
+          <xs:attribute name="RandomizeStartingHotspot" type="HBType-Boolean"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:group minOccurs="0" maxOccurs="unbounded" ref="QBSubElement-CollectThings-Hotspot"/>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="CollectThings"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="CollectUntil" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="QuestComplete"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="MobId" type="HBType-Id"/>
+          <xs:attribute name="MobId2" type="HBType-Id"/>
+          <xs:attribute name="MobId3" type="HBType-Id"/>
+          <xs:attribute name="MobId4" type="HBType-Id"/>
+          <xs:attribute name="MobId5" type="HBType-Id"/>
+          <xs:attribute name="MobId6" type="HBType-Id"/>
+          <xs:attribute name="MobId7" type="HBType-Id"/>
+          <xs:attribute name="MobId8" type="HBType-Id"/>
+          <xs:attribute name="MobId9" type="HBType-Id"/>
+          <xs:attribute name="MobId10" type="HBType-Id"/>
+          <xs:attribute name="MobId11" type="HBType-Id"/>
+          <xs:attribute name="MobId12" type="HBType-Id"/>
+          <xs:attribute name="MobId13" type="HBType-Id"/>
+          <xs:attribute name="MobId14" type="HBType-Id"/>
+          <xs:attribute name="MobId15" type="HBType-Id"/>
+          <xs:attribute name="MobId16" type="HBType-Id"/>
+          <xs:attribute name="MobId17" type="HBType-Id"/>
+          <xs:attribute name="MobId18" type="HBType-Id"/>
+          <xs:attribute name="MobId19" type="HBType-Id"/>
+          <xs:attribute name="MobId20" type="HBType-Id"/>
+          <xs:attribute name="ObjectId" type="HBType-Id"/>
+          <xs:attribute name="ObjectId2" type="HBType-Id"/>
+          <xs:attribute name="ObjectId3" type="HBType-Id"/>
+          <xs:attribute name="ObjectId4" type="HBType-Id"/>
+          <xs:attribute name="ObjectId5" type="HBType-Id"/>
+          <xs:attribute name="ObjectId6" type="HBType-Id"/>
+          <xs:attribute name="ObjectId7" type="HBType-Id"/>
+          <xs:attribute name="ObjectId8" type="HBType-Id"/>
+          <xs:attribute name="ObjectId9" type="HBType-Id"/>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="X" type="xs:decimal"/>
+          <xs:attribute name="Y" type="xs:decimal"/>
+          <xs:attribute name="Z" type="xs:decimal"/>
+          <xs:attribute name="CollectItemCount" type="HBType-Count"/>
+          <xs:attribute name="CollectItemId" type="HBType-Id"/>
+          <xs:attribute name="HuntingGroundRadius" type="HBType-Distance"/>
+          <xs:attribute name="IgnoreMobsInBlackspots" type="HBType-Boolean"/>
+          <xs:attribute name="MobState" type="QBType-CollectThings-MobState"/>
+          <xs:attribute name="NonCompeteDistance" type="HBType-Distance"/>
+          <xs:attribute name="PostInteractDelay" type="HBType-TimeDuration"/>
+          <xs:attribute name="RandomizeStartingHotspot" type="HBType-Boolean"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:group minOccurs="0" maxOccurs="unbounded" ref="QBSubElement-CollectThings-Hotspot"/>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="CollectThings"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="CollectUntil">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="RequiredCountReached"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="MobId" type="HBType-Id"/>
+          <xs:attribute name="MobId2" type="HBType-Id"/>
+          <xs:attribute name="MobId3" type="HBType-Id"/>
+          <xs:attribute name="MobId4" type="HBType-Id"/>
+          <xs:attribute name="MobId5" type="HBType-Id"/>
+          <xs:attribute name="MobId6" type="HBType-Id"/>
+          <xs:attribute name="MobId7" type="HBType-Id"/>
+          <xs:attribute name="MobId8" type="HBType-Id"/>
+          <xs:attribute name="MobId9" type="HBType-Id"/>
+          <xs:attribute name="MobId10" type="HBType-Id"/>
+          <xs:attribute name="MobId11" type="HBType-Id"/>
+          <xs:attribute name="MobId12" type="HBType-Id"/>
+          <xs:attribute name="MobId13" type="HBType-Id"/>
+          <xs:attribute name="MobId14" type="HBType-Id"/>
+          <xs:attribute name="MobId15" type="HBType-Id"/>
+          <xs:attribute name="MobId16" type="HBType-Id"/>
+          <xs:attribute name="MobId17" type="HBType-Id"/>
+          <xs:attribute name="MobId18" type="HBType-Id"/>
+          <xs:attribute name="MobId19" type="HBType-Id"/>
+          <xs:attribute name="MobId20" type="HBType-Id"/>
+          <xs:attribute name="ObjectId" type="HBType-Id"/>
+          <xs:attribute name="ObjectId2" type="HBType-Id"/>
+          <xs:attribute name="ObjectId3" type="HBType-Id"/>
+          <xs:attribute name="ObjectId4" type="HBType-Id"/>
+          <xs:attribute name="ObjectId5" type="HBType-Id"/>
+          <xs:attribute name="ObjectId6" type="HBType-Id"/>
+          <xs:attribute name="ObjectId7" type="HBType-Id"/>
+          <xs:attribute name="ObjectId8" type="HBType-Id"/>
+          <xs:attribute name="ObjectId9" type="HBType-Id"/>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="X" type="xs:decimal"/>
+          <xs:attribute name="Y" type="xs:decimal"/>
+          <xs:attribute name="Z" type="xs:decimal"/>
+          <xs:attribute name="CollectItemCount" use="required" type="HBType-Count"/>
+          <xs:attribute name="CollectItemId" use="required" type="HBType-Id"/>
+          <xs:attribute name="HuntingGroundRadius" type="HBType-Distance"/>
+          <xs:attribute name="IgnoreMobsInBlackspots" type="HBType-Boolean"/>
+          <xs:attribute name="MobState" type="QBType-CollectThings-MobState"/>
+          <xs:attribute name="NonCompeteDistance" type="HBType-Distance"/>
+          <xs:attribute name="PostInteractDelay" type="HBType-TimeDuration"/>
+          <xs:attribute name="RandomizeStartingHotspot" type="HBType-Boolean"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="CombatUseItemOn"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-MobIdN-Mandatory1"/>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+          <xs:attribute name="BlacklistMob" type="HBType-Boolean"/>
+          <xs:attribute name="CastingSpellId" type="HBType-Id"/>
+          <xs:attribute name="HasAuraId" type="HBType-Id"/>
+          <xs:attribute name="ItemId" use="required" type="HBType-Id"/>
+          <xs:attribute name="MaxRange" type="HBType-Distance"/>
+          <xs:attribute name="MobHasAuraId" type="HBType-Id"/>
+          <xs:attribute name="MobHpPercentLeft" type="HBType-Percent"/>
+          <xs:attribute name="NumOfTimes" type="HBType-Count"/>
+          <xs:attribute name="UseOnce" type="HBType-Boolean"/>
+          <xs:attribute name="WaitTime" type="HBType-TimeDuration"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="QuestBehaviorBase">
+              <xs:sequence>
+                <xs:element minOccurs="0" ref="HuntingGrounds"/>
+              </xs:sequence>
+              <xs:attribute name="File" use="required">
+                <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                    <xs:enumeration value="CombatUseItemOnV2"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+              <xs:attributeGroup ref="Attributes-MobIdN-Mandatory1"/>
+              <xs:attribute name="X" type="xs:decimal"/>
+              <xs:attribute name="Y" type="xs:decimal"/>
+              <xs:attribute name="Z" type="xs:decimal"/>
+              <xs:attribute name="CollectionDistance" type="HBType-Distance"/>
+              <xs:attribute name="InteractBlacklistTimeInSeconds" type="HBType-TimeDuration"/>
+              <xs:attribute name="ItemAppliesAuraId">
+                <xs:simpleType>
+                  <xs:union memberTypes="HBType-Id">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:token">
+                        <xs:enumeration value="AssumeItemUseAlwaysSucceeds"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:union>
+                </xs:simpleType>
+              </xs:attribute>
+              <xs:attribute name="ItemId" use="required" type="HBType-Id"/>
+              <xs:attribute name="MaxRangeToUseItem" type="HBType-Distance"/>
+              <xs:attribute name="NumOfTimesToUseItem" type="HBType-Count"/>
+              <xs:attribute name="RecallPetAtMobPercentHealth" type="HBType-Percent"/>
+              <xs:attribute name="UseItemStrategy" type="QBType-CombatUseItemOnV2-UseItemStrategy"/>
+              <xs:attribute name="UseWhenMeHasAuraId" type="HBType-Id"/>
+              <xs:attribute name="UseWhenMeMissingAuraId" type="HBType-Id"/>
+              <xs:attribute name="UseWhenMobCastingSpellId" type="HBType-Id"/>
+              <xs:attribute name="UseWhenMobHasAuraId" type="HBType-Id"/>
+              <xs:attribute name="UseWhenMobHasHealthPercent" type="HBType-Percent"/>
+              <xs:attribute name="UseWhenMobMissingAuraId" type="HBType-Id"/>
+              <xs:attribute name="WaitTimeAfterItemUse" type="HBType-TimeDuration"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="DeleteItems"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="Ids" use="required" type="QBType-IdsList"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="DisablePlugin"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="Names" use="required" type="HBType-RecognizedPluginNames"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="EjectVeh"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="EnablePlugin"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="Names" use="required" type="HBType-RecognizedPluginNames"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Escort"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="EscortDestX" type="xs:decimal"/>
+          <xs:attribute name="EscortDestY" type="xs:decimal"/>
+          <xs:attribute name="EscortDestZ" type="xs:decimal"/>
+          <xs:attributeGroup ref="Attributes-MobIdN-Mandatory1"/>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="X" type="xs:decimal"/>
+          <xs:attribute name="Y" type="xs:decimal"/>
+          <xs:attribute name="Z" type="xs:decimal"/>
+          <xs:attribute name="DefendType" type="QBType-Escort-DefendUnit"/>
+          <xs:attribute name="EscortUntil" type="QBType-Escort-EscortUntil"/>
+          <xs:attribute name="ItemId" type="HBType-Id"/>
+          <xs:attribute name="MobType" type="QBType-Escort-ObjectType"/>
+          <xs:attribute name="Range" type="HBType-Distance"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="EscortGroup"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="EscortCompleteX" type="xs:decimal"/>
+          <xs:attribute name="EscortCompleteY" type="xs:decimal"/>
+          <xs:attribute name="EscortCompleteZ" type="xs:decimal"/>
+          <xs:attributeGroup ref="Attributes-EscortGroup-EscortNpcIdN"/>
+          <xs:attributeGroup ref="Attributes-EscortGroup-PriorityTargetIdN"/>
+          <xs:attributeGroup ref="Attributes-EscortGroup-StartNpcIdN"/>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="CombatMaxEngagementRangeDistance" type="HBType-Distance"/>
+          <xs:attribute name="DebugReportUnitsOutOfRange" type="HBType-Boolean"/>
+          <xs:attribute name="EscortCompleteMaxRange" type="HBType-Distance"/>
+          <xs:attribute name="EscortCompleteWhen" type="QBType-EscortGroup-EscortCompleteWhen"/>
+          <xs:attribute name="EscortCountMax" type="HBType-Count"/>
+          <xs:attribute name="EscortMaxFightDistance" type="HBType-Distance"/>
+          <xs:attribute name="EscortMaxFollowDistance" type="HBType-Distance"/>
+          <xs:attribute name="NonCompeteDistance" type="HBType-Distance"/>
+          <xs:attribute name="QuestObjectiveIndex" type="xs:positiveInteger"/>
+          <xs:attribute name="SearchForNpcsRadius" type="HBType-Distance"/>
+          <xs:attribute name="StartEscortGossipOptions" type="QBType-GossipOptions"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="EquipItem"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="ItemId" use="required" type="HBType-Id"/>
+          <xs:attribute name="Slot" type="HBType-InventorySlot"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="QuestBehaviorBase">
+              <xs:attribute name="File" use="required">
+                <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                    <xs:enumeration value="FlyTo"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+              <xs:attributeGroup ref="Attributes-XYZ"/>
+              <xs:attribute name="DestName" type="xs:string"/>
+              <xs:attribute name="Distance" type="HBType-Distance"/>
+              <xs:attribute name="IgnoreIndoors" type="HBType-Boolean"/>
+              <xs:attribute name="Land" type="HBType-Boolean"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="QuestBehaviorBase">
+              <xs:attribute name="File" use="required">
+                <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                    <xs:enumeration value="ForcedDismount"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="ForcedMount"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="MountType" type="QBType-ForcedMount-MountType"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="ForceSetVendor"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="DoMail" type="HBType-Boolean"/>
+          <xs:attribute name="DoRepair" type="HBType-Boolean"/>
+          <xs:attribute name="DoSell" type="HBType-Boolean"/>
+          <xs:attribute name="DoTrain" type="HBType-Boolean"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="ForceTrainRiding"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="MobId" use="required" type="HBType-Id"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="GoThruPortal"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+          <xs:attribute name="TimeOut" type="HBType-TimeDuration"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="Safespots"/>
+          </xs:sequence>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="GetOutOfGroundEffectAndAuras"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="EventX" type="xs:decimal"/>
+          <xs:attribute name="EventY" type="xs:decimal"/>
+          <xs:attribute name="EventZ" type="xs:decimal"/>
+          <xs:attributeGroup ref="Attributes-GOOGEAA-MoveAwayFromMobWithAuraIdN"/>
+          <xs:attributeGroup ref="Attributes-GOOGEAA-MoveAwayFromMobCastingSpellIdN"/>
+          <xs:attributeGroup ref="Attributes-GOOGEAA-MoveBehindMobCastingSpellIdN"/>
+          <xs:attributeGroup ref="Attributes-GOOGEAA-MoveOutOfGroundEffectAuraIdN"/>
+          <xs:attributeGroup ref="Attributes-GOOGEAA-PreferKillingMobIdN"/>
+          <xs:attributeGroup ref="Attributes-GOOGEAA-EventCompleteDeadMobIdN"/>
+          <xs:attribute name="QuestObjectiveIndex" type="xs:positiveInteger"/>
+          <xs:attribute name="StartEventGossipOptions" type="QBType-GossipOptions"/>
+          <xs:attribute name="StartNpcId" type="HBType-Id"/>
+          <xs:attribute name="EventCompleteWhen" type="HBType-Condition"/>
+          <xs:attribute name="AvoidMobMinRange">
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="5.0"/>
+                <xs:maxInclusive value="100.0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="MovementBy" type="QBCoreType-MovementBy"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Halt"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="Color" type="xs:string"/>
+          <xs:attribute name="Message" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="Attributes-Base-InteractWith">
+              <xs:sequence>
+                <xs:element minOccurs="0" ref="HuntingGrounds"/>
+              </xs:sequence>
+              <xs:attribute name="File" use="required">
+                <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                    <xs:enumeration value="InteractWith"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+              <xs:attribute name="InteractByQuestFrameDisposition" type="QBType-InteractWith-QuestFrameDisposition"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="Attributes-Base-InteractWith">
+              <xs:sequence>
+                <xs:element minOccurs="0" ref="HuntingGrounds"/>
+              </xs:sequence>
+              <xs:attribute name="File" use="required">
+                <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                    <xs:enumeration value="InteractWith"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+              <xs:attribute name="BuyItemCount" type="HBType-Count"/>
+              <xs:attribute name="InteractByBuyingItemId" use="required" type="HBType-Id"/>
+              <xs:attribute name="InteractByQuestFrameDisposition" type="QBType-InteractWith-QuestFrameDisposition"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="Attributes-Base-InteractWith">
+              <xs:sequence>
+                <xs:element minOccurs="0" ref="HuntingGrounds"/>
+              </xs:sequence>
+              <xs:attribute name="File" use="required">
+                <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                    <xs:enumeration value="InteractWith"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+              <xs:attribute name="InteractByCastingSpellId" use="required" type="HBType-Id"/>
+              <xs:attribute name="InteractByQuestFrameDisposition" type="QBType-InteractWith-QuestFrameDisposition"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="Attributes-Base-InteractWith">
+              <xs:sequence>
+                <xs:element minOccurs="0" ref="HuntingGrounds"/>
+              </xs:sequence>
+              <xs:attribute name="File" use="required">
+                <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                    <xs:enumeration value="InteractWith"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+              <xs:attribute name="InteractByGossipOptions" use="required" type="QBType-GossipOptions"/>
+              <xs:attribute name="InteractByQuestFrameDisposition" type="QBType-InteractWith-QuestFrameDisposition"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="Attributes-Base-InteractWith">
+              <xs:sequence>
+                <xs:element minOccurs="0" ref="HuntingGrounds"/>
+              </xs:sequence>
+              <xs:attribute name="File" use="required">
+                <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                    <xs:enumeration value="InteractWith"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+              <xs:attribute name="InteractByLooting" use="required" type="HBType-Boolean"/>
+              <xs:attribute name="InteractByQuestFrameDisposition" type="QBType-InteractWith-QuestFrameDisposition"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="Attributes-Base-InteractWith">
+              <xs:sequence>
+                <xs:element minOccurs="0" ref="HuntingGrounds"/>
+              </xs:sequence>
+              <xs:attribute name="File" use="required">
+                <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                    <xs:enumeration value="InteractWith"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+              <xs:attribute name="InteractByQuestFrameDisposition" type="QBType-InteractWith-QuestFrameDisposition"/>
+              <xs:attribute name="InteractByUsingItemId" use="required" type="HBType-Id"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="ItemWhileMoving"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+          <xs:attribute name="ItemId" use="required" type="HBType-Id"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="KillUntilComplete"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-MobIdN-Mandatory1"/>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="LoadProfile"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="ProfileName" use="required" type="xs:string"/>
+          <xs:attribute name="RememberProfile" type="HBType-Boolean"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Message"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="LogColor" type="xs:string"/>
+          <xs:attribute name="Text" use="required" type="xs:string"/>
+          <xs:attribute name="UpdateGoalText" type="HBType-Boolean"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="MyCTM"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="DestName" type="xs:string"/>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+          <xs:attribute name="UseRelative" type="HBType-Boolean"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="NoCombatMoveTo"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="DestName" type="xs:string"/>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="NPCAssistance"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attributeGroup ref="Attributes-MobIdN-Mandatory1"/>
+          <xs:attribute name="MobState" type="QBType-NPCAssistance-MobState"/>
+          <xs:attribute name="MobCommand" type="QBType-NPCAssistance-MobCommand"/>
+          <xs:attribute name="WaitTime" type="HBType-TimeDuration"/>
+          <xs:attribute name="WaitForNpcs" type="HBType-Boolean"/>
+          <xs:attribute name="MobHpPercentLeft" type="HBType-Percent"/>
+          <xs:attribute name="CollectionDistance" type="HBType-Distance"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="PerformTradeskillOn"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="CastOnItemId" type="HBType-Id"/>
+          <xs:attribute name="NumOfTimes" type="HBType-Count"/>
+          <xs:attribute name="TradeSkillId" use="required" type="HBType-Id"/>
+          <xs:attribute name="TradeSkillItemId" use="required" type="HBType-Id"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:group minOccurs="0" maxOccurs="unbounded" ref="Hotspot"/>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="RunLikeHell"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="AllowCombat" type="HBType-Boolean"/>
+          <xs:attribute name="MobId" type="HBType-Id"/>
+          <xs:attribute name="NumOfTimes" type="HBType-Count"/>
+          <xs:attribute name="Range" type="HBType-Distance"/>
+          <xs:attribute name="UseCTM" type="HBType-Boolean"/>
+          <xs:attribute name="WaitTime" type="HBType-TimeDuration"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="RunMacro"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="GoalText" type="xs:string"/>
+          <xs:attribute name="Macro" use="required" type="xs:string"/>
+          <xs:attribute name="NumOfTimes" type="HBType-Count"/>
+          <xs:attribute name="WaitTime" type="HBType-TimeDuration"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SockemBoppers"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="QuestId" use="required" type="HBType-Id"/>
+          <xs:attribute name="MobIds" use="required" type="QBType-IdsList"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="TaxiRide"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-MobIdN-Mandatory1"/>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="CollectionDistance" type="HBType-Distance"/>
+          <xs:attribute name="DestName" type="xs:string"/>
+          <xs:attribute name="MobCommand" type="QBType-TaxiRide-MobCommand"/>
+          <xs:attribute name="MobHpPercentLeft" type="HBType-Percent"/>
+          <xs:attribute name="TaxiNumber" type="xs:string"/>
+          <xs:attribute name="WaitForNpcs" type="HBType-Boolean"/>
+          <xs:attribute name="WaitTime" type="HBType-TimeDuration"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="UseItem"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="X" type="xs:decimal"/>
+          <xs:attribute name="Y" type="xs:decimal"/>
+          <xs:attribute name="Z" type="xs:decimal"/>
+          <xs:attribute name="ItemId" use="required" type="HBType-Id"/>
+          <xs:attribute name="NumOfTimes" type="HBType-Count"/>
+          <xs:attribute name="TargetNearest" type="HBType-Boolean"/>
+          <xs:attribute name="WaitTime" type="HBType-TimeDuration"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="UseItemTargetLocation"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-MobIdN"/>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="ClickToX" type="xs:decimal"/>
+          <xs:attribute name="ClickToY" type="xs:decimal"/>
+          <xs:attribute name="ClickToZ" type="xs:decimal"/>
+          <xs:attribute name="X" type="xs:decimal"/>
+          <xs:attribute name="Y" type="xs:decimal"/>
+          <xs:attribute name="Z" type="xs:decimal"/>
+          <xs:attribute name="CollectionDistance" type="HBType-Distance"/>
+          <xs:attribute name="ItemId" type="HBType-Id"/>
+          <xs:attribute name="MinRange" type="HBType-Distance"/>
+          <xs:attribute name="MobHpPercentLeft" type="HBType-Percent"/>
+          <xs:attribute name="MobState" type="QBType-UseItemTargetLocation-MobState"/>
+          <xs:attribute name="NumOfTimes" type="HBType-Count"/>
+          <xs:attribute name="ObjectType" type="QBType-UseItemTargetLocation-MobType"/>
+          <xs:attribute name="Range" type="HBType-Distance"/>
+          <xs:attribute name="UseType" type="QBType-UseItemTargetLocation-UseType"/>
+          <xs:attribute name="WaitTime" type="HBType-TimeDuration"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="UsePetAbility"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-MobIdN"/>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="ClicktToX" type="xs:decimal"/>
+          <xs:attribute name="ClicktToY" type="xs:decimal"/>
+          <xs:attribute name="ClicktToZ" type="xs:decimal"/>
+          <xs:attribute name="X" type="xs:decimal"/>
+          <xs:attribute name="Y" type="xs:decimal"/>
+          <xs:attribute name="Z" type="xs:decimal"/>
+          <xs:attribute name="AttackButton" use="required" type="QBType-HotbarButton"/>
+          <xs:attribute name="CollectionDistance" type="HBType-Distance"/>
+          <xs:attribute name="IgnoreCombat" type="HBType-Boolean"/>
+          <xs:attribute name="MinRnage" type="HBType-Distance"/>
+          <xs:attribute name="MobHpPercentLeft" type="HBType-Percent"/>
+          <xs:attribute name="MobState" type="QBType-UsePetAbility-MobState"/>
+          <xs:attribute name="NumOfTimes" type="HBType-Count"/>
+          <xs:attribute name="Range" type="HBType-Distance"/>
+          <xs:attribute name="UseType" type="QBType-UsePetAbility-UseType"/>
+          <xs:attribute name="WaitTime" type="HBType-TimeDuration"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="UserDialog"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="AllowBotStop" type="HBType-Boolean"/>
+          <xs:attribute name="StopOnContinue" type="HBType-Boolean"/>
+          <xs:attribute name="Text" use="required" type="xs:string"/>
+          <xs:attribute name="Title" type="xs:string"/>
+          <xs:attribute name="ExpiryAction" type="QBType-UserDialog-ExpiryAction"/>
+          <xs:attribute name="ExpiryTime" type="HBType-TimeDuration"/>
+          <xs:attribute name="SoundCue" type="QBType-UserDialog-SoundCue"/>
+          <xs:attribute name="SoundCueInterval" type="HBType-TimeDuration"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="UserSettings"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="DebugShowChangesApplied" type="HBType-Boolean"/>
+          <xs:attribute name="DebugShowDetails" type="HBType-Boolean"/>
+          <xs:attribute name="DebugShowDiff" type="HBType-Boolean"/>
+          <xs:attribute name="Preset">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Grind"/>
+                <xs:enumeration value="HarvestsOff"/>
+                <xs:enumeration value="HarvestsOn"/>
+                <xs:enumeration value="NoDistractions"/>
+                <xs:enumeration value="NoTrain"/>
+                <xs:enumeration value="NormalQuesting"/>
+                <xs:enumeration value="UserOriginal"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="StopBot" type="HBType-Boolean"/>
+          <xs:attribute name="AutoEquip" type="HBType-Boolean"/>
+          <xs:attribute name="AutoEquipArmor" type="HBType-Boolean"/>
+          <xs:attribute name="AutoEquipBags" type="HBType-Boolean"/>
+          <xs:attribute name="AutoEquipBoEEpics" type="HBType-Boolean"/>
+          <xs:attribute name="AutoEquipWeapons" type="HBType-Boolean"/>
+          <xs:attribute name="DrinkAmount">
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="0.0"/>
+                <xs:maxInclusive value="100.0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="DrinkName" type="xs:string"/>
+          <xs:attribute name="FindMountAutomatically" type="HBType-Boolean"/>
+          <xs:attribute name="FlyingMountName" type="xs:string"/>
+          <xs:attribute name="FoodAmount">
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="0.0"/>
+                <xs:maxInclusive value="100.0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="FoodName" type="xs:string"/>
+          <xs:attribute name="GroundMountFarmingMode" type="HBType-Boolean"/>
+          <xs:attribute name="HarvestHerbs" type="HBType-Boolean"/>
+          <xs:attribute name="HarvestMinerals" type="HBType-Boolean"/>
+          <xs:attribute name="KillBetweenHotspots" type="HBType-Boolean"/>
+          <xs:attribute name="LogLevel" type="HBType-LogLevel"/>
+          <xs:attribute name="LogoutForInactivity" type="HBType-Boolean"/>
+          <xs:attribute name="LogoutInactivityTimer">
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="1.0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="LogoutInactivityUseForceQuit" type="HBType-Boolean"/>
+          <xs:attribute name="LootChests" type="HBType-Boolean"/>
+          <xs:attribute name="LootMobs" type="HBType-Boolean"/>
+          <xs:attribute name="LootRadius">
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="0.0"/>
+                <xs:maxInclusive value="100.0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="MaxBoEDisenchantQuality" type="HBType-WoWItemQuality"/>
+          <xs:attribute name="MountDistance">
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="30.0"/>
+                <xs:maxInclusive value="200.0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="MountName" type="xs:string"/>
+          <xs:attribute name="NinjaSkin" type="HBType-Boolean"/>
+          <xs:attribute name="PullDistance">
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="0.0"/>
+                <xs:maxInclusive value="500.0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="RessAtSpiritHealers" type="HBType-Boolean"/>
+          <xs:attribute name="RollDisenchantWhenGreed" type="HBType-Boolean"/>
+          <xs:attribute name="RollOnItems" type="HBType-Boolean"/>
+          <xs:attribute name="SelectTalents" type="HBType-Boolean"/>
+          <xs:attribute name="SkinMobs" type="HBType-Boolean"/>
+          <xs:attribute name="UseFlightPaths" type="HBType-Boolean"/>
+          <xs:attribute name="UseMount" type="HBType-Boolean"/>
+          <xs:attribute name="UseRandomMount" type="HBType-Boolean"/>
+          <xs:attribute name="WeaponStyle" type="HBType-WeaponStyle"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="UseTransport"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="GetOffX" type="xs:decimal"/>
+          <xs:attribute name="GetOffY" type="xs:decimal"/>
+          <xs:attribute name="GetOffZ" type="xs:decimal"/>
+          <xs:attribute name="StandOnX" type="xs:decimal"/>
+          <xs:attribute name="StandOnY" type="xs:decimal"/>
+          <xs:attribute name="StandOnZ" type="xs:decimal"/>
+          <xs:attribute name="TransportStartX" type="xs:decimal"/>
+          <xs:attribute name="TransportStartY" type="xs:decimal"/>
+          <xs:attribute name="TransportStartZ" type="xs:decimal"/>
+          <xs:attribute name="TransportEndX" type="xs:decimal"/>
+          <xs:attribute name="TransportEndY" type="xs:decimal"/>
+          <xs:attribute name="TransportEndZ" type="xs:decimal"/>
+          <xs:attribute name="WaitAtX" type="xs:decimal"/>
+          <xs:attribute name="WaitAtY" type="xs:decimal"/>
+          <xs:attribute name="WaitAtZ" type="xs:decimal"/>
+          <xs:attribute name="DestName" type="xs:string"/>
+          <xs:attribute name="TransportId" use="required" type="HBType-Id"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="FollowPath"/>
+          </xs:sequence>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="WaitForPatrol"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+          <xs:attribute name="AvoidDistance" use="required" type="HBType-Distance"/>
+          <xs:attribute name="AvoidMobId" use="required" type="HBType-Id"/>
+          <xs:attribute name="MoveToMobId" type="HBType-Id"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="WaitTimer"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="GoalText" type="xs:string"/>
+          <xs:attribute name="WaitTime" use="required" type="HBType-TimeDuration"/>
+          <xs:attribute name="VariantTime" type="HBType-TimeDuration"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Hooks\BarrelHook"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Hooks\BlackrockMaskHook"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="state" type="HBType-Boolean"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Hooks\MountHook"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="state" use="required" type="HBType-Boolean"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Hooks\TheEndlessFlowHook"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Misc\InInstance"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="DestName" type="xs:string"/>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Misc\InstanceTimer"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="GoalText" type="xs:string"/>
+          <xs:attribute name="Timer" use="required" type="QBType-Misc-InstanceTimer-Timer"/>
+          <xs:attribute name="WaitTime" use="required" type="HBType-TimeDuration"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Misc\LoadProfileOn"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="MinLevel" type="HBType-Level"/>
+          <xs:attribute name="CheckRange" type="HBType-Distance"/>
+          <xs:attribute name="ProfileName" type="xs:string"/>
+          <xs:attribute name="RemotePath" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Misc\ProfileCompatibilityInfo"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="AllowBrokenAddOns" type="HBType-Boolean"/>
+          <xs:attribute name="AllowBrokenPlugIns" type="HBType-Boolean"/>
+          <xs:attribute name="AllowMixedModeBot" type="HBType-Boolean"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Misc\RunLua"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="Lua" use="required" type="xs:string"/>
+          <xs:attribute name="NumOfTimes" type="HBType-Count"/>
+          <xs:attribute name="WaitTime" type="HBType-TimeDuration"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Misc\SafeQuestTurnin"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+          <xs:attribute name="QuestName" use="required" type="xs:string"/>
+          <xs:attribute name="TurnInId" use="required" type="HBType-Id"/>
+          <xs:attribute name="TurnInName" use="required" type="xs:string"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="TargetAndMoveToMob"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-Misc-TargetAndMoveToMob-TargetOnlyIfMobHasAuraIdN"/>
+          <xs:attributeGroup ref="Attributes-Misc-TargetAndMoveToMob-TargetOnlyIfMobMissingAuraIdN"/>
+          <xs:attributeGroup ref="Attributes-MobIdN-Mandatory1"/>
+          <xs:attribute name="X" type="xs:decimal"/>
+          <xs:attribute name="Y" type="xs:decimal"/>
+          <xs:attribute name="Z" type="xs:decimal"/>
+          <xs:attribute name="IgnoreLosToTarget" type="HBType-Boolean"/>
+          <xs:attribute name="MoveWithinMaxRangeOfMob" type="HBType-Distance"/>
+          <xs:attribute name="TargetOnlyIfHealthPercentAbove" type="HBType-Percent"/>
+          <xs:attribute name="TargetOnlyIfHealthPercentBelow" type="HBType-Percent"/>
+          <xs:attribute name="WaitForNpcs" type="HBType-Boolean"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="QuestBehaviorBase">
+              <xs:attribute name="File" use="required">
+                <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                    <xs:enumeration value="SpecificQuests\10129-10146-Hellfire-MurkethAndShaadraz"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="QuestBehaviorBase">
+              <xs:attribute name="File" use="required">
+                <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                    <xs:enumeration value="SpecificQuests\10162-10163-Hellfire-MissionTheAbyssalShelf"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\10838-Hellfire-TheDemoniacScryer"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="QuestId" use="required" type="HBType-Id"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\12259-GrizzlyHills-HordeTheThaneofVoldrune"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\14122-Kezan-TheGreatBankHeist"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="QuestId" type="HBType-Id"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\14382-Gilneas-TwoBySea"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\14395-Gilneas-GaspingForBreath"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\24817-LostIsles-AGoblininSharksClothing"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="QuestId" use="required" type="HBType-Id"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\25066-LostIsles-ThePrideofKezan"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\25251-LostIsles-FinalConfrontation"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\26647-STV-Olblasty"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\26649-Stranglethorn-DriveByPiracy"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\27001-WPL-ThisMeansWAR"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\27380-TwilightHighlands-Nightmare"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\27648-AllyTwilightHighlands-IntoTheFire"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\27702-27703-TwilightHighlands-CoupDeGrace"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\27787-27788-TwilightHighlands-Skullcrusher"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\27789-Badlands-TroggishTroubles"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\27811-AllyTwilightHighlands-ScentOfBattle"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\27817-AllyTwilightHighlands-DroppingTheHammer"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\28173-TwilightHighlands-Blackout"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\28758-TwilightHighlands-BattleofLifeandDeath"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\29661-PandaStarter-TheLessonofDryFur"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\29663-PandaStarter-TheLessonoftheBalancedRock"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\29679-PandaStarter-ANewFriend"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\29786-PandaStarter-BattleForTheSkies"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\29798-PandaStarter-AnAncientEvil"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\29799-PandaStarter-HealingofShenZinSu"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" ref="Start"/>
+            <xs:element minOccurs="0" ref="End"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="Hop"/>
+          </xs:sequence>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\DeathknightStart\AnEndToAllThings"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="AttackSpellIndex" use="required" type="HBType-HotbarIndex"/>
+          <xs:attribute name="HealSpellIndex" type="HBType-HotbarIndex"/>
+          <xs:attribute name="HealNpcId" use="required" type="HBType-Id"/>
+          <xs:attribute name="ItemId" type="HBType-Id"/>
+          <xs:attribute name="KillNpcId" use="required" type="HBType-Id"/>
+          <xs:attribute name="VehicleId" use="required" type="HBType-Id"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="SpecificQuests\DeathknightStart\TheLightOfDawn"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Vehicles\BasicVehicleBehaviour"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-BasicVehicleBehaviour-MountXYZ"/>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attributeGroup ref="Attributes-XYZ"/>
+          <xs:attribute name="SpellId" type="HBType-Id"/>
+          <xs:attribute name="VehicleId" use="required" type="HBType-Id"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Vehicles\CannonControl"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="Buttons" use="required" type="QBType-HotbarButtons"/>
+          <xs:attribute name="ExitButton" use="required" type="QBType-HotbarButton"/>
+          <xs:attribute name="MaxAngle" use="required" type="QBType-Angle"/>
+          <xs:attribute name="MinAngle" use="required" type="QBType-Angle"/>
+          <xs:attribute name="VehicleId" use="required" type="HBType-Id"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Vehicles\FlyingVehicle"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="Buttons" type="QBType-HotbarButtons"/>
+          <xs:attribute name="DropPassengerButton" type="QBType-HotbarButton"/>
+          <xs:attribute name="EndPath" use="required" type="QBType-WoWPoints"/>
+          <xs:attribute name="HealButton" type="QBType-HotbarButton"/>
+          <xs:attribute name="HealPercent" type="HBType-Percent"/>
+          <xs:attribute name="ItemId" type="HBType-Id"/>
+          <xs:attribute name="NpcList" use="required" type="QBType-IdsList"/>
+          <xs:attribute name="NpcScanRange" type="HBType-Distance"/>
+          <xs:attribute name="Path" use="required" type="QBType-WoWPoints"/>
+          <xs:attribute name="PickUpPassengerButton" type="QBType-HotbarButton"/>
+          <xs:attribute name="Precision" type="HBType-Distance"/>
+          <xs:attribute name="SpeedButton" type="QBType-HotbarButton"/>
+          <xs:attribute name="StartPath" use="required" type="QBType-WoWPoints"/>
+          <xs:attribute name="VehicleId" use="required" type="HBType-Id"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Vehicles\MountVehOnly"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="X" type="xs:decimal"/>
+          <xs:attribute name="Y" type="xs:decimal"/>
+          <xs:attribute name="Z" type="xs:decimal"/>
+          <xs:attribute name="VehicleMountId" use="required" type="HBType-Id"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Vehicles\NoControlVehicle"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-NoControlVehicle-TargetIdN-Mandatory1"/>
+          <xs:attributeGroup ref="Attributes-NoControlVehicle-TargetIdSecondaryN"/>
+          <xs:attribute name="AttackButton" use="required" type="QBType-HotbarButton"/>
+          <xs:attribute name="AttackButtonSecondary" type="QBType-HotbarButton"/>
+          <xs:attribute name="GoHomeButton" type="QBType-HotbarButton"/>
+          <xs:attribute name="MaxRange" type="HBType-Distance"/>
+          <xs:attribute name="NumOfTimes" type="HBType-Count"/>
+          <xs:attribute name="OftenToUse" type="HBType-TimeDuration"/>
+          <xs:attribute name="QuestId" type="HBType-Id"/>
+          <xs:attribute name="TypeId" type="HBType-Id"/>
+          <xs:attribute name="VehicleId" type="HBType-Id"/>
+          <xs:attribute name="VehicleMountId" type="HBType-Id"/>
+          <xs:attribute name="WaitTime" type="HBType-TimeDuration"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:attribute name="File" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="Vehicles\VehicleBehavior"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attributeGroup ref="Attributes-QuestSpecifier"/>
+          <xs:attribute name="EndPointX" type="xs:decimal"/>
+          <xs:attribute name="EndPointY" type="xs:decimal"/>
+          <xs:attribute name="EndPointZ" type="xs:decimal"/>
+          <xs:attribute name="FireLocationX" type="xs:decimal"/>
+          <xs:attribute name="FireLocationY" type="xs:decimal"/>
+          <xs:attribute name="FireLocationZ" type="xs:decimal"/>
+          <xs:attribute name="PreviousFireLocationX" type="xs:decimal"/>
+          <xs:attribute name="PreviousFireLocationY" type="xs:decimal"/>
+          <xs:attribute name="PreviousFireLocationZ" type="xs:decimal"/>
+          <xs:attribute name="StartObjectivePointX" type="xs:decimal"/>
+          <xs:attribute name="StartObjectivePointY" type="xs:decimal"/>
+          <xs:attribute name="StartObjectivePointZ" type="xs:decimal"/>
+          <xs:attribute name="StartPointX" type="xs:decimal"/>
+          <xs:attribute name="StartPointY" type="xs:decimal"/>
+          <xs:attribute name="StartPointZ" type="xs:decimal"/>
+          <xs:attribute name="TargetLocationX" type="xs:decimal"/>
+          <xs:attribute name="TargetLocationY" type="xs:decimal"/>
+          <xs:attribute name="TargetLocationZ" type="xs:decimal"/>
+          <xs:attribute name="AttackButton" use="required" type="QBType-HotbarButton"/>
+          <xs:attribute name="FireHeight">
+            <xs:simpleType>
+              <xs:restriction base="xs:integer">
+                <xs:minInclusive value="1"/>
+                <xs:maxExclusive value="1000"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="FireUntilFinished" type="HBType-Boolean"/>
+          <xs:attribute name="MobId" type="QBType-IdsList"/>
+          <xs:attribute name="VehicleId" use="required" type="HBType-Id"/>
+          <xs:attribute name="VehicleMountId" use="required" type="HBType-Id"/>
+          <xs:attribute name="VehicleType">
+            <xs:simpleType>
+              <xs:restriction base="xs:integer">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="4"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CustomBehavior">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="QuestBehaviorBase">
+              <xs:attribute name="File" use="required">
+                <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                    <xs:enumeration value="Vehicles\VehicleMover"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+              <xs:attributeGroup ref="Attributes-MobIdN"/>
+              <xs:attributeGroup ref="Attributes-VehicleIdN-Mandatory1"/>
+              <xs:attributeGroup ref="Attributes-XYZ"/>
+              <xs:attribute name="AuraId_ProxyVehicle" type="HBType-Id"/>
+              <xs:attribute name="CastNum" type="HBType-Count"/>
+              <xs:attribute name="CastTime" type="HBType-TimeDuration"/>
+              <xs:attribute name="Hop" type="HBType-Boolean"/>
+              <xs:attribute name="IgnoreCombat" type="HBType-Boolean"/>
+              <xs:attribute name="Precision" type="HBType-Distance"/>
+              <xs:attribute name="SpellId" type="HBType-Id"/>
+              <xs:attribute name="WaitForVehicle" type="HBType-Boolean"/>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+  </xs:group>
+  <xs:element name="Start">
+    <xs:complexType>
+      <xs:attributeGroup ref="Attributes-XYZ"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="End">
+    <xs:complexType>
+      <xs:attributeGroup ref="Attributes-XYZ"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Hop">
+    <xs:complexType>
+      <xs:attributeGroup ref="Attributes-XYZ"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

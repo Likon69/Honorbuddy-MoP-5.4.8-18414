@@ -1,0 +1,56 @@
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>LK to EK [Kick] ($Rev: 2921 $)</Name>
+    <MinLevel>80</MinLevel>
+    <MaxLevel>86</MaxLevel>
+
+    <MinDurability>0.1</MinDurability>
+    <MinFreeBagSlots>1</MinFreeBagSlots>
+
+
+    <Vendors>
+        <Vendor Name="Gunther Weller" Entry="1289" Type="Repair" X="-8790.421" Y="607.3484" Z="96.77338" />
+    </Vendors>
+
+    <Mailboxes>
+        <Mailbox X="-8861.914" Y="638.3568" Z="96.34637" />
+    </Mailboxes>
+
+    <Blackspots>
+        <Blackspot X="-8862.166" Y="637.9529" Z="96.27942" Radius="3" />
+        <Blackspot X="-8825.209" Y="629.1733" Z="94.38562" Radius="15" />
+    </Blackspots>
+
+    <QuestOrder>
+
+        <CustomBehavior File="UserSettings" LearnFlightPaths="False" UseFlightPaths="False" />
+
+        <If Condition="(Me.MapId == 571)">
+            <CustomBehavior File="FlyTo" X="2231.537" Y="5135.816" Z="5.345537" />
+            <CustomBehavior File="ForcedDismount" />
+            <!-- Valiance Keep to SW dock -->
+            <CustomBehavior File="UseTransport"
+                            Entry="2234.375, 5132.568, 5.343217"
+                            Exit="-8300.08, 1405.158, 4.422395"
+                            Start="2218.391, 5119.589, 0.04"
+                            End="-8288.816, 1424.703, 0.04"
+                            TransportId="190536" />
+        </If>
+
+        <If Condition="Me.MapId == 0">
+            <CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" DoMail="True" />
+
+            <If Condition="!SpellManager.HasSpell(&quot;Flight Master's License&quot;)">
+                <CustomBehavior File="ForceTrainRiding" MobId="43769" />
+                <CustomBehavior File="WaitTimer" WaitTime="5000"
+                                GoalText="Waiting for quest to complete {TimeRemaining}" />
+            </If>
+            <If Condition="!SpellManager.HasSpell(&quot;Flight Master's License&quot;)">
+                <CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1"
+                                Text="You need your cata flying license to continue!!!! Train it at SW Flight Path!" />
+            </If>
+        </If>
+
+        <CustomBehavior File="LoadProfile" ProfileName="..\Cata\[Fly][N - Quest] Hyjal 80-82 [Kick]" RememberProfile="true" />
+
+    </QuestOrder>
+</HBProfile>

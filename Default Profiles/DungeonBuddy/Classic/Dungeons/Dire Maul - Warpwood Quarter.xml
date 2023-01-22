@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile>
+  <Name>Dire Maul - Warpwood Quarter</Name>
+  <DungeonId>34</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="14327" name="Lethtendris" killOrder="1" optional="false" X="-13.65876" Y="-453.2047" Z="16.40296"/>
+    <Boss isFinal="false" entry="13280" name="Hydrospawn" killOrder="2" optional="false" X="-24.33454" Y="-421.3419" Z="-59.95171"/>
+    <!-- Pusillin is an optionalm boss -->
+    <Boss isFinal="false" entry="14354" name="Pusillin" killOrder="1" optional="true" />
+    <Boss isFinal="false" entry="11490" name="Zevrim Thornhoof" killOrder="4" optional="false" X="-34.98296" Y="-448.0004" Z="-37.96173"/>
+    <Boss isFinal="true" entry="11492" name="Alzzin the Wildshaper" killOrder="5" optional="false" X="264.0007" Y="-444.7152" Z="-119.9618"/>
+  </BossEncounters>
+    
+  <Blackspots>
+  </Blackspots>
+</DungeonBuddyProfile>

@@ -1,0 +1,27 @@
+<HBProfile xsi:noNamespaceSchemaLocation="../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>H BC to K ($Rev: 2887 $)</Name>
+    <MinLevel>1</MinLevel>
+    <MaxLevel>86</MaxLevel>
+
+    <MinDurability>0.1</MinDurability>
+    <MinFreeBagSlots>1</MinFreeBagSlots>
+
+
+    <QuestOrder>
+
+        <CustomBehavior File="UserSettings" LearnFlightPaths="False" UseFlightPaths="False" />
+
+        <While Condition="Me.MapId == 530 &amp;&amp; (Me.Level &gt;= 68)">
+            <CustomBehavior File="FlyTo" DestName="Org portal" X="-1956.413" Y="5383.551" Z="-12.42774" />
+            <CustomBehavior File="ForcedDismount" />
+
+            <RunTo X="-1898.169" Y="5395.958" Z="-12.42774" />
+            <CustomBehavior File="InteractWith" MobId="183323" ObjectType="GameObject" Range="4" />
+            <CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting for zone {TimeRemaining}" />
+        </While>
+
+        <CustomBehavior File="LoadProfile" ProfileName="H K to LK" />
+
+
+    </QuestOrder>
+</HBProfile>

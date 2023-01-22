@@ -1,0 +1,528 @@
+<HBProfile>
+
+	<Name>Sha'tari Skyguard Rep Grind ($Rev$)</Name>
+	<MinLevel>70</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.1</MinDurability>
+	<MinFreeBagSlots>1</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+		<Blackspot X="-4137.709" Y="3545.854" Z="316.31" Radius="8" />
+		<Blackspot X="-3823.254" Y="3284.642" Z="275.3525" Radius="4.045652" />
+		<Blackspot X="-3863.213" Y="3533.146" Z="278.4138" Radius="4.609187" />
+		<Blackspot X="-3838.385" Y="3336.973" Z="324.0499" Radius="25" Height="10" />
+	</Blackspots>
+	
+	<Blacklist>
+		<Mob Name="Monstrous Kaliri" Entry="23051" Flags="Pull" />
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<Vendor Nav="Fly" Name="Grella" Entry="23367" Type="Repair" X="-3384.475" Y="3611.3" Z="275.9875" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="11004" Name="World of Shadows">
+	<Objective Type="CollectItem" ItemId="32388" CollectCount="6">
+		<CollectFrom>
+			<Mob Name="Skettis Wing Guard" Id="21644" />
+			<Mob Name="Skettis Windwalker" Id="21649" />
+			<Mob Name="Skettis Soulcaller" Id="21911" />
+			<Mob Name="Skettis Talonite" Id="21650" />
+			<Mob Name="Talonpriest Zellek" Id="23068" />
+			<Mob Name="Talonpriest Skizzik" Id="23067" />
+			<Mob Name="Talonpriest Ishaal" Id="23066" />
+		</CollectFrom>
+		<Hotspots>
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<CustomBehavior File="Message" Text="Beginning Sha'tari Skyguard Reputation Grind" LogColor="Green" />
+
+	<CustomBehavior File="UserSettings" KillBetweenHotspots="False" />
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Shattrath -->
+		<If Condition="Me.IsAlliance" >
+			<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<UseMount Value="False" />
+			<CustomBehavior File="InteractWith" MobId="215120" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<UseMount Value="False" />
+			<CustomBehavior File="InteractWith" MobId="215113" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1732.343" Y="881.7467" Z="487.0864" />
+		</If>
+		<UseMount Value="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+		</If>
+	</If>
+	
+	<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="-3997.277" Y="-4723.235" Z="4.2373507" />
+			<CustomBehavior File="UseTransport" TransportId="176231"
+				WaitAtX="-3997.277" WaitAtY="-4723.235" WaitAtZ="4.2373507" 
+				TransportStartX="-4016.39" TransportStartY="-4740.588" TransportStartZ="0.03803937"
+				TransportEndX="-3872.35" TransportEndY="-639.944" TransportEndZ="-0.02619897"
+				StandOnX="-4009.505" StandOnY="-4738.07" StandOnZ="6.021125"
+				GetOffX="-3861.013" GetOffY="-656.758" GetOffZ="5.279493" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="1773.506" Y="-4327.022" Z="-8.118139" />
+			<CustomBehavior File="InteractWith" MobId="195142" NonCompeteDistance="0" WaitTime="5000" X="1773.506" Y="-4327.022" Z="-8.118139" />
+		</If>
+	</If>
+
+	<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.IsAlliance" >
+			<If Condition="Me.ZoneId == 1519" >
+				<CustomBehavior File="InteractWith" MobId="195141" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+					X="-9005.213" Y="868.702" Z="129.6925" />
+			</If>
+			<CustomBehavior File="FlyTo" X="-11899.66" Y="-3208.164" Z="-14.73684" />
+			<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+			<CustomBehavior File="WaitTimer" WaitTime="10000" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="-11899.66" Y="-3208.164" Z="-14.73684" />
+			<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+			<CustomBehavior File="WaitTimer" WaitTime="10000" />
+		</If>
+	</If>
+
+	<While Condition="Me.GetReputationLevelWith(1031) &lt; WoWUnitReaction.Exalted" >
+		<PickUp Nav="Fly" QuestName="Hungry Nether Rays" QuestId="11093" GiverName="Skyguard Handler Deesak" GiverId="23415" />
+		<PickUp Nav="Fly" QuestName="World of Shadows" QuestId="11004" GiverName="Severin" GiverId="23042" />
+		
+		<While Condition="HasQuest(11093) &amp;&amp; !IsQuestCompleted(11093)" >
+			<If Condition="Unit(23439, u =&gt; u.OwnedByRoot == StyxWoW.Me) == null &amp;&amp; Unit(23219) == null" >
+				<CustomBehavior File="FlyTo" TerminateWhen="Unit(23219) != null" X="-3862.622" Y="3710.685" Z="285.5227" />
+			</If>
+			<If Condition="Unit(23439, u =&gt; u.OwnedByRoot == StyxWoW.Me) == null" >
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(32834)" WaitTime="3000" />
+			</If>
+			<CustomBehavior File="InteractWith" QuestId="11093" MobId="23219" MobState="Alive" NonCompeteDistance="0"
+				PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000"
+				WaitTime="7500" TerminateWhen="Unit(23439, u =&gt; u.OwnedByRoot == StyxWoW.Me) == null" 
+				MovementBy="NavigatorPreferred" >
+				<HuntingGrounds>
+					<Hotspot X="-3862.622" Y="3710.685" Z="285.5227" />
+					<Hotspot X="-3943.733" Y="3741.368" Z="295.3434" />
+					<Hotspot X="-4006.167" Y="3630.737" Z="287.83" />
+					<Hotspot X="-4053.861" Y="3544.727" Z="280.6565" />
+					<Hotspot X="-4066.954" Y="3459.173" Z="280.2096" />
+					<Hotspot X="-4112.966" Y="3390.972" Z="294.1134" />
+					<Hotspot X="-4140.617" Y="3327.216" Z="283.0301" />
+					<Hotspot X="-4146.677" Y="3260.361" Z="298.9088" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</While>
+		<Objective Nav="Fly" QuestName="World of Shadows" QuestId="11004" Type="CollectItem" ItemId="32388" CollectCount="6" />
+		
+		<TurnIn Nav="Fly" QuestName="Hungry Nether Rays" QuestId="11093" TurnInName="Skyguard Handler Deesak" TurnInId="23415" />
+		<TurnIn Nav="Fly" QuestName="World of Shadows" QuestId="11004" TurnInName="Severin" TurnInId="23042" />
+		
+		<PickUp Nav="Fly" QuestName="Secrets of the Talonpriests" QuestId="11005" GiverName="Sky Commander Adaris" GiverId="23038" />
+		
+		<While Condition="HasQuest(11005) &amp;&amp; !IsQuestCompleted(11005)" >
+			<CustomBehavior File="InteractWith" QuestId="11005" QuestObjectiveIndex="1" MobId="23066" MobState="Alive"
+				NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				NumOfTimes="100" WaitTime="1000" TerminateWhen="!Me.HasAura(37678)" X="-3816.307" Y="3345.056" Z="324.0568" />
+			<CustomBehavior File="InteractWith" QuestId="11005" QuestObjectiveIndex="2" MobId="23067" MobState="Alive"
+				NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				NumOfTimes="100" WaitTime="1000" TerminateWhen="!Me.HasAura(37678)" X="-3947.388" Y="3317.588" Z="288.039" />
+			<CustomBehavior File="InteractWith" QuestId="11005" QuestObjectiveIndex="3" MobId="23068" MobState="Alive"
+				NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				NumOfTimes="100" WaitTime="1000" TerminateWhen="!Me.HasAura(37678)" X="-3677.463" Y="3294.275" Z="312.257" />
+			<If Condition="!Me.HasAura(37678) &amp;&amp; HasItem(32446)" >
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(32446)" />
+			</If>
+			<If Condition="!Me.HasAura(37678) &amp;&amp; !HasItem(32446)" >
+				<SetGrindArea>
+					<GrindArea>
+
+					<TargetMinLevel>60</TargetMinLevel>
+					<TargetMaxLevel>80</TargetMaxLevel>
+
+					<Factions>90 1860 1862 1869</Factions>
+
+					<Hotspots>
+						<Hotspot X="-3702.427" Y="3358.556" Z="284.7781" />
+						<Hotspot X="-3690.449" Y="3332.929" Z="284.0313" />
+						<Hotspot X="-3756.431" Y="3327.758" Z="285.9735" />
+						<Hotspot X="-3842.647" Y="3296.563" Z="274.9522" />
+						<Hotspot X="-3918.143" Y="3271.401" Z="296.5597" />
+						<Hotspot X="-3983.596" Y="3277.736" Z="286.3167" />
+						<Hotspot X="-4038.606" Y="3325.638" Z="285.4442" />
+						<Hotspot X="-4085.192" Y="3384.351" Z="291.5257" />
+						<Hotspot X="-3818.304" Y="3748.658" Z="277.9303" />
+						<Hotspot X="-3720.632" Y="3746.889" Z="276.4894" />
+						<Hotspot X="-3661.328" Y="3708.132" Z="280.4707" />
+					</Hotspots>
+
+					</GrindArea>
+				</SetGrindArea>
+				<GrindTo Condition="Me.GetReputationLevelWith(1031) &gt;= WoWUnitReaction.Exalted ||
+								(GetItemCount(32388) &gt;= 6 &amp;&amp; !HasItem(32446) &amp;&amp; !Me.HasAura(37678)) ||
+								(!Me.HasAura(37678) &amp;&amp; HasItem(32446))"
+					GoalText="Farming Skettis for Items (Questing Mode)" />
+				<If Condition="GetItemCount(32388) &gt;= 6 &amp;&amp; !HasItem(32446) &amp;&amp; !Me.HasAura(37678)" >
+					<CustomBehavior File="FlyTo" X="-3404.863" Y="3619.419" Z="277.9318" />
+					<While Condition="GetItemCount(32388) &gt;= 6" >
+						<CustomBehavior File="InteractWith" MobId="23042" MobState="Alive" NonCompeteDistance="0"
+							PreInteractMountStrategy="Dismount" WaitTime="500" X="-3404.863" Y="3619.419" Z="277.9318" />
+						<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="500" />
+						<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="500" />
+					</While>
+				</If>
+			</If>
+		</While>
+		<TurnIn Nav="Fly" QuestName="Secrets of the Talonpriests" QuestId="11005" TurnInName="Sky Commander Adaris" TurnInId="23038" />
+		
+		<While Condition="!HasQuest(11021) &amp;&amp; !IsQuestCompleted(11021)" >
+			<CustomBehavior File="InteractWith" MobId="23066" MobState="Alive" NumOfTimes="100" WaitTime="1000"
+				NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				TerminateWhen="!Me.HasAura(37678) || HasQuest(11021) || IsQuestCompleted(11021) || HasItem(32523)"
+				X="-3816.307" Y="3345.056" Z="324.0568" />
+			<If Condition="HasItem(32523)" >
+				<PickUp Nav="Fly" QuestName="Ishaal's Almanac" QuestId="11021" GiverType="Item" GiverName="Ishaal's Almanac" GiverId="32523" />
+			<Else>
+				<If Condition="!Me.HasAura(37678) &amp;&amp; HasItem(32446)" >
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(32446)" />
+				</If>
+				<If Condition="!Me.HasAura(37678) &amp;&amp; !HasItem(32446)" >
+					<SetGrindArea>
+						<GrindArea>
+
+						<TargetMinLevel>60</TargetMinLevel>
+						<TargetMaxLevel>80</TargetMaxLevel>
+
+						<Factions>90 1860 1862 1869</Factions>
+
+						<Hotspots>
+							<Hotspot X="-3702.427" Y="3358.556" Z="284.7781" />
+							<Hotspot X="-3690.449" Y="3332.929" Z="284.0313" />
+							<Hotspot X="-3756.431" Y="3327.758" Z="285.9735" />
+							<Hotspot X="-3842.647" Y="3296.563" Z="274.9522" />
+							<Hotspot X="-3918.143" Y="3271.401" Z="296.5597" />
+							<Hotspot X="-3983.596" Y="3277.736" Z="286.3167" />
+							<Hotspot X="-4038.606" Y="3325.638" Z="285.4442" />
+							<Hotspot X="-4085.192" Y="3384.351" Z="291.5257" />
+							<Hotspot X="-3818.304" Y="3748.658" Z="277.9303" />
+							<Hotspot X="-3720.632" Y="3746.889" Z="276.4894" />
+							<Hotspot X="-3661.328" Y="3708.132" Z="280.4707" />
+						</Hotspots>
+
+						</GrindArea>
+					</SetGrindArea>
+					<GrindTo Condition="Me.GetReputationLevelWith(1031) &gt;= WoWUnitReaction.Exalted ||
+									(GetItemCount(32388) &gt;= 6 &amp;&amp; !HasItem(32446) &amp;&amp; !Me.HasAura(37678)) ||
+									(!Me.HasAura(37678) &amp;&amp; HasItem(32446))"
+						GoalText="Farming Skettis for Items (Questing Mode)" />
+					<If Condition="GetItemCount(32388) &gt;= 6 &amp;&amp; !HasItem(32446) &amp;&amp; !Me.HasAura(37678)" >
+						<CustomBehavior File="FlyTo" X="-3404.863" Y="3619.419" Z="277.9318" />
+						<While Condition="GetItemCount(32388) &gt;= 6" >
+							<CustomBehavior File="InteractWith" MobId="23042" MobState="Alive" NonCompeteDistance="0"
+								PreInteractMountStrategy="Dismount" WaitTime="500" X="-3404.863" Y="3619.419" Z="277.9318" />
+							<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="500" />
+							<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="500" />
+						</While>
+					</If>
+				</If>
+			</Else>
+			</If>
+		</While>
+		<TurnIn Nav="Fly" QuestName="Ishaal's Almanac" QuestId="11021" TurnInName="Sky Commander Adaris" TurnInId="23038" />
+		
+		<PickUp Nav="Fly" QuestName="An Ally in Lower City" QuestId="11024" GiverName="Sky Commander Adaris" GiverId="23038" />
+		<TurnIn Nav="Fly" QuestName="An Ally in Lower City" QuestId="11024" TurnInName="Rilak the Redeemed" TurnInId="22292" />
+
+		<PickUp Nav="Fly" QuestName="Countdown to Doom" QuestId="11028" GiverName="Rilak the Redeemed" GiverId="22292" />
+		<TurnIn Nav="Fly" QuestName="Countdown to Doom" QuestId="11028" TurnInName="Sky Commander Adaris" TurnInId="23038" />
+
+		<PickUp Nav="Fly" QuestName="Hazzik's Bargain" QuestId="11056" GiverName="Hazzik" GiverId="23306" />
+		<Objective Nav="Fly" QuestName="Hazzik's Bargain" QuestId="11056" Type="CollectItem" ItemId="32687" CollectCount="1" />
+		<TurnIn Nav="Fly" QuestName="Hazzik's Bargain" QuestId="11056" TurnInName="Hazzik" TurnInId="23306" />
+
+		<PickUp Nav="Fly" QuestName="A Shabby Disguise" QuestId="11029" GiverName="Hazzik" GiverId="23306" />
+		<While Condition="HasQuest(11029) &amp;&amp; !IsQuestCompleted(11029)" >
+			<CustomBehavior File="FlyTo" X="-3885.98" Y="3481.162" Z="274.7573" />
+			<If Condition="!Me.HasAura(41181)" >
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(32741)" WaitTime="1000" />
+			</If>
+			<CustomBehavior File="InteractWith" QuestId="11029" MobId="23363" MobState="Alive" InteractByBuyingItemId="32742" 
+				NonCompeteDistance="0" BuyItemCount="1"
+				PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				NumOfTimes="1000" WaitTime="1000" TerminateWhen="!Me.HasAura(41181)" X="-3867.538" Y="3464.76" Z="275.4325" />
+		</While>
+		<If Condition="Me.HasAura(41181) &amp;&amp; IsQuestCompleted(11029)" >
+			<If Condition="new Func&lt;bool&gt;(() => { if (Me.HasAura(41181)) Me.GetAuraById(41181).TryCancelAura(); return true; })()" />  
+		</If>
+		<TurnIn Nav="Fly" QuestName="A Shabby Disguise" QuestId="11029" TurnInName="Hazzik" TurnInId="23306" X="-3410.853" Y="3614.863" Z="278.1506" />
+		
+		<PickUp Nav="Fly" QuestName="Adversarial Blood" QuestId="11885" GiverName="Hazzik" GiverId="23306" />
+		<While Condition="HasQuest(11885) &amp;&amp; !IsQuestCompleted(11885)" >
+			<CustomBehavior File="InteractWith" QuestId="11885" QuestObjectiveIndex="1" MobId="185913" InteractByGossipOptions="2"
+				NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				NumOfTimes="1000" WaitTime="10000" TerminateWhen="GetItemCount(32620) &lt; 10"
+				CollectionDistance="30" >
+				<HuntingGrounds>
+					<Hotspot X="-3860.092" Y="3299.944" Z="274.3952" />
+					<Hotspot X="-4000.653" Y="3290.9" Z="284.0651" />
+					<Hotspot X="-3908.041" Y="3120.402" Z="328.5557" />
+				</HuntingGrounds>
+			</CustomBehavior>
+			<CustomBehavior File="InteractWith" QuestId="11885" QuestObjectiveIndex="2" MobId="185913" InteractByGossipOptions="3"
+				NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				NumOfTimes="1000" WaitTime="10000" TerminateWhen="GetItemCount(32620) &lt; 10"
+				CollectionDistance="30" >
+				<HuntingGrounds>
+					<Hotspot X="-3860.092" Y="3299.944" Z="274.3952" />
+					<Hotspot X="-4000.653" Y="3290.9" Z="284.0651" />
+					<Hotspot X="-3908.041" Y="3120.402" Z="328.5557" />
+				</HuntingGrounds>
+			</CustomBehavior>
+			<CustomBehavior File="InteractWith" QuestId="11885" QuestObjectiveIndex="3" MobId="185913" InteractByGossipOptions="1"
+				NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				NumOfTimes="1000" WaitTime="10000" TerminateWhen="GetItemCount(32620) &lt; 10"
+				CollectionDistance="30" >
+				<HuntingGrounds>
+					<Hotspot X="-3860.092" Y="3299.944" Z="274.3952" />
+					<Hotspot X="-4000.653" Y="3290.9" Z="284.0651" />
+					<Hotspot X="-3908.041" Y="3120.402" Z="328.5557" />
+				</HuntingGrounds>
+			</CustomBehavior>
+			<CustomBehavior File="InteractWith" QuestId="11885" QuestObjectiveIndex="4" MobId="185913" InteractByGossipOptions="4"
+				NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				NumOfTimes="1000" WaitTime="10000" TerminateWhen="GetItemCount(32620) &lt; 10"
+				CollectionDistance="30" >
+				<HuntingGrounds>
+					<Hotspot X="-3860.092" Y="3299.944" Z="274.3952" />
+					<Hotspot X="-4000.653" Y="3290.9" Z="284.0651" />
+					<Hotspot X="-3908.041" Y="3120.402" Z="328.5557" />
+				</HuntingGrounds>
+			</CustomBehavior>
+			<If Condition="GetItemCount(32620) &lt; 10 &amp;&amp; !IsQuestCompleted(11885)" >
+				<If Condition="Unit(21650) == null &amp;&amp; Unit(21644) == null &amp;&amp; Unit(21649) == null &amp;&amp; Unit(21911) == null" >
+					<CustomBehavior File="FlyTo" X="-3702.427" Y="3358.556" Z="284.7781" />
+				</If>
+				<If Condition="!Me.HasAura(37678) &amp;&amp; HasItem(32446)" >
+					<CustomBehavior File="ForcedDismount" />
+					<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(32446)" />
+				</If>
+				<SetGrindArea>
+					<GrindArea>
+
+					<TargetMinLevel>60</TargetMinLevel>
+					<TargetMaxLevel>80</TargetMaxLevel>
+
+					<Factions>90 1860 1862 1869</Factions>
+
+					<Hotspots>
+						<Hotspot X="-3702.427" Y="3358.556" Z="284.7781" />
+						<Hotspot X="-3690.449" Y="3332.929" Z="284.0313" />
+						<Hotspot X="-3756.431" Y="3327.758" Z="285.9735" />
+						<Hotspot X="-3842.647" Y="3296.563" Z="274.9522" />
+						<Hotspot X="-3918.143" Y="3271.401" Z="296.5597" />
+						<Hotspot X="-3983.596" Y="3277.736" Z="286.3167" />
+						<Hotspot X="-4038.606" Y="3325.638" Z="285.4442" />
+						<Hotspot X="-4085.192" Y="3384.351" Z="291.5257" />
+						<Hotspot X="-3818.304" Y="3748.658" Z="277.9303" />
+						<Hotspot X="-3720.632" Y="3746.889" Z="276.4894" />
+						<Hotspot X="-3661.328" Y="3708.132" Z="280.4707" />
+					</Hotspots>
+
+					</GrindArea>
+				</SetGrindArea>
+				<GrindTo Condition="Me.GetReputationLevelWith(1031) &gt;= WoWUnitReaction.Exalted ||
+								(GetItemCount(32388) &gt;= 6 &amp;&amp; !HasItem(32446) &amp;&amp; !Me.HasAura(37678)) ||
+								(!Me.HasAura(37678) &amp;&amp; HasItem(32446)) || GetItemCount(32620) &gt;= 10 ||
+								IsQuestCompleted(11885)"
+					GoalText="Farming Skettis for Items and Rep (Time-Lost Scrolls)" />
+				<If Condition="GetItemCount(32388) &gt;= 6 &amp;&amp; !HasItem(32446) &amp;&amp; !Me.HasAura(37678)" >
+					<CustomBehavior File="FlyTo" X="-3404.863" Y="3619.419" Z="277.9318" />
+					<While Condition="GetItemCount(32388) &gt;= 6" >
+						<CustomBehavior File="InteractWith" MobId="23042" MobState="Alive" NonCompeteDistance="0"
+							PreInteractMountStrategy="Dismount" WaitTime="500" X="-3404.863" Y="3619.419" Z="277.9318" />
+						<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="500" />
+						<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="500" />
+					</While>
+				</If>
+			</If>
+		</While>
+		<TurnIn Nav="Fly" QuestName="Adversarial Blood" QuestId="11885" TurnInName="Hazzik" TurnInId="23306" />
+
+		<PickUp Nav="Fly" QuestName="Terokk's Downfall" QuestId="11073" GiverName="Sky Commander Adaris" GiverId="23038" />
+		<CustomBehavior File="InteractWith" QuestId="11073" MobId="185928" InteractByGossipOptions="1"
+			NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="1000" WaitTime="10000" CollectionDistance="30" X="-3789.397" Y="3507.632" Z="286.9818" />
+		<TurnIn Nav="Fly" QuestName="Terokk's Downfall" QuestId="11073" TurnInName="Sky Commander Adaris" TurnInId="23038" />
+		
+		<If Condition="Unit(21650) == null &amp;&amp; Unit(21644) == null &amp;&amp; Unit(21649) == null &amp;&amp; Unit(21911) == null" >
+			<CustomBehavior File="FlyTo" X="-3702.427" Y="3358.556" Z="284.7781" />
+		</If>
+		
+		<!-- Pre grind setup -->
+		<If Condition="!Me.HasAura(37678) &amp;&amp; HasItem(32446)" >
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(32446)" />
+		</If>
+		
+		<SetGrindArea>
+			<GrindArea>
+
+			<TargetMinLevel>60</TargetMinLevel>
+			<TargetMaxLevel>80</TargetMaxLevel>
+
+			<Factions>90 1860 1862 1869</Factions>
+
+			<Hotspots>
+				<Hotspot X="-3702.427" Y="3358.556" Z="284.7781" />
+				<Hotspot X="-3690.449" Y="3332.929" Z="284.0313" />
+				<Hotspot X="-3756.431" Y="3327.758" Z="285.9735" />
+				<Hotspot X="-3842.647" Y="3296.563" Z="274.9522" />
+				<Hotspot X="-3918.143" Y="3271.401" Z="296.5597" />
+				<Hotspot X="-3983.596" Y="3277.736" Z="286.3167" />
+				<Hotspot X="-4038.606" Y="3325.638" Z="285.4442" />
+				<Hotspot X="-4085.192" Y="3384.351" Z="291.5257" />
+				<Hotspot X="-3818.304" Y="3748.658" Z="277.9303" />
+				<Hotspot X="-3720.632" Y="3746.889" Z="276.4894" />
+				<Hotspot X="-3661.328" Y="3708.132" Z="280.4707" />
+			</Hotspots>
+
+			</GrindArea>
+		</SetGrindArea>
+		<GrindTo Condition="Me.GetReputationLevelWith(1031) &gt;= WoWUnitReaction.Exalted ||
+						(GetItemCount(32388) &gt;= 6 &amp;&amp; !HasItem(32446) &amp;&amp; !Me.HasAura(37678)) ||
+						(!Me.HasAura(37678) &amp;&amp; HasItem(32446)) || GetItemCount(32620) &gt;= 10 ||
+						(HasItem(32715) &amp;&amp; HasItem(32716) &amp;&amp; HasItem(32717) &amp;&amp; HasItem(32718)) ||
+						HasItem(32720)"
+			GoalText="Farming Skettis for Items and Rep" />
+		
+		<CustomBehavior File="InteractWith" MobId="185913" InteractByGossipOptions="2"
+			NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="1000" WaitTime="10000" TerminateWhen="GetItemCount(32620) &lt; 10 || HasItem(32715)"
+			CollectionDistance="30" >
+			<HuntingGrounds>
+				<Hotspot X="-3860.092" Y="3299.944" Z="274.3952" />
+				<Hotspot X="-4000.653" Y="3290.9" Z="284.0651" />
+				<Hotspot X="-3908.041" Y="3120.402" Z="328.5557" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" MobId="185913" InteractByGossipOptions="3"
+			NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="1000" WaitTime="10000" TerminateWhen="GetItemCount(32620) &lt; 10 || HasItem(32717)"
+			CollectionDistance="30" >
+			<HuntingGrounds>
+				<Hotspot X="-3860.092" Y="3299.944" Z="274.3952" />
+				<Hotspot X="-4000.653" Y="3290.9" Z="284.0651" />
+				<Hotspot X="-3908.041" Y="3120.402" Z="328.5557" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" MobId="185913" InteractByGossipOptions="1"
+			NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="1000" WaitTime="10000" TerminateWhen="GetItemCount(32620) &lt; 10 || HasItem(32716)"
+			CollectionDistance="30" >
+			<HuntingGrounds>
+				<Hotspot X="-3860.092" Y="3299.944" Z="274.3952" />
+				<Hotspot X="-4000.653" Y="3290.9" Z="284.0651" />
+				<Hotspot X="-3908.041" Y="3120.402" Z="328.5557" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" MobId="185913" InteractByGossipOptions="4"
+			NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="1000" WaitTime="10000" TerminateWhen="GetItemCount(32620) &lt; 10 || HasItem(32718)"
+			CollectionDistance="30" >
+			<HuntingGrounds>
+				<Hotspot X="-3860.092" Y="3299.944" Z="274.3952" />
+				<Hotspot X="-4000.653" Y="3290.9" Z="284.0651" />
+				<Hotspot X="-3908.041" Y="3120.402" Z="328.5557" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		
+		<While Condition="HasItem(32715) &amp;&amp; HasItem(32716) &amp;&amp; HasItem(32717) &amp;&amp; HasItem(32718)" >
+			<CustomBehavior File="InteractWith" MobId="23306" MobState="Alive" NonCompeteDistance="0"
+				PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				WaitTime="500" TerminateWhen="!HasItem(32715) || !HasItem(32716) || !HasItem(32717) || !HasItem(32718)"
+				X="-3410.853" Y="3614.863" Z="278.1507" />
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="500" />
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="500" />
+		</While>
+			
+		<If Condition="GetItemCount(32388) &gt;= 6 &amp;&amp; !HasItem(32446) &amp;&amp; !Me.HasAura(37678)" >
+			<CustomBehavior File="FlyTo" X="-3404.863" Y="3619.419" Z="277.9318" />
+			<While Condition="GetItemCount(32388) &gt;= 6" >
+				<CustomBehavior File="InteractWith" MobId="23042" MobState="Alive" NonCompeteDistance="0"
+					PreInteractMountStrategy="Dismount" WaitTime="500" X="-3404.863" Y="3619.419" Z="277.9318" />
+				<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteButton:Click()" WaitTime="500" />
+				<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="500" />
+			</While>
+		</If>
+		
+		<While Condition="HasItem(32720)" >
+			<CustomBehavior File="InteractWith" MobId="185928" InteractByGossipOptions="1"
+				NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				NumOfTimes="1000" WaitTime="15000" CollectionDistance="30" 
+				TerminateWhen="Unit(21838, u =&gt; u.IsAlive) != null" X="-3789.397" Y="3507.632" Z="286.9818" />
+			<CustomBehavior File="InteractWith" MobId="21838" NumOfTimes="1000" WaitTime="15000"
+				NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+				TerminateWhen="Unit(21838, u =&gt; u.IsAlive) == null" X="-3789.397" Y="3507.632" Z="286.9818" />
+		</While>
+	</While>
+	
+	<!-- Grind checks: Final Boss 18708, Last XYZ, Max Rep (1031) -->
+
+	<CustomBehavior File="Message" Text="Congratulations on reaching exalted with Sha'tari Skyguard. Don't forget your mounts!" LogColor="Orange" />
+		
+</QuestOrder>
+</HBProfile>

@@ -1,0 +1,145 @@
+<!-- Original contribution by chinajade -->
+
+<HBProfile>
+    <!-- AutoAngler2 "Blank Profile" for fishing in place.
+         If you want to turn this into a 'real' profile you will need to provide appropriate
+         values for Mailboxes, Vendors, and Hotspots.  Without these elements,
+         your bags will get clogged up.
+         Its mind-numbingly easy to do this, the comment sections below will guide
+         you through creating each of the needed elements.
+    -->
+    <Name>AutoAngler 'Blank Profile'</Name>
+    <MinDurability>0.2</MinDurability>
+    <MinFreeBagSlots>1</MinFreeBagSlots>
+
+    <MinLevel>1</MinLevel>
+    <MaxLevel>1001</MaxLevel>
+
+    <!-- AutoAngler will Sell before it Mails -->
+    <MailGrey>False</MailGrey>
+    <MailWhite>True</MailWhite>
+    <MailGreen>True</MailGreen>
+    <MailBlue>True</MailBlue>
+    <MailPurple>True</MailPurple>
+
+    <SellGrey>False</SellGrey>
+    <SellWhite>False</SellWhite>
+    <SellGreen>False</SellGreen>
+    <SellBlue>False</SellBlue>
+    <SellPurple>False</SellPurple>
+
+    <TargetElites>False</TargetElites>
+
+
+    <AvoidMobs>
+        <!-- Explanation is out-of-scope, but
+             Honorbuddy => Settings & Tools => Developer Tools will help you obtain info,
+             if needed.
+        -->
+        <!-- Sample: <Mob Name="Vicejaw" Entry="58769" /> -->
+    </AvoidMobs>
+
+
+    <Blackspots>
+        <!-- Explanation is out-of-scope, but
+             Honorbuddy => Settings & Tools => Developer Tools will help you generate these,
+             if needed.
+        -->
+        <!-- Sample: <Blackspot X="-1817.635" Y="285.8988" Z="5.631539" Radius="200" /> -->
+    </Blackspots>
+
+
+    <Mailboxes>
+        <!-- <Mailbox ... />
+             To include a Mailbox in the profile:
+             1. In the WoWclient, move next to the desired mailbox.
+             2. Open Honorbuddy's Developer Tools (Honorbuddy => Settings & Tools => Developer Tools).
+             3. In the Developer Tools, select the "Objects" tab.
+             4. In the "Objects" tab, select the "Game Objects" sub-tab.
+             5. The Mailbox information should near the top of the list.
+             6. A properly-formed Mailbox profile element looks like the following:
+             ===> <Mailbox Name="Canals Mailbox 1" X="-8743.299" Y="565.2322" Z="97.53443" />
+             7. You may include as many Mailbox elements as you like.  AutoAngler will always select the nearest.
+        -->
+    </Mailboxes>
+
+
+    <Vendors>
+        <!-- <Vendor .../>
+             To include a repair Vendor in the profile:
+             1. In the WoWclient, target the desired Vendor.
+             2. Open Honorbuddy's Developer Tools (Honorbuddy => Settings & Tools => Developer Tools).
+             3. In the Developer Tools, select the "Profiles" tab
+             ===> The Vendor information should be available in "Current Target Info" panel.
+             4. In the "Current Target Info" panel, click on the "Copy XML" button.
+             ===> This emits a vendor entry to Honorbuddy's "Log" window.
+             ===> In the emitted information, be certain Type="Repair" is showing.  Other types are
+             ===> not used to AutoAngler.  Honorbuddy frequently identifies non-Vendor NPCs as
+             ===> Type="Repair".  Be certain the NPC you have selected is in fact a Vendor.
+             5. A properly-formed Vendor profile element looks like the following:
+             ===> <Vendor Name="Gunther Weller" Id="1289" Type="Repair" X="-8790.421" Y="607.3484" Z="96.77347" />
+             6. You may include as many Vendor elements as you like. AutoAngler will always select the nearest.
+        -->
+    </Vendors>
+
+
+    <!-- <FishingSchool ... />
+         By default, AutoAngler will fish in any fishing pool if the "Fishing Pools" setting is 'True'
+         (see Honorbuddy => Settings & Tools => Bot Config).  Conversely, if "Fishing Pools" is 'False',
+         AutoAngler will fish in any open water, and treat pools just like open water.
+         -
+         Sometimes, users are only interested in certain types of fishing pools.  To limit AutoAngler's
+         search to pools only of a certain type, you can provide <FishingSchool> profile elements.
+         -
+         To include FishingSchool elements in the profile:
+         1. In the WoWclient, move next to the desired fishing school.
+         2. Open Honorbuddy's Developer Tools (Honorbuddy => Settings & Tools => Developer Tools).
+         3. In the Developer Tools, select the "Objects" tab.
+         4. In the "Objects" tab, select the "Game Objects" sub-tab.
+         5. The fishing school information should near the top of the list.
+         6. A properly-formed FishingSchool profile element looks like the following:
+         ===> <FishingSchool Entry="202780" Name="Fathom Eel" />
+         7. You may include as many FishingSchool elements as you like.  AutoAngler seeks any defined.
+         ===> Once again, if no <FishingSchool> is defined, then AutoAngler will fish at any fishing pools.
+    -->
+
+
+    <!-- <Pathing Type=... />
+         The Pathing element Determines how AutoAngler will treat the list of Hotpots (below).
+         The acceptable values are:
+         "Circle" [default]: When AutoAngler gets to the last Hotspot in the <Hotspots> list,
+         the next point to be visited is the first point in the <Hotspots> list.
+         "Bounce": When AutoAngler gets to the last Hotspot in the <Hotspots> list,
+         AutoAngler will 'reverse the list'.  AutoAngler will then visit each hotspot (in
+         reverse order) on the list, on its way back to the first Hotspot.
+
+    -->
+    <Pathing Type="Circle" />
+
+
+    <Hotspots>
+        <!-- <Hotspot ... />
+             A Hotspot is merely a waypoint that the bot will visit while seeking fishing pools.
+             AutoAngler 'sees' fishing pools within about 50 yards of the toon's current location.
+             Hotspots form a path that AutoAngler follows to find fishing pools within 50 yards of
+             this path.  AutoAngler notices fishing pools as it travels this path; thus, Hotspots
+             do not need to be *at* the known fishing pool spawning points, they just need to cause
+             AutoAngler to pass by these spawning points.
+             -
+             Once AutoAngler locates a fishing pool, it will select an appropriate landing site to
+             address the pool.  Thus, Hotspots do not influence AutoAngler's choice of 'landing location',
+             or 'casting location'.
+             -
+             To include Hotspots in the profiles:
+             1. In the WoWclient, move the toon to the next point in the path you are defining.
+             ===> The Hotspot will be in the air if you are flying, or on the ground if you can't fly.
+             2. Open Honorbuddy's Developer Tools (Honorbuddy => Settings & Tools => Developer Tools).
+             ===> The toon's current location should be shown in the "Local Player Info" panel.
+             3. In the "Local Player Info" panel, double-click on the numbers to the right of the word "Position"
+             ===> This emits the current position to Honorbuddy's "Log" window. as a Hotspot.
+             4. A properly-formed Hotspot profile element looks like the following:
+             ===> <Hotspot X="1229.209" Y="3663.716" Z="82.73235" />
+             5. You may include as many Hotspot elements as you like.
+        -->
+    </Hotspots>
+</HBProfile>

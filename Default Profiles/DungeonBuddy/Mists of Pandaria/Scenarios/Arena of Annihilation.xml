@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Arena of Annihilation</Name>
+  <DungeonId>511</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="63311" name="Scar-Shell" killOrder="1" optional="false" X="3795.57" Y="533.549" Z="639.0074"/>
+    <Boss isFinal="false" entry="63312" name="Jol'Grum" killOrder="2" optional="false" X="3795.64" Y="533.554" Z="639.0082"/>
+    <Boss isFinal="false" entry="63313" name="Little Liuyang" killOrder="3" optional="false" X="3795.6" Y="533.545" Z="639.0072"/>
+    <Boss isFinal="false" entry="63318" name="Chagan Firehoof" killOrder="4" optional="false" X="3795.6" Y="533.545" Z="639.0072"/>
+    
+    <Boss isFinal="true" entry="63316" name="Cloudbender Kobo" killOrder="5" optional="false" X="3795.6" Y="533.556" Z="639.007"/>
+    <Boss isFinal="true" entry="64280" name="Maki Waterblade" killOrder="5" optional="false" X="3795.6" Y="533.535" Z="639.007"/>
+    <Boss isFinal="true" entry="64281" name="Satay Byu" killOrder="5" optional="false" X="3795.808" Y="533.2673" Z="639.0076"/>
+
+
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+
+  </PullBlackspots>
+</DungeonBuddyProfile>

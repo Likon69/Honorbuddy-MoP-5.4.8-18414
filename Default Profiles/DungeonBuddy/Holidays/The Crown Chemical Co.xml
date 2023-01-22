@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<DungeonBuddyProfile>
+  <Name>The Crown Chemical Co</Name>
+  <DungeonId>288</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="46962" name="Baron Ashbury" killOrder="1" optional="false" X="-256.1198" Y="2117.153" Z="81.17957"/>
+    <Boss isFinal="false" entry="36565" name="Apothecary Baxter" killOrder="2" optional="false" X="-208.0903" Y="2217.389" Z="79.76363"/>
+    <Boss isFinal="false" entry="36272" name="Apothecary Frye" killOrder="2" optional="false" X="-208.0903" Y="2217.389" Z="79.76363"/>
+    <Boss isFinal="false" entry="36296" name="Apothecary Hummel" killOrder="2" optional="false" X="-208.0903" Y="2217.389" Z="79.76363"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+    <!-- At entrance to the left side-->
+    <PullBlackspot X="-3930.801" Y="-2612.666" Z="22.34698" Radius="13.83166" />
+  </PullBlackspots>
+</DungeonBuddyProfile>

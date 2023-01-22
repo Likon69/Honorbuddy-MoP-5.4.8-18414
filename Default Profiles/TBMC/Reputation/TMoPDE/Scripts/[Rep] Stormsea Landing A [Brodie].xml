@@ -1,0 +1,88 @@
+<HBProfile>
+	<Name>Stormsea Landing (Alliance) ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Teng of the Flying Daggers" Entry="70535" Type="Repair" X="6865.31" Y="5515.42" Z="1.28" />
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+<CustomBehavior File="Message" Text="Compiling Stormsea Landing Quests..." LogColor="CornflowerBlue"  />
+
+	<If Condition="((!HasQuest(32607) &amp;&amp; IsQuestCompleted(32607)))" >
+		<CustomBehavior File="Message" Text="Previously Completed Quests Detected" LogColor="CornflowerBlue" />
+		<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: Previously completed quests detected! \n\n Either you have done some of you quests already, and have restarted the bot...\n OR your cache folder is NOT clean, and must be deleted, and bot restarted." />
+	</If>
+	
+<!-- Extended Shore Leave -->
+	<If Condition="HasQuest(32607) &amp;&amp; !IsQuestCompleted(32607)" >
+		<CustomBehavior File="Message" Text="Starting Extended Shore Leave" LogColor="Green" />
+		<CustomBehavior File="UserSettings" QuestId="32607" LootMobs="True" KillBetweenHotspots="False" PullDistance="15" />
+		<While Condition="!IsObjectiveComplete(2,32607)" >
+			<RunTo X="7075.47" Y="5012.02" Z="23.40" />
+			<CustomBehavior File="InteractWith" QuestId="32607" MobId="218084" ObjectType="GameObject" WaitForNpcs="False" />
+		</While>
+		<If Condition="!IsObjectiveComplete(1,32607)" >
+			<RunTo X="6933.727" Y="4898.54" Z="7.647921" />
+			<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="This quest is currently bugged by WoW. Boat does not appear. And if it does, its once every few hours. Recommend you either skip this quest, or manually wait." />
+		</If>
+	</If>
+	
+<!-- Stormsea Landing Turn-ins -->
+<!--	<If Condition="HasQuest(32607) &amp;&amp; IsQuestCompleted(32607)" >
+		<CustomBehavior File="Message" Text="Heading back to Stormsea Landing to Turn-In" LogColor="Green" />
+		<CustomBehavior File="UserSettings" LootMobs="True" KillBetweenHotspots="False" PullDistance="1" />
+		<RunTo X="6990.02" Y="5237.74" Z="84.25" />
+	</If>
+	
+	<If Condition="HasQuest(32587) &amp;&amp; IsQuestCompleted(32587)" >
+		<TurnIn QuestName="Forge Ahead!" QuestId="32587" TurnInName="Scout Captain Daelin" TurnInId="70552" />
+	</If>
+	
+	<If Condition="HasQuest(32724) &amp;&amp; IsQuestCompleted(32724)" >
+		<TurnIn QuestName="Forge Ahead!" QuestId="32724" TurnInName="Scout Captain Daelin" TurnInId="70552" />
+	</If> -->
+
+<!-- Double check for ender quests -->
+	
+	<If Condition="HasItem(94566)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(94566)" />
+	</If>
+	
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+
+<CustomBehavior File="LoadProfile" ProfileName="..\[Rep] Isle of Thunder A [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

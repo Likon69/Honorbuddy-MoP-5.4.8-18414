@@ -1,0 +1,695 @@
+<HBProfile>
+
+	<Name>Terokkar Forest (Horde) ($Rev$)</Name>
+	<MinLevel>62</MinLevel>
+	<MaxLevel>70</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+		<Vendor Nav="Fly" Name="Bar Talet" Entry="18962" Type="Repair" X="-2639.384" Y="4425.386" Z="36.68339" />
+		<Vendor Nav="Fly" Name="Siflaed Coldhammer" Entry="20890" Type="Repair" X="-2846.73" Y="5048.99" Z="-18.45718" />
+		<Vendor Nav="Fly" Name="Aundro" Entry="22476" Type="Repair" X="-3753.327" Y="5410.808" Z="-3.330069" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Id="10023" Name="Patriarch Ironjaw">
+	<Objective Type="CollectItem" ItemId="25837" CollectCount="1">
+		<CollectFrom>
+			<Mob Name="Ironjaw" Id="18670" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="-2277.247" Y="3594.431" Z="-14.03904" />
+			<Hotspot X="-2252.597" Y="3487.043" Z="-22.80699" />
+			<Hotspot X="-2238.385" Y="3409.61" Z="-19.8136" />
+			<Hotspot X="-2215.558" Y="3320.054" Z="-22.39088" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="10028" Name="Vessels of Power">
+	<Objective Type="CollectItem" ItemId="25841" CollectCount="8">
+		<CollectFrom>
+			<GameObject Name="Draenei Vessel" Id="182581" />
+			<GameObject Name="Draenei Vessel" Id="182582" />
+			<GameObject Name="Draenei Vessel" Id="182583" />
+		</CollectFrom>
+		<Hotspots>
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="10878" Name="Before Darkness Falls">
+	<Objective Type="KillMob" MobId="21661" KillCount="8">
+		<Hotspots>
+			<Hotspot X="-3064.463" Y="5072.487" Z="-18.92086" />
+			<Hotspot X="-3125.517" Y="5040.657" Z="-21.0945" />
+			<Hotspot X="-3150.839" Y="5021.529" Z="-8.973885" />
+			<Hotspot X="-3127.427" Y="4946.441" Z="-21.04347" />
+			<Hotspot X="-3116.097" Y="4858.468" Z="-22.34113" />
+			<Hotspot X="-3038.728" Y="4866.926" Z="-21.71292" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="21902" KillCount="4">
+		<Hotspots>
+			<Hotspot X="-3064.463" Y="5072.487" Z="-18.92086" />
+			<Hotspot X="-3125.517" Y="5040.657" Z="-21.0945" />
+			<Hotspot X="-3150.839" Y="5021.529" Z="-8.973885" />
+			<Hotspot X="-3127.427" Y="4946.441" Z="-21.04347" />
+			<Hotspot X="-3116.097" Y="4858.468" Z="-22.34113" />
+			<Hotspot X="-3038.728" Y="4866.926" Z="-21.71292" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="21907" KillCount="2">
+		<Hotspots>
+			<Hotspot X="-3064.463" Y="5072.487" Z="-18.92086" />
+			<Hotspot X="-3125.517" Y="5040.657" Z="-21.0945" />
+			<Hotspot X="-3150.839" Y="5021.529" Z="-8.973885" />
+			<Hotspot X="-3127.427" Y="4946.441" Z="-21.04347" />
+			<Hotspot X="-3116.097" Y="4858.468" Z="-22.34113" />
+			<Hotspot X="-3038.728" Y="4866.926" Z="-21.71292" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="10920" Name="For the Fallen">
+	<Objective Type="KillMob" MobId="18467" KillCount="20">
+		<Hotspots>
+			<Hotspot X="-3104.38" Y="4129.139" Z="4.656313" />
+			<Hotspot X="-3227.811" Y="4119.483" Z="1.057774" />
+			<Hotspot X="-3330.903" Y="4133.144" Z="-1.502194" />
+			<Hotspot X="-3470.722" Y="4171.23" Z="5.224641" />
+			<Hotspot X="-3566.018" Y="4193.506" Z="-3.35439" />
+			<Hotspot X="-3738.33" Y="4216.267" Z="6.497" />
+			<Hotspot X="-3831.202" Y="4257.723" Z="5.25656" />
+			<Hotspot X="-3871.536" Y="4310.47" Z="2.731652" />
+			<Hotspot X="-3922.271" Y="4370.911" Z="-7.131462" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="10840" Name="The Tomb of Lights">
+	<Objective Type="KillMob" MobId="21370" KillCount="10">
+		<Hotspots>
+			<Hotspot X="-2998.049" Y="4545.717" Z="-21.82485" />
+			<Hotspot X="-2975.933" Y="4503.899" Z="-41.02025" />
+			<Hotspot X="-2929.074" Y="4514.357" Z="-42.94646" />
+			<Hotspot X="-3001.865" Y="4502.68" Z="-41.01537" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="21368" KillCount="10">
+		<Hotspots>
+			<Hotspot X="-2998.049" Y="4545.717" Z="-21.82485" />
+			<Hotspot X="-2975.933" Y="4503.899" Z="-41.02025" />
+			<Hotspot X="-2929.074" Y="4514.357" Z="-42.94646" />
+			<Hotspot X="-3001.865" Y="4502.68" Z="-41.01537" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="10917" Name="The Outcast's Plight">
+	<Objective Type="CollectItem" ItemId="25719" CollectCount="30">
+		<CollectFrom>
+			<Mob Name="Luanga the Imprisoner" Id="18533" />
+			<Mob Name="Urdak" Id="18541" />
+			<Mob Name="Ayit" Id="18540" />
+			<Mob Name="Okrek" Id="18685" />
+			<Mob Name="Shienor Sorcerer" Id="18450" />
+			<Mob Name="Shienor Talonite" Id="18449" />
+			<Mob Name="Shienor Wing Guard" Id="18451" />
+			<Mob Name="Shienor Windripper" Id="18453" />
+			<Mob Name="Shienor Dreadhawk" Id="18452" />
+			<Mob Name="Ashkaz" Id="18539" />
+			<Mob Name="Lithic Talonguard" Id="22388" />
+			<Mob Name="Shalassi Oracle" Id="18455" />
+			<Mob Name="Lithic Oracle" Id="22387" />
+			<Mob Name="Shalassi Talonguard" Id="18454" />
+		</CollectFrom>
+		<Hotspots>
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Terokkar Forest Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Kicker Quest" LogColor="CornflowerBlue" />
+	
+	<If Condition="!IsQuestCompleted(9957) &amp;&amp; !IsQuestCompleted(9960)" >
+		<PickUp Nav="Fly" QuestName="What's Wrong at Cenarion Thicket?" QuestId="9957" GiverName="Lethyn Moonfire" GiverId="17834" />
+	</If>
+	
+	<If Condition="HasQuest(9957)" >
+		<TurnIn Nav="Fly" QuestName="What's Wrong at Cenarion Thicket?" QuestId="9957" TurnInName="Earthbinder Tavgren" TurnInId="18446" />
+	</If>
+	<If Condition="HasQuest(9960)" >
+		<TurnIn Nav="Fly" QuestName="What's Wrong at Cenarion Thicket?" QuestId="9960" TurnInName="Earthbinder Tavgren" TurnInId="18446" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Cenarion Thicket Quests" LogColor="CornflowerBlue" />
+	
+	<If Condition="!HasQuest(9971) &amp;&amp; !IsQuestCompleted(9971)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+	
+	<PickUp Nav="Fly" QuestName="Clues in the Thicket" QuestId="9971" GiverName="Earthbinder Tavgren" GiverId="18446" />
+	<PickUp Nav="Fly" QuestName="Strange Energy" QuestId="9968" GiverName="Earthbinder Tavgren" GiverId="18446" />
+	
+	<Objective Nav="Fly" QuestName="Strange Energy" QuestId="9968" Type="CollectItem" ItemId="25672" CollectCount="4" />
+	<Objective Nav="Fly" QuestName="Strange Energy" QuestId="9968" Type="CollectItem" ItemId="24279" CollectCount="4" />
+	<CustomBehavior File="InteractWith" QuestId="9971" MobId="183789" NonCompeteDistance="0"
+		PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NumOfTimes="100" WaitTime="1000" X="-1784.088" Y="4646.958" Z="14.62396" />
+		
+	<PickUp Nav="Fly" QuestName="It's Watching You!" QuestId="9951" GiverName="Warden Treelos" GiverId="18424" />
+	<If Condition="HasQuest(9951) &amp;&amp; !IsQuestCompleted(9951)" >
+		<CustomBehavior File="FlyTo" X="-1793.379" Y="4735.169" Z="66.8316" />
+	</If>
+	<Objective Nav="Fly" QuestName="It's Watching You!" QuestId="9951" Type="KillMob" MobId="18438" KillCount="1" X="-1793.379" Y="4735.169" Z="66.8316" />
+	<TurnIn Nav="Fly" QuestName="It's Watching You!" QuestId="9951" TurnInName="Warden Treelos" TurnInId="18424" />
+
+	<TurnIn Nav="Fly" QuestName="Clues in the Thicket" QuestId="9971" TurnInName="Earthbinder Tavgren" TurnInId="18446" />
+	<TurnIn Nav="Fly" QuestName="Strange Energy" QuestId="9968" TurnInName="Earthbinder Tavgren" TurnInId="18446" />
+	
+	<PickUp Nav="Fly" QuestName="By Any Means Necessary" QuestId="9978" GiverName="Earthbinder Tavgren" GiverId="18446" />
+	<While Condition="HasQuest(9978)" >
+		<CustomBehavior File="InteractWith" MobId="18482" InteractByGossipOptions="1" NonCompeteDistance="0"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			WaitTime="5000" TerminateWhen="HasQuestAvailable(18482,&quot;TurnIn&quot;)" CollectionDistance="200" >
+			<HuntingGrounds>
+				<Hotspot X="-1948.676" Y="4666.116" Z="-1.434692" />
+				<Hotspot X="-1955.39" Y="4791.463" Z="-0.5128653" />
+				<Hotspot X="-1909.463" Y="4896.295" Z="1.339085" />
+				<Hotspot X="-1957.603" Y="4596.983" Z="5.328279" />
+				<Hotspot X="-1972.852" Y="4526.124" Z="13.50678" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<If Condition="HasQuestAvailable(18482,&quot;TurnIn&quot;)" >
+			<TurnIn Nav="Fly" QuestName="By Any Means Necessary" QuestId="9978" TurnInName="Empoor" TurnInId="18482" />
+		</If>
+	</While>
+	
+	<While Condition="!HasQuest(9979) &amp;&amp; !IsQuestCompleted(9979)" >
+		<CustomBehavior File="InteractWith" MobId="18482" InteractByGossipOptions="1" NonCompeteDistance="0"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			WaitTime="5000" TerminateWhen="HasQuestAvailable(18482,&quot;Available&quot;)" CollectionDistance="200" >
+			<HuntingGrounds>
+				<Hotspot X="-1948.676" Y="4666.116" Z="-1.434692" />
+				<Hotspot X="-1955.39" Y="4791.463" Z="-0.5128653" />
+				<Hotspot X="-1909.463" Y="4896.295" Z="1.339085" />
+				<Hotspot X="-1957.603" Y="4596.983" Z="5.328279" />
+				<Hotspot X="-1972.852" Y="4526.124" Z="13.50678" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<If Condition="HasQuestAvailable(18482,&quot;Available&quot;)" >
+			<PickUp Nav="Fly" QuestName="Wind Trader Lathrai" QuestId="9979" GiverName="Empoor" GiverId="18482" />
+		</If>
+	</While>
+	<TurnIn Nav="Fly" QuestName="Wind Trader Lathrai" QuestId="9979" TurnInName="Wind Trader Lathrai" TurnInId="18484" />
+	
+	<PickUp Nav="Fly" QuestName="A Personal Favor" QuestId="10112" GiverName="Wind Trader Lathrai" GiverId="18484" />
+	<Objective Nav="Fly" QuestName="A Personal Favor" QuestId="10112" Type="CollectItem" ItemId="27861" CollectCount="5" />
+	<TurnIn Nav="Fly" QuestName="A Personal Favor" QuestId="10112" TurnInName="Wind Trader Lathrai" TurnInId="18484" />
+	
+	<PickUp Nav="Fly" QuestName="Investigate Tuurem" QuestId="9990" GiverName="Wind Trader Lathrai" GiverId="18484" />
+	<Objective Nav="Fly" QuestName="Investigate Tuurem" QuestId="9990" Type="CollectItem" ItemId="25727" CollectCount="1" />
+	<TurnIn Nav="Fly" QuestName="Investigate Tuurem" QuestId="9990" TurnInName="Earthbinder Tavgren" TurnInId="18446" />
+
+	<PickUp Nav="Fly" QuestName="What Are These Things?" QuestId="9995" GiverName="Earthbinder Tavgren" GiverId="18446" />
+	<Objective Nav="Fly" QuestName="What Are These Things?" QuestId="9995" Type="CollectItem" ItemId="25746" CollectCount="1" />
+	<TurnIn Nav="Fly" QuestName="What Are These Things?" QuestId="9995" TurnInName="Tooki" TurnInId="18447" />
+
+	<CustomBehavior File="Message" Text="Compiling Stonebreaker Hold Quest" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="Report to Stonbreaker Camp" QuestId="10448" GiverName="Tooki" GiverId="18447" />
+	<PickUp Nav="Fly" QuestName="Vestments of the Wolf Spirit" QuestId="10018" GiverName="Malukaz" GiverId="18384" />
+	<PickUp Nav="Fly" QuestName="Wanted: Bonelashers Dead!" QuestId="10034" GiverName="Wanted Poster" GiverId="182588" />
+	<PickUp Nav="Fly" QuestName="Olemba Seed Oil" QuestId="9993" GiverName="Rakoria" GiverId="18385" />
+	<PickUp Nav="Fly" QuestName="An Unwelcome Presence" QuestId="10000" GiverName="Kurgatok" GiverId="18383" />
+	<PickUp Nav="Fly" QuestName="Magical Disturbances" QuestId="10027" GiverName="Kurgatok" GiverId="18383" />
+	<PickUp Nav="Fly" QuestName="Stymying the Arakkoa" QuestId="9987" GiverName="Rokag" GiverId="18386" />
+	<PickUp Nav="Fly" QuestName="Surrender to the Horde" QuestId="10862" GiverName="Rokag" GiverId="18386" />
+	<PickUp Nav="Fly" QuestName="Speak with Scout Neftis" QuestId="10039" GiverName="Advisor Faila" GiverId="18712" />
+	<PickUp Nav="Fly" QuestName="Arakkoa War Path" QuestId="10868" GiverName="Advisor Faila" GiverId="18712" />
+	
+	<TurnIn Nav="Fly" QuestName="Surrender to the Horde" QuestId="10862" TurnInName="Rilak the Redeemed" TurnInId="22292" />
+	
+	<PickUp Nav="Fly" QuestName="The Eyes of Skettis" QuestId="10847" GiverName="Rilak the Redeemed" GiverId="22292" />
+	<PickUp Nav="Fly" QuestName="The Outcast's Plight" QuestId="10917" GiverName="Vekax" GiverId="22429" />
+	<Objective Nav="Fly" QuestName="The Eyes of Skettis" QuestId="10847" Type="CollectItem" ItemId="25638" CollectCount="1" />
+	<Objective Nav="Fly" QuestName="Stymying the Arakkoa" QuestId="9987" Type="KillMob" MobId="18539" KillCount="1" />
+	<CustomBehavior File="FlyTo" QuestId="10847" QuestObjectiveIndex="2" X="-1833.56" Y="3957.368" Z="46.55501" />
+	<Objective QuestName="The Eyes of Skettis" QuestId="10847" Type="CollectItem" ItemId="25642" CollectCount="1" X="-1833.56" Y="3957.368" Z="46.55501" />
+	<Objective Nav="Fly" QuestName="Stymying the Arakkoa" QuestId="9987" Type="KillMob" MobId="18540" KillCount="1" />
+	<Objective Nav="Fly" QuestName="Arakkoa War Path" QuestId="10868" Type="KillMob" MobId="18449" KillCount="14" />
+	<Objective Nav="Fly" QuestName="Arakkoa War Path" QuestId="10868" Type="KillMob" MobId="18450" KillCount="6" />
+	<Objective Nav="Fly" QuestName="Stymying the Arakkoa" QuestId="9987" Type="KillMob" MobId="18541" KillCount="1" X="-2518.938" Y="5390.317" Z="27.16385" />
+	<Objective Nav="Fly" QuestName="The Outcast's Plight" QuestId="10917" Type="CollectItem" ItemId="25719" CollectCount="30" />
+	<TurnIn Nav="Fly" QuestName="The Eyes of Skettis" QuestId="10847" TurnInName="Rilak the Redeemed" TurnInId="22292" />
+	<PickUp Nav="Fly" QuestName="Seek Out Kirrik" QuestId="10849" GiverName="Rilak the Redeemed" GiverId="22292" />
+	<TurnIn Nav="Fly" QuestName="The Outcast's Plight" QuestId="10917" TurnInName="Vekax" TurnInId="22429" />
+	
+	<TurnIn Nav="Fly" QuestName="Speak with Scout Neftis" QuestId="10039" TurnInName="Scout Neftis" TurnInId="18714" />
+	
+	<PickUp Nav="Fly" QuestName="Who Are They?" QuestId="10041" GiverName="Scout Neftis" GiverId="18714" />
+	<While Condition="HasQuest(10041) &amp;&amp; !IsQuestCompleted(10041)" >
+		<DisableBehavior Name="Pull" />
+		<UseMount Value="False" />
+		<CustomBehavior File="InteractWith" QuestId="10041" QuestObjectiveIndex="2" MobId="18717"
+			InteractByGossipOptions="1" NonCompeteDistance="0" CollectionDistance="250"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			WaitTime="1000" TerminateWhen="!Me.HasAura(32756)" X="-2468.297" Y="4952.322" Z="34.24655" />
+		<CustomBehavior File="InteractWith" QuestId="10041" QuestObjectiveIndex="1" MobId="18716"
+			InteractByGossipOptions="1" NonCompeteDistance="0" CollectionDistance="250"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			WaitTime="1000" TerminateWhen="!Me.HasAura(32756)" X="-2428.18" Y="4975.853" Z="31.1417" />
+		<CustomBehavior File="InteractWith" QuestId="10041" QuestObjectiveIndex="3" MobId="18719"
+			InteractByGossipOptions="1" NonCompeteDistance="0" CollectionDistance="250"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			WaitTime="1000" TerminateWhen="!Me.HasAura(32756)" X="-2405.428" Y="4906.345" Z="35.31541" />
+		<UseMount Value="True" />
+		<CustomBehavior File="InteractWith" QuestId="10041" MobId="18714" InteractByGossipOptions="1" NonCompeteDistance="0"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			WaitTime="1000" TerminateWhen="Me.HasAura(32756)" X="-2298.908" Y="4897.763" Z="1.375484" />
+	</While>
+	<TurnIn Nav="Fly" QuestName="Who Are They?" QuestId="10041" TurnInName="Scout Neftis" TurnInId="18714" />
+	<UseMount Value="True" />
+	<EnableBehavior Name="Pull" />
+	
+	<PickUp Nav="Fly" QuestName="Kill the Shadow Council!" QuestId="10043" GiverName="Scout Neftis" GiverId="18714" />
+	<Objective Nav="Fly" QuestName="Kill the Shadow Council!" QuestId="10043" Type="KillMob" MobId="18720" KillCount="1" />
+	<Objective Nav="Fly" QuestName="Kill the Shadow Council!" QuestId="10043" Type="KillMob" MobId="16519" KillCount="10" />
+	<Objective Nav="Fly" QuestName="Kill the Shadow Council!" QuestId="10043" Type="KillMob" MobId="17088" KillCount="10" />
+	
+	<TurnIn Nav="Fly" QuestName="Kill the Shadow Council!" QuestId="10043" TurnInName="Advisor Faila" TurnInId="18712" />
+	<TurnIn Nav="Fly" QuestName="Arakkoa War Path" QuestId="10868" TurnInName="Advisor Faila" TurnInId="18712" />
+	<TurnIn Nav="Fly" QuestName="Stymying the Arakkoa" QuestId="9987" TurnInName="Rokag" TurnInId="18386" />
+	
+	<Objective Nav="Fly" QuestName="Olemba Seed Oil" QuestId="9993" Type="CollectItem" ItemId="25745" CollectCount="30" />
+	<Objective Nav="Fly" QuestName="Magical Disturbances" QuestId="10027" Type="KillMob" MobId="18464" KillCount="10" />
+	<Objective Nav="Fly" QuestName="Vestments of the Wolf Spirit" QuestId="10018" Type="CollectItem" ItemId="25812" CollectCount="12" />
+	
+	<TurnIn Nav="Fly" QuestName="Report to Stonebreaker Camp" QuestId="10448" TurnInName="Sergeant Chawni" TurnInId="21007" />
+	
+	<PickUp Nav="Fly" QuestName="Attack on Firewing Point" QuestId="9997" GiverName="Sergeant Chawni" GiverId="21007" />
+	<PickUp Nav="Fly" QuestName="The Firewing Liaison" QuestId="10003" GiverName="Shadowstalker Kaide" GiverId="18566" />
+	<Objective Nav="Fly" QuestName="Attack on Firewing Point" QuestId="9997" Type="KillMob" MobId="5355" KillCount="10" />
+	<Objective Nav="Fly" QuestName="Attack on Firewing Point" QuestId="9997" Type="KillMob" MobId="1410" KillCount="10" />
+	<Objective Nav="Fly" QuestName="Attack on Firewing Point" QuestId="9997" Type="KillMob" MobId="16769" KillCount="10" />
+	
+	<PickUp Nav="Fly" QuestName="Escape from Firewing Point!" QuestId="10052" GiverName="Isla Starmane" GiverId="18760" />
+	<While Condition="HasQuest(10052) &amp;&amp; !IsQuestCompleted(10052)" >
+		<CustomBehavior File="EscortGroup" QuestId="10052" EscortCompleteWhen="QuestCompleteOrFails" EscortNpcId="18760" />
+		<If Condition="!IsQuestCompleted(10052)" >
+			<CustomBehavior File="AbandonQuest" QuestId="10052" />
+			<PickUp Nav="Fly" QuestName="Escape from Firewing Point!" QuestId="10052" GiverName="Isla Starmane" GiverId="18760" />
+		</If>
+	</While>
+	
+	<CustomBehavior File="FlyTo" QuestId="10003" X="-2960.879" Y="3461.712" Z="1.014977" />
+	<Objective Nav="Fly" QuestName="The Firewing Liaison" QuestId="10003" Type="KillMob" MobId="18583" KillCount="1" />
+	<Objective Nav="Fly" QuestName="An Unwelcome Presence" QuestId="10000" Type="KillMob" MobId="18595" KillCount="12" />
+	<TurnIn Nav="Fly" QuestName="An Unwelcome Presence" QuestId="10000" TurnInName="Shadowstalker Kaide" TurnInId="18566" />
+	<TurnIn Nav="Fly" QuestName="The Firewing Liaison" QuestId="10003" TurnInName="Shadowstalker Kaide" TurnInId="18566" />
+	<PickUp Nav="Fly" QuestName="What Happens in Terokkar Stays in Terokkar" QuestId="10008" GiverName="Shadowstalker Kaide" GiverId="18566" />
+	<TurnIn Nav="Fly" QuestName="Attack on Firewing Point" QuestId="9997" TurnInName="Sergeant Chawni" TurnInId="21007" />
+	<PickUp Nav="Fly" QuestName="The Final Code" QuestId="10447" GiverName="Sergeant Chawni" GiverId="21007" />
+	
+	<If Condition="HasQuest(10447) &amp;&amp; !IsQuestCompleted(10447)" >
+		<Objective Nav="Fly" QuestName="The Final Code" QuestId="10447" Type="CollectItem" ItemId="29912" CollectCount="1" X="-2303.008" Y="3084.576" Z="158.2088" />
+	</If>
+	<CustomBehavior File="InteractWith" QuestId="10447" MobId="184725" NonCompeteDistance="0"
+		PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NumOfTimes="1000" WaitTime="1000" InteractBlacklistTimeInSeconds="5" X="-2345.222" Y="3234.89" Z="-3.374285" />
+
+	<PickUp QuestName="An Unseen Hand" QuestId="10013" GiverName="Fel Orc Plans" GiverId="182549" X="-2928.185" Y="3415.435" Z="1.894076" />
+	<CustomBehavior File="FlyTo" QuestId="10008" X="-2960.879" Y="3461.712" Z="1.014977" />
+	<Objective Nav="Fly" QuestName="What Happens in Terokkar Stays in Terokkar" QuestId="10008" Type="KillMob" MobId="16772" KillCount="10" />
+	<Objective Nav="Fly" QuestName="What Happens in Terokkar Stays in Terokkar" QuestId="10008" Type="KillMob" MobId="16810" KillCount="6" />
+
+	<TurnIn Nav="Fly" QuestName="What Happens in Terokkar Stays in Terokkar" QuestId="10008" TurnInName="Shadowstalker Kaide" TurnInId="18566" />
+	<TurnIn Nav="Fly" QuestName="The Final Code" QuestId="10447" TurnInName="Tooki" TurnInId="18447" />
+	<PickUp Nav="Fly" QuestName="Letting Earthbinder Tavgren Know" QuestId="10006" GiverName="Tooki" GiverId="18447" />
+	<TurnIn Nav="Fly" QuestName="Vestments of the Wolf Spirit" QuestId="10018" TurnInName="Malukaz" TurnInId="18384" />
+	<PickUp Nav="Fly" QuestName="Patriarch Ironjaw" QuestId="10023" GiverName="Malukaz" GiverId="18384" />
+	<TurnIn Nav="Fly" QuestName="Olemba Seed Oil" QuestId="9993" TurnInName="Rakoria" TurnInId="18385" />
+	<PickUp Nav="Fly" QuestName="And Now, the Moment of Truth" QuestId="10201" GiverName="Rakoria" GiverId="18385" />
+	<CustomBehavior File="InteractWith" QuestId="10201" MobId="19606" InteractByGossipOptions="1"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" NumOfTimes="100" WaitTime="7000"
+		InteractBlacklistTimeInSeconds="5" X="-2629.315" Y="4390.214" Z="34.86663" />
+	<TurnIn Nav="Fly" QuestName="And Now, the Moment of Truth" QuestId="10201" TurnInName="Rakoria" TurnInId="18385" />
+	<TurnIn Nav="Fly" QuestName="Magical Disturbances" QuestId="10027" TurnInName="Kurgatok" TurnInId="18383" />
+	<TurnIn Nav="Fly" QuestName="An Unseen Hand" QuestId="10013" TurnInName="Rokag" TurnInId="18386" />
+	<TurnIn Nav="Fly" QuestName="Escape from Firewing Point!" QuestId="10052" TurnInName="Advisor Faila" TurnInId="18712" />
+	
+	<Objective Nav="Fly" QuestName="Patriarch Ironjaw" QuestId="10023" Type="CollectItem" ItemId="25837" CollectCount="1" />
+	
+	<TurnIn Nav="Fly" QuestName="Letting Earthbinder Tavgren Know" QuestId="10006" TurnInName="Earthbinder Tavgren" TurnInId="18446" />
+	<TurnIn Nav="Fly" QuestName="Patriarch Ironjaw" QuestId="10023" TurnInName="Malukaz" TurnInId="18384" />
+	
+	<PickUp Nav="Fly" QuestName="Welcoming the Wolf Spirit" QuestId="10791" GiverName="Malukaz" GiverId="18384" />
+	<While Condition="HasQuest(10791) &amp;&amp; !IsQuestCompleted(10791)" >
+		<UseItem QuestId="10791" ItemId="31344" X="-2668.552" Y="4379.43" Z="36.20656" />
+		<CustomBehavior File="WaitTimer" QuestId="10791" WaitTime="60000" />
+	</While>
+	<TurnIn Nav="Fly" QuestName="Welcoming the Wolf Spirit" QuestId="10791" TurnInName="Malukaz" TurnInId="18384" />
+	
+	<TurnIn Nav="Fly" QuestName="Seek Out Kirrik" QuestId="10849" TurnInName="Kirrik the Awakened" TurnInId="22272" />
+	
+	<CustomBehavior File="Message" Text="Compiling The Bone Wastes Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="Veil Skith: Darkstone of Terokk" QuestId="10839" GiverName="Kirrik the Awakened" GiverId="22272" />
+	<PickUp Nav="Fly" QuestName="Missing Friends" QuestId="10852" GiverName="Ethan" GiverId="22365" />
+	<PickUp Nav="Fly" QuestName="The Infested Protectors" QuestId="10896" GiverName="Lakotae" GiverId="22420" />
+	<PickUp Nav="Fly" QuestName="Before Darkness Falls" QuestId="10878" GiverName="Mekeda" GiverId="22370" />
+	
+	<CustomBehavior File="InteractWith" QuestId="10839" MobId="185191" InteractByUsingItemId="31610"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		IgnoreLoSToTarget="True" NumOfTimes="1000" WaitTime="1000" 
+		InteractBlacklistTimeInSeconds="5" X="-2512.74" Y="5418.917" Z="0.04758" />
+	
+	<While Condition="HasQuest(10852) &amp;&amp; !IsQuestCompleted(10852)" >
+		<CustomBehavior File="InteractWith" QuestId="10852" MobId="18453" MobId2="18452" MobState="Alive" NonCompeteDistance="5"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="1000" WaitTime="1000" TerminateWhen="HasItem(31655)" >
+			<HuntingGrounds>
+				<Hotspot X="-2543.953" Y="5462.182" Z="8.511698" />
+				<Hotspot X="-2522.554" Y="5405.017" Z="0.04832079" />
+				<Hotspot X="-2464.344" Y="5392.245" Z="2.106232" />
+				<Hotspot X="-2520.782" Y="5390.647" Z="27.16027" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" QuestId="10852" MobId="185203" NonCompeteDistance="0"
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			WaitTime="1000" X="-2464.219" Y="5402.185" Z="2.07683" 
+			TerminateWhen="!HasItem(31655) || (Object(185203) != null &amp;&amp; Unit(22314, u =&gt; u.Location.Distance(new WoWPoint(-2464.219, 5402.185, 2.07683)) &lt; 5) == null)" />
+		<CustomBehavior File="InteractWith" QuestId="10852" MobId="185205" NonCompeteDistance="0" 
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			WaitTime="1000" X="-2526.296" Y="5384.325" Z="28.00639" 
+			TerminateWhen="!HasItem(31655) || (Object(185205) != null &amp;&amp; Unit(22314, u =&gt; u.Location.Distance(new WoWPoint(-2526.296, 5384.325, 28.00639)) &lt; 5) == null)" />
+		<CustomBehavior File="InteractWith" QuestId="10852" MobId="185202" NonCompeteDistance="0" 
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			WaitTime="1000" X="-2544.945" Y="5484.456" Z="8.259654"
+			TerminateWhen="!HasItem(31655) || (Object(185202) != null &amp;&amp; Unit(22314, u =&gt; u.Location.Distance(new WoWPoint(-2544.945, 5484.456, 8.259654)) &lt; 5) == null)" />
+		<CustomBehavior File="InteractWith" QuestId="10852" MobId="185204" NonCompeteDistance="0" 
+			PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			WaitTime="1000" X="-2579.545" Y="5430.312" Z="27.95818"
+			TerminateWhen="!HasItem(31655) || (Object(185204) != null &amp;&amp; Unit(22314, u =&gt; u.Location.Distance(new WoWPoint(-2579.545, 5430.312, 27.95818)) &lt; 5) == null)" />
+	</While>
+	
+	<If Condition="HasQuest(10878) &amp;&amp; !IsQuestCompleted(10878)" >
+		<CustomBehavior File="FlyTo" QuestId="10878" TerminateWhen="Unit(21661, u =&gt; u.Distance &lt; 30) != null || Unit(21902, u =&gt; u.Distance &lt; 30) != null || Unit(21907, u =&gt; u.Distance &lt; 30) != null"
+			X="-3064.463" Y="5072.487" Z="-18.92086" />
+		<CustomBehavior File="ForcedDismount" />
+	</If>
+	<Objective Nav="Fly" QuestName="Before Darkness Falls" QuestId="10878" Type="KillMob" MobId="21661" KillCount="8" />
+	<Objective Nav="Fly" QuestName="Before Darkness Falls" QuestId="10878" Type="KillMob" MobId="21902" KillCount="4" />
+	<Objective Nav="Fly" QuestName="Before Darkness Falls" QuestId="10878" Type="KillMob" MobId="21907" KillCount="2" />
+	
+	<If Condition="!HasQuest(10880) &amp;&amp; !IsQuestCompleted(10880)" >
+		<CustomBehavior File="InteractWith" MobId="21661" MobId2="21902" MobId3="21907" MobState="Alive"
+			NonCompeteDistance="5" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="1000" WaitTime="1000" TerminateWhen="HasQuest(10880) || HasItem(31707)" >
+			<HuntingGrounds>
+				<Hotspot X="-3064.463" Y="5072.487" Z="-18.92086" />
+				<Hotspot X="-3125.517" Y="5040.657" Z="-21.0945" />
+				<Hotspot X="-3150.839" Y="5021.529" Z="-8.973885" />
+				<Hotspot X="-3127.427" Y="4946.441" Z="-21.04347" />
+				<Hotspot X="-3116.097" Y="4858.468" Z="-22.34113" />
+				<Hotspot X="-3038.728" Y="4866.926" Z="-21.71292" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<PickUp QuestName="Cabal Orders" QuestId="10880" GiverType="Item" GiverName="Cabal Orders" GiverId="31707" />
+	</If>
+	
+	<Objective Nav="Fly" QuestName="Wanted: Bonelashers Dead!" QuestId="10034" Type="KillMob" MobId="18470" KillCount="20" X="-2864.105" Y="4763.831" Z="-2.473201" />
+	<TurnIn Nav="Fly" QuestName="Wanted: Bonelashers Dead!" QuestId="10034" TurnInName="Mawg Grimshot" TurnInId="18705" />
+	<PickUp Nav="Fly" QuestName="Torgos!" QuestId="10036" GiverName="Mawg Grimshot" GiverId="18705" />
+	
+	<While Condition="HasQuest(10896) &amp;&amp; !IsQuestCompleted(10896)" >
+		<CustomBehavior File="InteractWith" QuestId="10896" MobId="22095" MobId2="22307" MobState="Alive"
+			NonCompeteDistance="5" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="1000" WaitTime="1000" TerminateWhen="Unit(22419, u =&gt; u.IsAlive) != null" 
+			CollectionDistance="250" >
+			<HuntingGrounds>
+				<Hotspot X="-2843.828" Y="4577.156" Z="-12.39746" />
+				<Hotspot X="-2874.196" Y="4500.957" Z="-8.976773" />
+				<Hotspot X="-2943.553" Y="4387.192" Z="-8.905178" />
+				<Hotspot X="-3013.712" Y="4339.012" Z="-10.05189" />
+				<Hotspot X="-3116.893" Y="4257.335" Z="-10.05982" />
+				<Hotspot X="-3266.448" Y="4225.906" Z="-13.55269" />
+				<Hotspot X="-3360.084" Y="4199.911" Z="-8.585765" />
+				<Hotspot X="-3465.592" Y="4223.94" Z="-6.381154" />
+				<Hotspot X="-3551.908" Y="4243.237" Z="-5.969506" />
+				<Hotspot X="-3614.343" Y="4261.029" Z="0.3034989" />
+				<Hotspot X="-3701.899" Y="4279.523" Z="4.163066" />
+				<Hotspot X="-3772.208" Y="4350.664" Z="3.221514" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<CustomBehavior File="InteractWith" QuestId="10896" MobId="22419" MobState="Alive"
+			NonCompeteDistance="5" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="1000" WaitTime="1000" TerminateWhen="Unit(22419, u =&gt; u.IsAlive) == null" />
+	</While>
+	
+	<PickUp Nav="Fly" QuestName="For the Fallen" QuestId="10920" GiverName="Vindicator Haylen" GiverId="22462" />
+	<Objective Nav="Fly" QuestName="For the Fallen" QuestId="10920" Type="KillMob" MobId="18467" KillCount="20" />
+	<TurnIn Nav="Fly" QuestName="For the Fallen" QuestId="10920" TurnInName="Vindicator Haylen" TurnInId="22462" />
+	
+	<PickUp Nav="Fly" QuestName="Terokkarantula" QuestId="10921" GiverName="Vindicator Haylen" GiverId="22462" />
+	<Objective Nav="Fly" QuestName="Terokkarantula" QuestId="10921" Type="KillMob" MobId="20682" KillCount="1" />
+	<TurnIn Nav="Fly" QuestName="Terokkarantula" QuestId="10921" TurnInName="Vindicator Haylen" TurnInId="22462" />
+	
+	<PickUp Nav="Fly" QuestName="Return to Sha'tari Base Camp" QuestId="10926" GiverName="Vindicator Haylen" GiverId="22462" />
+	
+	<While Condition="HasQuest(10036) &amp;&amp; !IsQuestCompleted(10036)" >
+		<CustomBehavior File="InteractWith" QuestId="10036" MobId="21515" MobState="Alive"
+			NonCompeteDistance="5" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="100" WaitTime="1000" TerminateWhen="HasItem(30618)" X="-2852.101" Y="4766.435" Z="-0.9547945" />
+		<CustomBehavior File="InteractWith" QuestId="10036" MobId="184842" InteractByUsingItemId="30618"
+			NonCompeteDistance="5" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			WaitTime="10000" X="-3002.412" Y="5629.004" Z="-3.150181" />
+		<CustomBehavior File="InteractWith" QuestId="10036" MobId="18707" MobState="Alive"
+			NonCompeteDistance="0" PreInteractMountStrategy="Dismount" WaitTime="1000"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" TerminateWhen="Unit(18707, u =&gt; u.IsAlive) == null"
+			X="-3118.457" Y="5586.232" Z="-6.846826" />
+	</While>
+	<TurnIn Nav="Fly" QuestName="Torgos!" QuestId="10036" TurnInName="Mawg Grimshot" TurnInId="18705" />
+	
+	<TurnIn Nav="Fly" QuestName="Veil Skith: Darkstone of Terokk" QuestId="10839" TurnInName="Kirrik the Awakened" TurnInId="22272" />
+	<PickUp Nav="Fly" QuestName="Veil Rhaze: Unliving Evil" QuestId="10848" GiverName="Kirrik the Awakened" GiverId="22272" />
+	<TurnIn Nav="Fly" QuestName="Missing Friends" QuestId="10852" TurnInName="Ethan" TurnInId="22365" />
+	<TurnIn Nav="Fly" QuestName="The Infested Protectors" QuestId="10896" TurnInName="Lakotae" TurnInId="22420" />
+	<TurnIn Nav="Fly" QuestName="Before Darkness Falls" QuestId="10878" TurnInName="Mekeda" TurnInId="22370" />
+	<TurnIn Nav="Fly" QuestName="Cabal Orders" QuestId="10880" TurnInName="Mekeda" TurnInId="22370" />
+	<PickUp Nav="Fly" QuestName="The Shadow Tomb" QuestId="10881" GiverName="Mekeda" GiverId="22370" />
+	<PickUp Nav="Fly" QuestName="The Tomb of Lights" QuestId="10840" GiverName="High Priest Orglum" GiverId="22278" />
+	<PickUp Nav="Fly" QuestName="Vengeful Souls" QuestId="10842" GiverName="High Priest Orglum" GiverId="22278" />
+	
+	<Objective Nav="Fly" QuestName="The Shadow Tomb" QuestId="10881" Type="CollectItem" ItemId="31709" CollectCount="1" X="-2845.195" Y="5352.258" Z="-30.63358" />
+	<Objective Nav="Fly" QuestName="The Shadow Tomb" QuestId="10881" Type="CollectItem" ItemId="31710" CollectCount="1" X="-2855.051" Y="5472.016" Z="-30.18832" />
+	<Objective Nav="Fly" QuestName="The Shadow Tomb" QuestId="10881" Type="CollectItem" ItemId="31708" CollectCount="1" X="-2696.664" Y="5418.063" Z="-36.46872" />
+	<PickUp Nav="Fly" QuestName="Escaping the Tomb" QuestId="10887" GiverName="Akuno" GiverId="22377" />
+	<While Condition="HasQuest(10887) &amp;&amp; !IsQuestCompleted(10887)" >
+		<CustomBehavior File="EscortGroup" QuestId="10887" EscortCompleteWhen="QuestCompleteOrFails" EscortNpcId="22377" />
+		<If Condition="!IsQuestCompleted(10887)" >
+			<CustomBehavior File="AbandonQuest" QuestId="10887" />
+			<PickUp Nav="Fly" QuestName="Escaping the Tomb" QuestId="10887" GiverName="Akuno" GiverId="22377" />
+		</If>
+	</While>
+	<Objective Nav="Fly" QuestName="Veil Rhaze: Unliving Evil" QuestId="10848" Type="KillMob" MobId="21198" KillCount="4" />
+	<Objective Nav="Fly" QuestName="Veil Rhaze: Unliving Evil" QuestId="10848" Type="KillMob" MobId="21200" KillCount="4" />
+	<Objective Nav="Fly" QuestName="Veil Rhaze: Unliving Evil" QuestId="10848" Type="KillMob" MobId="21324" KillCount="2" />
+
+	<TurnIn Nav="Fly" QuestName="Veil Rhaze: Unliving Evil" QuestId="10848" TurnInName="Kirrik the Awakened" TurnInId="22272" />
+	<PickUp Nav="Fly" QuestName="Veil Lithic: Preemptive Strike" QuestId="10861" GiverName="Kirrik the Awakened" GiverId="22272" />
+	<TurnIn Nav="Fly" QuestName="Escaping the Tomb" QuestId="10887" TurnInName="Mekeda" TurnInId="22370" />
+	<TurnIn Nav="Fly" QuestName="The Shadow Tomb" QuestId="10881" TurnInName="Mekeda" TurnInId="22370" />
+	
+	<Objective Nav="Fly" QuestName="The Tomb of Lights" QuestId="10840" Type="KillMob" MobId="21370" KillCount="10" />
+	<Objective Nav="Fly" QuestName="The Tomb of Lights" QuestId="10840" Type="KillMob" MobId="21368" KillCount="10" />
+	<Objective Nav="Fly" QuestName="Vengeful Souls" QuestId="10842" Type="KillMob" MobId="21636" KillCount="5" X="-3001.865" Y="4502.68" Z="-41.01537" />
+	
+	<TurnIn Nav="Fly" QuestName="Vengeful Souls" QuestId="10842" TurnInName="High Priest Orglum" TurnInId="22278" />
+	<TurnIn Nav="Fly" QuestName="The Tomb of Lights" QuestId="10840" TurnInName="High Priest Orglum" TurnInId="22278" />
+	
+	<PickUp Nav="Fly" QuestName="Recover the Bones" QuestId="10030" GiverName="Soolaveen" GiverId="18675" />
+	<Objective Nav="Fly" QuestName="Recover the Bones" QuestId="10030" Type="CollectItem" ItemId="25842" CollectCount="10" />
+	<Objective Nav="Fly" QuestName="Veil Lithic: Preemptive Strike" QuestId="10861" Type="UseObject" ObjectId="185211" UseCount="3" />
+	<CustomBehavior File="InteractWith" QuestId="10861" QuestObjectiveIndex="2" MobId="185210"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NumOfTimes="1000" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-3574.396" Y="5781.789" Z="-2.637173" />
+			<Hotspot X="-3693.178" Y="5737.323" Z="-1.472788" />
+			<Hotspot X="-3639.365" Y="5813.179" Z="0.1217002" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	
+	<TurnIn Nav="Fly" QuestName="Veil Lithic: Preemptive Strike" QuestId="10861" TurnInName="Kirrik the Awakened" TurnInId="22272" />
+	<PickUp Nav="Fly" QuestName="Veil Shalas: Signal Fires" QuestId="10874" GiverName="Kirrik the Awakened" GiverId="22272" />
+	<TurnIn Nav="Fly" QuestName="Recover the Bones" QuestId="10030" TurnInName="Ramdor the Mad" TurnInId="19417" />
+	
+	<PickUp Nav="Fly" QuestName="Helping the Lost Find Their Way" QuestId="10031" GiverName="Ramdor the Mad" GiverId="19417" />
+	<Objective Nav="Fly" QuestName="Helping the Lost Find Their Way" QuestId="10031" Type="KillMob" MobId="18460" KillCount="10" />
+	<Objective Nav="Fly" QuestName="Helping the Lost Find Their Way" QuestId="10031" Type="KillMob" MobId="16805" KillCount="10" />
+	<TurnIn Nav="Fly" QuestName="Helping the Lost Find Their Way" QuestId="10031" TurnInName="Soolaveen" TurnInId="18675" />
+
+	<CustomBehavior File="FlyTo" QuestId="10874" QuestObjectiveIndex="1" X="-3423.907" Y="4075.081" Z="73.83592" />
+	<CustomBehavior File="InteractWith" QuestId="10874" QuestObjectiveIndex="1" MobId="185216" 
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NumOfTimes="100" WaitTime="1000" MovementBy="NavigatorPreferred" X="-3419.712" Y="4103.795" Z="62.63953" />
+	<Objective Nav="Fly" QuestName="Veil Shalas: Signal Fires" QuestId="10874" Type="UseObject" ObjectId="185217" UseCount="1" />
+	<Objective Nav="Fly" QuestName="Veil Shalas: Signal Fires" QuestId="10874" Type="UseObject" ObjectId="185218" UseCount="1" />
+	<Objective Nav="Fly" QuestName="Veil Shalas: Signal Fires" QuestId="10874" Type="UseObject" ObjectId="185219" UseCount="1" />
+	<TurnIn Nav="Fly" QuestName="Veil Shalas: Signal Fires" QuestId="10874" TurnInName="Kirrik the Awakened" TurnInId="22272" />
+	
+	<PickUp Nav="Fly" QuestName="Return to Shattrath" QuestId="10889" GiverName="Kirrik the Awakened" GiverId="22272" />
+	<TurnIn Nav="Fly" QuestName="Return to Shattrath" QuestId="10889" TurnInName="Rilak the Redeemed" TurnInId="22292" />
+
+	<TurnIn Nav="Fly" QuestName="Return to Sha'tari Base Camp" QuestId="10926" TurnInName="Scout Navrin" TurnInId="22364" />
+	
+	<CustomBehavior File="Message" Text="Compiling Sha'tari Base Camp Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp Nav="Fly" QuestName="Taken in the Night" QuestId="10873" GiverName="Scout Navrin" GiverId="22364" />
+	<PickUp Nav="Fly" QuestName="An Improper Burial" QuestId="10913" GiverName="Commander Ravaj" GiverId="22446" />
+	<PickUp Nav="Fly" QuestName="The Dread Relic" QuestId="10877" GiverName="Oakun" GiverId="22456" />
+	
+	<PickUp Nav="Fly" QuestName="Digging Through Bones" QuestId="10922" GiverName="Chief Archaeologist Letoll" GiverId="22458" />
+	<While Condition="HasQuest(10922) &amp;&amp; !IsQuestCompleted(10922)" >
+		<CustomBehavior File="EscortGroup" QuestId="10922" EscortCompleteWhen="QuestCompleteOrFails" EscortNpcId="22458" EscortNpcId2="22464" />
+		<If Condition="!IsQuestCompleted(10922)" >
+			<CustomBehavior File="AbandonQuest" QuestId="10922" />
+			<PickUp Nav="Fly" QuestName="Digging Through Bones" QuestId="10922" GiverName="Chief Archaeologist Letoll" GiverId="22458" />
+		</If>
+	</While>
+	<TurnIn Nav="Fly" QuestName="Digging Through Bones" QuestId="10922" TurnInName="Dwarfowitz" TurnInId="22481" />
+	
+	<PickUp Nav="Fly" QuestName="Fumping" QuestId="10929" GiverName="Dwarfowitz" GiverId="22481" />
+	
+	<CustomBehavior File="InteractWith" QuestId="10913" QuestObjectiveIndex="1" MobId="21859" InteractByUsingItemId="31769"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NumOfTimes="1000" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-3698.56" Y="5349.629" Z="-12.83801" />
+			<Hotspot X="-3707.229" Y="5286.888" Z="-19.64046" />
+			<Hotspot X="-3711.362" Y="5226.987" Z="-21.96443" />
+			<Hotspot X="-3733.642" Y="5180.236" Z="-21.43368" />
+			<Hotspot X="-3742.092" Y="5102.186" Z="-20.06058" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<CustomBehavior File="InteractWith" QuestId="10913" QuestObjectiveIndex="2" MobId="21846" InteractByUsingItemId="31769"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NumOfTimes="1000" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-3698.56" Y="5349.629" Z="-12.83801" />
+			<Hotspot X="-3707.229" Y="5286.888" Z="-19.64046" />
+			<Hotspot X="-3711.362" Y="5226.987" Z="-21.96443" />
+			<Hotspot X="-3733.642" Y="5180.236" Z="-21.43368" />
+			<Hotspot X="-3742.092" Y="5102.186" Z="-20.06058" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<Objective Nav="Fly" QuestName="The Dread Relic" QuestId="10877" Type="CollectItem" ItemId="31697" CollectCount="1" />
+	<CustomBehavior File="InteractWith" QuestId="10873" MobId="22355" MobState="Alive"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NumOfTimes="1000" WaitTime="1000" >
+		<HuntingGrounds>
+			<Hotspot X="-3751.466" Y="4243.939" Z="4.087403" />
+			<Hotspot X="-3816.859" Y="4241.087" Z="4.873154" />
+			<Hotspot X="-3865.878" Y="4267.991" Z="1.744943" />
+			<Hotspot X="-3908.56" Y="4297.484" Z="-7.629009" />
+			<Hotspot X="-3954.919" Y="4358.233" Z="-15.16357" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	
+	<CustomBehavior File="FlyTo" QuestId="10929" X="-3741.414" Y="4444.691" Z="-7.044203" />
+	<While Condition="HasQuest(10929) &amp;&amp; !IsQuestCompleted(10929)" >
+		<UseItem QuestId="10929" ItemId="31810" X="-3741.414" Y="4444.691" Z="-7.044203" />
+	</While>
+	
+	<TurnIn Nav="Fly" QuestName="Taken in the Night" QuestId="10873" TurnInName="Scout Navrin" TurnInId="22364" />
+	<TurnIn Nav="Fly" QuestName="An Improper Burial" QuestId="10913" TurnInName="Commander Ravaj" TurnInId="22446" />
+	<PickUp Nav="Fly" QuestName="A Hero Is Needed" QuestId="10914" GiverName="Commander Ravaj" GiverId="22446" />
+	<TurnIn Nav="Fly" QuestName="Fumping" QuestId="10929" TurnInName="Dwarfowitz" TurnInId="22481" />
+	<PickUp Nav="Fly" QuestName="The Big Bone Worm" QuestId="10930" GiverName="Dwarfowitz" GiverId="22481" />
+	<TurnIn Nav="Fly" QuestName="The Dread Relic" QuestId="10877" TurnInName="Oakun" TurnInId="22456" />
+	<PickUp Nav="Fly" QuestName="Evil Draws Near" QuestId="10923" GiverName="Oakun" GiverId="22456" />
+	
+	<Objective Nav="Fly" QuestName="A Hero Is Needed" QuestId="10914" Type="KillMob" MobId="21284" KillCount="12" />
+	<Objective Nav="Fly" QuestName="A Hero Is Needed" QuestId="10914" Type="KillMob" MobId="21285" KillCount="5" />
+	
+	<While Condition="HasQuest(10923) &amp;&amp; !IsQuestCompleted(10923)" >
+		<CustomBehavior File="InteractWith" QuestId="10923" MobId="21242" MobId2="21285" MobState="Alive" CollectionDistance="200"
+			NonCompeteDistance="5" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			NumOfTimes="1000" WaitTime="1000" TerminateWhen="GetItemCount(31812) &gt;= 20" X="-3423.74" Y="4459.202" Z="-8.698057" />
+		<If Condition="GetItemCount(31812) &gt;= 20" >
+			<UseItem QuestId="10923" ItemId="31811" X="-3418.469" Y="4455.764" Z="-7.967048" />
+			<CustomBehavior File="WaitTimer" WaitTime="15000" />
+		</If>
+	</While>
+	
+	<CustomBehavior File="InteractWith" QuestId="10930" MobId="22105" MobState="Dead" InteractByUsingItemId="31825"
+		NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NumOfTimes="1000" WaitTime="5000" >
+		<HuntingGrounds>
+			<Hotspot X="-3708.929" Y="4526.114" Z="-14.6451" />
+			<Hotspot X="-3762.055" Y="4554.207" Z="-15.39466" />
+			<Hotspot X="-3825.617" Y="4537.551" Z="-18.74836" />
+			<Hotspot X="-3880.789" Y="4532.516" Z="-31.05868" />
+			<Hotspot X="-3815.606" Y="4613.648" Z="-21.45324" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	
+	<TurnIn Nav="Fly" QuestName="The Big Bone Worm" QuestId="10930" TurnInName="Dwarfowitz" TurnInId="22481" />
+	<TurnIn Nav="Fly" QuestName="A Hero Is Needed" QuestId="10914" TurnInName="Commander Ravaj" TurnInId="22446" />
+	<PickUp Nav="Fly" QuestName="The Fallen Exarch" QuestId="10915" GiverName="Commander Ravaj" GiverId="22446" />
+	<TurnIn Nav="Fly" QuestName="Evil Draws Near" QuestId="10923" TurnInName="Oakun" TurnInId="22456" />
+	
+	<CustomBehavior File="InteractWith" QuestId="10915" MobId="184999" NonCompeteDistance="0"
+		PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+		NumOfTimes="1000" WaitTime="5000" InteractBlacklistTimeInSeconds="5" X="-3361.901" Y="5142.194" Z="-9.001325" />
+	<TurnIn Nav="Fly" QuestName="The Fallen Exarch" QuestId="10915" TurnInName="Commander Ravaj" TurnInId="22446" />
+	
+	<PickUp Nav="Fly" QuestName="A'dal" QuestId="10210" GiverName="Haggard War Veteran" GiverId="19684" />
+	<TurnIn Nav="Fly" QuestName="A'dal" QuestId="10210" TurnInName="Adal" TurnInId="18481" />
+
+	<CustomBehavior File="Message" Text="Terokkar Forest Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="[Quest] Nagrand A [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

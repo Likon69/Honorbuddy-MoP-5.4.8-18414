@@ -1,0 +1,138 @@
+<HBProfile>
+	<Name>Isle of Giants - Direhorns Giant Dinosaur Bones</Name>
+	
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	
+	<Blackspots>
+    </Blackspots>
+	
+	<Vendors>
+		<Vendor Name="Steelbender Doshu" Entry="64829" Type="Repair" X="4344.012" Y="874.0822" Z="108.4709" />
+	</Vendors>
+	
+	<Blacklist>
+		<Mob Name="Primal Direhorn" Entry="69983" Flags="Pull" />
+		<Mob Name="Primal Direhorn" Entry="70019" Flags="Pull" />
+		<Mob Name="Primal Direhorn" Entry="70018" Flags="Pull" />
+		<Mob Name="Primal Direhorn" Entry="70017" Flags="Pull" />
+		<Mob Name="Primal Direhorn" Entry="70016" Flags="Pull" />
+	</Blacklist>
+	
+	<AvoidMobs>
+		<Mob Name="Oondasta" Entry="69161" />
+		<Mob Name="Pterrorwing Skyscreamer" Entry="70020" />
+		<Mob Name="Primal Direhorn" Entry="70017" />
+		<Mob Name="Primal Devilsaur" Entry="69991" />
+		<Mob Name="Primal Devilsaur" Entry="70008" />
+		<Mob Name="Primal Devilsaur" Entry="70009" />
+		<Mob Name="Primal Devilsaur" Entry="70011" />
+		<Mob Name="Agrant Sharpshot" Entry="70030" />
+		<Mob Name="Nellie Sattler" Entry="70031" />
+		<Mob Name="Primal Direhorn" Entry="69983" />
+		<Mob Name="Primal Direhorn" Entry="70019" />
+		<Mob Name="Primal Direhorn" Entry="70016" />
+		<Mob Name="Primal Direhorn" Entry="70017" />
+	</AvoidMobs>
+	
+	<TargetElites>True</TargetElites>	
+  
+<QuestOrder>
+
+	<If Condition="Me.ZoneId != 6661" >
+		<CustomBehavior File="Message" Text="Moving to Isle of Giants" LogColor="Green"  />
+		<CustomBehavior File="FlyTo" X="5772.52" Y="1212.49" Z="0.81" />
+	</If>
+		
+	<SetGrindArea>
+		<GrindArea>
+			<Factions>16</Factions>
+			<Hotspots>
+				<Hotspot X="5831.993" Y="1074.272" Z="8.686101" />
+				<Hotspot X="5794.954" Y="1023.865" Z="20.3344" />
+				<Hotspot X="5763.542" Y="995.2528" Z="39.06802" />
+				<Hotspot X="5778.631" Y="939.6818" Z="35.49319" />
+				<Hotspot X="5758.285" Y="891.1188" Z="1.028588" />
+				<Hotspot X="5785.877" Y="839.1951" Z="3.818763" />
+				<Hotspot X="5792.594" Y="821.655" Z="3.646872" />
+				<Hotspot X="5802.5" Y="807.5788" Z="3.404252" />
+				<Hotspot X="5828.22" Y="774.7399" Z="22.08612" />
+				<Hotspot X="5857.827" Y="780.7444" Z="17.27877" />
+				<Hotspot X="5849.862" Y="758.677" Z="18.15461" />
+				<Hotspot X="5855.063" Y="781.1508" Z="17.25161" />
+				<Hotspot X="5842.16" Y="832.1869" Z="13.20588" />
+				<Hotspot X="5837.504" Y="844.3513" Z="12.93062" />
+				<Hotspot X="5834.594" Y="888.7264" Z="15.19467" />
+				<Hotspot X="5848.769" Y="925.5015" Z="20.80054" />
+				<Hotspot X="5787.723" Y="929.828" Z="23.69928" />
+				<Hotspot X="5772.453" Y="974.4011" Z="43.99874" />
+				<Hotspot X="5802.523" Y="1040.758" Z="19.55658" />
+				<Hotspot X="5846.882" Y="1107.278" Z="8.218295" />
+				<Hotspot X="5796.542" Y="1116.206" Z="2.083017" />
+				<Hotspot X="5799.235" Y="1148.146" Z="5.983132" />
+				<Hotspot X="5778.163" Y="1203.825" Z="2.018979" />
+				<Hotspot X="5810.784" Y="1238.999" Z="6.861639" />
+				<Hotspot X="5786.839" Y="1342.727" Z="28.75233" />
+				<Hotspot X="5744.916" Y="1368.545" Z="29.25574" />
+				<Hotspot X="5746.084" Y="1417.887" Z="29.26392" />
+				<Hotspot X="5794.632" Y="1448.319" Z="30.86463" />
+				<Hotspot X="5846.583" Y="1478.277" Z="48.42059" />
+				<Hotspot X="5834.197" Y="1529.555" Z="46.77963" />
+				<Hotspot X="5861.977" Y="1545.187" Z="47.8493" />
+				<Hotspot X="5910.162" Y="1572.386" Z="48.27961" />
+				<Hotspot X="5925.378" Y="1565.542" Z="52.80632" />
+				<Hotspot X="5971.309" Y="1536.534" Z="37.66972" />
+				<Hotspot X="6042.174" Y="1530.574" Z="33.97511" />
+				<Hotspot X="6062.958" Y="1533.475" Z="33.53264" />
+				<Hotspot X="6076.772" Y="1491.511" Z="53.77434" />
+				<Hotspot X="6007.571" Y="1435.96" Z="86.21793" />
+				<Hotspot X="6024.765" Y="1396.558" Z="86.95647" />
+				<Hotspot X="6044.689" Y="1319.698" Z="91.48532" />
+				<Hotspot X="5999.018" Y="1270.793" Z="81.38271" />
+				<Hotspot X="5969.74" Y="1265.16" Z="99.24453" />
+				<Hotspot X="5971.221" Y="1163.153" Z="57.1485" />
+				<Hotspot X="6043.587" Y="1160.351" Z="55.17039" />
+				<Hotspot X="6095.686" Y="1157.165" Z="56.56831" />
+				<Hotspot X="6073.161" Y="1118.938" Z="56.05564" />
+				<Hotspot X="6070.773" Y="1097.919" Z="56.01692" />
+				<Hotspot X="6101.986" Y="1055.311" Z="56.77781" />
+				<Hotspot X="6061.487" Y="1065.816" Z="56.19147" />
+				<Hotspot X="6031.592" Y="1054.859" Z="56.75134" />
+				<Hotspot X="5973.085" Y="1090.34" Z="55.61658" />
+				<Hotspot X="5950.132" Y="1138.832" Z="59.87279" />
+				<Hotspot X="5922.292" Y="1186.381" Z="76.25793" />
+				<Hotspot X="5933.869" Y="1202.937" Z="87.17967" />
+				<Hotspot X="5995.528" Y="1285.14" Z="85.60896" />
+				<Hotspot X="6033.005" Y="1318.099" Z="92.29889" />
+				<Hotspot X="6027.081" Y="1391.555" Z="87.19747" />
+				<Hotspot X="6015.818" Y="1429.269" Z="85.25688" />
+				<Hotspot X="6047.533" Y="1489.548" Z="63.2845" />
+				<Hotspot X="6093.256" Y="1509.221" Z="40.98498" />
+				<Hotspot X="6062.958" Y="1533.475" Z="33.53264" />
+				<Hotspot X="6042.174" Y="1530.574" Z="33.97511" />
+				<Hotspot X="5971.309" Y="1536.534" Z="37.66972" />
+				<Hotspot X="5910.13" Y="1576.105" Z="47.83761" />
+				<Hotspot X="5882.84" Y="1557.76" Z="48.83909" />
+				<Hotspot X="5861.977" Y="1545.187" Z="47.8493" />
+				<Hotspot X="5818.079" Y="1525.506" Z="46.29799" />
+				<Hotspot X="5802.956" Y="1473.27" Z="46.4172" />
+				<Hotspot X="5773.783" Y="1449.312" Z="30.21039" />
+				<Hotspot X="5743.784" Y="1407.169" Z="29.6739" />
+				<Hotspot X="5762.3" Y="1292.057" Z="14.39862" />
+				<Hotspot X="5800.4" Y="1232.005" Z="6.315725" />
+				<Hotspot X="5786.508" Y="1162.555" Z="6.249842" />
+				<Hotspot X="5816.305" Y="1117.678" Z="5.49656" />
+				<Hotspot X="5852.79" Y="1114.912" Z="7.220819" />
+			</Hotspots>
+		</GrindArea>
+	</SetGrindArea>
+	<GrindTo Condition="False" GoalText="Dinosaur Bones" />
+
+</QuestOrder>
+</HBProfile>  

@@ -1,0 +1,375 @@
+<HBProfile>
+	<Name>Isle of Thunder Pvp (Alliance) ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Teng of the Flying Daggers" Entry="70535" Type="Repair" X="6865.31" Y="5515.42" Z="1.28" />
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+<CustomBehavior File="UserSettings" KillBetweenHotspots="False" />
+
+<If Condition="Me.IsHorde" >
+	<CustomBehavior File="LoadProfile" ProfileName="[Rep] Isle of Thunder PvP H [Brodie]" />
+</If>
+
+<!-- Starting Quests -->
+
+<CustomBehavior File="Message" Text="Compiling Isle of Thunder PvP Quests..." LogColor="Green" />
+
+	<If Condition="!IsQuestCompleted(32644)" >
+		<CustomBehavior File="Message" Text="Phase 2 quest unlock not detected. Please end profile." LogColor="Green" />
+		<CustomBehavior File="UserDialog" ExpiryTime="15" ExpiryAction="InputEnabled_Continue" Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="3" Text="You have not yet completed phase 2 of the Isle of Thunder Unlock quests. Please complete said quest before starting this profile." />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="HasItem(60498)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60498)" />
+		<ElseIf Condition="HasItem(93672)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93672)" />
+		</ElseIf>
+		<ElseIf Condition="HasItem(54452)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(54452)" />
+		</ElseIf>
+		<ElseIf Condition="HasItem(64488)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" />
+		</ElseIf>
+		<ElseIf Condition="HasItem(6948)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" />
+		</ElseIf>
+		</If>
+	</If>
+
+<CustomBehavior File="Message" Text="Beginning Isle of Thunder PvP Quests." LogColor="Green" />
+
+	<If Condition="!(Me.ZoneId==6507)" >
+		<CustomBehavior File="Message" Text="Moving to Shado Pan Garrison." LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="1921.81" Y="4223.25" Z="132.44" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<CustomBehavior File="InteractWith" MobId="218463" ObjectType="GameObject" WaitForNpcs="True" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+	</If>
+	
+	<If Condition="!HasQuest(32485) &amp;&amp; !HasQuest(32636) &amp;&amp; !HasQuest(32635) &amp;&amp; !HasQuest(32631) &amp;&amp; 
+					!HasQuest(32637) &amp;&amp; !HasQuest(32301) &amp;&amp; !HasQuest(32627) &amp;&amp; !HasQuest(32632) &amp;&amp;
+					!HasQuest(32633) &amp;&amp; !HasQuest(32634) &amp;&amp; !HasQuest(32639) &amp;&amp; !HasQuest(32638) &amp;&amp;
+					!HasQuest(32628)" >
+		<CustomBehavior File="InteractWith" MobId="70561" IgnoreLoSToTarget="True" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		<CustomBehavior File="RunMacro" Macro="/run QuestChoiceFrameOption2.OptionButton:Click()" />
+		<CustomBehavior File="WaitTimer" WaitTime="1000" />
+	</If>
+
+<!-- Lady Jaina Proudmoore -->
+	<While Condition="HasQuestAvailable(67992)" >
+		<CustomBehavior File="InteractWith" MobId="67992" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Vereesa Windrunner -->
+	<While Condition="HasQuestAvailable(67993)" >
+		<CustomBehavior File="InteractWith" MobId="67993" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Warmage Yurias -->
+	<While Condition="HasQuestAvailable(67994)" >
+		<CustomBehavior File="InteractWith" MobId="67994" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Captain Elleane Wavecrest -->
+	<While Condition="HasQuestAvailable(67995)" >
+		<CustomBehavior File="InteractWith" MobId="67995" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" />
+		<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+	</While>
+	
+<!-- Bolstering the Defenses -->
+ 	<If Condition="HasQuest(32485) &amp;&amp; !IsQuestCompleted(32485)">
+		<CustomBehavior File="Message" Text="Starting Bolstering the Defenses" LogColor="Green" />
+		<While Condition="!IsQuestCompleted(32485)" >
+			<CustomBehavior File="InteractWith" QuestId="32485" MobId="69186" Range="5" CollectionDistance="200" WaitForNpcs="False" WaitTime="1000" >
+				<HuntingGrounds WaypointVisitStrategy="Random" >
+					<Hotspot X="6111.649" Y="5323.479" Z="23.71672" />
+					<Hotspot X="6154.031" Y="5284.495" Z="20.88754" />
+					<Hotspot X="6213.915" Y="5244.448" Z="27.29328" />
+					<Hotspot X="6228.638" Y="5284.55" Z="27.30049" />
+					<Hotspot X="6281.081" Y="5262.504" Z="29.09694" />
+					<Hotspot X="6327.36" Y="5251.289" Z="27.70341" />
+					<Hotspot X="6295.068" Y="5317.998" Z="28.67889" />
+					<Hotspot X="6332.369" Y="5370.455" Z="26.53666" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</While>
+	</If>
+	
+<!-- Breaking Down the Defenses -->
+ 	<If Condition="HasQuest(32634) &amp;&amp; !IsQuestCompleted(32634)">
+		<CustomBehavior File="Message" Text="Starting Breaking Down the Defenses" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="32634" MobId="217758" NumOfTimes="100" ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="200" WaitTime="1000" >
+			<HuntingGrounds WaypointVisitStrategy="Random" >
+				<Hotspot X="6876.185" Y="5851.19" Z="6.803259" />
+				<Hotspot X="6930.86" Y="5879.693" Z="6.478997" />
+				<Hotspot X="6896.358" Y="5954.501" Z="16.43653" />
+				<Hotspot X="6876.919" Y="6015.44" Z="11.68221" />
+				<Hotspot X="6818.232" Y="6062.28" Z="11.58464" />
+				<Hotspot X="6863.453" Y="6136.291" Z="6.377936" />
+				<Hotspot X="6913.935" Y="6135.145" Z="9.25563" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+	
+<!-- Tactical Mana Bombs -->
+	<If Condition="HasQuest(32628) &amp;&amp; !IsQuestCompleted(32628)">
+		<CustomBehavior File="Message" Text="Starting Tactical Mana Bombs" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="32628" QuestObjectiveIndex="2" ProactiveCombatStrategy="ClearMobsTargetingUs" IgnoreLoSToTarget="True" NonCompeteDistance="0" MobId="69604" Range="4" WaitTime="1000" X="7096.895" Y="6154.984" Z="-1.53" />
+		<CustomBehavior File="InteractWith" QuestId="32628" QuestObjectiveIndex="1" ProactiveCombatStrategy="ClearMobsTargetingUs" IgnoreLoSToTarget="True" NonCompeteDistance="0" MobId="69560" Range="4" WaitTime="1000" X="7279.555" Y="5946.754" Z="0.1" />
+		<CustomBehavior File="InteractWith" QuestId="32628" QuestObjectiveIndex="3" ProactiveCombatStrategy="ClearMobsTargetingUs" IgnoreLoSToTarget="True" NonCompeteDistance="0" MobId="69607" Range="4" WaitTime="1000" X="7019.625" Y="5939.215" Z="29.08454" />
+	</If>
+	
+<!-- Overpowered -->
+ 	<If Condition="HasQuest(32637) &amp;&amp; !IsQuestCompleted(32637)">
+		<CustomBehavior File="Message" Text="Starting Overpowered" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="32637" MobId="216299" IgnoreLoSToTarget="True" ProactiveCombatStrategy="ClearMobsTargetingUs" 
+			Range="5" MinRange="2" InteractByUsingItemId="95360" NumOfTimes="1000" WaitTime="1000" >
+			<HuntingGrounds WaypointVisitStrategy="Random" >
+				<Hotspot X="6927.023" Y="6134.432" Z="11.4087" />
+				<Hotspot X="6981.752" Y="5886.899" Z="6.490939" />
+				<Hotspot X="6940.528" Y="6032.241" Z="8.208748" />
+				<Hotspot X="7000.933" Y="6055.289" Z="11.70343" />
+				<Hotspot X="6954.479" Y="6094.404" Z="9.416412" />
+				<Hotspot X="7091.516" Y="5987.183" Z="16.60754" />
+				<Hotspot X="7011.99" Y="5932.771" Z="30.88919" />
+				<Hotspot X="7167.263" Y="6104.792" Z="0.8632388" />
+				<Hotspot X="7179.708" Y="6059.872" Z="0.3469887" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+	
+<!-- Captive Audience -->
+ 	<If Condition="HasQuest(32636) &amp;&amp; !IsQuestCompleted(32636)">
+		<CustomBehavior File="Message" Text="Starting Captive Audience" LogColor="Green" />
+		<CustomBehavior File="InteractWith" QuestId="32636" MobId="216987" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="1000" >
+			<HuntingGrounds WaypointVisitStrategy="Random" >
+				<Hotspot X="7176.07" Y="6041.728" Z="0.2944413" />
+				<Hotspot X="7112.723" Y="6090.642" Z="11.28364" />
+				<Hotspot X="6992.316" Y="6052.326" Z="11.70347" />
+			</HuntingGrounds>
+		</CustomBehavior>
+	</If>
+	
+<!-- Made For War -->
+ 	<If Condition="HasQuest(32632) &amp;&amp; !IsQuestCompleted(32632)">
+		<CustomBehavior File="Message" Text="Starting Made For War" LogColor="Green" />
+		<Objective QuestName="Made For War" QuestId="32632" Type="KillMob" MobId="67933" KillCount="1" />
+	</If>
+	
+<!-- Mana Scavengers -->
+ 	<If Condition="HasQuest(32638) &amp;&amp; !IsQuestCompleted(32638)">
+		<CustomBehavior File="Message" Text="Starting Mana Scavengers" LogColor="Green" />
+		<Objective QuestName="Mana Scavengers" QuestId="32638" Type="KillMob" MobId="67675" KillCount="9" />
+	</If>
+	
+<!-- Old Enemies -->
+ 	<If Condition="HasQuest(32301) &amp;&amp; !IsQuestCompleted(32301)">
+		<CustomBehavior File="Message" Text="Starting Old Enemies" LogColor="Green" />
+		<Objective QuestName="Old Enemies" QuestId="32301" Type="KillMob" MobId="70268" KillCount="10" />
+	</If>
+	
+<!-- Deconstruction -->
+ 	<If Condition="HasQuest(32639) &amp;&amp; !IsQuestCompleted(32639)">
+		<CustomBehavior File="Message" Text="Starting Old Enemies" LogColor="Green" />
+		<Objective QuestName="Deconstruction" QuestId="32639" Type="KillMob" MobId="67930" KillCount="3" />
+	</If>
+	
+<!-- Charged Moganite -->
+ 	<If Condition="HasQuest(32627) &amp;&amp; !IsQuestCompleted(32627)">
+		<CustomBehavior File="Message" Text="Starting Charged Moganite" LogColor="Green" />
+		<While Condition="!Me.HasAura(137257)" >
+			<CustomBehavior File="InteractWith" QuestId="32627" MobId="218192" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" 
+				TerminateWhen="Me.HasAura(137257)" WaitTime="1000" >
+				<HuntingGrounds WaypointVisitStrategy="Random" >
+					<Hotspot X="6753.617" Y="5773.006" Z="8.33128" />
+					<Hotspot X="6726.25" Y="5964.364" Z="8.430456" />
+					<Hotspot X="6535.64" Y="5495.227" Z="5.72489" />
+					<Hotspot X="6597.491" Y="5424.462" Z="5.542327" />
+				</HuntingGrounds>
+			</CustomBehavior>
+			<DisableBehavior Name="Pull" />
+			<UseMount Value="False" />
+			<CustomBehavior File="InteractWith" QuestId="32627" MobId="67994" TerminateWhen="!Me.HasAura(137257)"
+				IgnoreCombat="True" NonCompeteDistance="0" X="6123.312" Y="5028.211" Z="36.89486" />
+			<EnableBehavior Name="Pull" />
+			<UseMount Value="True" />
+		</While>
+	</If>
+	
+	<If Condition="(HasQuest(32485) &amp;&amp; IsQuestCompleted(32485)) ||
+					(HasQuest(32636) &amp;&amp; IsQuestCompleted(32636)) ||
+					(HasQuest(32635) &amp;&amp; IsQuestCompleted(32635)) ||
+					(HasQuest(32637) &amp;&amp; IsQuestCompleted(32637)) ||
+					(HasQuest(32301) &amp;&amp; IsQuestCompleted(32301)) ||
+					(HasQuest(32627) &amp;&amp; IsQuestCompleted(32627)) ||
+					(HasQuest(32632) &amp;&amp; IsQuestCompleted(32632)) ||
+					(HasQuest(32633) &amp;&amp; IsQuestCompleted(32633)) ||
+					(HasQuest(32634) &amp;&amp; IsQuestCompleted(32634)) ||
+					(HasQuest(32639) &amp;&amp; IsQuestCompleted(32639)) ||
+					(HasQuest(32638) &amp;&amp; IsQuestCompleted(32638)) ||
+					(HasQuest(32628) &amp;&amp; IsQuestCompleted(32628))" >
+		<CustomBehavior File="Message" Text="Returning to Violet Rise." LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<MoveTo X="6123.312" Y="5028.211" Z="36.89486" />
+	</If>
+	
+	<If Condition="HasQuest(32627) &amp;&amp; IsQuestCompleted(32627)" >
+		<TurnIn QuestName="Charged Moganite" QuestId="32627" TurnInName="Warmage Yurias" TurnInId="67994" />
+	</If>
+	
+	<If Condition="HasQuest(32632) &amp;&amp; IsQuestCompleted(32632)" >
+		<TurnIn QuestName="Made for War" QuestId="32632" TurnInName="Warmage Yurias" TurnInId="67994" />
+	</If>
+	
+	<If Condition="HasQuest(32633) &amp;&amp; IsQuestCompleted(32633)" >
+		<TurnIn QuestName="Spellbound" QuestId="32633" TurnInName="Warmage Yurias" TurnInId="67994" />
+	</If>
+	
+	<If Condition="HasQuest(32634) &amp;&amp; IsQuestCompleted(32634)" >
+		<TurnIn QuestName="Breaking Down the Defenses" QuestId="32634" TurnInName="Captain Elleane Wavecrest" TurnInId="67995" />
+	</If>
+	
+	<If Condition="HasQuest(32639) &amp;&amp; IsQuestCompleted(32639)" >
+		<TurnIn QuestName="Deconstruction" QuestId="32639" TurnInName="Captain Elleane Wavecrest" TurnInId="67995" />
+	</If>
+	
+	<If Condition="HasQuest(32638) &amp;&amp; IsQuestCompleted(32638)" >
+		<TurnIn QuestName="Mana Scavengers" QuestId="32638" TurnInName="Captain Elleane Wavecrest" TurnInId="67995" />
+	</If>
+	
+	<If Condition="HasQuest(32628) &amp;&amp; IsQuestCompleted(32628)" >
+		<TurnIn QuestName="Tactical Mana Bombs" QuestId="32628" TurnInName="Captain Elleane Wavecrest" TurnInId="67995" />
+	</If>
+	
+	<If Condition="HasQuest(32301) &amp;&amp; IsQuestCompleted(32301)" >
+		<TurnIn QuestName="Old Enemies" QuestId="32301" TurnInName="Vereesa Windrunner" TurnInId="67993" />
+	</If>
+	
+	<If Condition="HasQuest(32485) &amp;&amp; IsQuestCompleted(32485)" >
+		<TurnIn QuestName="Bolstering the Defenses" QuestId="32485" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
+	</If>
+	
+	<If Condition="HasQuest(32636) &amp;&amp; IsQuestCompleted(32636)" >
+		<TurnIn QuestName="Captive Audience" QuestId="32636" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
+	</If>
+	
+	<If Condition="HasQuest(32635) &amp;&amp; IsQuestCompleted(32635)" >
+		<TurnIn QuestName="Enough with the Bombs!" QuestId="32635" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
+	</If>
+	
+	<If Condition="HasQuest(32637) &amp;&amp; IsQuestCompleted(32637)" >
+		<TurnIn QuestName="Overpowered" QuestId="32637" TurnInName="Lady Jaina Proudmoore" TurnInId="67992" />
+	</If>
+	
+<!-- Double check we're done -->
+
+<!-- Lady Jaina Proudmoore -->
+	<While Condition="HasQuestAvailable(67992)" >
+		<CustomBehavior File="InteractWith" MobId="67992" WaitTime="1000" WaitForNpcs="False" />
+		<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" />
+	</While>
+	
+	<EnableBehavior Name="Pull" />
+
+<!-- All Done, hearth out and leave the island -->
+	<If Condition="!IsQuestCompleted(32644)" >
+		<If Condition="HasItem(95567) &amp;&amp; !(Me.Location.Distance(new WoWPoint(5675.27, 6216.83, 13.02)) &lt; 100)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(95567)" />
+			<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<RunTo X="5653.182" Y="6195.639" Z="18.43239" />
+			<CustomBehavior File="InteractWith" MobId="218639" WaitForNpcs="True" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<Else>
+			<RunTo X="5840.453" Y="6349.841" Z="1.706437" />
+			<CustomBehavior File="InteractWith" MobId="218838" WaitForNpcs="True" />
+			<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<RunTo X="5662.35" Y="6212.02" Z="12.79" />
+			<CustomBehavior File="MyCTM" X="5659.771" Y="6209.47" Z="13.21746" />
+			<CustomBehavior File="MyCTM" X="5656.402" Y="6205.382" Z="17.36683" />
+			<CustomBehavior File="InteractWith" MobId="218639" WaitForNpcs="True" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</Else>
+		</If>
+	<ElseIf Condition="IsQuestCompleted(32644)" >
+		<If Condition="HasItem(95567) &amp;&amp; !(Me.Location.Distance(new WoWPoint(6134.63, 5008.49, 36.78)) &lt; 100)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(95567)" />
+			<CustomBehavior File="WaitTimer" WaitTime="5000" />
+			<RunTo X="6122.84" Y="4980.87" Z="36.89" />
+			<CustomBehavior File="InteractWith" MobId="218639" WaitForNpcs="True" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<Else>
+			<RunTo X="6122.84" Y="4980.87" Z="36.89" />
+			<CustomBehavior File="InteractWith" MobId="218639" WaitForNpcs="True" />
+			<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		</Else>
+		</If>
+	</ElseIf>
+	</If>
+	
+	<If Condition="HasItem(94566)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(94566)" />
+	</If>
+	
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+
+	<CustomBehavior File="ForcedDismount" />
+	<If Condition="HasItem(60498)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60498)" WaitTime="1500" />
+	<ElseIf Condition="HasItem(93672)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93672)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(54452)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(54452)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(64488)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(6948)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1500" />
+	</ElseIf>
+	</If>
+
+</QuestOrder>
+</HBProfile>

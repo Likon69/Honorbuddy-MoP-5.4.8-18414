@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<DungeonBuddyProfile>
+  <Name>The Frost Lord Ahune</Name>
+  <DungeonId>286</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="40446" name="Skar'this the Summoner" killOrder="1" optional="false" X="-76.99172" Y="-157.0805" Z="-2.189719"/>
+    <Boss isFinal="true" entry="25740" name="Ahune" killOrder="2" optional="false" X="-99.1021" Y="-233.753" Z="-1.304886"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+</DungeonBuddyProfile>

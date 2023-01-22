@@ -1,0 +1,605 @@
+<HBProfile xsi:noNamespaceSchemaLocation="../../../Schemas/QuestProfileSchema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- Original contributed by Kickazz006 -->
+    <Name>[A - Quest] EK 5-12 [Kick] ($Rev: 3162 $)</Name>
+
+    <MinLevel>1</MinLevel>
+    <MaxLevel>1001</MaxLevel>
+
+    <MinDurability>0.3</MinDurability>
+    <MinFreeBagSlots>3</MinFreeBagSlots>
+
+    <!-- NB: Honorbuddy sells before mailing -->
+    <SellGrey>true</SellGrey>
+    <SellWhite>true</SellWhite>
+    <SellGreen>true</SellGreen>
+    <SellBlue>false</SellBlue>
+    <SellPurple>false</SellPurple>
+
+    <MailGrey>false</MailGrey>
+    <MailWhite>true</MailWhite>
+    <MailGreen>true</MailGreen>
+    <MailBlue>true</MailBlue>
+    <MailPurple>true</MailPurple>
+
+    <TargetElites>false</TargetElites>
+
+
+    <AvoidMobs>
+        <!-- Elwynn Forest -->
+        <Mob Name="Fedfennel" Id="472" />
+
+        <!-- Westfall -->
+        <Mob Name="Unbound Cyclone" Id="832" />
+    </AvoidMobs>
+
+
+    <Blackspots>
+        <Blackspot Name="Brackwell Group" X="-9808.213" Y="-930.0015" Z="39.50285" Radius="25.27641" />
+        <Blackspot Name="Crystal Lake Bandit Group (North)" X="-10831.89" Y="1766.705" Z="35.60209" Radius="23.56861" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9303.271" Y="-285.0476" Z="73.36655" Radius="20.35155" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9314.936" Y="-285.6443" Z="71.84756" Radius="35.31289" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9408.566" Y="-412.4509" Z="59.04622" Radius="17.51277" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9409.729" Y="-379.5738" Z="57.92302" Radius="18.19485" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9429.16" Y="-447.7548" Z="58.1219" Radius="19.41468" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9460.459" Y="-166.0726" Z="56.64828" Radius="28.93558" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9462.613" Y="-469.6875" Z="58.3756" Radius="7.93008" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9462.973" Y="-254.1801" Z="56.52259" Radius="36.95308" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9469.496" Y="-349.7698" Z="57.63178" Radius="34.08975" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9470.237" Y="-362.2356" Z="55.43611" Radius="36.55902" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9474.247" Y="-424.3345" Z="56.47178" Radius="26.87754" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9480.76" Y="-416.5303" Z="57.6312" Radius="37.67788" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9483.91" Y="-388.3989" Z="57.63155" Radius="35.59592" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9486.105" Y="-217.676" Z="54.91846" Radius="19.41329" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9486.326" Y="-212.4516" Z="56.8274" Radius="19.36576" />
+        <Blackspot Name="Crystal Lake Murloc Group" X="-9511.814" Y="-449.566" Z="58.61342" Radius="37.93584" />
+        <Blackspot Name="Jasperlode Group" X="-9253.396" Y="-709.8408" Z="63.63789" Radius="22.32958" />
+        <Blackspot Name="Jerod's Landing" X="-9858.939" Y="-228.3224" Z="38.12444" Radius="31.22359" />
+        <Blackspot Name="Jerod's Landing" X="-9955.237" Y="-133.0419" Z="28.5709" Radius="45.29675" />
+        <Blackspot Name="Northshire Vineyards Log" X="-9058.146" Y="-366.2888" Z="73.48458" Radius="29.56319" />
+        <Blackspot Name="Stone Cairn Murloc Group" X="-9206.348" Y="-1219.589" Z="69.3131" Radius="20.02822" />
+        <Blackspot Name="Stone Cairn Murloc Group" X="-9233.287" Y="-1202.613" Z="68.18855" Radius="20.33801" />
+        <Blackspot Name="Stone Cairn Murloc Group" X="-9275.445" Y="-1179.588" Z="66.35855" Radius="34.02249" />
+        <Blackspot Name="Stone Cairn Murloc Group" X="-9888.791" Y="-1108.349" Z="22.52038" Radius="64.63541" />
+        <Blackspot Name="West of the Stonefield Farm (Gnolls)" X="-9832.404" Y="457.7968" Z="34.36158" Radius="31.51942" />
+        <Blackspot Name="Westfall Gnoll Group" X="-10418.97" Y="1097.073" Z="33.43063" Radius="19.48027" />
+        <Blackspot Name="Westfall Gnoll Group" X="-10433.24" Y="1119.556" Z="34.19741" Radius="23.86871" />
+        <Blackspot Name="Westfall Gnoll Group" X="-10521.42" Y="1117.992" Z="42.13618" Radius="14.2559" />
+        <Blackspot Name="Westfall Gnoll Group" X="-10580.79" Y="1180.234" Z="34.25439" Radius="31.51524" />
+        <Blackspot Name="Westfall Gnoll Group" X="-10623.55" Y="1229.756" Z="33.07132" Radius="16.40426" />
+        <Blackspot Name="Westfall Gnoll Group" X="-10658.45" Y="1218.36" Z="33.92026" Radius="23.61281" />
+        <Blackspot Name="Wolf Group" X="-9399.918" Y="-272.5425" Z="64.84491" Radius="14.17546" />
+        <Blackspot Name="Wolf Group" X="-9415.188" Y="-573.467" Z="67.38905" Radius="17.80883" />
+        <Blackspot Name="Wolf Group" X="-9423.188" Y="-556.7031" Z="68.25664" Radius="44.80907" />
+        <Blackspot Name="Wolf Group" X="-9450.441" Y="-972.3715" Z="58.3282" Radius="27.92987" />
+        <Blackspot Name="Wolf Group" X="-9454.35" Y="-542.483" Z="66.57167" Radius="15.65633" />
+        <Blackspot Name="Wolf Group" X="-9455.016" Y="-971.4392" Z="59.82343" Radius="26.38953" />
+    </Blackspots>
+
+
+    <Mailboxes>
+        <Mailbox Name="Goldshire" X="-9456.721" Y="46.77825" Z="56.60653" />
+        <Mailbox Name="Northshire" X="-8908.27" Y="-129.904" Z="80.91549" />
+        <Mailbox Name="Sentinel Hill" X="-10643.38" Y="1157.339" Z="33.24381" />
+    </Mailboxes>
+
+
+    <Vendors>
+        <!-- Stormwind Vendors -->
+        <Vendor Name="Gunther Weller" Id="1289" Type="Repair" X="-8790.421" Y="607.3484" Z="96.77347" />
+        <Vendor Name="Innkeeper Allison" Id="6740" Type="Food" X="-8867.786" Y="673.6729" Z="97.90376" />
+        <Vendor Name="Marda Weller" Id="1287" Type="Repair" X="-8787.688" Y="609.6306" Z="96.77336" />
+
+        <!-- Goldshire Vendors -->
+        <Vendor Name="Corina Steele" Id="54" Type="Repair" X="-9464.4" Y="94.0174" Z="58.34372" />
+        <Vendor Name="Innkeeper Farley" Id="295" Type="Food" X="-9462.663" Y="16.19151" Z="56.96306" />
+
+        <!-- Maclure Vineyards -->
+        <Vendor Name="Joshua Maclure" Id="258" Type="Food" X="-10008.29" Y="65.2117" Z="34.78337" />
+
+        <!-- Eastvale Logging Camp Vendors -->
+        <Vendor Name="Drake Lindgren" Id="1250" Type="Food" X="-9483.098" Y="-1356.247" Z="46.95809" />
+        <Vendor Name="Rallic Finn" Id="1198" Type="Repair" X="-9469.282" Y="-1355.242" Z="47.20493" />
+
+        <!-- Westbrook Garrison Vendors -->
+        <Vendor Name="Quartermaster Hudson" Id="1249" Type="Repair" X="-9653.945" Y="659.6507" Z="38.65258" />
+
+        <!-- Westfall Sentinel Hill Vendors -->
+        <Vendor Name="Innkeeper Heather" Id="8931" Type="Food" X="-10653.28" Y="1166.431" Z="34.50473" />
+        <Vendor Name="Quartermaster Lewis" Id="491" Type="Repair" X="-10500.6" Y="1021.59" Z="60.52" />
+        <Vendor Name="William MacGregor" Id="1668" Type="Repair" UsableWhen="Me.HasAura(79489)" X="-10509.68" Y="1044.411" Z="60.51823" />
+        <Vendor Name="William MacGregor" Id="1668" Type="Repair" UsableWhen="!Me.HasAura(79489)" X="-10653.31" Y="996.5868" Z="32.87472" />
+    </Vendors>
+
+
+    <!-- BEGIN: Quest Overrides -->
+    <Quest Id="47" Name="Gold Dust Exchange">
+        <Objective Type="CollectItem" ItemId="773" CollectCount="10">
+            <Hotspots>
+                <Hotspot X="-9792.924" Y="148.6573" Z="24.36459" />
+                <Hotspot X="-9790.336" Y="146.164" Z="24.74088" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="60" Name="Kobold Candles">
+        <Objective Type="CollectItem" ItemId="772" CollectCount="8">
+            <Hotspots>
+                <Hotspot X="-9792.924" Y="148.6573" Z="24.36459" />
+                <Hotspot X="-9790.336" Y="146.164" Z="24.74088" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="86" Name="Pie for Billy">
+        <Objective Type="CollectItem" ItemId="60401" CollectCount="4">
+            <CollectFrom>
+                <Mob Id="113" Name="Stonetusk Boar" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-9951.537" Y="91.00248" Z="32.98941" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="87" Name="Goldtooth">
+        <Objective Type="CollectItem" ItemId="981" CollectCount="1">
+            <CollectFrom>
+                <Mob Id="327" Name="Goldtooth" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-9806.027" Y="142.8414" Z="58.6209" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="88" Name="Princess Must Die!">
+        <Objective Type="CollectItem" ItemId="1006" ItemName="Brass Collar" CollectCount="1">
+            <CollectFrom>
+                <Mob Id="330" Name="Princess" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-9916.954" Y="362.8189" Z="35.06284" />
+                <Hotspot X="-9876.678" Y="401.218" Z="35.15297" />
+                <Hotspot X="-9919.889" Y="449.0773" Z="34.50039" />
+                <Hotspot X="-9966.309" Y="402.5466" Z="35.38795" />
+                <Hotspot X="-9923.014" Y="405.0986" Z="35.09683" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="112" Name="Collecting Kelp">
+        <Objective Type="CollectItem" ItemId="1256" ItemName="Crystal Kelp Fronds" CollectCount="4">
+            <Hotspots>
+                <Hotspot X="-9396.515" Y="-202.8554" Z="60.06731" />
+                <Hotspot X="-9440.085" Y="-243.3681" Z="62.12923" />
+                <Hotspot X="-9430.174" Y="-289.6079" Z="61.58236" />
+                <Hotspot X="-9404.506" Y="-319.811" Z="60.40728" />
+                <Hotspot X="-9394.623" Y="-351.0164" Z="58.56152" />
+                <Hotspot X="-9403.393" Y="-404.3218" Z="61.67746" />
+                <Hotspot X="-9412.614" Y="-443.7243" Z="58.9713" />
+                <Hotspot X="-9453.994" Y="-480.5734" Z="61.33335" />
+                <Hotspot X="-9492.722" Y="-480.1411" Z="60.18399" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="26152" Name="Wanted: James Clark">
+        <Objective Type="CollectItem" ItemId="57122" ItemName="James Clark's Head" CollectCount="1">
+            <Hotspots>
+                <Hotspot X="-9494.66" Y="-1194.923" Z="49.56461" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="83" Name="Fine Linen Goods">
+        <Objective Type="CollectItem" ItemId="1019" ItemName="Linen Scraps" CollectCount="6">
+            <Hotspots>
+                <Hotspot X="-9194.271" Y="-1127.831" Z="70.45897" />
+                <Hotspot X="-9220.792" Y="-1095.72" Z="71.00063" />
+                <Hotspot X="-9234.589" Y="-1029.086" Z="69.35631" />
+                <Hotspot X="-9248.219" Y="-990.4721" Z="67.45255" />
+                <Hotspot X="-9217.466" Y="-973.5811" Z="70.20268" />
+                <Hotspot X="-9156.251" Y="-949.0311" Z="70.4827" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="46" Name="Bounty on Murlocs">
+        <Objective Type="CollectItem" ItemId="780" ItemName="Torn Murloc Fins" CollectCount="8">
+            <CollectFrom>
+                <Mob Id="46" Name="Murloc Forager" />
+                <Mob Id="732" Name="Murloc Lurker" />
+            </CollectFrom>
+            <Hotspots>
+                <Hotspot X="-9961.712" Y="-270.5063" Z="24.68227" />
+                <Hotspot X="-9912.501" Y="-426.5816" Z="25.96089" />
+                <Hotspot X="-9851.645" Y="-520.059" Z="24.33786" />
+                <Hotspot X="-9834.682" Y="-624.0311" Z="26.34392" />
+                <Hotspot X="-9864.496" Y="-722.848" Z="28.17992" />
+                <Hotspot X="-9884.214" Y="-788.6376" Z="27.90329" />
+                <Hotspot X="-9906.728" Y="-859.4411" Z="22.88217" />
+                <Hotspot X="-9905.271" Y="-920.6" Z="26.55242" />
+                <Hotspot X="-9912.824" Y="-1007.438" Z="23.53461" />
+                <Hotspot X="-9915.849" Y="-1040.938" Z="25.31275" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="52" Name="Protect the Frontier">
+        <Objective Type="KillMob" MobId="118" MobName="Prowler" KillCount="8">
+            <Hotspots>
+                <Hotspot X="-9334.146" Y="-1257.703" Z="65.23393" />
+                <Hotspot X="-9342.994" Y="-1355.363" Z="62.32494" />
+                <Hotspot X="-9364.12" Y="-1403.175" Z="63.25855" />
+                <Hotspot X="-9361.035" Y="-1448.18" Z="65.86559" />
+                <Hotspot X="-9422.688" Y="-1514.221" Z="69.37318" />
+                <Hotspot X="-9501.829" Y="-1513.828" Z="61.00885" />
+                <Hotspot X="-9554.241" Y="-1496.297" Z="61.43304" />
+                <Hotspot X="-9588.844" Y="-1541.509" Z="59.09395" />
+            </Hotspots>
+        </Objective>
+        <Objective Type="KillMob" MobId="822" MobName="Young Forest Bear" KillCount="5">
+            <Hotspots>
+                <Hotspot X="-9334.146" Y="-1257.703" Z="65.23393" />
+                <Hotspot X="-9342.994" Y="-1355.363" Z="62.32494" />
+                <Hotspot X="-9364.12" Y="-1403.175" Z="63.25855" />
+                <Hotspot X="-9361.035" Y="-1448.18" Z="65.86559" />
+                <Hotspot X="-9422.688" Y="-1514.221" Z="69.37318" />
+                <Hotspot X="-9501.829" Y="-1513.828" Z="61.00885" />
+                <Hotspot X="-9554.241" Y="-1496.297" Z="61.43304" />
+                <Hotspot X="-9588.844" Y="-1541.509" Z="59.09395" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+
+    <Quest Id="176" Name="Wanted: &quot;Hogger&quot;">
+        <Objective Type="KillMob" MobId="448" KillCount="1">
+            <Hotspots>
+                <Hotspot X="-10139.54" Y="669.1921" Z="35.95509" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <Quest Id="11" Name="Riverpaw Gnoll Bounty">
+        <Objective Type="CollectItem" ItemId="782" ItemName="Painted Gnoll Armbands" CollectCount="8">
+            <Hotspots>
+                <Hotspot X="-9779.6" Y="573.0954" Z="37.58414" />
+                <Hotspot X="-9833.881" Y="563.9341" Z="39.09294" />
+                <Hotspot X="-9892.616" Y="564.5978" Z="37.96761" />
+                <Hotspot X="-10042.64" Y="549.8605" Z="32.58686" />
+                <Hotspot X="-10101.33" Y="557.7492" Z="29.13638" />
+                <Hotspot X="-10153.64" Y="579.3329" Z="25.28452" />
+                <Hotspot X="-10170.36" Y="632.6255" Z="24.77172" />
+                <Hotspot X="-10162.01" Y="691.3068" Z="24.90212" />
+                <Hotspot X="-10120.16" Y="725.54" Z="28.84049" />
+                <Hotspot X="-10047.98" Y="714.5275" Z="28.2148" />
+                <Hotspot X="-9957.457" Y="701.8306" Z="24.97368" />
+            </Hotspots>
+        </Objective>
+    </Quest>
+    <!-- END: Quest Overrides -->
+
+
+    <QuestOrder IgnoreCheckpoints="false" >
+
+        <!-- Make certin we're in Goldshire -->
+        <If Condition="( Me.ZoneId == 3524 ) || ( Me.ZoneId == 3557 ) || ( Me.ZoneId == 1657 ) || ( Me.ZoneId == 141 )" >
+            <CustomBehavior File="UserDialog" SoundCue="Exclamation" SoundCueInterval="2"
+                            Text="You cannot be in Draenei or Night Elf Territory.  Please go to Stormwind and press start!" />
+        </If>
+
+        <CustomBehavior File="Message" Text="Compiling Elwynn Forest Quests" LogColor="Green" />
+
+        <SetGrindArea>
+            <GrindArea>
+                <Factions>7</Factions>
+                <!-- [Humanoids] -->
+                <Hotspots>
+                    <Hotspot X="-8782.871" Y="-107.3422" Z="83.35699" />
+                    <Hotspot X="-8720.972" Y="-88.16251" Z="90.40733" />
+                    <Hotspot X="-8724.425" Y="-137.0334" Z="86.89613" />
+                    <Hotspot X="-8736.088" Y="-199.7948" Z="87.86673" />
+                    <Hotspot X="-8771.962" Y="-259.924" Z="80.28711" />
+                    <Hotspot X="-8805.207" Y="-232.5131" Z="82.34293" />
+                    <Hotspot X="-8807.99" Y="-198.0297" Z="82.20427" />
+                    <Hotspot X="-8774.711" Y="-160.9021" Z="81.87766" />
+                    <Hotspot X="-8768.478" Y="-106.164" Z="85.97653" />
+                </Hotspots>
+            </GrindArea>
+        </SetGrindArea>
+        <GrindTo Level="5" GoalText="Grinding to Level 5" />
+
+        <!-- Elwynn Forest -->
+        <Checkpoint Level="5" />
+
+        <!-- BEGIN: Checkpoint Block
+             This code needs to be replicated after every checkpoint.
+             If you modify something in this block, don't forget to update the copy of this
+             block after each checkpoint, and the at the start of the <QuestOrder>, also.
+        -->
+        <CustomBehavior File="Misc\RunLua" Lua="SetCVar('AutoLootDefault', 1)" />
+        <CustomBehavior File="UserSettings" AutoEquip="true" />
+
+        <CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+        <CustomBehavior File="EnablePlugin" Names="Questhelper - ItemForAura" />
+        <CustomBehavior File="EnablePlugin" Names="Refreshment Detection" />
+
+        <CustomBehavior File="Misc\ProfileCompatibilityInfo" AllowBrokenAddOns="true" AllowBrokenPlugIns="true" />
+
+        <LootMobs Value="true" />
+        <TargetingDistance Value="null" />    <!-- Use LevelBot default -->
+        <UseMount Value="true" />
+        <!-- END: Checkpoint Block -->
+
+        <CustomBehavior File="Message" Text="Compiling Goldshire Quests" LogColor="CornflowerBlue" />
+
+        <If Condition="!IsQuestCompleted(62) &amp;&amp; Me.HearthstoneAreaId != 5148" >
+            <CustomBehavior File="Message" Text="Moving to set hearth to Stormwind" LogColor="Red" />
+            <MoveTo DestName="Moving to set hearth to Stormwind" X="-8865.525" Y="635.5101" Z="96.06046" />
+            <CustomBehavior File="InteractWith" MobId="6740" InteractByGossipOptions="2"
+                            X="-8867.786" Y="673.6729" Z="97.90324" />
+        </If>
+
+        <PickUp QuestName="The Fargodeep Mine" QuestId="62" GiverName="Marshal Dughan" GiverId="240"
+                X="-9465.521" Y="74.00694" Z="56.59536" />
+        <PickUp QuestName="Gold Dust Exchange" QuestId="47" GiverName="Remy&quot;Two Times&quot;" GiverId="241"
+                X="-9496.319" Y="72.82639" Z="56.41537" />
+        <!-- This quest has issues -->
+        <If Condition="!IsQuestCompleted(106)" >
+        <PickUp QuestName="A Visit With Maybell" QuestId="26150" GiverName="William Pestle" GiverId="253"
+                X="-9460.302" Y="31.93891" Z="56.96619" />
+        </If>
+        <PickUp QuestName="Kobold Candles" QuestId="60" GiverName="William Pestle" GiverId="253"
+                X="-9460.302" Y="31.93891" Z="56.96619" />
+        <If Condition="Me.Race == WoWRace.Human">
+            <PickUp QuestName="A Swift Message" QuestId="26393" GiverName="Smith Argus" GiverId="514"
+                    X="-9456.65" Y="87.85526" Z="58.34371" />
+            <TurnIn QuestName="A Swift Message" QuestId="26393" TurnInName="Bartlett the Brave" TurnInId="42983"
+                    X="-9435.714" Y="87.61111" Z="57.12768" />
+            <PickUp QuestName="Continue to Stormwind" QuestId="26394" GiverName="Bartlett the Brave" GiverId="42983" />
+            <TurnIn QuestName="Continue to Stormwind" QuestId="26394" TurnInName="Osric Strang" TurnInId="1323" />
+            <PickUp QuestName="Dungar Longdrink" QuestId="26395" GiverName="Osric Strang" GiverId="1323" />
+            <!-- Avail to all -->
+            <PickUp QuestName="Wine Shop Advert" QuestId="332" GiverName="Renato Gallina" GiverId="1432" />
+            <PickUp QuestName="Harlan Needs a Resupply" QuestId="333" GiverName="Harlan Bagley" GiverId="1427" />
+            <TurnIn QuestName="Harlan Needs a Resupply" QuestId="333" TurnInName="Rema Schneider" TurnInId="1428" />
+            <PickUp QuestName="Package for Thurman" QuestId="334" GiverName="Rema Schneider" GiverId="1428" />
+            <TurnIn QuestName="Wine Shop Advert" QuestId="332" TurnInName="Suzetta Gallina" TurnInId="1431" />
+            <TurnIn QuestName="Package for Thurman" QuestId="334" TurnInName="Thurman Schneider" TurnInId="1429" />
+            <!-- /Avail -->
+            <TurnIn QuestName="Dungar Longdrink" QuestId="26395" TurnInName="Dungar Longdrink" TurnInId="352" />
+            <PickUp QuestName="Return to Argus" QuestId="26396" GiverName="Dungar Longdrink" GiverId="352" />
+            <TurnIn QuestName="Return to Argus" QuestId="26396" TurnInName="Smith Argus" TurnInId="514" />
+        </If>
+        <PickUp QuestName="Lost Necklace" QuestId="85" GiverName="&quot;Auntie&quot; Bernice Stonefield" GiverId="246"
+                X="-9889.681" Y="338.4665" Z="36.49811" />
+        <TurnIn QuestName="Lost Necklace" QuestId="85" TurnInName="Billy Maclure" TurnInId="247"
+                X="-9923.681" Y="38.38715" Z="32.41258" />
+        <PickUp QuestName="Pie for Billy" QuestId="86" GiverName="Billy Maclure" GiverId="247"
+                X="-9923.681" Y="38.38715" Z="32.41258" />
+        <Objective QuestName="Pie for Billy" QuestId="86" Type="CollectItem" ItemId="60401" CollectCount="4" />
+        <TurnIn QuestName="Pie for Billy" QuestId="86" TurnInName="&quot;Auntie&quot;Bernice Stonefield" TurnInId="246"
+                X="-9889.681" Y="338.4665" Z="36.49811" />
+        <PickUp QuestName="Back to Billy" QuestId="84" GiverName="&quot;Auntie&quot;Bernice Stonefield" GiverId="246"
+                X="-9889.681" Y="338.4665" Z="36.49811" />
+        <TurnIn QuestName="Back to Billy" QuestId="84" TurnInName="Billy Maclure" TurnInId="247"
+                X="-9923.681" Y="38.38715" Z="32.41258" />			
+        <PickUp QuestName="Goldtooth" QuestId="87" GiverName="Billy Maclure" GiverId="247"
+				X="-9923.681" Y="38.38715" Z="32.41258" />		
+        <If Condition="HasQuest(26150)" >
+             <TurnIn QuestName="A Visit With Maybell" QuestId="26150" TurnInName="Maybell Maclure" TurnInId="251"
+                    X="-10014.04" Y="37.6059" Z="35.1707" />
+        </If>
+        <PickUp QuestName="Young Lovers" QuestId="106" GiverName="Maybell Maclure" GiverId="251"
+                X="-10014.04" Y="37.6059" Z="35.1707" />
+        <TurnIn QuestName="Young Lovers" QuestId="106" TurnInName="Tommy Joe Stonefield" TurnInId="252"
+                X="-9930.049" Y="499.7344" Z="32.33897" />
+        <PickUp QuestName="Speak with Gramma" QuestId="111" GiverName="Tommy Joe Stonefield" GiverId="252"
+                X="-9930.049" Y="499.7344" Z="32.33897" />
+        <TurnIn QuestName="Speak with Gramma" QuestId="111" TurnInName="Gramma Stonefield" TurnInId="248"
+                X="-9880.63" Y="322.6189" Z="37.74079" />
+        <PickUp QuestName="Note to William" QuestId="107" GiverName="Gramma Stonefield" GiverId="248"
+                X="-9880.63" Y="322.6189" Z="37.74079" />
+        <If Condition="HasQuest(62) &amp;&amp; !IsQuestCompleted(62)" >
+            <MoveTo QuestId="62" X="-9794.518" Y="149.2703" Z="24.2468" />
+        </If>
+        <Objective QuestName="Gold Dust Exchange" QuestId="47" Type="CollectItem" ItemId="773" CollectCount="10" />
+        <Objective QuestName="Kobold Candles" QuestId="60" Type="CollectItem" ItemId="772" CollectCount="8" />
+        <TurnIn QuestName="Kobold Candles" QuestId="60" TurnInName="William Pestle" TurnInId="253"
+                X="-9460.302" Y="31.93891" Z="56.96619" />
+        <TurnIn QuestName="Note to William" QuestId="107" TurnInName="William Pestle" TurnInId="253"
+                X="-9460.302" Y="31.93891" Z="56.96619" />
+        <PickUp QuestName="Collecting Kelp" QuestId="112" GiverName="William Pestle" GiverId="253"
+                X="-9460.302" Y="31.93891" Z="56.96619" />
+        <TurnIn QuestName="The Fargodeep Mine" QuestId="62" TurnInName="Marshal Dughan" TurnInId="240"
+                X="-9465.521" Y="74.00694" Z="56.59536" />
+        <PickUp QuestName="The Jasperlode Mine" QuestId="76" GiverName="Marshal Dughan" GiverId="240"
+                X="-9465.521" Y="74.00694" Z="56.59536" />
+        <TurnIn QuestName="Gold Dust Exchange" QuestId="47" TurnInName="Remy &quot;Two Times&quot;" TurnInId="241"
+                X="-9496.319" Y="72.82639" Z="56.41537" />
+        <PickUp QuestName="Princess Must Die!" QuestId="88" GiverName="Ma Stonefield" GiverId="244"
+                X="-9895" Y="332.4236" Z="36.37015" />
+        <Objective QuestName="Princess Must Die!" QuestId="88" Type="CollectItem" ItemId="1006" CollectCount="1" />
+        <TurnIn QuestName="Princess Must Die!" QuestId="88" TurnInName="Ma Stonefield" TurnInId="244"
+                X="-9895" Y="332.4236" Z="36.37015" />   
+		<If Condition="HasQuest(87)" >
+		<MoveTo QuestId="87" X="-9805.761" Y="143.6951" Z="52.65312" />
+		</If>
+		<Objective QuestName="Goldtooth" QuestId="87" Type="CollectItem" ItemId="981" CollectCount="1" />           		
+        <TurnIn QuestName="Goldtooth" QuestId="87" TurnInName="&quot;Auntie&quot;Bernice Stonefield" TurnInId="246"
+                X="-9889.681" Y="338.4665" Z="36.49811" />
+        <PickUp QuestName="A Fishy Peril" QuestId="40" GiverName="Remy&quot;Two Times&quot;" GiverId="241"
+                X="-9496.319" Y="72.82639" Z="56.41537" />
+        <TurnIn QuestName="A Fishy Peril" QuestId="40" TurnInName="Marshal Dughan" TurnInId="240"
+                X="-9465.521" Y="74.00694" Z="56.59536" />
+        <PickUp QuestName="Further Concerns" QuestId="35" GiverName="Marshal Dughan" GiverId="240"
+                X="-9465.521" Y="74.00694" Z="56.59536" />
+        <Objective QuestName="Collecting Kelp" QuestId="112" Type="CollectItem" ItemId="1256" CollectCount="4" />
+        <!-- CJ: We frequently end upon an island in the center of the lake with quickly-popping murlocs...
+             Before turning in, we need to move to a safer area when done.  Otherwise, we'll get stuck
+             in an infinite pop/kill/loot cycle.
+        -->
+        <DisableBehavior Name="Combat,Loot" />
+        <MoveTo QuestId="112" X="-9616.57" Y="-311.0784" Z="57.65745" />
+        <EnableBehavior Name="Combat,Loot" />
+        <TurnIn QuestName="Collecting Kelp" QuestId="112" TurnInName="William Pestle" TurnInId="253"
+                X="-9460.302" Y="31.93891" Z="56.96619" />
+        <PickUp QuestName="The Escape" QuestId="114" GiverName="William Pestle" GiverId="253"
+                X="-9460.302" Y="31.93891" Z="56.96619" />
+        <TurnIn QuestName="The Escape" QuestId="114" TurnInName="Maybell Maclure" TurnInId="251"
+                X="-10014.04" Y="37.6059" Z="35.1707" />
+        <TurnIn QuestName="Further Concerns" QuestId="35" TurnInName="Guard Thomas" TurnInId="261"
+                X="-9610.232" Y="-1032.052" Z="41.12282" />
+        <PickUp QuestName="Find the Lost Guards" QuestId="37" GiverName="Guard Thomas" GiverId="261"
+                X="-9610.232" Y="-1032.052" Z="41.12282" />
+        <PickUp QuestName="Protect the Frontier" QuestId="52" GiverName="Guard Thomas" GiverId="261"
+                X="-9610.232" Y="-1032.052" Z="41.12282" />
+        <PickUp QuestName="Bounty on Murlocs" QuestId="46" GiverType="Object" GiverId="203733"
+                X="-9613.294" Y="-1033.362" Z="40.24664" />
+        <PickUp QuestName="Wanted: James Clark" QuestId="26152" GiverType="Object" GiverId="203733"
+                X="-9613.294" Y="-1033.362" Z="40.24664" />
+        <PickUp QuestName="Fine Linen Goods" QuestId="83" GiverName="Sara Timberlain" GiverId="278"
+                X="-9530.045" Y="-1222.585" Z="47.28971" />
+        <PickUp QuestName="A Bundle of Trouble" QuestId="5545" GiverName="Supervisor Raelen" GiverId="10616"
+                X="-9469.795" Y="-1289.215" Z="41.34282" />
+        <Objective QuestName="Wanted: James Clark" QuestId="26152" Type="CollectItem" ItemId="57122" CollectCount="1" />
+        <TurnIn QuestName="Wanted: James Clark" QuestId="26152" TurnInName="Marshal McCree" TurnInId="42256"
+                X="-9468.153" Y="-1305.781" Z="44.15004" />
+        <If Condition="HasItem(1307)" >
+            <PickUp QuestName="The Collector" QuestId="123" GiverType="Item" GiverId="1307" />
+        </If>
+        <If Condition="HasQuest(123)" >
+            <TurnIn QuestName="The Collector" QuestId="123" TurnInName="Marshal McCree" TurnInId="42256" />
+            <!-- <PickUp QuestName="Manhunt" QuestId="147" GiverName="Marshal McCree" GiverId="42256" /> -->
+        </If>
+        <If Condition="HasQuest(76)">
+            <MoveTo X="-9086.532" Y="-557.8581" Z="60.70144" QuestId="76" />
+        </If>
+
+        <Objective QuestName="A Bundle of Trouble" QuestId="5545" Type="CollectItem" ItemId="13872" CollectCount="8" />
+        <TurnIn QuestName="Find the Lost Guards" QuestId="37" TurnInName="A half-eaten body" TurnInId="55"
+                X="-9335.764" Y="-986.4834" Z="67.69179" />
+        <PickUp QuestName="Discover Rolf's Fate" QuestId="45" GiverType="Object" GiverId="55"
+                X="-9335.764" Y="-986.4834" Z="67.69179" />
+        <Objective QuestName="Fine Linen Goods" QuestId="83" Type="CollectItem" ItemId="1019" CollectCount="6" />
+        <TurnIn QuestName="A Bundle of Trouble" QuestId="5545" TurnInName="Supervisor Raelen" TurnInId="10616"
+                X="-9469.795" Y="-1289.215" Z="41.34282" />
+        <TurnIn QuestName="Fine Linen Goods" QuestId="83" TurnInName="Sara Timberlain" TurnInId="278"
+                X="-9530.045" Y="-1222.585" Z="47.28971" />
+
+        <SetGrindArea>
+            <GrindArea>
+                <Factions>38 44 189</Factions>
+                <!-- [Wolf, Bear, Pig] -->
+                <TargetMinLevel>7</TargetMinLevel>
+                <TargetMaxLevel>11</TargetMaxLevel>
+                <Hotspots>
+                    <Hotspot X="-9307.01" Y="-1226.242" Z="68.80513" />
+                    <Hotspot X="-9257.933" Y="-1293.887" Z="74.06022" />
+                    <Hotspot X="-9420.059" Y="-1548.221" Z="70.69685" />
+                    <Hotspot X="-9506.553" Y="-1515.509" Z="60.78536" />
+                    <Hotspot X="-9590.335" Y="-1483.711" Z="59.91952" />
+                    <Hotspot X="-9719.108" Y="-1591.682" Z="53.24578" />
+                    <Hotspot X="-9781.724" Y="-1474.434" Z="45.50785" />
+                    <Hotspot X="-9739.691" Y="-1250.477" Z="49.01613" />
+                    <Hotspot X="-9605.207" Y="-1350.938" Z="52.99231" />
+                    <Hotspot X="-9529.566" Y="-1504.539" Z="62.08037" />
+                    <Hotspot X="-9376.894" Y="-1405.349" Z="61.64602" />
+                    <Hotspot X="-9374.647" Y="-1312.654" Z="55.07628" />
+                </Hotspots>
+            </GrindArea>
+        </SetGrindArea>
+        <GrindTo Level="10" GoalText="Grinding to Level 10" />
+
+        <TurnIn QuestName="Discover Rolf's Fate" QuestId="45" TurnInType="Object" TurnInId="56"
+                X="-9224.173" Y="-1234.316" Z="73.73194" />
+        <PickUp QuestName="Report to Thomas" QuestId="71" GiverType="Object" GiverId="56"
+                X="-9224.173" Y="-1234.316" Z="73.73194" />
+        <Objective QuestName="Bounty on Murlocs" QuestId="46" Type="CollectItem" ItemId="780" CollectCount="8" />
+        <Objective QuestName="Protect the Frontier" QuestId="52" Type="KillMob" MobId="822" KillCount="5" />
+        <Objective QuestName="Protect the Frontier" QuestId="52" Type="KillMob" MobId="118" KillCount="8" />
+        <TurnIn QuestName="Bounty on Murlocs" QuestId="46" TurnInName="Guard Thomas" TurnInId="261"
+                X="-9610.232" Y="-1032.052" Z="41.12282" />
+        <TurnIn QuestName="Protect the Frontier" QuestId="52" TurnInName="Guard Thomas" TurnInId="261"
+                X="-9610.232" Y="-1032.052" Z="41.12282" />
+        <TurnIn QuestName="Report to Thomas" QuestId="71" TurnInName="Guard Thomas" TurnInId="261"
+                X="-9610.232" Y="-1032.052" Z="41.12282" />
+        <PickUp QuestName="Cloth and Leather Armor" QuestId="59" GiverName="Guard Thomas" GiverId="261"
+                X="-9610.232" Y="-1032.052" Z="41.12282" />
+        <TurnIn QuestName="Cloth and Leather Armor" QuestId="59" TurnInName="Sara Timberlain" TurnInId="278"
+                X="-9530.045" Y="-1222.585" Z="47.28971" />
+        <PickUp QuestName="Hero's Call: Westfall!" QuestId="26378" GiverName="Marshal McCree" GiverId="42256"
+                X="-9468.153" Y="-1305.781" Z="44.15004" />
+        <If Condition="HasQuest(76)">
+            <MoveTo X="-9086.532" Y="-557.8581" Z="60.70144" QuestId="76" />
+        </If>
+        <TurnIn QuestName="The Jasperlode Mine" QuestId="76" TurnInName="Marshal Dughan" TurnInId="240"
+                X="-9465.521" Y="74.00694" Z="56.59536" />
+        <PickUp QuestName="Elmore's Task" QuestId="1097" GiverName="Smith Argus" GiverId="514" />
+        <TurnIn QuestName="Elmore's Task" QuestId="1097" TurnInName="Grimand Elmore" TurnInId="1416" />
+        <PickUp QuestName="Westbrook Garrison Needs Help!" QuestId="239" GiverName="Marshal Dughan" GiverId="240"
+                X="-9465.521" Y="74.00694" Z="56.59536" />
+        <PickUp QuestName="Wanted: &quot;Hogger&quot;" QuestId="176" GiverType="Object" GiverId="68"
+                X="-9669.776" Y="684.2137" Z="36.62647" />
+        <TurnIn QuestName="Westbrook Garrison Needs Help!" QuestId="239" TurnInName="Deputy Rainer" TurnInId="963"
+                X="-9662.753" Y="694.3211" Z="36.85325" />
+        <PickUp QuestName="Riverpaw Gnoll Bounty" QuestId="11" GiverName="Deputy Rainer" GiverId="963"
+                X="-9662.753" Y="694.3211" Z="36.85325" />
+        <Objective QuestName="Wanted: &quot;Hogger&quot;" QuestId="176" Type="KillMob" MobId="448" KillCount="1" />
+        <PickUp QuestName="Furlbrow's Deed" QuestId="184" GiverType="Object" GiverId="203734"
+                X="-10139.54" Y="669.1921" Z="35.95509" />
+        <Objective QuestName="Riverpaw Gnoll Bounty" QuestId="11" Type="CollectItem" ItemId="782" CollectCount="8" />
+        <TurnIn QuestName="Wanted: &quot;Hogger&quot;" QuestId="176" TurnInName="Marshal Dughan" TurnInId="240"
+                X="-9465.521" Y="74.00694" Z="56.59536" />
+        <TurnIn QuestName="Riverpaw Gnoll Bounty" QuestId="11" TurnInName="Deputy Rainer" TurnInId="963"
+                X="-9662.753" Y="694.3211" Z="36.85325" />
+        <TurnIn QuestName="Furlbrow's Deed" QuestId="184" TurnInName="Lieutenant Horatio Laine" TurnInId="42308"
+                X="-9849.856" Y="914.9618" Z="30.27025" />
+
+        <SetGrindArea>
+            <GrindArea>
+                <Factions>38 44 189</Factions>
+                <!-- [Wolf, Bear, Pig] -->
+                <TargetMinLevel>7</TargetMinLevel>
+                <TargetMaxLevel>11</TargetMaxLevel>
+                <Hotspots>
+                    <Hotspot X="-9720.43" Y="49.7692" Z="41.01646" />
+                    <!-- South of Goldshire and goes east near Brackwell -->
+                    <Hotspot X="-9798.137" Y="9.242975" Z="29.57826" />
+                    <Hotspot X="-9863.74" Y="6.092821" Z="27.79266" />
+                    <Hotspot X="-9906.576" Y="-28.88545" Z="30.29438" />
+                    <Hotspot X="-9973.366" Y="-47.40935" Z="34.99699" />
+                    <Hotspot X="-10022.73" Y="-22.00787" Z="34.01312" />
+                    <Hotspot X="-9958.058" Y="-60.10365" Z="33.72009" />
+                    <Hotspot X="-9931.236" Y="-89.88985" Z="30.37609" />
+                    <Hotspot X="-9899.061" Y="-50.5927" Z="28.9197" />
+                    <Hotspot X="-9859.553" Y="-43.15723" Z="26.10554" />
+                    <Hotspot X="-9812.51" Y="-78.52355" Z="25.81955" />
+                    <Hotspot X="-9813.236" Y="-10.45343" Z="26.11792" />
+                    <Hotspot X="-9823.549" Y="44.84231" Z="33.44895" />
+                    <Hotspot X="-9764.188" Y="77.97866" Z="41.09714" />
+                    <Hotspot X="-9786.423" Y="6.081963" Z="31.51482" />
+                    <Hotspot X="-9788.001" Y="-62.88512" Z="26.40487" />
+                    <Hotspot X="-9730.659" Y="-71.08958" Z="34.26672" />
+                    <Hotspot X="-9672.373" Y="-19.31929" Z="43.55779" />
+                    <Hotspot X="-9655.652" Y="-90.79086" Z="43.23079" />
+                    <Hotspot X="-9679.263" Y="-124.3228" Z="42.91785" />
+                    <Hotspot X="-9676.548" Y="-171.9559" Z="46.49627" />
+                    <Hotspot X="-9731.208" Y="-206.9452" Z="42.60763" />
+                    <Hotspot X="-9784.082" Y="-200.0088" Z="38.5035" />
+                    <Hotspot X="-9830.678" Y="-185.0714" Z="36.51274" />
+                    <Hotspot X="-9882.451" Y="-144.5452" Z="30.09871" />
+                    <Hotspot X="-9918.553" Y="-87.61197" Z="29.4919" />
+                    <Hotspot X="-9900.093" Y="-49.90158" Z="28.97948" />
+                    <Hotspot X="-9831.786" Y="12.80331" Z="27.89258" />
+                    <Hotspot X="-9729.723" Y="40.52927" Z="39.03622" />
+                    <!-- loops back around near start point -->
+                </Hotspots>
+            </GrindArea>
+        </SetGrindArea>
+        <GrindTo Level="11" GoalText="Grinding to Level 11" />
+
+        <CustomBehavior File="LoadProfile" ProfileName="..\[A - Quest] EK 12-58 [Kick]" RememberProfile="true" />
+
+    </QuestOrder>
+
+</HBProfile>

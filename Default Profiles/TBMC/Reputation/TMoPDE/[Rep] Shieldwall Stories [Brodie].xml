@@ -1,0 +1,62 @@
+<HBProfile>
+	<Name>Operation Shieldwall QuestLine ($Rev$)</Name>
+	<MinLevel>89</MinLevel>
+	<MaxLevel>91</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+		<Blackspot X="-1876.213" Y="1916.132" Z="5.37" Radius="3" /> <!-- A big pipe -->
+		<Blackspot X="-1952.306" Y="2333.733" Z="8.146486" Radius="10" /> <!-- Don't go in here -->
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+<If Condition="Me.IsHorde" >
+	<CustomBehavior File="UserDialog" Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="This Profile is for Alliance only. Stopping bot (until I get Horde started)." />
+	<CustomBehavior File="Halt" />
+</If>
+
+<!-- Starting Quests -->
+
+<CustomBehavior File="Message" Text="Compiling Operation Shieldwall Story Quests..." LogColor="Green" />
+
+	<If Condition="!IsQuestCompleted(32426)" >
+		<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Thousand Faces A [Brodie]" />
+	</If>
+	
+	<If Condition="!IsQuestCompleted(32382)" >
+		<CustomBehavior File="LoadProfile" ProfileName="Scripts\[Rep] Voice of the Gods A [Brodie]" />
+	</If>
+
+<!-- <CustomBehavior File="LoadProfile" ProfileName="[Rep] Dailies [Brodie]" /> -->
+
+<CustomBehavior File="UserDialog" Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="MORE COMING SOON!!!" />
+
+</QuestOrder>
+</HBProfile>

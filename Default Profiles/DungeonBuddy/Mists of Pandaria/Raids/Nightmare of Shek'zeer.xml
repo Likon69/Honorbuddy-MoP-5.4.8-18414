@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile xsi:noNamespaceSchemaLocation="../../DungeonbuddyProfile.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Nightmare of Shek'zeer</Name>
+  <DungeonId>530</DungeonId>
+
+  <BossEncounters>
+    <Boss isFinal="false" entry="62397" name="Wind Lord Mel'jarak" killOrder="1" optional="false" X="-2073.854" Y="475.9306" Z="503.569"/>
+    <Boss isFinal="false" entry="62511" name="Amber-Shaper Un'sok" killOrder="2" optional="false" X="-2477.417" Y="796.5174" Z="586.6834"/>
+    <Boss isFinal="true" entry="62837" name="Grand Empress Shek'zeer" killOrder="3" optional="false" X="-2478.587" Y="1018.547" Z="571.133"/>
+  </BossEncounters>
+
+  <Blackspots>
+
+  </Blackspots>
+  <PullBlackspots>
+  </PullBlackspots>
+</DungeonBuddyProfile>

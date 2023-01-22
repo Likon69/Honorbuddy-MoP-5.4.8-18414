@@ -1,0 +1,1186 @@
+<HBProfile>
+
+	<Name>Azshara ($Rev$)</Name>
+	<MinLevel>8</MinLevel>
+	<MaxLevel>25</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+		<AvoidMob Name="Land Mine" Entry="195360" />
+		<AvoidMob Name="Balboa" Entry="35759" />
+		<AvoidMob Name="Talrendis Glaive Thrower" Entry="36890" />
+	</AvoidMobs>
+	
+	<Blacklist>
+		<Mob Name="Enslaved Son of Arkkoroc" Entry="36868" Flags="Pull" />
+		<Mob Name="Azshara Bombing Bunny" Entry="36932" Flags="Pull" />
+		<Mob Name="Vile Splash" Entry="36131" Flags="Pull, Combat" />
+		<Mob Name="Balboa" Entry="35759" Flags="Pull" />
+	</Blacklist>
+
+	<Blackspots>
+		<Blackspot X="2795.777" Y="-4665.038" Z="117.0491" Radius="4.658494" />
+		<Blackspot X="2585.829" Y="-5811.044" Z="77.17947" Radius="6.141519" />
+		<Blackspot X="2540.818" Y="-5793.596" Z="78.11218" Radius="2.0" />
+	</Blackspots>
+
+	<Mailboxes>
+		<MailBox X="2957.907" Y="-4972.689" Z="125.9999" />
+	</Mailboxes>
+
+	<Vendors>
+		<!-- Orgrimmar Rocketway Exchange -->
+		<Vendor Name="Beezle Spinspark" Entry="43708" Type="Repair" X="2941.93" Y="-4997.47" Z="166.0698" />
+		<!-- Southern Rocketway Exchange -->
+		<Vendor Name="Geezle Spinspark" Entry="43705" Type="Repair" X="2649.35" Y="-6175.29" Z="138.1036" />
+		<!-- Bilgewater Harbor -->
+		<Vendor Name="Sally Sandscrew" Entry="49884" Type="Repair" X="3534.69" Y="-6729.38" Z="96.35945" />
+		<!-- Darnassian Base Camp -->
+		<Vendor Name="Feezle Spinspark" Entry="43709" Type="Repair" X="4478.51" Y="-5711.56" Z="145.5509" />
+		<!-- Northern Rocketway Exchange -->
+		<Vendor Name="Meezle Spinspark" Entry="43710" Type="Repair" X="4603.78" Y="-7029.55" Z="154.1242" />
+	</Vendors>
+
+<!-- Quest Overrides -->
+
+<Quest Name="Venison for the Troops" Id="14118" >
+	<Objective Type="CollectItem" ItemId="47038" CollectCount="15" >
+		<CollectFrom>
+			<Mob Name="Weakened Mosshoof Stag" Id="35096" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="2845.598" Y="-4898.844" Z="125.7665" />
+			<Hotspot X="2761.536" Y="-4958.91" Z="116.214" />
+			<Hotspot X="2707.817" Y="-5024.407" Z="120.495" />
+			<Hotspot X="2641.677" Y="-5082.623" Z="121.4104" />
+			<Hotspot X="2593.625" Y="-5127.696" Z="115.527" />
+			<Hotspot X="2565.892" Y="-5009.362" Z="125.0534" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="A Thousand Stories in the Sand" Id="14201" >
+	<Objective Type="CollectItem" ItemId="48525" CollectCount="5" >
+		<CollectFrom>
+			<GameObject Name="Ancient Debris Pile" Id="195455" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="2747.552" Y="-5311.534" Z="113.0909" />
+			<Hotspot X="2704.019" Y="-5267.609" Z="102.7724" />
+			<Hotspot X="2641.613" Y="-5248.039" Z="109.6512" />
+			<Hotspot X="2598.659" Y="-5238.241" Z="102.9974" />
+			<Hotspot X="2560.378" Y="-5279.809" Z="105.11" />
+			<Hotspot X="2540.933" Y="-5320.91" Z="104.7499" />
+			<Hotspot X="2549.577" Y="-5371.773" Z="112.8568" />
+			<Hotspot X="2579.115" Y="-5437.409" Z="104.6888" />
+			<Hotspot X="2623.004" Y="-5441.179" Z="114.4337" />
+			<Hotspot X="2698.187" Y="-5418.885" Z="103.9232" />
+			<Hotspot X="2716.81" Y="-5368.898" Z="107.4302" />
+			<Hotspot X="2727.482" Y="-5318.708" Z="99.94293" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Diplomacy By Another Means" Id="14433" >
+	<Objective Type="CollectItem" ItemId="49367" CollectCount="1" >
+		<CollectFrom>
+			<GameObject Name="Important Documents" Id="196835" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="3976.165" Y="-5036.16" Z="136.0712" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="CollectItem" ItemId="49366" CollectCount="1" >
+		<CollectFrom>
+			<Mob Name="Talrendis Ambassador" Id="36614" />
+		</CollectFrom>
+		<Hotspots>
+			<Hotspot X="4090.366" Y="-5111.089" Z="135.5148" />
+			<Hotspot X="3997.332" Y="-5060.386" Z="136.1972" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="Mop Up" Id="24435" >
+	<Objective Type="KillMob" MobId="6190" KillCount="12" >
+		<Hotspots>
+			<Hotspot X="3405.022" Y="-5572.45" Z="11.48293" />
+			<Hotspot X="3461.988" Y="-5557.398" Z="11.09499" />
+			<Hotspot X="3466.831" Y="-5647.683" Z="6.776672" />
+			<Hotspot X="3521.812" Y="-5677.845" Z="4.785433" />
+			<Hotspot X="3621.127" Y="-5691.89" Z="3.576548" />
+			<Hotspot X="3691.886" Y="-5676.945" Z="9.010488" />
+			<Hotspot X="3750.975" Y="-5707.046" Z="4.640636" />
+			<Hotspot X="3227.902" Y="-5756.78" Z="3.715584" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Name="The Blackmaw Doublecross" Id="14435" >
+	<Objective Type="KillMob" MobId="36625" KillCount="1" >
+		<Hotspots>
+			<Hotspot X="4277.298" Y="-5087.897" Z="132.2542" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="36013" KillCount="4" >
+		<Hotspots>
+			<Hotspot X="4277.298" Y="-5087.897" Z="132.2542" />
+			<Hotspot X="4217.489" Y="-5079.675" Z="138.4411" />
+			<Hotspot X="4270.6" Y="-5101.855" Z="150.1643" />
+		</Hotspots>
+	</Objective>
+	<Objective Type="KillMob" MobId="36012" KillCount="4" >
+		<Hotspots>
+			<Hotspot X="4277.298" Y="-5087.897" Z="132.2542" />
+			<Hotspot X="4217.489" Y="-5079.675" Z="138.4411" />
+			<Hotspot X="4270.6" Y="-5101.855" Z="150.1643" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance">
+		<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+	</If>
+	
+	<If Condition="HasQuest(25275)" >
+		<TurnIn QuestName="Report to the Labor Captain" QuestId="25275" TurnInName="Labor Captain Grabbit" TurnInId="35086" />
+	</If>
+	
+	<If Condition="HasQuest(28496)" >
+		<TurnIn QuestName="Warchief's Command: Azshara!" QuestId="28496" TurnInName="Labor Captain Grabbit" TurnInId="35086" />
+	</If>
+	
+	<If Condition="!HasQuest(14129) &amp;&amp; !IsQuestCompleted(14129)" >
+		<CustomBehavior File="RunMacro" Macro="/run for i=1,GetNumQuestLogEntries() do SelectQuestLogEntry(i); SetAbandonQuest(); AbandonQuest(); end" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Azshara Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Orgrimmar Rear Gate Quests" LogColor="CornflowerBlue" />
+	
+<!-- Venison for the Troops -->
+	<PickUp QuestName="Runaway Shredder!" QuestId="14129" GiverName="Labor Captain Grabbit" GiverId="35086" />
+	<PickUp QuestName="Venison for the Troops" QuestId="14118" GiverName="Ag'tor Bloodfist" GiverId="8576" />
+	<PickUp QuestName="The Eyes of Ashenvale" QuestId="14117" GiverName="Ag'tor Bloodfist" GiverId="8576" />
+	<Objective QuestName="Venison for the Troops" QuestId="14118" Type="CollectItem" ItemId="47038" CollectCount="15" />
+	
+<!-- DROP VEHICLE for Singular Fix -->
+	<If Condition="(HasQuest(14134) || HasQuest(14135) || HasQuest(14146) || HasQuest(14155)) &amp;&amp; Me.IsOnTransport" >
+		<CustomBehavior File="Message" Text="EJECTING VEHICLE due to issues with resets and being in one. If Bot is halted, please stop/start again!" LogColor="Red" />
+		<CustomBehavior File="EjectVeh" />
+	</If>
+
+<!-- Runaway Shredder -->
+	<While Condition="HasQuest(14129) &amp;&amp; !IsQuestCompleted(14129)" >
+		<RunTo X="2769.078" Y="-4972.933" Z="118.783" />
+		<CustomBehavior File="KillShredder" />
+	</While>
+	<TurnIn QuestName="Runaway Shredder!" QuestId="14129" />
+
+<!-- The Captain's Logs -->
+	<PickUp QuestName="The Captain's Logs" QuestId="14134" GiverName="Labor Captain Grabbit" GiverId="35086" />
+	<If Condition="HasQuest(14134) &amp;&amp; !IsQuestCompleted(14134)" >
+		<While Condition="HasQuest(14134) &amp;&amp; !IsQuestCompleted(14134)" >
+			<While Condition="Me.IsOnTransport &amp;&amp; !IsQuestCompleted(14134)" >
+				<CustomBehavior File="SpecificQuests\Kalimdor\Azshara\14134-TheCaptainsLogs" />
+			</While>
+			<While Condition="!Me.IsOnTransport &amp;&amp; !IsQuestCompleted(14134)" >
+				<RunTo X="2769.078" Y="-4972.933" Z="118.783" />
+				<CustomBehavior File="KillShredder" />
+			</While>
+		</While>
+	</If>
+	<If Condition="HasQuest(14134) &amp;&amp; IsQuestCompleted(14134)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="14134" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestFrameAcceptButton" WaitTime="1000" />
+	</If>
+	
+<!-- Up A Tree -->
+	<PickUp QuestName="Up A Tree" QuestId="14135" GiverName="Labor Captain Grabbit" GiverId="35086" />
+	<If Condition="HasQuest(14135) &amp;&amp; !IsQuestCompleted(14135)" >
+		<While Condition="HasQuest(14135) &amp;&amp; !IsQuestCompleted(14135)" >
+			<While Condition="Me.IsOnTransport &amp;&amp; !IsQuestCompleted(14135)" >
+				<CustomBehavior File="RunMacro" Macro="/cleartarget" />
+				<RunTo X="2663.896" Y="-5025.539" Z="121.6968" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="SpecificQuests\Kalimdor\Azshara\14135-UpATree" />
+			</While>
+			<While Condition="!Me.IsOnTransport &amp;&amp; !IsQuestCompleted(14135)" >
+				<RunTo X="2769.078" Y="-4972.933" Z="118.783" />
+				<CustomBehavior File="KillShredder" />
+			</While>
+		</While>
+	</If>
+	<If Condition="HasQuest(14135) &amp;&amp; IsQuestCompleted(14135)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="14135" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestFrameAcceptButton" WaitTime="1000" />
+	</If>
+	
+<!-- Defend the Gates! -->
+	<PickUp QuestName="Defend the Gates!" QuestId="14146" GiverName="Labor Captain Grabbit" GiverId="35195" />
+	<If Condition="HasQuest(14146) &amp;&amp; !IsQuestCompleted(14146)" >
+		<While Condition="HasQuest(14146) &amp;&amp; !IsQuestCompleted(14146)" >
+			<While Condition="Me.IsOnTransport &amp;&amp; !IsQuestCompleted(14146)" >
+				<CustomBehavior File="RunMacro" Macro="/cleartarget" />
+				<RunTo X="2546.64" Y="-4858.115" Z="145.5385" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="SpecificQuests\Kalimdor\Azshara\14146-DefendTheGates" />
+			</While>
+			<While Condition="!Me.IsOnTransport &amp;&amp; !IsQuestCompleted(14146)" >
+				<CustomBehavior File="InteractWith" MobId="35196" NonCompeteDistance="0" TerminateWhen="Me.IsOnTransport" ProactiveCombatStrategy="NoClear" X="2548.04" Y="-4853.928" Z="145.4129" />
+			</While>
+		</While>
+	</If>
+	<If Condition="HasQuest(14146) &amp;&amp; IsQuestCompleted(14146)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="14146" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="RunMacro" Macro="/click QuestFrameAcceptButton" WaitTime="1000" />
+	</If>
+	
+<!-- Arborcide -->
+	<PickUp QuestName="Arborcide" QuestId="14155" GiverName="Labor Captain Grabbit" GiverId="35195" />
+	<If Condition="HasQuest(14155) &amp;&amp; !IsQuestCompleted(14155)" >
+		<While Condition="HasQuest(14155) &amp;&amp; !IsQuestCompleted(14155)" >
+			<While Condition="Me.IsOnTransport &amp;&amp; !IsQuestCompleted(14155)" >
+				<CustomBehavior File="RunMacro" Macro="/cleartarget" />
+				<CustomBehavior File="NoCombatMoveTo" X="2614.482" Y="-4626.842" Z="145.1204" />
+				<CustomBehavior File="WaitTimer" WaitTime="1000" />
+				<CustomBehavior File="SpecificQuests\Kalimdor\Azshara\14155-Arborcide" />
+			</While>
+			<While Condition="!Me.IsOnTransport &amp;&amp; !IsQuestCompleted(14155)" >
+				<CustomBehavior File="InteractWith" MobId="35196" NonCompeteDistance="0" TerminateWhen="Me.IsOnTransport" ProactiveCombatStrategy="NoClear" X="2548.04" Y="-4853.928" Z="145.4129" />
+			</While>
+		</While>
+	</If>
+	<If Condition="HasQuest(14155) &amp;&amp; IsQuestCompleted(14155)" >
+		<CustomBehavior File="NoCombatMoveTo" X="2546.64" Y="-4858.115" Z="145.5385" />
+		<CustomBehavior File="EjectVeh" />
+		<TurnIn QuestName="Arborcide" QuestId="14155" TurnInName="Labor Captain Grabbit" TurnInId="35086" />
+	</If>
+
+<!-- The Eyes of Ashenvale -->
+	<Objective QuestName="The Eyes of Ashenvale" QuestId="14117" Type="KillMob" MobId="35095" KillCount="8" />
+	<If Condition="!HasItem(47039) &amp;&amp; (!HasQuest(14127) &amp;&amp; !IsQuestCompleted(14127))" >
+		<CustomBehavior File="CollectThings" MobId="35095" CollectItemId="47039" CollectItemCount="1" >
+			<Hotspot X="2845.598" Y="-4898.844" Z="125.7665" />
+			<Hotspot X="2761.536" Y="-4958.91" Z="116.214" />
+			<Hotspot X="2707.817" Y="-5024.407" Z="120.495" />
+			<Hotspot X="2641.677" Y="-5082.623" Z="121.4104" />
+			<Hotspot X="2593.625" Y="-5127.696" Z="115.527" />
+			<Hotspot X="2565.892" Y="-5009.362" Z="125.0534" />
+		</CustomBehavior>
+	</If>
+	<If Condition="HasItem(47039) &amp;&amp; (!HasQuest(14127) &amp;&amp; !IsQuestCompleted(14127))" >
+		<PickUp QuestName="Return of the Highborne?" QuestId="14127" GiverType="Item" GiverId="47039" />
+	</If>
+	<If Condition="HasQuest(14127)" >
+		<TurnIn QuestName="Return of the Highborne?" QuestId="14127" TurnInName="Ag'tor Bloodfist" TurnInId="8576" />
+	</If>
+	<PickUp QuestName="Return of the Highborne?" QuestId="14128" GiverName="Ag'tor Bloodfist" GiverId="8576" />
+	<TurnIn QuestName="Venison for the Troops" QuestId="14118" TurnInName="Ag'tor Bloodfist" TurnInId="8576" />
+	<TurnIn QuestName="The Eyes of Ashenvale" QuestId="14117" TurnInName="Ag'tor Bloodfist" TurnInId="8576" />
+	
+	<PickUp QuestName="Report to Horzak" QuestId="14162" GiverName="Labor Captain Grabbit" GiverId="35086" />
+	<TurnIn QuestName="Report to Horzak" QuestId="14162" TurnInName="Horzak Zignibble" TurnInId="35091" />
+	
+	<CustomBehavior File="Message" Text="Compiling Orgrimmar Rocketway Exchange Quests" LogColor="CornflowerBlue" />
+
+	<TurnIn QuestName="Return of the Highborne?" QuestId="14128" TurnInName="Malynea Skyreaver" TurnInId="35087" />
+
+<!-- Basilisk Bashin'/Stone Cold/A Quota To Meet -->
+	<PickUp QuestName="Basilisk Bashin'" QuestId="14161" GiverName="Horzak Zignibble" GiverId="35091" />
+	<PickUp QuestName="Stone Cold" QuestId="14165" GiverName="Horzak Zignibble" GiverId="35091" />
+	<PickUp QuestName="A Quota to Meet" QuestId="14197" GiverName="Foreman Fisk" GiverId="35085" />
+	<Objective QuestName="A Quota to Meet" QuestId="14197" Type="CollectItem" ItemId="48128" CollectCount="20" />
+	<Objective QuestName="Basilisk Bashin'" QuestId="14161" Type="KillMob" MobId="35245" KillCount="10" />
+	<While Condition="HasQuest(14165) &amp;&amp; !IsQuestCompleted(14165)" >
+		<While Condition="!Me.HasAura(91695) &amp;&amp; !Me.HasAura(69619) &amp;&amp; !Me.HasAura(67032)" >
+			<CustomBehavior File="InteractWith" MobId="35257" PreInteractMountStrategy="DismountOrCancelShapeshift" ProactiveCombatStrategy="ClearMobsTargetingUs" NotMoving="True"
+				Range="5.5" NonCompeteDistance="0" >
+				<HuntingGrounds>
+					<Hotspot X="2874.295" Y="-4782.33" Z="95.61549" />
+					<Hotspot X="2795.474" Y="-4838.832" Z="91.97857" />
+					<Hotspot X="2735.263" Y="-4733.292" Z="79.90814" />
+				</HuntingGrounds>
+			</CustomBehavior>
+		</While>
+		<CustomBehavior File="InteractWith" QuestId="14165" MobId="35091" TerminateWhen="!Me.HasAura(91695) &amp;&amp; !Me.HasAura(69619) &amp;&amp; !Me.HasAura(67032)" ProactiveCombatStrategy="NoClear" X="2940.89" Y="-4980.691" Z="125.507" />
+	</While>
+	<TurnIn QuestName="Basilisk Bashin'" QuestId="14161" TurnInName="Horzak Zignibble" TurnInId="35091" />
+	<TurnIn QuestName="Stone Cold" QuestId="14165" TurnInName="Horzak Zignibble" TurnInId="35091" />
+	<TurnIn QuestName="A Quota to Meet" QuestId="14197" TurnInName="Foreman Fisk" TurnInId="35085" />
+	
+	<PickUp QuestName="The Perfect Prism" QuestId="14190" GiverName="Horzak Zignibble" GiverId="35091" />
+	<Objective QuestName="The Perfect Prism" QuestId="14190" Type="CollectItem" ItemId="47819" CollectCount="1" />
+	<TurnIn QuestName="The Perfect Prism" QuestId="14190" TurnInType="Object" TurnInName="Headquarters Radio" TurnInId="195431" X="2792.934" Y="-4490.589" Z="96.09443" />
+	
+	<PickUp QuestName="Prismbreak" QuestId="14192" GiverType="Object" GiverName="Headquarters Radio" GiverId="195431" X="2792.934" Y="-4490.589" Z="96.09443" />
+	<TurnIn QuestName="Prismbreak" QuestId="14192" TurnInType="Object" TurnInName="Weapons Cabinet" TurnInId="195435" X="2807.509" Y="-4481.393" Z="96.09443" />
+	
+	<PickUp QuestName="Refleshification" QuestId="14194" GiverType="Object" GiverName="Weapons Cabinet" GiverId="195435" X="2807.509" Y="-4481.393" Z="96.09443" />
+	<CustomBehavior File="InteractWith" QuestId="14194" MobId="35257" InteractByUsingItemId="48104" Range="20" NumOfTimes="1000" 
+		PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs" >
+		<HuntingGrounds>
+			<Hotspot X="2874.295" Y="-4782.33" Z="95.61549" />
+			<Hotspot X="2795.474" Y="-4838.832" Z="91.97857" />
+			<Hotspot X="2735.263" Y="-4733.292" Z="79.90814" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="Refleshification" QuestId="14194" TurnInName="Horzak Zignibble" TurnInId="35091" />
+	
+	<If Condition="!HasQuest(14468) &amp;&amp; !IsQuestCompleted(14468)" >
+		<PickUp QuestName="Another Warm Body" QuestId="14468" GiverName="Private Worcester" GiverId="36752" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" DoRepair="True" />
+	</If>
+	<TurnIn QuestName="Another Warm Body" QuestId="14468" TurnInName="Commander Molotov" TurnInId="36749" />
+	
+	<CustomBehavior File="Message" Text="Compiling Forlorn Ridge Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Hand-Me-Downs" QuestId="14469" GiverName="Commander Molotov" GiverId="36749" />
+	<PickUp QuestName="Military Breakthrough" QuestId="14470" GiverName="Glix Grindlock" GiverId="36744" />
+	<PickUp QuestName="First Degree Mortar" QuestId="14471" GiverName="Xiz The Eye Salvoblast" GiverId="36746" />
+
+<!-- First Degree Mortar -->
+	<If Condition="HasQuest(14471) &amp;&amp; !IsQuestCompleted(14471)" >
+		<RunTo X="3263.132" Y="-5090.189" Z="129.6903" />
+		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" Text="CANNON CONTROL DOES NOT WORK! No work around, sorry but this part is NOT afk'able. Please stop bot, do this quest, and restart.. Bot will handle the rest! Note: This quests IS REQUIRED to continue the storyline!" />
+	</If>
+<!--<CustomBehavior File="InteractWith" MobId="36768" CollectionDistance="8" NonCompeteDistance="0" X="3263.132" Y="-5090.189" Z="129.6903" />
+	<CustomBehavior File="Cava\FixedCannon" QuestId="14471" VehicleId="36768" MinAngle="0.15" MaxAngle="0.393" Buttons="1" ExitButton="12" /> -->
+	<CustomBehavior File="InteractWith" QuestId="14469" MobId="36756" InteractByLooting="True" NumOfTimes="1000" ProactiveCombatStrategy="ClearMobsTargetingUs" X="3397.778" Y="-4961.151" Z="100.2029" />
+	<Objective QuestName="Military Breakthrough" QuestId="14470" Type="CollectItem" ItemId="49700" CollectCount="1" />
+	<Objective QuestName="Military Breakthrough" QuestId="14470" Type="KillMob" MobId="8408" KillCount="1" />
+	<TurnIn QuestName="Hand-Me-Downs" QuestId="14469" TurnInName="Commander Molotov" TurnInId="36749" />
+	<TurnIn QuestName="Military Breakthrough" QuestId="14470" TurnInName="Glix Grindlock" TurnInId="36744" />
+	<TurnIn QuestName="First Degree Mortar" QuestId="14471" TurnInName="Xiz The Eye Salvoblast" TurnInId="36746" />
+	
+	<PickUp QuestName="In The Face!" QuestId="14472" GiverName="Glix Grindlock" GiverId="36744" />
+	<While Condition="HasQuest(14472) &amp;&amp; !IsQuestCompleted(14472)" >
+		<CustomBehavior File="InteractWith" QuestId="14472" MobId="36868" TerminateWhen="!HasItem(49700)" InteractByUsingItemId="49700" 
+			CollectionDistance="50" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="50" WaitTime="5000" X="3141.912" Y="-5118.189" Z="132.8136" />
+		<If Condition="!HasItem(49700) &amp;&amp; !IsQuestCompleted(14472)" >
+			<!-- Just in case we lose item or doesn't count -->
+		</If>
+	</While>
+	<TurnIn QuestName="In The Face!" QuestId="14472" TurnInName="Glix Grindlock" TurnInId="36744" />
+	
+	<PickUp QuestName="Profitability Scouting" QuestId="24452" GiverName="Commander Molotov" GiverId="36749" />
+	<If Condition="HasQuest(24452) &amp;&amp; !IsQuestCompleted(24452)" >
+		<!-- CC will re-enable pets, can't drop them -->
+		<RunTo X="3481.157" Y="-5068.914" Z="87.03924" /> <!-- Location of area we can use Stealth Generator -->
+		<DisableBehavior Name="Combat" />
+		<If Condition="Me.Class == WoWClass.Hunter" >
+			<CustomBehavior File="InteractWith" MobIdIncludesSelf="True" InteractByCastingSpellId="2641" />
+		</If>
+		<If Condition="(Me.Minions != null) &amp;&amp; (Me.Minions.Count &gt; 0)" >
+			<CustomBehavior File="Misc\RunLua" Lua="PetDismiss()" WaitTime="3000" />
+		</If>
+		<While Condition="!IsQuestCompleted(24452)" >
+			<If Condition="!(Me.HasAura(69744))" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(49701)" />
+			</If>
+			<CustomBehavior File="InteractWith" QuestId="24452" MobId="200298" TerminateWhen="!(Me.HasAura(69744))" NonCompeteDistance="0" />
+		</While>
+		<RunTo X="3481.157" Y="-5068.914" Z="87.03924" />
+		<EnableBehavior Name="Combat" />
+	</If>
+	<TurnIn QuestName="Profitability Scouting" QuestId="24452" TurnInName="Commander Molotov" TurnInId="36749" />
+	
+	<PickUp QuestName="Private Chat" QuestId="24453" GiverName="Commander Molotov" GiverId="36749" />
+	<TurnIn QuestName="Private Chat" QuestId="24453" TurnInName="Private Worcester" TurnInId="36752" />
+	
+	<CustomBehavior File="Message" Text="Compiling Orgrimmar Rocketway Exchange Quests, Round 2" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Survey the Lakeshore" QuestId="14202" GiverName="Custer Clubnik" GiverId="35088" />
+	<PickUp QuestName="A Thousand Stories in the Sand" QuestId="14201" GiverName="Malynea Skyreaver" GiverId="35087" />
+	<While Condition="HasQuest(14202) &amp;&amp; !IsQuestCompleted(14202)" >
+		<If Condition="Unit(35485, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 50) == null" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(48665)" WaitTime="1000" />
+		</If>
+		<CustomBehavior File="InteractWith" QuestId="14202" QuestObjectiveIndex="2" MobId="35484" TerminateWhen="!(ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; u.Entry == 35485 &amp;&amp; u.IsAlive &amp;&amp; u.Distance &lt;= 50))" 
+			NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" X="2749.589" Y="-5287.745" Z="114.9873" />
+		<CustomBehavior File="InteractWith" QuestId="14202" QuestObjectiveIndex="1" MobId="35484" TerminateWhen="!(ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; u.Entry == 35485 &amp;&amp; u.IsAlive &amp;&amp; u.Distance &lt;= 50))" 
+			NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" X="2563.646" Y="-5261.465" Z="111.3624" />
+		<CustomBehavior File="InteractWith" QuestId="14202" QuestObjectiveIndex="3" MobId="35484" TerminateWhen="!(ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; u.Entry == 35485 &amp;&amp; u.IsAlive &amp;&amp; u.Distance &lt;= 50))" 
+			NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="100" X="2635.759" Y="-5435.381" Z="115.2353" />
+	</While>
+	<Objective QuestName="A Thousand Stories in the Sand" QuestId="14201" Type="CollectItem" ItemId="48525" CollectCount="5" />
+	<TurnIn QuestName="Survey the Lakeshore" QuestId="14202" TurnInName="Custer Clubnik" TurnInId="35088" />
+	<TurnIn QuestName="A Thousand Stories in the Sand" QuestId="14201" TurnInName="Malynea Skyreaver" TurnInId="35087" />
+	
+	<PickUp QuestName="Gunk In The Trunk" QuestId="14209" GiverName="Custer Clubnik" GiverId="35088" />
+	<CustomBehavior File="CollectThings" QuestId="14209" CollectItemId="48780" CollectItemCount="1" MobId="35526" MobId2="35558" MobState="Alive" NonCompeteDistance="5" X="2907.877" Y="-5026.672" Z="126.9239" />
+	<TurnIn QuestName="Gunk In The Trunk" QuestId="14209" TurnInName="Custer Clubnik" TurnInId="35088" />
+	
+	<PickUp QuestName="Dozercism" QuestId="14423" GiverName="Custer Clubnik" GiverId="35088" />
+	<UseItem QuestId="14423" ItemId="49350" X="2907.877" Y="-5026.672" Z="126.9239" />
+	<Objective QuestName="Dozercism" QuestId="14423" Type="KillMob" MobId="35526" KillCount="1" />
+	<TurnIn QuestName="Dozercism" QuestId="14423" TurnInName="Custer Clubnik" TurnInId="35088" />
+	
+	<PickUp QuestName="Memories of the Dead" QuestId="14215" GiverName="Malynea Skyreaver" GiverId="35087" />
+	<If Condition="HasQuest(14215) &amp;&amp; !IsQuestCompleted(14215)" >
+		<CustomBehavior File="InteractWith" MobId="35567" InteractByGossipOptions="1" TerminateWhen="Me.HasAura(67704)" WaitTime="3000" X="2722.599" Y="-5380.651" Z="108.2659" />
+		<CustomBehavior File="InteractWith" MobId="35595" InteractByGossipOptions="1" X="2643.527" Y="-5439.837" Z="115.433" />
+	</If>
+	<TurnIn QuestName="Memories of the Dead" QuestId="14215" />
+	
+	<PickUp QuestName="Mystery of the Sarcen Stone" QuestId="14216" GiverName="Malynea Skyreaver" GiverId="35087" />
+	<If Condition="HasQuest(14216) &amp;&amp; !IsQuestCompleted(14216)" >
+		<RunTo X="2608.567" Y="-5334.949" Z="99.7" />
+		<CustomBehavior File="MyCTM" X="2608.567" Y="-5334.949" Z="76.15992" />
+		<CustomBehavior File="InteractWith" QuestId="14216" MovementBy="ClickToMoveOnly" MobId="195513" NonCompeteDistance="0" X="2608.567" Y="-5334.949" Z="76.15992" />
+		<CustomBehavior File="AscendInWater" />
+	</If>
+	<TurnIn QuestName="Mystery of the Sarcen Stone" QuestId="14216" TurnInName="Malynea Skyreaver" TurnInId="35087" />
+	
+	<If Condition="!HasQuest(14424) &amp;&amp; !IsQuestCompleted(14424)" >
+		<PickUp QuestName="Need More Science" QuestId="14424" GiverName="Custer Clubnik" GiverId="35088" />
+		<CustomBehavior File="UseTransport" TransportId="207889"
+			WaitAtX="2930.053" WaitAtY="-4992.288" WaitAtZ="125.9934" 
+			TransportStartX="2936.059" TransportStartY="-4993.609" TransportStartZ="126.9284"
+			TransportEndX="2936.059" TransportEndY="-4993.609" TransportEndZ="165.4816"
+			StandOnX="2935.524" StandOnY="-4993.343" StandOnZ="127.1236"
+			GetOffX="2945.6" GetOffY="-4995.836" GetOffZ="165.6983" />
+		<CustomBehavior File="InteractWith" MobId="43217" InteractByGossipOptions="1" NonCompeteDistance="0" TerminateWhen="Me.IsOnTransport" WaitTime="5000" X="2945.844" Y="-4996.208" Z="165.6922" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="Need More Science" QuestId="14424" TurnInName="Assistant Greely" TurnInId="36077" />
+	
+	<CustomBehavior File="Message" Text="Compiling Southern Rocketway Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="When Science Attacks" QuestId="14308" GiverName="Assistant Greely" GiverId="36077" />
+	<PickUp QuestName="Mortar the Point" QuestId="14258" GiverName="Bombardier Captain Smooks" GiverId="35817" />
+	<PickUp QuestName="Bad Science! Bad!" QuestId="14322" GiverName="Twistex Happytongs" GiverId="36146" />
+	<Objective QuestName="Mortar the Point" QuestId="14258" Type="CollectItem" ItemId="49062" CollectCount="5" />
+	<CustomBehavior File="InteractWith" QuestId="14308" QuestObjectiveIndex="1" MobId="36025" InteractByUsingItemId="49132" NumOfTimes="1000" Range="15" 
+		PreInteractMountStrategy="DismountOrCancelShapeshift" NonCompeteDistance="0" >
+		<HuntingGrounds>
+			<Hotspot X="2571.536" Y="-5798.803" Z="77.10453" />
+			<Hotspot X="2623.041" Y="-5800.992" Z="77.36506" />
+			<Hotspot X="2528.638" Y="-5769.938" Z="77.84023" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<CustomBehavior File="InteractWith" QuestId="14308" QuestObjectiveIndex="2" MobId="36061" InteractByUsingItemId="49132" NumOfTimes="1000" IgnoreLoSToTarget="True" Range="15" 
+		PreInteractMountStrategy="DismountOrCancelShapeshift" NonCompeteDistance="0" >
+		<HuntingGrounds>
+			<Hotspot X="2571.536" Y="-5798.803" Z="77.10453" />
+			<Hotspot X="2623.041" Y="-5800.992" Z="77.36506" />
+			<Hotspot X="2528.638" Y="-5769.938" Z="77.84023" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	<TurnIn QuestName="When Science Attacks" QuestId="14308" TurnInType="Object" TurnInName="Secret Lab Squawkbox" 
+		TurnInId="195676" X="2536.553" Y="-5787.283" Z="77.59385" />
+	<PickUp QuestName="Segmentation Fault: Core Dumped" QuestId="14310" GiverType="Object" GiverName="Secret Lab Squawkbox" 
+		GiverId="195676" X="2536.553" Y="-5787.283" Z="77.59385" />
+		
+	<Objective QuestName="Bad Science! Bad!" QuestId="14322" Type="KillMob" MobId="36147" KillCount="8" />
+	<TurnIn QuestName="Bad Science! Bad!" QuestId="14322" TurnInName="Twistex Happytongs" TurnInId="36146" />
+	<PickUp QuestName="My Favorite Subject" QuestId="14442" GiverName="Twistex Happytongs" GiverId="36146" />
+
+	<TurnIn QuestName="My Favorite Subject" QuestId="14442" TurnInName="Subject Nine" TurnInId="36500" />
+	<PickUp QuestName="Nine's Plan" QuestId="14408" GiverName="Subject Nine" GiverId="36500" />
+	
+	<While Condition="HasQuest(14408) &amp;&amp; !IsQuestCompleted(14408)" >
+		<CustomBehavior File="InteractWith" MobId="36472" InteractByGossipOptions="1" NonCompeteDistance="0" TerminateWhen="IsObjectiveComplete(2,14408)" X="2585.445" Y="-5904.817" Z="95.8958" />
+		<CustomBehavior File="InteractWith" QuestId="14408" MobId="36156" WaitForNpcs="False" X="2585.445" Y="-5904.817" Z="95.8958" />
+	</While>
+	<TurnIn QuestName="Nine's Plan" QuestId="14408" TurnInName="Subject Nine" TurnInId="36500" />
+	
+	<PickUp QuestName="Raptor Raptor Rocket" QuestId="14422" GiverName="Subject Nine" GiverId="36500" />
+	<While Condition="HasQuest(14422) &amp;&amp; !IsQuestCompleted(14422)" >
+		<CustomBehavior File="InteractWith" QuestId="14422" MobId="196486" ProactiveCombatStrategy="ClearMobsTargetingUs" NumOfTimes="5" >
+			<HuntingGrounds>
+				<Hotspot X="2571.536" Y="-5798.803" Z="77.10453" />
+				<Hotspot X="2623.041" Y="-5800.992" Z="77.36506" />
+				<Hotspot X="2528.638" Y="-5769.938" Z="77.84023" />
+			</HuntingGrounds>
+		</CustomBehavior>
+		<RunTo X="2584.384" Y="-5698.797" Z="109.7529" />
+		<While Condition="Unit(36984, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 5) != null" />
+	</While>
+	<TurnIn QuestName="Raptor Raptor Rocket" QuestId="14422" TurnInName="Subject Nine" TurnInId="36500" />
+	
+<!-- Segmentation Fault: Core Dumped -->
+	<While Condition="HasQuest(14310) &amp;&amp; !IsQuestCompleted(14310)" >
+		<CustomBehavior File="InteractWith" MobId="195683" NonCompeteDistance="0" WaitTime="3000" X="2538.287" Y="-5786.184" Z="76.73697" />
+		<CustomBehavior File="SpecificQuests\Kalimdor\Azshara\14310-SegmentationFault" />
+	</While>
+	<TurnIn QuestName="Segmentation Fault: Core Dumped" QuestId="14310" TurnInName="Assistant Greely" TurnInId="36077" />
+	
+	<TurnIn QuestName="Mortar the Point" QuestId="14258" TurnInName="Bombardier Captain Smooks" TurnInId="35817" />
+	
+	<PickUp QuestName="Mysterious Azsharite" QuestId="14370" GiverName="Assistant Greely" GiverId="36077" />
+	<PickUp QuestName="A Gigantic Snack" QuestId="14371" GiverName="Assistant Greely" GiverId="36077" />
+	<PickUp QuestName="To Gut A Fish" QuestId="14262" GiverName="Torg Twocrush" GiverId="35657" />
+	<PickUp QuestName="Investigating the Sea Shrine" QuestId="14267" GiverName="Torg Twocrush" GiverId="35657" />
+	
+	<Objective QuestName="Mysterious Azsharite" QuestId="14370" Type="CollectItem" ItemId="49207" CollectCount="5" />
+	<Objective QuestName="A Gigantic Snack" QuestId="14371" Type="CollectItem" ItemId="49208" CollectCount="8" />
+	<TurnIn QuestName="Mysterious Azsharite" QuestId="14370" TurnInName="Assistant Greely" TurnInId="36077" />
+	<TurnIn QuestName="A Gigantic Snack" QuestId="14371" TurnInName="Assistant Greely" TurnInId="36077" />
+	
+	<PickUp QuestName="Befriending Giants" QuestId="14377" GiverName="Assistant Greely" GiverId="36077" />
+	<CustomBehavior File="InteractWith" QuestId="14377" MobId="36297" InteractByGossipOptions="1,1,1,1,1,1,1" NonCompeteDistance="0" X="2607.34" Y="-6007.17" Z="101.0683" />
+	<TurnIn QuestName="Befriending Giants" QuestId="14377" TurnInName="Assistant Greely" TurnInId="36077" />
+	
+	<PickUp QuestName="Azsharite Experiment Number One" QuestId="14385" GiverName="Assistant Greely" GiverId="36077" />
+	<PickUp QuestName="The Terrible Tinkers of the Ruined Reaches" QuestId="14383" GiverName="Hobart Grapplehammer" GiverId="36379" />
+	<Objective QuestName="The Terrible Tinkers of the Ruined Reaches" QuestId="14383" Type="KillMob" MobId="36407" KillCount="1" />
+	<If Condition="HasQuest(14385) &amp;&amp; !IsObjectiveComplete(2,14385)" >
+		<CustomBehavior File="UseTransport" TransportId="152614"
+			WaitAtX="2267.32" WaitAtY="-5571.08" WaitAtZ="21.147" 
+			TransportStartX="2264.382" TransportStartY="-5565.711" TransportStartZ="21.79486"
+			TransportEndX="2263.702" TransportEndY="-5565.56" TransportEndZ="33.93858"
+			StandOnX="2264.425" StandOnY="-5565.603" StandOnZ="21.19351"
+			GetOffX="2266.13" GetOffY="-5569.498" GetOffZ="34.06258" />
+		<CustomBehavior File="InteractWith" QuestId="14385" QuestObjectiveIndex="2" MobId="196462" ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" X="2265.396" Y="-5571.45" Z="34.06321" />
+		<CustomBehavior File="UseTransport" TransportId="152614"
+			WaitAtX="2266.13" WaitAtY="-5569.498" WaitAtZ="34.06258" 
+			TransportStartX="2263.702" TransportStartY="-5565.56" TransportStartZ="33.93858"
+			TransportEndX="2264.382" TransportEndY="-5565.711" TransportEndZ="21.79486"
+			StandOnX="2263.676" StandOnY="-5565.566" StandOnZ="34.01852"
+			GetOffX="2267.32" GetOffY="-5571.08" GetOffZ="21.147" />
+	</If>
+	<Objective QuestName="The Terrible Tinkers of the Ruined Reaches" QuestId="14383" Type="KillMob" MobId="36385" KillCount="4" />
+	<Objective QuestName="The Terrible Tinkers of the Ruined Reaches" QuestId="14383" Type="KillMob" MobId="36384" KillCount="6" />
+	
+	<CustomBehavior File="InteractWith" QuestId="14385" MobId="36297" InteractByGossipOptions="1" NonCompeteDistance="0" X="2607.34" Y="-6007.17" Z="101.0683" />
+	
+	<TurnIn QuestName="The Terrible Tinkers of the Ruined Reaches" QuestId="14383" TurnInName="Hobart Grapplehammer" TurnInId="36379" />
+	<TurnIn QuestName="Azsharite Experiment Number One" QuestId="14385" TurnInName="Assistant Greely" TurnInId="36077" />
+	
+	<PickUp QuestName="Azsharite Experiment Number Two" QuestId="14388" GiverName="Assistant Greely" GiverId="36077" />
+	<While Condition="HasQuest(14388) &amp;&amp; !IsQuestCompleted(14388)" >
+		<DisableBehavior Name="Combat" />
+		<CustomBehavior File="InteractWith" QuestId="14388" MobId="36077" InteractByGossipOptions="1" TerminateWhen="Me.HasAura(68710)" NonCompeteDistance="0" X="2645.903" Y="-6152.344" Z="98.78696" />
+		<CustomBehavior File="InteractWith" QuestId="14388" MobId="36437" TerminateWhen="Me.IsOnTransport" NonCompeteDistance="0" X="2645.903" Y="-6152.344" Z="98.78696" />
+		<CustomBehavior File="InteractWith" QuestId="14388" MobId="36297" InteractByGossipOptions="1" TerminateWhen="!(Me.HasAura(68710)) || !(Me.IsOnTransport)" NonCompeteDistance="0" X="2607.34" Y="-6007.17" Z="101.0683" />
+		<EnableBehavior Name="Combat" />
+	</While>
+	<If Condition="HasQuest(14388) &amp;&amp; IsQuestCompleted(14388)" >
+		<TurnIn QuestName="Azsharite Experiment Number Two" QuestId="14388" TurnInName="Assistant Greely" TurnInId="36077" />
+		<CustomBehavior File="UseTransport" TransportId="204246"
+			WaitAtX="2637.111" WaitAtY="-6172.934" WaitAtZ="98.47455" 
+			TransportStartX="2640.204" TransportStartY="-6173.193" TransportStartZ="99.09735"
+			TransportEndX="2640.204" TransportEndY="-6173.193" TransportEndZ="138.11"
+			StandOnX="2639.935" StandOnY="-6173.037" StandOnZ="99.48818"
+			GetOffX="2647.643" GetOffY="-6173.358" GetOffZ="138.1227" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" />
+		<CustomBehavior File="MyCTM" X="2630.253" Y="-6173.319" Z="98.86409" />
+	</If>
+	
+	<Objective QuestName="To Gut a Fish" QuestId="14262" Type="KillMob" MobId="35831" KillCount="6" />
+	<Objective QuestName="To Gut a Fish" QuestId="14262" Type="KillMob" MobId="35832" KillCount="6" />
+	
+	<TurnIn QuestName="Investigating the Sea Shrine" QuestId="14267" TurnInType="Object" TurnInName="Naga Power Stone"
+		TurnInId="195642" X="2737.617" Y="-6626.547" Z="105.229" />
+
+	<PickUp QuestName="The Keystone Shard" QuestId="14270" GiverType="Object" GiverName="Naga Power Stone"
+		GiverId="195642" X="2737.617" Y="-6626.547" Z="105.229" />
+	<Objective QuestName="The Keystone Shard" QuestId="14270" Type="CollectItem" ItemId="49094" CollectCount="1" />
+	<TurnIn QuestName="The Keystone Shard" QuestId="14270" TurnInType="Object" TurnInName="Naga Power Stone"
+		TurnInId="195642" X="2737.617" Y="-6626.547" Z="105.229" />
+		
+	<PickUp QuestName="Report to Twocrush" QuestId="14271" GiverType="Object" GiverName="Naga Power Stone"
+		GiverId="195642" X="2737.617" Y="-6626.547" Z="105.229" />
+	<TurnIn QuestName="Report to Twocrush" QuestId="14271" TurnInName="Torg Twocrush" TurnInId="35657" />
+	<TurnIn QuestName="To Gut a Fish" QuestId="14262" TurnInName="Torg Twocrush" TurnInId="35657" />
+	
+	<PickUp QuestName="Sisters of the Sea" QuestId="14295" GiverName="Torg Twocrush" GiverId="35657" />
+	<While Condition="HasQuest(14295) &amp;&amp; !IsObjectiveComplete(1,14295)" >
+		<RunTo X="2555.671" Y="-6816.931" Z="111.4146" />
+		<CustomBehavior File="WaitTimer" WaitTime="1000" GoalText="Waiting out agro." />
+		<CustomBehavior File="InteractWith" QuestId="14295" QuestObjectiveIndex="1" MobId="35892"
+			TerminateWhen="ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; u.Entry == 35880 &amp;&amp; u.IsAlive &amp;&amp; !(u.HasAura(68266) || u.HasAura(68255)) &amp;&amp; u.Distance &lt;= 100) || !(ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; u.Entry == 35880 &amp;&amp; u.IsAlive &amp;&amp; u.Distance &lt;= 100))"
+			ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" X="2555.671" Y="-6816.931" Z="111.4146" />
+		<If Condition="Unit(35880, u =&gt; u.IsAlive &amp;&amp; !(u.HasAura(68266) || u.HasAura(68255)) &amp;&amp; u.Distance &lt;= 100) != null" >
+			<Objective QuestName="Sisters of the Sea" QuestId="14295" Type="KillMob" MobId="35880" KillCount="1" />
+		</If>
+	</While>
+	<While Condition="HasQuest(14295) &amp;&amp; !IsObjectiveComplete(2,14295)" >
+		<RunTo X="2479.561" Y="-6828.953" Z="102.3971" />
+		<CustomBehavior File="WaitTimer" WaitTime="1000" GoalText="Waiting out agro." />
+		<CustomBehavior File="InteractWith" QuestId="14295" QuestObjectiveIndex="2" MobId="35968"
+			TerminateWhen="ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; u.Entry == 35881 &amp;&amp; u.IsAlive &amp;&amp; !(u.HasAura(68266) || u.HasAura(68255)) &amp;&amp; u.Distance &lt;= 100) || !(ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; u.Entry == 35881 &amp;&amp; u.IsAlive &amp;&amp; u.Distance &lt;= 100))"
+			ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" X="2479.561" Y="-6828.953" Z="102.3971" />
+		<If Condition="Unit(35881, u =&gt; u.IsAlive &amp;&amp; !(u.HasAura(68266) || u.HasAura(68255)) &amp;&amp; u.Distance &lt;= 100) != null" >
+			<Objective QuestName="Sisters of the Sea" QuestId="14295" Type="KillMob" MobId="35881" KillCount="1" />
+		</If>
+	</While>
+	<TurnIn QuestName="Sisters of the Sea" QuestId="14295" TurnInName="Torg Twocrush" TurnInId="35657" />
+	
+	<If Condition="!HasQuest(24458) &amp;&amp; !IsQuestCompleted(24458)" >
+		<PickUp QuestName="A Hello to Arms" QuestId="24458" GiverName="Hobart Grapplehammer" GiverId="36379" />
+		<CustomBehavior File="InteractWith" MobId="37005" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="3000" X="2649.093" Y="-6208.443" Z="100.1111" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<If Condition="HasQuest(24458)" >
+		<TurnIn QuestName="A Hello to Arms" QuestId="24458" TurnInName="Bleenik Fizzlefuse" TurnInId="37009" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" />
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Bilgewater Harbor Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="Azshara Blues" QuestId="14407" GiverName="Teemo" GiverId="36999" />
+	<TurnIn QuestName="Azshara Blues" QuestId="14407" TurnInName="Kalec" TurnInId="35867" />
+
+	<PickUp QuestName="Operation Fishgut" QuestId="14478" GiverType="Object" GiverName="Wrenchman Recruitment Poster"
+		GiverId="201578" X="3472.237" Y="-6415.039" Z="11.49487" />
+	<TurnIn QuestName="Operation Fishgut" QuestId="14478" TurnInName="Commander Molotov" TurnInId="36749" />
+	
+	<PickUp QuestName="Rapid Deployment" QuestId="24455" GiverName="Commander Molotov" GiverId="36749" />
+	<TurnIn QuestName="Rapid Deployment" QuestId="24455" TurnInName="Captain Desoto" TurnInId="36956" />
+	
+	<If Condition="!HasQuest(14479) &amp;&amp; !IsQuestCompleted(14479)" >
+		<PickUp QuestName="There Are Many Like It" QuestId="14479" GiverName="Captain Desoto" GiverId="36956" />
+		<CustomBehavior File="InteractWith" MobId="36917" TerminateWhen="Me.IsOnTransport" WaitTime="5000" X="3456.932" Y="-6565.543" Z="59.39896" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="There Are Many Like It" QuestId="14479" TurnInName="Lieutenant Drex" TurnInId="36920" />
+	
+	<PickUp QuestName="Mop Up" QuestId="24435" GiverName="Lieutenant Drex" GiverId="36920" />
+	<PickUp QuestName="Halo Drops" QuestId="24436" GiverName="Sergeant Hort" GiverId="36921" />
+	<PickUp QuestName="First Come, First Served" QuestId="24437" GiverName="Ruckus" GiverId="36795" />
+
+<!-- First Come, First Served -->
+	<CustomBehavior File="InteractWith" QuestId="24437" QuestObjectiveIndex="1" MobId="201386" InteractByUsingItemId="49685" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" NumOfTimes="10" WaitTime="2000" X="3179.132" Y="-5789.466" Z="3.466714" />
+	<CustomBehavior File="InteractWith" QuestId="24437" QuestObjectiveIndex="2" MobId="201386" InteractByUsingItemId="49685" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" NumOfTimes="10" WaitTime="2000" X="3788.002" Y="-5774.122" Z="4.331224" />
+	<CustomBehavior File="InteractWith" QuestId="24437" QuestObjectiveIndex="3" MobId="201386" InteractByUsingItemId="49685" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" NumOfTimes="10" WaitTime="2000" X="3963.316" Y="-5876.649" Z="8.109708" />
+
+<!-- Halo Drops -->
+	<CustomBehavior File="InteractWith" QuestId="24436" MobId="36922" MobState="Dead" InteractByUsingItemId="49679" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" NumOfTimes="1000" >
+		<HuntingGrounds>
+			<Hotspot X="3405.022" Y="-5572.45" Z="11.48293" />
+			<Hotspot X="3461.988" Y="-5557.398" Z="11.09499" />
+			<Hotspot X="3466.831" Y="-5647.683" Z="6.776672" />
+			<Hotspot X="3521.812" Y="-5677.845" Z="4.785433" />
+			<Hotspot X="3621.127" Y="-5691.89" Z="3.576548" />
+			<Hotspot X="3691.886" Y="-5676.945" Z="9.010488" />
+			<Hotspot X="3750.975" Y="-5707.046" Z="4.640636" />
+			<Hotspot X="3227.902" Y="-5756.78" Z="3.715584" />
+		</HuntingGrounds>
+	</CustomBehavior>
+	
+	<Objective QuestName="Mop Up" QuestId="24435" Type="KillMob" MobId="6190" KillCount="12" />
+	
+	<TurnIn QuestName="First Come, First Served" QuestId="24437" TurnInName="Ruckus" TurnInId="36795" />
+	<TurnIn QuestName="Halo Drops" QuestId="24436" TurnInName="Sergeant Hort" TurnInId="36921" />
+	<TurnIn QuestName="Mop Up" QuestId="24435" TurnInName="Lieutenant Drex" TurnInId="36920" />
+	
+	<PickUp QuestName="Field Promotion" QuestId="24448" GiverName="Lieutenant Drex" GiverId="36920" />
+	<TurnIn QuestName="Field Promotion" QuestId="24448" TurnInName="Captain Tork" TurnInId="36745" />
+	
+	<If Condition="!HasQuest(14487) &amp;&amp; !IsQuestCompleted(14487)" >
+		<PickUp QuestName="Still Beating Heart" QuestId="14487" GiverName="Captain Tork" GiverId="36745" />
+		<If Condition="Unit(36750, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36780, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36781, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36782, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36783, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null" >
+			<CustomBehavior File="InteractWith" MobId="36745" InteractByUsingItemId="49629" ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" />
+		</If>
+	</If>
+	<If Condition="!HasQuest(14480) &amp;&amp; !IsQuestCompleted(14480)" >
+		<PickUp QuestName="Extermination" QuestId="14480" GiverName="Sergeant Zelks" GiverId="36895" />
+		<If Condition="Unit(36750, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36780, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36781, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36782, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36783, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null" >
+			<CustomBehavior File="InteractWith" MobId="36895" InteractByUsingItemId="49629" ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" />
+		</If>
+	</If>
+	<If Condition="!HasQuest(14484) &amp;&amp; !IsQuestCompleted(14484)" >
+		<PickUp QuestName="Head of the Snake" QuestId="14484" GiverName="Sergeant Zelks" GiverId="36895" />
+		<If Condition="Unit(36750, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36780, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36781, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36782, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36783, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null" >
+			<CustomBehavior File="InteractWith" MobId="36895" InteractByUsingItemId="49629" ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" />
+		</If>
+	</If>
+	<If Condition="!HasQuest(14485) &amp;&amp; !IsQuestCompleted(14485)" >
+		<PickUp QuestName="Ticker Required" QuestId="14485" GiverName="Sergeant Zelks" GiverId="36895" />
+		<If Condition="Unit(36750, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36780, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36781, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36782, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36783, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null" >
+			<CustomBehavior File="InteractWith" MobId="36895" InteractByUsingItemId="49629" ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" />
+		</If>
+	</If>
+	<If Condition="!HasQuest(14486) &amp;&amp; !IsQuestCompleted(14486)" >
+		<PickUp QuestName="Handling the Goods" QuestId="14486" GiverName="Tora Halotrix" GiverId="36894" />
+		<If Condition="Unit(36750, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36780, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36781, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36782, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36783, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null" >
+			<CustomBehavior File="InteractWith" MobId="36894" InteractByUsingItemId="49629" ProactiveCombatStrategy="NoClear" NonCompeteDistance="0" />
+		</If>
+	</If>
+	
+	<If Condition="HasQuest(14486) &amp;&amp; !IsQuestCompleted(14486)" >
+		<If Condition="Unit(36750, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36780, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36781, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36782, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36783, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null" >
+			<CustomBehavior File="InteractWith" MobId="199330" InteractByUsingItemId="49629" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="28" NonCompeteDistance="0" WaitTime="4000" />
+		</If>
+		<Objective QuestName="Handling the Goods" QuestId="14486" Type="CollectItem" ItemId="49639" CollectCount="12" />
+	</If>
+	<If Condition="HasQuest(14487) &amp;&amp; !IsQuestCompleted(14487)" >
+		<If Condition="Unit(36750, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36780, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36781, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36782, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36783, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null" >
+			<CustomBehavior File="InteractWith" MobId="36868" InteractByUsingItemId="49629" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="28" NonCompeteDistance="0" WaitTime="4000" />
+		</If>
+		<Objective QuestName="Still Beating Heart" QuestId="14487" Type="CollectItem" ItemId="49642" CollectCount="1" />
+	</If>
+	<If Condition="HasQuest(14485) &amp;&amp; !IsQuestCompleted(14485)" >
+		<If Condition="Unit(36750, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36780, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36781, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36782, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36783, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null" >
+			<CustomBehavior File="InteractWith" MobId="199333" InteractByUsingItemId="49629" ProactiveCombatStrategy="ClearMobsTargetingUs" Range="28" NonCompeteDistance="0" WaitTime="4000" />
+		</If>
+		<While Condition="!IsQuestCompleted(14485)" >
+			<CustomBehavior File="InteractWith" QuestId="14485" MobId="199333" ProactiveCombatStrategy="ClearMobsTargetingUs" X="3465.897" Y="-5165.992" Z="84.18761" />
+		</While>
+	</If>
+	<If Condition="HasQuest(14484) &amp;&amp; !IsQuestCompleted(14484)" >
+		<If Condition="Unit(36750, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36780, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36781, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36782, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36783, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null" >
+			<CustomBehavior File="InteractWith" MobId="36822" InteractByUsingItemId="49629" ProactiveCombatStrategy="NoClear" Range="28" NonCompeteDistance="0" />
+		</If>
+		<Objective QuestName="Head of the Snake" QuestId="14484" Type="KillMob" MobId="36822" KillCount="1" />
+	</If>
+	<If Condition="HasQuest(14480) &amp;&amp; !IsQuestCompleted(14480)" >
+		<If Condition="Unit(36750, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36780, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36781, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36782, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null ||
+					Unit(36783, u =&gt; u.IsAlive &amp;&amp; u.Distance &lt;= 40) == null" >
+			<CustomBehavior File="InteractWith" MobId="36822" InteractByUsingItemId="49629" ProactiveCombatStrategy="NoClear" Range="28" NonCompeteDistance="0" />
+		</If>
+		<Objective QuestName="Extermination" QuestId="14480" Type="KillMob" MobId="7885" KillCount="30" />
+	</If>
+	
+	<TurnIn QuestName="Extermination" QuestId="14480" TurnInName="Sergeant Zelks" TurnInId="36895" />
+	<TurnIn QuestName="Head of the Snake" QuestId="14484" TurnInName="Sergeant Zelks" TurnInId="36895" />
+	<TurnIn QuestName="Ticker Required" QuestId="14485" TurnInName="Sergeant Zelks" TurnInId="36895" />
+	<TurnIn QuestName="Handling the Goods" QuestId="14486" TurnInName="Tora Halotrix" TurnInId="36894" />
+	<TurnIn QuestName="Still Beating Heart" QuestId="14487" TurnInName="Captain Tork" TurnInId="36745" />
+	
+	<If Condition="Me.Level &gt;= 20" >
+		<CustomBehavior File="DeleteItems" Ids="49229, 49201, 49042" />
+		<If Condition="!HasQuest(13866) &amp;&amp; !IsQuestCompleted(13866)" >
+			<CustomBehavior File="NoCombatMoveTo" X="2870.532" Y="-3743.097" Z="87.41811" />
+			<PickUp QuestName="To The Ramparts!" QuestId="13866" GiverName="Kulg Gorespatter" GiverId="34195" />
+			<CustomBehavior File="InteractWith" MobId="34195" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="1000" />
+			<While Condition="Me.IsOnTransport" />
+			<CustomBehavior File="Message" Text="Azshara Complete" LogColor="Orange" />
+			<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		</If>
+	</If>
+	
+	<If Condition="!HasQuest(24449) &amp;&amp; !IsQuestCompleted(24449)" >
+		<PickUp QuestName="Shore Leave" QuestId="24449" GiverName="Captain Tork" GiverId="36745" />
+		<CustomBehavior File="InteractWith" MobId="37145" TerminateWhen="Me.IsOnTransport" NumOfTimes="100" NonCompeteDistance="0" X="3729.575" Y="-5272.935" Z="83.80523" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="Shore Leave" QuestId="24449" TurnInName="Uncle Bedlam" TurnInId="36959" />
+		
+	<PickUp QuestName="Friends Come In All Colors" QuestId="14130" GiverName="Kalec" GiverId="35867" />
+	<TurnIn QuestName="Friends Come In All Colors" QuestId="14130" TurnInName="Ergll" TurnInId="35142" />
+	
+	<If Condition="Me.Level &gt;= 20" >
+		<CustomBehavior File="DeleteItems" Ids="49229, 49201, 49042" />
+		<If Condition="!HasQuest(13866) &amp;&amp; !IsQuestCompleted(13866)" >
+			<CustomBehavior File="NoCombatMoveTo" X="2870.532" Y="-3743.097" Z="87.41811" />
+			<PickUp QuestName="To The Ramparts!" QuestId="13866" GiverName="Kulg Gorespatter" GiverId="34195" />
+			<CustomBehavior File="InteractWith" MobId="34195" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="1000" />
+			<While Condition="Me.IsOnTransport" />
+			<CustomBehavior File="Message" Text="Azshara Complete" LogColor="Orange" />
+			<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		</If>
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Ruins of Arkkoran Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="A Little Pick-me-up" QuestId="14131" GiverName="Ergll" GiverId="35142" />
+	<PickUp QuestName="That's Just Rude!" QuestId="14132" GiverName="Ergll" GiverId="35142" />
+	<PickUp QuestName="Absorbent" QuestId="14323" GiverName="Ergll" GiverId="35142" />
+	<Objective QuestName="A Little Pick-me-up" QuestId="14131" Type="CollectItem" ItemId="49162" CollectCount="10" />
+	<CustomBehavior File="InteractWith" QuestId="14323" MobId="36131" MobState="Alive" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" NumOfTimes="1000" X="4022.462" Y="-7522.633" Z="5.466552" />
+	<If Condition="HasQuest(14323) &amp;&amp; IsQuestCompleted(14323)" >
+		<CustomBehavior File="CompleteLogQuest" QuestId="14323" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+	</If>
+	<PickUp QuestName="Full of Hot Water" QuestId="14324" GiverName="Ergll" GiverId="35142" />
+	<While Condition="HasQuest(14324) &amp;&amp; !IsQuestCompleted(14324)" >
+		<CustomBehavior File="InteractWith" QuestId="14324" MobId="195711" InteractByUsingItemId="49176" NonCompeteDistance="0" 
+			ProactiveCombatStrategy="ClearMobsTargetingUs" IgnoreLoSToTarget="True" Range="10" X="4247.792" Y="-7846.785" Z="5.906982" />
+	</While>
+	<Objective QuestName="That's Just Rude!" QuestId="14132" Type="KillMob" MobId="6370" KillCount="10" />
+	
+	<TurnIn QuestName="A Little Pick-me-up" QuestId="14131" TurnInName="Ergll" TurnInId="35142" />
+	<TurnIn QuestName="That's Just Rude!" QuestId="14132" TurnInName="Ergll" TurnInId="35142" />
+	<TurnIn QuestName="Full of Hot Water" QuestId="14324" TurnInName="Ergll" TurnInId="35142" />
+	
+	<If Condition="Me.Level &gt;= 20" >
+		<CustomBehavior File="DeleteItems" Ids="49229, 49201, 49042" />
+		<If Condition="!HasQuest(13866) &amp;&amp; !IsQuestCompleted(13866)" >
+			<CustomBehavior File="NoCombatMoveTo" X="2870.532" Y="-3743.097" Z="87.41811" />
+			<PickUp QuestName="To The Ramparts!" QuestId="13866" GiverName="Kulg Gorespatter" GiverId="34195" />
+			<CustomBehavior File="InteractWith" MobId="34195" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="1000" />
+			<While Condition="Me.IsOnTransport" />
+			<CustomBehavior File="Message" Text="Azshara Complete" LogColor="Orange" />
+			<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		</If>
+	</If>
+	
+	<If Condition="!HasQuest(14345) &amp;&amp; !IsQuestCompleted(14345)" >
+		<PickUp QuestName="Wash Out" QuestId="14345" GiverName="Ergll" GiverId="35142" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="Wash Out" QuestId="14345" TurnInName="Sorata Firespinner" TurnInId="36210" />
+	
+	<If Condition="Me.Level &gt;= 20" >
+		<CustomBehavior File="DeleteItems" Ids="49229, 49201, 49042" />
+		<If Condition="!HasQuest(13866) &amp;&amp; !IsQuestCompleted(13866)" >
+			<CustomBehavior File="NoCombatMoveTo" X="2870.532" Y="-3743.097" Z="87.41811" />
+			<PickUp QuestName="To The Ramparts!" QuestId="13866" GiverName="Kulg Gorespatter" GiverId="34195" />
+			<CustomBehavior File="InteractWith" MobId="34195" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="1000" />
+			<While Condition="Me.IsOnTransport" />
+			<CustomBehavior File="Message" Text="Azshara Complete" LogColor="Orange" />
+			<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		</If>
+	</If>
+	
+	<CustomBehavior File="Message" Text="Compiling Darnassian Base Camp Quests" LogColor="CornflowerBlue" />
+	
+	<If Condition="!HasQuest(14340) &amp;&amp; !IsQuestCompleted(14340)" >
+		<PickUp QuestName="Dressed to Impress" QuestId="14340" GiverName="Sorata Firespinner" GiverId="36210" />
+		<CustomBehavior File="UseTransport" TransportId="204244"
+			WaitAtX="4499.256" WaitAtY="-5708.914" WaitAtZ="106.3094" 
+			TransportStartX="4488.178" TransportStartY="-5711.003" TransportStartZ="106.729"
+			TransportEndX="4488.178" TransportEndY="-5711.46" TransportEndZ="145.0181"
+			StandOnX="4488.631" StandOnY="-5711.174" StandOnZ="107.1199"
+			GetOffX="4480.059" GetOffY="-5713.762" GetOffZ="145.562" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" />
+		<CustomBehavior File="MyCTM" X="4499.256" Y="-5708.914" Z="106.3094" />
+	</If>
+	
+	<PickUp QuestName="Amberwind's Journal" QuestId="14428" GiverName="Andorel Sunsworn" GiverId="36596" />
+	<PickUp QuestName="The Blackmaw Scar" QuestId="14431" GiverName="Haggrum Bloodfist" GiverId="8586" />
+	
+	<Objective QuestName="The Blackmaw Scar" QuestId="14431" Type="KillMob" MobId="36611" KillCount="8" />
+	<Objective QuestName="The Blackmaw Scar" QuestId="14431" Type="CollectItem" ItemId="49364" CollectCount="1" />
+	<TurnIn QuestName="The Blackmaw Scar" QuestId="14431" TurnInName="Haggrum Bloodfist" TurnInId="8586" />
+	
+	<If Condition="Me.Level &gt;= 20" >
+		<CustomBehavior File="DeleteItems" Ids="49229, 49201, 49042" />
+		<If Condition="!HasQuest(13866) &amp;&amp; !IsQuestCompleted(13866)" >
+			<CustomBehavior File="NoCombatMoveTo" X="2870.532" Y="-3743.097" Z="87.41811" />
+			<PickUp QuestName="To The Ramparts!" QuestId="13866" GiverName="Kulg Gorespatter" GiverId="34195" />
+			<CustomBehavior File="InteractWith" MobId="34195" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="1000" />
+			<While Condition="Me.IsOnTransport" />
+			<CustomBehavior File="Message" Text="Azshara Complete" LogColor="Orange" />
+			<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		</If>
+	</If>
+	
+	<PickUp QuestName="A Pale Brew" QuestId="14432" GiverName="Haggrum Bloodfist" GiverId="8586" />
+	<PickUp QuestName="Diplomacy By Another Means" QuestId="14433" GiverName="Haggrum Bloodfist" GiverId="8586" />
+	
+	<Objective QuestName="Amberwind's Journal" QuestId="14428" Type="CollectItem" ItemId="49356" CollectCount="1" />
+	<TurnIn QuestName="Amberwind's Journal" QuestId="14428" TurnInType="Object" TurnInName="Upper Scrying Stone"
+		TurnInId="196832" X="4320.219" Y="-6102.19" Z="126.0063" />
+	<PickUp QuestName="Arcane De-Construction" QuestId="14429" GiverType="Object" GiverName="Upper Scrying Stone"
+		GiverId="196832" X="4320.219" Y="-6102.19" Z="126.0063" />
+	<Objective QuestName="Arcane De-Construction" QuestId="14429" Type="CollectItem" ItemId="49359" CollectCount="10" />
+	<TurnIn QuestName="Arcane De-Construction" QuestId="14429" TurnInType="Object" TurnInName="Lower Scrying Stone"
+		TurnInId="196833" X="4311.042" Y="-6295.126" Z="94.94518" />
+		
+	<If Condition="Me.Level &gt;= 20" >
+		<CustomBehavior File="DeleteItems" Ids="49229, 49201, 49042" />
+		<If Condition="!HasQuest(13866) &amp;&amp; !IsQuestCompleted(13866)" >
+			<CustomBehavior File="NoCombatMoveTo" X="2870.532" Y="-3743.097" Z="87.41811" />
+			<PickUp QuestName="To The Ramparts!" QuestId="13866" GiverName="Kulg Gorespatter" GiverId="34195" />
+			<CustomBehavior File="InteractWith" MobId="34195" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="1000" />
+			<While Condition="Me.IsOnTransport" />
+			<CustomBehavior File="Message" Text="Azshara Complete" LogColor="Orange" />
+			<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		</If>
+	</If>
+		
+	<PickUp QuestName="Hacking the Construct" QuestId="14430" GiverType="Object" GiverName="Lower Scrying Stone"
+		GiverId="196833" X="4311.042" Y="-6295.126" Z="94.94518" />
+	<CustomBehavior File="InteractWith" QuestId="14430" MobId="36599" MobState="Alive" InteractByGossipOptions="1" NonCompeteDistance="0"
+		ProactiveCombatStrategy="ClearMobsTargetingUs" NotMoving="True" X="4285.001" Y="-6294.44" Z="95.47975" />
+	<TurnIn QuestName="Hacking the Construct" QuestId="14430" TurnInName="Andorel Sunsworn" TurnInId="36596" />
+	
+	<If Condition="Me.Level &gt;= 20" >
+		<CustomBehavior File="DeleteItems" Ids="49229, 49201, 49042" />
+		<If Condition="!HasQuest(13866) &amp;&amp; !IsQuestCompleted(13866)" >
+			<CustomBehavior File="NoCombatMoveTo" X="2870.532" Y="-3743.097" Z="87.41811" />
+			<PickUp QuestName="To The Ramparts!" QuestId="13866" GiverName="Kulg Gorespatter" GiverId="34195" />
+			<CustomBehavior File="InteractWith" MobId="34195" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="1000" />
+			<While Condition="Me.IsOnTransport" />
+			<CustomBehavior File="Message" Text="Azshara Complete" LogColor="Orange" />
+			<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		</If>
+	</If>
+	
+	<Objective QuestName="A Pale Brew" QuestId="14432" Type="CollectItem" ItemId="49365" CollectCount="10" />
+	<Objective QuestName="Diplomacy By Another Means" QuestId="14433" Type="CollectItem" ItemId="49367" CollectCount="1" />
+	<Objective QuestName="Diplomacy By Another Means" QuestId="14433" Type="CollectItem" ItemId="49366" CollectCount="1" />
+	<TurnIn QuestName="A Pale Brew" QuestId="14432" TurnInName="Haggrum Bloodfist" TurnInId="8586" />
+	<TurnIn QuestName="Diplomacy By Another Means" QuestId="14433" TurnInName="Haggrum Bloodfist" TurnInId="8586" />
+	
+	<If Condition="Me.Level &gt;= 20" >
+		<CustomBehavior File="DeleteItems" Ids="49229, 49201, 49042" />
+		<If Condition="!HasQuest(13866) &amp;&amp; !IsQuestCompleted(13866)" >
+			<CustomBehavior File="NoCombatMoveTo" X="2870.532" Y="-3743.097" Z="87.41811" />
+			<PickUp QuestName="To The Ramparts!" QuestId="13866" GiverName="Kulg Gorespatter" GiverId="34195" />
+			<CustomBehavior File="InteractWith" MobId="34195" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="1000" />
+			<While Condition="Me.IsOnTransport" />
+			<CustomBehavior File="Message" Text="Azshara Complete" LogColor="Orange" />
+			<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		</If>
+	</If>
+	
+	<PickUp QuestName="The Blackmaw Doublecross" QuestId="14435" GiverName="Haggrum Bloodfist" GiverId="8586" />
+	<If Condition="HasQuest(14435) &amp;&amp; !IsQuestCompleted(14435)" >
+		<While Condition="!Me.HasAura(69054) &amp;&amp; (HasQuest(14435) &amp;&amp; !IsObjectiveComplete(1,14435))" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(49368)" WaitTime="1000" />
+		</While>
+		<CustomBehavior File="InteractWith" MobId="36596" TerminateWhen="Me.Location.Distance(new WoWPoint(4283.13, -5092.07, 131.979)) &lt; 100" InteractByGossipOptions="1" NonCompeteDistance="0"
+			X="4508.344" Y="-5720.457" Z="104.9388" />
+		<CustomBehavior File="InteractWith" QuestId="14435" QuestObjectiveIndex="1" MobId="36618" InteractByGossipOptions="1,1,1" 
+			NonCompeteDistance="0" X="4279.394" Y="-5084.523" Z="132.268" />
+		<Objective QuestName="The Blackmaw Doublecross" QuestId="14435" Type="KillMob" MobId="36013" KillCount="4" />
+		<Objective QuestName="The Blackmaw Doublecross" QuestId="14435" Type="KillMob" MobId="36012" KillCount="4" />
+	</If>
+	<If Condition="HasQuest(14435) &amp;&amp; IsQuestCompleted(14435)" >
+		<TurnIn QuestName="The Blackmaw Doublecross" QuestId="14435" TurnInName="Haggrum Bloodfist" TurnInId="8586" />
+		<CustomBehavior File="UseTransport" TransportId="204244"
+			WaitAtX="4499.256" WaitAtY="-5708.914" WaitAtZ="106.3094" 
+			TransportStartX="4488.178" TransportStartY="-5711.003" TransportStartZ="106.729"
+			TransportEndX="4488.178" TransportEndY="-5711.46" TransportEndZ="145.0181"
+			StandOnX="4488.631" StandOnY="-5711.174" StandOnZ="107.1199"
+			GetOffX="4480.059" GetOffY="-5713.762" GetOffZ="145.562" />
+		<CustomBehavior File="ForceSetVendor" DoSell="True" />
+		<CustomBehavior File="MyCTM" X="4499.256" Y="-5708.914" Z="106.3094" />
+	</If>
+	
+	<While Condition="HasQuest(14340) &amp;&amp; !IsQuestCompleted(14340)" >
+		<CustomBehavior File="EquipItem" Solt="HeadSlot" ItemId="49201" />
+		<CustomBehavior File="InteractWith" QuestId="14340" MobId="35187" X="4615.874" Y="-5974.692" Z="155.2392" />
+	</While>
+	<TurnIn QuestName="Dressed To Impress" QuestId="14340" TurnInName="Image of Archmage Xylem" TurnInId="35187" />
+	
+	<If Condition="Me.Level &gt;= 20" >
+		<CustomBehavior File="DeleteItems" Ids="49229, 49201, 49042" />
+		<If Condition="!HasQuest(13866) &amp;&amp; !IsQuestCompleted(13866)" >
+			<CustomBehavior File="NoCombatMoveTo" X="2870.532" Y="-3743.097" Z="87.41811" />
+			<PickUp QuestName="To The Ramparts!" QuestId="13866" GiverName="Kulg Gorespatter" GiverId="34195" />
+			<CustomBehavior File="InteractWith" MobId="34195" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="1000" />
+			<While Condition="Me.IsOnTransport" />
+			<CustomBehavior File="Message" Text="Azshara Complete" LogColor="Orange" />
+			<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		</If>
+	</If>
+	
+	<PickUp QuestName="Shear Will" QuestId="14249" GiverName="Will Robotronic" GiverId="35648" />
+	<PickUp QuestName="Waste of Thyme" QuestId="14263" GiverName="Quarla Whistlebreak" GiverId="35754" />
+	<PickUp QuestName="Renewable Resource" QuestId="14250" GiverName="Tharkul Ironskull" GiverId="35755" />
+	<Objective QuestName="Waste of Thyme" QuestId="14263" Type="CollectItem" ItemId="49082" CollectCount="8" />
+	<Objective QuestName="Shear Will" QuestId="14249" Type="CollectItem" ItemId="49068" CollectCount="80" />
+	
+<!-- Renewable Resource -->
+	<While Condition="HasQuest(14250) &amp;&amp; !IsQuestCompleted(14250)" >
+		<RunTo X="4715.199" Y="-6002.121" Z="103.6447" />
+		<If Condition="Unit(35759, u =&gt; u.Distance &lt; 60) == null &amp;&amp; !IsQuestCompleted(14250)" >
+			<CustomBehavior File="InteractWith" QuestId="14250" MobId="195602" ProactiveCombatStrategy="ClearMobsTargetingUs" NonCompeteDistance="0" TerminateWhen="Object(195602, o =&gt; o.Distance &lt; 100) == null || Unit(35759, u =&gt; u.Distance &lt; 40) != null" 
+				NumOfTimes="1000" X="4715.199" Y="-6002.121" Z="103.6447" />
+			<If Condition="Unit(35759, u =&gt; u.Distance &lt; 60) == null &amp;&amp; !IsQuestCompleted(14250)" >
+				<UseItem QuestId="14250" ItemId="49038" X="4746.313" Y="-6003.481" Z="95.40663" />
+				<RunTo X="4715.199" Y="-6002.121" Z="103.6447" />
+			</If>
+		</If>
+		<While Condition="Unit(35762, u =&gt; u.Distance &lt; 100) != null &amp;&amp; !IsQuestCompleted(14250)" />
+	</While>
+	
+	<TurnIn QuestName="Renewable Resource" QuestId="14250" TurnInName="Tharkul Ironskull" TurnInId="35755" />
+	<TurnIn QuestName="Shear Will" QuestId="14249" TurnInName="Will Robotronic" TurnInId="35648" />
+	<TurnIn QuestName="Waste of Thyme" QuestId="14263" TurnInName="Quarla Whistlebreak" TurnInId="35754" />
+	
+	<If Condition="Me.Level &gt;= 20" >
+		<CustomBehavior File="DeleteItems" Ids="49229, 49201, 49042" />
+		<If Condition="!HasQuest(13866) &amp;&amp; !IsQuestCompleted(13866)" >
+			<CustomBehavior File="NoCombatMoveTo" X="2870.532" Y="-3743.097" Z="87.41811" />
+			<PickUp QuestName="To The Ramparts!" QuestId="13866" GiverName="Kulg Gorespatter" GiverId="34195" />
+			<CustomBehavior File="InteractWith" MobId="34195" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="1000" />
+			<While Condition="Me.IsOnTransport" />
+			<CustomBehavior File="Message" Text="Azshara Complete" LogColor="Orange" />
+			<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		</If>
+	</If>
+	
+	<PickUp QuestName="Manual Labor" QuestId="14230" GiverName="Teresa Spireleaf" GiverId="35756" />
+	<PickUp QuestName="Trouble Under Foot" QuestId="14226" GiverName="Image of Archmage Xylem" GiverId="35187" />
+	<Objective QuestName="Manual Labor" QuestId="14230" Type="CollectItem" ItemId="49012" CollectCount="1" />
+	<While Condition="HasQuest(14226) &amp;&amp; !IsQuestCompleted(14226)" >
+		<CustomBehavior File="InteractWith" QuestId="14226" MobId="35187" InteractByGossipOptions="1" TerminateWhen="Me.HasAura(69951)"
+			NonCompeteDistance="0" X="4617.846" Y="-5971.796" Z="155.2374" />
+		<CustomBehavior File="14226-TroubleUnderFoot" />
+		<If Condition="IsQuestCompleted(14226)" >
+			<CustomBehavior File="Misc\RunLua" Lua="CastPetAction(10)" />
+		</If>
+	</While>
+	<TurnIn QuestName="Trouble Under Foot" QuestId="14226" TurnInName="Image of Archmage Xylem" TurnInId="35187" />
+	<TurnIn QuestName="Manual Labor" QuestId="14230" TurnInName="Teresa Spireleaf" TurnInId="35756" />
+	
+	<If Condition="Me.Level &gt;= 20" >
+		<CustomBehavior File="DeleteItems" Ids="49229, 49201, 49042" />
+		<If Condition="!HasQuest(13866) &amp;&amp; !IsQuestCompleted(13866)" >
+			<CustomBehavior File="NoCombatMoveTo" X="2870.532" Y="-3743.097" Z="87.41811" />
+			<PickUp QuestName="To The Ramparts!" QuestId="13866" GiverName="Kulg Gorespatter" GiverId="34195" />
+			<CustomBehavior File="InteractWith" MobId="34195" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="1000" />
+			<While Condition="Me.IsOnTransport" />
+			<CustomBehavior File="Message" Text="Azshara Complete" LogColor="Orange" />
+			<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		</If>
+	</If>
+	
+	<!--<CustomBehavior File="Message" Text="Compiling Xylem's Tower Quests" LogColor="CornflowerBlue" />
+	
+	<PickUp QuestName="The Pinnacle of Learning" QuestId="14413" GiverName="Image of Archmage Xylem" GiverId="35187" />
+	<If Condition="HasQuest(14413)" >
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="The Pinnacle of Learning" QuestId="14413" TurnInName="Image of Archmage Xylem" TurnInId="36334" />
+	
+	<PickUp QuestName="Watch Your Step" QuestId="14296" GiverName="Image of Archmage Xylem" GiverId="36334" />
+	<While Condition="HasQuest(14296) &amp;&amp; !IsQuestCompleted(14296)" >
+		<If Condition="Me.IsSwimming" >
+			<MoveTo X="4831.797" Y="-6426.244" Z="-2" />
+		</If>
+	</While> -->
+	
+	<CustomBehavior File="Message" Text="Compiling Talrendis Point Quests" LogColor="CornflowerBlue" />'
+	
+	<If Condition="IsQuestCompleted(14392) &amp;&amp; !IsQuestCompleted(24497)" >
+		<PickUp QuestName="Airborne Again" QuestId="24497" GiverName="Gurlorn" GiverId="37142" />
+	</If>
+	
+	<!-- need to code in the interact with the Wings of Steel and the turnin -->
+	
+	<PickUp QuestName="Where's My Head?" QuestId="14462" GiverName="Chawg" GiverId="36730" />
+	<PickUp QuestName="Let Them Feast on Fear" QuestId="24433" GiverName="Chawg" GiverId="36730" />
+	<PickUp QuestName="Commando Drop" QuestId="24434" GiverName="Andorel Sunsworn" GiverId="36919" />
+	<PickUp QuestName="Grounded!" QuestId="14475" GiverName="Kroum" GiverId="36728" />
+	
+	<TurnIn QuestName="Where's My Head?" QuestId="14462" TurnInName="Slinky Sharpshiv" TurnInId="36729" />
+	
+	<PickUp QuestName="Lightning Strike Assassination" QuestId="14464" GiverName="Slinky Sharpshiv" GiverId="36729" />
+	<CustomBehavior File="WaitTimer" QuestId="14464" WaitTime="5000" />
+	<Objective QuestName="Lightning Strike Assassination" QuestId="14464" Type="CollectItem" ItemId="49540" CollectCount="1" />
+	<If Condition="HasQuest(14464) &amp;&amp; Me.Location.Distance(new WoWPoint(2870.849, -4025.526, 179.7777)) &lt; 30" >
+		<CustomBehavior File="InteractWith" MobId="36761" TerminateWhen="Me.IsOnTransport" NonCompeteDistance="0" X="2870.849" Y="-4025.526" Z="179.7777" />
+		<While Condition="Me.IsOnTransport" />
+	</If>
+	<TurnIn QuestName="Lightning Strike Assassination" QuestId="14464" TurnInName="Chawg" TurnInId="36730" />
+	
+	<If Condition="Me.Level &gt;= 20" >
+		<CustomBehavior File="DeleteItems" Ids="49229, 49201, 49042" />
+		<If Condition="!HasQuest(13866) &amp;&amp; !IsQuestCompleted(13866)" >
+			<CustomBehavior File="NoCombatMoveTo" X="2870.532" Y="-3743.097" Z="87.41811" />
+			<PickUp QuestName="To The Ramparts!" QuestId="13866" GiverName="Kulg Gorespatter" GiverId="34195" />
+			<CustomBehavior File="InteractWith" MobId="34195" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="1000" />
+			<While Condition="Me.IsOnTransport" />
+			<CustomBehavior File="Message" Text="Azshara Complete" LogColor="Orange" />
+			<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		</If>
+	</If>
+	
+	<Objective QuestName="Commando Drop" QuestId="24434" Type="KillMob" MobId="36849" KillCount="5" />
+	<TurnIn QuestName="Commando Drop" QuestId="24434" TurnInName="Lorekeeper\'s Summoning Stone" TurnInId="36918" />
+	
+	<Objective QuestName="Let Them Feast on Fear" QuestId="24433" Type="KillMob" MobId="36816" KillCount="12" />
+	<Objective QuestName="Let Them Feast on Fear" QuestId="24433" Type="KillMob" MobId="36914" KillCount="6" />
+	<TurnIn QuestName="Let Them Feast on Fear" QuestId="24433" TurnInName="Chawg" TurnInId="36730" />
+	
+	<If Condition="Me.Level &gt;= 20" >
+		<CustomBehavior File="DeleteItems" Ids="49229, 49201, 49042" />
+		<If Condition="!HasQuest(13866) &amp;&amp; !IsQuestCompleted(13866)" >
+			<CustomBehavior File="NoCombatMoveTo" X="2870.532" Y="-3743.097" Z="87.41811" />
+			<PickUp QuestName="To The Ramparts!" QuestId="13866" GiverName="Kulg Gorespatter" GiverId="34195" />
+			<CustomBehavior File="InteractWith" MobId="34195" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="1000" />
+			<While Condition="Me.IsOnTransport" />
+			<CustomBehavior File="Message" Text="Azshara Complete" LogColor="Orange" />
+			<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		</If>
+	</If>
+	
+	<TurnIn QuestName="Grounded!" QuestId="14475" TurnInName="Bombardier Captain Smooks" TurnInId="36785" />
+	
+	<PickUp QuestName="Rigged to Blow" QuestId="14476" GiverName="Bombardier Captain Smooks" GiverId="36785" />
+	<Objective QuestName="Rigged to Blow" QuestId="14476" Type="UseObject" ObjectId="197344" UseCount="1" />
+	<Objective QuestName="Rigged to Blow" QuestId="14476" Type="UseObject" ObjectId="197345" UseCount="1" />
+	<Objective QuestName="Rigged to Blow" QuestId="14476" Type="UseObject" ObjectId="197346" UseCount="1" />
+	<TurnIn QuestName="Rigged to Blow" QuestId="14476" TurnInName="Bombardier Captain Smooks" TurnInId="36785" />
+	
+	<PickUp QuestName="Push the Button!" QuestId="14477" GiverName="Bombardier Captain Smooks" GiverId="36785" />
+	<CustomBehavior File="InteractWith" QuestId="14477" MobId="196870" NonCompeteDistance="0" ProactiveCombatStrategy="ClearMobsTargetingUs" X="2600.352" Y="-4166.801" Z="158.6214" />
+	<TurnIn QuestName="Push the Button!" QuestId="14477" TurnInName="Kroum" TurnInId="36728" />
+	
+	<!-- <PickUp QuestName="Blacken the Skies" QuestId="24430" GiverName="Jr. Bombardier Hackel" GiverId="36903" />
+	<CustomBehavior File="InteractWith" QuestId="24430" MobId="36900" WaitTime="3000" NonCompeteDistance="0" TerminateWhen="Me.IsOnTransport" X="2967.105" Y="-4169.324" Z="100.8727" />
+	<TurnIn QuestName="Blacken the Skies" QuestId="24430" TurnInName="Jr. Bombardier Hackel" TurnInId="36903" /> -->
+	
+	<If Condition="!HasQuest(13866) &amp;&amp; !IsQuestCompleted(13866)" >
+		<CustomBehavior File="NoCombatMoveTo" X="2870.532" Y="-3743.097" Z="87.41811" />
+		<PickUp QuestName="To The Ramparts!" QuestId="13866" GiverName="Kulg Gorespatter" GiverId="34195" />
+		<CustomBehavior File="InteractWith" MobId="34195" InteractByGossipOptions="1" NonCompeteDistance="0" WaitTime="3000" />
+	</If>
+	
+	<CustomBehavior File="DeleteItems" Ids="49229, 49201, 49042" />
+	<CustomBehavior File="Message" Text="Azshara Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] The Level Grind [Brodie]" />
+		
+</QuestOrder>
+</HBProfile>

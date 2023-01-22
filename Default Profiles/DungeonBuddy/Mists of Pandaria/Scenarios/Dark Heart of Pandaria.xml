@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Dark Heart of Pandaria</Name>
+  <DungeonId>647</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="70959" name="Urtharges the Destroyer" killOrder="1" optional="false">
+      <Path>
+        <Hotspot X="1150.791" Y="812.7064" Z="378.0059"/>
+        <Hotspot X="1015.824" Y="859.9707" Z="378.0059"/>
+      </Path>
+    </Boss>
+    <Boss isFinal="true" entry="71123" name="Echo of Y'Shaarj" killOrder="2" optional="false" X="764.8032" Y="1160.552" Z="357.694"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+
+  </PullBlackspots>
+</DungeonBuddyProfile>

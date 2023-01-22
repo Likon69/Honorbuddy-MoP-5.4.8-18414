@@ -1,0 +1,457 @@
+# =====
+# Original contribution by chinajade
+#   $Rev: 3200 $
+#   $Date: 2014-04-23 04:03:25 -0300 (qua, 23 abr 2014) $
+#
+# WARNING: DO NOT EDIT .xsd files.
+#   They are not authoritative and will be overwritten!
+#   Instead, regenerate the .xsd files from the .rnc 'sources'.
+#   Its a one-line command to do this. Please see README.txt
+#   for more information.
+# =====
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\10129-10146-Hellfire-MurkethAndShaadraz" },
+
+    QuestBehaviorBase
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\10162-10163-Hellfire-MissionTheAbyssalShelf" },
+
+    QuestBehaviorBase
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\10838-Hellfire-TheDemoniacScryer" },
+
+    attribute QuestId { HBType-Id }
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\12259-GrizzlyHills-HordeTheThaneofVoldrune" }
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\13947-Ashenvale-Blastranaar!" },
+
+    attribute QuestId { HBType-Id }?
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\14122-Kezan-TheGreatBankHeist" },
+
+    attribute QuestId { HBType-Id }?
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\14382-Gilneas-TwoBySea" }
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\14395-Gilneas-GaspingForBreath" }
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\24697-ungoro-howtomakemeatfresh" }
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\24707-ungoro-theballadofmaximillian" }
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\24817-LostIsles-AGoblininSharksClothing" },
+
+    attribute QuestId { HBType-Id }
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\24910-Tanaris-RocketRescue" }
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\25066-LostIsles-ThePrideofKezan" }
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\25251-LostIsles-FinalConfrontation" }
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\25551-Hyjal-TheFirelord" },
+
+    Attributes-QuestSpecifier,
+    Attributes-XYZ?
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\26058-Stonetalon-InDefenseofKromgarFortress" }
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\26647-STV-Olblasty" }
+  }
+
+  
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\26649-Stranglethorn-DriveByPiracy" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\27001-WPL-ThisMeansWAR" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\27380-TwilightHighlands-Nightmare" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\27648-AllyTwilightHighlands-IntoTheFire" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\27702-27703-TwilightHighlands-CoupDeGrace" },
+
+    Attributes-QuestSpecifier
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\27738-Uldum-ThePitOfScales" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\27748-Uldum-FortuneAndGlory" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\27761-Uldum-ADisarmingDistraction" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\27779-Uldum-Gnomebliteration" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\27787-27788-TwilightHighlands-Skullcrusher" },
+
+    Attributes-QuestSpecifier
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\27789-Badlands-TroggishTroubles" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\27811-AllyTwilightHighlands-ScentOfBattle" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\27817-AllyTwilightHighlands-DroppingTheHammer" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\27990-Uldum-Battlezone" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\28173-TwilightHighlands-Blackout" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\28277-Uldum-SalhetTheTactician" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\28367-Uldum-ShroudOfTheMakers" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\28497-28736-Uldum-FireFromTheSky" },
+
+    Attributes-QuestSpecifier
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\28501-Uldum-TheDefenseOfNahom" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\28611-Uldum-TheDefilersRitual" },
+
+    Attributes-XYZ
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\28758-TwilightHighlands-BattleofLifeandDeath" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\29661-PandaStarter-TheLessonofDryFur" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\29663-PandaStarter-TheLessonoftheBalancedRock" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\29679-PandaStarter-ANewFriend" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\29731-HordeJadeForest-ScoutingReportOnTheRightTrack" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\29786-PandaStarter-BattleForTheSkies" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\29798-PandaStarter-AnAncientEvil" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\29799-PandaStarter-HealingofShenZinSu" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\29823-HordeJadeForest-ScoutingReportTheFriendofMyEnemy" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\29824-HordeJadeForest-ScoutingReportLikeJinyuInABarrel" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\29827-HordeJadeForest-AcidRain" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\29967-HordeJadeForest-BoomGoesTheDoonamite!" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\31303-JadeForest-TheSealIsBroken" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\31765-JadeForest-PaintItRed" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\DeathknightStart\AnEndToAllThings" },
+
+    attribute AttackSpellIndex { HBType-HotbarIndex },
+    attribute HealSpellIndex { HBType-HotbarIndex }?,
+    attribute HealNpcId { HBType-Id },
+    attribute ItemId { HBType-Id }?,
+    attribute KillNpcId { HBType-Id },
+    attribute VehicleId { HBType-Id },
+
+    element Start { Attributes-XYZ }?,
+    element End { Attributes-XYZ }?,
+    element Hop { Attributes-XYZ }*
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\DeathknightStart\TheLightOfDawn" },
+    
+    Attributes-QuestSpecifier
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\MountHyjal\BaronGeddon" }
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\MountHyjal\BearsUpThere" },
+    
+    Attributes-QuestSpecifier?,
+    attribute QuestName { string }?
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\MountHyjal\GreaterOfTwoEvils" },
+    
+    attribute MobId { HBType-Id },
+    attribute QuestId { HBType-Id },
+    attribute QuestName { string }?
+  }
+
+
+CustomBehavior |=
+  element CustomBehavior
+  {
+    attribute File { "SpecificQuests\MountHyjal\MentalTraining" },
+    
+    Attributes-QuestSpecifier,
+    attribute QuestName { string }?
+  }
+

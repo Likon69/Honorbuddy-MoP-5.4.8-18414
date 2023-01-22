@@ -1,0 +1,129 @@
+<HBProfile>
+	<Name>Hawker's 'Learn Flight Paths in Pandaria' Profile</Name>
+	<MinLevel>1</MinLevel>
+	<MaxLevel>101</MaxLevel>
+
+
+
+	<QuestOrder>	
+		<!-- Travel from Eastern Kingdoms or from Kalimdor -->		
+		<If Condition="Me.IsHorde &amp;&amp; Me.MapId == 0" >	
+			<If Condition="CanFly()" >
+				<CustomBehavior File="FlyTo" DestName="Booty Bay" X="-14288.29" Y="549.3284" Z="8.689642" />
+			</If>
+			<RunTo X="-14288.29" Y="549.3284" Z="8.689642" />
+			<CustomBehavior File="ForcedDismount" />
+			<!-- BB dock to Ratchet -->
+			<CustomBehavior File="UseTransport" TransportId="20808"
+										WaitAtX="-14280.88" WaitAtY="566.6268" WaitAtZ="6.979454" 
+										TransportStartX="-14277.75" TransportStartY="582.8661" TransportStartZ="0.01553879"
+										StandOnX="-14270.46" StandOnY="579.9881" StandOnZ="6.088587"
+										TransportEndX="-1005.613" TransportEndY="-3841.648" TransportEndZ="0.03330701"
+										GetOffX="-996.8669" GetOffY="-3826.07" GetOffZ="5.536246" />
+		</If>	
+
+		<If Condition="Me.IsAlliance &amp;&amp; Me.MapId == 0">
+			<CustomBehavior File="FlyTo" DestName="Pandaria Portal in Stormwind" X="-8194.625" Y="536.0027" Z="117.6574" />
+			<CustomBehavior File="InteractWith" MobId="215457" Range="5" X="-8195.061" Y="527.3506" Z="117.1698" />
+			<CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting to zone in Pandaria {TimeRemaining}" />
+		</If>
+
+		<If Condition="Me.IsHorde &amp;&amp; Me.MapId == 1">
+			<CustomBehavior File="FlyTo" DestName="Pandaria Portal in Orgrimmar" X="2015.133" Y="-4702.711" Z="28.68543"  />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="215424" Range="5" X="2015.133" Y="-4702.711" Z="28.68543" />
+			<CustomBehavior File="WaitTimer" WaitTime="5000" GoalText="Waiting to zone in Pandaria {TimeRemaining}" />
+		</If>
+
+		<If Condition="!CanFly()" >
+			<CustomBehavior File="Message" Text="Please train your character to fly in Pandaria!" LogColor="CornflowerBlue" />
+			<CustomBehavior File="Halt" />
+		</If>
+		<!--Jade Forest-->
+		<If Condition="Me.IsAlliance">
+			<CustomBehavior File="FlyTo" Land="True" DestName="Paw'don Village Flight Master" X="-307.2" Y="-1762.77" Z="61.59297" />
+			<CustomBehavior File="FlyTo" Land="True" DestName="Pearlfin Village" X="-186.097" Y="-2594.61" Z="0.944614" />
+		</If>
+		<If Condition="Me.IsHorde">
+			<CustomBehavior File="FlyTo" Land="True" DestName="Honeydew Village"  X="2927.16" Y="-509.184" Z="268.856" />
+			<CustomBehavior File="FlyTo" DestName="Grookin Hill" Land="True" X="1418.57" Y="-487.703" Z="355.96" />
+		</If>
+		<CustomBehavior File="FlyTo" Land="True" DestName="Jade Temple Grounds" X="773.247" Y="-2358.96" Z="120.9551" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Serpent's Overlook" X="465.856" Y="-1558.56" Z="154.886" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Dawn's Blossom" X="1503.71" Y="-1832.13" Z="246.2" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="The Arboretum" X="1600.66" Y="-2530.27" Z="152.212" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Sri-La Village" X="2550.76" Y="-2418.32" Z="23.9507" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Emporer's Omen" X="2400.75" Y="-2099.43" Z="228.034" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Tian Monastery" X="2505.9" Y="-1590.89" Z="400.868" />
+		<!-- Valley of the Four Winds -->
+		<CustomBehavior File="FlyTo" Land="True" DestName="Pang's Stead" X="543.915" Y="-637.814" Z="257.775" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Grassy Cline" X="460.54" Y="-100.467" Z="179.535" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Halfhill" X="-221.326" Y="464.559" Z="185.442" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="StonePlow" X="-436.54" Y="1886.7" Z="131.13" />
+		<!-- Krasarang Wilds-->
+		<If Condition="Me.IsAlliance">
+			<CustomBehavior File="FlyTo" Land="True" DestName="Sentinel Basecamp"  X="-1156.61" Y="1770.38" Z="16.989" />
+		</If>
+		<If Condition="Me.IsHorde">
+			<CustomBehavior File="FlyTo" Land="True" DestName="Dawnchaser Retreat" X="-1684.943" Y="1590.808" Z="16.14572" />
+		</If>
+		<CustomBehavior File="FlyTo" Land="True" DestName="Cradle of Chi-Ji" X="-2082.3" Y="1483.63" Z="0.550604" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Marista" X="-2504.09" Y="491.583" Z="2.331935" />
+		<If Condition="Me.IsAlliance &amp;&amp; IsQuestCompleted(30274)">
+			<!-- QuestName="The Arcanic Oubliette" QuestId="30274"  -->
+			<CustomBehavior File="FlyTo" Land="True" DestName="The Incursion" X="-1125.31" Y="-227.747" Z="31.3673" />
+		</If>
+		<If Condition="Me.IsHorde">
+			<CustomBehavior File="FlyTo" Land="True" DestName="Thunder Cleft" X="-880.3077" Y="169.136" Z="13.49095" />
+		</If>
+		<CustomBehavior File="FlyTo" Land="True" DestName="Zhu's Watch" X="-375.684" Y="-647.965" Z="117.516" />
+		<!-- Vale of Eternal Blossoms -->
+		<CustomBehavior File="FlyTo" Land="True" DestName="Tavern in the Mists" X="784.899" Y="-203.67" Z="402.192" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Serpent's Spine" X="612.371" Y="2122.244" Z="368.0564" />
+		<!-- Kun-Lai Summit -->
+		<CustomBehavior File="FlyTo" Land="True" DestName="Binan Village" X="1690.11" Y="303.958" Z="478.587" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="One Keg" X="3124.52" Y="1224.28" Z="654.231" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Temple of the White Tiger" X="3504.04" Y="690.677" Z="608.185" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Zouchin Village" X="4362.96" Y="932.118" Z="110.039" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Eastwind Rest" X="2250.59" Y="931.569" Z="481.146" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Westwind Rest" X="2103.35" Y="1463.83" Z="487.886" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Shado-Pan Fallback" X="2103.35" Y="1463.83" Z="487.886" />
+		<If Condition="Me.IsHorde">
+			<CustomBehavior File="FlyTo" Land="True" DestName="Horde Honor Points vendors on Serpent's Spine" X="2128.526" Y="2587.487" Z="542.2506" />
+		</If>
+		<CustomBehavior File="FlyTo" Land="True" DestName="Kota Basecamp" X="2716.43" Y="2163.31" Z="589.098" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Winter's Blossom" X="3151.85" Y="2677.76" Z="579.735" />
+		<!-- Townlong Steppes -->
+		<CustomBehavior File="FlyTo" Land="True" DestName="Longying Outpost" X="2363.23" Y="2994.39" Z="420.568" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Gao-Ran Battlefront" X="1440.72" Y="2804.49" Z="301.922" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Shado-Pan Garrison" X="1803.32" Y="4204.23" Z="157.508" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Rensai's Watchpost" X="1531.73" Y="3963.7" Z="227.666" />
+		<!-- Dread Wastes -->
+		<CustomBehavior File="FlyTo" Land="True" DestName="The Sunset Brewgarden" X="982.677" Y="3451.86" Z="256.77" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Klaxxi'vess"  X="172.663" Y="3152.25" Z="215.54" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="The Briny Muck" X="-570.405" Y="3859.79" Z="0.734358" />
+		<CustomBehavior File="FlyTo" Land="True" DestName="Soggy's Gamble" X="-1086.21" Y="3136.19" Z="0.9831" />
+		<If Condition="Me.IsAlliance">
+			<CustomBehavior File="FlyTo" Land="True" DestName="The Lion's Redoubt" X="232.9912" Y="2199.415" Z="271.4587" />
+		</If>
+		<If Condition="Me.IsAlliance">
+		    <CustomBehavior File="FlyTo" DestName="Shrine of the Seven Stars" X="909.1883" Y="344.8386" Z="506.0945" />
+        </If>
+        <If Condition="Me.IsHorde">
+		    <CustomBehavior File="FlyTo" DestName="Shrine of Two Moons " X="1577.034" Y="893.2909" Z="473.601"  />
+        </If>  
+
+		<CustomBehavior File="Halt" />
+
+	</QuestOrder>
+
+
+
+	<!-- 
+A comment:<CustomBehavior File="FlyTo" DestName="Booty Bay" X="-14288.29" Y="549.3284" Z="8.689642" />
+				<CustomBehavior File="ForcedDismount" />
+				Nav="Fly" 
+				/dump IsQuestFlaggedCompleted(11350)
+-->
+
+</HBProfile>

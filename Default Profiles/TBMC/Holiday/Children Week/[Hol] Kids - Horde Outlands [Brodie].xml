@@ -1,0 +1,363 @@
+﻿<HBProfile>
+	<Name>Children's Week - Outlands (Horde) ($Rev$)</Name>
+   
+	<MinLevel>1</MinLevel>
+	<MaxLevel>100</MaxLevel>
+   
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>True</MailBlue>
+	<MailPurple>True</MailPurple>
+   
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+   
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+	
+	<Blackspots>
+	</Blackspots>
+
+<QuestOrder>
+
+	<If Condition="Me.IsAlliance" >
+		<CustomBehavior File="LoadProfile" ProfileName="[Hol] Kids - Alliance Outlands [Brodie]" />
+	</If>
+
+	<If Condition="!HasSpell(34090) &amp;&amp; !HasSpell(34091) &amp;&amp; !HasSpell(90265)" >
+		<CustomBehavior File="UserDialog" StopOnContinue="true" Text="You must be able to fly to use this profile." />
+		<CustomBehavior File="Halt" />
+	</If>
+
+	<!-- Move to the Matron, if we don't already have the whistle in inventory -->
+	<If Condition="!HasItem(31880)" >
+		<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Shattrath -->
+			<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326) &gt;= 100)" >
+				<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<UseMount Value="False" />
+			<CustomBehavior File="InteractWith" MobId="215113" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1730.643" Y="922.8421" Z="470.7326" /> <!-- Shattrath -->
+			<UseMount Value="True" />
+		</If>
+		
+		<If Condition="Me.MapId == 571" >
+			<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+		</If>
+		
+		<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+			<!-- If in Orgrimmar, move to portal in Cleft of Shadow -->
+			<CustomBehavior File="FlyTo" X="1775.027" Y="-4327.167" Z="-8.028289" />
+			<!-- Portal to Blasted Lands -->
+			<CustomBehavior File="InteractWith" MobId="195142" NonCompeteDistance="0" WaitTime="5000" 
+				TerminateWhen="Me.ZoneId != 1637" X="1775.027" Y="-4327.167" Z="-8.028289" />
+			<CustomBehavior File="WaitTimer" WaitTime="25000" VariantTime="15000"
+				TerminateWhen="Me.ZoneId != 1637" GoalText="Waiting {TimeRemaining} for teleport to complete" />
+		</If>
+		
+		<!-- Use Blasted Lands portal -->
+		<If Condition="Me.MapId == 0" >
+			<CustomBehavior File="FlyTo" X="-11882.51" Y="-3205.007" Z="-16.88242" />
+			<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+			<CustomBehavior File="WaitTimer" WaitTime="25000" VariantTime="15000"
+				TerminateWhen="Me.MapId != 0" GoalText="Waiting {TimeRemaining} for zoning to complete." />
+		</If>
+
+		<If Condition="Me.MapId == 530" >	
+			<!-- Spread out approach to Matron so multiple HB users won't be standing on top of one another -->
+			<If Condition="Chance(20.0)" >
+				<CustomBehavior File="FlyTo" X="-1894.267" Y="5160.354" Z="-40.20852" />
+			<ElseIf Condition="Chance(40.0)" >
+				<CustomBehavior File="FlyTo" X="-1887.389" Y="5161.38" Z="-42.3903" />
+			</ElseIf>
+			<ElseIf Condition="Chance(60.0)" >
+				<CustomBehavior File="FlyTo" X="-1883.983" Y="5155.843" Z="-43.4709" />
+			</ElseIf>
+			<ElseIf Condition="Chance(80.0)" >
+				<CustomBehavior File="FlyTo" X="-1885.817" Y="5146.214" Z="-40.20865" />
+			</ElseIf>
+			<Else>
+				<CustomBehavior File="FlyTo" X="-1890.014" Y="5157.902" Z="-40.20861" />
+			</Else>
+			</If>
+		</If>
+		<CustomBehavior File="ForcedDismount" />
+
+		<PickUp Nav="Fly" QuestName="Children's Week" QuestId="10942" GiverName="Orphan Matron Mercy" GiverId="22819" />
+	</If>
+
+	<While Condition="HasQuest(10942) &amp;&amp; Me.HasAura(58818)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31880)" WaitTime="3000" />
+	</While>
+
+	<While Condition="HasQuest(10942) &amp;&amp; IsQuestCompleted(10942)" >
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31880)" WaitTime="3000" />
+		</While>
+		<TurnIn Nav="Fly" QuestName="Children's Week" QuestId="10942" TurnInName="Blood Elf Orphan" TurnInId="22817" />
+	</While>
+	
+	<While Condition="!Me.HasAura(58818) &amp;&amp; ((!HasQuest(10945) &amp;&amp; !IsQuestCompleted(10945)) ||
+						(!HasQuest(10953) &amp;&amp; !IsQuestCompleted(10953)) ||
+						(!HasQuest(10951) &amp;&amp; !IsQuestCompleted(10951)))" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31880)" WaitTime="3000" />
+	</While>
+		
+	<PickUp Nav="Fly" QuestName="Hcu'uu and the Mushroom People" QuestId="10945" GiverName="Blood Elf Orphan" GiverId="22817" />
+	<PickUp Nav="Fly" QuestName="Visit the Throne of the Elements" QuestId="10953" GiverName="Blood Elf Orphan" GiverId="22817" />
+	<PickUp Nav="Fly" QuestName="A Trip to the Dark Portal" QuestId="10951" GiverName="Blood Elf Orphan" GiverId="22817" />
+	
+<!-- Visit the Throne of the Elements -->
+	<If Condition="HasQuest(10953) &amp;&amp; !IsQuestCompleted(10953)" >
+		<If Condition="Chance(25.0)" >
+			<CustomBehavior File="FlyTo" X="-776.1358" Y="6935.813" Z="32.24924" />
+		<ElseIf Condition="Chance(50.0)" >
+			<CustomBehavior File="FlyTo" X="-775.6296" Y="6950.766" Z="32.14127" />
+		</ElseIf>
+		<ElseIf Condition="Chance(75.0)" >
+			<CustomBehavior File="FlyTo" X="-789.0215" Y="6952.749" Z="32.09429" />
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="FlyTo" X="-788.6945" Y="6938.262" Z="32.14142" />
+		</Else>
+		</If>
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31880)" WaitTime="3000" />
+		</While>
+		<MoveTo X="-784.2043" Y="6942.516" Z="33.23114" />
+		
+		<While Condition="!IsQuestCompleted(10953)" />
+	</If>
+	
+	<While Condition="HasQuest(10953) &amp;&amp; IsQuestCompleted(10953)" >
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31880)" WaitTime="3000" />
+		</While>
+		<TurnIn Nav="Fly" QuestName="Visit the Throne of the Elements" QuestId="10953" TurnInName="Elementalist Sharvak" TurnInId="18072" />
+	</While>
+
+<!-- Hcu'uu and the Mushroom People -->
+	<If Condition="HasQuest(10945) &amp;&amp; !IsQuestCompleted(10945)" >
+		<If Condition="Chance(33.3)" >
+			<CustomBehavior File="FlyTo" X="213.6675" Y="8501.601" Z="24.2389" />
+		<ElseIf Condition="Chance(66.6)" >
+			<CustomBehavior File="FlyTo" X="211.3374" Y="8511.769" Z="24.457" />
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="FlyTo" X="218.9791" Y="8507.614" Z="24.10459" />
+		</Else>
+		</If>
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31880)" WaitTime="3000" />
+		</While>
+		<While Condition="!IsQuestCompleted(10945)" />
+	</If>
+	
+	<While Condition="HasQuest(10945) &amp;&amp; IsQuestCompleted(10945)" >
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31880)" WaitTime="3000" />
+		</While>
+		<TurnIn Nav="Fly" QuestName="Hch'uu and the Mushroom People" QuestId="10945" TurnInName="Hchuu" TurnInId="22823" />
+	</While>
+
+<!-- A Trip to the Dark Portal -->
+	<If Condition="HasQuest(10951) &amp;&amp; !IsQuestCompleted(10951)" >
+		<If Condition="Chance(25.0)" >
+			<CustomBehavior File="FlyTo" X="-271.1154" Y="945.5175" Z="84.37973" />
+		<ElseIf Condition="Chance(50.0)" >
+			<CustomBehavior File="FlyTo" X="-222.5101" Y="951.7496" Z="84.35833" />
+		</ElseIf>
+		<ElseIf Condition="Chance(75.0)" >
+			<CustomBehavior File="FlyTo" X="-257.0391" Y="930.5157" Z="84.37953" />
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="FlyTo" X="-233.1684" Y="927.5714" Z="84.37949" />
+		</Else>
+		</If>
+		
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31880)" WaitTime="3000" />
+		</While>
+		<MoveTo X="-235.1521" Y="957.4091" Z="84.34785" />
+
+		<While Condition="!IsQuestCompleted(10951)" />
+	</If>
+
+	<While Condition="HasQuest(10951) &amp;&amp; IsQuestCompleted(10951)" >
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31880)" WaitTime="3000" />
+		</While>
+		<TurnIn Nav="Fly" QuestName="A Trip to the Dark Portal" QuestId="10951" TurnInName="Blood Elf Orphan" TurnInId="22817" />
+	</While>
+
+	<While Condition="!Me.HasAura(58818) &amp;&amp; ((!HasQuest(11975) &amp;&amp; !IsQuestCompleted(11975)) ||
+						(!HasQuest(10963) &amp;&amp; !IsQuestCompleted(10963)))" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31880)" WaitTime="3000" />
+	</While>
+	<PickUp Nav="Fly" QuestName="Now, When I Grow Up" QuestId="11975" GiverName="Blood Elf Orphan" GiverId="22817" />
+	<PickUp Nav="Fly" QuestName="Time to Visit the Caverns" QuestId="10963" GiverName="Blood Elf Orphan" GiverId="22817" />	
+
+<!-- Now, When I Grow Up -->
+	<If Condition="HasQuest(11975) &amp;&amp; !IsQuestCompleted(11975)" >
+		<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3487 &amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433" >
+			<CustomBehavior File="FlyTo" X="-248.014" Y="899.1279" Z="84.3497" />
+			<CustomBehavior File="Misc\InInstance" X="-249.014" Y="897.1279" Z="84.3497" />
+			<CustomBehavior File="WaitTimer" WaitTime="25000" VariantTime="15000"
+				TerminateWhen="Me.MapId != 530" GoalText="Waiting {TimeRemaining} for zoning to complete." />
+		</If>
+		<If Condition="Me.ZoneId == 0" >
+			<CustomBehavior File="FlyTo" X="1806.531" Y="340.6268" Z="70.66035" />
+			<CustomBehavior File="InteractWith" MobId="184503" NonCompeteDistance="0" PreInteractMountStrategy="DismountOrCancelShapeshift"
+				WaitTime="5000" TerminateWhen="Me.ZoneId != 1497" X="1806.531" Y="340.6268" Z="70.66035" />
+		</If>
+		
+		<While Condition="HasQuest(11975) &amp;&amp; !IsQuestCompleted(11975)" >
+			<While Condition="!Me.HasAura(58818)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31880)" WaitTime="3000" />
+			</While>
+			<MoveTo X="9502.212" Y="-7330.313" Z="14.38785" />
+			<CustomBehavior File="WaitTimer" WaitTime="5000" VariantTime="5000" />
+		</While>
+		<TurnIn Nav="Fly" QuestName="Now, When I Grow Up" QuestId="11975" TurnInName="Blood Elf Orphan" TurnInId="22817" />
+	</If>
+	
+	<If Condition="Me.ZoneId == 3487 || Me.ZoneId == 3430 || Me.ZoneId == 3433" >
+		<MoveTo X="10039.9" Y="-7000.938" Z="61.97666" />
+		<CustomBehavior File="InteractWith" MobId="184502" NonCompeteDistance="0" PreInteractMountStrategy="DismountOrCancelShapeshift"
+			WaitTime="5000" TerminateWhen="Me.ZoneId == 1497" X="10039.9" Y="-7000.938" Z="61.97666" />
+	</If>
+
+<!-- Time to Visit the Caverns -->
+	<If Condition="HasQuest(10963) &amp;&amp; !IsQuestCompleted(10963)" >
+		<If Condition="Me.MapId == 530" >
+			<CustomBehavior File="FlyTo" X="-248.014" Y="899.1279" Z="84.3497" />
+			<CustomBehavior File="Misc\InInstance" X="-249.014" Y="897.1279" Z="84.3497" />
+			<CustomBehavior File="WaitTimer" WaitTime="25000" VariantTime="15000"
+				TerminateWhen="Me.MapId != 530" GoalText="Waiting {TimeRemaining} for zoning to complete." />
+		</If>
+		
+		<!-- If in Eastern Kingdoms, move to Theramore via Menethil Harbor -->
+		<If Condition="Me.MapId == 0" >
+			<CustomBehavior File="FlyTo" X="2070.155" Y="289.2588" Z="97.0315" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="UseTransport" TransportId="164871"
+				WaitAtX="2070.155" WaitAtY="289.2588" WaitAtZ="97.0315" 
+				TransportStartX="2062.376" TransportStartY="292.998" TransportStartZ="114.973"
+				TransportEndX="1833.509" TransportEndY="-4391.543" TransportEndZ="152.7679"
+				StandOnX="2067.979" StandOnY="295.2747" StandOnZ="97.23677" 
+				GetOffX="1840.225" GetOffY="-4390.912" GetOffZ="135.2337" />
+		</If>
+		
+		<!-- If in Kalimdor, move to the Caverns of Time -->
+		<If Condition="Me.MapId == 1" >
+			<If Condition="!HasItem(31951)" >
+				<CustomBehavior File="FlyTo" X="-8526.656" Y="-4606.126" Z="-212.0455" />
+				<While Condition="!Me.HasAura(58818)" >
+					<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31880)" WaitTime="3000" />
+				</While>
+				<CustomBehavior File="InteractWith" MobId="21643" InteractByBuyingItemId="31951" NonCompeteDistance="0"
+					WaitTime="1000" X="-8527.242" Y="-4609.146" Z="-212.1374" />
+			</If>
+		
+			<If Condition="Chance(25.0)" >
+				<MoveTo X="-8510.06" Y="-4396.11" Z="-218.165" />
+			<ElseIf Condition="Chance(50.0)" >
+				<MoveTo X="-8515.758" Y="-4396.253" Z="-218.0038" />
+			</ElseIf>
+			<ElseIf Condition="Chance(75.0)" >
+				<MoveTo X="-8515.993" Y="-4391.435" Z="-218.5184" />
+			</ElseIf>
+			<Else>
+				<MoveTo X="-8513.194" Y="-4391.152" Z="-218.621" />
+			</Else>
+			</If>
+		</If>
+
+		<While Condition="!IsQuestCompleted(10963)" >
+			<While Condition="!Me.HasAura(58818)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31880)" WaitTime="3000" />
+			</While>
+			
+			<If Condition="Me.HasAura(58818) &amp;&amp; HasItem(31951)" >
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31951)" WaitTime="5000" />
+			</If>
+
+			<CustomBehavior File="WaitTimer" WaitTime="1000" VariantTime="1000" GoalText="Waiting for quest completion" />
+		</While>
+	</If>
+	
+	<While Condition="HasQuest(10963) &amp;&amp; IsQuestCompleted(10963)" >
+		<While Condition="!Me.HasAura(58818)" >
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31880)" WaitTime="3000" />
+		</While>
+		<TurnIn Nav="Fly" QuestName="Time to Visit the Caverns" QuestId="10963" TurnInName="Blood Elf Orphan" TurnInId="22817" />
+	</While>
+	
+	<While Condition="!Me.HasAura(58818) &amp;&amp; (!HasQuest(10967) &amp;&amp; !IsQuestCompleted(10967))" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(31880)" WaitTime="3000" />
+	</While>
+		
+	<PickUp Nav="Fly" QuestName="Back to the Orphanage" QuestId="10967" GiverName="Blood Elf Orphan" GiverId="22817" />
+	
+<!-- Back to the Orphanage -->
+	<If Condition="HasQuest(10967)" >
+		<If Condition="Unit(19934) != null" >
+			<MoveTo X="-8172.648" Y="-4737.101" Z="33.73726" />
+		</If>
+		<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+			<!-- If in Orgrimmar, move to portal in Cleft of Shadow -->
+			<CustomBehavior File="FlyTo" X="1775.027" Y="-4327.167" Z="-8.028289" />
+			<!-- Portal to Blasted Lands -->
+			<CustomBehavior File="InteractWith" MobId="195142" NonCompeteDistance="0" WaitTime="5000" 
+				TerminateWhen="Me.ZoneId != 1637" X="1775.027" Y="-4327.167" Z="-8.028289" />
+			<CustomBehavior File="WaitTimer" WaitTime="25000" VariantTime="15000"
+				TerminateWhen="Me.ZoneId != 1637" GoalText="Waiting {TimeRemaining} for teleport to complete" />
+		</If>
+		
+		<!-- Use Blasted Lands portal -->
+		<If Condition="Me.MapId == 0" >
+			<CustomBehavior File="FlyTo" X="-11882.51" Y="-3205.007" Z="-16.88242" />
+			<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+			<CustomBehavior File="WaitTimer" WaitTime="25000" VariantTime="15000"
+				TerminateWhen="Me.MapId != 0" GoalText="Waiting {TimeRemaining} for zoning to complete." />
+		</If>
+
+		<If Condition="Me.MapId == 530" >
+			<If Condition="Chance(20.0)" >
+				<CustomBehavior File="FlyTo" X="-1894.267" Y="5160.354" Z="-40.20852" />
+			<ElseIf Condition="Chance(40.0)" >
+				<CustomBehavior File="FlyTo" X="-1887.389" Y="5161.38" Z="-42.3903" />
+			</ElseIf>
+			<ElseIf Condition="Chance(60.0)" >
+				<CustomBehavior File="FlyTo" X="-1883.983" Y="5155.843" Z="-43.4709" />
+			</ElseIf>
+			<ElseIf Condition="Chance(80.0)" >
+				<CustomBehavior File="FlyTo" X="-1885.817" Y="5146.214" Z="-40.20865" />
+			</ElseIf>
+			<Else>
+				<CustomBehavior File="FlyTo" X="-1890.014" Y="5157.902" Z="-40.20861" />
+			</Else>
+			</If>
+		</If>
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="Turn in quest, and select your reward." />
+	</If>	
+	
+	<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1" Text="Outlands Children's Week quest line complete!" />
+
+</QuestOrder>
+</HBProfile>

@@ -1,0 +1,297 @@
+<HBProfile>
+
+	<Name>Thrallmar/Honor Hold Rep Grind ($Rev$)</Name>
+	<MinLevel>70</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+
+	<TargetElites>True</TargetElites>
+
+	<AvoidMobs>
+	</AvoidMobs>
+
+	<Blackspots>
+	</Blackspots>
+	
+	<Blacklist>
+		<Mob Name="Hellfire Training Dummy" Entry="17578" Flags="Pull, Combat" />
+		<Mob Name="Creeping Oozeling" Entry="17357" Flags="Pull" />
+		<Mob Name="Creeping Ooze" Entry="17356" Flags="Pull" />
+	</Blacklist>
+
+	<Mailboxes>
+	</Mailboxes>
+
+	<Vendors>
+	</Vendors>
+
+<!-- Quest Overrides -->
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+
+	<If Condition="Me.IsHorde" >
+		<CustomBehavior File="Message" Text="Beginning Thrallmar Reputation Grind" LogColor="Green" />
+	<Else>
+		<CustomBehavior File="Message" Text="Beginning Honor Hold Reputation Grind" LogColor="Green" />
+	</Else>
+	</If>
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Shattrath -->
+		<If Condition="Me.IsAlliance" >
+			<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<UseMount Value="False" />
+			<CustomBehavior File="InteractWith" MobId="215120" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<UseMount Value="False" />
+			<CustomBehavior File="InteractWith" MobId="215113" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1732.343" Y="881.7467" Z="487.0864" />
+		</If>
+		<UseMount Value="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+		</If>
+	</If>
+	
+	<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="-3997.277" Y="-4723.235" Z="4.2373507" />
+			<CustomBehavior File="UseTransport" TransportId="176231"
+				WaitAtX="-3997.277" WaitAtY="-4723.235" WaitAtZ="4.2373507" 
+				TransportStartX="-4016.39" TransportStartY="-4740.588" TransportStartZ="0.03803937"
+				TransportEndX="-3872.35" TransportEndY="-639.944" TransportEndZ="-0.02619897"
+				StandOnX="-4009.505" StandOnY="-4738.07" StandOnZ="6.021125"
+				GetOffX="-3861.013" GetOffY="-656.758" GetOffZ="5.279493" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="1773.506" Y="-4327.022" Z="-8.118139" />
+			<CustomBehavior File="InteractWith" MobId="195142" NonCompeteDistance="0" WaitTime="5000" X="1773.506" Y="-4327.022" Z="-8.118139" />
+		</If>
+	</If>
+
+	<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.IsAlliance" >
+			<If Condition="Me.ZoneId == 1519" >
+				<CustomBehavior File="InteractWith" MobId="195141" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+					X="-9005.213" Y="868.702" Z="129.6925" />
+			</If>
+			<CustomBehavior File="FlyTo" X="-11899.66" Y="-3208.164" Z="-14.73684" />
+			<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+			<CustomBehavior File="WaitTimer" WaitTime="10000" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="-11899.66" Y="-3208.164" Z="-14.73684" />
+			<CustomBehavior File="Misc\InInstance" X="-11909.47" Y="-3209.611" Z="-14.70588" />
+			<CustomBehavior File="WaitTimer" WaitTime="10000" />
+		</If>
+	</If>
+	
+	<If Condition="Me.IsHorde" >
+		<SetVendor>
+			<Vendors>
+				<Vendor Nav="Fly" Name="Reagan Mancuso" Entry="22225" Type="Repair" X="179.7871" Y="2605.4" Z="87.28379" />
+			</Vendors>
+		</SetVendor>
+	<Else>
+		<SetVendor>
+			<Vendors>
+				<Vendor Nav="Fly" Name="Humphry" Entry="16823" Type="Repair" X="-717.3172" Y="2607.582" Z="91.01124" />
+			</Vendors>
+		</SetVendor>
+	</Else>
+	</If>
+	
+	<CustomBehavior File="UserSettings" KillBetweenHotspots="False" />
+	
+	<While Condition="(Me.IsHorde &amp;&amp; Me.GetReputationLevelWith(947) &lt; WoWUnitReaction.Exalted) ||
+						(Me.IsAlliance &amp;&amp; Me.GetReputationLevelWith(946) &lt; WoWUnitReaction.Exalted)" >
+		
+		<!-- Move to and into instance -->
+		<If Condition="Me.ZoneId != 3714" > <!-- Shattered Halls -->
+			<If Condition="Me.FreeBagSlots &lt; 2 || Me.LowestDurabilityPercent &lt; 0.2" >
+				<If Condition="Object(184912, o =&gt; o.Distance &lt; 10) != null" >
+					<CustomBehavior File="InteractWith" MobId="184912" NonCompeteDistance="0" WaitTime="1000" />
+				</If>
+				<CustomBehavior File="ForceSetVendor" DoRepair="True" DoSell="True" />
+			</If>
+			<CustomBehavior File="FlyTo" TerminateWhen="Object(184912, o =&gt; o.Distance &lt; 10) != null" X="-305.5124" Y="3064.48" Z="-2.554458" />
+			<CustomBehavior File="InteractWith" MobId="184912" PreInteractMountStrategy="Dismount" NonCompeteDistance="0" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/script SetDungeonDifficulty(1)" /> <!-- Set Difficulty to Normal -->
+			<CustomBehavior File="RunMacro" Macro="/script ResetInstances()" /> <!-- resets instances -->
+			<CustomBehavior File="Misc\InInstance" X="-310.3611" Y="3090.479" Z="-3.94747" />
+			<CustomBehavior File="WaitTimer" WaitTime="10000" />
+		</If>
+		
+		<!-- Check for Quests from Shattered Halls -->
+		<If Condition="(Me.IsHorde &amp;&amp; ((HasQuest(29655) || !IsQuestCompleted(29655)) || (HasQuest(29650) || !IsQuestCompleted(29650)) || (HasQuest(29651) || !IsQuestCompleted(29651)) || (HasQuest(29653) || !IsQuestCompleted(29653)))) ||
+						(Me.IsAlliance &amp;&amp; ((HasQuest(29649) || !IsQuestCompleted(29649)) || (HasQuest(29656) || !IsQuestCompleted(29656)) || (HasQuest(29652) || !IsQuestCompleted(29652)) || (HasQuest(29654) || !IsQuestCompleted(29654))))" >
+			<CustomBehavior File="Message" Text="Compiling Quest Data from Dungeons" LogColor="CornflowerBlue" />
+			
+			<!-- Pick Ups -->
+			<If Condition="Me.IsHorde" >
+				<If Condition="!HasQuest(29655) &amp;&amp; !IsQuestCompleted(29655)" >
+					<PickUp QuestName="A Very Special Cloth" QuestId="29655" GiverName="Stone Guard Stok'ton" GiverId="54931" />
+				</If>
+				<If Condition="!HasQuest(29650) &amp;&amp; !IsQuestCompleted(29650)" >
+					<PickUp QuestName="Fel Ember" QuestId="29650" GiverName="Stone Guard Stok'ton" GiverId="54931" />
+				</If>
+				<If Condition="!HasQuest(29653) &amp;&amp; !IsQuestCompleted(29653)" >
+					<PickUp QuestName="The Will of the Warchief" QuestId="29653" GiverName="Stone Guard Stok'ton" GiverId="54931" />
+				</If>
+				<If Condition="!HasQuest(29651) &amp;&amp; !IsQuestCompleted(29651)" >
+					<PickUp QuestName="Honor The Dying" QuestId="29651" GiverName="Caza'rez" GiverId="54932" />
+				</If>
+			</If>
+			<If Condition="Me.IsAlliance" >
+				<If Condition="!HasQuest(29649) &amp;&amp; !IsQuestCompleted(29649)" >
+					<PickUp QuestName="How To Save A Life" QuestId="29649" GiverName="Advance Scout Chadwick" GiverId="54933" />
+				</If>
+				<If Condition="!HasQuest(29656) &amp;&amp; !IsQuestCompleted(29656)" >
+					<PickUp QuestName="O'mrogg's Warcloth" QuestId="29656" GiverName="Advance Scout Chadwick" GiverId="54933" />
+				</If>
+				<If Condition="!HasQuest(29654) &amp;&amp; !IsQuestCompleted(29654)" >
+					<PickUp QuestName="Turning the Tide" QuestId="29654" GiverName="Advance Scout Chadwick" GiverId="54933" />
+				</If>
+				<If Condition="!HasQuest(29652) &amp;&amp; !IsQuestCompleted(29652)" >
+					<PickUp QuestName="One Last Favor" QuestId="29652" GiverName="Gunny" GiverId="54934" />
+				</If>
+			</If>
+			
+			<!-- Turn Ins -->
+			<If Condition="Me.IsHorde" >
+				<If Condition="HasQuest(29655) &amp;&amp; IsQuestCompleted(29655)" >
+					<TurnIn QuestName="A Very Special Cloth" QuestId="29655" TurnInName="Stone Guard Stok'ton" TurnInId="54931" />
+				</If>
+				<If Condition="HasQuest(29650) &amp;&amp; IsQuestCompleted(29650)" >
+					<TurnIn QuestName="Fel Ember" QuestId="29650" TurnInName="Stone Guard Stok'ton" TurnInId="54931" />
+				</If>
+				<If Condition="HasQuest(29651) &amp;&amp; IsQuestCompleted(29651)" >
+					<TurnIn QuestName="Honor The Dying" QuestId="29651" TurnInName="Stone Guard Stok'ton" TurnInId="54931" />
+				</If>
+				<If Condition="HasQuest(29653) &amp;&amp; IsQuestCompleted(29653)" >
+					<TurnIn QuestName="The Will of the Warchief" QuestId="29653" TurnInName="Stone Guard Stok'ton" TurnInId="54931" />
+				</If>
+			</If>
+			<If Condition="Me.IsAlliance" >
+				<If Condition="HasQuest(29649) &amp;&amp; IsQuestCompleted(29649)" >
+					<TurnIn QuestName="How To Save A Life" QuestId="29649" TurnInName="Advance Scout Chadwick" TurnInId="54933" />
+				</If>
+				<If Condition="HasQuest(29656) &amp;&amp; IsQuestCompleted(29656)" >
+					<TurnIn QuestName="O'mrogg's Warcloth" QuestId="29656" TurnInName="Advance Scout Chadwick" TurnInId="54933" />
+				</If>
+				<If Condition="HasQuest(29652) &amp;&amp; IsQuestCompleted(29652)" >
+					<TurnIn QuestName="One Last Favor" QuestId="29652" TurnInName="Advance Scout Chadwick" TurnInId="54933" />
+				</If>
+				<If Condition="HasQuest(29654) &amp;&amp; IsQuestCompleted(29654)" >
+					<TurnIn QuestName="Turning the Tide" QuestId="29654" TurnInName="Advance Scout Chadwick" TurnInId="54933" />
+				</If>
+			</If>
+		</If>
+		
+		<CustomBehavior File="UserSettings" KillBetweenHotspots="True" />
+	
+		<SetGrindArea>
+			<GrindArea>
+   
+            <TargetMinLevel>60</TargetMinLevel>
+            <TargetMaxLevel>75</TargetMaxLevel>
+   
+            <Factions>16</Factions>
+
+            <Hotspots>
+				<Hotspot X="163.3641" Y="-84.23154" Z="1.924397" />
+            </Hotspots>
+
+			</GrindArea>
+		</SetGrindArea>
+		<GrindTo Condition="(Me.GetReputationLevelWith(946) &gt;= WoWUnitReaction.Exalted || Me.GetReputationLevelWith(947) &gt;= WoWUnitReaction.Exalted) ||
+							Me.ZoneId != 3714 || Me.FreeBagSlots &lt; 2 || Me.LowestDurabilityPercent &lt; 0.2 || Unit(16808, u =&gt; u.IsDead) != null ||
+							Me.Location.Distance(new WoWPoint(163.3641, -84.23154, 1.924397)) &lt; 10" GoalText="Clearing The Shattered Halls" />
+		
+		<If Condition="Unit(16808, u =&gt; u.IsDead &amp;&amp; u.Distance &lt; 50) != null &amp;&amp; (Unit(55136) != null || Unit(55138) != null)" >
+			<CustomBehavior File="Message" Text="Compiling Completed Quest Data from Dungeons" LogColor="CornflowerBlue" />
+			<If Condition="Me.IsHorde" >
+				<If Condition="HasQuest(29655) &amp;&amp; IsQuestCompleted(29655)" >
+					<TurnIn QuestName="A Very Special Cloth" QuestId="29655" TurnInName="Stone Guard Stok'ton" TurnInId="55136" />
+				</If>
+				<If Condition="HasQuest(29650) &amp;&amp; IsQuestCompleted(29650)" >
+					<TurnIn QuestName="Fel Ember" QuestId="29650" TurnInName="Stone Guard Stok'ton" TurnInId="55136" />
+				</If>
+				<If Condition="HasQuest(29651) &amp;&amp; IsQuestCompleted(29651)" >
+					<TurnIn QuestName="Honor The Dying" QuestId="29651" TurnInName="Stone Guard Stok'ton" TurnInId="55136" />
+				</If>
+				<If Condition="HasQuest(29653) &amp;&amp; IsQuestCompleted(29653)" >
+					<TurnIn QuestName="The Will of the Warchief" QuestId="29653" TurnInName="Stone Guard Stok'ton" TurnInId="55136" />
+				</If>
+			</If>
+			<If Condition="Me.IsAlliance" >
+				<If Condition="HasQuest(29649) &amp;&amp; IsQuestCompleted(29649)" >
+					<TurnIn QuestName="How To Save A Life" QuestId="29649" TurnInName="Advance Scout Chadwick" TurnInId="55138" />
+				</If>
+				<If Condition="HasQuest(29656) &amp;&amp; IsQuestCompleted(29656)" >
+					<TurnIn QuestName="O'mrogg's Warcloth" QuestId="29656" TurnInName="Advance Scout Chadwick" TurnInId="55138" />
+				</If>
+				<If Condition="HasQuest(29652) &amp;&amp; IsQuestCompleted(29652)" >
+					<TurnIn QuestName="One Last Favor" QuestId="29652" TurnInName="Advance Scout Chadwick" TurnInId="55138" />
+				</If>
+				<If Condition="HasQuest(29654) &amp;&amp; IsQuestCompleted(29654)" >
+					<TurnIn QuestName="Turning the Tide" QuestId="29654" TurnInName="Advance Scout Chadwick" TurnInId="55138" />
+				</If>
+			</If>
+		</If>
+		
+		<If Condition="(HasQuest(29650) &amp;&amp; !IsQuestCompleted(29650)) || (HasQuest(29649) &amp;&amp; !IsQuestCompleted(29649))" >
+			<MoveTo X="185.0482" Y="290.8547" Z="-8.182482" />
+			<CustomBehavior File="WaitTimer" WaitTime="2000" />
+			<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(23735)" WaitTime="1000" />
+		</If>
+		
+		<!-- Run out of instance -->
+		<MoveTo X="-41.73314" Y="-21.36947" Z="-13.68696" />
+		<CustomBehavior File="Misc\InInstance" X="-42.05605" Y="-27.77249" Z="-13.51534" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" />
+	</While>
+	
+	<!-- Grind checks: Final Boss 16808, Last XYZ, Max Rep (A 946/H 947) -->
+
+	<If Condition="Me.IsHorde" >
+		<CustomBehavior File="Message" Text="Congratulations on reaching exalted with Thrallmar" LogColor="Orange" />
+	<Else>
+		<CustomBehavior File="Message" Text="Congratulations on reaching exalted with Honor Hold" LogColor="Orange" />
+	</Else>
+	</If>
+		
+</QuestOrder>
+</HBProfile>

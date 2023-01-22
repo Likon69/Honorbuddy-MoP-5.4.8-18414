@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DungeonBuddyProfile>
+  <Name>Battle on the High Seas Heroic - Horde</Name>
+  <DungeonId>652</DungeonId>
+  <BossEncounters>
+    <Boss isFinal="false" entry="71327" name="Admiral Hodgson" killOrder="1" optional="false" X="2175.594" Y="-4209.522" Z="19.67027"/>
+  </BossEncounters>
+  <Blackspots>
+    <!-- Temp Blackspot for when I come acrossed them
+    <Blackspot X="-101.3791" Y="-703.8368" Z="9.095623" Radius="3.363508" />-->
+  </Blackspots>
+  <PullBlackspots>
+
+  </PullBlackspots>
+</DungeonBuddyProfile>

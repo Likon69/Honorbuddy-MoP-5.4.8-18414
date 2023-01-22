@@ -1,0 +1,413 @@
+<HBProfile>
+
+	<Name>Flame Warden and Extinguishing - Eastern Kingdoms (Alliance) ($Rev$)</Name>
+	<MinLevel>1</MinLevel>
+	<MaxLevel>100</MaxLevel>
+	
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<QuestOrder>
+
+	<CustomBehavior File="Message" Text="Starting Flame Warden and Extinguisher Run (EK)" LogColor="CornflowerBlue" />
+	
+	<If Condition="Me.IsHorde" >
+		<CustomBehavior File="LoadProfile" ProfileName="[Hol] EK Keeper Extinguish H [Brodie]" />
+	</If>
+	
+	<If Condition="Me.MapId != 0 &amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433" >
+		<CustomBehavior File="Message" Text="Current Location doesn't match desired continent. Moving to Eastern Kingdoms." LogColor="Orange" />
+	</If>
+	
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Stormwind/Undercity -->
+		<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684) &gt;= 100)" >
+			<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+			<CustomBehavior File="ForcedDismount" />
+		</If>
+		<UseMount Value="False" />
+		<CustomBehavior File="InteractWith" MobId="215119" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" WaitTime="10000" X="827.6292" Y="179.0341" Z="519.5684" />
+		<UseMount Value="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" WaitTime="10000" X="5725.88" Y="729.7267" Z="641.7689" />
+	</If>
+	
+	<!-- Needs conditional for Ghostlands -->
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487
+		&amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557" > <!-- Outlands, but not Ghostlands/Eversong/Silvermoon or Azure/Bloodmyst/Exodar -->
+		<CustomBehavior File="FlyTo" X="-338.0062" Y="969.5461" Z="54.29" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="195139" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" WaitTime="10000" X="-338.0062" Y="969.5461" Z="54.29" />
+	</If>
+	
+	<If Condition="Me.MapId == 1" > <!-- Kalimdor -->
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="Me.ZoneId == 3525 || Me.ZoneId == 3524 || Me.ZoneId == 3557" > <!-- If in Draenei starter area -->
+			<MoveTo X="-4043.154" Y="-11570.57" Z="-138.442" />
+			<CustomBehavior File="InteractWith" MobId="207996" NonCompeteDistance="0" TerminateWhen="Me.ZoneId != 3557" WaitTime="10000" X="-4043.154" Y="-11570.57" Z="-138.442" />
+		</If>
+		<!-- Boat from Darnassus -->
+		<CustomBehavior File="FlyTo" X="8179.11" Y="1002.75" Z="6.817571" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="UseTransport" TransportId="176310"
+			WaitAtX="8179.11" WaitAtY="1002.75" WaitAtZ="6.817571" 
+			TransportStartX="8162.587" TransportStartY="1005.365" TransportStartZ="-0.04571009"
+			TransportEndX="-8650.719" TransportEndY="1346.051" TransportEndZ="0.04218207"
+			StandOnX="8162.587" StandOnY="1005.365" StandOnZ="6.18"
+			GetOffX="-8641.401" GetOffY="1324.443" GetOffZ="5.505301" />
+	</If>
+	
+	<DisableBehavior Name="Pull" />
+
+	<!-- Goldshire - Elwyyn Forest (Warden) -->
+	<While Condition="!IsQuestCompleted(11816)" >
+		<CustomBehavior File="InteractWith" MobId="25898" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11816)" WaitTime="1000"
+			X="-9396.608" Y="23.8935" Z="59.17491" />
+		<If Condition="!IsQuestCompleted(11816)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Moonbrook - Westfall (Warden) -->
+	<While Condition="!IsQuestCompleted(11583)" >
+		<CustomBehavior File="InteractWith" MobId="25910" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11583)" WaitTime="1000"
+			X="-10847.26" Y="1452.622" Z="42.06357" />
+		<If Condition="!IsQuestCompleted(11583)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Grom'Gol Base Camp - N STV (Extinguish) -->
+	<While Condition="!IsQuestCompleted(28911)" >
+		<CustomBehavior File="InteractWith" MobId="207983" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(28911)" WaitTime="1000"
+			X="-12436.95" Y="75.21933" Z="5.542328" />
+		<If Condition="!IsQuestCompleted(28911)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Fort Livingston - N STV (Warden) -->
+	<While Condition="!IsQuestCompleted(28922)" >
+		<CustomBehavior File="InteractWith" MobId="51574" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(28922)" WaitTime="1000"
+			X="-12757.08" Y="-389.9047" Z="13.39248" />
+		<If Condition="!IsQuestCompleted(28922)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Booty Bay - Cape of STV (Warden) -->
+	<While Condition="!IsQuestCompleted(11832)" >
+		<CustomBehavior File="InteractWith" MobId="25915" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11832)" WaitTime="1000"
+			X="-14300.95" Y="60.82663" Z="1.416853" />
+		<If Condition="!IsQuestCompleted(11832)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+	
+	<!-- Booty Bay - Cape of STV (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11801)" >
+		<CustomBehavior File="InteractWith" MobId="187951" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11801)" WaitTime="1000"
+			X="-14375.23" Y="113.0657" Z="2.908114" />
+		<If Condition="!IsQuestCompleted(11801)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Darkshire - Duskwood (Warden) -->
+	<While Condition="!IsQuestCompleted(11814)" >
+		<CustomBehavior File="InteractWith" MobId="25896" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11814)" WaitTime="1000"
+			X="-10705.7" Y="-1151.751" Z="24.92626" />
+		<If Condition="!IsQuestCompleted(11814)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Nethergarde Keep - Blasted Lands (Warden) -->
+	<While Condition="!IsQuestCompleted(11808)" >
+		<CustomBehavior File="InteractWith" MobId="25890" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11808)" WaitTime="1000"
+			X="-10951.35" Y="-3233.583" Z="41.34812" />
+		<If Condition="!IsQuestCompleted(11808)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+	
+	<!-- Dreadmaul Hold - Blasted Lands (Extinguish) -->
+	<While Condition="!IsQuestCompleted(28917)" >
+		<CustomBehavior File="InteractWith" MobId="207989" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(28917)" WaitTime="1000"
+			X="-10921.27" Y="-2893.351" Z="11.93715" />
+		<If Condition="!IsQuestCompleted(28917)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Bogpaddle - Swamp of Sorrows (Warden) -->
+	<While Condition="!IsQuestCompleted(28929)" >
+		<CustomBehavior File="InteractWith" MobId="51602" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(28929)" WaitTime="1000"
+			X="-9793.199" Y="-3841.107" Z="21.90276" />
+		<If Condition="!IsQuestCompleted(28929)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Bogpaddle - Swamp of Sorrows (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11781)" >
+		<CustomBehavior File="InteractWith" MobId="187969" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11781)" WaitTime="1000"
+			X="-9774.787" Y="-4006.944" Z="21.85628" />
+		<If Condition="!IsQuestCompleted(11781)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Lakeshire - Redridge (Warden) -->
+	<While Condition="!IsQuestCompleted(11822)" >
+		<CustomBehavior File="InteractWith" MobId="25904" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11822)" WaitTime="1000"
+			X="-9430.941" Y="-2121.163" Z="66.00724" />
+		<If Condition="!IsQuestCompleted(11822)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Morgan's Vigil - Burning Steppes (Warden) -->
+	<While Condition="!IsQuestCompleted(11810)" >
+		<CustomBehavior File="InteractWith" MobId="25892" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11810)" WaitTime="1000"
+			X="-8258.638" Y="-2613.956" Z="133.1685" />
+		<If Condition="!IsQuestCompleted(11810)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Flame Crest - Burning Steppes (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11768)" >
+		<CustomBehavior File="InteractWith" MobId="187956" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11768)" WaitTime="1000"
+			X="-7603.103" Y="-2089.311" Z="126.3132" />
+		<If Condition="!IsQuestCompleted(11768)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Dragon's Mount - Badlands (Warden) -->
+	<While Condition="!IsQuestCompleted(28925)" >
+		<CustomBehavior File="InteractWith" MobId="51585" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(28925)" WaitTime="1000"
+			X="-7000.593" Y="-2483.417" Z="242.0782" />
+		<If Condition="!IsQuestCompleted(28925)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+	
+	<!-- New Kargath - Badlands (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11766)" >
+		<CustomBehavior File="InteractWith" MobId="187954" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11766)" WaitTime="1000"
+			X="-6613.916" Y="-2646.739" Z="266.2849" />
+		<If Condition="!IsQuestCompleted(11766)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Kharanos - Dun Morogh (Warden) -->
+	<While Condition="!IsQuestCompleted(11813)" >
+		<CustomBehavior File="InteractWith" MobId="25895" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11813)" WaitTime="1000"
+			X="-5418.707" Y="-501.8575" Z="396.2868" />
+		<If Condition="!IsQuestCompleted(11813)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+	
+	<!-- Thelsamar - Loch Modan (Warden) -->
+	<While Condition="!IsQuestCompleted(11820)" >
+		<CustomBehavior File="InteractWith" MobId="25902" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11820)" WaitTime="1000"
+			X="-5244.096" Y="-2885.374" Z="339.0984" />
+		<If Condition="!IsQuestCompleted(11820)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Menethil Harbor - Wetlands (Warden) -->
+	<While Condition="!IsQuestCompleted(11828)" >
+		<CustomBehavior File="InteractWith" MobId="25911" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11828)" WaitTime="1000"
+			X="-3448.197" Y="-949.9843" Z="9.171152" />
+		<If Condition="!IsQuestCompleted(11828)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Bloodgulch - Twilight Highlands (Extinguish) -->
+	<While Condition="!IsQuestCompleted(28944)" >
+		<CustomBehavior File="InteractWith" MobId="208090" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(28944)" WaitTime="1000"
+			X="-3791.64" Y="-5248.958" Z="36.48092" />
+		<If Condition="!IsQuestCompleted(28944)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Thundermar - Twilight Highlands (Warden) -->
+	<While Condition="!IsQuestCompleted(28945)" >
+		<CustomBehavior File="InteractWith" MobId="51650" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(28945)" WaitTime="1000"
+			X="-3176.559" Y="-4928.955" Z="130.656" />
+		<If Condition="!IsQuestCompleted(28945)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Refuge Point - Arathi Highlands (Warden) -->
+	<While Condition="!IsQuestCompleted(11804)" >
+		<CustomBehavior File="InteractWith" MobId="25887" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11804)" WaitTime="1000"
+			X="-1204.281" Y="-2669.047" Z="44.75145" />
+		<If Condition="!IsQuestCompleted(11804)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Hammerfall - Arathi Highlands (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11764)" >
+		<CustomBehavior File="InteractWith" MobId="187947" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11764)" WaitTime="1000"
+			X="-1134.003" Y="-3524.209" Z="50.52457" />
+		<If Condition="!IsQuestCompleted(11764)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Revantusk Village - Hinterlands (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11784)" >
+		<CustomBehavior File="InteractWith" MobId="187972" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11784)" WaitTime="1000"
+			X="-446.8757" Y="-4521.858" Z="9.64745" />
+		<If Condition="!IsQuestCompleted(11784)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Aerie Peak - Hinterlands (Warden) -->
+	<While Condition="!IsQuestCompleted(11826)" >
+		<CustomBehavior File="InteractWith" MobId="25908" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11826)" WaitTime="1000"
+			X="177.7917" Y="-2129.253" Z="103.0328" />
+		<If Condition="!IsQuestCompleted(11826)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+	
+	<!-- Tarren Mill - Hillsbrad Foothills (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11776)" >
+		<CustomBehavior File="InteractWith" MobId="187964" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11776)" WaitTime="1000"
+			X="-134.2014" Y="-795.8675" Z="55.81349" />
+		<If Condition="!IsQuestCompleted(11776)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+	
+	<!-- Sepulcher - Silverpine Forest (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11580)" >
+		<CustomBehavior File="InteractWith" MobId="187559" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11580)" WaitTime="1000"
+			X="580.934" Y="1362.335" Z="90.37743" />
+		<If Condition="!IsQuestCompleted(11580)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Brill - Tirisfal Glades (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11786)" >
+		<CustomBehavior File="InteractWith" MobId="187974" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11786)" WaitTime="1000"
+			X="2269.7" Y="453.4776" Z="34.01701" />
+		<If Condition="!IsQuestCompleted(11786)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Undercity Extinguish Horde Bonfire -->
+	<While Condition="!IsQuestCompleted(9326) &amp;&amp; !HasItem(23181)" >
+		<CustomBehavior File="InteractWith" MobId="181335" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(9326) || HasItem(23181)" WaitTime="1000"
+			X="1828.865" Y="214.7762" Z="60.50576" />
+	</While>
+
+	<!-- The Bulwark - WPL (Extinguish) -->
+	<While Condition="!IsQuestCompleted(28918)" >
+		<CustomBehavior File="InteractWith" MobId="207990" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(28918)" WaitTime="1000"
+			X="1756.942" Y="-836.0293" Z="60.08029" />
+		<If Condition="!IsQuestCompleted(28918)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<!-- Chillwind Camp - WPL (Warden) -->
+	<While Condition="!IsQuestCompleted(11827)" >
+		<CustomBehavior File="InteractWith" MobId="25909" NonCompeteDistance="0" PreInteractMountStrategy="None"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11827)" WaitTime="1000"
+			X="1008.811" Y="-1455.936" Z="61.5415" />
+		<If Condition="!IsQuestCompleted(11827)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+	
+	<If Condition="Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487 &amp;&amp; (!IsQuestCompleted(11774) || !IsQuestCompleted(11772))" >
+		<CustomBehavior File="FlyTo" X="3462.215" Y="-4469.596" Z="137.1948" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="Misc\InInstance" X="3471.249" Y="-4484.958" Z="137.3143" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" />
+	</If>
+				
+	<!-- Tranquillien - Ghostlands (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11774)" >
+		<CustomBehavior File="InteractWith" MobId="187962" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11774)" WaitTime="1000"
+			X="7699.538" Y="-6836.705" Z="77.23497" MovementBy="NavigatorPreferred" />
+		<If Condition="!IsQuestCompleted(11774)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+	
+	<!-- North Sanctum - Eversong Woods (Extinguish) -->
+	<While Condition="!IsQuestCompleted(11772)" >
+		<CustomBehavior File="InteractWith" MobId="187960" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="NoClear" TerminateWhen="IsQuestCompleted(11772)" WaitTime="1000"
+			X="9388.901" Y="-6767.721" Z="15.1333" MovementBy="NavigatorPreferred" />
+		<If Condition="!IsQuestCompleted(11772)" >
+			<CustomBehavior File="Misc\RunLua" Lua="QuestFrameCompleteQuestButton:Click()" WaitTime="1000" />
+		</If>
+	</While>
+
+	<If Condition="!IsQuestCompleted(11935) &amp;&amp; !HasItem(35568)" >
+		<CustomBehavior File="UserDialog" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="1"
+			Text="Make your way into Silvermoon and get the fire from in there, since flight is not possible, you should do this manually." />
+	</If>
+	
+	<If Condition="HasItem(35568) &amp;&amp; (!HasQuest(11935) &amp;&amp; !IsQuestCompleted(11935))" >
+		<PickUp QuestName="Stealing Silvermoon's Flame" QuestId="11935" GiverType="Item" GiverId="35568" />
+	</If>
+	
+	<If Condition="HasItem(23181) &amp;&amp; (!HasQuest(9326) &amp;&amp; !IsQuestCompleted(9326))" >
+		<PickUp QuestName="Stealing Undercity's Flame" QuestId="9326" GiverType="Item" GiverId="23181" />
+	</If>
+
+</QuestOrder>
+</HBProfile>

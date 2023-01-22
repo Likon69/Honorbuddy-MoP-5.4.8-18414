@@ -1,0 +1,342 @@
+<HBProfile>
+	<Name>Lost and Found ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>200</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<QuestOrder IgnoreCheckpoints="True" >
+
+<CustomBehavior File="Message" Text="Checking Your Achievements..." LogColor="Green" />
+
+<!-- Starting Achievement Grind -->
+
+<CustomBehavior File="Message" Text="Beginning the Lost and Found Achievement Grind." LogColor="Green"  />
+
+<While Condition="!IsQuestCompleted(31397) || !IsQuestCompleted(31307) || !IsQuestCompleted(31284) ||
+			!IsQuestCompleted(31292) || !IsQuestCompleted(31409) || !IsQuestCompleted(31411) ||
+			!IsQuestCompleted(31433) || !IsQuestCompleted(31432) || !IsQuestCompleted(31438) ||
+			!IsQuestCompleted(31417) || !IsQuestCompleted(31403) || !IsQuestCompleted(31425) ||
+			!IsQuestCompleted(31436) || !IsQuestCompleted(31431) || !IsQuestCompleted(31434) ||
+			!IsQuestCompleted(31437) || !IsQuestCompleted(31435) || !IsQuestCompleted(31429) ||
+			!IsQuestCompleted(31304) || !IsQuestCompleted(31399) || !IsQuestCompleted(31402) ||
+			!IsQuestCompleted(31406) || !IsQuestCompleted(31407) || !IsQuestCompleted(31410) ||
+			!IsQuestCompleted(31413) || !IsQuestCompleted(31412) || !IsQuestCompleted(31421) ||
+			!IsQuestCompleted(31430)" >
+
+<!-- Jade Forest -->
+
+<!-- Wodin's Mantid Shanker -->
+	<If Condition="!IsQuestCompleted(31397)">
+		<CustomBehavior File="FlyTo" X="3316.01" Y="-1296.73" Z="202.62" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<CustomBehavior File="InteractWith" MobId="213363" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213363) == null || IsQuestCompleted(31397)" WaitTime="3000" />
+	</If>
+
+<!-- Hammer of Ten Thunders -->
+	<If Condition="!IsQuestCompleted(31403)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213742) != null || IsQuestCompleted(31403)" X="3112.61" Y="-1549.65" Z="228.08" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213742) != null || IsQuestCompleted(31403)" X="3004.97" Y="-1423.80" Z="262.66" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213742) != null || IsQuestCompleted(31403)" X="2837.26" Y="-1468.56" Z="291.07" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="213742" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213742) == null || IsQuestCompleted(31403)" WaitTime="2000" />
+	</If>
+	
+<!-- Ancient Pandaren Mining Pick -->
+	<If Condition="!IsQuestCompleted(31399)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213364) != null || IsQuestCompleted(31399)" X="2295.99" Y="-1765.99" Z="234.47" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<CustomBehavior File="InteractWith" MobId="213364" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213364) == null || IsQuestCompleted(31399)" WaitTime="2000" />
+	</If>
+
+<!-- Jade Infused Blade -->
+	<If Condition="!IsQuestCompleted(31307)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Unit(64272) != null || IsQuestCompleted(31307)" X="1483.69" Y="-1282.93" Z="246.25" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<CustomBehavior File="InteractWith" MobId="64272" InteractByGossipOptions="1" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Unit(64272) == null || IsQuestCompleted(31307)" WaitTime="2000" />
+	</If>
+	
+<!-- Ancient Jinyu Staff -->
+	<If Condition="!IsQuestCompleted(31402)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213741) != null || IsQuestCompleted(31402)" X="644.80" Y="-1677.94" Z="40.23" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213741) != null || IsQuestCompleted(31402)" X="655.81" Y="-1726.32" Z="40.72" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213741) != null || IsQuestCompleted(31402)" X="607.455" Y="-1814.003" Z="46.50277" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213741) != null || IsQuestCompleted(31402)" X="510.25" Y="-1828.33" Z="40.15" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213741) != null || IsQuestCompleted(31402)" X="395.15" Y="-1788.52" Z="40.75" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213741) != null || IsQuestCompleted(31402)" X="338.66" Y="-1771.11" Z="40.87" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MovementBy="ClickToMoveOnly" MobId="213741" NonCompeteDistance="0" PreInteractMountStrategy="Dismount"
+			ProactiveCombatStrategy="ClearMobsTargetingUs" CollectionDistance="200"
+			TerminateWhen="Object(213741) == null || IsQuestCompleted(31402)" WaitTime="2000" />
+	</If>
+
+<!-- Valley of the Four Winds -->
+
+<!-- Ancient Pandaren Fishing Charm -->
+	<If Condition="!IsQuestCompleted(31284)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Unit(64004) != null || IsQuestCompleted(31284)" X="452.09" Y="841.98" Z="145.50" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<CustomBehavior File="InteractWith" MobId="64004" InteractByGossipOptions="1" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Unit(64004) == null || IsQuestCompleted(31284)" WaitTime="2000" />
+	</If>
+
+<!-- Ancient Pandaren Woodcutter -->
+	<If Condition="!IsQuestCompleted(31292)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Unit(64191) != null || IsQuestCompleted(31292)" X="76.77" Y="886.74" Z="174.93" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<CustomBehavior File="InteractWith" MobId="64191" InteractByGossipOptions="1" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Unit(64191) == null || IsQuestCompleted(31292)" WaitTime="2000" />
+	</If>
+	
+<!-- Cache of Pilfered Goods -->
+	<If Condition="!IsQuestCompleted(31406)">
+		<CustomBehavior File="FlyTo" X="15.99" Y="977.94" Z="166.88" />
+		<CustomBehavior File="ForcedDismount" />
+		<MoveTo X="87.39" Y="997.56" Z="135.14" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<CustomBehavior File="InteractWith" MobId="213649" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213649) == null || IsQuestCompleted(31406)" WaitTime="2000" />
+	</If>
+	
+<!-- Staff of the Hidden Master -->
+	<If Condition="!IsQuestCompleted(31407)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213749) != null || IsQuestCompleted(31407)" X="-8.89" Y="1940.84" Z="143.18" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213749) != null || IsQuestCompleted(31407)" X="113.70" Y="1925.74" Z="148.11" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213749) != null || IsQuestCompleted(31407)" X="167.40" Y="1993.30" Z="152.07" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213749) != null || IsQuestCompleted(31407)" X="214.86" Y="2085.25" Z="162.46" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213749) != null || IsQuestCompleted(31407)" X="331.09" Y="2065.47" Z="178.59" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="213749" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213749) == null || IsQuestCompleted(31407)" WaitTime="2000" />
+	</If>
+
+<!-- Krasarang Wilds -->
+
+<!-- Pandaren Fishing Spear -->
+	<If Condition="!IsQuestCompleted(31409)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213653) != null || IsQuestCompleted(31409)" X="-1648.84" Y="571.90" Z="1.58" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<CustomBehavior File="InteractWith" MobId="213653" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213653) == null || IsQuestCompleted(31409)" WaitTime="2000" />
+	</If>
+
+<!-- Barrel of Banana Infused Rum -->
+	<If Condition="!IsQuestCompleted(31411)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(214439) != null || IsQuestCompleted(31411)" X="-2891.46" Y="502.24" Z="85.00" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="214439" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(214439) == null || IsQuestCompleted(31411)" WaitTime="2000" />
+	</If>
+
+<!-- Equipment Locker -->
+	<If Condition="!IsQuestCompleted(31410)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213651) != null || IsQuestCompleted(31410)" X="-3000.81" Y="949.64" Z="13.31" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="213651" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213651) == null || IsQuestCompleted(31410)" WaitTime="2000" />
+	</If>
+
+<!-- Dread Wastes -->
+
+<!-- Wind-Reaver's Dagger of Quick Strikes -->
+	<If Condition="!IsQuestCompleted(31429)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213962) != null || IsQuestCompleted(31429)" X="126.17" Y="2296.30" Z="202.68" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="213962" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213962) == null || IsQuestCompleted(31429)" WaitTime="2000" />
+	</If>
+
+<!-- Blade of the Prime -->
+	<If Condition="!IsQuestCompleted(31433)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213967) != null || IsQuestCompleted(31433)" X="-78.765" Y="4601.393" Z="81.11" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<CustomBehavior File="InteractWith" MobId="213967" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213967) == null || IsQuestCompleted(31433)" WaitTime="2000" />
+	</If>
+
+<!-- Swarming Cleaver of Ka'roz -->
+	<If Condition="!IsQuestCompleted(31434)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213968) != null || IsQuestCompleted(31434)" X="-1355.98" Y="3105.03" Z="0.1" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<CustomBehavior File="InteractWith" MobId="213968" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213968) == null || IsQuestCompleted(31434)" WaitTime="2000" />
+		<CustomBehavior File="AscendInWater" />
+	</If>
+
+<!-- Swarmkeeper's Medallion -->
+	<If Condition="!IsQuestCompleted(31437)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213971) != null || IsQuestCompleted(31437)" X="-594.93" Y="3236.25" Z="146.99" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="213971" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213971) == null || IsQuestCompleted(31437)" WaitTime="2000" />
+	</If>
+
+<!-- Manipulator's Talisman -->
+	<If Condition="!IsQuestCompleted(31432)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Unit(65552) != null || IsQuestCompleted(31432)" X="-935.97" Y="3836.065" Z="12.56" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Unit(65552) != null || IsQuestCompleted(31432)" X="-786.71" Y="3862.54" Z="18.55" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Unit(65552) != null || IsQuestCompleted(31432)" X="-803.78" Y="4002.68" Z="11.32" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Unit(65552) != null || IsQuestCompleted(31432)" X="-943.437" Y="3934.32" Z="8.31" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="65552" InteractByGossipOptions="1" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Unit(65552) == null || IsQuestCompleted(31432)" WaitTime="2000" />
+	</If>
+
+<!-- Dissector's Staff of Mutation -->
+	<If Condition="!IsQuestCompleted(31435)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213969) != null || IsQuestCompleted(31435)" X="-1824.11" Y="4521.07" Z="47.48" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<CustomBehavior File="InteractWith" MobId="213969" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213969) == null || IsQuestCompleted(31435)" WaitTime="2000" />
+	</If>
+
+<!-- Bloodsoaked Chitin Fragment -->
+	<If Condition="!IsQuestCompleted(31436)">
+		<CustomBehavior File="FlyTo" X="-513.56" Y="4748.80" Z="0.1" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="MyCTM" X="-527.85" Y="4754.66" Z="-45.77" />
+		<CustomBehavior File="MyCTM" X="-458.43" Y="4761.94" Z="-47.75" />
+		<CustomBehavior File="MyCTM" X="-414.95" Y="4766.26" Z="-31.38" />
+		<CustomBehavior File="MyCTM" X="-389.32" Y="4746.65" Z="-30.02" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<CustomBehavior File="InteractWith" MobId="213970" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213970) == null || IsQuestCompleted(31436)" WaitTime="2000" />
+		<CustomBehavior File="MyCTM" X="-389.32" Y="4746.65" Z="-30.02" />
+		<CustomBehavior File="MyCTM" X="-414.95" Y="4766.26" Z="-31.38" />
+		<CustomBehavior File="MyCTM" X="-458.43" Y="4761.94" Z="-47.75" />
+		<CustomBehavior File="MyCTM" X="-527.85" Y="4754.66" Z="-45.77" />
+		<CustomBehavior File="AscendInWater" />
+	</If>
+
+<!-- Blade of the Poisoned Mind -->
+	<If Condition="!IsQuestCompleted(31438)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213972) != null || IsQuestCompleted(31438)" X="-78.765" Y="4601.393" Z="81.11" />
+		<CustomBehavior File="WaitTimer" WaitTime="3000" />
+		<CustomBehavior File="InteractWith" MobId="213972" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213972) == null || IsQuestCompleted(31438)" WaitTime="2000" />
+	</If>
+
+<!-- Lucid Amulet of the Agile Mind -->
+	<If Condition="!IsQuestCompleted(31431)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213966) != null || IsQuestCompleted(31431)" X="-349.28" Y="4373.64" Z="230.54" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="213966" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213966) == null || IsQuestCompleted(31431)" WaitTime="2000" />
+	</If>
+	
+<!-- Malik's Stalwart Spear -->
+	<If Condition="!IsQuestCompleted(31430)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213964) != null || IsQuestCompleted(31430)" X="354.73" Y="3526.75" Z="231.13" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="213964" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213964) == null || IsQuestCompleted(31430)" WaitTime="2000" />
+	</If>
+
+<!-- Townlong Steppes -->
+
+<!-- Yaungol Fire Carrier -->
+	<If Condition="!IsQuestCompleted(31425)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213960) != null || IsQuestCompleted(31425)" X="2844.91" Y="3272.24" Z="433.80" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213960) != null || IsQuestCompleted(31425)" X="2722.45" Y="3242.38" Z="429.13" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="213960" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213960) == null || IsQuestCompleted(31425)" WaitTime="2000" />
+	</If>
+
+<!-- Kun-Lai Summit -->
+
+<!-- Kafa Press -->
+	<If Condition="!IsQuestCompleted(31304)">
+		<CustomBehavior File="FlyTo" X="2364.12" Y="2492.21" Z="683.89" />
+		<MoveTo X="2411.62" Y="2627.94" Z="667.32" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="64227" InteractByGossipOptions="1" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Unit(64227) == null || IsQuestCompleted(31304)" WaitTime="2000" />
+	</If>
+
+<!-- Tablet of Ren Yun -->
+	<If Condition="!IsQuestCompleted(31417)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213765) != null || IsQuestCompleted(31417)" X="3434.76" Y="2036.34" Z="1215.07" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="213765" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213765) == null || IsQuestCompleted(31417)" WaitTime="2000" />
+	</If>
+	
+<!-- Hozen Warrior Spear -->
+	<If Condition="!IsQuestCompleted(31413)">
+		<CustomBehavior File="FlyTo" X="2648.05" Y="1530.75" Z="637.31" />
+		<CustomBehavior File="ForcedDismount" />
+		<MoveTo X="2568.64" Y="1606.34" Z="621.18" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="213768" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213768) == null || IsQuestCompleted(31413)" WaitTime="2000" />
+	</If>
+	
+<!-- Sturdy Yaungol Spear -->
+	<If Condition="!IsQuestCompleted(31421)">
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213842) != null || IsQuestCompleted(31421)" X="2999.16" Y="377.06" Z="500.04" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="FlyTo" TerminateWhen="Object(213842) != null || IsQuestCompleted(31421)" X="2949.81" Y="454.33" Z="510.34" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="213842" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213842) == null || IsQuestCompleted(31421)" WaitTime="2000" />
+	</If>
+	
+<!-- Sprite's Cloth Chest -->
+	<If Condition="!IsQuestCompleted(31412)">
+		<CustomBehavior File="FlyTo" X="2558.23" Y="276.66" Z="491.81" />
+		<CustomBehavior File="ForcedDismount" />
+		<MoveTo X="2514.13" Y="134.82" Z="473.50" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" />
+		<CustomBehavior File="InteractWith" MobId="213751" NonCompeteDistance="0" PreInteractMountStrategy="Dismount" ProactiveCombatStrategy="ClearMobsTargetingUs"
+			CollectionDistance="200" TerminateWhen="Object(213751) == null || IsQuestCompleted(31412)" WaitTime="2000" />
+	</If>
+</While>
+
+<CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="All supported items are, or have been, obtained." />
+
+</QuestOrder>
+</HBProfile>

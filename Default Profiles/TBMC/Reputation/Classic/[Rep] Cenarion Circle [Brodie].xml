@@ -1,0 +1,172 @@
+<HBProfile>
+	
+	<Name>Cenarion Circle Rep Grind ($Rev$)</Name>
+
+	<MinLevel>60</MinLevel>
+	<MaxLevel>100</MaxLevel>
+
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+	<MinDurability>0.2</MinDurability>
+
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>True</MailPurple>
+
+	<SellGrey>True</SellGrey>
+	<SellWhite>True</SellWhite>
+	<SellGreen>True</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+	
+	<TargetElites>True</TargetElites>
+	
+	<Vendors>
+		<!-- Cenarion Hold -->
+		<Vendor Nav="Fly" Name="Vargus" Entry="15176" Type="Repair" X="-6860.931" Y="753.0439" Z="42.47256" />
+	</Vendors>
+
+
+	<Mailboxes>
+		<!-- Cenarion Hold -->
+		<Mailbox X="-6837.049" Y="735.4683" Z="41.95308" />
+	</Mailboxes>
+
+<QuestOrder>
+
+	<If Condition="Me.MapId == 870" > <!-- If in Pandaria, use portal to Exodar/Orgrimmar -->
+		<If Condition="Me.IsAlliance" >
+			<If Condition="Me.Location.Distance(new WoWPoint(827.6292, 179.0341, 519.5684)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="862.3105" Y="283.7128" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="UserSettings" UseMount="False" />
+			<If Condition="!IsAchievementCompleted(4926)" > <!-- Bloodmyst Isle -->
+				<CustomBehavior File="InteractWith" MobId="215117" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+			<Else>
+				<CustomBehavior File="InteractWith" MobId="215116" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="827.6292" Y="179.0341" Z="519.5684" />
+			</Else>
+			</If>
+		</If>
+		<If Condition="Me.IsHorde" >
+			<If Condition="Me.Location.Distance(new WoWPoint(1730.643, 922.8421, 470.7326)) &gt;= 100" >
+				<CustomBehavior File="FlyTo" X="1618.411" Y="922.8421" Z="503.678" />
+				<CustomBehavior File="ForcedDismount" />
+			</If>
+			<CustomBehavior File="UserSettings" UseMount="False" />
+			<CustomBehavior File="InteractWith" MobId="215127" NonCompeteDistance="0" TerminateWhen="Me.MapId != 870" X="1732.343" Y="881.7467" Z="487.0864" />
+		</If>
+		<CustomBehavior File="UserSettings" UseMount="True" />
+	</If>
+	
+	<If Condition="Me.MapId == 571" >
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="5725.88" Y="729.7267" Z="641.7689" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="190960" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5725.88" Y="729.7267" Z="641.7689" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="5881.809" Y="574.0649" Z="650" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="191009" NonCompeteDistance="0" TerminateWhen="Me.MapId != 571" X="5881.809" Y="574.0649" Z="650" />
+		</If>
+	</If>
+	
+	<If Condition="Me.MapId == 530 &amp;&amp; Me.ZoneId != 3525 &amp;&amp; Me.ZoneId != 3524 &amp;&amp; Me.ZoneId != 3557
+			&amp;&amp; Me.ZoneId != 3430 &amp;&amp; Me.ZoneId != 3433 &amp;&amp; Me.ZoneId != 3487" > <!-- Outlands, but not Azure/Bloodmyst/Exodar or Ghostlands/Eversong/Silvermoon -->
+		<If Condition="Me.IsAlliance" >
+			<CustomBehavior File="FlyTo" X="-338.0062" Y="969.5461" Z="54.29" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="195139" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-338.0062" Y="969.5461" Z="54.29" />
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="-163.8283" Y="973.4586" Z="54.29" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" MobId="195140" NonCompeteDistance="0" TerminateWhen="Me.MapId != 530" X="-163.8283" Y="973.4586" Z="54.29" />
+		</If>
+	</If>
+
+	<If Condition="Me.MapId == 0" > <!-- Eastern Kingdoms -->
+		<If Condition="Me.IsAlliance" >
+			<If Condition="IsQuestCompleted(25316)" > <!-- If Has Hyjal Portal Available -->
+				<CustomBehavior File="FlyTo" X="-8211.945" Y="413.7261" Z="117.7627" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" MobId="207692" NonCompeteDistance="0" TerminateWhen="Me.MapId != 0" X="-8211.945" Y="413.7261" Z="117.7627" />
+			<Else> <!-- Boat to Darnassus -->
+				<CustomBehavior File="FlyTo" X="-8641.401" Y="1324.443" Z="5.505301" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="UseTransport" TransportId="176310"
+					WaitAtX="-8641.401" WaitAtY="1324.443" WaitAtZ="5.505301" 
+					TransportStartX="-8650.719" TransportStartY="1346.051" TransportStartZ="0.04218207"
+					TransportEndX="8162.587" TransportEndY="1005.365" TransportEndZ="-0.04571009"
+					StandOnX="-8643.596" StandOnY="1342.503" StandOnZ="6.104574"
+					GetOffX="8179.11" GetOffY="1002.75" GetOffZ="6.817571" />
+			</Else>
+			</If>
+		</If>
+		<If Condition="Me.IsHorde" >
+			<CustomBehavior File="FlyTo" X="2067.239" Y="286.846" Z="97.03265" />
+			<CustomBehavior File="UseTransport" TransportId="164871"
+				WaitAtX="2067.239" WaitAtY="286.846" WaitAtZ="97.03265"
+				TransportStartX="2062.376" TransportStartY="292.998" TransportStartZ="114.973"
+				TransportEndX="1833.509" TransportEndY="-4391.543" TransportEndZ="152.7679"
+				StandOnX="2067.527" StandOnY="296.0905" StandOnZ="97.21635"
+				GetOffX="1842.996" GetOffY="-4393.846" GetOffZ="135.233" /> <!-- Zeppelin to Durotar -->
+		</If>
+	</If>
+
+	<While Condition="Me.GetReputationLevelWith(609) &lt; WoWUnitReaction.Exalted">
+		<CustomBehavior File="FlyTo" X="-6963.522" Y="1067.097" Z="4.543442" />
+		<SetGrindArea>
+			<GrindArea>
+   
+            <TargetMinLevel>50</TargetMinLevel>
+            <TargetMaxLevel>63</TargetMaxLevel>
+   
+            <Factions>16</Factions>
+
+            <Hotspots>
+				<Hotspot X="-6966.369" Y="1080.919" Z="4.017647" />
+				<Hotspot X="-7024.142" Y="1094.981" Z="5.049373" />
+				<Hotspot X="-7017.468" Y="1142.6" Z="5.438115" />
+				<Hotspot X="-6987.582" Y="1136.831" Z="9.669967" />
+				<Hotspot X="-6965.417" Y="1166.276" Z="12.27921" />
+				<Hotspot X="-6932.787" Y="1191.09" Z="6.060883" />
+				<Hotspot X="-6977.907" Y="1235.58" Z="0.7611805" />
+				<Hotspot X="-7026.437" Y="1209.779" Z="5.066914" />
+				<Hotspot X="-6756.499" Y="1571.727" Z="4.165117" />
+				<Hotspot X="-6789.414" Y="1614.935" Z="4.071483" />
+				<Hotspot X="-6789.091" Y="1663.923" Z="6.164947" />
+				<Hotspot X="-6734.286" Y="1669.093" Z="5.886408" />
+				<Hotspot X="-6688.111" Y="1642.237" Z="8.865636" />
+				<Hotspot X="-6689.179" Y="1571.012" Z="6.649788" />
+				<Hotspot X="-6720.144" Y="1597.95" Z="15.31017" />
+            </Hotspots>
+
+			</GrindArea>
+		</SetGrindArea>
+		<GrindTo Condition="GetItemCount(20404) &gt;= 50" GoalText="Collecting Encrypted Texts" />
+		
+		<If Condition="!HasQuest(8318) &amp;&amp; !IsQuestCompleted(8318)" >
+			<PickUp Nav="Fly" QuestName="Secret Communication" QuestId="8318" GiverName="Bor Wildmane" GiverId="15306" />
+		</If>
+		
+		<If Condition="HasQuest(8318) &amp;&amp; IsQuestCompleted(8318)" >
+			<TurnIn Nav="Fly" QuestName="Secret Communication" QuestId="8318" TurnInName="Bor Wildmane" TurnInId="15306" />
+		</If>
+		
+		<While Condition="GetItemCount(20404) &gt; 10" >
+			<CustomBehavior File="FlyTo" X="-6819.152" Y="823.5208" Z="49.59235" />
+			<CustomBehavior File="InteractWith" MobId="15306" NonCompeteDistance="0" WaitTime="1000" X="-6823.387" Y="826.2274" Z="49.46825" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteButton" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestFrameCompleteQuestButton" WaitTime="1000" />
+		</While>
+	</While>
+	
+	<CustomBehavior File="Message" Text="Congrats on hitting exalted! Profile will terminate." LogColor="Orange" />
+	<CustomBehavior File="Halt" />
+
+</QuestOrder>
+</HBProfile>

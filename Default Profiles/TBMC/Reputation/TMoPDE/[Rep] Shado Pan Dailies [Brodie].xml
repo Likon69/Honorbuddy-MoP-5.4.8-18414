@@ -1,0 +1,1266 @@
+<HBProfile>
+	<Name>Shado Pan Dailies ($Rev$)</Name>
+	<MinLevel>90</MinLevel>
+	<MaxLevel>100</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Nav="Fly" Name="Rushi the Fox" Entry="64595" Type="Repair" X="1855.37" Y="4272.19" Z="148.87" />
+	</Vendors>
+  
+	<AvoidMobs>
+		<Mob Name="Shan Bu" Entry="62441" />
+	</AvoidMobs>
+   
+	<Blackspots>
+		<!--<Blackspot X="1337.77" Y="2655.481" Z="429.9347" Radius="500" Height="200" />-->
+		<Blackspot X="2896.737" Y="3431.529" Z="377.3549" Radius="4.5" />
+		<Blackspot X="2960.7" Y="3420.746" Z="394.5116" Radius="10.57025" />
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- Bronze Claws -->
+	<Quest Id="31044" Name="Bronze Claws"> 
+		<Objective Type="CollectItem" ItemId="83153" CollectCount="20">
+			<CollectFrom>
+				<Mob Name="Bronze Quilen" Id="62266" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="3691.14" Y="5117.74" Z="9.73" />
+				<Hotspot X="3774.12" Y="5105.92" Z="9.81" />
+				<Hotspot X="3676.34" Y="5194.92" Z="8.97" />
+				<Hotspot X="3563.73" Y="5260.09" Z="9.88" />
+				<Hotspot X="3537.21" Y="5267.66" Z="10.65" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Onyx Hearts -->
+	<Quest Id="31042" Name="Onyx Hearts"> 
+		<Objective Type="CollectItem" ItemId="83138" CollectCount="4">
+			<CollectFrom>
+				<Mob Name="Onyx Stormclaw" Id="62448" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="4211.47" Y="5673.92" Z="106.30" />
+				<Hotspot X="4236.49" Y="5686.93" Z="100.45" />
+				<Hotspot X="4212.76" Y="5746.95" Z="104.96" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- The Deadtalker's Cipher -->
+	<Quest Id="31118" Name="The Deadtalker's Cipher"> 
+		<Objective Type="CollectItem" ItemId="84759" CollectCount="1">
+			<CollectFrom>
+				<Mob Name="Deadtalker Crusher" Id="62844" />
+				<Mob Name="Deadtalker Corpsedefiler" Id="62677" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="2687.02" Y="4065.49" Z="173.45" />
+				<Hotspot X="2601.25" Y="4056.40" Z="172.48" />
+				<Hotspot X="2601.26" Y="4180.15" Z="175.75" />
+				<Hotspot X="2565.28" Y="4124.66" Z="173.11" />
+				<Hotspot X="2530.28" Y="4081.34" Z="179.64" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- The Bigger They Come -->
+	<Quest Id="31197" Name="The Bigger They Come"> 
+		<Objective Type="KillMob" MobId="63687" MobId2="63688" MobId3="63685" MobId4="63686" MobId5="63684" KillCount="4">
+			<Hotspots>
+				<Hotspot X="2508.38" Y="5831.94" Z="72.15" />
+				<Hotspot X="2576.12" Y="5736.31" Z="72.13" />
+				<Hotspot X="2652.91" Y="5713.95" Z="68.05" />
+				<Hotspot X="2514.09" Y="5720.09" Z="69.45" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Sra'vess Wetwork -->
+	<Quest Id="31196" Name="Sra'vess Wetwork"> 
+		<Objective Type="KillMob" MobId="63677" KillCount="15">
+			<Hotspots>
+				<Hotspot X="2467.07" Y="5742.06" Z="66.53" />
+				<Hotspot X="2440.97" Y="5736.50" Z="64.03" />
+				<Hotspot X="2445.47" Y="5779.24" Z="70.08" />
+				<Hotspot X="2393.08" Y="5797.11" Z="69.35" />
+				<Hotspot X="2436.20" Y="5836.58" Z="69.06" />
+				<Hotspot X="2388.97" Y="5851.72" Z="66.39" />
+				<Hotspot X="2344.40" Y="5872.64" Z="63.98" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Spirit Dust -->
+	<Quest Id="31116" Name="Spirit Dust"> 
+		<Objective Type="CollectItem" ItemId="84727" CollectCount="32">
+			<CollectFrom>
+				<Mob Name="Defiled Spirit" Id="62679" />
+			</CollectFrom>
+			<Hotspots>
+				<Hotspot X="2687.02" Y="4065.49" Z="173.45" />
+				<Hotspot X="2601.25" Y="4056.40" Z="172.48" />
+				<Hotspot X="2601.26" Y="4180.15" Z="175.75" />
+				<Hotspot X="2565.28" Y="4124.66" Z="173.11" />
+				<Hotspot X="2530.28" Y="4081.34" Z="179.64" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Assault Deadtalker's Plateau -->
+	<Quest Id="31114" Name="Assault Deadtalker's Plateau"> 
+		<Objective Type="KillMob" MobId="62677" KillCount="8">
+			<Hotspots>
+				<Hotspot X="2687.02" Y="4065.49" Z="173.45" />
+				<Hotspot X="2601.25" Y="4056.40" Z="172.48" />
+				<Hotspot X="2601.26" Y="4180.15" Z="175.75" />
+				<Hotspot X="2565.28" Y="4124.66" Z="173.11" />
+				<Hotspot X="2530.28" Y="4081.34" Z="179.64" />
+			</Hotspots>
+		</Objective>
+		<Objective Type="KillMob" MobId="62844" KillCount="1">
+			<Hotspots>
+				<Hotspot X="2687.02" Y="4065.49" Z="173.45" />
+				<Hotspot X="2601.25" Y="4056.40" Z="172.48" />
+				<Hotspot X="2601.26" Y="4180.15" Z="175.75" />
+				<Hotspot X="2565.28" Y="4124.66" Z="173.11" />
+				<Hotspot X="2530.28" Y="4081.34" Z="179.64" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Illusions Of The Past -->
+	<Quest Id="31045" Name="Illusions Of The Past"> 
+		<Objective Type="KillMob" MobId="62440" KillCount="3">
+			<Hotspots>
+				<Hotspot X="3713.76" Y="5361.51" Z="142.39" />
+				<Hotspot X="3882.47" Y="5390.64" Z="178.36" />
+				<Hotspot X="3872.07" Y="5455.88" Z="169.96" />
+				<Hotspot X="3771.04" Y="5422.97" Z="152.23" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- Spiteful Sprites -->
+	<Quest Id="31040" Name="Spiteful Sprites"> 
+		<Objective Type="KillMob" MobId="62457" MobId2="62520" KillCount="30">
+			<Hotspots>
+				<Hotspot X="3879.35" Y="5765.18" Z="121.78" />
+				<Hotspot X="3839.63" Y="5734.77" Z="117.23" />
+				<Hotspot X="3803.20" Y="5782.15" Z="112.34" />
+				<Hotspot X="3760.73" Y="5758.66" Z="108.08" />
+				<Hotspot X="3726.90" Y="5705.11" Z="104.49" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- The Mogu Menace -->
+	<Quest Id="31106" Name="The Mogu Menace"> 
+		<Objective Type="KillMob" MobId="62293" KillCount="12">
+			<Hotspots>
+				<Hotspot X="3691.14" Y="5117.74" Z="9.73" />
+				<Hotspot X="3774.12" Y="5105.92" Z="9.81" />
+				<Hotspot X="3676.34" Y="5194.92" Z="8.97" />
+				<Hotspot X="3563.73" Y="5260.09" Z="9.88" />
+				<Hotspot X="3537.21" Y="5267.66" Z="10.65" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- The Mogu Menace -->
+	<Quest Id="31105" Name="The Mogu Menace"> 
+		<Objective Type="KillMob" MobId="62293" KillCount="12">
+			<Hotspots>
+				<Hotspot X="3691.14" Y="5117.74" Z="9.73" />
+				<Hotspot X="3774.12" Y="5105.92" Z="9.81" />
+				<Hotspot X="3676.34" Y="5194.92" Z="8.97" />
+				<Hotspot X="3563.73" Y="5260.09" Z="9.88" />
+				<Hotspot X="3537.21" Y="5267.66" Z="10.65" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- The Mogu Menace -->
+	<Quest Id="31039" Name="The Mogu Menace"> 
+		<Objective Type="KillMob" MobId="62293" KillCount="12">
+			<Hotspots>
+				<Hotspot X="3691.14" Y="5117.74" Z="9.73" />
+				<Hotspot X="3774.12" Y="5105.92" Z="9.81" />
+				<Hotspot X="3676.34" Y="5194.92" Z="8.97" />
+				<Hotspot X="3563.73" Y="5260.09" Z="9.88" />
+				<Hotspot X="3537.21" Y="5267.66" Z="10.65" />
+			</Hotspots>
+		</Objective>
+	</Quest>
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<CustomBehavior File="RunMacro" Macro="/script SetCVar('AutoLootDefault', 1)" NumOfTimes="1" WaitTime="1000" />
+	<CustomBehavior File="EnablePlugin" Names="Anti Drown" />
+
+	<!-- If I am in EK, take the SW portal -->
+	<If Condition="(Me.MapId == 0 &amp;&amp; Me.IsAlliance)" >
+		<CustomBehavior File="FlyTo" DestName="SW Portal" X="-8199.441" Y="529.3228" Z="117.0738" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="215457" Range="4" X="-8194.479" Y="528.1129" Z="117.2901" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+	</If>
+
+	<If Condition=" (Me.MapId == 1 &amp;&amp; Me.IsHorde)" >
+		<CustomBehavior File="FlyTo" DestName="Org Portal" X="2013.813" Y="-4699.559" Z="28.61817" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" MobId="215424" Range="4.75" X="2014.819" Y="-4700.274" Z="28.62439" />
+		<CustomBehavior File="WaitTimer" WaitTime="10000" GoalText="Waiting for port {TimeRemaining}" />
+	</If>
+
+	<CustomBehavior File="Message" Text="Compiling Shado Pan Quests..." LogColor="Green" />
+
+	<If Condition="((!HasQuest(31106) &amp;&amp; IsQuestCompleted(31106)) ||
+			(!HasQuest(31105) &amp;&amp; IsQuestCompleted(31105)) ||
+			(!HasQuest(31039) &amp;&amp; IsQuestCompleted(31039)) ||
+			(!HasQuest(31048) &amp;&amp; IsQuestCompleted(31048)) ||
+			(!HasQuest(31045) &amp;&amp; IsQuestCompleted(31045)) ||
+			(!HasQuest(31044) &amp;&amp; IsQuestCompleted(31044)) ||
+			(!HasQuest(31042) &amp;&amp; IsQuestCompleted(31042)) ||
+			(!HasQuest(31043) &amp;&amp; IsQuestCompleted(31043)) ||
+			(!HasQuest(31047) &amp;&amp; IsQuestCompleted(31047)) ||
+			(!HasQuest(31061) &amp;&amp; IsQuestCompleted(31061)) ||
+			(!HasQuest(31062) &amp;&amp; IsQuestCompleted(31062)) ||
+			(!HasQuest(31117) &amp;&amp; IsQuestCompleted(31117)) ||
+			(!HasQuest(31113) &amp;&amp; IsQuestCompleted(31113)) ||
+			(!HasQuest(31204) &amp;&amp; IsQuestCompleted(31204)) ||
+			(!HasQuest(31203) &amp;&amp; IsQuestCompleted(31203)) ||
+			(!HasQuest(31201) &amp;&amp; IsQuestCompleted(31201)) ||
+			(!HasQuest(31114) &amp;&amp; IsQuestCompleted(31114)) ||
+			(!HasQuest(31040) &amp;&amp; IsQuestCompleted(31040)) ||
+			(!HasQuest(31118) &amp;&amp; IsQuestCompleted(31118)) ||
+			(!HasQuest(31119) &amp;&amp; IsQuestCompleted(31119)) ||
+			(!HasQuest(31041) &amp;&amp; IsQuestCompleted(31041)) ||
+			(!HasQuest(31046) &amp;&amp; IsQuestCompleted(31046)) ||
+			(!HasQuest(31049) &amp;&amp; IsQuestCompleted(31049)) ||
+			(!HasQuest(31116) &amp;&amp; IsQuestCompleted(31116)) ||
+			(!HasQuest(31196) &amp;&amp; IsQuestCompleted(31196)) ||
+			(!HasQuest(31197) &amp;&amp; IsQuestCompleted(31197)) ||
+			(!HasQuest(31198) &amp;&amp; IsQuestCompleted(31198)) ||
+			(!HasQuest(31199) &amp;&amp; IsQuestCompleted(31199)) ||
+			(!HasQuest(31200) &amp;&amp; IsQuestCompleted(31200)) ||
+			(!HasQuest(31120) &amp;&amp; IsQuestCompleted(31120)))" >
+		<CustomBehavior File="Message" Text="Previously Completed Quests Detected" LogColor="Green" />
+		<CustomBehavior File="UserDialog" ExpiryTime="30" ExpiryAction="InputEnabled_Continue" AllowBotStop="True" SoundCue="Exclamation" SoundCueInterval="3" Text="WARNING: Previously completed quests detected! \n\n Either you have done some of you quests already, and have restarted the bot...\n OR your cache folder is NOT clean, and must be deleted, and bot restarted." />
+	</If>
+
+<!-- Checking if you have a quest. If you do, start, if not, fly to The Garrison -->
+	<If Condition="!HasQuest(31106) &amp;&amp; !HasQuest(31044) &amp;&amp; !HasQuest(31045) &amp;&amp;
+			!HasQuest(31048) &amp;&amp; !HasQuest(31062) &amp;&amp; !HasQuest(31127) &amp;&amp; 
+			!HasQuest(31113) &amp;&amp; !HasQuest(31114) &amp;&amp; !HasQuest(31118) &amp;&amp;
+			!HasQuest(31119) &amp;&amp; !HasQuest(31105) &amp;&amp; !HasQuest(31039) &amp;&amp; 
+			!HasQuest(31120) &amp;&amp; !HasQuest(31040) &amp;&amp; !HasQuest(31041) &amp;&amp;
+			!HasQuest(31049) &amp;&amp; !HasQuest(31116) &amp;&amp; !HasQuest(31117) &amp;&amp;
+			!HasQuest(31220) &amp;&amp; !HasQuest(31196) &amp;&amp; !HasQuest(31198) &amp;&amp;
+			!HasQuest(31199) &amp;&amp; !HasQuest(31197) &amp;&amp; !HasQuest(31200) &amp;&amp;
+			!HasQuest(31104) &amp;&amp; !HasQuest(31266) &amp;&amp; !HasQuest(30201) &amp;&amp;
+			!HasQuest(31061)" >
+		<CustomBehavior File="Message" Text="Starting Shado Pan Dailies, moving to The Garrison." LogColor="Green" />
+		<CustomBehavior File="FlyTo" DestName="The Garrison" X="1853.202" Y="4261.375" Z="148.8664" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+	</If>
+
+<!-- Starting Quests -->
+
+<CustomBehavior File="Message" Text="Beginning Shado Pan Quests." LogColor="Green" />
+
+<!-- Ban Bearheart -->
+	<If Condition="HasQuestAvailable(62304)" >
+		<While Condition="HasQuestAvailable(62304)" >
+			<CustomBehavior File="InteractWith" MobId="62304" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click GossipTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+
+		<If Condition="!IsAchievementCompleted(7298, 1)" >
+			<CustomBehavior File="InteractWith" MobId="62354" X="1870.94" Y="4276.80" Z="149.50" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		<ElseIf Condition="!IsAchievementCompleted(7298, 4) &amp;&amp; IsQuestCompleted(31038)" >	
+			<CustomBehavior File="InteractWith" MobId="62380" X="1873.87" Y="4268.60" Z="149.50" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="!IsAchievementCompleted(7298, 7) &amp;&amp; IsQuestCompleted(31104)" >
+			<CustomBehavior File="InteractWith" MobId="62303" X="1877.03" Y="4273.26" Z="149.52" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="(Random(100) &lt; 33) &amp;&amp; IsQuestCompleted(31104)" >
+			<CustomBehavior File="InteractWith" MobId="62303" X="1877.03" Y="4273.26" Z="149.52" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="(Random(100) &lt; 66) &amp;&amp; IsQuestCompleted(31038)" >
+			<CustomBehavior File="InteractWith" MobId="62380" X="1873.87" Y="4268.60" Z="149.50" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="InteractWith" MobId="62354" X="1870.94" Y="4276.80" Z="149.50" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		</Else>
+		</If>
+	</If>
+
+<!-- Ling of the Six Pools -->
+	<If Condition="HasQuestAvailable(63614)" >
+		<While Condition="HasQuestAvailable(63614)" >
+			<CustomBehavior File="InteractWith" MobId="63614" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="SelectGossipAvailableQuest(GetNumGossipAvailableQuests())" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+
+		<If Condition="!IsAchievementCompleted(7298, 2)" >
+			<CustomBehavior File="InteractWith" MobId="63617" X="1838.78" Y="4281.86" Z="149.32" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		<ElseIf Condition="!IsAchievementCompleted(7298, 5) &amp;&amp; IsQuestCompleted(31220)" >
+			<CustomBehavior File="InteractWith" MobId="63618" X="1842.04" Y="4264.08" Z="148.88" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="!IsAchievementCompleted(7298, 8) &amp;&amp; IsQuestCompleted(31221)" >
+			<CustomBehavior File="InteractWith" MobId="63616" X="1830.88" Y="4271.50" Z="149.08" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="(Random(100) &lt; 33) &amp;&amp; IsQuestCompleted(31221)" >
+			<CustomBehavior File="InteractWith" MobId="63616" X="1870.94" Y="4276.80" Z="149.50" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="(Random(100) &lt; 66) &amp;&amp; IsQuestCompleted(31220)" >
+			<CustomBehavior File="InteractWith" MobId="63618" X="1842.04" Y="4264.08" Z="148.88" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="InteractWith" MobId="63617" X="1838.78" Y="4281.86" Z="149.32" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		</Else>
+		</If>
+	</If>
+
+<!-- Master Snowdrift -->
+	<If Condition="HasQuestAvailable(63009)" >
+		<While Condition="HasQuestAvailable(63009)" >
+			<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton1" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton2" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton3" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton4" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+			<CustomBehavior File="InteractWith" MobId="63009" InteractByQuestFrameDisposition="Ignore" WaitTime="1000" />
+			<CustomBehavior File="RunMacro" Macro="/click QuestTitleButton5" WaitTime="1000" />
+			<CustomBehavior File="Misc\RunLua" Lua="AcceptQuest()" WaitTime="1000" />
+		</While>
+
+		<If Condition="!IsAchievementCompleted(7298, 3)" >
+			<CustomBehavior File="InteractWith" MobId="62546" X="1845.39" Y="4239.98" Z="148.76" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		<ElseIf Condition="!IsAchievementCompleted(7298, 6) &amp;&amp; IsQuestCompleted(31127)" >
+			<CustomBehavior File="InteractWith" MobId="62550" X="1859.20" Y="4224.45" Z="150.09" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" Range="5" WaitForNpcs="False" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="!IsAchievementCompleted(7298, 9) &amp;&amp; IsQuestCompleted(31128)" >
+			<CustomBehavior File="InteractWith" MobId="62978" X="1803.88" Y="4247.88" Z="148.80" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="(Random(100) &lt; 33) &amp;&amp; IsQuestCompleted(31128)" >
+			<CustomBehavior File="InteractWith" MobId="62978" X="1803.88" Y="4247.88" Z="148.80" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		</ElseIf>
+		<ElseIf Condition="(Random(100) &lt; 66) &amp;&amp; IsQuestCompleted(31127)" >
+			<CustomBehavior File="InteractWith" MobId="62550" X="1859.20" Y="4224.45" Z="150.09" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" Range="5" WaitForNpcs="False" WaitTime="1000" />
+		</ElseIf>
+		<Else>
+			<CustomBehavior File="InteractWith" MobId="62546" X="1845.39" Y="4239.98" Z="148.76" InteractByQuestFrameDisposition="Ignore" InteractByGossipOptions="1" NonCompeteDistance="0" WaitForNpcs="False" WaitTime="1000" />
+		</Else>
+		</If>
+	</If>
+
+<!-- The Challenger's Ring: Lao-Chin the Iron Belly -->
+	<If Condition="HasQuest(31128) &amp;&amp; !IsQuestCompleted(31128)" >
+		<CustomBehavior File="Message" Text="Starting The Challenger's Ring: Lao-Chin the Iron Belly" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="1842.04" Y="4264.08" Z="148.88" />
+		<CustomBehavior File="InteractWith" QuestId="31128" QuestObjectiveIndex="1" NumOfTimes="100" MobId="62978" InteractByGossipOptions="1" PreInteractDismountStrategy="Dismount" X="1803.88" Y="4247.88" Z="148.80" />
+		<CustomBehavior File="FlyTo" X="1946.56" Y="4194.15" Z="138.47" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="31128" MobId="63135" InteractByGossipOptions="1" NumOfTimes="100" X="1959.65" Y="4175.24" Z="138.47" />
+		<CustomBehavior File="FlyTo" X="1831.925" Y="4258.577" Z="149.2426" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn Nav="Fly" QuestName="The Challenger's Ring: Lao-Chin the Iron Belly" QuestId="31128" TurnInName="Master Snowdrift" TurnInId="63009" />
+		<CustomBehavior File="LoadProfile" ProfileName="[Rep] Shado Pan Dailies [Brodie]" />
+	</If>
+
+<!-- The Challenger's Ring: Tenwu of the Red Smoke -->
+	<If Condition="HasQuest(31221) &amp;&amp; !IsQuestCompleted(31221)" >
+		<CustomBehavior File="Message" Text="Starting The Challenger's Ring: Tenwu of the Red Smoke" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="1842.04" Y="4264.08" Z="148.88" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="31221" QuestObjectiveIndex="1" MobId="63616" InteractByGossipOptions="1" NumOfTimes="100" X="1830.88" Y="4271.50" Z="149.08" />
+		<CustomBehavior File="FlyTo" X="1946.56" Y="4194.15" Z="138.47" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(31221)" >
+			<CustomBehavior File="InteractWith" WaitForNpcs="False" MobId="64471" InteractByGossipOptions="1" X="1935.40" Y="4171.55" Z="138.47" />
+		</While>
+		<CustomBehavior File="FlyTo" X="1831.925" Y="4258.577" Z="149.2426" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn Nav="Fly" QuestName="The Challenger's Ring: Tenwu of the Red Smoke" QuestId="31221" TurnInName="Ling of the Six Pools" TurnInId="63614" />
+		<CustomBehavior File="LoadProfile" ProfileName="[Rep] Shado Pan Dailies [Brodie]" />
+	</If>
+
+<!-- The Challenger's Ring: Hawkmaster Nurong -->
+	<If Condition="HasQuest(31220) &amp;&amp; !IsQuestCompleted(31220)" >
+		<CustomBehavior File="Message" Text="Starting The Challenger's Ring: Hawkmaster Nurong" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="1842.04" Y="4264.08" Z="148.88" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="31220" QuestObjectiveIndex="1" MobId="63618" InteractByGossipOptions="1" NumOfTimes="100" X="1842.04" Y="4264.08" Z="148.88" />
+		<CustomBehavior File="FlyTo" X="1946.56" Y="4194.15" Z="138.47" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(31220)" >
+			<CustomBehavior File="InteractWith" WaitForNpcs="False" MobId="64470" InteractByGossipOptions="1" X="1947.71" Y="4166.86" Z="138.47" />
+		</While>
+		<CustomBehavior File="FlyTo" X="1831.925" Y="4258.577" Z="149.2426" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn Nav="Fly" QuestName="The Challenger's Ring: Hawkmaster Nurong" QuestId="31220" TurnInName="Ling of the Six Pools" TurnInId="63614" />
+		<CustomBehavior File="LoadProfile" ProfileName="[Rep] Shado Pan Dailies [Brodie]" />
+	</If>
+
+<!-- The Challenger's Ring: Chao the Voice -->
+	<If Condition="HasQuest(31127) &amp;&amp; !IsQuestCompleted(31127)" >
+		<CustomBehavior File="Message" Text="Starting The Challenger's Ring: Chao the Voice" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="1857.414" Y="4227.181" Z="148.7653" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsObjectiveComplete(1,31127)" >
+			<CustomBehavior File="InteractWith" MobId="62550" InteractByGossipOptions="1" X="1859.20" Y="4224.45" Z="150.09" />
+		</While>
+		<CustomBehavior File="FlyTo" X="1946.56" Y="4194.15" Z="138.47" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(31127)" >
+			<CustomBehavior File="InteractWith" WaitForNpcs="False" MobId="63125" InteractByGossipOptions="1" X="1943.82" Y="4198.97" Z="138.47" />
+		</While>
+		<CustomBehavior File="FlyTo" X="1857.414" Y="4227.181" Z="148.7653" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn Nav="Fly" QuestName="The Challenger's Ring: Chao the Voice" QuestId="31127" TurnInName="Master Snowdrift" TurnInId="63009" />
+		<CustomBehavior File="LoadProfile" ProfileName="[Rep] Shado Pan Dailies [Brodie]" />
+	</If>
+
+<!-- The Challenger's Ring: Yalia Sagewhisper -->
+	<If Condition="HasQuest(31104) &amp;&amp; !IsQuestCompleted(31104)" >
+		<CustomBehavior File="Message" Text="Starting The Challenger's Ring: Yalia Sagewhisper" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="1857.414" Y="4227.181" Z="148.7653" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsObjectiveComplete(1,31104)" >
+			<CustomBehavior File="InteractWith" MobId="62303" InteractByGossipOptions="1" X="1877.03" Y="4273.26" Z="149.52" />
+		</While>
+		<CustomBehavior File="FlyTo" X="1946.56" Y="4194.15" Z="138.47" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(31104)" >
+			<CustomBehavior File="InteractWith" WaitForNpcs="False" MobId="62850" InteractByGossipOptions="1" X="1964.84" Y="4186.96" Z="138.47" />
+		</While>
+		<CustomBehavior File="FlyTo" X="1857.414" Y="4227.181" Z="148.7653" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn Nav="Fly" QuestName="The Challenger's Ring: Yalia Sagewhisper" QuestId="31104" TurnInName="Ban Bearheart" TurnInId="62304" />
+		<CustomBehavior File="LoadProfile" ProfileName="[Rep] Shado Pan Dailies [Brodie]" />
+	</If>
+
+<!-- The Challenger's Ring: Snow Blossom -->
+	<If Condition="HasQuest(31038) &amp;&amp; !IsQuestCompleted(31038)" >
+		<CustomBehavior File="Message" Text="Starting The Challenger's Ring: Snow Blossom" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="1857.414" Y="4227.181" Z="148.7653" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="31038" QuestObjectiveIndex="1" MobId="62380" InteractByGossipOptions="1" X="1873.87" Y="4268.60" Z="149.50" />
+		<CustomBehavior File="FlyTo" X="1946.56" Y="4194.15" Z="138.47" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="31038" QuestObjectiveIndex="2" MobId="62834" InteractByGossipOptions="1" X="1956.37" Y="4195.84" Z="138.47" />
+		<CustomBehavior File="FlyTo" X="1857.414" Y="4227.181" Z="148.7653" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn Nav="Fly" QuestName="The Challenger's Ring: Snow Blossom" QuestId="31038" TurnInName="Ban Bearheart" TurnInId="62304" />
+		<CustomBehavior File="LoadProfile" ProfileName="[Rep] Shado Pan Dailies [Brodie]" />
+	</If>
+
+<!-- Friends, Not Food -->
+	<If Condition="HasQuest(31201) &amp;&amp; !IsQuestCompleted(31201)" >
+		<CustomBehavior File="Message" Text="Starting Friends, Not Food" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<While Condition="!IsQuestCompleted(31201)" >
+			<If Condition="!IsObjectiveComplete(1, 30201)" >
+				<CustomBehavior File="FlyTo" X="2510.26" Y="6041.46" Z="55.22" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" QuestId="31201" MobId="64461" ProactiveCombatStrategy="NoClear" InteractByGossipOptions="1" PreInteractMountStrategy="Dismount" NonCompeteDistance="0" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsObjectiveComplete(2, 30201)" >
+				<CustomBehavior File="FlyTo" X="2381.62" Y="6078.68" Z="54.32" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" QuestId="31201" MobId="64460" ProactiveCombatStrategy="NoClear" InteractByGossipOptions="1" PreInteractMountStrategy="Dismount" NonCompeteDistance="0" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsObjectiveComplete(3, 30201)" >
+				<CustomBehavior File="FlyTo" X="2336.98" Y="6065.93" Z="54.23" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="InteractWith" QuestId="31201" MobId="64459" ProactiveCombatStrategy="NoClear" InteractByGossipOptions="1" PreInteractMountStrategy="Dismount" NonCompeteDistance="0" WaitForNpcs="False" />
+			</If>
+		</While>
+		<CustomBehavior File="FlyTo" X="2491.74" Y="5949.21" Z="91.05" />
+	</If>
+
+<!-- Destroy the Siege Weapons -->
+ 	<If Condition="HasQuest(31199) &amp;&amp; !IsQuestCompleted(31199)" >
+		<CustomBehavior File="Message" Text="Starting Destroy the Siege Weapons" LogColor="Green" />
+		<If Condition="!IsObjectiveComplete(2,31199)" >
+			<CustomBehavior File="FlyTo" X="2450.843" Y="5500.398" Z="83.84156" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" QuestId="31199" QuestObjectiveIndex="2" ProactiveCombatStrategy="ClearMobsTargetingUs" MobId="213308" 
+				NumOfTimes="100" CollectionDistance="200" X="2460.637" Y="5504.174" Z="82.54575" />
+		</If>
+		<If Condition="!IsObjectiveComplete(1,31199)" >
+			<CustomBehavior File="FlyTo" X="2510.925" Y="5609.593" Z="71.19161" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" QuestId="31199" QuestObjectiveIndex="1" ProactiveCombatStrategy="ClearMobsTargetingUs" MobId="213307" 
+				NumOfTimes="100" CollectionDistance="200" X="2506.641" Y="5599.797" Z="70.86126" />
+		</If>
+		<If Condition="!IsObjectiveComplete(3,31199)" >
+			<CustomBehavior File="FlyTo" X="2971.075" Y="5517.408" Z="62.43878" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" QuestId="31199" QuestObjectiveIndex="3" ProactiveCombatStrategy="ClearMobsTargetingUs" MobId="213310"
+				NumOfTimes="100" CollectionDistance="200" X="2983.526" Y="5517.333" Z="62.43768" />
+		</If>
+		<If Condition="!IsObjectiveComplete(4,31199)" >
+			<CustomBehavior File="FlyTo" X="3034.689" Y="5576.127" Z="75.41873" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" QuestId="31199" QuestObjectiveIndex="4" ProactiveCombatStrategy="ClearMobsTargetingUs" MobId="213311"
+				NumOfTimes="100" CollectionDistance="200" X="3029.808" Y="5582.784" Z="75.59239" />
+		</If>
+		<EnableBehavior Name="Pull" />
+	</If>
+
+<!-- A Morale Victory -->
+ 	<If Condition="HasQuest(31198) &amp;&amp; !IsQuestCompleted(31198)">
+		<CustomBehavior File="Message" Text="Starting A Morale Victory" LogColor="Green" />
+		<If Condition="!IsObjectiveComplete(2,31198)" >
+			<CustomBehavior File="FlyTo" X="2805.021" Y="6154.779" Z="75.1567" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" QuestId="31198" QuestObjectiveIndex="2" MobId="213305" Range="5" CollectionDistance="200" 
+				NonCompeteDistance="0" NMumOfTimes="100" WaitTime="1000" />
+		</If>
+		<If Condition="!IsObjectiveComplete(1,31198)" >
+			<CustomBehavior File="FlyTo" X="2435.171" Y="5721.392" Z="63.7044" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" QuestId="31198" QuestObjectiveIndex="1" Range="5" MobId="213304" CollectionDistance="200" 
+				NonCompeteDistance="0" NMumOfTimes="100" WaitTime="1000" />
+		</If>
+		<If Condition="!IsObjectiveComplete(3,31198)" >
+			<CustomBehavior File="FlyTo" X="2678.543" Y="5850.164" Z="106.0402" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" QuestId="31198" QuestObjectiveIndex="3" Range="5" MobId="213309" CollectionDistance="200" 
+				NonCompeteDistance="0" NMumOfTimes="100" WaitTime="1000" />
+		</If>
+		<If Condition="!IsObjectiveComplete(4,31198)" >
+			<CustomBehavior File="FlyTo" X="2952.004" Y="5477.272" Z="68.28373" />
+			<CustomBehavior File="ForcedDismount" />
+			<CustomBehavior File="InteractWith" QuestId="31198" QuestObjectiveIndex="4" Range="5" MobId="213306" CollectionDistance="200" 
+				NonCompeteDistance="0" NMumOfTimes="100" WaitTime="1000" />
+		</If>
+	</If>
+
+<!-- Fumigation -->
+ 	<If Condition="HasQuest(31200) &amp;&amp; !IsQuestCompleted(31200)">
+		<CustomBehavior File="Message" Text="Starting Fumigation" LogColor="Green" />
+		<If Condition="!IsObjectiveComplete(1,31200)" >
+			<CustomBehavior File="FlyTo" X="2800.912" Y="5876.463" Z="138.1241" />
+			<CustomBehavior File="ForcedDismount" />
+			<While Condition="!IsObjectiveComplete(1,31200)" >
+				<RunTo X="2800.912" Y="5876.463" Z="138.1241" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(86532)" WaitTime="2000" />
+			</While>
+		</If>
+		<If Condition="!IsObjectiveComplete(3,31200)" >
+			<CustomBehavior File="FlyTo" X="2849.064" Y="5716.589" Z="126.1583" />
+			<CustomBehavior File="ForcedDismount" />
+			<While Condition="!IsObjectiveComplete(3,31200)" >
+				<RunTo X="2849.064" Y="5716.589" Z="126.1583" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(86532)" WaitTime="2000" />
+			</While>
+		</If>
+		<If Condition="!IsObjectiveComplete(4,31200)" >
+			<CustomBehavior File="FlyTo" X="2970.775" Y="5814.73" Z="81.08456" />
+			<CustomBehavior File="ForcedDismount" />
+			<While Condition="!IsObjectiveComplete(4,31200)" >
+				<RunTo X="2970.775" Y="5814.73" Z="81.08456" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(86532)" WaitTime="2000" />
+			</While>
+		</If>
+		<If Condition="!IsObjectiveComplete(5,31200)" >
+			<CustomBehavior File="FlyTo" X="2906.76" Y="5867.02" Z="127.52" />
+			<CustomBehavior File="ForcedDismount" />
+			<While Condition="!IsObjectiveComplete(5,31200)" >
+				<RunTo X="2905.997" Y="5865.388" Z="127.445" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(86532)" WaitTime="2000" />
+			</While>
+		</If>
+		<If Condition="!IsObjectiveComplete(2,31200)" >
+			<CustomBehavior File="FlyTo" X="2743.37" Y="5703.776" Z="76.66451" />
+			<CustomBehavior File="ForcedDismount" />
+			<While Condition="!IsObjectiveComplete(2,31200)" >
+				<RunTo X="2743.37" Y="5703.776" Z="76.66451" />
+				<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(86532)" WaitTime="2000" />
+			</While>
+		</If>
+	</If>
+
+<!-- The Bigger They Come... -->
+ 	<If Condition="HasQuest(31197) &amp;&amp; !IsQuestCompleted(31197)">
+		<CustomBehavior File="Message" Text="Starting The Bigger They Come" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2517.044" Y="5895.433" Z="72.96153" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective Nav="Fly" QuestName="The Bigger They Come..." QuestId="31197" Type="KillMob" MobId="63687" MobId2="63688" MobId3="63685" MobId4="63686" MobId5="63684" KillCount="4" />
+	</If>
+
+<!-- Sra'vess Wetwork -->
+ 	<If Condition="HasQuest(31196) &amp;&amp; !IsQuestCompleted(31196)">
+		<CustomBehavior File="Message" Text="Starting Sra'vess Wetwork" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2478.149" Y="5715.019" Z="65.05225" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective Nav="Fly" QuestName="Sra'vess Wetwork" QuestId="31196" Type="KillMob" MobId="63677" KillCount="15" />
+	</If>
+
+<!-- Grave Consequences -->
+ 	<If Condition="HasQuest(31048) &amp;&amp; !IsQuestCompleted(31048)">
+		<CustomBehavior File="Message" Text="Starting Grave Consequences" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="3739.57" Y="5383.41" Z="144.41" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="31048" MobId="212324" NumOfTimes="1000" CollectionDistance="1000" />
+	</If>
+
+<!-- Dark Arts -->
+ 	<If Condition="HasQuest(31043) &amp;&amp; !IsQuestCompleted(31043)">
+		<CustomBehavior File="Message" Text="Starting Dark Arts" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="3739.57" Y="5383.41" Z="144.41" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="31043" MobId="212318" NumOfTimes="1000" CollectionDistance="1000" />
+	</If>
+
+<!-- Born Free -->
+ 	<If Condition="HasQuest(31047) &amp;&amp; !IsQuestCompleted(31047)">
+		<CustomBehavior File="Message" Text="Starting Born Free" LogColor="Green" />
+		<UseMount Value="False" />
+		<CustomBehavior File="FlyTo" X="3680.37" Y="5195.96" Z="8.91" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="InteractWith" QuestId="31047" MobId="62539" NumOfTimes="1000" CollectionDistance="1000" Range="2" />
+		<UseMount Value="True" />
+	</If>
+
+<!-- Egg Rescue -->
+ 	<If Condition="HasQuest(31041) &amp;&amp; !IsQuestCompleted(31041)">
+		<CustomBehavior File="Message" Text="Starting Egg Rescue" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="3680.37" Y="5195.96" Z="8.91" />
+		<CustomBehavior File="ForcedDismount" />
+		<CustomBehavior File="CollectThings" ObjectId="212230" ObjectId2="214479" ObjectId3="214480" ObjectId4="214481" CollectUntil="RequiredCountReached" CollectItemCount="8" CollectItemId="83129" NonCompeteDistance="5" PostInteractDelay="1000" HuntingGroundRadius="200" />
+	</If>
+
+<!-- Little Hatchlings -->
+ 	<If Condition="HasQuest(31046) &amp;&amp; !IsQuestCompleted(31046)">
+		<CustomBehavior File="Message" Text="Starting Little Hatchlings" LogColor="Green" />
+		<While Condition="!IsQuestCompleted(31046)">
+			<If Condition="!IsQuestCompleted(31046)">
+				<CustomBehavior File="FlyTo" X="3561.077" Y="5227.29" Z="7.006161" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="SpecificQuests\31046-TownlongSteppes-LittleHatchlings" />
+				<CustomBehavior File="InteractWith" QuestId="31046" MobId21="213578" MobId20="213584" MobId19="213571" MobId18="213572" MobId17="213585" MobId16="213573" MobId15="213583" MobId14="213579" MobId13="213591" MobId12="213586" MobId11="213574" MobId10="213582" MobId9="213575" MobId8="213580" MobId7="213576" MobId6="213581" MobId5="213590" MobId4="213577" MobId3="213589" MobId2="213588" MobId="213587" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsQuestCompleted(31046)">
+				<CustomBehavior File="FlyTo" X="3667.552" Y="5240.583" Z="12.9497" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="SpecificQuests\31046-TownlongSteppes-LittleHatchlings" />
+				<CustomBehavior File="InteractWith" QuestId="31046" MobId21="213578" MobId20="213584" MobId19="213571" MobId18="213572" MobId17="213585" MobId16="213573" MobId15="213583" MobId14="213579" MobId13="213591" MobId12="213586" MobId11="213574" MobId10="213582" MobId9="213575" MobId8="213580" MobId7="213576" MobId6="213581" MobId5="213590" MobId4="213577" MobId3="213589" MobId2="213588" MobId="213587" WaitForNpcs="False" />
+			</If>
+			<If Condition="!IsQuestCompleted(31046)">
+				<CustomBehavior File="FlyTo" X="3646.913" Y="5134.396" Z="11.36216" />
+				<CustomBehavior File="ForcedDismount" />
+				<CustomBehavior File="SpecificQuests\31046-TownlongSteppes-LittleHatchlings" />
+				<CustomBehavior File="InteractWith" QuestId="31046" MobId21="213578" MobId20="213584" MobId19="213571" MobId18="213572" MobId17="213585" MobId16="213573" MobId15="213583" MobId14="213579" MobId13="213591" MobId12="213586" MobId11="213574" MobId10="213582" MobId9="213575" MobId8="213580" MobId7="213576" MobId6="213581" MobId5="213590" MobId4="213577" MobId3="213589" MobId2="213588" MobId="213587" WaitForNpcs="False" />
+			</If>
+		</While>
+	</If>
+
+<!-- Illusions of the Past -->
+ 	<If Condition="HasQuest(31045) &amp;&amp; !IsQuestCompleted(31045)">
+		<CustomBehavior File="Message" Text="Starting Illusions of the Past" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="3738.974" Y="5349.507" Z="145.4" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective Nav="Fly" QuestName="Illusions of the Past" QuestId="31045" Type="KillMob" MobId="62440" KillCount="3" />
+	</If>
+
+<!-- Onyx Hearts -->
+ 	<If Condition="HasQuest(31042) &amp;&amp; !IsQuestCompleted(31042)">
+		<CustomBehavior File="Message" Text="Starting Onyx Hearts" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="4172.657" Y="5678.905" Z="102.5394" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective Nav="Fly" QuestName="Onyx Hearts" QuestId="31042" Type="CollectItem" ItemId="83138" CollectCount="4" />
+	</If>
+
+<!-- Bronze Claws -->
+ 	<If Condition="HasQuest(31044) &amp;&amp; !IsQuestCompleted(31044)">
+		<CustomBehavior File="Message" Text="Starting Bronze Claws" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="3666.193" Y="5267.66" Z="6.1911" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective Nav="Fly" QuestName="Bronze Claws" QuestId="31044" Type="CollectItem" ItemId="83153" CollectCount="20" />
+	</If>
+
+<!-- Spiteful Sprites -->
+ 	<If Condition="HasQuest(31040) &amp;&amp; !IsQuestCompleted(31040)">
+		<CustomBehavior File="Message" Text="Starting Spiteful Sprites" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="3943.4" Y="5696.141" Z="136.2418" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective Nav="Fly" QuestName="Spiteful Sprites" QuestId="31040" Type="KillMob" MobId="62457" MobId2="62520" KillCount="30" />
+	</If>
+
+<!-- The Mogu Menace -->
+ 	<If Condition="HasQuest(31106) &amp;&amp; !IsQuestCompleted(31106) ||
+			HasQuest(31105) &amp;&amp; !IsQuestCompleted(31105) ||
+			HasQuest(31039) &amp;&amp; !IsQuestCompleted(31039)">
+		<CustomBehavior File="Message" Text="Starting The Mogu Menace" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="3666.193" Y="5267.66" Z="6.1911" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="HasQuest(31106)" >
+			<Objective Nav="Fly" QuestName="The Mogu Menace" QuestId="31106" Type="KillMob" MobId="62293" KillCount="12" />
+		</If>
+		<If Condition="HasQuest(31105)" >
+			<Objective Nav="Fly" QuestName="The Mogu Menace" QuestId="31105" Type="KillMob" MobId="62293" KillCount="12" />
+		</If>
+		<If Condition="HasQuest(31039)" >
+			<Objective Nav="Fly" QuestName="The Mogu Menace" QuestId="31039" Type="KillMob" MobId="62293" KillCount="12" />
+		</If>
+	</If>
+
+<!-- The Enemy of My Enemy...Is Still My Enemy -->
+ 	<If Condition="HasQuest(31119) &amp;&amp; !IsQuestCompleted(31119)">
+		<CustomBehavior File="Message" Text="Starting The Enemy of My Enemy...Is Still My Enemy" LogColor="Green" />
+		<DisableBehavior Name="Pull" />
+		<While Condition="!IsQuestCompleted(31119)" >
+			<CustomBehavior File="FlyTo" X="2911.838" Y="3474.233" Z="377.3546" />
+			<EnableBehavior Name="Combat, Rest, Loot" />
+			<CustomBehavior File="InteractWith" QuestId="31119" MobId="212877" Range="5" NonCompeteDistance="0"
+				WaitTime="100" CollectionDistance="2000" WaitForNpcs="False" IgnoreMobsInBlackspots="True"
+				ProactiveCombatStrategy="ClearMobsTargetingUs" PreInteractMountStrategy="Dismount"
+				NumOfTimes="1000" TerminateWhen="GetItemCount(84762) &gt;= 10"
+				X="2911.838" Y="3474.233" Z="377.3546" />
+			<DisableBehavior Name="Pull, Combat, Rest, Loot" />
+			<CustomBehavior File="FlyTo" X="2704.885" Y="3608.939" Z="315.2162" />
+			<While Condition="GetItemCount(84762) &gt; 1 &amp;&amp; !IsQuestCompleted(31119)" >
+				<CustomBehavior File="UseItemTargetLocation" ItemId="84762" UseType="ToObject" ObjectId="62572" Range="100" NumOfTimes="1" WaitTime="5000" />
+			</While>
+		</While>
+		<EnableBehavior Name="Pull, Combat, Rest, Loot" />
+	</If>
+
+<!-- Assault Fire Camp Gai-Cho -->
+ 	<If Condition="HasQuest(31113) &amp;&amp; !IsQuestCompleted(31113)">
+		<CustomBehavior File="Message" Text="Starting Assault Fire Camp Gai-Cho" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2911.838" Y="3474.233" Z="377.3546" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective Nav="Fly" QuestName="Assault Fire Camp Gai-Cho" QuestId="31113" Type="KillMob" MobId="62552" MobId2="62608" MobId3="62553" KillCount="16" X="2885.67" Y="3451.157" Z="377.3565" />
+	</If>
+
+<!-- The Deadtalker's Cipher -->
+ 	<If Condition="HasQuest(31118) &amp;&amp; !IsQuestCompleted(31118)">
+		<CustomBehavior File="Message" Text="Starting The Deadtalker's Cipher" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2681.02" Y="4032.29" Z="174.0606" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective Nav="Fly" QuestName="The Deadtalker's Cipher" QuestId="31118" Type="CollectItem" ItemId="84759" CollectCount="1" />
+	</If>
+
+<!-- Assault Deadtalker's Plateau -->
+ 	<If Condition="HasQuest(31114) &amp;&amp; !IsQuestCompleted(31114)">
+		<CustomBehavior File="Message" Text="Starting Assault Deadtalker's Plateau" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2681.02" Y="4032.29" Z="174.0606" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective Nav="Fly" QuestName="Assault Deadtalker's Plateau" QuestId="31114" Type="KillMob" MobId="62677" KillCount="8" />
+		<Objective Nav="Fly" QuestName="Assault Deadtalker's Plateau" QuestId="31114" Type="KillMob" MobId="62844" KillCount="1" />
+	</If>
+
+<!-- Spirit Dust -->
+ 	<If Condition="HasQuest(31116) &amp;&amp; !IsQuestCompleted(31116)">
+		<CustomBehavior File="Message" Text="Starting Spirit Dust" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2681.02" Y="4032.29" Z="174.0606" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(31116)" >
+			<CustomBehavior File="CollectThings" CollectItemId="84727" CollectItemCount="4" MobId="62679" NonCompeteDistance="5" HuntingGroundRadius="100" />
+			<CustomBehavior File="InteractWith" QuestId="31116" MobId="212779" TerminateWhen="(GetItemCount(84727) &lt; 4)" NumOfTimes="1000" CollectionDistance="1000" />
+		</While>
+	</If>
+
+<!-- Mogu Incursions -->
+ 	<If Condition="HasQuest(31266) &amp;&amp; !IsQuestCompleted(31266)">
+		<CustomBehavior File="Message" Text="Starting Mogu Incursions" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="2314.866" Y="4245.169" Z="176.7085" />
+		<CustomBehavior File="ForcedDismount" />
+		<Objective Nav="Fly" QuestName="Mogu Incursions" QuestId="31266" Type="KillMob" MobId="63888" KillCount="1" X="2312.52" Y="4276.74" Z="178.85" />
+	</If>
+
+<!-- Quest Turn ins -->
+
+	<If Condition="Me.HasAura(122766)" > <!-- Yalia -->
+		<If Condition="HasQuest(31040) &amp;&amp; IsQuestCompleted(31040)" >
+			<TurnIn Nav="Fly" QuestName="Spiteful Sprites" QuestId="31040" TurnInName="Yalia Sagewhisper" TurnInId="62303" />
+		</If>
+		<If Condition="HasQuest(31041) &amp;&amp; IsQuestCompleted(31041)" >
+			<TurnIn Nav="Fly" QuestName="Egg Rescue" QuestId="31041" TurnInName="Yalia Sagewhisper" TurnInId="62303" />
+		</If>
+		<If Condition="HasQuest(31046) &amp;&amp; IsQuestCompleted(31046)" >
+			<TurnIn Nav="Fly" QuestName="Little Hatchlings" QuestId="31046" TurnInName="Yalia Sagewhisper" TurnInId="62303" />
+		</If>
+		<If Condition="HasQuest(31039) &amp;&amp; IsQuestCompleted(31039)" >
+			<TurnIn Nav="Fly" QuestName="The Mogu Menace" QuestId="31039" TurnInName="Yalia Sagewhisper" TurnInId="62303" />
+		</If>
+		<If Condition="HasQuest(31042) &amp;&amp; IsQuestCompleted(31042)" >
+			<TurnIn Nav="Fly" QuestName="Onyx Hearts" QuestId="31042" TurnInName="Yalia Sagewhisper" TurnInId="62303" />
+		</If>
+		<If Condition="HasQuest(31043) &amp;&amp; IsQuestCompleted(31043)" >
+			<TurnIn Nav="Fly" QuestName="Dark Arts" QuestId="31043" TurnInName="Yalia Sagewhisper" TurnInId="62303" />
+		</If>
+		<If Condition="HasQuest(31047) &amp;&amp; IsQuestCompleted(31047)" >
+			<TurnIn Nav="Fly" QuestName="Born Free" QuestId="31047" TurnInName="Yalia Sagewhisper" TurnInId="62303" />
+		</If>
+		<If Condition="HasQuest(31105) &amp;&amp; IsQuestCompleted(31105)" >
+			<TurnIn Nav="Fly" QuestName="The Mogu Menace" QuestId="31105" TurnInName="Yalia Sagewhisper" TurnInId="62303" />
+		</If>
+		<If Condition="HasQuest(31048) &amp;&amp; IsQuestCompleted(31048)" >
+			<TurnIn Nav="Fly" QuestName="Grave Consequences" QuestId="31048" TurnInName="Yalia Sagewhisper" TurnInId="62303" />
+		</If>
+		<If Condition="HasQuest(31045) &amp;&amp; IsQuestCompleted(31045)" >
+			<TurnIn Nav="Fly" QuestName="Illusions of the Past" QuestId="31045" TurnInName="Yalia Sagewhisper" TurnInId="62303" />
+		</If>
+		<If Condition="HasQuest(31044) &amp;&amp; IsQuestCompleted(31044)" >
+			<TurnIn Nav="Fly" QuestName="Bronze Claws" QuestId="31044" TurnInName="Yalia Sagewhisper" TurnInId="62303" />
+		</If>
+		<If Condition="HasQuest(31106) &amp;&amp; IsQuestCompleted(31106)" >
+			<TurnIn Nav="Fly" QuestName="The Mogu Menace" QuestId="31106" TurnInName="Yalia Sagewhisper" TurnInId="62303" />
+		</If>
+	<ElseIf Condition="Me.HasAura(122298)" > <!-- Fei Li -->
+		<If Condition="HasQuest(31040) &amp;&amp; IsQuestCompleted(31040)" >
+			<TurnIn Nav="Fly" QuestName="Spiteful Sprites" QuestId="31040" TurnInName="Fei Li" TurnInId="62354" />
+		</If>
+		<If Condition="HasQuest(31041) &amp;&amp; IsQuestCompleted(31041)" >
+			<TurnIn Nav="Fly" QuestName="Egg Rescue" QuestId="31041" TurnInName="Fei Li" TurnInId="62354" />
+		</If>
+		<If Condition="HasQuest(31046) &amp;&amp; IsQuestCompleted(31046)" >
+			<TurnIn Nav="Fly" QuestName="Little Hatchlings" QuestId="31046" TurnInName="Fei Li" TurnInId="62354" />
+		</If>
+		<If Condition="HasQuest(31039) &amp;&amp; IsQuestCompleted(31039)" >
+			<TurnIn Nav="Fly" QuestName="The Mogu Menace" QuestId="31039" TurnInName="Fei Li" TurnInId="62354" />
+		</If>
+		<If Condition="HasQuest(31042) &amp;&amp; IsQuestCompleted(31042)" >
+			<TurnIn Nav="Fly" QuestName="Onyx Hearts" QuestId="31042" TurnInName="Fei Li" TurnInId="62354" />
+		</If>
+		<If Condition="HasQuest(31043) &amp;&amp; IsQuestCompleted(31043)" >
+			<TurnIn Nav="Fly" QuestName="Dark Arts" QuestId="31043" TurnInName="Fei Li" TurnInId="62354" />
+		</If>
+		<If Condition="HasQuest(31047) &amp;&amp; IsQuestCompleted(31047)" >
+			<TurnIn Nav="Fly" QuestName="Born Free" QuestId="31047" TurnInName="Fei Li" TurnInId="62354" />
+		</If>
+		<If Condition="HasQuest(31105) &amp;&amp; IsQuestCompleted(31105)" >
+			<TurnIn Nav="Fly" QuestName="The Mogu Menace" QuestId="31105" TurnInName="Fei Li" TurnInId="62354" />
+		</If>
+		<If Condition="HasQuest(31048) &amp;&amp; IsQuestCompleted(31048)" >
+			<TurnIn Nav="Fly" QuestName="Grave Consequences" QuestId="31048" TurnInName="Fei Li" TurnInId="62354" />
+		</If>
+		<If Condition="HasQuest(31045) &amp;&amp; IsQuestCompleted(31045)" >
+			<TurnIn Nav="Fly" QuestName="Illusions of the Past" QuestId="31045" TurnInName="Fei Li" TurnInId="62354" />
+		</If>
+		<If Condition="HasQuest(31044) &amp;&amp; IsQuestCompleted(31044)" >
+			<TurnIn Nav="Fly" QuestName="Bronze Claws" QuestId="31044" TurnInName="Fei Li" TurnInId="62354" />
+		</If>
+		<If Condition="HasQuest(31106) &amp;&amp; IsQuestCompleted(31106)" >
+			<TurnIn Nav="Fly" QuestName="The Mogu Menace" QuestId="31106" TurnInName="Fei Li" TurnInId="62354" />
+		</If>
+	</ElseIf>
+	<ElseIf Condition="Me.HasAura(122765)" > <!-- Snow Blossom -->
+		<If Condition="HasQuest(31040) &amp;&amp; IsQuestCompleted(31040)" >
+			<TurnIn Nav="Fly" QuestName="Spiteful Sprites" QuestId="31040" TurnInName="Snow Blossom" TurnInId="62380" />
+		</If>
+		<If Condition="HasQuest(31041) &amp;&amp; IsQuestCompleted(31041)" >
+			<TurnIn Nav="Fly" QuestName="Egg Rescue" QuestId="31041" TurnInName="Snow Blossom" TurnInId="62380" />
+		</If>
+		<If Condition="HasQuest(31046) &amp;&amp; IsQuestCompleted(31046)" >
+			<TurnIn Nav="Fly" QuestName="Little Hatchlings" QuestId="31046" TurnInName="Snow Blossom" TurnInId="62380" />
+		</If>
+		<If Condition="HasQuest(31039) &amp;&amp; IsQuestCompleted(31039)" >
+			<TurnIn Nav="Fly" QuestName="The Mogu Menace" QuestId="31039" TurnInName="Snow Blossom" TurnInId="62380" />
+		</If>
+		<If Condition="HasQuest(31042) &amp;&amp; IsQuestCompleted(31042)" >
+			<TurnIn Nav="Fly" QuestName="Onyx Hearts" QuestId="31042" TurnInName="Snow Blossom" TurnInId="62380" />
+		</If>
+		<If Condition="HasQuest(31043) &amp;&amp; IsQuestCompleted(31043)" >
+			<TurnIn Nav="Fly" QuestName="Dark Arts" QuestId="31043" TurnInName="Snow Blossom" TurnInId="62380" />
+		</If>
+		<If Condition="HasQuest(31047) &amp;&amp; IsQuestCompleted(31047)" >
+			<TurnIn Nav="Fly" QuestName="Born Free" QuestId="31047" TurnInName="Snow Blossom" TurnInId="62380" />
+		</If>
+		<If Condition="HasQuest(31105) &amp;&amp; IsQuestCompleted(31105)" >
+			<TurnIn Nav="Fly" QuestName="The Mogu Menace" QuestId="31105" TurnInName="Snow Blossom" TurnInId="62380" />
+		</If>
+		<If Condition="HasQuest(31048) &amp;&amp; IsQuestCompleted(31048)" >
+			<TurnIn Nav="Fly" QuestName="Grave Consequences" QuestId="31048" TurnInName="Snow Blossom" TurnInId="62380" />
+		</If>
+		<If Condition="HasQuest(31045) &amp;&amp; IsQuestCompleted(31045)" >
+			<TurnIn Nav="Fly" QuestName="Illusions of the Past" QuestId="31045" TurnInName="Snow Blossom" TurnInId="62380" />
+		</If>
+		<If Condition="HasQuest(31044) &amp;&amp; IsQuestCompleted(31044)" >
+			<TurnIn Nav="Fly" QuestName="Bronze Claws" QuestId="31044" TurnInName="Snow Blossom" TurnInId="62380" />
+		</If>
+		<If Condition="HasQuest(31106) &amp;&amp; IsQuestCompleted(31106)" >
+			<TurnIn Nav="Fly" QuestName="The Mogu Menace" QuestId="31106" TurnInName="Snow Blossom" TurnInId="62380" />
+		</If>
+	</ElseIf>
+	<ElseIf Condition="Me.HasAura(124165)" > <!-- Tenwu -->
+		<If Condition="HasQuest(31199) &amp;&amp; IsQuestCompleted(31199)" >
+			<TurnIn Nav="Fly" QuestName="Destroy The Siege Weapons" QuestId="31199" TurnInName="Tenwu of the Red Smoke" TurnInId="63616" />
+		</If>
+		<If Condition="HasQuest(31198) &amp;&amp; IsQuestCompleted(31198)" >
+			<TurnIn Nav="Fly" QuestName="A Morale Victory" QuestId="31198" TurnInName="Tenwu of the Red Smoke" TurnInId="63616" />
+		</If>
+		<If Condition="HasQuest(31197) &amp;&amp; IsQuestCompleted(31197)" >
+			<TurnIn Nav="Fly" QuestName="The Bigger They Come..." QuestId="31197" TurnInName="Tenwu of the Red Smoke" TurnInId="63616" />
+		</If>
+		<If Condition="HasQuest(31196) &amp;&amp; IsQuestCompleted(31196)" >
+			<TurnIn Nav="Fly" QuestName="Sra'vess Wetwork" QuestId="31196" TurnInName="Tenwu of the Red Smoke" TurnInId="63616" />
+		</If>
+		<If Condition="HasQuest(31200) &amp;&amp; IsQuestCompleted(31200)" >
+			<TurnIn Nav="Fly" QuestName="Fumigation" QuestId="31200" TurnInName="Tenwu of the Red Smoke" TurnInId="63616" />
+		</If>
+		<If Condition="HasQuest(31201) &amp;&amp; IsQuestCompleted(31201)" >
+			<TurnIn Nav="Fly" QuestName="Friends, Not Food" QuestId="31201" TurnInName="Tenwu of the Red Smoke" TurnInId="63616" />
+		</If>
+	</ElseIf>
+	<ElseIf Condition="Me.HasAura(124166)" > <!-- Taoshi -->
+		<If Condition="HasQuest(31199) &amp;&amp; IsQuestCompleted(31199)" >
+			<TurnIn Nav="Fly" QuestName="Destroy The Siege Weapons" QuestId="31199" TurnInName="Taoshi" TurnInId="63617" />
+		</If>
+		<If Condition="HasQuest(31198) &amp;&amp; IsQuestCompleted(31198)" >
+			<TurnIn Nav="Fly" QuestName="A Morale Victory" QuestId="31198" TurnInName="Taoshi" TurnInId="63617" />
+		</If>
+		<If Condition="HasQuest(31197) &amp;&amp; IsQuestCompleted(31197)" >
+			<TurnIn Nav="Fly" QuestName="The Bigger They Come..." QuestId="31197" TurnInName="Taoshi" TurnInId="63617" />
+		</If>
+		<If Condition="HasQuest(31196) &amp;&amp; IsQuestCompleted(31196)" >
+			<TurnIn Nav="Fly" QuestName="Sra'vess Wetwork" QuestId="31196" TurnInName="Taoshi" TurnInId="63617" />
+		</If>
+		<If Condition="HasQuest(31200) &amp;&amp; IsQuestCompleted(31200)" >
+			<TurnIn Nav="Fly" QuestName="Fumigation" QuestId="31200" TurnInName="Taoshi" TurnInId="63617" />
+		</If>
+		<If Condition="HasQuest(31201) &amp;&amp; IsQuestCompleted(31201)" >
+			<TurnIn Nav="Fly" QuestName="Friends, Not Food" QuestId="31201" TurnInName="Taoshi" TurnInId="63617" />
+		</If>
+	</ElseIf>
+	<ElseIf Condition="Me.HasAura(124167)" > <!-- Nurong -->
+		<If Condition="HasQuest(31199) &amp;&amp; IsQuestCompleted(31199)" >
+			<TurnIn Nav="Fly" QuestName="Destroy The Siege Weapons" QuestId="31199" TurnInName="Hawkmaster Nurong" TurnInId="63618" />
+		</If>
+		<If Condition="HasQuest(31198) &amp;&amp; IsQuestCompleted(31198)" >
+			<TurnIn Nav="Fly" QuestName="A Morale Victory" QuestId="31198" TurnInName="Hawkmaster Nurong" TurnInId="63618" />
+		</If>
+		<If Condition="HasQuest(31197) &amp;&amp; IsQuestCompleted(31197)" >
+			<TurnIn Nav="Fly" QuestName="The Bigger They Come..." QuestId="31197" TurnInName="Hawkmaster Nurong" TurnInId="63618" />
+		</If>
+		<If Condition="HasQuest(31196) &amp;&amp; IsQuestCompleted(31196)" >
+			<TurnIn Nav="Fly" QuestName="Sra'vess Wetwork" QuestId="31196" TurnInName="Hawkmaster Nurong" TurnInId="63618" />
+		</If>
+		<If Condition="HasQuest(31200) &amp;&amp; IsQuestCompleted(31200)" >
+			<TurnIn Nav="Fly" QuestName="Fumigation" QuestId="31200" TurnInName="Hawkmaster Nurong" TurnInId="63618" />
+		</If>
+		<If Condition="HasQuest(31201) &amp;&amp; IsQuestCompleted(31201)" >
+			<TurnIn Nav="Fly" QuestName="Friends, Not Food" QuestId="31201" TurnInName="Hawkmaster Nurong" TurnInId="63618" />
+		</If>
+	</ElseIf>
+	<ElseIf Condition="Me.HasAura(122830)" > <!-- Chao the Voice -->
+		<If Condition="HasQuest(31113) &amp;&amp; IsQuestCompleted(31113)" >
+			<TurnIn Nav="Fly" QuestName="Assault Fire Camp Gai-Cho" QuestId="31113" TurnInName="Chao the Voice" TurnInId="62550" />
+		</If>
+		<If Condition="HasQuest(31114) &amp;&amp; IsQuestCompleted(31114)" >
+			<TurnIn Nav="Fly" QuestName="Assault Deadtalker's Plateau" QuestId="31114" TurnInName="Chao the Voice" TurnInId="62550" />
+		</If>
+		<If Condition="HasQuest(31118) &amp;&amp; IsQuestCompleted(31118)" >
+			<TurnIn Nav="Fly" QuestName="The Deadtalker's Cipher" QuestId="31118" TurnInName="Chao the Voice" TurnInId="62550" />
+		</If>
+		<If Condition="HasQuest(31119) &amp;&amp; IsQuestCompleted(31119)" >
+			<TurnIn Nav="Fly" QuestName="The Enemy of My Enemy...Is Still My Enemy" QuestId="31119" TurnInName="Chao the Voice" TurnInId="62550" />
+		</If>
+		<If Condition="HasQuest(31116) &amp;&amp; IsQuestCompleted(31116)" >
+			<TurnIn Nav="Fly" QuestName="Spirit Dust" QuestId="31116" TurnInName="Chao the Voice" TurnInId="62550" />
+		</If>
+	</ElseIf>
+	<ElseIf Condition="Me.HasAura(122793)" > <!-- Protector Yi -->
+		<If Condition="HasQuest(31113) &amp;&amp; IsQuestCompleted(31113)" >
+			<TurnIn Nav="Fly" QuestName="Assault Fire Camp Gai-Cho" QuestId="31113" TurnInName="Protector Yi" TurnInId="62811" />
+		</If>
+		<If Condition="HasQuest(31114) &amp;&amp; IsQuestCompleted(31114)" >
+			<TurnIn Nav="Fly" QuestName="Assault Deadtalker's Plateau" QuestId="31114" TurnInName="Protector Yi" TurnInId="62811" />
+		</If>
+		<If Condition="HasQuest(31118) &amp;&amp; IsQuestCompleted(31118)" >
+			<TurnIn Nav="Fly" QuestName="The Deadtalker's Cipher" QuestId="31118" TurnInName="Protector Yi" TurnInId="62811" />
+		</If>
+		<If Condition="HasQuest(31119) &amp;&amp; IsQuestCompleted(31119)" >
+			<TurnIn Nav="Fly" QuestName="The Enemy of My Enemy...Is Still My Enemy" QuestId="31119" TurnInName="Protector Yi" TurnInId="62811" />
+		</If>
+		<If Condition="HasQuest(31116) &amp;&amp; IsQuestCompleted(31116)" >
+			<TurnIn Nav="Fly" QuestName="Spirit Dust" QuestId="31116" TurnInName="Protector Yi" TurnInId="62811" />
+		</If>
+	</ElseIf>
+	<ElseIf Condition="Me.HasAura(123047)" > <!-- Lao-Chin the Iron Belly -->
+		<If Condition="HasQuest(31113) &amp;&amp; IsQuestCompleted(31113)" >
+			<TurnIn Nav="Fly" QuestName="Assault Fire Camp Gai-Cho" QuestId="31113" TurnInName="Lao-Chin the Iron Belly" TurnInId="62978" />
+		</If>
+		<If Condition="HasQuest(31114) &amp;&amp; IsQuestCompleted(31114)" >
+			<TurnIn Nav="Fly" QuestName="Assault Deadtalker's Plateau" QuestId="31114" TurnInName="Lao-Chin the Iron Belly" TurnInId="62978" />
+		</If>
+		<If Condition="HasQuest(31118) &amp;&amp; IsQuestCompleted(31118)" >
+			<TurnIn Nav="Fly" QuestName="The Deadtalker's Cipher" QuestId="31118" TurnInName="Lao-Chin the Iron Belly" TurnInId="62978" />
+		</If>
+		<If Condition="HasQuest(31119) &amp;&amp; IsQuestCompleted(31119)" >
+			<TurnIn Nav="Fly" QuestName="The Enemy of My Enemy...Is Still My Enemy" QuestId="31119" TurnInName="Lao-Chin the Iron Belly" TurnInId="62978" />
+		</If>
+		<If Condition="HasQuest(31116) &amp;&amp; IsQuestCompleted(31116)" >
+			<TurnIn Nav="Fly" QuestName="Spirit Dust" QuestId="31116" TurnInName="Lao-Chin the Iron Belly" TurnInId="62978" />
+		</If>
+	</ElseIf>
+	</If>
+		
+	<CustomBehavior File="Message" Text="Quests Completed. Returning to The Garrison (If Any left)" LogColor="Green" />
+
+	<If Condition="HasQuest(31127) &amp;&amp; IsQuestCompleted(31127)" >
+		<TurnIn Nav="Fly" QuestName="The Challenger's Ring: Chao the Voice" QuestId="31127" TurnInName="Master Snowdrift" TurnInId="63009" />
+	</If>
+
+	<If Condition="HasQuest(31040) &amp;&amp; IsQuestCompleted(31040)" >
+		<TurnIn Nav="Fly" QuestName="Spiteful Sprites" QuestId="31040" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+
+	<If Condition="HasQuest(31041) &amp;&amp; IsQuestCompleted(31041)" >
+		<TurnIn Nav="Fly" QuestName="Egg Rescue" QuestId="31041" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+
+	<If Condition="HasQuest(31046) &amp;&amp; IsQuestCompleted(31046)" >
+		<TurnIn Nav="Fly" QuestName="Little Hatchlings" QuestId="31046" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+
+	<If Condition="HasQuest(31039) &amp;&amp; IsQuestCompleted(31039)" >
+		<TurnIn Nav="Fly" QuestName="The Mogu Menace" QuestId="31039" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+
+	<If Condition="HasQuest(31042) &amp;&amp; IsQuestCompleted(31042)" >
+		<TurnIn Nav="Fly" QuestName="Onyx Hearts" QuestId="31042" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+
+	<If Condition="HasQuest(31043) &amp;&amp; IsQuestCompleted(31043)" >
+		<TurnIn Nav="Fly" QuestName="Dark Arts" QuestId="31043" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+
+	<If Condition="HasQuest(31047) &amp;&amp; IsQuestCompleted(31047)" >
+		<TurnIn Nav="Fly" QuestName="Born Free" QuestId="31047" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+
+	<If Condition="HasQuest(31105) &amp;&amp; IsQuestCompleted(31105)" >
+		<TurnIn Nav="Fly" QuestName="The Mogu Menace" QuestId="31105" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+
+	<If Condition="HasQuest(31048) &amp;&amp; IsQuestCompleted(31048)" >
+		<TurnIn Nav="Fly" QuestName="Grave Consequences" QuestId="31048" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+
+	<If Condition="HasQuest(31045) &amp;&amp; IsQuestCompleted(31045)" >
+		<TurnIn Nav="Fly" QuestName="Illusions of the Past" QuestId="31045" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+
+	<If Condition="HasQuest(31044) &amp;&amp; IsQuestCompleted(31044)" >
+		<TurnIn Nav="Fly" QuestName="Bronze Claws" QuestId="31044" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+
+	<If Condition="HasQuest(31106) &amp;&amp; IsQuestCompleted(31106)" >
+		<TurnIn Nav="Fly" QuestName="The Mogu Menace" QuestId="31106" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+
+	<If Condition="HasQuest(31113) &amp;&amp; IsQuestCompleted(31113)" >
+		<TurnIn Nav="Fly" QuestName="Assault Fire Camp Gai-Cho" QuestId="31113" TurnInName="Master Snowdrift" TurnInId="63009" />
+	</If>
+
+	<If Condition="HasQuest(31114) &amp;&amp; IsQuestCompleted(31114)" >
+		<TurnIn Nav="Fly" QuestName="Assault Deadtalker's Plateau" QuestId="31114" TurnInName="Master Snowdrift" TurnInId="63009" />
+	</If>
+
+	<If Condition="HasQuest(31118) &amp;&amp; IsQuestCompleted(31118)" >
+		<TurnIn Nav="Fly" QuestName="The Deadtalker's Cipher" QuestId="31118" TurnInName="Master Snowdrift" TurnInId="63009" />
+	</If>
+
+	<If Condition="HasQuest(31119) &amp;&amp; IsQuestCompleted(31119)" >
+		<TurnIn Nav="Fly" QuestName="The Enemy of My Enemy...Is Still My Enemy" QuestId="31119" TurnInName="Master Snowdrift" TurnInId="63009" />
+	</If>
+
+	<If Condition="HasQuest(31116) &amp;&amp; IsQuestCompleted(31116)" >
+		<TurnIn Nav="Fly" QuestName="Spirit Dust" QuestId="31116" TurnInName="Master Snowdrift" TurnInId="63009" />
+	</If>
+
+	<If Condition="HasQuest(31199) &amp;&amp; IsQuestCompleted(31199)" >
+		<TurnIn Nav="Fly" QuestName="Destroy The Siege Weapons" QuestId="31199" TurnInName="Ling of the Six Pools" TurnInId="63614" />
+	</If>
+
+	<If Condition="HasQuest(31198) &amp;&amp; IsQuestCompleted(31198)" >
+		<TurnIn Nav="Fly" QuestName="A Morale Victory" QuestId="31198" TurnInName="Ling of the Six Pools" TurnInId="63614" />
+	</If>
+
+	<If Condition="HasQuest(31197) &amp;&amp; IsQuestCompleted(31197)" >
+		<TurnIn Nav="Fly" QuestName="The Bigger They Come..." QuestId="31197" TurnInName="Ling of the Six Pools" TurnInId="63614" />
+	</If>
+
+	<If Condition="HasQuest(31196) &amp;&amp; IsQuestCompleted(31196)" >
+		<TurnIn Nav="Fly" QuestName="Sra'vess Wetwork" QuestId="31196" TurnInName="Ling of the Six Pools" TurnInId="63614" />
+	</If>
+
+	<If Condition="HasQuest(31200) &amp;&amp; IsQuestCompleted(31200)" >
+		<TurnIn Nav="Fly" QuestName="Fumigation" QuestId="31200" TurnInName="Ling of the Six Pools" TurnInId="63614" />
+	</If>
+
+	<If Condition="HasQuest(31201) &amp;&amp; IsQuestCompleted(31201)" >
+		<TurnIn Nav="Fly" QuestName="Friends, Not Food" QuestId="31201" TurnInName="Ling of the Six Pools" TurnInId="63614" />
+	</If>
+
+<!-- Phase 2 -->
+
+<!-- In Sprite of Everything -->
+ 	<If Condition="HasQuest(31049) &amp;&amp; !IsQuestCompleted(31049)">
+		<CustomBehavior File="Message" Text="Starting In Sprite of Everything" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="In Sprite of Everything" QuestId="31049" Type="KillMob" MobId="62522" KillCount="1" X="4027.17" Y="5957.67" Z="86.81" />
+	</If>
+
+<!-- When The Dead Speak -->
+ 	<If Condition="HasQuest(31062) &amp;&amp; !IsQuestCompleted(31062)">
+		<CustomBehavior File="Message" Text="Starting When The Dead Speak" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="When The Dead Speak" QuestId="31062" Type="KillMob" MobId="62559" KillCount="1" X="4192.98" Y="5221.21" Z="156.99" />
+	</If>
+
+<!-- Uruk -->
+ 	<If Condition="HasQuest(31117) &amp;&amp; !IsQuestCompleted(31117)">
+		<CustomBehavior File="Message" Text="Starting Uruk" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Uruk" QuestId="31117" Type="KillMob" MobId="62613" KillCount="1" X="2684.48" Y="4186.59" Z="188.12" />
+	</If>
+
+<!-- Cheng Bo! -->
+ 	<If Condition="HasQuest(31120) &amp;&amp; !IsQuestCompleted(31120)">
+		<CustomBehavior File="Message" Text="Starting Cheng Bo!" LogColor="Green" />
+		<CustomBehavior File="FlyTo" QuestId="31120" X="2959.496" Y="3572.078" Z="404.0086" />
+		<Objective Nav="Fly" QuestName="Cheng Bo!" QuestId="31120" Type="KillMob" MobId="62554" KillCount="1" X="2959.496" Y="3572.078" Z="404.0086" />
+	</If>
+
+<!-- Target of Opportunity: Sra'thik Hivelord -->
+ 	<If Condition="HasQuest(31204) &amp;&amp; !IsQuestCompleted(31204)">
+		<CustomBehavior File="Message" Text="Starting Target of Opportunity: Sra'thik Hivelord" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Target of Opportunity: Sra'thik Hivelord" QuestId="31204" Type="KillMob" MobId="63694" KillCount="1" X="2872.69" Y="5673.39" Z="-12.54" />
+	</If>
+
+<!-- Target of Opportunity: Sra'thik Swarmlord -->
+ 	<If Condition="HasQuest(31203) &amp;&amp; !IsQuestCompleted(31203)">
+		<CustomBehavior File="Message" Text="Starting Target of Opportunity: Sra'thik Swarmlord" LogColor="Green" />
+		<Objective Nav="Fly" QuestName="Target of Opportunity: Sra'thik Swarmlord" QuestId="31203" Type="KillMob" MobId="63693" KillCount="1" X="2993.36" Y="6140.08" Z="79.23" />
+	</If>
+
+<!-- Riding the Storm -->
+<!-- 	<If Condition="HasQuest(31061) &amp;&amp; !IsQuestCompleted(31061)">
+		<CustomBehavior File="Message" Text="Starting Riding the Storm" LogColor="Green" />
+		<CustomBehavior File="FlyTo" X="3972.71" Y="5358.88" Z="210.88" />
+		<CustomBehavior File="ForcedDismount" />
+		<While Condition="!IsQuestCompleted(31061)">
+			<If Condition="(Me.Class == WoWClass.Rogue)">
+				<CustomBehavior File="SpecificQuests\31061-TownlongSteppes-RidingTheStorm" SpellId="121733" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Warlock)">
+				<CustomBehavior File="SpecificQuests\31061-TownlongSteppes-RidingTheStorm" SpellId="172" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Warrior)">
+				<CustomBehavior File="SpecificQuests\31061-TownlongSteppes-RidingTheStorm" SpellId="355" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.DeathKnight )">
+				<CustomBehavior File="SpecificQuests\31061-TownlongSteppes-RidingTheStorm" SpellId="45477" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Druid)">
+				<CustomBehavior File="SpecificQuests\31061-TownlongSteppes-RidingTheStorm" SpellId="8921" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Hunter)">
+				<CustomBehavior File="SpecificQuests\31061-TownlongSteppes-RidingTheStorm" SpellId="3044" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Mage)">
+				<CustomBehavior File="SpecificQuests\31061-TownlongSteppes-RidingTheStorm" SpellId="2136" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Paladin)">
+				<CustomBehavior File="SpecificQuests\31061-TownlongSteppes-RidingTheStorm" SpellId="62124" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Priest)">
+				<CustomBehavior File="SpecificQuests\31061-TownlongSteppes-RidingTheStorm" SpellId="589" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Shaman)">
+				<CustomBehavior File="SpecificQuests\31061-TownlongSteppes-RidingTheStorm" SpellId="403" />
+			</If>
+			<If Condition="(Me.Class == WoWClass.Monk)">
+				<CustomBehavior File="SpecificQuests\31061-TownlongSteppes-RidingTheStorm" SpellId="115546" />
+			</If>
+		</While>
+	</If> -->
+
+  	<If Condition="HasQuest(31062) &amp;&amp; IsQuestCompleted(31062)" >
+		<TurnIn Nav="Fly" QuestName="When The Dead Speak" QuestId="31062" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+
+  	<If Condition="HasQuest(31049) &amp;&amp; IsQuestCompleted(31049)" >
+		<TurnIn Nav="Fly" QuestName="In Spite of Everything" QuestId="31049" TurnInName="Ban Bearheart" TurnInId="62304" />
+	</If>
+
+  	<If Condition="HasQuest(31120) &amp;&amp; IsQuestCompleted(31120)" >
+		<TurnIn Nav="Fly" QuestName="Cheng Bo!" QuestId="31120" TurnInName="Master Snowdrift" TurnInId="63009" />
+	</If>
+
+  	<If Condition="HasQuest(31117) &amp;&amp; IsQuestCompleted(31117)" >
+		<CustomBehavior File="FlyTo" X="1853.202" Y="4261.375" Z="148.8664" />
+		<CustomBehavior File="ForcedDismount" />
+		<TurnIn Nav="Fly" QuestName="Uruk!" QuestId="31117" TurnInName="Master Snowdrift" TurnInId="63009" />
+	</If>
+
+  	<If Condition="HasQuest(31204) &amp;&amp; IsQuestCompleted(31204)" >
+		<TurnIn Nav="Fly" QuestName="Sra'thik Hivelord" QuestId="31204" TurnInName="Ling of the Six Pools" TurnInId="63614" />
+	</If>
+
+  	<If Condition="HasQuest(31203) &amp;&amp; IsQuestCompleted(31203)" >
+		<TurnIn Nav="Fly" QuestName="Sra'thik Swarmlord" QuestId="31203" TurnInName="Ling of the Six Pools" TurnInId="63614" />
+	</If>
+
+	<While Condition="(GetItemCount(89112) &gt; 10)">
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(89112)" WaitTime="1500" />
+	</While>
+
+	<CustomBehavior File="ForcedDismount" />
+	<If Condition="HasItem(60498)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(60498)" WaitTime="1500" />
+	<ElseIf Condition="HasItem(93672)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(93672)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(54452)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(54452)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(64488)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(64488)" WaitTime="1500" />
+	</ElseIf>
+	<ElseIf Condition="HasItem(6948)" >
+		<CustomBehavior File="Misc\RunLua" Lua="UseItemByName(6948)" WaitTime="1500" />
+	</ElseIf>
+	</If>
+
+	<CustomBehavior File="UserDialog" Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="End of Shado-Pan Dailies" />
+
+</QuestOrder>
+</HBProfile>

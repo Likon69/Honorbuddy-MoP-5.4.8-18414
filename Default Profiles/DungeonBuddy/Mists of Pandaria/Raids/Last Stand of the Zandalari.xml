@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile xsi:noNamespaceSchemaLocation="../../DungeonbuddyProfile.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Last Stand of the Zandalari</Name>
+  <DungeonId>610</DungeonId>
+
+  <BossEncounters>
+    <Boss isFinal="false" entry="69465" name="Jin'rokh the Breaker" killOrder="1" optional="false" X="5891.612" Y="6263.176" Z="124.0358"/>
+    <Boss isFinal="false" entry="68476" name="Horridon" killOrder="2" optional="false" X="5431.19" Y="5702.19" Z="129.6054"/>
+
+    <Boss isFinal="true" entry="69078" name="Sul the Sandcrawler" killOrder="3" optional="false" X="6068.754" Y="5396.009" Z="136.0882"/>
+    <Boss isFinal="true" entry="69134" name="Kazra'jin" killOrder="3" optional="false" X="6056.477" Y="5386.444" Z="136.0879"/>
+    <Boss isFinal="true" entry="69132" name="High Priestess Mar'li" killOrder="3" optional="false" X="6035.903" Y="5385.327" Z="136.0892"/>
+    <Boss isFinal="true" entry="69131" name="Frost King Malakk" killOrder="3" optional="false" X="6025.242" Y="5393.14" Z="136.0882"/>
+
+  </BossEncounters>
+
+  <Blackspots>
+    <!-- right stairs at entrance. most groups will skip the group of trash npcs there.-->
+    <!--
+    <Blackspot X="5875.13" Y="6567.521" Z="109.8059" Radius="6.912776" />
+    <Blackspot X="5872.754" Y="6506.858" Z="115.2049" Radius="7.038331" />
+    -->
+  </Blackspots>
+  <PullBlackspots>
+  </PullBlackspots>
+</DungeonBuddyProfile>

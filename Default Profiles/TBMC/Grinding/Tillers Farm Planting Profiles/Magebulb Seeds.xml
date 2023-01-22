@@ -1,0 +1,372 @@
+<HBProfile>
+	<Name>Magebulb Seeds ($Rev$) (by Billtay, adapted by TheBrodieman)</Name>
+	<MinLevel>85</MinLevel>
+	<MaxLevel>91</MaxLevel>
+  
+	<MinDurability>0.2</MinDurability>
+	<MinFreeBagSlots>2</MinFreeBagSlots>
+  
+	<MailGrey>False</MailGrey>
+	<MailWhite>False</MailWhite>
+	<MailGreen>False</MailGreen>
+	<MailBlue>False</MailBlue>
+	<MailPurple>False</MailPurple>
+  
+	<SellGrey>True</SellGrey>
+	<SellWhite>False</SellWhite>
+	<SellGreen>False</SellGreen>
+	<SellBlue>False</SellBlue>
+	<SellPurple>False</SellPurple>
+  
+	<TargetElites>True</TargetElites>
+
+	<Vendors>
+		<Vendor Name="Gina Mudclaw" Entry="58706" Type="Repair" X="-259.5399" Y="592.5469" Z="167.5478" />
+	</Vendors>
+  
+	<AvoidMobs>
+	</AvoidMobs>
+   
+	<Blackspots>
+	</Blackspots>
+
+<!-- Quest Overrides -->
+
+<!-- End of Quest Overrides --> 
+
+<QuestOrder>
+
+	<CustomBehavior File="Message" Text="Starting Farming Daily, moving to My Farm." LogColor="Green"  />
+	<CustomBehavior File="FlyTo" DestName="My Farm" X="-168.9621" Y="639.7676" Z="165.4103" />
+	<CustomBehavior File="WaitTimer" WaitTime="5000" />
+
+<!-- Starting Quests -->
+
+	<CustomBehavior File="Message" Text="Beginning Farming Quests." LogColor="Green"  />
+	<UseMount Value="False" />
+
+	<!-- Harvesting Farm -->
+	<CustomBehavior File="Message" Text="Checking for harvestable plants." LogColor="Green" />
+	<While Condition="ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; new [] 
+						{ 58567, 60113, 66112, 66113, 63154, 63156, 63184, 63185, 63249, 63250,
+						63228, 63229, 63164, 63165, 66128, 66129, 63264, 63265, 66084, 66085,
+						66043, 65989, 66016, 65973, 66006, 60172, 65938, 65932, 65930, 65933,
+						65929, 65931, 63157, 66108, 63158, 63180, 63245, 63223, 63160, 66123,
+						63260, 66080 }.Contains((int)u.Entry) &amp;&amp; u.Distance &lt;= 100)" >
+		<CustomBehavior File="InteractWith" MobId="58567" MobId2="60113" MobId3="66112" MobId4="66113" MobId5="63154"
+											MobId6="63156" MobId7="63184" MobId8="63185" MobId9="63249" MobId10="63250"
+											MobId11="63228" MobId12="63229" MobId13="63164" MobId14="63165" MobId15="66128"
+											MobId16="66129" MobId17="63264" MobId18="63265" MobId19="66084" MobId20="66085"
+											MobId21="66043" MobId22="65989" MobId23="66016" MobId24="65973" MobId25="66006"
+											MobId26="60172" MobId27="65938" MobId28="65932" MobId29="65930" MobId30="65933"
+											MobId31="65929" MobId32="65931" MobId33="63157" MobId34="66108" MobId35="63158"
+											MobId36="63180" MobId37="63245" MobId38="63223" MobId39="63160" MobId40="66123"
+											MobId41="63260" MobId42="66080"
+			WaitForNpcs="False" PreInteractMountStrategy="DismountOrCancelShapeshift" WaitTime="1000" NonCompeteDistance="0" />
+	</While>
+	
+	<!-- Grab the Shovel -->
+	<If Condition="!HasItem(89880) &amp;&amp; (ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; new [] { 63224, 63261, 66081, 58566, 63246, 63153, 66109, 66124, 63181, 63161, 65916, 65986, 66013, 65965, 66040, 66003 }.Contains((int)u.Entry) &amp;&amp; u.Distance &lt;= 100))">
+		<CustomBehavior File="InteractWith" MobId="215719" WaitTime="50" X="-162.2882" Y="632.7327" Z="165.2623" />
+		<!-- Remove misc plants from the daily -->
+		<CustomBehavior File="InteractWith" MobId="63224" MobId2="63261" MobId3="66081" MobId4="58566" MobId5="63246"
+											MobId6="63153" MobId7="66109" MobId8="66124" MobId9="63181" MobId10="63161"
+											MobId11="65916" MobId12="65986" MobId13="66013" MobId14="65965" MobId15="66040" MobId16="66003"
+											InteractByUsingItemId="89880" NumOfTimes="16" WaitForNpcs="False" WaitTime="2000" 
+											PreInteractMountStrategy="DismountOrCancelShapeshift" />
+	</If>
+
+	<!-- Delete Shovel -->	
+	<If Condition="HasItem(89880)" >
+		<CustomBehavior File="DeleteItems" Ids="89880" />
+	</If>
+			
+	<!-- Checking for Stubborn Weeds -->
+	<While Condition="Unit(60153) != null" >
+		<CustomBehavior File="InteractWith" MobId="60153" NonCompeteDistance="0" PreInteractMountStrategy="DismountOrCancelShapeshift" 
+			TerminateWhen="Unit(60153) == null || Me.IsOnTransport" WaitTime="1000" />
+		<If Condition="Me.IsOnTransport" >
+			<CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton1" NumOfTimes="30" WaitTime="500" />
+		</If>
+	</While>
+	
+	<!-- Checking for Occupied Soil -->
+	<CustomBehavior File="InteractWith" MobId="60172" NumOfTimes="100" PreInteractMountStrategy="DismountOrCancelShapeshift" WaitTime="100"
+		TerminateWhen="Unit(60172) == null" NonCompeteDistance="0" />
+
+	<!-- Verify/Buy Seeds and Plant -->
+
+	<CustomBehavior File="Message" Text="Going to vendor for seeds" LogColor="Orange" />
+	<If Condition="GetItemCount(85217) &lt; 16" >
+		<UseMount Value="True" />
+		<CustomBehavior File="FlyTo" DestName="Buying Seeds" X="-267.1079" Y="603.3618" Z="167.5482" />
+		<CustomBehavior File="ForcedDismount" />
+		<If Condition="IsQuestCompleted(30257)">
+			<If Condition="IsQuestCompleted(30516)">
+				<If Condition="IsQuestCompleted(30524)">
+					<If Condition="IsQuestCompleted(30529)">
+						<If Condition="(GetItemCount(85217) == 0)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="16" WaitTime="2000" />
+						</If>
+						<If Condition="(GetItemCount(85217) == 1)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="15" WaitTime="2000" />
+						</If>
+						<If Condition="(GetItemCount(85217) == 2)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="14" WaitTime="2000" />
+						</If>
+						<If Condition="(GetItemCount(85217) == 3)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="13" WaitTime="2000" />
+						</If>
+						<If Condition="(GetItemCount(85217) == 4)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="12" WaitTime="2000" />
+						</If>
+						<If Condition="(GetItemCount(85217) == 5)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="11" WaitTime="2000" />
+						</If>
+						<If Condition="(GetItemCount(85217) == 6)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="10" WaitTime="2000" />
+						</If>
+						<If Condition="(GetItemCount(85217) == 7)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="9" WaitTime="2000" />
+						</If>
+						<If Condition="(GetItemCount(85217) == 8)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="8" WaitTime="2000" />
+						</If>
+						<If Condition="(GetItemCount(85217) == 9)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="7" WaitTime="2000" />
+						</If>
+						<If Condition="(GetItemCount(85217) == 10)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="6" WaitTime="2000" />
+						</If>
+						<If Condition="(GetItemCount(85217) == 11)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="5" WaitTime="2000" />
+						</If>
+						<If Condition="(GetItemCount(85217) == 12)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="4" WaitTime="2000" />
+						</If>
+						<If Condition="(GetItemCount(85217) == 13)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="3" WaitTime="2000" />
+						</If>
+						<If Condition="(GetItemCount(85217) == 14)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="2" WaitTime="2000" />
+						</If>
+						<If Condition="(GetItemCount(85217) == 15)">
+							<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="1" WaitTime="2000" />
+						</If>
+					</If>
+					<If Condition="(GetItemCount(85217) == 0)">
+						<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="12" WaitTime="2000" />
+					</If>
+					<If Condition="(GetItemCount(85217) == 1)">
+						<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="11" WaitTime="2000" />
+					</If>
+					<If Condition="(GetItemCount(85217) == 2)">
+						<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="10" WaitTime="2000" />
+					</If>
+					<If Condition="(GetItemCount(85217) == 3)">
+						<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="9" WaitTime="2000" />
+					</If>
+					<If Condition="(GetItemCount(85217) == 4)">
+						<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="8" WaitTime="2000" />
+					</If>
+					<If Condition="(GetItemCount(85217) == 5)">
+						<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="7" WaitTime="2000" />
+					</If>
+					<If Condition="(GetItemCount(85217) == 6)">
+						<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="6" WaitTime="2000" />
+					</If>
+					<If Condition="(GetItemCount(85217) == 7)">
+						<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="5" WaitTime="2000" />
+					</If>
+					<If Condition="(GetItemCount(85217) == 8)">
+						<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="4" WaitTime="2000" />
+					</If>
+					<If Condition="(GetItemCount(85217) == 9)">
+						<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="3" WaitTime="2000" />
+					</If>
+					<If Condition="(GetItemCount(85217) == 10)">
+						<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="2" WaitTime="2000" />
+					</If>
+					<If Condition="(GetItemCount(85217) == 11)">
+						<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="1" WaitTime="2000" />
+					</If>
+				</If>
+				<If Condition="(GetItemCount(85217) == 0)">
+					<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="8" WaitTime="2000" />
+				</If>
+				<If Condition="(GetItemCount(85217) == 1)">
+					<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="7" WaitTime="2000" />
+				</If>
+				<If Condition="(GetItemCount(85217) == 2)">
+					<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="6" WaitTime="2000" />
+				</If>
+				<If Condition="(GetItemCount(85217) == 3)">
+					<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="5" WaitTime="2000" />
+				</If>
+				<If Condition="(GetItemCount(85217) == 4)">
+					<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="4" WaitTime="2000" />
+				</If>
+				<If Condition="(GetItemCount(85217) == 5)">
+					<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="3" WaitTime="2000" />
+				</If>
+				<If Condition="(GetItemCount(85217) == 6)">
+					<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="2" WaitTime="2000" />
+				</If>
+				<If Condition="(GetItemCount(85217) == 7)">
+					<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="1" WaitTime="2000" />
+				</If>
+			</If>
+			<If Condition="(GetItemCount(85217) == 0)">
+				<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="4" WaitTime="2000" />
+			</If>
+			<If Condition="(GetItemCount(85217) == 1)">
+				<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="3" WaitTime="2000" />
+			</If>
+			<If Condition="(GetItemCount(85217) == 2)">
+				<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="2" WaitTime="2000" />
+			</If>
+			<If Condition="(GetItemCount(85217) == 3)">
+				<CustomBehavior File="InteractWith" MobId="58718" InteractByBuyingItemId="85217" BuyItemCount="1" WaitTime="2000" />
+			</If>
+		</If>
+		<CustomBehavior File="Misc\RunLua" Lua="CloseMerchant()" />
+		<CustomBehavior File="FlyTo" DestName="My Farm" X="-161.5227" Y="637.4417" Z="165.4093" />
+		<CustomBehavior File="WaitTimer" WaitTime="5000" />
+		<UseMount Value="False" />
+	</If>
+
+	<While Condition="HasItem(85217) &amp;&amp; (Unit(58562) != null || Unit(58563) != null)" >
+		<CustomBehavior File="Message" Text="Planting Seed" LogColor="Orange" />
+		<CustomBehavior File="InteractWith" MobId="58563" InteractByUsingItemId="85217" NonCompeteDistance="0" 
+			PreInteractMountStrategy="DismountOrCancelShapeshift" TerminateWhen="Unit(58563) == null" WaitTime="1000" />
+		<CustomBehavior File="InteractWith" MobId="58562" NonCompeteDistance="0" PreInteractMountStrategy="DismountOrCancelShapeshift" 
+			TerminateWhen="Unit(58563) != null || Unit(58562) == null" WaitTime="1000" />
+	</While>
+	
+<!-- Checking your crops for issues -->
+
+<!-- Alluring -->
+	<CustomBehavior File="Message" Text="Alluring Crop..." LogColor="Green" />
+	<CustomBehavior File="InteractWith" MobId="66122" MobId2="63178" MobId3="63222" MobId4="66107" MobId5="63147" 
+										MobId6="60070" MobId7="63243" MobId8="63259" MobId9="66079" MobId10="63159"
+										MobId11="65913" MobId12="65985" MobId13="66012" MobId14="65964" MobId15="66039" MobId16="66002"
+		NonCompeteDistance="0" PreInteractMountStrategy="DismountOrCancelShapeshift" NumOfTimes="100" WaitForNpcs="False" WaitTime="1000" />
+
+<!-- Wiggling -->
+	<CustomBehavior File="Message" Text="Wiggling Crop..." LogColor="Green" />
+	<CustomBehavior File="InteractWith" MobId="66133" MobId2="63189" MobId3="63233" MobId4="66117" MobId5="63146"
+										MobId6="60029" MobId7="63254" MobId8="63270" MobId9="66089" MobId10="63169"
+										MobId11="65924" MobId12="65993" MobId13="66020" MobId14="65971" MobId15="66047" MobId16="66010"
+		NonCompeteDistance="0" PreInteractMountStrategy="DismountOrCancelShapeshift" NumOfTimes="100" WaitForNpcs="False" WaitTime="1000" />
+
+<!-- Encroaching Weeds -->
+	<CustomBehavior File="Message" Text="Encroaching Weeds..." LogColor="Green" />
+	<While Condition="Unit(60185) != null" >
+		<CustomBehavior File="InteractWith" MobId="60185" WaitTime="1000" TerminateWhen="Unit(60185) == null || Me.IsOnTransport" />
+		<While Condition="Me.IsOnTransport" >
+			<CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton1" NumOfTimes="5" WaitTime="250" />
+		</While>
+	</While>
+			
+<!-- Tangled -->
+	<CustomBehavior File="Message" Text="Tangled crop..." LogColor="Green" />
+	<While Condition="ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; new [] { 66132, 63188, 63232, 66116, 63151, 60270, 63253, 63269, 66088, 63168, 65922, 65992, 66019, 65970, 66046, 66009 }.Contains((int)u.Entry) &amp;&amp; u.Distance &lt;= 100)" >
+		<CustomBehavior File="InteractWith" MobId="66132" MobId2="63188" MobId3="63232" MobId4="66116" MobId5="63151"
+											MobId6="60270" MobId7="63253" MobId8="63269" MobId9="66088" MobId10="63168"
+											MobId11="65922" MobId12="65992" MobId13="66019" MobId14="65970" MobId15="66046" MobId16="66009"
+			NonCompeteDistance="0" PreInteractMountStrategy="DismountOrCancelShapeshift" WaitForNpcs="False" TerminateWhen="Me.HasAura(116242)" WaitTime="1000" />
+		<If Condition="Me.HasAura(116242)" >
+			<RunTo X="-187.87" Y="630.97" Z="165.41" />
+			<RunTo X="-164.82" Y="643.40" Z="165.41" />
+			<CustomBehavior File="ForcedDismount" />
+		</If>
+	</While>
+	
+<!-- Wild -->
+	<CustomBehavior File="Message" Text="Wild weeds..." LogColor="Green" />
+	<While Condition="ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; new [] { 66134, 63190, 63234, 66118, 63149, 63255, 63271, 60207, 66090, 63170, 65925, 65994, 66021, 65972, 66048, 66011 }.Contains((int)u.Entry) &amp;&amp; u.Distance &lt;= 100)" >
+		<CustomBehavior File="InteractWith" MobId="66134" MobId2="63190" MobId3="63234" MobId4="66118" MobId5="63149"
+											MobId6="60207" MobId7="63255" MobId8="63271" MobId9="66090" MobId10="63170"
+											MobId11="65925" MobId12="65994" MobId13="66021" MobId14="65972" MobId15="66048" MobId16="66011"
+			NonCompeteDistance="0" PreInteractMountStrategy="DismountOrCancelShapeshift" WaitForNpcs="False" TerminateWhen="Me.IsOnTransport" WaitTime="1000" />
+		<While Condition="Me.IsOnTransport" >
+			<CustomBehavior File="RunMacro" Macro="/click OverrideActionBarButton1" WaitTime="250" />
+		</While>
+	</While>
+	
+<!-- Runty -->
+	<CustomBehavior File="Message" Text="Runty crop..." LogColor="Green" />
+	<While Condition="ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; new [] { 66130, 63186, 63230, 66114, 63150, 60218, 63251, 63267, 66086, 63166, 65920, 65990, 66017, 65968, 66044, 66007 }.Contains((int)u.Entry) &amp;&amp; u.Distance &lt;= 100)" >
+		<CustomBehavior File="InteractWith" MobId="66130" MobId2="63186" MobId3="63230" MobId4="66114" MobId5="63150"
+											MobId6="60218" MobId7="63251" MobId8="63267" MobId9="66086" MobId10="63166"
+											MobId11="65920" MobId12="65990" MobId13="66017" MobId14="65968" MobId15="66044" MobId16="66007"
+											PreInteractMountStrategy="DismountOrCancelShapeshift" WaitForNpcs="False" WaitTime="3000" />
+		<CustomBehavior File="Misc\RunLua" Lua="JumpOrAscendStart()" WaitTime="1500" />
+	</While>
+
+<!-- Infested Plants -->
+	<If Condition="ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; new [] { 66125, 63182, 63226, 66110, 63145, 60026, 63247, 63262, 66082, 63162, 65918, 65987, 66014, 65966, 66041, 66004 }.Contains((int)u.Entry) &amp;&amp; u.Distance &lt;= 100)" >
+		<If Condition="IsQuestCompleted(31937)" >
+			<!-- Use Pest Repeller 1 -->
+			<CustomBehavior File="InteractWith" MobId="215163" TerminateWhen="Object(215163) == null" NonCompeteDistance="0"
+				PreInteractMountStrategy="DismountOrCancelShapeshift" WaitTime="1000" X="-154.149" Y="644.668" Z="165.409" />
+			<!-- Use Pest Repeller 2 -->
+			<CustomBehavior File="InteractWith" MobId="215162" TerminateWhen="Object(215162) == null" NonCompeteDistance="0" 
+				PreInteractMountStrategy="DismountOrCancelShapeshift" WaitTime="1000" X="-168.795" Y="643.637" Z="165.409" />
+		<ElseIf Condition="!HasItem(80513)">
+			<CustomBehavior File="InteractWith" MobId="211331" TerminateWhen="Object(211331) == null || HasItem(80513)" NonCompeteDistance="0"
+				PreInteractMountStrategy="DismountOrCancelShapeshift" WaitTime="1000" X="-166.8677" Y="633.5659" Z="165.4094" />
+		</ElseIf>
+		</If>
+	</If>
+
+<!-- Parched Plants -->
+	<If Condition="ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; new [] { 66127, 63183, 63227, 66111, 63144, 58565, 63263, 63248, 66083, 63163, 65919, 65988, 66015, 65967, 66042, 66005 }.Contains((int)u.Entry) &amp;&amp; u.Distance &lt;= 100)" >
+		<If Condition="IsQuestCompleted(31936)" >
+			<!-- Use Sprinkler 1 -->
+			<CustomBehavior File="InteractWith" MobId="215137" TerminateWhen="Object(215137) == null" NonCompeteDistance="0"
+				PreInteractMountStrategy="DismountOrCancelShapeshift" WaitTime="1000" X="-154.328" Y="653.969" Z="165.169" />
+			<!-- Use Sprinkler 2 -->
+			<CustomBehavior File="InteractWith" MobId="215135" TerminateWhen="Object(215135) == null" NonCompeteDistance="0" 
+				PreInteractMountStrategy="DismountOrCancelShapeshift" WaitTime="1000" X="-168.587" Y="654.073" Z="165.266" />
+		<ElseIf Condition="!HasItem(79104)">
+			<CustomBehavior File="InteractWith" MobId="211330" TerminateWhen="Object(211330) == null || HasItem(79104)" NonCompeteDistance="0"
+				PreInteractMountStrategy="DismountOrCancelShapeshift" WaitTime="1000" X="-166.8677" Y="633.5659" Z="165.4094" />
+		</ElseIf>
+		</If>
+	</If>
+	
+<!-- Parched -->
+	<If Condition="HasItem(79104)" >
+		<CustomBehavior File="Message" Text="Watering crops..." LogColor="Green" />
+		<CustomBehavior File="InteractWith" MobId="66127" MobId2="63183" MobId3="63227" MobId4="66111" MobId5="63144"
+											MobId6="58565" MobId7="63248" MobId8="63263" MobId9="66083" MobId10="63163"
+											MobId11="65919" MobId12="65988" MobId13="66015" MobId14="65967" MobId15="66042" MobId16="66005"
+			NonCompeteDistance="0" PreInteractMountStrategy="DismountOrCancelShapeshift" InteractByUsingItemId="79104" NumOfTimes="16" WaitForNpcs="False" WaitTime="1000" />
+	</If>
+
+<!-- Infested -->
+	<If Condition="HasItem(80513)" >
+		<CustomBehavior File="Message" Text="Spraying crops..." LogColor="Green" />
+		<CustomBehavior File="InteractWith" MobId="66125" MobId2="63182" MobId3="63226" MobId4="66110" MobId5="63145"
+											MobId6="60026" MobId7="63247" MobId8="63262" MobId9="66082" MobId10="63162"
+											MobId11="65918" MobId12="65987" MobId13="66014" MobId14="65966" MobId15="66041" MobId16="66004"
+			NonCompeteDistance="0" PreInteractMountStrategy="DismountOrCancelShapeshift" InteractByUsingItemId="80513" NumOfTimes="16" WaitForNpcs="False" WaitTime="1000" />
+	</If>
+	
+<!-- Deleting farm tools -->	
+	<CustomBehavior File="DeleteItems" Ids="80513,79104" />
+
+<!-- Check for Bursting Plants -->
+	<While Condition="ObjectManager.GetObjectsOfType&lt;WoWUnit&gt;().Any(u =&gt; new [] 
+					{ 63157, 66108, 63158, 63180, 63245, 63223, 63160, 66123,
+					63260, 66080 }.Contains((int)u.Entry) &amp;&amp; u.Distance &lt;= 100)" >
+		<CustomBehavior File="InteractWith" MobId="63157" MobId2="66108" MobId3="63158" MobId4="63180" MobId5="63245"
+											MobId6="63223" MobId7="63160" MobId8="66123" MobId9="63260" MobId10="66080"
+			NonCompeteDistance="0" PreInteractMountStrategy="DismountOrCancelShapeshift" WaitForNpcs="False" WaitTime="1000" />
+	</While>
+
+	<CustomBehavior File="UserDialog"  Title="title" AllowBotStop="True" SoundCue="Asterisk" SoundCueInterval="1" Text="All crops harvested and replanted!" />
+
+</QuestOrder>
+</HBProfile>

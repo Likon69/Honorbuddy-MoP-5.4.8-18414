@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassProfile Class="Paladin" Specialization="1" Name="Paladin - Holy">
+	<TalentTree>
+		<Talent Tier="1" Index="3" Name="Pursuit of Justice" />
+		<Talent Tier="2" Index="1" Name="Fist of Justice" />
+		<Talent Tier="3" Index="3" Name="Sacred Shield" />
+		<Talent Tier="4" Index="3" Name="Clemency" />
+		<Talent Tier="5" Index="3" Name="Divine Purpose" />
+		<Talent Tier="6" Index="1" Name="Holy Prism" />
+	</TalentTree>
+	<WeightSet>
+		<Spirit>20</Spirit>
+		<SpellPower>18</SpellPower>
+		<Intellect>18</Intellect>
+		<Mastery>16</Mastery>
+		<Haste>14</Haste>
+		<CriticalStrike>12</CriticalStrike>
+		<Stamina>5</Stamina>
+		<Armor>0.01</Armor>
+		<DamagePerSecond>0.01</DamagePerSecond>
+	</WeightSet>
+</ClassProfile>

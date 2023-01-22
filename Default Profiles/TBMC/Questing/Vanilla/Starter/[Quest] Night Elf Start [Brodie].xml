@@ -1,0 +1,314 @@
+<HBProfile>
+
+<Name>Night Elf Starter ($Rev$)</Name>
+<MinLevel>1</MinLevel>
+<MaxLevel>10</MaxLevel>
+
+<MinDurability>0.2</MinDurability>
+<MinFreeBagSlots>2</MinFreeBagSlots>
+
+<MailGrey>False</MailGrey>
+<MailWhite>False</MailWhite>
+<MailGreen>False</MailGreen>
+<MailBlue>False</MailBlue>
+<MailPurple>True</MailPurple>
+
+<SellGrey>True</SellGrey>
+<SellWhite>True</SellWhite>
+<SellGreen>True</SellGreen>
+<SellBlue>False</SellBlue>
+<SellPurple>False</SellPurple>
+
+<AvoidMobs>
+	<Mob Name="Training Dummy" Entry="44614" /> <!-- Shadowglen -->
+	<Mob Name="Training Dummy" Entry="31144" /> <!-- Darnassus -->
+</AvoidMobs>
+
+<Blackspots>
+	<Blackspot X="10391.23" Y="746.5612" Z="1320.462" Radius="1.460651" /> <!-- Shadowglen Mailbox -->
+	<Blackspot X="10770.1" Y="2185.813" Z="1329.456" Radius="35.94508" />
+	<Blackspot X="-9151.938" Y="88.74734" Z="76.00366" Radius="20.25414" /> <!-- Defiant in Elwynn -->
+</Blackspots>
+
+<Mailboxes>
+	<Mailbox X="10391.03" Y="748.014" Z="1320.292" /> <!-- Shadowglen Mailbox -->
+</Mailboxes>
+
+<Vendors>
+	<!-- Shadowglen Vendors -->
+	<Vendor Name="Andiss" Entry="3592" Type="Repair" X="10429.96" Y="765.7778" Z="1322.667" />
+	<Vendor Name="Dellylah" Entry="6091" Type="Food" X="10440.97" Y="773.0278" Z="1322.666" />
+	<!-- Dolanaar -->
+	<Vendor Name="Shalomon" Entry="3609" Type="Repair" X="9812.371" Y="947.5777" Z="1308.771" />
+</Vendors>
+
+<!-- Quest Overrides -->
+<Quest Id="28713" Name="The Balance of Nature">
+	<Objective Type="KillMob" Name="Young Nightsaber" MobId="2031" KillCount="6">
+		<Hotspots>
+			<Hotspot X="10416.43" Y="909.5345" Z="1319.048" />
+			<Hotspot X="10429.46" Y="949.4171" Z="1320.006" />
+			<Hotspot X="10400.78" Y="989.8533" Z="1327.539" />
+			<Hotspot X="10336.15" Y="970.6346" Z="1331.869" />
+			<Hotspot X="10295.4" Y="885.6855" Z="1329.364" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="28726" Name="Webwood Corruption">
+	<Objective QuestName="Webwood Corruption" QuestId="28726" Type="KillMob" Name="Webwood Spider" MobId="1986" KillCount="12">
+		<Hotspots>
+			<Hotspot X="10831.73" Y="900.8888" Z="1335.141" />
+			<Hotspot X="10794.27" Y="936.1412" Z="1336.23" />
+			<Hotspot X="10851.44" Y="968.0315" Z="1335.634" />
+			<Hotspot X="10911.3" Y="965.6492" Z="1338.85" />
+			<Hotspot X="10933.21" Y="949.1938" Z="1321.963" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="28727" Name="Vile Touch">
+	<Objective QuestName="Vile Touch" QuestId="28727" Type="KillMob" Name="Githyiss the Vile" MobId="1994" KillCount="1">
+		<Hotspots>
+			<Hotspot X="10941.58" Y="923.1849" Z="1340.638" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="488" Name="Zenn's Bidding">
+	<Objective QuestName="Zenn's Bidding" QuestId="488" Type="CollectItem" Name="Nightsaber Fang" ItemId="3409" CollectCount="2">
+		<Hotspots>
+			<Hotspot X="9786.556" Y="673.4957" Z="1296.901" />
+			<Hotspot X="9845.144" Y="695.9861" Z="1305.357" />
+			<Hotspot X="9754.954" Y="791.536" Z="1297.27" />
+			<Hotspot X="9853.813" Y="833.0185" Z="1306.895" />
+			<Hotspot X="9969.988" Y="873.2745" Z="1323.473" />
+		</Hotspots>
+	</Objective>
+	<Objective QuestName="Zenn's Bidding" QuestId="488" Type="CollectItem" Name="Strigid Owl Feather" ItemId="3411" CollectCount="2">
+		<Hotspots>
+			<Hotspot X="9773.157" Y="841.3387" Z="1297.71" />
+			<Hotspot X="9789.132" Y="810.5225" Z="1302.279" />
+			<Hotspot X="9921.223" Y="832.3353" Z="1317.969" />
+			<Hotspot X="9924.39" Y="891.0925" Z="1316.716" />
+		</Hotspots>
+	</Objective>
+	<Objective QuestName="Zenn's Bidding" QuestId="488" Type="CollectItem" Name="Webwood Spider Silk" ItemId="3412" CollectCount="2">
+		<Hotspots>
+			<Hotspot X="9969.988" Y="873.2745" Z="1323.473" />
+			<Hotspot X="9851.482" Y="747.6723" Z="1304.223" />
+			<Hotspot X="9791.444" Y="785.9016" Z="1299.801" />
+			<Hotspot X="9755.977" Y="742.8307" Z="1300.505" />
+			<Hotspot X="9707.025" Y="782.7817" Z="1290.284" />
+			<Hotspot X="9822.906" Y="803.8576" Z="1304.213" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="2438" Name="The Emerald Dreamcatcher">
+	<Objective QuestName="The Emerald Dreamcatcher" QuestId="2438" Type="CollectItem" Name="Emerald Dreamcatcher" ItemId="8048" CollectCount="1">
+		<Hotspots>
+			<Hotspot X="9807.431" Y="352.0983" Z="1308.46" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="2459" Name="Ferocitas the Dream Eater">
+	<Objective QuestName="Ferocitas the Dream Eater" QuestId="2459" Type="CollectItem" Name="Tallonkai's Jewel" ItemId="8050" CollectCount="1">
+		<Hotspots>
+			<Hotspot X="10017.07" Y="287.4155" Z="1322.746" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<Quest Id="932" Name="Twisted Hatred">
+	<Objective QuestName="Twisted Hatred" QuestId="932" Type="CollectItem" Name="Melenas' Head" ItemId="5221" CollectCount="1">
+		<Hotspots>
+			<Hotspot X="10131.35" Y="1190.76" Z="1323.597" />
+			<Hotspot X="10112.05" Y="1198.142" Z="1311.882" />
+		</Hotspots>
+	</Objective>
+</Quest>
+
+<!-- End of Quest Overrides -->
+
+<QuestOrder>
+  
+<!-- Teldrassil Quests -->
+	<CustomBehavior File="Message" Text="Compiling Teldrassil Quests" LogColor="Green" />
+	<CustomBehavior File="Message" Text="Compiling Shadowglen Quests" LogColor="CornflowerBlue" />
+
+<!-- The Balance of Nature -->
+	<PickUp QuestName="The Balance of Nature" QuestId="28713" GiverName="Ilthalaine" GiverId="2079" />
+	<Objective QuestName="The Balance of Nature" QuestId="28713" Type="KillMob" MobId="2031" KillCount="6" />
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="The Balance of Nature" QuestId="28713" TurnInName="Ilthalaine" TurnInId="2079" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+<!-- Fel Moss Corruption/Demonic Thieves -->
+	<PickUp QuestName="Fel Moss Corruption" QuestId="28714" GiverName="Ilthalaine" GiverId="2079" />
+	<PickUp QuestName="Demonic Thieves" QuestId="28715" GiverName="Melithar Staghelm" GiverId="2077" />
+	<Objective QuestName="Demonic Thieves" QuestId="28715" Type="CollectItem" ItemId="46700" CollectCount="5" />
+	<Objective QuestName="Fel Moss Corruption" QuestId="28714" Type="CollectItem" ItemId="3297" CollectCount="6" />
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Fel Moss Corruption" QuestId="28714" TurnInName="Ilthalaine" TurnInId="2079" />
+	<TurnIn QuestName="Demonic Thieves" QuestId="28715" TurnInName="Melithar Staghelm" TurnInId="2077" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+<!-- Class Quests -->
+	<!-- Warrior -->
+	<If Condition="Me.Class == WoWClass.Warrior" >
+		<PickUp QuestName="Simple Sigil" QuestId="3116" GiverName="Melithar Staghelm" GiverId="2077" />
+		<TurnIn QuestName="Simple Sigil" QuestId="3116" TurnInName="Alyissia" TurnInId="3593" />
+		<PickUp QuestName="Learning New Techniques" QuestId="26945" GiverName="Alyissia" GiverId="3593" />
+		<While Condition="!IsQuestCompleted(26945)" >
+			<CustomBehavior File="InteractWith" QuestId="26945" MobId="44614" MobState="Alive" InteractByCastingSpellId="100" MinRange="14" 
+				Range="25" NonCompeteDistance="0" X="10407.3" Y="740.832" Z="1319.778" />
+		</While>
+		<TurnIn QuestName="Learning New Techniques" QuestId="26945" TurnInName="Alyissia" TurnInId="3593" />
+		<PickUp QuestName="Priestess of the Moon" QuestId="28723" GiverName="Alyissia" GiverId="3593" />
+	</If>
+			
+	<!-- Hunter -->
+	<If Condition="Me.Class == WoWClass.Hunter" >
+		<PickUp QuestName="Etched Sigil" QuestId="3117" GiverName="Melithar Staghelm" GiverId="2077" />
+		<TurnIn QuestName="Etched Sigil" QuestId="3117" TurnInName="Ayanna Everstride" TurnInId="3596" />
+		<PickUp QuestName="A Woodsman's Training" QuestId="26947" GiverName="Ayanna Everstride" GiverId="3596" />
+		<While Condition="!IsQuestCompleted(26947)" >
+			<CustomBehavior File="InteractWith" QuestId="26947" MobId="44614" MobState="Alive" InteractByCastingSpellId="56641" MinRange="5"
+				Range="30" NonCompeteDistance="0" X="10407.3" Y="740.832" Z="1319.778" />
+		</While>
+		<TurnIn QuestName="A Woodsman's Training" QuestId="26947" TurnInName="Ayanna Everstride" TurnInId="3596" />
+		<PickUp QuestName="Priestess of the Moon" QuestId="28723" GiverName="Ayanna Everstride" GiverId="3596" />
+	</If>
+			
+	<!-- Rogue -->
+	<If Condition="Me.Class == WoWClass.Rogue" >
+		<PickUp QuestName="Encrypted Sigil" QuestId="3118" GiverName="Melithar Staghelm" GiverId="2077" />
+		<TurnIn QuestName="Encrypted Sigil" QuestId="3118" TurnInName="Frahun Shadewhisper" TurnInId="3594" />
+		<PickUp QuestName="A Rogue's Advantage" QuestId="26946" GiverName="Frahun Shadewhisper" GiverId="3594" />
+		<While Condition="!IsQuestCompleted(26946)" >
+			<CustomBehavior File="InteractWith" MobId="44614" MobState="Alive" InteractByCastingSpellId="1752"
+				NonCompeteDistance="0" X="10407.3" Y="740.832" Z="1319.778" />
+			<CustomBehavior File="InteractWith" MobId="44614" MobState="Alive" InteractByCastingSpellId="2098"
+				NonCompeteDistance="0" X="10407.3" Y="740.832" Z="1319.778" />
+		</While>
+		<TurnIn QuestName="A Rogue's Advantage" QuestId="26946" TurnInName="Frahun Shadewhisper" TurnInId="3594" />
+		<PickUp QuestName="Priestess of the Moon" QuestId="28723" GiverName="Frahun Shadewhisper" GiverId="3594" />
+	</If>
+			
+	<!-- Priest -->
+	<If Condition="Me.Class == WoWClass.Priest" >
+		<PickUp QuestName="Hallowed Sigil" QuestId="3119" GiverName="Melithar Staghelm" GiverId="2077" />
+		<TurnIn QuestName="Hallowed Sigil" QuestId="3119" TurnInName="Shanda" TurnInId="3595" />
+		<PickUp QuestName="Healing for the Wounded" QuestId="26949" GiverName="Shanda" GiverId="3595" />
+		<While Condition="!IsQuestCompleted(26949)" >
+			<CustomBehavior File="InteractWith" QuestId="26949" MobId="44614" MobState="Alive" InteractByCastingSpellId="589" 
+				NonCompeteDistance="0" X="10404.43" Y="780.3768" Z="1322.713" />
+		</While>
+		<TurnIn QuestName="Healing for the Wounded" QuestId="26949" TurnInName="Shanda" TurnInId="3595" />
+		<PickUp QuestName="Priestess of the Moon" QuestId="28723" GiverName="Shanda" GiverId="3595" />
+	</If>
+
+	<!-- Druid -->
+	<If Condition="Me.Class == WoWClass.Druid" >
+		<PickUp QuestName="Verdant Sigil" QuestId="3120" GiverName="Melithar Staghelm" GiverId="2077" />
+		<TurnIn QuestName="Verdant Sigil" QuestId="3120" TurnInName="Mardant Strongoak" TurnInId="3597" />
+		<PickUp QuestName="A Healer's Touch" QuestId="26948" GiverName="Mardant Strongoak" GiverId="3597" />
+		<While Condition="!IsQuestCompleted(26948)" >
+			<CustomBehavior File="InteractWith" QuestId="26948" MobId="44614" MobState="Alive" InteractByCastingSpellId="8921" 
+				NonCompeteDistance="0" X="10404.43" Y="780.3768" Z="1322.713" />
+		</While>
+		<TurnIn QuestName="A Healer's Touch" QuestId="26948" TurnInName="Mardant Strongoak" TurnInId="3597" />
+		<PickUp QuestName="Priestess of the Moon" QuestId="28723" GiverName="Mardant Strongoak" GiverId="3597" />
+	</If>
+
+	<!-- Mage -->
+	<If Condition="Me.Class == WoWClass.Mage" >
+		<PickUp QuestName="Forbidden Sigil" QuestId="26841" GiverName="Melithar Staghelm" GiverId="2077" />
+		<TurnIn QuestName="Forbidden Sigil" QuestId="26841" TurnInName="Rhyanda" TurnInId="43006" />
+		<PickUp QuestName="Arcane Missiles" QuestId="26940" GiverName="Rhyanda" GiverId="43006" />
+		<While Condition="!IsQuestCompleted(26940)" >
+			<CustomBehavior File="InteractWith" QuestId="26940" MobId="44614" MobState="Alive" InteractByCastingSpellId="122" 
+				NonCompeteDistance="0" X="10407.3" Y="740.832" Z="1319.778" />
+		</While>
+		<TurnIn QuestName="Arcane Missiles" QuestId="26940" TurnInName="Rhyanda" TurnInId="43006" />
+		<PickUp QuestName="Priestess of the Moon" QuestId="28723" GiverName="Rhyanda" GiverId="43006" />
+	</If>
+
+	<!-- Monk -->
+	<If Condition="Me.Class == WoWClass.Monk">
+		<PickUp QuestName="Calligraphed Sigil" QuestId="31168" GiverName="Melithar Staghelm" GiverId="2077" />
+		<TurnIn QuestName="Calligraphed Sigil" QuestId="31168" TurnInName="Laoxi" TurnInId="63331" />
+		<PickUp QuestName="The Art of the Monk" QuestId="31169" GiverName="Laoxi" GiverId="63331" />
+		<While Condition="HasQuest(31169) &amp;&amp; !IsQuestCompleted(31169)" >
+			<CustomBehavior File="InteractWith" MobId="44614" MobState="Alive" InteractByCastingSpellId="100780" 
+				NonCompeteDistance="0" X="10468.95" Y="804.3754" Z="1322.745" />
+			<CustomBehavior File="InteractWith" MobId="44614" MobState="Alive" InteractByCastingSpellId="100787" 
+				NonCompeteDistance="0" X="10468.95" Y="804.3754" Z="1322.745" />
+		</While>
+		<TurnIn QuestName="The Art of the Monk" QuestId="31169" TurnInName="Laoxi" TurnInId="63331" />
+		<PickUp QuestName="Priestess of the Moon" QuestId="28723" GiverName="Laoxi" GiverId="63331" />
+	</If>
+
+<!-- Priestess of the Moon -->
+	<TurnIn QuestName="Priestess of the Moon" QuestId="28723" TurnInName="Dentaria Silverglade" TurnInId="49479" />
+
+<!-- Iverron's Antidote -->
+	<PickUp QuestName="Iverron's Antidote" QuestId="28724" GiverName="Dentaria Silverglade" GiverId="49479" />
+	<Objective QuestName="Iverron's Antidote" QuestId="28724" Type="CollectItem" ItemId="10641" CollectCount="7" />
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Iverron's Antidote" QuestId="28724" TurnInName="Dentaria Silverglade" TurnInId="49479" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+<!-- The Woodland Protector -->
+	<PickUp QuestName="The Woodland Protector" QuestId="28725" GiverName="Dentaria Silverglade" GiverId="49479" />
+	<If Condition="HasQuest(28725)" >
+		<TurnIn QuestName="The Woodland Protector" QuestId="28725" TurnInName="Tarindrella" TurnInId="49480" />
+		<CustomBehavior File="WaitTimer" WaitTime="2000" GoalText="Waiting for Phase Change" />
+	</If>
+
+<!-- Webwood Corruption -->
+	<PickUp QuestName="Webwood Corruption" QuestId="28726" GiverName="Tarindrella" GiverId="49480" />
+	<Objective QuestName="Webwood Corruption" QuestId="28726" Type="KillMob" MobId="1986" KillCount="12" />
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Webwood Corruption" QuestId="28726" TurnInName="Tarindrella" TurnInId="49480" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+<!-- Vile Touch -->
+	<PickUp QuestName="Vile Touch" QuestId="28727" GiverName="Tarindrella" GiverId="49480" />
+	<Objective QuestName="Vile Touch" QuestId="28727" Type="KillMob" MobId="1994" KillCount="1" />
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Vile Touch" QuestId="28727" TurnInName="Tarindrella" TurnInId="49480" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+<!-- Signs of Things to Come -->
+	<PickUp QuestName="Signs of Things to Come" QuestId="28728" GiverName="Tarindrella" GiverId="49480" />
+	<TurnIn QuestName="Signs of Things to Come" QuestId="28728" TurnInName="Dentaria Silverglade" TurnInId="49479" />
+	
+<!-- Teldrassil: Crown of Azeroth -->
+	<PickUp QuestName="Teldrassil: Crown of Azeroth" QuestId="28729" GiverName="Dentaria Silverglade" GiverId="49479" />
+	<UseItem QuestId="28729" ItemId="5185" X="10708.71" Y="763.3292" Z="1321.28" />
+	<DisableBehavior Name="Pull, Combat" />
+	<TurnIn QuestName="Teldrassil: Crown of Azeroth" QuestId="28729" TurnInName="Dentaria Silverglade" TurnInId="49479" />
+	<EnableBehavior Name="Pull, Combat" />
+	
+<!-- Precious Waters -->
+	<PickUp QuestName="Precious Waters" QuestId="28730" GiverName="Dentaria Silverglade" GiverId="49479" />
+	<TurnIn QuestName="Precious Waters" QuestId="28730" TurnInName="Tenaron Stormgrip" TurnInId="3514" />
+	
+<!-- Teldrassil: Passing Awareness/Dolanaar Delivery -->
+	<PickUp QuestName="Teldrassil: Passing Awareness" QuestId="28731" GiverName="Tenaron Stormgrip" GiverId="3514" />
+	<PickUp QuestName="Dolanaar Delivery" QuestId="2159" GiverName="Porthannius" GiverId="6780" />
+	<If Condition="HasQuest(2159)" >
+		<TurnIn QuestName="Dolanaar Delivery" QuestId="2159" TurnInName="Innkeeper Keldamyr" TurnInId="6736" />
+		<CustomBehavior File="SetHearthstone" MobId="6736" />
+		<CustomBehavior File="ForceSetVendor" DoMail="True" DoSell="True" />
+	</If>
+	<TurnIn QuestName="Teldrassil: Passing Awareness" QuestId="28731" TurnInName="Corithras Moonrage" TurnInId="3515" />
+
+	<CustomBehavior File="Message" Text="Shadowglen Quests Complete" LogColor="Orange" />
+	<CustomBehavior File="LoadProfile" ProfileName="..\[Quest] Teldrassil [Brodie]" />
+
+</QuestOrder>
+</HBProfile>

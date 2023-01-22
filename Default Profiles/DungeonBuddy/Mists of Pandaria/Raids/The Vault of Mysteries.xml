@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonBuddyProfile xsi:noNamespaceSchemaLocation="../../DungeonbuddyProfile.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>The Vault of Mysteries</Name>
+  <DungeonId>528</DungeonId>
+
+  <BossEncounters>
+
+    <Boss isFinal="false" entry="60708" name="Meng the Demented" killOrder="1" optional="false" X="4227.072" Y="1595.776" Z="438.804" />
+    <Boss isFinal="false" entry="60709" name="Qiang the Merciless" killOrder="1" optional="false" X="4227.072" Y="1595.776" Z="438.804" />
+    <Boss isFinal="false" entry="60710" name="Subetai the Swift" killOrder="1" optional="false" X="4227.072" Y="1595.776" Z="438.804" />
+    <Boss isFinal="false" entry="60701" name="Zian of the Endless Shadow" killOrder="1" optional="false" X="4227.072" Y="1595.776" Z="438.804" />
+
+    <Boss isFinal="false" entry="60410" name="Elegon" killOrder="2" optional="false" X="4023.042" Y="1907.786" Z="358.7884" />
+    
+    <Boss isFinal="true" entry="60399" name="Qin-xi" killOrder="3" optional="false" X="3878.542" Y="1550.4" Z="362.1992"/>
+    <Boss isFinal="true" entry="60400" name="Jan-xi" killOrder="3" optional="false" X="3878.542" Y="1550.4" Z="362.1992"/>
+
+  </BossEncounters>
+
+  <Blackspots>
+
+  </Blackspots>
+  <PullBlackspots>
+  </PullBlackspots>
+</DungeonBuddyProfile>
