@@ -11,30 +11,25 @@
     127.0.0.1 eu2.auth.buddyauth.com
     127.0.0.1 eu3.auth.buddyauth.com
 
-[========]
 
 
-
-### II
+### ||
 >**Go to folder**
 
 >Honorbuddy/auth
 
 >**Start**
 
-Buddy_Auth.exe (must do this every time)
+>Buddy_Auth.exe (must do this every time)
 
-[========]
 
-### III
+### |||
 >**Start**
 
 >Honorbuddy.exe
 
 >Key: 12345678901234567890
 
-
-[========]
 
 
 # **IMPORTANT**
