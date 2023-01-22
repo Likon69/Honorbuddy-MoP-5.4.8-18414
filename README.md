@@ -4,8 +4,11 @@
 
 add this lines to
 C:\Windows\System32\drivers\etc\hosts
+
 127.0.0.1 eu1.auth.buddyauth.com
+
 127.0.0.1 eu2.auth.buddyauth.com
+
 127.0.0.1 eu3.auth.buddyauth.com
 
 
