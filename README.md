@@ -41,10 +41,6 @@
 
 
 
-
-## If you have a problem, please contact me.
-Discord Téxy#6677
-
 ## Authors
 **Bossland GmbH**
 
